@@ -25,17 +25,12 @@ cd /var/www/html/dcat-ap-ch-def.clients.liip.ch/
 deploy documents
 
 ```
-tar -zcf dcat-ap-ch-def.tar.gz docs/
+cd docs
+tar -zcf dcat-ap-ch-def.tar.gz .
 scp -P 2202 dcat-ap-ch-def.tar.gz liip@ps8.ms.bsa.oriented.ch:/var/www/html/dcat-ap-ch-def.clients.liip.ch/
 ssh -p 2202 -l liip ps8.ms.bsa.oriented.ch
 cd /var/www/html/dcat-ap-ch-def.clients.liip.ch
 tar -xzf dcat-ap-ch-def.tar.gz
-cd docs
-mv * ..
-rmdir docs
 ``` 
 
-Now the site should be reachable at https://ogdch-new-convention-handbook.clients.liip.ch.
-
-
-
+Now the site should be reachable at `https://dcat-ap-ch-def.clients.liip.ch`.
