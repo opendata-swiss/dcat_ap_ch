@@ -2,7 +2,7 @@
 name: 'Add new feature to DCAT-AP-CH from DCAT-AP'
 about: 'request to add a new feature for DCAT-AP to DCAT-AP-CH'
 title: ''
-labels: ''
+labels: 'DCAT-AP-feature'
 assignees: ''
 
 ---
