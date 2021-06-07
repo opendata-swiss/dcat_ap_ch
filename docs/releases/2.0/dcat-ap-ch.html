@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Data Catalog Vocabulary (DCAT) - Version 3</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c" defer></script>
+  <script class="remove" src="config.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="small.css" media="only all and (max-width: 649px)">
+  <style>
+table.simple {width:100%;}
+#table-sdo-mapping th:first-child ,
+#table-sdo-mapping td:first-child {text-align:right;}
+.prop-list {columns:4;}
+
+
+
+  </style>
+</head>
+<body>
+
+<!-- Disclaimer -->
+<aside class="ednote">
+  <p>This document is the preparation for version 2 of DCAT-AP-CH. The goal is to reach conformity with the DCAT-AP
+    while remaining in line with the Swiss demands of OGD and NaDB.</p>
+</aside>
+
+<aside class="note">
+  <p>Currently the active version of DCAT-AP-CH is still version 1.0. This is just a draft to be completed.</p>
+</aside>
+<section id="abstract">
+  <p>DCAT is an RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web.
+    It enables a publisher to describe datasets and data services in a catalog using a standard model and vocabulary
+    that facilitates the consumption and aggregation of metadata from multiple catalogs. This can increase the
+    discoverability of datasets and data services. It also makes it possible to have a decentralized approach to
+    publishing data catalogs and makes federated search for datasets across catalogs in multiple sites possible using
+    the same query mechanism and structure.
+  </p>
+
+  <p>DCAT-AP is the European application profile for DCAT that aims for interoperability within Europe. It
+    specifies conventions on the usage of DCAT, that make sure metadata can be imported into the Europen Dataportal,
+    in a way, where the metadata information is preserved and can be still understood by a visitor of that Dataportal.
+  <p>
+  <p>DCAT-AP-CH is the Swiss application profile customizes DCAT for the needs of Swiss government agencies.
+    One Swiss specialty are the 3 official languages: German, French and Italian, that are all supported by the
+    DCAT-AP-CH</p>
+  <p class="issue">
+    For historic reasons the DCAT-AP-CH application format is currently not fully conformant with the DCAT-AP.
+    But the goal is to solve these frictions between the two application profile, so that the interoperabilty will be
+    established in the near future.
+  <p>
+</section>
+
+<section id="sotd">
+
+  <aside class="ednote">
+    <p>
+      This document has as a first goal to make the DCAT-AP-CH version 1 into an HTML document, so that
+      discussing it by the community and further developing it is facilitated. Once this transfer of the current
+      standard is ready,
+      the actual work of adapting it to the European DCAT-AP will start.
+    </p>
+  </aside>
+
+  <h3 id="dcat_ap_ch_history">DCAT-AP-CH history</h3>
+  <p>DCAT-AP-CH is the DCAT Applicationprofile for Dataportals in Switzerland. It serves to describe Data published by
+    Swiss governemnt and other organizations. It was developped in parallel with the OGD portal of the Swiss
+    Federal office of Statistics in 2016. It was last updated in 2018.
+  </p>
+  <h3 id="external_terms">External terms</h3>
+  <p>DCAT-AP-CH incorporates terms from pre-existing vocabularies where stable terms with appropriate meanings could be
+    found, Changes to definitions in the references, if any, supersede the summaries given in this specification.
+  </p>
+
+  <h3 id="please_send_comments">Please send comments</h3>
+
+</section>
+
+<section class="introductory" id="issue-summary">
+</section>
+
+<section id="introduction" class="informative">
+
+
+  <h2>Introduction</h2>
+
+  <p>DCAT-AP-CH is the Swiss application profile for DCAT.
+  <p>
+
+  <p>
+    DCAT-AP-CH aims to be conformant to DCAT-AP
+  </p>
+
+  <p>
+    The Swiss national Opendata portal is <a href="https://opendata.swiss">opendata.swiss</a>
+  </p>
+
+</section>
+
+<section id="namespaces">
+
+  <h2>Namespaces</h2>
+
+  <p>DCAT-AP-CH uses the DCAT namespace <code>http://www.w3.org/ns/dcat#</code>.
+    It also makes extensive use of terms from other vocabularies.</p>
+  <section>
+    <h3>Normative namespaces</h3>
+    <p>Namespaces and prefixes used in normative parts of this recommendation are shown in the following table.</p>
+
+    <table id="table-namespaces" class="simple">
+      <thead>
+      <tr>
+        <th>Prefix</th>
+        <th>Namespace IRI</th>
+        <th>Source</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>dc</code></td>
+        <td><code>http://purl.org/dc/elements/1.1/</code></td>
+        <td>[[DCTERMS]]</td>
+      </tr>
+      <tr>
+        <td><code>dcat</code></td>
+        <td><code>http://www.w3.org/ns/dcat#</code></td>
+        <td>[[VOCAB-DCAT]]</td>
+      </tr>
+      <tr>
+        <td><code>dct</code></td>
+        <td><code>http://purl.org/dc/terms/</code></td>
+        <td>[[DCTERMS]]</td>
+      </tr>
+      <tr>
+        <td><code>foaf</code></td>
+        <td><code>http://xmlns.com/foaf/0.1/</code></td>
+        <td>[[FOAF]]</td>
+      </tr>
+      <tr>
+        <td><code>schema</code></td>
+        <td><code>http://schema.org/</code></td>
+        <td>[[schema-org]]</td>
+      </tr>
+      <tr>
+        <td><code>rdf</code></td>
+        <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td>
+        <td>[[RDF-SYNTAX-GRAMMAR]]</td>
+      </tr>
+      <tr>
+        <td><code>rdfs</code></td>
+        <td><code>http://www.w3.org/2000/01/rdf-schema#</code></td>
+        <td>[[RDF-SCHEMA]]</td>
+      </tr>
+      <tr>
+        <td><code>vcard</code></td>
+        <td><code>http://www.w3.org/2006/vcard/ns#</code></td>
+        <td>[[VCARD-RDF]]</td>
+      </tr>
+      <tr>
+        <td><code>xsd</code></td>
+        <td><code>http://www.w3.org/2001/XMLSchema#</code></td>
+        <td>[[XMLSCHEMA11-2]]</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+</section>
+
+<section id="conformance">
+  <p><strong>A data catalog conforms to DCAT-AP-CH</strong> if:</p>
+  <ul>
+    <li>It contains all mandatory classes specified in the specification</li>
+    <li> An RDF description of the catalog itself is available
+    </li>
+    <li> All classes and properties defined in the catalog are used in a way consistent with the semantics declared in
+      this
+      specification.
+    </li>
+  </ul>
+  DCAT-AP-CH compliant catalogs MAY include additional non-DCAT-AP-CH metadata fields and additional RDF data in the
+  catalog's RDF
+  description.
+  <p>
+    <strong>That DCAT-AP-CH as a DCAT profile conforms to DCAT-AP</strong> means that it is a specification for a data
+    catalog
+    that adds additional constraints to DCAT-AP. A
+    data catalog that conforms to the DCAT-AP-CH also conforms to DCAT-AP. Additional constraints in a profile MAY
+    include:
+  </p>
+  <ul>
+    <li> Cardinality constraints, including a minimum set of required metadata fields</li>
+    <li> Sub-classes and sub-properties of the standard DCAT classes and properties</li>
+    <li> Classes and properties for additional metadata fields not covered in DCAT vocabulary specification</li>
+    <li> Controlled vocabularies or IRI sets as acceptable values for properties</li>
+    <li> Requirements for specific access mechanisms (RDF syntaxes, protocols) to the catalog's RDF description</li>
+  </ul>
+
+</section>
+
+<section id="vocabulary-overview" class="informative">
+
+  <h2>Applcation profile overview</h2>
+
+  <section id="dcat-scope">
+    <h3>DCAT-AP-CH scope</h3>
+
+    <p>DCAT-AP-CH uses only some of the classes of [[DCAT-AP]]. It also uses Classes from [[FOAF]] for modeling
+      of the Agent class.</p>
+    <ul>
+      <li>
+        <a href="#Class:Catalog"><code>dcat:Catalog</code></a> is a container of datasets in DCAT-AP-CH.
+      </li>
+      <li>
+        <a href="#Class:Dataset"><code>dcat:Dataset</code></a> is a container of distributions.
+      </li>
+      <li>
+        <a href="#Class:Distribution"><code>dcat:Distribution</code></a> represents an accessible form of a dataset such
+        as a downloadable file.
+        </a>
+      </li>
+      <li>
+        <a href="#Class:Agent"><code>foaf:Agent</code></a> is an Organization that is authorized to publish data.
+        </a>
+      </li>
+      <li>There are other classes in [[DCAT-AP]] that have not yet become part of DCAT-AP-CH</li>
+    </ul>
+    <div id="diagram" class="mermaid">
+      classDiagram
+
+      Catalog --> Dataset : dcat:dataset
+      Catalog --> Agent : dct:publisher
+      Dataset --> Distribution : dcat:distribution
+      Dataset --> Agent : dct:publisher
+      class Catalog {
+      Mandatory:
+      - dct:title
+      - dct:description
+      - dct:issued
+      - foaf:homepage
+      - dct:publisher
+      - dcat:dataset
+      Conditonal:
+      - dct:modified
+      Optional:
+      - dct:themeTaxonomy
+      - dcat:license
+      - dct:rights
+      - dct:language
+      }
+      class Dataset {
+      Mandatory:
+      - dct:title
+      - dct:description
+      - dct:publisher
+      - dcat:contactPoint
+      - dct:identifier
+      Conditional:
+      - dct:issued
+      - dct:modified
+      - dcat:theme
+      - dcat:distribution
+      - dcat:landingPage
+      - dct:language
+      Optional:
+      - dcat:keyword
+      - dct:spatial
+      - dct:coverage
+      - dct:temporal
+      - dct:accrualPeriodicity
+      - dct:relation
+      - rdfs:seeAlsos
+      - schema:image
+      }
+      class Distribution {
+      Mandatory:
+      - dct:issued
+      - dcat:accessURL
+      - dct:rights
+      - dct:identifier
+      Conditional:
+      - dct:title
+      - dct:description
+      - dcat:byteSize
+      - dcat:mediaType
+      - dct:format
+      - dct:language
+      Optional:
+      - dct:license
+      - dct:identifier
+      - dcat:downloadURL
+      - dct:coverage
+      - schema:image
+      }
+      class Agent {
+      Mandatory:
+      - foaf:name
+      - foaf:type
+      }
+    </div>
+  </section>
+
+</section>
+
+<section id="dcat-ap-ch-specification">
+
+  <h2>Vocabulary specification</h2>
+
+  <section id="Class:Catalog">
+    <h3>Class: Catalog</h3>
+
+    <table class="def">
+      <tbody>
+      <tr>
+        <th>Label</th>
+        <td>Catalogue</td>
+      </tr>
+      <tr>
+        <th>Obligation</th>
+        <td><strong>Mandatory</strong></td>
+      </tr>
+      <tr>
+        <th>RDF Class</th>
+        <td><a data-cite="VOCAB-DCAT#class-catalog"><code title="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</code></a>
+        </td>
+      </tr>
+      <tr>
+        <th>Definition</th>
+        <td>A curated collection of metadata about datasets. [[VOCAB-DCAT]]</td>
+      </tr>
+      <!--
+<tr>
+<th>Usage note</th>
+<td></td>
+</tr>
+-->
+      <tr>
+        <th>Scope</th>
+        <td><a class="scope" href="#metadata-scope">All</a></td>
+      </tr>
+      <tr>
+        <th>Specification</th>
+        <td>[[DCAT-AP]]</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <p>The following table lists the properties used for describing a catalogue.</p>
+
+    <table class="simple">
+      <thead>
+      <tr>
+        <th>Label</th>
+        <th><abbr title="Obligation">Obl.</abbr></th>
+        <th><abbr title="Max Cardinality">MC</abbr></th>
+        <th>RDF Property</th>
+        <th>Range</th>
+        <!--
+<th>Code list</th>
+-->
+        <th>Scope</th>
+        <th><abbr title="Specification">Spec.</abbr></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="#catalogue-title">title</a></td>
+        <td><strong>M</strong></td>
+        <td>1*</td>
+        <td><a data-cite="DCTERMS#terms-title"><code title="http://purl.org/dc/terms/title">dct:title</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code
+          title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
+        <!--
+<td></td>
+-->
+        <td><a class="scope" href="#metadata-scope">All</a></td>
+        <td>[[DCAT-AP]]</td>
+      </tr>
+      <tr>
+        <td><a href="#catalogue-description">description</a></td>
+        <td><strong>M</strong></td>
+        <td>1*</td>
+        <td><a data-cite="DCTERMS#terms-description"><code
+          title="http://purl.org/dc/terms/description">dct:description</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code
+          title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
+        <!--
+<td></td>
+-->
+        <td><a class="scope" href="#metadata-scope">All</a></td>
+        <td>[[DCAT-AP]]</td>
+      </tr>
+      <tr>
+        <td><a href="#catalogue-contact-point">contact point</a></td>
+        <td><strong>M</strong></td>
+        <td>1</td>
+        <td><a data-cite="VOCAB-DCAT#Property:dataset_contactPoint"><code
+          title="http://www.w3.org/ns/dcat#contactPoint">dcat:contactPoint</code></a></td>
+        <td><a data-cite="VCARD-RDF#d4e1819"><code title="http://www.w3.org/2006/vcard/ns#Kind">vcard:Kind</code></a>
+        </td>
+        <!--
+<td></td>
+-->
+        <td><a class="scope" href="#metadata-scope">All</a></td>
+        <td>[[GeoDCAT-AP]]</td>
+      </tr>
+      <tr>
+        <td><a href="#catalogue-publisher">publisher</a></td>
+        <td><strong>M</strong></td>
+        <td>1</td>
+        <td><a data-cite="DCTERMS#terms-publisher"><code title="http://purl.org/dc/terms/publisher">dct:publisher</code></a>
+        </td>
+        <td><a data-cite="FOAF#term_Organization"><code
+          title="http://xmlns.com/foaf/0.1/Organization">foaf:Organization</code></a></td>
+        <!--
+<td>[[MDR-CB]]</td>
+-->
+        <td><a class="scope" href="#metadata-scope">All</a></td>
+        <td>[[DCAT-AP]]</td>
+      </tr>
+      <tr>
+        <td><a href="#catalogue-dataset">dataset</a></td>
+        <td><strong>M</strong></td>
+        <td><var>N</var></td>
+        <td><a data-cite="VOCAB-DCAT#Property:catalog_dataset"><code title="http://www.w3.org/ns/dcat#dataset">dcat:dataset</code></a>
+        </td>
+        <td><a data-cite="VOCAB-DCAT#class-dataset"><code title="http://www.w3.org/ns/dcat#Dataset">dcat:Dataset</code></a>
+        </td>
+        <!--
+<td></td>
+-->
+        <td><a class="scope" href="#metadata-scope">All</a></td>
+        <td>[[DCAT-AP]]</td>
+      </tr>
+      <tr>
+        <td><a href="#catalogue-identifier">identifier</a></td>
+        <td><em>R</em></td>
+        <td>1</td>
+        <td><a data-cite="DCTERMS#terms-identifier"><code
+          title="http://purl.org/dc/terms/identifier">dct:identifier</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code
+          title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
+        <!--
+<td></td>
+-->
+        <td><a class="scope" href="#metadata-scope">MM</a>, <a class="scope" href="#metadata-scope">MS</a></td>
+        <td>DCAT-AP-JRC</td>
+      </tr>
+      <tr>
+        <td><a href="#catalogue-acronym">acronym</a></td>
+        <td><em>R</em></td>
+        <td>1</td>
+        <td><a data-cite="DCTERMS#terms-alternative"><code
+          title="http://purl.org/dc/terms/alternative">dct:alternative</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code
+          title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
+        <!--
+<td></td>
+-->
+        <td><a class="scope" href="#metadata-scope">DD</a>, <a class="scope" href="#metadata-scope">MM</a></td>
+        <td>DCAT-AP-JRC</td>
+      </tr>
+      <tr>
+        <td><a href="#catalogue-landing-page">landing page</a></td>
+        <td><em>R</em></td>
+        <td>1</td>
+        <td><a data-cite="FOAF#term_homepage"><code title="http://xmlns.com/foaf/0.1/homepage">foaf:homepage</code></a>
+        </td>
+        <td><a data-cite="FOAF#term_Document"><code title="http://xmlns.com/foaf/0.1/Document">foaf:Document</code></a>
+        </td>
+        <!--
+<td><a data-cite="VOCAB-DCAT#Property:dataset_landingpage"><code title="http://www.w3.org/ns/dcat#landingPage">dcat:landingPage</code></a></td>
+<td><a data-cite="FOAF#term_Document"><code title="http://xmlns.com/foaf/0.1/Document">foaf:Document</code></a></td>
+-->
+        <!--
+<td></td>
+-->
+        <td><a class="scope" href="#metadata-scope">All</a></td>
+        <td>[[DCAT-AP]]</td>
+        <!--
+<td>DCAT-AP-JRC</td>
+-->
+      </tr>
+      <tr>
+        <td rowspan="2"><a href="#catalogue-other-identifier">other identifier</a></td>
+        <td rowspan="2"><em>R</em></td>
+        <td rowspan="2"><var>N</var></td>
+        <td><a data-cite="OWL-REF#sameAs-def"><code title="http://www.w3.org/2002/07/owl#sameAs">owl:sameAs</code></a>
+        </td>
+        <td><a data-cite="OWL-SEMANTICS#owl_Thing_syntax"><code
+          title="http://www.w3.org/2002/07/owl#Thing">owl:Thing</code></a></td>
+        <!--
+<td rowspan="2"></td>
+-->
+        <td rowspan="2"><a class="scope" href="#metadata-scope">DD</a>, <a class="scope" href="#metadata-scope">DC</a>
+        </td>
+        <td rowspan="2">DCAT-AP-JRC</td>
+      </tr>
+      <tr>
+        <td><a data-cite="VOCAB-ADMS#adms_identifier"><code
+          title="http://www.w3.org/ns/adms#identifier">adms:identifier</code></a></td>
+        <td><a data-cite="VOCAB-ADMS#dt_identifier"><code
+          title="http://www.w3.org/ns/adms#Identifier">adms:Identifier</code></a></td>
+      </tr>
+      <tr>
+        <td><a href="#catalogue-collection">collection</a></td>
+        <td>O</td>
+        <td><var>N</var></td>
+        <td><a data-cite="DCTERMS#terms-hasPart"><code title="http://purl.org/dc/terms/hasPart">dct:hasPart</code></a>
+        </td>
+        <td><a data-cite="VOCAB-DCAT#class-catalog"><code title="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</code></a>
+        </td>
+        <!--
+<td></td>
+-->
+        <td><a class="scope" href="#metadata-scope">All</a></td>
+        <td>[[DCAT-AP]]</td>
+      </tr>
+      <tr>
+        <td><a href="#catalogue-catalogue-record">catalogue record</a></td>
+        <td>O</td>
+        <td><var>N</var></td>
+        <td><a data-cite="VOCAB-DCAT#Property:catalog_catalog_record"><code title="http://www.w3.org/ns/dcat#record">dcat:record</code></a>
+        </td>
+        <td><a data-cite="VOCAB-DCAT#class-catalog-record"><code title="http://www.w3.org/ns/dcat#CatalogRecord">dcat:CatalogRecord</code></a>
+        </td>
+        <!--
+<td></td>
+-->
+        <td><a class="scope" href="#metadata-scope">MM</a>, <a class="scope" href="#metadata-scope">MS</a></td>
+        <td>[[DCAT-AP]]</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+    <aside class="example" id="ex-catalogue" title="Catalogue">
+      <pre data-include-format="text" data-include="./examples/catalog.ttl"></pre>
+    </aside>
+</section>
+
+</body>
+</html>

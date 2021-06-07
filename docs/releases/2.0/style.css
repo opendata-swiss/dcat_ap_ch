@@ -1,3 +1,4 @@
+/* Force W3C logo to site side by side with OGC logo */
 .head img[src*="logos/W3C"] {
   display: inherit !important;
 }
@@ -145,4 +146,49 @@ section.specterm.ssn, section.specterm.ssn th, section.specterm.sosa tr.ssn, sec
     padding-bottom: 0.6ex;
     border: 0px dotted black;
     font-size: small;
+}
+
+/* for mermaid diagrams */
+
+g.classGroup text {
+    fill: #134962 !important;
+}
+
+g.classGroup rect {
+    fill: #ddeeff !important;
+    stroke: #134962 !important;
+}
+
+g.classGroup line {
+    stroke: #134962 !important;
+}
+
+.classLabel .box {
+    fill: transparent !important;
+}
+
+.classLabel .label {
+    fill: #134962 !important;
+}
+
+.relation {
+    stroke: #134962 !important;
+}
+
+#dependencyStart,
+#dependencyEnd {
+    stroke: #134962 !important;
+    fill: #134962 !important;
+}
+
+.mermaid svg {
+    overflow: visible;
+}
+
+hr {
+    height: 0px;
+}
+
+#appendicies-content {
+    display: none;
 }

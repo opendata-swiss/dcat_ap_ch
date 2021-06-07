@@ -1,0 +1,9 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://swisstopo/catalog-endpoint.rdf>
+  a dcat:Catalog ;
+  dcat:dataset <https://swisstopo/data/123>, <https://swisstopo/data/345> ;
+  dcat:landingPage <https://swisstopo/index.html> ;
+  dct:title "Open Data City of Zürich"@en ;
+  dct:description "Datenkatalog der Stadt Zürich"@de ;
+  dcat:landingPage <https://data.stadt-zuerich.ch/> ;
