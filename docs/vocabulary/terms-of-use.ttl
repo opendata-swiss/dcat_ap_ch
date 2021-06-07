@@ -1,0 +1,55 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+
+<http://metawal.wallonie.be/thesaurus/conditions>
+  a skos:ConceptScheme ;
+  dc11:title "Conditions d'utilisation et d'accÃ¨s, version 1.0" ;
+  dc11:description "Conditions d'utilisation et d'accÃ¨s" ;
+  dc11:creator [
+    a foaf:Organization ;
+    foaf:name "geocat.ch"
+  ] ;
+  dc:issued "2019-09-24" ;
+  dc:modified "2019-09-24" .
+
+<https://opendata.swiss/en/terms-of-use/#terms_open>
+  a skos:Concept ;
+  skos:prefLabel "Opendata OPEN: Open use."@en,
+                 "Opendata OPEN: Utilisation libre."@fr,
+                 "Opendata OPEN: Freie Nutzung."@de,
+                 "Opendata OPEN: Libero utilizzo."@it ;
+  skos:altLabel "Freie Nutzung"@de,
+                "Utilisation libre"@fr ;
+  skos:mappingRelation "NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired" .
+
+<https://opendata.swiss/en/terms-of-use/#terms_by>
+  a skos:Concept ;
+  skos:prefLabel "Opendata BY: Open use. Must provide the source."@en,
+                 "Opendata BY: Utilisation libre. Obligation dâ€™indiquer la source."@fr,
+                 "Opendata BY: Freie Nutzung. Quellenangabe ist Pflicht."@de,
+                 "Opendata BY: Libero utilizzo. Indicazione della fonte obbligatoria. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati"@it ;
+  skos:altLabel "Freie Nutzung. Quellenangabe ist Pflicht."@de,
+                "Utilisation libre. Obligation d’indiquer la source."@fr ;
+  skos:mappingRelation "NonCommercialAllowed-CommercialAllowed-ReferenceRequired" .
+
+<https://opendata.swiss/en/terms-of-use/#terms_ask>
+  a skos:Concept ;
+  skos:prefLabel "Opendata ASK: Open use. Use for commercial purposes requires permission of the data owner."@en,
+                 "Opendata ASK: Utilisation libre. Utilisation Ã  des fins commerciales uniquement avec lâ€™autorisation du fournisseur des donnÃ©es."@fr,
+                 "Opendata ASK: Freie Nutzung. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulÃ¤ssig."@de,
+                 "Opendata ASK: Libero utilizzo. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati."@it ;
+  skos:altLabel "Freie Nutzung. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulässig."@de,
+                "Utilisation libre. Utilisation à des fins commerciales uniquement avec l’autorisation du fournisseur des données."@fr ;
+  skos:mappingRelation "NonCommercialAllowed-CommercialWithPermission-ReferenceNotRequired" .
+
+<https://opendata.swiss/en/terms-of-use/#terms_by_ask>
+  a skos:Concept ;
+  skos:prefLabel "Opendata BY ASK: Open use. Must provide the source. Use for commercial purposes requires permission of the data owner."@en,
+                 "Opendata BY ASK: Utilisation libre. Obligation dâ€™indiquer la source. Utilisation commerciale uniquement avec lâ€™autorisation du fournisseur des donnÃ©es."@fr,
+                 "Opendata BY ASK: Freie Nutzung. Quellenangabe ist Pflicht. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulÃ¤ssig."@de,
+                 "Opendata BY ASK: Libero utilizzo. Indicazione della fonte obbligatoria. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati."@it ;
+  skos:altLabel "Freie Nutzung. Quellenangabe ist Pflicht. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulässig."@de,
+                 "Utilisation libre. Obligation d’indiquer la source. Utilisation commerciale uniquement avec l’autorisation du fournisseur des données."@fr ;
+  skos:mappingRelation "NonCommercialAllowed-CommercialWithPermission-ReferenceRequired" .
