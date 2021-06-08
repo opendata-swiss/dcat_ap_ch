@@ -24,14 +24,15 @@
                  "Travail, rémunération"@fr,
                  "Lavoro e reddito"@it,
                  "Work and income"@en ;
-  skos:mappingRelation euthemes:AGRI,
-                       geothemes:biota .
+  skos:mappingRelation euthemes:ECON ,
+                       geothemes:economy .
 <http://opendata.swiss/themes/construction>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
   skos:prefLabel "Bau- und Wohnungswesen"@de,
                  "Construction, logement"@fr,
-                 "Costruzione e abitazione"@it .
+                 "Costruzione e abitazione"@it ;
+  skos:mappingRelation geothemes:structure .
 <http://opendata.swiss/themes/population>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -39,7 +40,8 @@
                  "Population"@fr,
                  "Popolazione"@it,
                  "Population"@en ;
-  skos:mappingRelation euthemes:SOCI.
+  skos:mappingRelation euthemes:SOCI ,
+                       geothemes:geothemes:society .
 <http://opendata.swiss/themes/education>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -55,7 +57,9 @@
                  "Energie"@fr,
                  "Energia"@it,
                  "Energy"@en ;
-  skos:mappingRelation euthemes:ENER.
+  skos:mappingRelation euthemes:ENER ,
+                       geothemes:utilitiesCommunication_Energy ,
+                       geothemes:utilitiesCommunication .
 <http://opendata.swiss/themes/finances>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -63,7 +67,7 @@
                  "Finances"@fr,
                  "Finanze"@it,
                  "Finances"@en ;
-  skos:mappingRelation euthemes:ECON.
+  skos:mappingRelation euthemes:ECON .
 <http://opendata.swiss/themes/geography>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -71,7 +75,39 @@
                  "Géographie"@fr,
                  "Geografia"@it,
                  "Geography"@en ;
-  skos:mappingRelation euthemes:REGI.
+  skos:mappingRelation euthemes:REGI ,
+                       geothemes:imageryBaseMapsEarthCover ,
+                       geothemes:imageryBaseMapsEarthCover_BaseMaps ,
+                       geothemes:imageryBaseMapsEarthCover_Imagery ,
+                       geothemes:imageryBaseMapsEarthCover_EarthCover ,
+                       geothemes:location ,
+                       geothemes:elevation ,
+                       geothemes:boundaries ,
+                       geothemes:planningCadastre ,
+                       geothemes:planningCadastre_Planning ,
+                       geothemes:planningCadastre_Cadastre ,
+                       geothemes:geoscientificInformation ,
+                       geothemes:geoscientificInformation_Geology ,
+                       geothemes:geoscientificInformation_Soils ,
+                       geothemes:geoscientificInformation_NaturalHazards ,
+                       geothemes:biota ,
+                       geothemes:oceans ,
+                       geothemes:inlandWaters ,
+                       geothemes:climatologyMeteorologyAtmosphere ,
+                       geothemes:environment ,
+                       geothemes:environment_EnvironmentalProtection ,
+                       geothemes:environment_NatureProtection ,
+                       geothemes:society ,
+                       geothemes:health ,
+                       geothemes:structure ,
+                       geothemes:transportation ,
+                       geothemes:utilitiesCommunication ,
+                       geothemes:utilitiesCommunication_Energy ,
+                       geothemes:utilitiesCommunication_Utilities ,
+                       geothemes:utilitiesCommunication_Communication ,
+                       geothemes:intelligenceMilitary ,
+                       geothemes:farming ,
+                       geothemes:economy .
 <http://opendata.swiss/themes/legislation>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -79,7 +115,7 @@
                  "Législation"@fr,
                  "Legislazione"@it,
                  "Legislation"@en ;
-  skos:mappingRelation euthemes:JUST.
+  skos:mappingRelation euthemes:JUST .
 <http://opendata.swiss/themes/health>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -87,7 +123,8 @@
                  "Santé"@fr,
                  "Sanità"@it,
                  "Health"@en ;
-  skos:mappingRelation euthemes:HEAL.
+  skos:mappingRelation euthemes:HEAL ,
+                       geothemes:health .
 <http://opendata.swiss/themes/trade>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -95,7 +132,7 @@
                  "Commerce"@fr,
                  "Commercio"@it,
                  "Trade"@en ;
-  skos:mappingRelation euthemes:ECON.
+  skos:mappingRelation euthemes:ECON .
 <http://opendata.swiss/themes/industry>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -103,7 +140,7 @@
                  "Industrie, services"@fr,
                  "Industria, servizi"@it,
                  "Industry and services"@en ;
-  skos:mappingRelation euthemes:ECON.
+  skos:mappingRelation euthemes:ECON .
 <http://opendata.swiss/themes/crime>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -111,7 +148,7 @@
                  "Criminalité, droit pénal"@fr,
                  "Criminalità, diritto penale"@it,
                  "Crime, criminal justice"@en ;
-  skos:mappingRelation euthemes:SOCI.
+  skos:mappingRelation euthemes:SOCI .
 <http://opendata.swiss/themes/culture>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -119,7 +156,10 @@
                  "Culture, médias, société de l'information, sport"@fr,
                  "Cultura, media, società dell'informazione, sport"@it,
                  "Culture, media, information society, sport"@en ;
-  skos:mappingRelation euthemes:EDUC.
+  skos:mappingRelation euthemes:EDUC ,
+                       geothemes:geothemes:society ,
+                       geothemes:utilitiesCommunication_Communication ,
+                       geothemes:utilitiesCommunication .
 <http://opendata.swiss/themes/agriculture>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -127,7 +167,9 @@
                  "Agriculture, sylviculture"@fr,
                  "Agricoltura, selvicoltura"@it,
                  "Agriculture, forestry"@en ;
-  skos:mappingRelation euthemes:AGRI.
+  skos:mappingRelation euthemes:AGRI ,
+                       geothemes:geothemes:biota ,
+                       geothemes:farming .
 <http://opendata.swiss/themes/mobility>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -135,7 +177,8 @@
                  "Mobilité et transports"@fr,
                  "Mobilità e trasporti"@it,
                  "Mobility and Transport"@en ;
-  skos:mappingRelation euthemes:TRAN.
+  skos:mappingRelation euthemes:TRAN ,
+                       geothemes:transportation .
 <http://opendata.swiss/themes/public-order>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -143,7 +186,8 @@
                  "Ordre et sécurité publics"@fr,
                  "Ordine pubblico e sicurezza pubblica"@it,
                  "Public order and security"@en ;
-  skos:mappingRelation euthemes:GOVE.
+  skos:mappingRelation euthemes:GOVE ,
+                       geothemes:intelligenceMilitary .
 <http://opendata.swiss/themes/politics>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -151,7 +195,7 @@
                  "Politique"@fr,
                  "Politica"@it,
                  "Politics"@en ;
-  skos:mappingRelation euthemes:GOVE.
+  skos:mappingRelation euthemes:GOVE .
 <http://opendata.swiss/themes/prices>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -159,7 +203,7 @@
                  "Prix"@fr,
                  "Prezzi"@it,
                  "Prices"@en ;
-  skos:mappingRelation euthemes:ECON.
+  skos:mappingRelation euthemes:ECON .
 <http://opendata.swiss/themes/territory>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -167,7 +211,33 @@
                  "Territoire et environnement"@fr,
                  "Territorio e ambiente"@it,
                  "Territory and environment"@en ;
-  skos:mappingRelation euthemes:ENVI.
+  skos:mappingRelation euthemes:ENVI ,
+                       geothemes:imageryBaseMapsEarthCover ,
+                       geothemes:imageryBaseMapsEarthCover_BaseMaps ,
+                       geothemes:imageryBaseMapsEarthCover_Imagery ,
+                       geothemes:imageryBaseMapsEarthCover_EarthCover ,
+                       geothemes:location ,
+                       geothemes:elevation ,
+                       geothemes:boundaries ,
+                       geothemes:planningCadastre ,
+                       geothemes:planningCadastre_Planning ,
+                       geothemes:planningCadastre_Cadastre ,
+                       geothemes:geoscientificInformation ,
+                       geothemes:geoscientificInformation_Geology ,
+                       geothemes:geoscientificInformation_Soils ,
+                       geothemes:geoscientificInformation_NaturalHazards ,
+                       geothemes:biota ,
+                       geothemes:oceans ,
+                       geothemes:inlandWaters ,
+                       geothemes:climatologyMeteorologyAtmosphere ,
+                       geothemes:environment ,
+                       geothemes:environment_EnvironmentalProtection ,
+                       geothemes:environment_NatureProtection ,
+                       geothemes:utilitiesCommunication ,
+                       geothemes:utilitiesCommunication_Energy ,
+                       geothemes:utilitiesCommunication_Utilities ,
+                       geothemes:utilitiesCommunication_Energy ,
+                       geothemes:utilitiesCommunication .
 <http://opendata.swiss/themes/social-security>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -175,7 +245,7 @@
                  "Protection sociale"@fr,
                  "Sicurezza sociale"@it,
                  "Social security"@en ;
-  skos:mappingRelation euthemes:SOCI.
+  skos:mappingRelation euthemes:SOCI .
 <http://opendata.swiss/themes/statistical-basis>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -197,7 +267,7 @@
                  "Administration"@fr,
                  "Amministrazione"@it,
                  "Administration"@en ;
-  skos:mappingRelation euthemes:GOVE.
+  skos:mappingRelation euthemes:GOVE .
 <http://opendata.swiss/themes/national-economy>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
@@ -205,4 +275,18 @@
                  "Economie nationale"@fr,
                  "Economia"@it,
                  "National economy"@en ;
-  skos:mappingRelation euthemes:ECON.
+  skos:mappingRelation euthemes:ECON ,
+                       geothemes:economy .
+
+
+
+
+geothemes:utilitiesCommunication ,
+
+
+
+
+
+        'utilitiesCommunication': ['geography', 'territory', 'energy', 'culture'],  # noqa
+        'utilitiesCommunication_Energy': ['geography', 'energy', 'territory'],
+
