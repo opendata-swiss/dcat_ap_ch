@@ -29,6 +29,7 @@ table.simple {width:100%;}
 
 
 
+
   </style>
 </head>
 <body>
@@ -443,7 +444,6 @@ table.simple {width:100%;}
         </td>
         <td><a data-cite="FOAF#term_Document"><code title="http://xmlns.com/foaf/0.1/Document">dct:modified</code></a>
         </td>
-        title="http://xmlns.com/foaf/0.1/Organization">foaf:Organization</code></a></td>
         <td>[[DCAT-AP]]</td>
       </tr>
       <tr>
@@ -467,7 +467,7 @@ table.simple {width:100%;}
         <td>[[DCAT-AP]]</td>
       </tr>
       <tr>
-        <td><a href="#catalogue-theme-taxonomy">theme-taxonomy</a></td>
+        <td><a href="#catalog-theme">theme-taxonomy</a></td>
         <td><em>O</em></td>
         <td>N</td>
         <td><a data-cite="DCTERMS#terms-issued"><code
@@ -477,7 +477,7 @@ table.simple {width:100%;}
         <td>[[DCAT-AP]]</td>
       </tr>
       <tr>
-        <td><a href="#catalogue-license">license</a></td>
+        <td><a href="#catalog-license">license</a></td>
         <td><em>O</em></td>
         <td>N</td>
         <td><a data-cite="DCTERMS#terms-licence"><code title="http://purl.org/dc/terms/license">dct:license</code></a>
@@ -486,7 +486,7 @@ table.simple {width:100%;}
         </td>
       </tr>
       <tr>
-        <td><a href="#catalogue-rights">rights</a></td>
+        <td><a href="#catalog-rights">rights</a></td>
         <td><em>O</em></td>
         <td>N</td>
         <td><a data-cite="DCTERMS#terms-accessRights"><code title="http://purl.org/dc/terms/accessRights">dct:accessRights</code></a>
@@ -496,7 +496,7 @@ table.simple {width:100%;}
         <td>[[DCAT-AP]]</td>
       </tr>
       <tr>
-        <td><a href="#catalogue-language">language</a></td>
+        <td><a href="#catalog-language">language</a></td>
         <td><em>O</em></td>
         <td>N</td>
         <td><a data-cite="VOCAB-DCAT#Property:dataset_language"><code title="http://purl.org/dc/terms/language">dct:language</code></a>
@@ -861,7 +861,7 @@ table.simple {width:100%;}
 
     </section>
 
-    <section id="catalogue-dataset">
+    <section id="catalog-dataset">
 
       <h2>Property: dataset</h2>
 
@@ -898,6 +898,155 @@ table.simple {width:100%;}
         <tr>
           <th>Usage</th>
           <td></td>
+        </tr>
+        <tr>
+          <th>Specification</th>
+          <td>[[DCAT-AP]]</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section id="catalog-license">
+
+      <h2>Property: licence</h2>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Label</th>
+          <td>licence</td>
+        </tr>
+        <tr>
+          <th>Obligation</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Max card.</th>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>RDF Property</th>
+          <td><a data-cite="DCTERMS#terms-licence"><code title="http://purl.org/dc/terms/license">dct:license</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#terms-LicenseDocument"><code title="http://purl.org/dc/terms/LicenseDocument">dct:LicenseDocument</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The distribution licence.</td>
+        </tr>
+        <tr>
+          <th>Usage note</th>
+          <td>This property MUST take as value one of the licences defined in [[MDR-LICENCES]]</td>
+        </tr>
+        <tr>
+          <th>Scope</th>
+          <td><a class="scope" href="#metadata-scope">All</a></td>
+        </tr>
+        <tr>
+          <th>Specification</th>
+          <td>[[DCAT-AP]]</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+       <section id="catalog-rights">
+
+      <h2>Property: Rights</h2>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Label</th>
+          <td>access restrictions</td>
+        </tr>
+        <tr>
+          <th>Obligation</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Max card.</th>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>RDF Property</th>
+          <td><a data-cite="DCTERMS#terms-rights"><code title="http://purl.org/dc/terms/rights">dct:rights</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#terms-RightsStatement"><code title="http://purl.org/dc/terms/RightsStatement">dct:RightsStatement</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The distribution access restrictions.</td>
+        </tr>
+        <tr>
+          <th>Usage note</th>
+          <td>This property SHOULD take as value one of the access restriction codes defined in the register illustrated
+            in <a class="no-sectionRef" href="#registers-access-restrictions"></a></td>
+        </tr>
+        <tr>
+          <th>Scope</th>
+          <td><a class="scope" href="#metadata-scope">Data Documentation</a></td>
+        </tr>
+        <tr>
+          <th>Specification</th>
+          <td>DCAT-AP-JRC</td>
+        </tr>
+        <tr>
+          <th>Requirement</th>
+          <td><a class="no-sectionRef" href="#req-distribution-access-restrictions"></a></td>
+        </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+     <section id="catalog-language">
+
+      <h2>Property: language</h2>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Label</th>
+          <td>language</td>
+        </tr>
+        <tr>
+          <th>Obligation</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Max card.</th>
+          <td><var>N</var></td>
+        </tr>
+        <tr>
+          <th>RDF Property</th>
+          <td><a data-cite="VOCAB-DCAT#Property:dataset_language"><code title="http://purl.org/dc/terms/language">dct:language</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#terms-LinguisticSystem"><code title="http://purl.org/dc/terms/LinguisticSystem">dct:LinguisticSystem</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>languages used in the textual
+metadata of the datasets referenced in the catalog, such as titles, descriptions, etc. </td>
+        </tr>
+        <tr>
+          <th>Usage</th>
+          <td>Tha language should use the URI of the ISO two letter code [[ISO 639-1]]</td>
         </tr>
         <tr>
           <th>Specification</th>
@@ -1189,15 +1338,18 @@ table.simple {width:100%;}
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The dataset title.</td>
+          <td>Name given to the dataset.</td>
+        </tr>
+        <tr>
+          <th>Usage</th>
+          <td>The title can be given in several languages. All languages that have Distributions should also
+            hava e dataset title. In multiligual dataportals ususally the title of the language selected by a user
+            will be shown for the dataset.
+          </td>
         </tr>
         <tr>
           <th>Specification</th>
           <td>[[DCAT-AP]]</td>
-        </tr>
-        <tr>
-          <th>Requirement</th>
-          <td><a class="no-sectionRef" href="#req-data-citation"></a></td>
         </tr>
         </tbody>
       </table>
@@ -1234,7 +1386,14 @@ table.simple {width:100%;}
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The dataset title.</td>
+          <td>Free-text description of the dataset</td>
+        </tr>
+        <tr>
+          <th>Usage</th>
+          <td>The description can be provided in several languages. On dataportals the description that is displayed to
+            the user
+            is then usually determined by content negotiation and depends on his language preference.
+          </td>
         </tr>
         <tr>
           <th>Specification</th>
