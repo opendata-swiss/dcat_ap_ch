@@ -1,6 +1,22 @@
-@prefix skos: <http://www.w3.org/2004/02/skos/core>.
-@prefix euthemes: <http://publications.europa.eu/resource/authority/data-theme/>.
-@prefix geothemes: <https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix euthemes: <http://publications.europa.eu/resource/authority/data-theme/> .
+@prefix geothemes: <https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+
+<http://opendata.swiss/themes>
+  a skos:ConceptScheme ;
+  dc11:title "Conditions d'utilisation et d'accÃ¨s, version 1.0"@en ;
+  dc11:description "Custom vocabulary for OGD dataset categories in Switzerland"@en ;
+  dc11:creator [
+    a foaf:Organization ;
+    foaf:name "bfs.admin.ch"
+  ] ;
+  rdfs:label "Kategorien"@de "Categories"@en;
+  dct:issued "2016-06-23" ;
+  dct:modified "2021-06-23" .
+
 <http://opendata.swiss/themes/work>
   a skos:Concept ;
   skos:inScheme <http://opendata.swiss/themes> ;
