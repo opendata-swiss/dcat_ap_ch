@@ -349,12 +349,12 @@ table.simple {width:100%;}
       </tr>
       <tr>
         <th>RDF Class</th>
-        <td><a data-cite="VOCAB-DCAT#class-catalog"><code title="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</code></a>
+        <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code title="http://www.w3.org/ns/dcat#ClassCatalog">dcat:Catalog</code></a>
         </td>
       </tr>
       <tr>
         <th>Definition</th>
-        <td>A curated collection of metadata about datasets. [[VOCAB-DCAT]]</td>
+        <td>A curated collection of metadata about datasets.</td>
       </tr>
       <tr>
         <th>Usage</th>
@@ -385,7 +385,7 @@ table.simple {width:100%;}
         <td><a href="#catalog-title">title</a></td>
         <td><strong>M</strong></td>
         <td>1*</td>
-        <td><a data-cite="DCTERMS#terms-title"><code title="http://purl.org/dc/terms/title">dct:title</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code title="http://purl.org/dc/terms/title">dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code
           title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
         <td>[[DCAT-AP]]</td>
@@ -394,7 +394,7 @@ table.simple {width:100%;}
         <td><a href="#catalog-description">description</a></td>
         <td><strong>M</strong></td>
         <td>1*</td>
-        <td><a data-cite="DCTERMS#terms-description"><code
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code
           title="http://purl.org/dc/terms/description">dct:description</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code
           title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
@@ -404,7 +404,7 @@ table.simple {width:100%;}
         <td><a href="#catalog-issued">issued</a></td>
         <td><strong>M</strong></td>
         <td>1</td>
-        <td><a data-cite="DCTERMS#terms-issued"><code
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code
           title="http://purl.org/dc/terms/issued">dct:issued</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code
           title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal typed as xsd:date</code></a></td>
@@ -424,10 +424,10 @@ table.simple {width:100%;}
         <td><a href="#catalog-publisher">publisher</a></td>
         <td><strong>M</strong></td>
         <td>1</td>
-        <td><a data-cite="FOAF#term_homepage"><code title="http://xmlns.com/foaf/0.1/homepage">dct:modified</code></a>
+        <td><a data-cite="DCTERMS#terms-publisher"><code title="http://purl.org/dc/terms/publisher">dct:publisher</code></a>
         </td>
-        <td><a data-cite="FOAF#term_Document"><code title="http://xmlns.com/foaf/0.1/Document">dct:modified</code></a>
-        </td>
+        <td><a data-cite="FOAF#term_Organization"><code
+          title="http://xmlns.com/foaf/0.1/Organization">foaf:Organization</code></a></td>
         <td>[[DCAT-AP]]</td>
       </tr>
       <tr>
@@ -444,7 +444,7 @@ table.simple {width:100%;}
         <td><a href="#catalog-modified">modified</a></td>
         <td><em>C</em></td>
         <td>1</td>
-        <td><a data-cite="DCTERMS#terms-modified"><code
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code
           title="http://purl.org/dc/terms/modified">dct:modified</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code
           title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal typed as xsd:date</code></a></td>
@@ -464,7 +464,7 @@ table.simple {width:100%;}
         <td><a href="#catalog-license">license</a></td>
         <td><em>O</em></td>
         <td>N</td>
-        <td><a data-cite="DCTERMS#terms-licence"><code title="http://purl.org/dc/terms/license">dct:license</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/licence"><code title="http://purl.org/dc/terms/license">dct:license</code></a>
         </td>
         <td><a data-cite="DCTERMS#terms-LicenseDocument"><code title="http://purl.org/dc/terms/LicenseDocument">dct:LicenseDocument</code></a>
         </td>
@@ -1043,7 +1043,7 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
 
   </section>
 
-  <section id="dataset">
+  <section id="Class:Dataset">
 
     <h2>Class: Dataset</h2>
 
@@ -1065,7 +1065,7 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
       <tr>
         <th>Definition</th>
         <td>A collection of data, published or curated by a single agent, and available for access or download in one or
-          more formats. [[VOCAB-DCAT]]
+          more formats. [[VOCAB-DCAT]], [[ADMS-SKOS]], [[DCAT-UCR]]
         </td>
       </tr>
 
@@ -1312,7 +1312,7 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_title"><code
+          <td><a data-cite="VOCAB-DCAT#Property:resource_title"><code
             title="http://purl.org/dc/terms/title">dct:title</code></a></td>
         </tr>
         <tr>
@@ -1426,10 +1426,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
           <td>This property MUST take as value one of the corporate bodies defined in [[!MDR-CB]].</td>
         </tr>
         <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
-        </tr>
-        <tr>
           <th>Specification</th>
           <td>[[DCAT-AP]]</td>
         </tr>
@@ -1530,10 +1526,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
           </td>
         </tr>
         <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
-        </tr>
-        <tr>
           <th>Specification</th>
           <td>[[DCAT-AP]]</td>
         </tr>
@@ -1587,10 +1579,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
               title="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</code></a>), or a year (<a
               data-cite="XMLSCHEMA11-2#gYear"><code title="http://www.w3.org/2001/XMLSchema#gYear">xsd:gYear</code></a>).
           </td>
-        </tr>
-        <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
         </tr>
         <tr>
           <th>Specification</th>
@@ -1697,10 +1685,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
           <td>This property MUST take as value one of the themes defined in [[MDR-THEMES]]</td>
         </tr>
         <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
-        </tr>
-        <tr>
           <th>Specification</th>
           <td>[[DCAT-AP]]</td>
         </tr>
@@ -1741,10 +1725,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         <tr>
           <th>Definition</th>
           <td>A distribution of the dataset.</td>
-        </tr>
-        <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
         </tr>
         <tr>
           <th>Specification</th>
@@ -1792,10 +1772,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
           <td>Typically, the landing page is specified only with its URI.</td>
         </tr>
         <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
-        </tr>
-        <tr>
           <th>Specification</th>
           <td>[[DCAT-AP]]</td>
         </tr>
@@ -1841,10 +1817,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
           <td>This property MUST take as value one of the languages defined in [[!MDR-LANG]]</td>
         </tr>
         <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
-        </tr>
-        <tr>
           <th>Specification</th>
           <td>[[DCAT-AP]]</td>
         </tr>
@@ -1884,10 +1856,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         <tr>
           <th>Definition</th>
           <td>A free-text keyword describing the dataset.</td>
-        </tr>
-        <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
         </tr>
         <tr>
           <th>Specification</th>
@@ -1944,10 +1912,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
           </td>
         </tr>
         <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
-        </tr>
-        <tr>
           <th>Specification</th>
           <td>[[DCAT-AP]]</td>
         </tr>
@@ -1997,10 +1961,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
               href="http://schema.org/endDate"><code title="http://schema.org/endDate">schema:endDate</code></a>,
             respectively.
           </td>
-        </tr>
-        <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
         </tr>
         <tr>
           <th>Specification</th>
@@ -2057,10 +2017,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
           </td>
         </tr>
         <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
-        </tr>
-        <tr>
           <th>Specification</th>
           <td>[[DCAT-AP]]</td>
         </tr>
@@ -2104,10 +2060,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         <tr>
           <th>Usage note</th>
           <td>This property MUST take as value one of the frequency codes defined in [[!MDR-FREQ]]</td>
-        </tr>
-        <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">All</a></td>
         </tr>
         <tr>
           <th>Specification</th>
@@ -2162,10 +2114,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
             <a class="no-sectionRef" href="#dataset-usage-notes">usage notes</a>. For more information on
             dataset-related resources, see <a class="no-sectionRef" href="#other-resource"></a>.
           </td>
-        </tr>
-        <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">Data Documentation</a></td>
         </tr>
         <tr>
           <th>Specification</th>
@@ -2224,10 +2172,6 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
             <a class="no-sectionRef" href="#dataset-usage-notes">usage notes</a>. For more information on
             dataset-related resources, see <a class="no-sectionRef" href="#other-resource"></a>.
           </td>
-        </tr>
-        <tr>
-          <th>Scope</th>
-          <td><a class="scope" href="#metadata-scope">Data Documentation</a></td>
         </tr>
         <tr>
           <th>Specification</th>
