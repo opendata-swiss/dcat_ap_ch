@@ -13,20 +13,7 @@
   dct:description "Datenkatalog der Stadt Zurich"@de ;
 
   dct:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
-  foaf:homepage <https://swisstopo/index.html> ;
+  foaf:homepage "https://swisstopo/index.html" ;
   dct:publisher <https://swisstopo> ;
   dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
-  dct:language: <http://id.loc.gov/vocabulary/iso639-1/en> .
-
-<https://swisstopo/data/123>
-  a dcat:Dataset .
-
-<https://swisstopo/data/345>
-  a dcat:Dataset .
-
-<https://swisstopo/index.html>
-  a foaf:Document .
-
-<https://swisstopo>
-  a foaf:Agent .
-
+  dct:language: "ww" .

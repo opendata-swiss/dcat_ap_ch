@@ -16,7 +16,7 @@
   foaf:homepage <https://swisstopo/index.html> ;
   dct:publisher <https://swisstopo> ;
   dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
-  dct:language: <http://id.loc.gov/vocabulary/iso639-1/en> .
+  dct:language: <http://publications.europa.eu/resource/authority/language/GER> .
 
 <https://swisstopo/data/123>
   a dcat:Dataset .
@@ -29,4 +29,3 @@
 
 <https://swisstopo>
   a foaf:Agent .
-

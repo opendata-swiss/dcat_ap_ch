@@ -1,0 +1,49 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xml1: <http://www.w3.org/2001/XMLSchema> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://swisstopo/catalog-endpoint/dataset/reforestation>
+  a dcat:Dataset ;
+
+  # Mandatory properties:
+
+  # datasets are listed with their URIs
+  dcat:distribution <https://swisstopo/data/123>, <https://swisstopo/data/345> ;
+
+  # title and description can be given in multiple languages
+  dct:title "Reforestation Kanton Zürich"@en ,
+            "Aufforstung Kanton Zürich"@de ;
+  dct:description "Aufforsterungsarbeiten des Waldbestands im Kanton Zürich"@de ;
+
+  # issued is given as an ISO Date
+  dct:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
+
+  # the homepage is another class, so its value is an URI
+  foaf:landingPage <https://swisstopo/waldbestand/index.html> ;
+
+  # the publisher is another class and thus given by its URI
+  dct:publisher <https://swisstopo> ;
+
+  # Conditional Properties
+  # Conditional means that the property depends on other properties
+
+  # modified is supposed to be filled it the catalog changed after it's issue date
+  dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
+
+  # Optional Properties
+  # Conditional means that the property depends on other properties
+  dct:language: <http://id.loc.gov/vocabulary/iso639-1/en> .

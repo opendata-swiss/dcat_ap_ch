@@ -16,6 +16,16 @@ var respecConfig = {
         "title":"ADMS Controlled Vocabularies",
         "publisher":"European Commission",
       },
+      "VOCAB-EU-LANG":{
+        "href":"http://publications.europa.eu/resource/authority/language",
+        "title":"Language",
+        "publisher":"European Commission",
+      },
+      "ISO 639-1":{
+        "href":"https://en.wikipedia.org/wiki/ISO_639-1",
+        "title":"Language 2 Letter Code",
+        "publisher":"Wikipedia",
+      },
       "DCAT-UCR":{
         "href":"https://www.w3.org/TR/dcat-ucr/",
         "title":"Dataset Exchange Use Cases and Requirements",
