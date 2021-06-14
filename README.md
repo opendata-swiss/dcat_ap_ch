@@ -34,3 +34,14 @@ tar -xzf dcat-ap-ch-def.tar.gz
 ``` 
 
 Now the site should be reachable at `https://dcat-ap-ch-def.clients.liip.ch`.
+
+
+## Install pyshacl
+
+```
+git clone <repo>
+python3 -m venv p3venv
+source p3venv/bin/activate
+pip install -r requirements.txt
+```
+
