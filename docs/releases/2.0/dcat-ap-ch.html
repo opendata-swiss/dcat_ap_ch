@@ -888,7 +888,7 @@ table.simple {width:100%;}
         </tr>
         <tr>
           <th>Usage</th>
-          <td></td>
+          <td>Verweis auf denMetadateneintrag einer Datensammlung</td>
         </tr>
         <tr>
           <th>Conformance</th>
@@ -1245,23 +1245,21 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         <td><a href="#dataset-update-frequency">update frequency</a></td>
         <td>O</td>
         <td>1</td>
-        <td><a data-cite="VOCAB-DCAT#Property:dataset_frequency"><code
-          title="http://purl.org/dc/terms/accrualPeriodicity">dct:accrualPeriodicity</code></a></td>
-        <td><a data-cite="SKOS-REFERENCE#concepts"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a>
+        <td><a data-cite="VOCAB-DCAT#Property:dataset_frequency"><code>dct:accrualPeriodicity</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dct:Frequency</code></a>
         </td>
         <td>[[DCAT-AP]]</td>
       </tr>
       <tr>
-        <td><a href="#dataset-relation">other resource</a></td>
+        <td><a href="#dataset-relation">related resource</a></td>
         <td>O</td>
         <td><var>N</var></td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_relation"><code
-          title="http://purl.org/dc/terms/relation">dct:relation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:resource_relation"><code>dct:relation</code></a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>rdfs:Resource</code></a></td>
         <td>[[DCAT-AP]]</td>
       </tr>
       <tr>
-        <td><a href="#dataset-see-alsos">other datasets</a></td>
+        <td><a href="#dataset-see-alsos">see also</a></td>
         <td>O</td>
         <td><var>N</var></td>
         <td><a data-cite="RDF-SCHEMA#ch_seealso"><code>rdfs:seeAlsos</code></a></td>
@@ -1520,11 +1518,29 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The internal identifier of the dataset.</td>
+          <td>Unique identifier of the dataset.
+            The identifier maybe used as part of the URI of the dataset,
+            but having it represented explic-itly is still useful.</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>The value for this property MUST correspond to the dataset URI, and it MUST be a persistent identifier.
+          <td>Die eindeutige Kennzeichnung jeder Datensammlungist Voraussetzung
+            für die Verlinkung von ver-wandten Datensammlungen.Das Element "dct:identifier"
+            hat deshalb folgende Struktur:ID_Datensammlung@ID_DatenlieferantBeispiel:
+            <dct:identifier>325@statgr</dct:identifier>Der Datenlieferant wählt
+            einen Datenlieferant-Identifikator,
+            der nach menschlichem Ermessen national eindeutig sein sollte.Die Verlinkung
+            von Datensammlungen(über das Element "rdfs:seeAlso") erfolgt jeweils durch
+            die Angabe des entsprechenden Elements "dct:identifier".Das Ersetzen und Löschen von
+            Metadateneinträgen von Datensammlungen(und den zugehörigen Metadateneinträgen der
+            Bereitstellungsformen) erfordert weitere Automatismen seitensder Portal-Software:
+            -Ersetzt ein Dateneigner denMetadateneintrageiner Datensammlung durch einen neuen mit gleicher Kennzeichnung,
+            bleiben die Elemente "rdfs:seeAlso" in den Metadateneinträgen der verlinkten Datensammlungenunverändert.
+            -Ersetzt ein Dateneigner den Metadateneintrag einer Datensammlung durch einen neuen mit neuer
+            Kennzeichnung, ändert die Portal-Software die Werte aller Elemente "rdfs:seeAlso" in den Metadateneinträgen
+            der verlinkten Datensammlungen entsprechend. Die Verlinkung bleibt somit bestehen.-Löscht ein Dateneigner den Metadateneintrag einer
+            Datensammlung, entfernt die Portal-Software in den Metadateneinträgen
+            der verlinkten Datensammlungen die Elemente "rdfs:seeAlso".
           </td>
         </tr>
         <tr>
@@ -1538,13 +1554,13 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
 
     <section id="dataset-release-date">
 
-      <h2>Property: publication date</h2>
+      <h2>Property: release date</h2>
 
       <table class="def">
         <tbody>
         <tr>
           <th>Label</th>
-          <td>publication date</td>
+          <td>release date</td>
         </tr>
         <tr>
           <th>Obligation</th>
@@ -1556,7 +1572,7 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_release_date"><code title="http://purl.org/dc/terms/issued">dct:issued</code></a>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_release_date"><code>dct:issued</code></a>
           </td>
         </tr>
         <tr>
@@ -1571,12 +1587,16 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>Usage</th>
-          <td>The range of this property is intentionally generic, with the purpose of allowing different level of
-            temporal precision for specifying the publication date. E.g., it can be expressed with a date (<a
-              data-cite="XMLSCHEMA11-2#date"><code title="http://www.w3.org/2001/XMLSchema#date">xsd:date</code></a>), a
-            date and time (<a data-cite="XMLSCHEMA11-2#dateTime"><code
-              title="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</code></a>), or a year (<a
-              data-cite="XMLSCHEMA11-2#gYear"><code title="http://www.w3.org/2001/XMLSchema#gYear">xsd:gYear</code></a>).
+          <td>Das Element "dct:issued" im Metadateneintrag einer Datensammlung enthält das Datum der erstmaligen
+            Veröffentlichung des Datensatzes. Falls dieses Datum nicht bekannt ist, kann das Datum der
+            erstmaligen Referenzierungder Datensammlungim Katalog eingetragen werden. Falls zur Datensammlung, die
+            dieser Metadateneintragbeschreibt, (noch) keine Bereitstellungsformveröffentlicht
+            ist (z.B. bei Inventar-Datensätzen), kann das Element "dct:issued" weggelassen werden.
+            Es kann aber durchaus ein Element "dct:issued" eingefügt werden, auch wenn noch keine
+            Bereitstellungsform veröffentlicht ist (z.B. mit dem Datum der vorgesehenen Veröffentlichung).
+            In beiden Fällen kommt im Metadateneintrag der Datensammlung kein Element "dcat:distribution" vor.
+            Auf der Benutzeroberfläche des Portals wird die Datensammlung nur angezeigt, wenn ein Element
+            "dct:issued" vorhanden ist und das Veröffentlichungsdatum nicht in der Zukunft liegt.
           </td>
         </tr>
         <tr>
@@ -1608,7 +1628,7 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_update_date"><code title="http://purl.org/dc/terms/modified">dct:modified</code></a>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_update_date"><code>dct:modified</code></a>
           </td>
         </tr>
         <tr>
@@ -1619,16 +1639,18 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The date of last modification of the dataset.</td>
+          <td>Most recent date on which the dataset was changed, updated or modified. The value of this property indicates
+            a change to the actual dataset, not a change to the catalog record. No value may indicate that the dataset has
+            never changed after its initial
+            publication, or that the date of the last modification is not known, or that the dataset is continuously updated</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>The range of this property is intentionally generic, with the purpose of allowing different level of
-            temporal precision for specifying the modification date. E.g., it can be expressed with a date (<a
-              data-cite="XMLSCHEMA11-2#date"><code title="http://www.w3.org/2001/XMLSchema#date">xsd:date</code></a>), a
-            date and time (<a data-cite="XMLSCHEMA11-2#dateTime"><code
-              title="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</code></a>), or a year (<a
-              data-cite="XMLSCHEMA11-2#gYear"><code title="http://www.w3.org/2001/XMLSchema#gYear">xsd:gYear</code></a>).
+          <td>Falls die Daten, diederMetadateneintragbeschreibt, seit der Erstveröffentlichung auf dem Portal
+            geändert haben (z.B. eine Berichtigung der Werte erfolgt ist), muss das Element "dct:modified"
+            das Datum der letzten Änderung wiedergeben. Auf diese Weise kann eine Person oder Institution,
+            welche die Datensammlungfür eine eigene Auswertung
+            oder Anwendung genutzt hat, erkennen, ob sie die Aus-wertung oder Anwendung eventuell aktualisieren muss
           </td>
         </tr>
         <tr>
@@ -1660,8 +1682,7 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_theme"><code
-            title="http://www.w3.org/ns/dcat#theme">dcat:theme</code></a></td>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_theme"><code>dcat:theme</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
@@ -1670,11 +1691,14 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The dataset thematic areas(s).</td>
+          <td>main category of the dataset Adataset can have multiple themes;
+            themes are part of the knowledge organization system (KOS)
+            used to classify the catalog's datasets.</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>This property MUST take as value one of the themes defined in [[MDR-THEMES]]</td>
+          <td>Der Inhalt eines Elements "dcat:theme" muss einem Begriff aus der Klassifikation
+            des skos:ConceptScheme des jeweiligen Portalsentsprechen(sofern vorhanden).</td>
         </tr>
         <tr>
           <th>Conformance</th>
@@ -1705,18 +1729,24 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_distribution"><code
-            title="http://www.w3.org/ns/dcat#distribution">dcat:distribution</code></a></td>
+          <td><a data-cite="VOCAB-DCAT#Property:dataset_distribution"><code>dcat:distribution</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="VOCAB-DCAT#class-distribution"><code title="http://www.w3.org/ns/dcat#Distribution">dcat:Distribution</code></a>
-            (<a class="no-sectionRef" href="#distribution"></a>)
+          <td><a data-cite="VOCAB-DCAT#class-distribution"><code>dcat:Distribution</code></a>
+            (<a class="no-sectionRef" href="#Class:Distribution"></a>)
           </td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>A distribution of the dataset.</td>
+          <td>Available distribution of the dataset</td>
+        </tr>
+        <tr>
+          <th>Usage</th>
+          <td>Mit dem Element "dcat:distribution" wird auf die Metadateneinträge der Bereitstellungsformen verwiesen.
+            In Ausnahmefällen kann eine Datensammlungbeschrieben werden, zu der(noch) keine Bereitstellungsform existiert.
+            In diesem Fall wird das Element "dcat:distribution" weggelassen.
+          </td>
         </tr>
         <tr>
           <th>Conformance</th>
@@ -1747,21 +1777,25 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_landingpage"><code
-            title="http://www.w3.org/ns/dcat#landingPage">dcat:landingPage</code></a></td>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_landingpage"><code>dcat:landingPage</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="FOAF#term_Document"><code
-            title="http://xmlns.com/foaf/0.1/Document">foaf:Document</code></a></td>
+          <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The landing page of the dataset.</td>
+          <td>Webpage that can be navi-gated to in a Web browser to gain access to the dataset, its distributions
+            and/or additional information. If distributions are accessible only through a landing page
+            (i.e. direct download URLs are not known), the landing page link should be duplicated as accessURL on the distributions</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Typically, the landing page is specified only with its URI.</td>
+          <td>Das Element "dcat:landingPage" wird benötigt, wenn die Datensammlung, dieder Metadateneintragbeschreibt,
+            nur indirekt (über eine Webseite der publizierenden Stelle) verfügbar ist. In diesem Fall muss im
+            Metadateneintrag der Datensammlungtrotzdem eine Bereitstellungsform referenziert wer-den,
+            wobei der Inhalt des Elements "dcat:accessURL"
+            im Metadateneintrag der Bereitstellungsformmit dem Inhalt des Elements "dcat:landingPage" übereinstimmen muss.</td>
         </tr>
         <tr>
           <th>Conformance</th>
@@ -1792,21 +1826,27 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_language"><code title="http://purl.org/dc/terms/language">dct:language</code></a>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_language"><code>dct:language</code></a>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#terms-LinguisticSystem"><code title="http://purl.org/dc/terms/LinguisticSystem">dct:LinguisticSystem</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
           </td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>A natural language used in the dataset.</td>
+          <td>language of the dataset If the dataset is available in multiple languages, use
+            multiple values for this property. If each language is available separately, define an instance
+            of dcat:Distribution for each language and describe the specific language of
+            each distribution using dct:language</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>This property MUST take as value one of the languages defined in [[!MDR-LANG]]</td>
+          <td>Falls die Daten in einer sprachunabhängigen Form vorliegen (oder gar
+            keine Bereitstellungsform refe-renziertist), kann das Element "dct:language"
+            weggelassen werden.Für alle in den Bereitstellungsformen vorkommenden Sprachen muss je ein Element „dct:language“ definiertwerden.
+            Eine Bereitstellungsformkann mehrsprachig sein, oder nur in einer einzelnen Spra-che vorliegen.</td>
         </tr>
         <tr>
           <th>Conformance</th>
@@ -1837,17 +1877,21 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_keyword"><code title="http://www.w3.org/ns/dcat#keyword">dcat:keyword</code></a>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_keyword"><code>dcat:keyword</code></a>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>A free-text keyword describing the dataset.</td>
+          <td>Keyword or tag describing the dataset</td>
+        </tr>
+        <tr>
+          <th>Usage</th>
+          <td>Als "keywords" empfehlen sich die Begriffe aus TERMDAT. Zusätzlich nötige Begriffe können aber ebenfalls verwendet werden. </td>
         </tr>
         <tr>
           <th>Conformance</th>
@@ -1870,7 +1914,7 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -1878,22 +1922,26 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_spatial"><code title="http://purl.org/dc/terms/spatial">dct:spatial</code></a>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_spatial"><code>dct:spatial</code></a>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#terms-Location"><code title="http://purl.org/dc/terms/Location">dct:Location</code></a>
-            (<a class="no-sectionRef" href="#spatial-coverage"></a>)
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code title="http://purl.org/dc/terms/Location">dct:Location</code></a>
           </td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The spatial coverage of the dataset.</td>
+          <td>Spatial coverage of the dataset.</td>
         </tr>
         <tr>
           <th>Usage</th>
-          </td>
+          <td>Das Element "dct:spatial" ermöglicht die geografische Zuordnung des Datensatzes. Als Werte für das
+            Element kommen für Datensammlungen, welche sich auf die Schweiz beziehen, vorwiegend die offiziellen
+            Kantonskürzel und die Gemeindenamen des amtlichen Ortschaftenverzeichnisses (Herausgeber: Swisstopo)
+            in Frage.Daneben ist auch dieAngabe der Koordinaten eines Punktes oder die Definition einer
+            rechteckigen "Bounding-Box" zulässig.Der Datentyp "dct:Location" lässt keine Beschreibung der
+            geografischen Abdeckung in Form eines Polygons zu; deshalb soll dafür das Element "dct:coverage" verwendet werden.</td>
         </tr>
         <tr>
           <th>Conformance</th>
@@ -1924,22 +1972,22 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_temporal"><code title="http://purl.org/dc/terms/temporal">dct:temporal</code></a>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_temporal"><code>dct:temporal</code></a>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#terms-PeriodOfTime"><code title="http://purl.org/dc/terms/PeriodOfTime">dct:PeriodOfTime</code></a>
-            (<a class="no-sectionRef" href="#temporal-coverage"></a>)
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dct:PeriodOfTime</code></a>
           </td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The temporal coverage of the dataset.</td>
+          <td>Temporal period covered by the dataset.</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>
+          <td>Für Zeitangaben wird zur Wahrung der Kompatibilität mit dem DCAT AP
+            for Data Portals in Europe immer das Element "dct:temporal" verwendet.
           </td>
         </tr>
         <tr>
@@ -2035,21 +2083,20 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_frequency"><code
-            title="http://purl.org/dc/terms/accrualPeriodicity">dct:accrualPeriodicity</code></a></td>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_frequency"><code>dct:accrualPeriodicity</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="SKOS-REFERENCE#concepts"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dct:Frequency</code></a>
           </td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The frequency at which a dataset is updated.</td>
+          <td>Time intervalat which the da-taset is updated</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>This property MUST take as value one of the frequency codes defined in [[!MDR-FREQ]]</td>
+          <td>Dieses Element kann verwendet werden, um eine allfällige Periodizität der Aktualisierung des Daten-satzes anzugeben.</td>
         </tr>
         <tr>
           <th>Conformance</th>
@@ -2068,7 +2115,7 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         <tbody>
         <tr>
           <th>Label</th>
-          <td>other resource</td>
+          <td>related resource</td>
         </tr>
         <tr>
           <th>Obligation</th>
@@ -2080,14 +2127,11 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="DCTERMS#terms-relation"><code title="http://purl.org/dc/terms/relation">dct:relation</code></a>
-          </td>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_relation"><code>dct:relation</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_resource">
-            <code>rdfs:Resource</code></a>
-          </td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>rdfs:Resource</code></a></td>
         </tr>
         <tr>
           <th>Definition</th>
@@ -2119,7 +2163,7 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         <tbody>
         <tr>
           <th>Label</th>
-          <td>other resource</td>
+          <td>see also</td>
         </tr>
         <tr>
           <th>Obligation</th>
@@ -2131,34 +2175,33 @@ metadata of the datasets referenced in the catalog, such as titles, descriptions
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="DCTERMS#terms-relation"><code title="http://purl.org/dc/terms/relation">dct:relation</code></a>
+          <td><a data-cite="RDF-SCHEMA#ch_seealso"><code>rdfs:seeAlsos</code></a></td>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="OWL-SEMANTICS#owl_Thing_syntax"><code
-            title="http://www.w3.org/2002/07/owl#Thing">owl:Thing</code></a> (<a class="no-sectionRef"
-                                                                                 href="#other-resource"></a>)
-          </td>
+          <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>A resource having a relationship with the described dataset.</td>
+          <td>Resource that might be useful to users interested in the dataset.</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>This property is meant to be used for resources whose relationship with the dataset are different from <a
-            class="no-sectionRef" href="#dataset-distribution">distribution</a>, <a class="no-sectionRef"
-                                                                                    href="#dataset-publication">publication</a>,
-            <a class="no-sectionRef" href="#dataset-input-data">input data</a>, <a class="no-sectionRef"
-                                                                                   href="#dataset-lineage">lineage</a>,
-            <a class="no-sectionRef" href="#dataset-usage-notes">usage notes</a>. For more information on
-            dataset-related resources, see <a class="no-sectionRef" href="#other-resource"></a>.
+          <td>
+            Mit dem Element "rdfs:seeAlso" kann im Metadateneintrag einer Datensammlung ein Verweis
+            auf eine andere Datensammlung eingefügt werden.Die Verknüpfungen ermöglichenesden
+            Nutzer/-innen, zu einergefundenen Datensammlungverwandte Datensammlungenzu entdecken.Die Elemente
+            "rdfs:seeAlso" im Metadateneintrag einer Datensammlungwerdenvom Datenlieferan-ten bei Bedarf eingefügt.
+            Auf diese Weise können verwandte Datensätze
+            (z.B.dieBevölkerungszahlen von 2013 und dieBevölkerungszahlen von 2014) einfach miteinander verknüpft werden.
+            Zur Darstellung wird systemintern die Form <rdfs:seeAlso>"dct:identifier" der betreffenden Daten-sammlung</rdfs:seeAlso>
+            verwendet.Beispiel: <rdfs:seeAlso>325@statgr</rdfs:seeAlso>
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>custom</td>
         </tr>
         </tbody>
       </table>
