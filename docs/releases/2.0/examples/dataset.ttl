@@ -19,31 +19,12 @@
 <https://swisstopo/catalog-endpoint/dataset/reforestation>
   a dcat:Dataset ;
 
-  # Mandatory properties:
-
-  # datasets are listed with their URIs
   dcat:distribution <https://swisstopo/data/123>, <https://swisstopo/data/345> ;
-
-  # title and description can be given in multiple languages
   dct:title "Reforestation Kanton Zürich"@en ,
             "Aufforstung Kanton Zürich"@de ;
   dct:description "Aufforsterungsarbeiten des Waldbestands im Kanton Zürich"@de ;
-
-  # issued is given as an ISO Date
   dct:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
-
-  # the homepage is another class, so its value is an URI
   foaf:landingPage <https://swisstopo/waldbestand/index.html> ;
-
-  # the publisher is another class and thus given by its URI
   dct:publisher <https://swisstopo> ;
-
-  # Conditional Properties
-  # Conditional means that the property depends on other properties
-
-  # modified is supposed to be filled it the catalog changed after it's issue date
   dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
-
-  # Optional Properties
-  # Conditional means that the property depends on other properties
   dct:language: <http://id.loc.gov/vocabulary/iso639-1/en> .
