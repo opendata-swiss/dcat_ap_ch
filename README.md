@@ -16,3 +16,8 @@ source p3venv/bin/activate
 pip install -r requirements.txt
 ```
 
+To run pyshacl use the following command:
+
+```
+pyshacl -s /path/to/shapesGraph.ttl -m -i rdfs -a -j -f human /path/to/dataGraph.ttl
+```
