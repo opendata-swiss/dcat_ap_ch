@@ -19,4 +19,4 @@ jobs:
           known_hosts: ${{ secrets.SSH_KNOWN_HOSTS_TEST }}
 
       - name: Deploy with rsync
-        run: rsync -avz -e 'ssh -p ${{ secrets.SSH_PORT_TEST }}' ./dist/docs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_TEST }}:/var/www/html/dcat-ap-ch-def.clients.liip.ch
+        run: rsync -avz -e 'ssh -p ${{ secrets.SSH_PORT_TEST }}' docs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_TEST }}:/var/www/html/dcat-ap-ch-def.clients.liip.ch
