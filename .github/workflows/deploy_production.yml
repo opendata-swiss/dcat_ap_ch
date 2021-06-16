@@ -1,0 +1,20 @@
+name: Deploy to PRODUCTION
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check repo out locally
+        uses: actions/checkout@v2
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS_PRODUCTION }}
+
+      - name: Deploy with rsync
+        run: rsync -avz -e 'ssh -p ${{ secrets.SSH_PORT_PRODUCTION }}' docs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_PRODUCTION }}:/var/www/html/dcat-ap-ch
