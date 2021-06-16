@@ -16,7 +16,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS_TEST }}
 
       - name: Deploy with rsync
-        run: echo Hello, world!
+        run: rsync -avz -e 'ssh -p ${{ secrets.SSH_PORT_TEST }}' ./dist/docs/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_TEST }}:/var/www/html/dcat-ap-ch-def.clients.liip.ch
