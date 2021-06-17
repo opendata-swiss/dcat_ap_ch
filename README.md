@@ -21,3 +21,8 @@ To run pyshacl use the following command:
 ```
 pyshacl -s /path/to/shapesGraph.ttl -m -i rdfs -a -j -f human /path/to/dataGraph.ttl
 ```
+
+## Validate with the EU-Testbed
+
+https://www.itb.ec.europa.eu/shacl/dcat-ap/upload
+
