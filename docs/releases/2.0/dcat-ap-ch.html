@@ -53,11 +53,6 @@
   <p>DCAT-AP-CH is the Swiss application profile customizes DCAT for the needs of Swiss government agencies.
     One Swiss specialty are the 3 official languages: German, French and Italian, that are all supported by the
     DCAT-AP-CH</p>
-  <p class="issue">
-    For historic reasons the DCAT-AP-CH application format is currently not fully conformant with the DCAT-AP.
-    But the goal is to solve these frictions between the two application profile, so that the interoperabilty will be
-    established in the near future.
-  <p>
 </section>
 
 <section id="sotd">
@@ -504,9 +499,6 @@
 
     <aside class="note">
       <p>The example given below conforms to the DCAT-AP Shacl Shape for the Class:Catalogs</p>
-      <ul>
-        <li>The homepage needs to be a class.</li>
-      </ul>
     </aside>
 
     <p class="issue" data-number="3"></p>
@@ -715,10 +707,6 @@
     <section id="catalog-publisher">
 
       <h2>Property: publisher</h2>
-      <p class="issue">This publisher defintion is contradicting itself:
-        With the proposed representation the publisher is not in the Range <code>foaf:Agent</code>.
-        The reprepsentation should instead look like this:
-      </p>
 
       <table class="def">
         <tbody>
@@ -761,13 +749,18 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
+          The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
+          but implementing it with <code>rdf:Description</code></td>
         </tr>
         </tbody>
       </table>
 
       <p class="issue" data-number="19"></p>
-
+      <p class="issue" data-number="23"></p>
+      <aside class="note">
+        <p>According to [[DCAT-AP]] the publisher should be implemented as in the example below:</p>
+      </aside>
       <aside class="example" title="Usage of dct:publisher for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/catalog-publisher.ttl"></pre>
       </aside>
@@ -818,7 +811,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]] recommended</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -851,25 +844,25 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_theme">dcat:themeTaxonomy</code></a>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_theme"><code>dcat:themeTaxonomy</code></a>
           </td>
         </tr>
         <tr>
           <th>Range</th>
           <td>
-            <p>Custom Theme Vocabulary, a <code>skos:Concept-Scheme</code></p>, that has not yet been published as
-            controlled vocabulary</p>
+            <p><a data-cite="SKOS-REFERENCE#L2039"><code>skos:Concept-Scheme</code></a></p>
           </td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Knowledge organization system (KOS) used to classify the
+          <td>Simple Knowledge organization system (SKOS) used to classify the
             catalog's datasets
           </td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td><p>Als Grundlage für Klassifikationen können beispielsweise die Terminologie-Datenbank der
+          <td><p>
+            Als Grundlage für Klassifikationen können beispielsweise die Terminologie-Datenbank der
             Bundesverwaltung TERMDAT, das amtliche Ortschaftenverzeichnis(Herausgeber: Swisstopo) oder
             eine sich laufend ergänzende eigene Terminologie des Portals dienen. Des Weiteren bietet
             sich die Nutzung von Terminologien an, welche im Rahmen von eCH-Standards festgelegt wurden
@@ -884,13 +877,17 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
 
+      <aside class="note">
+        <p>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</p>
+      </aside>
+
       <aside class="example" title="Usage of dct:title for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/catalog-title.ttl"></pre>
+        <pre data-include-format="text" data-include="./examples/catalog/catalog-theme.ttl"></pre>
       </aside>
 
     </section>
