@@ -1,21 +1,21 @@
 ---
-name: 'Change request implementation'
-about: 'Request a change of the implementation of DCAT-AP-CH on opendata.swiss'
+name: 'CR Implemtation on opendata.swiss doe not conform to DCAT-AP'
+about: 'Request a change of the implementation on opendata.swiss where the current implementation does not conform DCAT-AP'
 title: ''
 labels: 'opendata.swiss-implementation'
 assignees: ''
 
 ---
 
-Please describe why a property or class of DCAT-AP-CH should be implementated in a different way onopendata.swiss
+Please describe why a property or class of DCAT-AP should be implementated 
+in a different way on opendata.swiss
 
-### DCAT-AP-CH Element
+### DCAT Element
 
 Please state the element in the DCAT-AP-CH that is not implemented correctly in your opinion
 
 - class:
 - property
-- about
 
 ### Implementation on opendata.swiss
 
