@@ -1,7 +1,4 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcatchcategories: <https://www.dcat-ap.ch/vocabulary/theme.rdf> .
 
 <https://swisstopo/catalog-endpoint.rdf>
