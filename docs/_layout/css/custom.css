@@ -48,3 +48,9 @@ h2 {
 .col-description {
     width: 60%;
 }
+.col-uri {
+    width: 20%;
+}
+.col-mapping {
+    width: 30%;
+}
