@@ -3,6 +3,6 @@
 <https://swisstopo/opendata/catalog>
   a dcat:Catalog ;
 
-  dcat:themeTaxonomy <http://opendata.swiss/themes/agriculture> ,
-                     <http://publications.europa.eu/resource/dataset/data-theme/AGRA>  .
+  dcat:themeTaxonomy <https://dcat-ap.ch/theme/agriculture> ,
+                     <http://publications.europa.eu/resource/authority/data-theme/AGRI>  .
 
