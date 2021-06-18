@@ -277,16 +277,3 @@
                  "National economy"@en ;
   skos:mappingRelation euthemes:ECON ,
                        geothemes:economy .
-
-
-
-
-geothemes:utilitiesCommunication ,
-
-
-
-
-
-        'utilitiesCommunication': ['geography', 'territory', 'energy', 'culture'],  # noqa
-        'utilitiesCommunication_Energy': ['geography', 'energy', 'territory'],
-
