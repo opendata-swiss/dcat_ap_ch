@@ -1,15 +1,3 @@
-#sub_header {
-    color:red;
-}
-
-/* font family */
-
-body {
-   font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
-}
-
-/* link color */
-
 #logo {
     height:50px;
     margin-top:15px;
@@ -21,36 +9,4 @@ body {
 
 .breadcrumb {
     background:white;
-}
-
-a, a:hover, a:visited, a:active, a:focus {
-    color: #009688;
-}
-
-h1 {
-    font-size: 1.6em;
-}
-
-
-h2 {
-    font-size: 1.2em;
-}
-
-.col-name {
-    width: 20%;
-}
-.col-version {
-    width: 10%;
-}
-.col-format {
-    width: 10%;
-}
-.col-description {
-    width: 60%;
-}
-.col-uri {
-    width: 20%;
-}
-.col-mapping {
-    width: 30%;
 }
