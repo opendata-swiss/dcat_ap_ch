@@ -743,7 +743,7 @@
             TERMDAT, the corresponding Identification will be entered. The property will be
             represented in the following way:
             <aside class="example" title="Publisher">
-              <pre data-include-format="text" data-include="./examples/publisher.xml"></pre>
+              <pre data-include-format="text" data-include="./examples/agent/publisher.xml"></pre>
             </aside>
           </td>
         </tr>
@@ -826,8 +826,6 @@
 
       <h2>Property: theme taxonomy</h2>
 
-      <p class="issue">TO be conformant with [[DCAT-AP]] this needs to be mapped to the EU-categories</p>
-
       <table class="def">
         <tbody>
         <tr>
@@ -862,17 +860,12 @@
         <tr>
           <th>Usage</th>
           <td><p>
-            Als Grundlage für Klassifikationen können beispielsweise die Terminologie-Datenbank der
-            Bundesverwaltung TERMDAT, das amtliche Ortschaftenverzeichnis(Herausgeber: Swisstopo) oder
-            eine sich laufend ergänzende eigene Terminologie des Portals dienen. Des Weiteren bietet
-            sich die Nutzung von Terminologien an, welche im Rahmen von eCH-Standards festgelegt wurden
-            (z.B. eCH-0049, eCH-0070 und eCH-0145 für die Beschreibungder Leistungen bzw. der
-            Aufgaben der öffentlichen Verwaltung). Für den Austausch mit anderen europäischen Portalen wird
-            zudem die oberste Ebene des mehrsprachigen
-            Thesaurus der Europäischen Union (http://eurovoc.europa.eu) unterstützt.
-            Der Eurovoc-Thesaurus wird allerdings nicht von allen europäischen Open-Data-Portalen verwendet;
-            eine Vereinheitlichung wäre zwar wünschenswert, aber die generelle Anwendbarkeit von Eurovoc
-            steht zur Diskussion (vgl. z.B. Krantz 2013).
+            For the classification the Termdatabase TERMDAT of the federal administration office can be used,
+            the registry of locations by Swisstopo or a growing terminology gathered by a portal can serve
+            as a base of this. Also terms formed by the eCH Standards (for example eCH-0049, eCH-0070 und eCH-0145)
+            that describe the task of the public administrations might be useful.
+            For the Exchange with the European portal also the upper level of the European Thesaurus Eurovoc
+            (http://eurovoc.europa.eu) is supported.
           </td>
         </tr>
         <tr>
@@ -881,6 +874,8 @@
         </tr>
         </tbody>
       </table>
+
+      <p class="issue" data-number="23"></p>
 
       <aside class="note">
         <p>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</p>
@@ -927,17 +922,17 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Verweis auf denMetadateneintrag einer Datensammlung</td>
+          <td>Reference to the dataset that is contained in the catalog.</td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>conforms [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
 
       <aside class="example" title="Usage of dct:title for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/catalog-title.ttl"></pre>
+        <pre data-include-format="text" data-include="./examples/catalog/catalog-dataset.ttl"></pre>
       </aside>
 
     </section>
@@ -989,7 +984,7 @@
       </table>
 
       <aside class="example" title="Usage of dct:title for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/catalog-title.ttl"></pre>
+        <pre data-include-format="text" data-include="./examples/catalog/catalog-license.ttl"></pre>
       </aside>
 
     </section>
@@ -1041,7 +1036,7 @@
       </table>
 
       <aside class="example" title="Usage of dct:title for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/catalog-title.ttl"></pre>
+        <pre data-include-format="text" data-include="./examples/catalog/catalog-rights.ttl"></pre>
       </aside>
 
     </section>
@@ -1050,9 +1045,6 @@
 
       <h2>Property: language</h2>
 
-      <p class="issue">According to the [[DCAT-AP]] the language MUST be taken from the European controlled
-        vocabulary [[VOCAB-EU-LANG]]. Also according to [[VOCAB-DCAT]] it must be a URI in the controlled
-        vocabulary.</p>
       <table class="def">
         <tbody>
         <tr>
@@ -1095,9 +1087,21 @@
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of dct:title for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/catalog-title.ttl"></pre>
+      <aside class="example" title="Usage of dct:language for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/catalog-language.ttl"></pre>
       </aside>
+
+      <p class="issue" data-number="26"></p>
+
+      <aside class="note">
+        <p>According to [[DCAT-AP]] the language should be implemented with [[VOCAB-EU-LANG]] as in the
+          example below:</p>
+      </aside>
+
+      <aside class="example" title="DCAT-AP conformant dct:language">
+        <pre data-include-format="text" data-include="./examples/catalog/catalog-language-dcat-ap.ttl"></pre>
+      </aside>
+
 
     </section>
 
