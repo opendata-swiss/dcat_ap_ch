@@ -2,10 +2,11 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<https://swisstopo/catalog-endpoint.rdf>
+<https://swisstopo/opendata/catalog>
   a dcat:Catalog ;
   dct:publisher <https://swisstopo> .
 
 <https://swisstopo>
-  a foaf:Agent .
+  a foaf:Organization ;
+  foaf:name: "Landesamt für Topographie Swisstopo"@de .
 
