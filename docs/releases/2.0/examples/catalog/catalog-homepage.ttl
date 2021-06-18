@@ -1,9 +1,9 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<https://opendata.zurich/catalog-endpoint.rdf>
+<https://swisstopo/opendata/catalog>
   a dcat:Catalog ;
-  foaf:homepage <https://stadt-zurich/index.html> .
+  foaf:homepage <https://opendata.stadt-zurich> .
 
-<https://stadt-zurich/index.html>
+<https://opendata.stadt-zurich>
   a foaf:Document .

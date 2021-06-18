@@ -1,8 +1,8 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcatchcategories: <https://www.dcat-ap.ch/vocabulary/theme.rdf> .
 
-<https://swisstopo/catalog-endpoint.rdf>
+<https://swisstopo/opendata/catalog>
   a dcat:Catalog ;
 
-  dcat:themeTaxonomy dcatchcategories:economy .
+  dcat:themeTaxonomy <http://opendata.swiss/themes/agriculture> ,
+                     <http://publications.europa.eu/resource/dataset/data-theme/AGRA>  .
 

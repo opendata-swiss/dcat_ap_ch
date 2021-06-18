@@ -3,4 +3,5 @@
 
 <https://swisstopo/opendata/catalog>
   a dcat:Catalog ;
-  dct:title "Opendata der Stadt Zürich"@de, "Open Data of the city of Zurich"@en.
+
+  dct:language <http://publications.europa.eu/resource/authority/language/DEU> .

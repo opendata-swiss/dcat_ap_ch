@@ -3,7 +3,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://swisstopo/opendata/catalog>
+<https://swisstopo/catalog-endpoint.rdf>
   a dcat:Catalog ;
 
   dcat:dataset <https://swisstopo/data/123>, <https://swisstopo/data/345> ;
@@ -13,19 +13,25 @@
   dct:description "Datenkatalog der Stadt Zurich"@de ;
 
   dct:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
-  foaf:homepage <https://swisstopo/homepage> ;
-  dct:publisher <https://publishers/swisstopo> ;
+  foaf:homepage <https://swisstopo/index.html> ;
+  dct:publisher <https://swisstopo> ;
   dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
-  dct:language: <http://id.loc.gov/vocabulary/iso639-1/en> .
+  dct:language: "en" .
 
 <https://swisstopo/data/123>
-  a dcat:Dataset .
+  a dcat:Dataset ;
+  dct:title "some title"@en ;
+  dct:description "some dataset"@en .
 
 <https://swisstopo/data/345>
-  a dcat:Dataset .
+  a dcat:Dataset ;
+  dct:title "some title"@en ;
+  dct:description "some dataset"@en .
 
 <https://swisstopo/index.html>
   a foaf:Document .
 
-<https://publishers/swisstopo>
-  a foaf:Agent .
+<https://swisstopo>
+  a foaf:Organization   ;
+  foaf:name "Landesamt für Topography"@en .
+

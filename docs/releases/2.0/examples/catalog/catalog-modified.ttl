@@ -2,6 +2,6 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://opendata.zurich/catalog-endpoint.rdf>
+<https://swisstopo/opendata/catalog>
   a dcat:Catalog ;
   dct:modified "2013-04-26T01:00:00Z"^^xsd:dateTime .
