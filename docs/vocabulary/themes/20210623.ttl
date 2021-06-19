@@ -10,13 +10,9 @@
   a skos:ConceptScheme ;
   dc11:title "Categories for Swiss Open Government Data"@en ;
   dc11:description "Custom vocabulary for OGD dataset categories in Switzerland"@en ;
-  dc11:creator [
-    a foaf:Organization ;
-    foaf:name "bfs.admin.ch"
-  ] ;
   rdfs:label "Kategorien"@de,"Categories"@en;
-  dct:issued "2016-06-23" ;
-  dct:modified "2021-06-23" .
+  owl:versionInfo "202100623" ;
+  owl:versionIRI <http://dcat-ap.ch/vocabulary/licenses/20210623/> ;
 
 <http://dcat-ap.ch/vocabulary/theme//work>
   a skos:Concept ;
