@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:ns0="http://www.w3.org/2004/02/skos/"
+         xmlns:dc="http://purl.org/dc/terms/">
+
+  <rdf:Description rdf:about="http://dcat-ap.ch/vocabulary/publishers/">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/coreConceptScheme"/>
+    <owl:versionInfo>202100623</owl:versionInfo>
+    <owl:versionIRI rdf:resource="http://dcat-ap.ch/vocabulary/publishers/20210623/"/>
+    <rdfs:comment xml:lang="de">Liste der Publisher, die im Feld dct:publisher einer DCAT-AP-CH-konformen dcat:Distribution für die Zulieferung an opendata.swiss erlaubt sind.</rdfs:comment>
+    <rdfs:label xml:lang="en">List of publishers</rdfs:label>
+    <ns0:coreprefLabel xml:lang="en">List of Publishers</ns0:coreprefLabel>
+    <dc:identifier>http://www.dcat-ap.ch/vocabulary/publishers</dc:identifier>
+  </rdf:Description>
+
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/publishers/gis-luzern">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/publishers/"/>
+    <dc:identifier>http://dcat-ap.ch/vocabulary/publishers/gis-luzern</dc:identifier>
+    <ns0:coreprefLabel xml:lang="de">Geoinformationszentrum (GIS) Stadt Luzern</ns0:coreprefLabel>
+  </ns0:coreConcept>
+
+</rdf:RDF>
