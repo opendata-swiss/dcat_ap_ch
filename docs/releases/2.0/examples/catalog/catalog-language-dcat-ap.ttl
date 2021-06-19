@@ -4,4 +4,5 @@
 <https://swisstopo/opendata/catalog>
   a dcat:Catalog ;
 
-  dct:language <http://publications.europa.eu/resource/authority/language/DEU> .
+  dct:language <http://publications.europa.eu/resource/authority/language/DEU> ,
+               <http://publications.europa.eu/resource/authority/language/FRA>.

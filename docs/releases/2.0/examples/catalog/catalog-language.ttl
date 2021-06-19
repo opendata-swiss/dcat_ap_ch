@@ -4,4 +4,4 @@
 <https://swisstopo/opendata/catalog>
   a dcat:Catalog ;
 
-  dct:language: <http://id.loc.gov/vocabulary/iso639-1/en> .
+  dct:language: "en", "fr" .

@@ -204,7 +204,83 @@
 
   <h2>Content Negotiation</h2>
 
-  <p class="issue">Provide some information about content negotiation: Languages, Formats?</p>
+  <p>Switzerland is a multilingual country. Therefore supporting multiple languages
+  is very important in DCAT-AP-CH. See the below on how multiple languages are handled in the
+  Swiss Application profile:
+  </p>
+  <ul>
+    <li><strong>Multiligual Literals</strong>: Properties of Range
+      <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> support
+      multiple languages out of the box and the Swiss Profile makes use of this. It also
+      adds some additional restraints on what languages are expected.
+    </li>
+    <li><strong>Content Negotian</strong>: Properties of Range
+      <a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a> are supposed to be URIs.
+      It is good practice to use URIs that are language independent ao that content
+      negotiation can be used at these URI to provide the desired language to users that follow
+      them.
+      <code>http://my-dataset-name-language-neutral</code> are good uris
+      URI should not be formed in the way <code>http://de/my-dataset-name</code>. The URI
+      is supposed to be the same in all languages.
+    </li>
+  </ul>
+  <p>The tables shows for which properties which multilanguage strategy applies:</p>
+
+  <table class="simple">
+      <thead>
+      <tr>
+        <th>Label</th>
+        <th>RDF property</th>
+        <th>Range</th>
+        <th>Multilanguage Support</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="#catalog-title">Catalog title</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td>Language encoded string</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-description">Catalog description</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td>Language encoded string</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-homepage">Catalog homepage</a></td>
+        <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        <td>Content Negotiation</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-title">Dataset title</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td>Language encoded string</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-title">Dataset description</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td>Language encoded string</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-keyword">Dataset keyword</a></td>
+        <td>dcat:keyword</td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td>Language encoded string</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-landing-page">Dataset landing Page</a></td>
+        <td><a data-cite="FOAF#term_homepage"><code>dcat:landingPage</code></a></td>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        <td>Content Negotiation</td>
+      </tr>
+      </tbody>
+    </table>
+
 
 </section>
 
@@ -374,7 +450,7 @@
       </tr>
       <tr>
         <th>Conformance</th>
-        <td>[[DCAT-AP]]</td>
+        <td>conforms to [[DCAT-AP]]</td>
       </tr>
       </tbody>
     </table>
@@ -389,7 +465,8 @@
         <th><abbr title="Max Cardinality">MC</abbr></th>
         <th>RDF Property</th>
         <th>Range</th>
-        <th><abbr title="Conformance">Conforms</abbr></th>
+        <th><abbr title="Conformance to DCAT-AP">Conforms</abbr></th>
+        <th>Done</th>
       </tr>
       </thead>
       <tbody>
@@ -400,6 +477,7 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-description">description</a></td>
@@ -408,6 +486,7 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-issued">issued</a></td>
@@ -416,6 +495,7 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a></td>
         <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a></td>
         <td>Y</td>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-homepage">homepage</a></td>
@@ -424,6 +504,7 @@
         <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
         <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
         <td>Y</td>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-publisher">publisher</a></td>
@@ -433,16 +514,18 @@
         </td>
         <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
         <td>N</td>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-dataset">dataset</a></td>
         <td><strong>M</strong></td>
-        <td><var>N</var></td>
+        <td><var>n</var></td>
         <td><a data-cite="VOCAB-DCAT#Property:catalog_dataset"><code>dcat:dataset</code></a>
         </td>
         <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a>
         </td>
         <td>Y</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#catalog-modified">modified</a></td>
@@ -451,14 +534,16 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a></td>
         <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a></td>
         <td>Y</td>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-theme">theme-taxonomy</a></td>
         <td><em>O</em></td>
-        <td>N</td>
+        <td>n</td>
         <td><a data-cite="VOCAB-DCAT#Property:catalog_themes"><code>dcat:themeTaxonomy</code></a></td>
         <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></td>
         <td>N</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#catalog-license">license</a></td>
@@ -469,6 +554,7 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
         </td>
         <td>N</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#catalog-rights">rights</a></td>
@@ -479,16 +565,18 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
         </td>
         <td>N</td>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-language">language</a></td>
         <td><em>O</em></td>
-        <td>N</td>
+        <td>n</td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
         </td>
         <td>N</td>
+        <th>ok</th>
       </tr>
       </tbody>
     </table>
@@ -527,19 +615,19 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code>
+            [[ISO 639-1]] two letter code</a>
           </td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The name / title of the catalogue.</td>
+          <td>Name given to the catalog (in the language indicated in the attribute)</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Name given to the catalog (in the language indicated in the attribute). The title must be
+          <td>The title of the catalog im the indicated language. The title must be
             given in at least one of the four languages German, French, English, Italien. Further languages are
-            optional. For indicating the language the two letter code is used, see [[ISO 639-1]]
-          </td>
+            optional.
         </tr>
         <tr>
           <th>Conformance</th>
@@ -584,12 +672,15 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The description of the catalogue.</td>
+          <td>Free-text description of the
+            catalog (in the language indicated in the attribute).</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>free-text description of the
-            catalog (in the language indicated in the attribute). Further languages are optional.
+          <td>The description of the catalog im the indicated language. The description must be
+            given in at least one of the four languages German, French, English, Italien.
+            Further languages are
+            optional.
           </td>
         </tr>
         <tr>
@@ -599,7 +690,7 @@
         </tbody>
       </table>
       <aside class="example" title="Usage of dct:description for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/catalog-title.ttl"></pre>
+        <pre data-include-format="text" data-include="./examples/catalog/catalog-description.ttl"></pre>
       </aside>
     </section>
 
@@ -634,12 +725,12 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The date of issuance of the catalog.</td>
+          <td>Date of formal issuance (e.g.
+            publication) of the catalog.</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>date of formal issuance (e.g.
-            publication) of the catalog
+          <td>The date when the catalog was published.
           </td>
         </tr>
         <tr>
@@ -656,13 +747,13 @@
 
     <section id="catalog-homepage">
 
-      <h2>Property: landing page</h2>
+      <h2>Property: homepage</h2>
 
       <table class="def">
         <tbody>
         <tr>
           <th>Label</th>
-          <td>landing page</td>
+          <td>Homepage</td>
         </tr>
         <tr>
           <th>Obligation</th>
@@ -687,7 +778,7 @@
         <tr>
           <th>Usage</th>
           <td>For example https://opendata.swiss would be the homepage of the catalog exported to the European
-            Dataportal.
+            Dataportal. ()
           </td>
         </tr>
         <tr>
@@ -805,8 +896,10 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>This property is expected if the catalog has been updated in its content or structure after it has
-            first been issued.
+          <td>This property MUST only be set if the catalog has been updated in its
+            content or structure after it has
+            first been issued. In this case the property MUST contain the date of the
+            last update.
           </td>
         </tr>
         <tr>
@@ -834,11 +927,11 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><strong>Optional</strong></td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
-          <td>N</td>
+          <td>n</td>
         </tr>
         <tr>
           <th>RDF Property</th>
@@ -903,7 +996,7 @@
         </tr>
         <tr>
           <th>Max card.</th>
-          <td><var>N</var></td>
+          <td><var>n</var></td>
         </tr>
         <tr>
           <th>RDF Property</th>
@@ -949,7 +1042,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><strong>Optional</strong></td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -1082,7 +1175,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]] uses different vocabulary as a MUST</td>
+          <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] must be used.</td>
         </tr>
         </tbody>
       </table>
@@ -1150,11 +1243,12 @@
       <thead>
       <tr>
         <th>Label</th>
-        <th>Obl.</th>
-        <th>MC</th>
+        <th><abbr title="Obligation">Obl.</abbr></th>
+        <th><abbr title="Max Cardinality">MC</abbr></th>
         <th>RDF Property</th>
         <th>Range</th>
-        <th>Spec.</th>
+        <th><abbr title="Conformance to DCAT-AP">Conforms</abbr></th>
+        <th>Done</th>
       </tr>
       </thead>
       <tbody>
@@ -1165,7 +1259,8 @@
         <td>1*</td>
         <td><a data-cite="VOCAB-DCAT#Property:resource_title"><code>dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>Y</td>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#dataset-description">description</a></td>
@@ -1175,7 +1270,8 @@
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code
                 title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>Y</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-publisher">publisher</a></td>
@@ -1184,7 +1280,8 @@
         <td><a data-cite="VOCAB-DCAT#Property:resource_publisher"><code>dct:publisher</code></a>
         </td>
         <td><a data-cite="FOAF#term_Agent"><code>foaf:Organization</code></a></td>
-        <td>only 1 in [[DCAT-AP]]</td>
+        <td>N</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-contact-point">contact point</a></td>
@@ -1194,7 +1291,8 @@
                 title="http://www.w3.org/ns/dcat#contactPoint">dcat:contactPoint</code></a></td>
         <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a>
         </td>
-        <td>[[DCAT-AP]]</td>
+        <td>?</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-identifier">identifier</a></td>
@@ -1203,7 +1301,8 @@
         <td><a data-cite="VOCAB-DCAT#Property:resource_identifier"><code>dct:identifier</code></a>
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>?</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-release-date">release date</a></td>
@@ -1212,7 +1311,8 @@
         <td><a data-cite="VOCAB-DCAT#Property:resource_release_date"><code>dct:issued</code></a>
         </td>
         <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>Y</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-modification-date">modification date</a></td>
@@ -1221,7 +1321,8 @@
         <td><a data-cite="VOCAB-DCAT#Property:resource_update_date"><code>dct:modified</code></a>
         </td>
         <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>Y</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-theme">theme</a></td>
@@ -1230,7 +1331,8 @@
         <td><a data-cite="VOCAB-DCAT#Property:dataset_theme"><code>dcat:theme</code></a></td>
         <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
         </td>
-        <td>[[DCAT-AP]]</td>
+        <td>N</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-distribution">distribution</a></td>
@@ -1240,7 +1342,8 @@
                 title="http://www.w3.org/ns/dcat#distribution">dcat:distribution</code></a></td>
         <td><a data-cite="VOCAB-DCAT#class-distribution"><code>dcat:Distribution</code></a>
         </td>
-        <td>[[DCAT-AP]]</td>
+        <td>Y</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-landing-page">landing page</a></td>
@@ -1250,7 +1353,8 @@
         </td>
         <td><a data-cite="FOAF#term_Document"><code title="http://xmlns.com/foaf/0.1/Document">foaf:Document</code></a>
         </td>
-        <td>[[DCAT-AP]]</td>
+        <td>Y</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-language">language</a></td>
@@ -1260,7 +1364,8 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
         </td>
-        <td>[[DCAT-AP]]</td>
+        <td>N</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-keyword">keyword</a></td>
@@ -1270,7 +1375,8 @@
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code
                 title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>Y</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-spatial-coverage">spatial coverage</a></td>
@@ -1280,7 +1386,8 @@
         </td>
         <td><a data-cite="DCTERMS#DCTERMS#http://purl.org/dc/terms/Location"><code
                 title="http://purl.org/dc/terms/Location">dct:Location</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>N</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-coverage">coverage</a></td>
@@ -1292,7 +1399,8 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LocationPeriodOrJurisdiction">
           <code>dct:LocationPeriodOrJurisdiction</code></a>
         </td>
-        <td>custom</td>
+        <td>N</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-temporal-coverage">temporal coverage</a></td>
@@ -1302,7 +1410,8 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dct:PeriodOfTime</code></a>
         </td>
-        <td>[[DCAT-AP]]</td>
+        <td>?</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-update-frequency">update frequency</a></td>
@@ -1311,7 +1420,8 @@
         <td><a data-cite="VOCAB-DCAT#Property:dataset_frequency"><code>dct:accrualPeriodicity</code></a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dct:Frequency</code></a>
         </td>
-        <td>[[DCAT-AP]]</td>
+        <td>?</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-relation">related resource</a></td>
@@ -1319,7 +1429,8 @@
         <td><var>N</var></td>
         <td><a data-cite="VOCAB-DCAT#Property:resource_relation"><code>dct:relation</code></a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>rdfs:Resource</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>N</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-see-alsos">see also</a></td>
@@ -1327,7 +1438,8 @@
         <td><var>N</var></td>
         <td><a data-cite="RDF-SCHEMA#ch_seealso"><code>rdfs:seeAlsos</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
-        <td>custom</td>
+        <td>N</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-image">image</a></td>
@@ -1336,7 +1448,8 @@
         <td><a href="https://schema-org/image"><code>schema:image</code></a></td>
         <td><a href="https://schema-org/url"><code>schema:url</code></a> or
           <a href="https://schema-org/ImageObject"><code>schema:imageObject</code></a></td>
-        <td>custom</td>
+        <td>?</td>
+        <th></th>
       </tr>
       </tbody>
     </table>
@@ -1378,22 +1491,26 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>The title can be given in several languages. All languages that have Distributions should also
-            hava e dataset title. In multiligual dataportals ususally the title of the language selected by a user
-            will be shown for the dataset.
-            <p>Falls der Datensatz in verschiedenen Sprachen verfügbar ist, muss das Element "dct:title" aber
-              in den entsprechenden Sprachen geführt werden. Dies erlaubt es, die Bereitstellungsformen
-              auf der Benutzeroberfläche
-              des Portals passend zu bezeichnen, auch wenn der Metadateneintrag der Bereitstel-lungsform keine Elemente
-              "dct:title" enthält.</p>
+          <td><p>The title MAY be given in several languages.
+            All languages that the dataset offers distributions in should also
+            hava e dataset title. This allows for a fallback for the distribution title
+            in case they don't come with a title themselves.</p>
+            <p>In multiligual dataportals the language of the title displayed
+            will depend on the language preferred by the user viewing the dataset.
+              (<a class="no-sectionRef" href="#content-negociation"></a>)
+            </p>
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of dct:title for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/dataset-title.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -1889,6 +2006,8 @@
         </tr>
         </tbody>
       </table>
+
+      <p class="issue" data-number="46"></p>
 
     </section>
 
@@ -2411,11 +2530,12 @@
       <thead>
       <tr>
         <th>Label</th>
-        <th>Obl.</th>
-        <th>MC</th>
+        <th><abbr title="Obligation">Obl.</abbr></th>
+        <th><abbr title="Max Cardinality">MC</abbr></th>
         <th>RDF Property</th>
         <th>Range</th>
-        <th>Spec.</th>
+        <th><abbr title="Conformance to DCAT-AP">Conforms</abbr></th>
+        <th>Done</th>
       </tr>
       </thead>
       <tbody>
@@ -2428,6 +2548,7 @@
         </td>
         <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a></td>
         <td>[[DCAT-AP]]</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-access-url">access url</a></td>
@@ -2439,6 +2560,7 @@
         <td>
           <a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
         <td>[[DCAT-AP]]</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-rights">rights</a></td>
@@ -2450,6 +2572,7 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement">
           <code>dct:RightsStatement</code></a></td>
         <td>[[DCAT-AP]]</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-title">title</a></td>
@@ -2458,6 +2581,7 @@
         <td><a data-cite="VOCAB-DCAT#Property:distribution_title"><code>dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>[[DCAT-AP]]</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-description">description</a></td>
@@ -2468,6 +2592,7 @@
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>[[DCAT-AP]] recommended</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-byte-size">byte size</a></td>
@@ -2479,6 +2604,7 @@
         <td><a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a>
         </td>
         <td>[[DCAT-AP]] optional</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-media-type">media type</a></td>
@@ -2489,6 +2615,7 @@
         </td>
         <td><a data-cite="DCTERMS##http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a></td>
         <td>[[DCAT-AP]]</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-format">format</a></td>
@@ -2499,6 +2626,7 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaTypeOrExtent"><code>dct:MediaTypeOrExtent</code></a>
         </td>
         <td>[[DCAT-AP]]</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-language">language</a></td>
@@ -2509,6 +2637,7 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
         </td>
         <td>[[DCAT-AP]]</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-modification-date">modification date</a></td>
@@ -2519,6 +2648,7 @@
         </td>
         <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a></td>
         <td>[[DCAT-AP]]</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-license">license</a></td>
@@ -2528,6 +2658,7 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LincenseDocument"><code>dct:LicenseDocument</code></a></td>
         <td>[[DCAT-AP]]</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-identifier">identifier</a></td>
@@ -2538,6 +2669,7 @@
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td></td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-download-url">download url</a></td>
@@ -2548,6 +2680,7 @@
         <td><a data-cite="DCTERMS#terms-Location"><code
                 title="http://purl.org/dc/terms/Location">rdfs:Resource</code></a></td>
         <td>[[DCAT-AP]]</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-coverage">coverage</a></td>
@@ -2557,7 +2690,8 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LocationPeriodOrJurisdiction"><code>LocationPeriodOrJurisdiction</code></a>
         </td>
-        <td>custom</td>
+        <td>N</td>
+        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-image">image</a></td>
@@ -2566,7 +2700,8 @@
         <td><a href="https://schema-org/image"><code>schema:image</code></a></td>
         <td><a href="https://schema-org/url"><code>schema:url</code></a> or
           <a href="https://schema-org/ImageObject"><code>schema:imageObject</code></a></td>
-        <td>custom</td>
+        <td>Y</td>
+        <th></th>
       </tr>
       </tbody>
     </table>
@@ -3433,11 +3568,11 @@
       <thead>
       <tr>
         <th>Label</th>
-        <th>Obl.</th>
-        <th>MC</th>
+        <th><abbr title="Obligation">Obl.</abbr></th>
+        <th><abbr title="Max Cardinality">MC</abbr></th>
         <th>RDF Property</th>
         <th>Range</th>
-        <th>Spec.</th>
+        <th><abbr title="Conformance to DCAT-AP">Conforms</abbr></th>
       </tr>
       </thead>
       <tbody>
