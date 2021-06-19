@@ -3,4 +3,5 @@
 
 <https://swisstopo/opendata/catalog>
   a dcat:Catalog ;
-  dct:title "Opendata der Stadt Zürich"@de, "Open Data of the city of Zurich"@en.
+  dct:title "Opendata der des Landesamts für Topographie"@de,
+            "Opendata catalog of the Federal Office for Topography"@en.
