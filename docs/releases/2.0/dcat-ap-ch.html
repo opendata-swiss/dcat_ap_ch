@@ -457,6 +457,56 @@
 
   </section>
 
+  <section id="coverage-issues">
+
+    <h2>Coverage issues</h2>
+
+    <ul>
+      <li><strong>Spatial coverage</strong>: There are currently two properties for this <code>dct:coverage</code>
+      and <code>dct:spatial</code>. The first one is a custom property of DCAT-AP-CH that is also used for temporal
+      purposes. </li>
+      <li>Temporal coverage</li>
+    </ul>
+
+    <p>The coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
+      of the [[DCAT-AP]]:</p>
+    <p>"The EU Vocabularies Name Authority Lists must be used for continents, countries and
+      places that are in those lists; if a particular location is not in one of the mentioned
+      Named Authority Lists, Geonames URIs must be used."</p>
+
+
+
+    <p class="issue" data-number="52"></p>
+
+    <ul>
+      <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
+      <li>Adapt implementation on opendata.swiss</li>
+    </ul>
+
+    <aside class="example" title="Usage of dct:accrualPeriodicty for dcat:Dataset using the EU vocabulary">
+      <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
+    </aside>
+
+  </section>
+
+  <section id="dataset-concept-issue">
+
+    <h2>Concept of a Dataset issue</h2>
+
+
+    <p>Some problems that we currently face, for example the need of the attribute <code>dct:coverage</code>
+    for dcat:Distribution come from the fact, that we we misinterpret what is meant by a dataset: in [[VOCAB-DCAT]]
+      there is a note
+      <a data-cite="VOCAB-DCAT#class-distribution"><code>dcat:Distribution</code></a></p>
+    that states that the Distributions of a dataset should contain the same content, but in different
+    format. If there is a series of different content it should rather be modeled as a datasets that relate
+    to each other. </p>
+    <p>It seems painful to change this defintion what a dataset is now, but in the long run we will be better
+    of if we adapt to [[VOCAB-DCAT]]'s generel concepts. Only this will enable us to profit in the best
+    way from its further development.</p>
+
+  </section>
+
 </section>
 
 
@@ -722,11 +772,16 @@
       </tr>
       <tr>
         <th>Definition</th>
-        <td>A curated collection of metadata about datasets.</td>
+        <td>A Datacatalog is a collection of metadata entries to dataset that are hosted on a dataportal.</td>
       </tr>
       <tr>
         <th>Usage</th>
-        <td>This is usually served at a catalog endpoint provided by the publisher of the data.</td>
+        <td>
+      The catalog has a hierarchical structure and contains references to all the metadata
+      for the data that can be accessed via the portal (The entries have the class dcat:Dataset).
+      The datasets themselves refer to all Distributions of the actual data (class dcat:Distribution).
+      In DCAT-AP there is an additional class dcat:CatalogRecord, which contains Metadata on the Catalog.
+      This class has not been used so far in the implementation of DCAT-AP-CH on opendata.swiss.</td>
       </tr>
       <tr>
         <th>Conformance</th>
@@ -1491,19 +1546,34 @@
       </tr>
       <tr>
         <th>Definition</th>
-        <td>A collection of data, published or curated by a single agent, and available for access or download in one
-          or
-          more formats. [[VOCAB-DCAT]], [[ADMS-SKOS]], [[DCAT-UCR]]
+        <td>The metadata entry of this class describes a single thematically closed data collection,
+    that is published by responsible organization (person or institution). The dataset can be
+    offered in different ways: as file in a text/csv format or as API Service. Each Distribution
+    SHOULD be described by a dcat:Distribution. In general each dataset will have at least
+    one distribution.
         </td>
       </tr>
 
       <tr>
         <th>Usage</th>
-        <td>Datasets are also used for Dataservices since the Dataservice has not yet been added to DCAT-AP-CH</td>
+        <td>
+           <p>The dataset will also list distributions if these are only available on an external website, to that the
+      reference is set by the property dcat:landingPage of the dataset </p>
+    <p>In exceptional cases there can also be dataset that have not yet distributions. This can be the case
+    if the publication of those datasets is planned for a future date.</p>
+    <p>The property dcat:theme helps to group datasets by topics. Using a controlled vocabulary
+    in the context of a dataportal helps with the dicoverabilty of the datasets by topic.
+    Since in DCAT-AP the dcat:theme is optional, it can be ignored on export.</p>
+        </td>
       </tr>
       <tr>
         <th>Conformance</th>
-        <td>[[DCAT-AP]]</td>
+        <td>The definition of a dataset should be redone:
+          to stay conformant to DCAT-AP the dcat:DataService class should be introduced
+          and it must be considered that [[VOCAB-DCAT]] goes more in the direction of
+          allowing datasets to have parts (that could even be catalogs) then in the
+          direction of datasets having distribution as parts.
+          (<a class="no-sectionRef" href="#dataset-concept-issue"></a>) [[DCAT-AP]]</td>
       </tr>
       </tbody>
     </table>
@@ -2454,8 +2524,7 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code
-                  title="http://purl.org/dc/terms/Location">dct:Location</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>
           </td>
         </tr>
         <tr>
@@ -2464,21 +2533,30 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Das Element "dct:spatial" ermöglicht die geografische Zuordnung des Datensatzes. Als Werte für das
-            Element kommen für Datensammlungen, welche sich auf die Schweiz beziehen, vorwiegend die offiziellen
-            Kantonskürzel und die Gemeindenamen des amtlichen Ortschaftenverzeichnisses (Herausgeber: Swisstopo)
-            in Frage.Daneben ist auch dieAngabe der Koordinaten eines Punktes oder die Definition einer
-            rechteckigen "Bounding-Box" zulässig.Der Datentyp "dct:Location" lässt keine Beschreibung der
-            geografischen Abdeckung in Form eines Polygons zu; deshalb soll dafür das Element "dct:coverage" verwendet
-            werden.
+          <td><p>This property allows to add a geographical reference for the dataset. Possible values for
+            Swiss datasets might be the official canton abbreviations or community names as they are
+            published by swisstopo.</p>
+            <p>Another option is to provide point coordinates or a rectangular bounding box.
+            It is not possible with <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>
+            to provide a polygon as geographical coverage, therefore dct:coverage should be used for this purpose
+            (<a class="no-sectionRef" href="#distribution-coverage"></a>)
+            </p>
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>This definition does not comform to [[DCAT-AP]]
+            (<a class="no-sectionRef" href="#coverage-issues"></a>). The remark with the polygon does not seem
+          to hold true any more, as the example shows. (The example was received by automatically transforming
+          original data from geocat at the [[GEODCAT-AP-API]])</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" id="ex-dataset-spatial" title="Usage of dct:spatial for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/spatial.ttl"></pre>
+      </aside>
+
 
     </section>
 
@@ -2528,6 +2606,7 @@
       </table>
 
     </section>
+
 
     <section id="dataset-coverage">
 
@@ -2840,27 +2919,27 @@
       </tr>
       <tr>
         <th>Definition</th>
-        <td>A specific representation of a dataset or a representation of part of the dataset.
-          A dataset might be available in multiple serializations
-          that may differ in various ways, including natural language, media-type or format, schematic organization,
-          temporal
-          and spatial resolution, level of detail. A dataset might also be split into different distribution, where
-          each
-          distribution
-          covers a part of the data: a spatial or temporal part.
+        <td>A metadata entry of this class
+      describes a distribution of the data.
         </td>
       </tr>
       <tr>
         <th>Usage</th>
-        <td><p>Example where a distribution just covers part of the dataset: When the dataset is about:
-          "Daten zur ständigen Wohnbevölke-rung der Schweiz", the dataset might be split into distributions where
-          each distribution just covers one year.</p>
-          <p>Dataservices are also declared as Distributions since the Dataservice Class
-            has not yet been added to DCAT-AP-CH.</p></td>
+        <td><p>The distribution can contain all the data of the dataset or it can contain just a certain
+      part of the data. For example: it can contain all data
+      about the population in Switzerland or it can contain just on year of this data, say
+      the year 2018.
+      It can also contain the data in an alternative data format, for example a graphical
+      presentation of the data for the years 1990 up to 2010.</p></td>
       </tr>
       <tr>
         <th>Conformance</th>
-        <td>[[DCAT-AP]]</td>
+        <td>According to [[VOCAB-DCAT]] and therefore also according to [[DCAT-AP]]
+          modeling a series of data as distributions of a dataset
+          is an anti pattern. It should rather be modeled as a series of datasets.
+          This concept of a series of datasets is coming with [[VOCAB-DCAT-3]] as
+          <a data-cite="VOCAB-DCAT#Class:Dataset_Series"><code>dcat:DatasetSeries[</code></a>.
+          (<a class="no-sectionRef" href="#dataset-concept-issue"></a>)</td>
       </tr>
       </tbody>
     </table>
