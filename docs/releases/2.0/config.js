@@ -9,6 +9,7 @@ var respecConfig = {
     branch: "main",
     repoURL: "https://github.com/opendata-swiss/dcat_ap_ch",
   },
+  edDraftURI: "https://www.dcat-ap.ch/releases/2.0/dcat-ap-ch.html",
   subtitle: "A DCAT Application Profile for Switzerland",
   localBiblio: {
       "ADMS-SKOS":{
@@ -18,6 +19,11 @@ var respecConfig = {
       },
       "VOCAB-EU-LANG":{
         "href":"http://publications.europa.eu/resource/authority/language",
+        "title":"Language",
+        "publisher":"European Commission",
+      },
+      "VOCAB-EU-FREQUENCY":{
+        "href":"http://publications.europa.eu/resource/authority/frequency",
         "title":"Language",
         "publisher":"European Commission",
       },
