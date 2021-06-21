@@ -28,3 +28,10 @@ https://www.itb.ec.europa.eu/shacl/dcat-ap/upload
 
 Here is what the validators on that page mean: https://github.com/ISAITB/validator-resources-dcat-ap
 
+## Known Issues
+
+The specfication needs the W3C Server to be up to render correctly. This server
+seems to have downtimes with some frequency: so if the specification looks funny:
+check here: https://www.isitdownrightnow.com/w3.org.html and see whether the W3C Server is up,
+before filing an issue.
+
