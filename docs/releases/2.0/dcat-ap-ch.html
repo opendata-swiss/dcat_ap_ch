@@ -2903,8 +2903,8 @@
         </td>
         <td>
           <a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
-        <td>[[DCAT-AP]]</td>
-        <th></th>
+        <td>Y</td>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-rights">rights</a></td>
@@ -2915,7 +2915,7 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement">
           <code>dct:RightsStatement</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>N</td>
         <th></th>
       </tr>
       <tr>
@@ -2961,7 +2961,7 @@
           <code>dcat:mediaType</code></a>
         </td>
         <td><a data-cite="DCTERMS##http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>N</td>
         <th></th>
       </tr>
       <tr>
@@ -2972,7 +2972,7 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaTypeOrExtent"><code>dct:MediaTypeOrExtent</code></a>
         </td>
-        <td>[[DCAT-AP]]</td>
+        <td>N</td>
         <th></th>
       </tr>
       <tr>
@@ -2998,7 +2998,7 @@
           as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>)
         </td>
         <td>Y</td>
-        <th></th>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-license">license</a></td>
@@ -3007,7 +3007,7 @@
         <td><a data-cite="VOCAB-DCAT#Property:distribution_license"><code>dct:license</code></a>
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LincenseDocument"><code>dct:LicenseDocument</code></a></td>
-        <td>[[DCAT-AP]]</td>
+        <td>N</td>
         <th></th>
       </tr>
       <tr>
@@ -3029,8 +3029,8 @@
         </td>
         <td><a data-cite="DCTERMS#terms-Location"><code
                 title="http://purl.org/dc/terms/Location">rdfs:Resource</code></a></td>
-        <td>[[DCAT-AP]]</td>
-        <th></th>
+        <td>Y</td>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-coverage">coverage</a></td>
@@ -3154,14 +3154,21 @@
             should be the same as the value in dcat:accessURL.</p>
             <p>Since the field is mandatory in the DCAT-AP it has to be set even for downloadable distributions.
               In that case both dcat:accessURL and dcat:downloadURL should contain the same value.</p>
+            <p>There might be more than one way to access a distribution (HTTP, WebDAV, FTP) there might be several
+              access urls for a distribution.</p>
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
+
       </table>
+
+      <aside class="example" title="Usage of dcat:accessURL for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/access-url.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -3767,18 +3774,21 @@
           <th>Usage</th>
           <td><p>
             Because the distribution mights be callable in different ways (HTTP, WebDAV, FTP),
-            there MAY be more than one download url. In order to ensure the conformance with DCAT-AP each download url
-            must be
-            doubled as access url.</p>
+            there MAY be more than one download url. </p>
+            <p>
+            In order to ensure the conformance with DCAT-AP each download url
+            must be doubled as access url.</p>
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
-
+      <aside class="example" title="Usage of dcat:downloadURL for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/access-url.ttl"></pre>
+      </aside>
     </section>
 
     <section id="distribution-coverage">
