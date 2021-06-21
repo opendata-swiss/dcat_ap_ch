@@ -4,4 +4,4 @@
 
 <https://opendata.zurich/opendata/catalog>
   a dcat:Catalog ;
-  dct:modified "2013-04-26T01:00:00Z"^^xsd:dateTime .
+  dct:modified "2021-04-26"^^xsd:date .
