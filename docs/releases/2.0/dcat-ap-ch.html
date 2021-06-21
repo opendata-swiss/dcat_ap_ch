@@ -430,6 +430,14 @@
 
   </section>
 
+  <section id="license-issues">
+
+    <h2>License issues</h2>
+
+    <p>Licenses are recommended in DCAT-AP.</p>
+
+  </section>
+
   <section id="frequency-issues">
 
     <h2>Frequency issues</h2>
@@ -821,7 +829,7 @@
         <td><a data-cite="VOCAB-DCAT#Property:catalog_themes"><code>dcat:themeTaxonomy</code></a></td>
         <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></td>
         <td>Y</td>
-        <th>okay</th>
+        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-license">license</a></td>
@@ -1015,7 +1023,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
@@ -1058,7 +1066,7 @@
         <tr>
           <th>Usage</th>
           <td>For example https://opendata.swiss would be the homepage of the catalog exported to the European
-            Dataportal. ()
+            Dataportal.
           </td>
         </tr>
         <tr>
@@ -1180,7 +1188,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
@@ -1344,14 +1352,11 @@
         </tr>
         <tr>
           <th>Conformance Notes</th>
-          <td>[[DCAT-AP]] recommenends dct:license, that means it shhould be used if this is possible.</td>
+          <td>[[DCAT-AP]] recommenends dct:license, that means it should be used if this is possible.
+          (<a class="no-sectionRef" href="#license-issues"></a>)</td>
         </tr>
         </tbody>
       </table>
-
-      <aside class="example" title="Usage of dct:title for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/catalog-license.ttl"></pre>
-      </aside>
 
     </section>
 
@@ -1396,14 +1401,10 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]]</td>
+          <td>(<a class="no-sectionRef" href="#license-issues"></a>)</td>
         </tr>
         </tbody>
       </table>
-
-      <aside class="example" title="Usage of dct:title for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/catalog-rights.ttl"></pre>
-      </aside>
 
     </section>
 
@@ -2072,28 +2073,31 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The date when the dataset was first published.</td>
+          <td>date of formal issuance (publication) of the dataset
+             This property should be set using the first known date of issuance.</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Das Element "dct:issued" im Metadateneintrag einer Datensammlung enthält das Datum der erstmaligen
-            Veröffentlichung des Datensatzes. Falls dieses Datum nicht bekannt ist, kann das Datum der
-            erstmaligen Referenzierungder Datensammlungim Katalog eingetragen werden. Falls zur Datensammlung, die
-            dieser Metadateneintragbeschreibt, (noch) keine Bereitstellungsformveröffentlicht
-            ist (z.B. bei Inventar-Datensätzen), kann das Element "dct:issued" weggelassen werden.
-            Es kann aber durchaus ein Element "dct:issued" eingefügt werden, auch wenn noch keine
-            Bereitstellungsform veröffentlicht ist (z.B. mit dem Datum der vorgesehenen Veröffentlichung).
-            In beiden Fällen kommt im Metadateneintrag der Datensammlung kein Element "dcat:distribution" vor.
-            Auf der Benutzeroberfläche des Portals wird die Datensammlung nur angezeigt, wenn ein Element
-            "dct:issued" vorhanden ist und das Veröffentlichungsdatum nicht in der Zukunft liegt.
+          <td>This property contains the date of the first issuance of the dataset. If this date is not
+            known, it can be set to the date of the first reference of the dataset in the corresponding
+            catalog. If the dataset does not yet have any distributions this property can be skipped. But the
+            property can even be set to a future date if the publication of dataset and distribution is already
+            planned. It should then contain the date that is scheduled for the publication.
+            In a dataportal the the dataset will only get publically be displayed if it has an issued date and
+            if that date is not in the future.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of dct:issued for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/issued.ttl"></pre>
+      </aside>
+
 
     </section>
 
@@ -2139,19 +2143,24 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Falls die Daten, diederMetadateneintragbeschreibt, seit der Erstveröffentlichung auf dem Portal
-            geändert haben (z.B. eine Berichtigung der Werte erfolgt ist), muss das Element "dct:modified"
-            das Datum der letzten Änderung wiedergeben. Auf diese Weise kann eine Person oder Institution,
-            welche die Datensammlungfür eine eigene Auswertung
-            oder Anwendung genutzt hat, erkennen, ob sie die Aus-wertung oder Anwendung eventuell aktualisieren muss
+          <td>
+            This property MUST only be set if the distributions (te actual data) that the dataset
+            describes have been updated after it has been issued.
+            In this case the property MUST contain the date of the
+            last update. That way a person or institution using the data for an analysis or application
+            will know when to update the report or application on their side.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of dct:modified for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/modified.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -2774,12 +2783,12 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a href="https://schema-org/image"><code>schema:image</code></a></td>
+          <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a href="https://schema-org/url"><code>schema:url</code></a> or
-            <a href="https://schema-org/ImageObject"><code>schema:imageObject</code></a>
+          <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
+            <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a>
           </td>
         </tr>
         <tr>
@@ -2803,6 +2812,9 @@
         </tbody>
       </table>
 
+      <aside class="example" title="Usage of schema:Image for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/image.ttl"></pre>
+      </aside>
     </section>
 
   </section>
@@ -3090,11 +3102,13 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
-
+      <aside class="example" title="Usage of dct:issued for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/issued.ttl"></pre>
+      </aside>
     </section>
 
     <section id="distribution-access-url">
@@ -3594,10 +3608,14 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of dct:modified for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/modified.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -3697,7 +3715,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td><p>DCAT-AP-CH</p>
+          <td>
             <p>This property is not given to Distribtuions in [[DCAT-AP]], in [[VOCAB-DCAT]]
               dcat:Distribution inherits it from dcat:Cataloged Resource. But having the identifier
               also for resources does not hurt the conformance with DCAT-AP</p>
@@ -3841,12 +3859,12 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a href="https://schema-org/image"><code>schema:image</code></a></td>
+          <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a href="https://schema-org/url"><code>schema:url</code></a> or
-            <a href="https://schema-org/ImageObject"><code>schema:imageObject</code></a>
+          <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
+            <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a>
           </td>
         </tr>
         <tr>
@@ -3869,6 +3887,10 @@
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of schema:Image for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/image.ttl"></pre>
+      </aside>
 
     </section>
 
