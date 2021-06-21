@@ -1,0 +1,5 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://swisstopo/reforestation-data/1234>
+  a dcat:Dataset ;
+  dcat:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/ANNUAL> .
