@@ -32,6 +32,11 @@ var respecConfig = {
         "title":"Language 2 Letter Code",
         "publisher":"Wikipedia",
       },
+      "GEODCAT-AP-API":{
+        "href":"http://geodcat-ap.semic.eu:8890/api/",
+        "title": "GeoDCAT AP API: ISO 19139 records in RDF",
+        "publisher":"ARe3NA, SEMIC, EU ISA",
+      },
       "DCAT-UCR":{
         "href":"https://www.w3.org/TR/dcat-ucr/",
         "title":"Dataset Exchange Use Cases and Requirements",
