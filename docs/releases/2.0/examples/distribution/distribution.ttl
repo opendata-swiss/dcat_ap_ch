@@ -16,5 +16,5 @@
 @prefix xml1: <http://www.w3.org/2001/XMLSchema> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://swisstopo/catalog-endpoint/dataset/reforestation/file123.csv>
+<https://swisstopo/reforestation-data/1234>
   a dcat:Distribution .
