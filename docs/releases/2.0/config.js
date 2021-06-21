@@ -312,14 +312,6 @@ var respecConfig = {
         "publisher":"GeoVocab.org",
         "date": "25 February 2012"
       },
-/*
-      "OpenAPI": {
-         "href": "https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md",
-         "title": "OpenAPI Specification. Version 3.0.2",
-         "date": "08 October 2018",
-         "publisher": "OAI"
-      },
-*/
       "OpenSearch": {
          "authors": [
            "DeWitt Clinton"
@@ -328,20 +320,6 @@ var respecConfig = {
          "title":"OpenSearch 1.1 Draft 6",
          "date":"17 April 2018",
          "publisher":"OpenSearch"
-      },
-/*
-      "POWDER-S": {
-        "href":"https://www.w3.org/2007/05/powder-s",
-        "title":"Protocol for Web Description Resources (POWDER): POWDER-S Vocabulary (WDRS)",
-        "authors":["Andrea Perego","Stasinos Konstantopoulos","Phil Archer"],
-        "publisher":"W3C",
-        "status":"Namespace Document",
-        "date":"8 November 2010"
-      },
-*/
-      "SCHEMA-ORG":{
-        "href":"http://schema.org/",
-        "title":"Schema.org"
       },
       "SCoRO": {
         "href":"http://purl.org/spar/scoro#",
