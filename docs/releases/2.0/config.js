@@ -33,6 +33,11 @@ var respecConfig = {
         "title":"Language",
         "publisher":"European Commission",
       },
+     "VOCAB-EU-PUBLISHERS":{
+        "href":"http://publications.europa.eu/resource/dataset/corporate-body",
+        "title":"Corperate Body",
+        "publisher":"European Commission",
+     },
       "ISO 639-1":{
         "href":"https://en.wikipedia.org/wiki/ISO_639-1",
         "title":"Language 2 Letter Code",
