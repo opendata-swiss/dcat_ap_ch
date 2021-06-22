@@ -4109,7 +4109,7 @@
 
     <section id="byte-size-implementation">
 
-      <h2>add xsd:decimal to byte size</h2>
+      <h2>Add xsd:decimal to byte size</h2>
 
       <p>All <code>dct:byteSize</code> is demanded as xsd:decimal in DCAT-AP-CH, but implemented without
         this format specification and as integer on opendata.swiss
@@ -4193,17 +4193,46 @@
 
     </section>
 
-    <section id="coverage-issues">
+    <section id="spatial-issues">
 
-      <h2>Drop support for coverage</h2>
+      <h2>Improve support for spatial</h2>
+
+      <p>The spatial coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
+        of the [[DCAT-AP]]:</p>
+      <p>"The EU Vocabularies Name Authority Lists must be used for continents, countries and
+        places that are in those lists; if a particular location is not in one of the mentioned
+        Named Authority Lists, Geonames URIs must be used."</p>
+      <p>Also the explanation needs to be corrected: the property can also be used for polygon at
+      this time.</p>
+
+      <p class="issue" data-number="52"></p>
 
       <ul>
-        <li><strong>Spatial coverage</strong>: There are currently two properties for this <code>dct:coverage</code>
-          and <code>dct:spatial</code>. The first one is a custom property of DCAT-AP-CH that is also used for temporal
-          purposes.
-        </li>
-        <li>Temporal coverage</li>
+        <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
+        <li>Adapt implementation on opendata.swiss</li>
       </ul>
+
+      <aside class="example" title="Usage of dct:accrualPeriodicty for dcat:Dataset using the EU vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
+      </aside>
+
+    </section>
+
+
+    <section id="coverage-issues">
+
+      <h2>Drop support for dct:coverage</h2>
+      <p>dct:coverage (<a class="no-sectionRef" href="#distribution-coverage"></a>) is an attribute that goes counter the general
+      concept in DCAT, that Distribution should have the same content and may just differ in language,
+      format or resolution. But series of data should not be modeled with them. For series
+      of data datasets, that connect to each other should be used. The concept
+      of <code>dcat:Dataseries</code> is new in [[VOCAB-DCAT-3]] and should be used for this purpose
+      in the future.
+      </p>
+      <p>On datasets, dct:coverage is unnecessary since there are already <code>dct:spatial</code>
+        (<a class="no-sectionRef" href="#dataset-spatial-coverage"></a>) and
+      dct:temporal (<a class="no-sectionRef" href="#dataset-temporal-coverage"></a>), which can cover all possible use cases
+      </p>
 
       <p>The coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
         of the [[DCAT-AP]]:</p>
