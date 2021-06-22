@@ -34,8 +34,13 @@ var respecConfig = {
         "publisher":"European Commission",
       },
      "VOCAB-EU-PUBLISHERS":{
-        "href":"http://publications.europa.eu/resource/dataset/corporate-body",
+        "href":"http://publications.europa.eu/resource/authority/corporate-body",
         "title":"Corperate Body",
+        "publisher":"European Commission",
+     },
+     "VOCAB-EU-THEME":{
+        "href":"https://publications.europa.eu/resource/authority/data-theme",
+        "title":"Data Theme",
         "publisher":"European Commission",
      },
       "ISO 639-1":{
