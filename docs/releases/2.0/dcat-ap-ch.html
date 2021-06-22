@@ -1958,18 +1958,23 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Mit dem Element "dcat:distribution" wird auf die Metadateneinträge der Bereitstellungsformen verwiesen.
-            In Ausnahmefällen kann eine Datensammlungbeschrieben werden, zu der(noch) keine Bereitstellungsform
-            existiert.
-            In diesem Fall wird das Element "dcat:distribution" weggelassen.
+          <td>
+            This property contains the reference to the
+            metadata of a distribution of the data. In exceptional cases there can be metadata
+            for data collections that have not been published yet. In theses cases there MAY be
+            datasets that don't have distributions.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>The definition conforms to [[DCAT-AP]].</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of dcat:distribution for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/theme.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -2023,8 +2028,6 @@
         </tr>
         </tbody>
       </table>
-
-      <p class="issue" data-number="46"></p>
 
     </section>
 
