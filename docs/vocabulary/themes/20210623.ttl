@@ -12,7 +12,7 @@
   dc11:description "Custom vocabulary for OGD dataset categories in Switzerland"@en ;
   rdfs:label "Kategorien"@de,"Categories"@en;
   owl:versionInfo "202100623" ;
-  owl:versionIRI <http://dcat-ap.ch/vocabulary/licenses/20210623/> ;
+  owl:versionIRI <http://dcat-ap.ch/vocabulary/licenses/20210623/> .
 
 <http://dcat-ap.ch/vocabulary/theme//work>
   a skos:Concept ;
