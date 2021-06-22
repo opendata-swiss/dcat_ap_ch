@@ -2264,15 +2264,6 @@
 
       <h2>Property: coverage</h2>
 
-      <p class="issue">
-        This element is too close to DCAT-AP properties and violates therefore conformance.
-        The Usage Instructions don't seem clear to me: I added them in the original German
-        language.
-        What cases cannot be covered by the other two properties <a class="no-sectionRef"
-                                                                    href="#dataset-temporal-coverage"></a>
-        and <a class="no-sectionRef" href="#dataset-spatial-coverage"></a>?
-      </p>
-
       <table class="def">
         <tbody>
         <tr>
@@ -2300,27 +2291,31 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Spatial (and temporal) characteristics of the object or resource .</td>
+          <td>Spatial (and temporal) characteristics of the object or resource.
+          This is the key element for supporting spatial or temporal range
+            searching on document-like objects that are spatially referenced or time-referenced.
+          </td>
         </tr>
         <tr>
           <th>Usage</th>
           <td><p>This is the key element for supporting spatial or temporal range
             searching on document-like objects that are spatially referenced or time-referenced.</p>
-            <p>Das Element "dct:coverage" soll nur dann verwendet werden, wenn die geografische Abdeckung in Form
-              eines
-              Polygons beschrieben werden muss
-              (z.B. name="dc.coverage.polygon" scheme = "WGS84.DD"
+            <p>The property should only be used for spatial coverage that has the shape of a polygon.
+              (for example name="dc.coverage.polygon" scheme = "WGS84.DD"
               content = "9.547 46.737 9.550 46.739 9.556 46.740 9.554 46.743 9.548 46.742 9.547 46.737";
               name= "dc.coverage.placeName content="Heidsee").
-              In diesem Fall muss zur Wahrung der Kompatibilität mit dem DCAT AP for Data Portals in Europe ein
-              Element
-              "dct:spatial"
-              mit einer passenden "Bounding Box" eingefügt werden. Dies wird vom System automatisch erledigt</p>
+              In this case there must a property dct:spatial added as well in order to stay conformant
+              with DCAT-AP. The portal software will do that automatically.</p>
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>DCAT-AP-CH but [[DCAT-AP]] has similar properties
+          <td>This element is too close to the DCAT-AP properties
+            <a class="no-sectionRef" href="#dataset-spatial-coverage"></a> and
+            <a class="no-sectionRef" href="#dataset-temporal-coverage"></a>.
+            It violates therefore conformance. Therefore support for it should be dropped
+            on the dataset class. (
+           <a class="no-sectionRef" href="#coverage-issues"></a>)
           </td>
         </tr>
         </tbody>
