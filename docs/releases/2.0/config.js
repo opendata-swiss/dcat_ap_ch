@@ -10,6 +10,7 @@ var respecConfig = {
     repoURL: "https://github.com/opendata-swiss/dcat_ap_ch",
   },
   edDraftURI: "https://www.dcat-ap.ch/releases/2.0/dcat-ap-ch.html",
+  prevED: "https://ech.ch/ech/ech-0200",
   subtitle: "A DCAT Application Profile for Switzerland",
   localBiblio: {
       "ADMS-SKOS":{
@@ -21,6 +22,11 @@ var respecConfig = {
         "href":"http://publications.europa.eu/resource/authority/language",
         "title":"Language",
         "publisher":"European Commission",
+      },
+      "DCAT-AP-CH-1":{
+        "href":"http://ech.ch/ech/ech-0200",
+        "title":"eCH-0200 DCAT-Anwendungsprofil für Datenportale in der Schweiz 4",
+        "publisher":"Verein eCH",
       },
       "VOCAB-EU-FREQUENCY":{
         "href":"http://publications.europa.eu/resource/authority/frequency",
