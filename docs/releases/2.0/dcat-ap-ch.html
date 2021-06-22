@@ -896,7 +896,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td>conforms to [[DCAT-AP]] (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
@@ -955,8 +955,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]], but there the property is recommended.
-            <p>All used theme taxonomies SHOULD be listed here if possible.</p>
+          <td>To conform [[DCAT-AP]] the requirement level of this property chould be changed to recommended.
+            <p>All used theme taxonomies SHOULD be listed here if possible.
+              (<a class="no-sectionRef" href="#theme-issues"></a>)</p>
           </td>
         </tr>
         </tbody>
@@ -1925,23 +1926,29 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>main category of the dataset Adataset can have multiple themes;
+          <td>main category of the dataset: a dataset can have multiple themes;
             themes are part of the knowledge organization system (KOS)
             used to classify the catalog's datasets.
           </td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Der Inhalt eines Elements "dcat:theme" muss einem Begriff aus der Klassifikation
-            des skos:ConceptScheme des jeweiligen Portalsentsprechen(sofern vorhanden).
+          <td>The content of the property must be a term
+            of the skos:ConceptScheme of the data-portal, if that exists.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>[[DCAT-AP]] demands the usage of the [[VOCAB-EU-THEME]]. The definition should be changed
+          to explicitely demand this. (<a class="no-sectionRef" href="#theme-issues"></a>)</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of dcat:theme for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/theme.ttl"></pre>
+      </aside>
+
 
     </section>
 
@@ -4177,18 +4184,23 @@
 
     <section id="theme-issues">
 
-      <h2>Theme issues</h2>
+      <h2>Add Usage of EU themes</h2>
 
       <p>The theme must also map to the EU categories and it MUST use a skos:ConceptScheme for
         the Swiss categories</p>
 
       <p class="issue" data-number="31"></p>
 
-      <aside class="note">
-        <p>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</p>
+      <aside class="ednote" title="Proposal for theme and theme taxonomy">
+        <ul>
+        <li>Integrate the [[VOCAB-EU-THEME]] into the defintion of both
+        dcat:themeTaxonomy and dcat:theme</li>
+        <li>Change the usage of dcat:themeTaxonomy from optional to recommended as it is in DCAT-AP</li>
+        <li>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</li>
+        </ul>
       </aside>
 
-      <aside class="example" title="Usage of dcat:themeTaxonomay for dcat:Catalog">
+      <aside class="example" title="Usage of dcat:themeTaxonomay and dcat:theme">
         <pre data-include-format="text" data-include="./examples/proposals/theme.ttl"></pre>
       </aside>
 
