@@ -2014,20 +2014,24 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Das Element "dcat:landingPage" wird benötigt, wenn die Datensammlung, dieder Metadateneintragbeschreibt,
-            nur indirekt (über eine Webseite der publizierenden Stelle) verfügbar ist. In diesem Fall muss im
-            Metadateneintrag der Datensammlungtrotzdem eine Bereitstellungsform referenziert wer-den,
-            wobei der Inhalt des Elements "dcat:accessURL"
-            im Metadateneintrag der Bereitstellungsformmit dem Inhalt des Elements "dcat:landingPage" übereinstimmen
-            muss.
+          <td>The property is needed if the data collection described by the metadata is only
+            indirectly accessible vie a webpage of the data publisher. In this case the
+            dataset must still have a distribution, but the url entered in the dcat:accessURL of the distribution
+            will be the same as the url for the dcat:landingPage.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>The defintion conforms to [[DCAT-AP]], but the implementation on opendat.swiss
+          does not, as it is implemented as an rdfs:Literal instead of a foaf:Document.
+          (<a class="no-sectionRef" href="#landing-page-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Correct usage of dcat:landingPage for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
+      </aside>
 
     </section>
 
