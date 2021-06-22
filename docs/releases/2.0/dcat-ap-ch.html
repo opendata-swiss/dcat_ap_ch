@@ -2394,7 +2394,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td>O</td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -2423,17 +2423,18 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td><p>This property's usage is not conformant to [[DCAT-AP]] or [[VOCAB-DCAT]], which states that it should
-            be used
-            if the relationship between the two resources is unclear.</p>
-            <p>Instead of this property dcat:qualifiedRelationShip should be added and used whereever possible.
-              dct:relation should take over the role of rdfs:seeAlso and directly add the resource URIs which feels a
-              lot safer than relaying on identifiers as it does now.</p>
+          <td>conforms to [[DCAT-AP]]. It would make sense to add more vocabulary from DCAT-AP in order
+            to be able to express qualified relationships. In  many cases the type of the relationship is known
+            and can be further specified. (<a class="no-sectionRef" href="#relationship-issues"></a>)</p>
           </td>
         </tr>
         </tbody>
 
       </table>
+
+      aside class="example" id="ex-dataset-relation" title="Usage of dct:relation for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/relation.ttl"></pre>
+      </aside>
 
     </section>
 
