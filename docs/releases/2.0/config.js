@@ -43,6 +43,11 @@ var respecConfig = {
         "title":"Data Theme",
         "publisher":"European Commission",
      },
+     "DCAT-AP-USE":{
+        "href":"https://joinup.ec.europa.eu/sites/default/files/document/2018-04/Report%20on%20DCAT-AP%20use.pdf",
+        "title":"Report on DCAT-AP use",
+        "publisher":"European Commission",
+     },
       "ISO 639-1":{
         "href":"https://en.wikipedia.org/wiki/ISO_639-1",
         "title":"Language 2 Letter Code",
