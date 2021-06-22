@@ -1,7 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 
-<https://swisstopo/opendata/catalog>
-  a dcat:Catalog ;
+<https://swisstopo/opendata/1234>
+  a dcat:Dataset ;
 
-  dcat:themeTaxonomy <https://dcat-ap.ch/vocabulary/themes> ,
-                     <http://publications.europa.eu/resource/authority/data-theme>  .
+  dcat:themes <http://dcat-ap.ch/theme/vocabulary/themes/work> .
