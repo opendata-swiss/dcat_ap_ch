@@ -1637,7 +1637,8 @@
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of dcat:contactPoint for dcat:Dataset as it is now implemented on opendata.swiss">
+      <aside class="example"
+             title="Usage of dcat:contactPoint for dcat:Dataset as it is now implemented on opendata.swiss">
         <pre data-include-format="text" data-include="./examples/dataset/publisher.ttl"></pre>
       </aside>
 
@@ -1675,10 +1676,12 @@
           <td>Relevant contact information with regard to the dataset</td>
         </tr>
         <tr>
-         <th>Usage</th>
+          <th>Usage</th>
           <td>This property SHOULD contain an email adress, that is really serviced by the data publisher.
-        If there are several contributors involved in the publication of the the dataset, the property
-          can be used multiple times.</td></tr>
+            If there are several contributors involved in the publication of the the dataset, the property
+            can be used multiple times.
+          </td>
+        </tr>
         <tr>
           <th>Conformance</th>
           <td>conforms to [[DCAT-AP]]</td>
@@ -1940,7 +1943,8 @@
         <tr>
           <th>Conformance</th>
           <td>[[DCAT-AP]] demands the usage of the [[VOCAB-EU-THEME]]. The definition should be changed
-          to explicitely demand this. (<a class="no-sectionRef" href="#theme-issues"></a>)</td>
+            to explicitely demand this. (<a class="no-sectionRef" href="#theme-issues"></a>)
+          </td>
         </tr>
         </tbody>
       </table>
@@ -4031,13 +4035,13 @@
 
       <p class="issue" data-number="26"></p>
 
-      <aside class="note">
+      <aside class="ednote" title="Proposal for a vocabulary change for the language">
         <strong>Proposal:</strong>
         <ul>
           <li>Adapt the range of the language property and demand the use of [[VOCAB-EU-LANG]]</li>
           <li>Change implementation on opendata.swiss so that in conforms to this change</li>
+          <li>See the example below for how the language is expected in DCAT-AP.</li>
         </ul>
-        <p>See the example below for how the language is expected in DCAT-AP:</p>
       </aside>
 
       <aside class="example" title="dct:language MUST use the EU vocabulary as URI to conform DCAT-AP">
@@ -4055,13 +4059,12 @@
 
       <p class="issue" data-number="52"></p>
 
-      <aside class="note">
-        <strong>Proposal:</strong>
+      <aside class="ednote" title="Proposal for a vocabulary change for the frequency">
         <ul>
           <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
           <li>Adapt implementation on opendata.swiss</li>
+          <li>See the example below for how the frequency is expected in DCAT-AP</li>
         </ul>
-        <p>See the example below for how the frequency is expected in DCAT-AP:</p>
       </aside>
 
       <aside class="example" title="dct:accrualPeriodicty MUST use the EU vocabulary to conform DCAT-AP">
@@ -4081,12 +4084,12 @@
 
       <p class="issue" data-number="46"></p>
 
-      <aside class="note">
-        <strong>Proposal:</strong>
+      <aside class="ednote" title="Proposal for an implementation change for the landing page">
         <ul>
           <li>Correct implementation on opendata.swiss</li>
+          <li>See the example below for how the landing page is expected in DCAT-AP.</li>
         </ul>
-        <p>See the example below for how the landing page is expected in DCAT-AP:</p>
+
       </aside>
 
       <aside class="example" title="dcat:landingPage is expected as a URI in DCAT-AP">
@@ -4110,12 +4113,11 @@
 
       <p class="issue" data-number="48"></p>
 
-      <aside class="note">
-        <strong>Proposal:</strong>
+      <aside class="ednote" title="Proposal for a definition change on issued and modified properties">
         <ul>
           <li>Adapt range in DCAT-AP-CH to also allow <code>rdfs:Literal</code> typed as <code>xsd:datetime</code></li>
+          <li>See the example below for how the issued is currently implemented on opendata.swiss.</li>
         </ul>
-        <p>See the example below for how the issued is currently implemented on opendata.swiss:</p>
       </aside>
 
       <aside class="example"
@@ -4135,7 +4137,7 @@
 
       <p class="issue" data-number="49"></p>
 
-      <aside class="note">
+      <aside class="ednote" title="Proposal for an implementation change on byte size property">
         <p>Change the implementation and add the xsd:Decimal type information, since both DCAT-AP-CH and [[DCAT-AP]]
           agree
           on this.
@@ -4162,19 +4164,20 @@
       <p class="issue" data-number="19"></p>
       <p class="issue" data-number="23"></p>
       <p class="issue" data-number="2"></p>
-      <aside class="note">
-        <strong>Proposal</strong>
+      <aside class="ednote" title="Proposal for refactoring the publisher property">
         <ul>
           <li>Change the definition on both catalog and dataset to use foaf:Agent instead of rdf:description
           </li>
           <li>Change the cardinality on the dataset to 1 in order to be confromant with DCAT-AP</li>
           <li>Correct implementation on opendata.swiss</li>
           <li>Build a publisher vocabulary for Swiss datapublishers similar to the one the EU uses
-          for its publishers [[VOCAB-EU-PUBLISHERS]]</li>
+            for its publishers [[VOCAB-EU-PUBLISHERS]]
+          </li>
+          <li>Before the vocabulary is in place the publisher should at least changed so that
+            it is implemented as in the example below:
+          </li>
         </ul>
-        <p>Before the vocabulary is in place the publisher should at least changed so that
-          it is implemented as in the example below:
-        </p>
+
       </aside>
       <aside class="example" title="Usage of dct:publisher for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/proposals/publisher.ttl"></pre>
@@ -4193,10 +4196,11 @@
 
       <aside class="ednote" title="Proposal for theme and theme taxonomy">
         <ul>
-        <li>Integrate the [[VOCAB-EU-THEME]] into the defintion of both
-        dcat:themeTaxonomy and dcat:theme</li>
-        <li>Change the usage of dcat:themeTaxonomy from optional to recommended as it is in DCAT-AP</li>
-        <li>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</li>
+          <li>Integrate the [[VOCAB-EU-THEME]] into the defintion of both
+            dcat:themeTaxonomy and dcat:theme
+          </li>
+          <li>Change the usage of dcat:themeTaxonomy from optional to recommended as it is in DCAT-AP</li>
+          <li>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</li>
         </ul>
       </aside>
 
