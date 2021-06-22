@@ -1,130 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DCAT-AP-CH Def</title>
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../../_layout/css/custom.css"
+      type="text/css"
+    />
+    <link rel="shortcut icon" href="../../_layout/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a38bff75ad.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DCAT AP CH Def</title>
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../_layout/css/custom.css" type="text/css"/>
-  <link rel="shortcut icon" href="../../_layout/images/favicon.png"/>
-
-</head>
-
-<body>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-1">
-      <a href="https://dcat-ap.ch">
-      <img id="logo" class="align-self-center mr-3"
-           src="../../_layout/images/ech-logo.png" alt="DCAT-AP.de Logo">
-      </a>
+  <body>
+    <div class="container-fluid header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img
+              class="header__logo"
+              src="../../_layout/images/logo-ech.svg"
+              alt="eCH Logo"
+            />
+            <span class="header__title">DCAT-AP-CH</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-11">
-      <ol class="breadcrumb mt-4">
-        <li class="breadcrumb-item"><a href="../../index.html">DCAT-AP-CH</a></li>
-        <li class="breadcrumb-item active" aria-current="page">
-          <a href="../../index.html">Standard</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-         License vocabulary</li>
-      </ol>
+    <div class="container-fluid bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="../../index.html">DCAT-AP-CH</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <a href="../../index.html">Standard</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                License vocabulary
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  </a>
-</div>
 
-<!-- Page Content -->
-<div class="container-fluid">
-  <h1>License vocabulary for DCAT-AP-CH</h1>
-</div>
-<div class="container-fluid">
-  <h2>List of licenses for Swiss opendata to enter in dct:license</h2>
-  <p>
-    Other Formats: <a href="20210623.rdf">RDF/XML</a> |  <a href="20210623.ttl">Turtle</a>
-  </p>
-  <table class="table">
-    <thead>
-    <tr>
-      <th class="col-uri">URI</th>
-      <th class="col-name">Name</th>
-      <th class="col-name">Code</th>
-      <th class="col-name">License text</th>
-    </tr>
-    </thead>
-    <tbody>
-     <tr id="terms_open">
-      <td><a href='#terms_open'>http://dcat-ap.ch/vocabulary/licenses/terms_open</a></td>
-      <td>Datenlizenz Schweiz "NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired"</td>
-      <td>terms_open</td>
-      <td><a href='https://opendata.swiss/terms-of-use#terms_open'>https://opendata.swiss/terms-of-use#terms_open</a></td>
-    </tr>
-     <tr id="terms_by">
-      <td><a href='#terms_open'>http://dcat-ap.ch/vocabulary/licenses/terms_by</a></td>
-      <td>Datenlizenz Schweiz "NonCommercialAllowed-CommercialAllowed-ReferenceRequired"</td>
-      <td>terms_by</td>
-      <td><a href='https://opendata.swiss/terms-of-use#terms_by'>https://opendata.swiss/terms-of-use#terms_by</a></td>
-    </tr>
-     <tr id="terms_ask">
-      <td><a href='#terms_open'>http://dcat-ap.ch/vocabulary/licenses/terms_ask</a></td>
-      <td>Datenlizenz Schweiz "NonCommercialAllowed-CommercialWithPermission-ReferenceNotRequired"</td>
-      <td>terms_ask</td>
-      <td><a href='https://opendata.swiss/terms-of-use#terms_ask'>https://opendata.swiss/terms-of-use#terms_ask</a></td>
-    </tr>
-     <tr id="terms_by_ask">
-      <td><a href='#terms_open'>http://dcat-ap.ch/vocabulary/licenses/terms_by_ask</a></td>
-      <td>Datenlizenz Schweiz "NonCommercialAllowed-CommercialWithPermission-ReferenceRequiredd"</td>
-      <td>terms_by_ask</td>
-      <td><a href='https://opendata.swiss/terms-of-use#terms_by_ask'>https://opendata.swiss/terms-of-use#terms_by_ask</a></td>
-    </tr>
-    <tr id="cc-by/4.0">
-      <td><a href='#cc-by/4.0'>http://dcat-ap.ch/vocabulary/licenses/cc-by/4.0</a></td>
-      <td>Creative Commons Namensnennung – 4.0 International (CC BY 4.0)</td>
-      <td>cc-by/4.0</td>
-      <td><a href='http://creativecommons.org/licenses/by/4.0/'>http://creativecommons.org/licenses/by/4.0/</a></td>
-    </tr>
-    <tr id="cc-zero">
-      <td><a href='#cc-zero'>http://dcat-ap.ch/vocabulary/licenses/cc-zero</a></td>
-      <td>Creative Commons CC Zero License (cc-zero)</td>
-      <td>cc-zero</td>
-      <td><a href='http://www.opendefinition.org/licenses/cc-zero'>http://www.opendefinition.org/licenses/cc-zero</a></td>
-    </tr>
-    <tr id="cc-by-sa">
-      <td><a href='#cc-by-sa'>http://dcat-ap.ch/vocabulary/licenses//cc-by-sa</a></td>
-      <td>Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen (CC-BY-SA)</td>
-      <td>cc-by-sa</td>
-      <td><a href='http://www.opendefinition.org/licenses/cc-by-sa'>http://www.opendefinition.org/licenses/cc-by-sa</a></td>
-    </tr>
-    <tr id="cc-by-sa/4.0">
-      <td><a href='#cc-by-sa/4.0'>http://dcat-ap.ch/vocabulary/licenses/cc-by-sa/4.0</a></td>
-      <td>Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International (CC-BY-SA 4.0)</td>
-      <td>cc-by-sa/4.0</td>
-      <td><a href='http://creativecommons.org/licenses/by-sa/4.0/'>http://creativecommons.org/licenses/by-sa/4.0/</a></td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<footer>
-  <div class="container-fluid maxwidth bg-dark text-center text-white">
-    <nav class="nav">
-      <a class="nav-link text-white" href="https://ech.ch/de/impressum">Imprint</a>
-      <a class="nav-link text-white" href="https://ech.ch/de/datenschutzerklaerung">Data Protection</a>
-    </nav>
-  </div>
-</footer>
+    <!-- Page Content -->
+    <div class="container page">
+      <div class="row">
+        <div class="col-12">
+          <h1>License vocabulary</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>List of licenses for Swiss opendata to enter in dct:license</h2>
+          <p>
+            Other Formats:
+            <a href="20210623.rdf" class="icon download">RDF/XML</a> |
+            <a href="20210623.ttl" class="icon code">Turtle</a>
+          </p>
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th class="col-uri">URI</th>
+                <th class="col-name">Name</th>
+                <th class="col-name">Code</th>
+                <th class="col-name">License text</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="terms_open">
+                <td>
+                  <a href="#terms_open"
+                    >http://dcat-ap.ch/vocabulary/licenses/terms_open</a
+                  >
+                </td>
+                <td>
+                  Datenlizenz Schweiz
+                  "NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired"
+                </td>
+                <td>terms_open</td>
+                <td>
+                  <a href="https://opendata.swiss/terms-of-use#terms_open"
+                    >https://opendata.swiss/terms-of-use#terms_open</a
+                  >
+                </td>
+              </tr>
+              <tr id="terms_by">
+                <td>
+                  <a href="#terms_open"
+                    >http://dcat-ap.ch/vocabulary/licenses/terms_by</a
+                  >
+                </td>
+                <td>
+                  Datenlizenz Schweiz
+                  "NonCommercialAllowed-CommercialAllowed-ReferenceRequired"
+                </td>
+                <td>terms_by</td>
+                <td>
+                  <a href="https://opendata.swiss/terms-of-use#terms_by"
+                    >https://opendata.swiss/terms-of-use#terms_by</a
+                  >
+                </td>
+              </tr>
+              <tr id="terms_ask">
+                <td>
+                  <a href="#terms_open"
+                    >http://dcat-ap.ch/vocabulary/licenses/terms_ask</a
+                  >
+                </td>
+                <td>
+                  Datenlizenz Schweiz
+                  "NonCommercialAllowed-CommercialWithPermission-ReferenceNotRequired"
+                </td>
+                <td>terms_ask</td>
+                <td>
+                  <a href="https://opendata.swiss/terms-of-use#terms_ask"
+                    >https://opendata.swiss/terms-of-use#terms_ask</a
+                  >
+                </td>
+              </tr>
+              <tr id="terms_by_ask">
+                <td>
+                  <a href="#terms_open"
+                    >http://dcat-ap.ch/vocabulary/licenses/terms_by_ask</a
+                  >
+                </td>
+                <td>
+                  Datenlizenz Schweiz
+                  "NonCommercialAllowed-CommercialWithPermission-ReferenceRequiredd"
+                </td>
+                <td>terms_by_ask</td>
+                <td>
+                  <a href="https://opendata.swiss/terms-of-use#terms_by_ask"
+                    >https://opendata.swiss/terms-of-use#terms_by_ask</a
+                  >
+                </td>
+              </tr>
+              <tr id="cc-by/4.0">
+                <td>
+                  <a href="#cc-by/4.0"
+                    >http://dcat-ap.ch/vocabulary/licenses/cc-by/4.0</a
+                  >
+                </td>
+                <td>
+                  Creative Commons Namensnennung – 4.0 International (CC BY 4.0)
+                </td>
+                <td>cc-by/4.0</td>
+                <td>
+                  <a href="http://creativecommons.org/licenses/by/4.0/"
+                    >http://creativecommons.org/licenses/by/4.0/</a
+                  >
+                </td>
+              </tr>
+              <tr id="cc-zero">
+                <td>
+                  <a href="#cc-zero"
+                    >http://dcat-ap.ch/vocabulary/licenses/cc-zero</a
+                  >
+                </td>
+                <td>Creative Commons CC Zero License (cc-zero)</td>
+                <td>cc-zero</td>
+                <td>
+                  <a href="http://www.opendefinition.org/licenses/cc-zero"
+                    >http://www.opendefinition.org/licenses/cc-zero</a
+                  >
+                </td>
+              </tr>
+              <tr id="cc-by-sa">
+                <td>
+                  <a href="#cc-by-sa"
+                    >http://dcat-ap.ch/vocabulary/licenses//cc-by-sa</a
+                  >
+                </td>
+                <td>
+                  Creative Commons Namensnennung - Weitergabe unter gleichen
+                  Bedingungen (CC-BY-SA)
+                </td>
+                <td>cc-by-sa</td>
+                <td>
+                  <a href="http://www.opendefinition.org/licenses/cc-by-sa"
+                    >http://www.opendefinition.org/licenses/cc-by-sa</a
+                  >
+                </td>
+              </tr>
+              <tr id="cc-by-sa/4.0">
+                <td>
+                  <a href="#cc-by-sa/4.0"
+                    >http://dcat-ap.ch/vocabulary/licenses/cc-by-sa/4.0</a
+                  >
+                </td>
+                <td>
+                  Creative Commons Namensnennung - Weitergabe unter gleichen
+                  Bedingungen 4.0 International (CC-BY-SA 4.0)
+                </td>
+                <td>cc-by-sa/4.0</td>
+                <td>
+                  <a href="http://creativecommons.org/licenses/by-sa/4.0/"
+                    >http://creativecommons.org/licenses/by-sa/4.0/</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid maxwidth bg-dark text-center text-white">
+        <nav class="nav">
+          <a class="nav-link text-white" href="https://ech.ch/de/impressum"
+            >Imprint</a
+          >
+          <a
+            class="nav-link text-white"
+            href="https://ech.ch/de/datenschutzerklaerung"
+            >Data Protection</a
+          >
+        </nav>
+      </div>
+    </footer>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
