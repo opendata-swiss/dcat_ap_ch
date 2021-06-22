@@ -1,263 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DCAT-AP-CH Def</title>
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../../_layout/css/custom.css"
+      type="text/css"
+    />
+    <link rel="shortcut icon" href="../../_layout/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a38bff75ad.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DCAT AP CH Def</title>
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../_layout/css/custom.css" type="text/css"/>
-  <link rel="shortcut icon" href="../../_layout/images/favicon.png"/>
-
-</head>
-
-<body>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-1">
-      <a href="https://dcat-ap.ch">
-      <img id="logo" class="align-self-center mr-3"
-           src="../../_layout/images/ech-logo.png" alt="DCAT-AP.de Logo">
-      </a>
+  <body>
+    <div class="container-fluid header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img
+              class="header__logo"
+              src="../../_layout/images/logo-ech.svg"
+              alt="eCH Logo"
+            />
+            <span class="header__title">DCAT-AP-CH</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-11">
-      <ol class="breadcrumb mt-4">
-        <li class="breadcrumb-item"><a href="../../index.html">DCAT-AP-CH</a></li>
-        <li class="breadcrumb-item active" aria-current="page">
-          <a href="../../index.html">Standard</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-         Theme vocabulary</li>
-      </ol>
+    <div class="container-fluid bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="../../index.html">DCAT-AP-CH</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <a href="../../index.html">Standard</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Theme vocabulary
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  </a>
-</div>
 
-<!-- Page Content -->
-<div class="container-fluid">
-  <h1>Theme vocabulary for DCAT-AP-CH</h1>
-</div>
-<div class="container-fluid">
-  <h2>List of Categories for Swiss opendata to enter in dcat:theme and dcat:themeTaxonomy</h2>
-   <p>This includes mapping from geocategories and to EU data-theme</p>
-  <p>
-    Other Formats: <a href="20210623.rdf">RDF/XML</a> |  <a href="20210623.ttl">Turtle</a>
-  </p>
-  <table class="table">
-    <thead>
-    <tr>
-      <th class="col-uri">URI</th>
-      <th class="col-name">Name</th>
-      <th class="col-name">Mapping to EU data-theme</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr id="work">
-      <td><a href="#work">
-        http://dcat-ap.ch/theme/vocabulary/work</a>
-      </td>
-      <td>Work and income</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/ECON">
-        http://publications.europa.eu/resource/authority/data-theme/ECON</a></td>
-    </tr>
-    <tr id="construction">
-      <td><a href="#construction">
-        http://dcat-ap.ch/theme/vocabulary/construction</a>
-      </td>
-      <td>Construction, logement</td>
-      <td></td>
-    </tr>
-    <tr id="population">
-      <td><a href="#population">
-        http://dcat-ap.ch/vocabulary/theme/population</a>
-      </td>
-      <td>Population</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/SOCI">
-        http://publications.europa.eu/resource/authority/data-theme/SOCI</a></td>
-    </tr>
-    <tr id="education">
-      <td><a href="#education">
-        http://dcat-ap.ch/vocabulary/theme/education</a>
-      </td>
-      <td>Education and science</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">
-        http://publications.europa.eu/resource/authority/data-theme/EDUC</a></td>
-    </tr>
-    <tr id="energy">
-      <td><a href="#energy">
-        http://dcat-ap.ch/theme/vocabulary/energy</a>
-      </td>
-      <td>Energy</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/ENER">
-        http://publications.europa.eu/resource/authority/data-theme/ENER</a></td>
-    </tr>
-    <tr id="finances">
-      <td><a href="#finances">
-        http://dcat-ap.ch/vocabulary/theme/finances</a>
-      </td>
-      <td>Finances</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/ECON">
-        http://publications.europa.eu/resource/authority/data-theme/ECON</a></td>
-    </tr>
-    <tr id="geography">
-      <td><a href="#geography">
-        http://dcat-ap.ch/vocabulary/theme/geography</a>
-      </td>
-      <td>Geography</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/REGI">
-        http://publications.europa.eu/resource/authority/data-theme/REGI</a></td>
-    </tr>
-    <tr id="legislation">
-      <td><a href="#legislation">
-        http://dcat-ap.ch/theme/vocabulary/legislation</a>
-      </td>
-      <td>Legislation</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/JUST">
-        http://publications.europa.eu/resource/authority/data-theme/JUST</a></td>
-    </tr>
-    <tr id="health">
-      <td><a href="#health">
-        http://dcat-ap.ch/theme/vocabulary/health</a>
-      </td>
-      <td>Health</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/HEAL">
-        http://publications.europa.eu/resource/authority/data-theme/HEAL</a></td>
-    </tr>
-    <tr id="trade">
-      <td><a href="#trade">
-        http://dcat-ap.ch/vocabulary/theme/trade</a>
-      </td>
-      <td>Trade</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/ECON">
-        http://publications.europa.eu/resource/authority/data-theme/ECON</a></td>
-    </tr>
-    <tr id="industry">
-      <td><a href="#industry">
-        http://dcat-ap.ch/vocabulary/theme/industry</a>
-      </td>
-      <td>Industry and services</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/ECON">
-        http://publications.europa.eu/resource/authority/data-theme/ECON</a></td>
-    </tr>
-    <tr id="crime">
-      <td><a href="#crime">
-        http://dcat-ap.ch/theme/vocabulary/crime</a>
-      </td>
-      <td>Crime, criminal justice</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/JUST">
-        http://publications.europa.eu/resource/authority/data-theme/JUST</a></td>
-    </tr>
-    <tr id="culture">
-      <td><a href="#culture">
-        http://dcat-ap.ch/theme/vocabulary/culture</a>
-      </td>
-      <td>Culture, media, information society, sport</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">
-        http://publications.europa.eu/resource/authority/data-theme/EDUC</a></td>
-    </tr>
-    <tr id="agriculture">
-      <td><a href="#agriculture">
-        http://dcat-ap.ch/vocabulary/theme/agriculture</a>
-      </td>
-      <td>Agriculture, forestry</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/AGRI">
-        http://publications.europa.eu/resource/authority/data-theme/AGRI</a></td>
-    </tr>
-    <tr id="mobility">
-      <td><a href="#mobility">
-        http://dcat-ap.ch/vocabulary/theme/mobility</a>
-      </td>
-      <td>Mobility and Transport</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/TRAN">
-        http://publications.europa.eu/resource/authority/data-theme/TRAN</a></td>
-    </tr>
-    <tr id="politics">
-      <td><a href="#politics">
-        http://dcat-ap.ch/theme/vocabulary/politics</a>
-      </td>
-      <td>Public order and security</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/GOVE">
-        http://publications.europa.eu/resource/authority/data-theme/GOVE</a></td>
-    </tr>
-    <tr id="prices">
-      <td><a href="#prices">
-        http://dcat-ap.ch/theme/vocabulary/prices</a>
-      </td>
-      <td>Prices</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/ECON">
-        http://publications.europa.eu/resource/authority/data-theme/ECON</a></td>
-    </tr>
-    <tr id="territory">
-      <td><a href="#territory">
-        http://dcat-ap.ch/vocabulary/theme/territory</a>
-      </td>
-      <td>Territory and environment</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/ENVI">
-        http://publications.europa.eu/resource/authority/data-theme/ENVI</a></td>
-    </tr>
-    <tr id="social-security">
-      <td><a href="#social-security">
-        http://dcat-ap.ch/vocabulary/theme/social-security</a>
-      </td>
-      <td>Social security</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/SOCI">
-        http://publications.europa.eu/resource/authority/data-theme/SOCI</a></td>
-    </tr>
-    <tr id="statistical-basis">
-      <td><a href="#statistical-basis">
-        http://dcat-ap.ch/theme/vocabulary/statistical-basis</a>
-      </td>
-      <td>Statistical basis</td>
-      <td></td>
-    </tr>
-    <tr id="tourism">
-      <td><a href="#tourism">
-        http://dcat-ap.ch/theme/vocabulary/tourism</a>
-      </td>
-      <td>Tourism</td>
-      <td></td>
-    </tr>
-    <tr id="administration">
-      <td><a href="#administration">
-        http://dcat-ap.ch/vocabulary/theme/administration</a>
-      </td>
-      <td>Administration</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/GOVE">
-        http://publications.europa.eu/resource/authority/data-theme/GOVE</a></td>
-    </tr>
-    <tr id="national-economy">
-      <td><a href="#national-economy">
-        http://dcat-ap.ch/vocabulary/theme/national-economy</a>
-      </td>
-      <td>National economy</td>
-      <td><a href="http://publications.europa.eu/resource/authority/data-theme/ECON">
-        http://publications.europa.eu/resource/authority/data-theme/ECON</a></td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<footer>
-  <div class="container-fluid maxwidth bg-dark text-center text-white">
-    <nav class="nav">
-      <a class="nav-link text-white" href="https://ech.ch/de/impressum">Imprint</a>
-      <a class="nav-link text-white" href="https://ech.ch/de/datenschutzerklaerung">Data Protection</a>
-    </nav>
-  </div>
-</footer>
+    <!-- Page Content -->
+    <div class="container page">
+      <div class="row">
+        <div class="col-12">
+          <h1>Theme vocabulary</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>
+            List of Categories for Swiss opendata to enter in dcat:theme and
+            dcat:themeTaxonomy
+          </h2>
+          <p>This includes mapping from geocategories and to EU data-theme</p>
+          <p>
+            Other Formats:
+            <a href="20210623.rdf" class="icon download">RDF/XML</a> |
+            <a href="20210623.ttl" class="icon code">Turtle</a>
+          </p>
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th class="col-uri">URI</th>
+                <th class="col-name">Name</th>
+                <th class="col-name">Mapping to EU data-theme</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="work">
+                <td>
+                  <a href="#work"> http://dcat-ap.ch/theme/vocabulary/work</a>
+                </td>
+                <td>Work and income</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/ECON"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/ECON</a
+                  >
+                </td>
+              </tr>
+              <tr id="construction">
+                <td>
+                  <a href="#construction">
+                    http://dcat-ap.ch/theme/vocabulary/construction</a
+                  >
+                </td>
+                <td>Construction, logement</td>
+                <td></td>
+              </tr>
+              <tr id="population">
+                <td>
+                  <a href="#population">
+                    http://dcat-ap.ch/vocabulary/theme/population</a
+                  >
+                </td>
+                <td>Population</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/SOCI"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/SOCI</a
+                  >
+                </td>
+              </tr>
+              <tr id="education">
+                <td>
+                  <a href="#education">
+                    http://dcat-ap.ch/vocabulary/theme/education</a
+                  >
+                </td>
+                <td>Education and science</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/EDUC"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/EDUC</a
+                  >
+                </td>
+              </tr>
+              <tr id="energy">
+                <td>
+                  <a href="#energy">
+                    http://dcat-ap.ch/theme/vocabulary/energy</a
+                  >
+                </td>
+                <td>Energy</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/ENER"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/ENER</a
+                  >
+                </td>
+              </tr>
+              <tr id="finances">
+                <td>
+                  <a href="#finances">
+                    http://dcat-ap.ch/vocabulary/theme/finances</a
+                  >
+                </td>
+                <td>Finances</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/ECON"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/ECON</a
+                  >
+                </td>
+              </tr>
+              <tr id="geography">
+                <td>
+                  <a href="#geography">
+                    http://dcat-ap.ch/vocabulary/theme/geography</a
+                  >
+                </td>
+                <td>Geography</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/REGI"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/REGI</a
+                  >
+                </td>
+              </tr>
+              <tr id="legislation">
+                <td>
+                  <a href="#legislation">
+                    http://dcat-ap.ch/theme/vocabulary/legislation</a
+                  >
+                </td>
+                <td>Legislation</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/JUST"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/JUST</a
+                  >
+                </td>
+              </tr>
+              <tr id="health">
+                <td>
+                  <a href="#health">
+                    http://dcat-ap.ch/theme/vocabulary/health</a
+                  >
+                </td>
+                <td>Health</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/HEAL"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/HEAL</a
+                  >
+                </td>
+              </tr>
+              <tr id="trade">
+                <td>
+                  <a href="#trade"> http://dcat-ap.ch/vocabulary/theme/trade</a>
+                </td>
+                <td>Trade</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/ECON"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/ECON</a
+                  >
+                </td>
+              </tr>
+              <tr id="industry">
+                <td>
+                  <a href="#industry">
+                    http://dcat-ap.ch/vocabulary/theme/industry</a
+                  >
+                </td>
+                <td>Industry and services</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/ECON"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/ECON</a
+                  >
+                </td>
+              </tr>
+              <tr id="crime">
+                <td>
+                  <a href="#crime"> http://dcat-ap.ch/theme/vocabulary/crime</a>
+                </td>
+                <td>Crime, criminal justice</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/JUST"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/JUST</a
+                  >
+                </td>
+              </tr>
+              <tr id="culture">
+                <td>
+                  <a href="#culture">
+                    http://dcat-ap.ch/theme/vocabulary/culture</a
+                  >
+                </td>
+                <td>Culture, media, information society, sport</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/EDUC"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/EDUC</a
+                  >
+                </td>
+              </tr>
+              <tr id="agriculture">
+                <td>
+                  <a href="#agriculture">
+                    http://dcat-ap.ch/vocabulary/theme/agriculture</a
+                  >
+                </td>
+                <td>Agriculture, forestry</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/AGRI"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/AGRI</a
+                  >
+                </td>
+              </tr>
+              <tr id="mobility">
+                <td>
+                  <a href="#mobility">
+                    http://dcat-ap.ch/vocabulary/theme/mobility</a
+                  >
+                </td>
+                <td>Mobility and Transport</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/TRAN"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/TRAN</a
+                  >
+                </td>
+              </tr>
+              <tr id="politics">
+                <td>
+                  <a href="#politics">
+                    http://dcat-ap.ch/theme/vocabulary/politics</a
+                  >
+                </td>
+                <td>Public order and security</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/GOVE"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/GOVE</a
+                  >
+                </td>
+              </tr>
+              <tr id="prices">
+                <td>
+                  <a href="#prices">
+                    http://dcat-ap.ch/theme/vocabulary/prices</a
+                  >
+                </td>
+                <td>Prices</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/ECON"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/ECON</a
+                  >
+                </td>
+              </tr>
+              <tr id="territory">
+                <td>
+                  <a href="#territory">
+                    http://dcat-ap.ch/vocabulary/theme/territory</a
+                  >
+                </td>
+                <td>Territory and environment</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/ENVI"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/ENVI</a
+                  >
+                </td>
+              </tr>
+              <tr id="social-security">
+                <td>
+                  <a href="#social-security">
+                    http://dcat-ap.ch/vocabulary/theme/social-security</a
+                  >
+                </td>
+                <td>Social security</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/SOCI"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/SOCI</a
+                  >
+                </td>
+              </tr>
+              <tr id="statistical-basis">
+                <td>
+                  <a href="#statistical-basis">
+                    http://dcat-ap.ch/theme/vocabulary/statistical-basis</a
+                  >
+                </td>
+                <td>Statistical basis</td>
+                <td></td>
+              </tr>
+              <tr id="tourism">
+                <td>
+                  <a href="#tourism">
+                    http://dcat-ap.ch/theme/vocabulary/tourism</a
+                  >
+                </td>
+                <td>Tourism</td>
+                <td></td>
+              </tr>
+              <tr id="administration">
+                <td>
+                  <a href="#administration">
+                    http://dcat-ap.ch/vocabulary/theme/administration</a
+                  >
+                </td>
+                <td>Administration</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/GOVE"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/GOVE</a
+                  >
+                </td>
+              </tr>
+              <tr id="national-economy">
+                <td>
+                  <a href="#national-economy">
+                    http://dcat-ap.ch/vocabulary/theme/national-economy</a
+                  >
+                </td>
+                <td>National economy</td>
+                <td>
+                  <a
+                    href="http://publications.europa.eu/resource/authority/data-theme/ECON"
+                  >
+                    http://publications.europa.eu/resource/authority/data-theme/ECON</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid maxwidth bg-dark text-center text-white">
+        <nav class="nav">
+          <a class="nav-link text-white" href="https://ech.ch/de/impressum"
+            >Imprint</a
+          >
+          <a
+            class="nav-link text-white"
+            href="https://ech.ch/de/datenschutzerklaerung"
+            >Data Protection</a
+          >
+        </nav>
+      </div>
+    </footer>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
