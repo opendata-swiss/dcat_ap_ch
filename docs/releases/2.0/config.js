@@ -23,6 +23,16 @@ var respecConfig = {
         "title":"Language",
         "publisher":"European Commission",
       },
+      "VOCAB-EU-FILETYPE":{
+        "href":"http://publications.europa.eu/resource/authority/filetype",
+        "title":"Filetype Vocabulary",
+        "publisher":"European Commission",
+      },
+      "VOCAB-DCAT-AP-DEF":{
+        "href":"http://dcat-ap.ch",
+        "title":"DCAT-AP-CH Standard",
+        "publisher":"Verein eCH",
+      },
       "DCAT-AP-CH-1":{
         "href":"http://ech.ch/ech/ech-0200",
         "title":"eCH-0200 DCAT-Anwendungsprofil für Datenportale in der Schweiz 4",
