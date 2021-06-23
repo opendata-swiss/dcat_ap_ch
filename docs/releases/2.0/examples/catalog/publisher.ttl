@@ -7,6 +7,5 @@
   dct:publisher <https://swisstopo> .
 
 <https://swisstopo>
-  a foaf:Agent ;
+  a foaf:Organization ;
   foaf:name: "Landesamt für Topographie Swisstopo"@de .
-
