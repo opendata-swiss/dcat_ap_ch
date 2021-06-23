@@ -1726,15 +1726,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>The Usage of this property is not [[DCAT-AP]] comformant. Also rdfs:seeAlso is not DCAT-AP
-            conformant. Instead dct:relation should be used for that purpose: In DCAT-AP the property is called
-            "related resource" <code>dct:relation</code>. It has range <code>rdfs:Resource</code>
-            and the description says: "This property refers to a related
-            resource." The DCAT-AP links this property to a
-            <a href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/discussion/mo12-grouping-datasets">
-              discussion about grouping datasets on Joinup
-            </a>
-            </code></td>
+          <td>The property is [[DCAT-AP]] comformant, but the defintion is too application related:
+            (<a class="no-sectionRef" href="#identifier-issues"></a>)
+          </td>
         </tr>
         </tbody>
       </table>
@@ -2206,7 +2200,6 @@
         <pre data-include-format="text" data-include="./examples/dataset/spatial.ttl"></pre>
       </aside>
 
-
     </section>
 
     <section id="dataset-temporal-coverage">
@@ -2321,11 +2314,11 @@
         </tbody>
       </table>
 
-    </section>
-
-    <aside class="ednote">
+      <aside class="ednote">
       The Example for this property is skipped in order to not encourage its usage.
     </aside>
+
+    </section>
 
     <section id="dataset-update-frequency">
 
@@ -2423,9 +2416,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]]. It would make sense to add more vocabulary from DCAT-AP in order
-            to be able to express qualified relationships. In  many cases the type of the relationship is known
-            and can be further specified. (<a class="no-sectionRef" href="#relationship-issues"></a>)</p>
+          <td>conforms to [[DCAT-AP]]
           </td>
         </tr>
         </tbody>
@@ -2487,7 +2478,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>custom</td>
+          <td>does not conform to DCAT-AP  (<a class="no-sectionRef" href="#see-also-issues"></a>)</td>
         </tr>
         </tbody>
       </table>
@@ -3099,7 +3090,8 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conformant to[[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]], but implementation on opendata.swiss should be corrected.
+            (<a class="no-sectionRef" href="#byte-size-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
@@ -3217,10 +3209,16 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]] recommendedl</td>
+          <td>Not conformant to [[DCAT-AP]], since DCAT-AP demands the use
+          of a controlled vocabulary [[VOCAB-EU-FILETYPE]] (<a class="no-sectionRef" href="#format-issues"></a>)
+          </td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" id="ex-dataset-format" title="Usage of dct:format as it is currently implemented on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/distribution/format.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -4036,7 +4034,6 @@
 
     </section>
 
-
     <section id="landing-page-implementation">
 
       <h2>Landing page: use URIs</h2>
@@ -4107,6 +4104,11 @@
         </p>
       </aside>
 
+      <aside class="example"
+             title="Usage of byte size with xsd type specification as xsd:decimal">
+        <pre data-include-format="text" data-include="./examples/distribution/byte-size.ttl"></pre>
+      </aside>
+
     </section>
 
     <section id="publisher-issues">
@@ -4173,14 +4175,12 @@
 
     </section>
 
-    <section id="relationship-issues">
+    <section id="see-also-issues">
 
-      <h2>Relationship issues</h2>
+      <h2>See Also should be replaced</h2>
 
-      <p>Relationships are not expressed in a DCAT conformant way.</p>
+      <p>See Alsos is not a a DCAT conformant way to express relationships between datasets.</p>
 
-      <p class="issue" data-number="50"></p>
-      <p class="issue" data-number="51"></p>
       <p class="issue" data-number="53"></p>
 
     </section>
@@ -4190,6 +4190,32 @@
       <h2>License issues</h2>
 
       <p>Licenses are recommended in DCAT-AP.</p>
+
+    </section>
+
+    <section id="format-issues">
+
+      <h2>Use EU vocabulary for format</h2>
+
+      <p>The format property MUST use a EU controlled vocabulary [[VOCAB-EU-FILETYPE]] in order to be
+        conformant with [[DCAT-AP]]:</p>
+      <p>There is an option to add custom Swiss formats to that vocabulary. The DCAT-AP has
+      this property as recommended and dcat:mediaType only as optional. This is because the file
+      types are much shorter than media types and much closer to what a data user would search for.</p>
+      <p class="issue" data-number="78"></p>
+
+      <aside class="ednote" title="Proposal for distribution format definition change">
+        <ul>
+          <li>Change defintion and demand the use of [[VOCAB-EU-FILETYPE]]
+          </li>
+          <li>Give guidance on how a new format can be added to [[VOCAB-EU-FILETYPE]]</li>
+          <li>See example below on how the format property can be used in a DCAT-AP conformant way</li>
+        </ul>
+      </aside>
+
+      <aside class="example" title="Usage of dct:format using the EU vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/format.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -4207,17 +4233,28 @@
 
       <p class="issue" data-number="52"></p>
 
-      <ul>
-        <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
-        <li>Adapt implementation on opendata.swiss</li>
-      </ul>
-
-      <aside class="example" title="Usage of dct:accrualPeriodicty for dcat:Dataset using the EU vocabulary">
-        <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
+      <aside class="ednote" title="Proposal for spatial defintion change">
+        <ul>
+          <li>Flesh out the definition for spatial and give more guidance there
+          </li>
+          <li>Update the section about polygons</li>
+          <li>Check with geocat on vocabulary that can be used for locations. Add
+          the vocabulary to [[VOCAB-DCAT-AP-DEF]]</li>
+        </ul>
       </aside>
 
     </section>
 
+    <section id="identifier-issues">
+
+      <h2>Rethink dataset identifiers</h2>
+
+      <p>The dataset identifiers are defined in a too application oriented way. This
+      should be changed</p>
+
+      <p class="issue" data-number="50"></p>
+
+    </section>
 
     <section id="coverage-issues">
 
@@ -4242,18 +4279,16 @@
         places that are in those lists; if a particular location is not in one of the mentioned
         Named Authority Lists, Geonames URIs must be used."</p>
 
+      <p class="issue" data-number="79"></p>
 
-      <p class="issue" data-number="52"></p>
-
-      <ul>
-        <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
-        <li>Adapt implementation on opendata.swiss</li>
-      </ul>
-
-      <aside class="example" title="Usage of dct:accrualPeriodicty for dcat:Dataset using the EU vocabulary">
-        <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
+      <aside class="ednote" title="Proposal for dct:coverage">
+        <ul>
+          <li>Drop support for dct:coverage on dcat:Dataset
+          </li>
+          <li>Deappreciate the use of dct:coverage for dcat:Distribution
+          </li>
+        </ul>
       </aside>
-
     </section>
 
     <section id="dataset-concept-issue">
