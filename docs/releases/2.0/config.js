@@ -74,5 +74,20 @@ var respecConfig = {
         "publisher":"W3C Working Group",
         "date":"17 Jan 2019"
       },
+      "TERMDAT":{
+        "href": "https://www.bk.admin.ch/bk/en/home/dokumentation/languages/termdat.html",
+        "title": " TERMDAT - The Federal Administration’s terminology database",
+        "publisher": "Swiss Federal Chancellery FCh",
+      },
+      "PLZO_CH": {
+        "href": "https://www.cadastre.ch/en/services/service/registry/plz.html",
+        "title": "Official directory of towns and cities",
+        "publisher": "Geodesy and Federal Directorate of Cadastral Surveying",
+      },
+      "EUROVOC": {
+        "href": "https://op.europa.eu/en/web/eu-vocabularies",
+        "title": "EU Vocabularies",
+        "publisher": "Publications Office of the European Union",
+      },
     }
 };
