@@ -412,8 +412,7 @@
       </tr>
       <tr>
         <th>RDF Class</th>
-        <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code
-                title="http://www.w3.org/ns/dcat#ClassCatalog">dcat:Catalog</code></a>
+        <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:Catalog</code></a>
         </td>
       </tr>
       <tr>
@@ -969,12 +968,12 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:catalog_dataset"><code title="http://www.w3.org/ns/dcat#dataset">dcat:dataset</code></a>
+          <td><a data-cite="VOCAB-DCAT#Property:catalog_dataset"><code>dcat:dataset</code></a>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="VOCAB-DCAT#class-dataset"><code>dcat:Dataset</code></a> (<a class="no-sectionRef"
+          <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a> (<a class="no-sectionRef"
                                                                                         href="#Class:Dataset"></a>)
           </td>
         </tr>
@@ -1001,13 +1000,13 @@
 
     <section id="catalog-license">
 
-      <h2>Property: licence</h2>
+      <h2>Property: license</h2>
 
       <table class="def">
         <tbody>
         <tr>
           <th>Label</th>
-          <td>licence</td>
+          <td>license</td>
         </tr>
         <tr>
           <th>Obligation</th>
@@ -1019,28 +1018,28 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_license"><code>dct:license</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#terms-LicenseDocument"><code title="http://purl.org/dc/terms/LicenseDocument">dct:LicenseDocument</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
           </td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>License document under which the Catalog (and not the datasets) is made available.
+          <td>License document under which the catalog (and not the datasets) is made available.
           </td>
         </tr>
         <tr>
           <th>Usage</th>
           <td>If the license of the catalog applies to all of its datasets and distributions,
-            the attribute should be replicated on each distribution. Alternatively the property rights can be used.
+            the attribute should be replicated on each distribution. Alternatively, the property rights can be used.
           </td>
         </tr>
         <tr>
           <th>Conformance Notes</th>
-          <td>[[DCAT-AP]] recommenends dct:license, that means it should be used if this is possible.
+          <td>[[DCAT-AP]] recommends dct:license, so that should be used if is possible.
             (<a class="no-sectionRef" href="#license-issues"></a>)
           </td>
         </tr>
@@ -1069,12 +1068,12 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="DCTERMS#terms-rights"><code title="http://purl.org/dc/terms/rights">dct:rights</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dct:rights</code></a>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#terms-RightsStatement"><code title="http://purl.org/dc/terms/RightsStatement">dct:RightsStatement</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
           </td>
         </tr>
         <tr>
@@ -1117,7 +1116,6 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td>
           <td><a data-cite=VOCAB-DCAT#Property:resource_language><code>dct:language</code></a>
           </td>
         </tr>
@@ -1136,15 +1134,15 @@
         <tr>
           <th>Usage</th>
           <td>The properties title and description of Catalogs, Datasets or Distribution may be
-            be provided in different language. In that case it makes sense to also list languages on
+            be provided in multiple languages. In that case, it makes sense to also list languages on
             the Catalog level.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. Also
-            the language should be give as an URI. Also in DCAT this property is not optional, but recommended
-            for the catalog. (<a class="no-sectionRef" href="#language-issues"></a>)
+          <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.
+            The language should also be given as an URI. Furthermore, in DCAT this property is not optional
+            but recommended for the catalog. (<a class="no-sectionRef" href="#language-issues"></a>)
           </td>
         </tr>
         </tbody>
@@ -1174,16 +1172,15 @@
       </tr>
       <tr>
         <th>RDF Class</th>
-        <td><a data-cite="VOCAB-DCAT#class-dataset"><code
-                title="http://www.w3.org/ns/dcat#Dataset">dcat:Dataset</code></a>
+        <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a>
         </td>
       </tr>
       <tr>
         <th>Definition</th>
         <td>The metadata entry of this class describes a single thematically closed data collection,
-          that is published by responsible organization (person or institution). The dataset can be
-          offered in different ways: as file in a text/csv format or as API Service. Each Distribution
-          SHOULD be described by a dcat:Distribution. In general each dataset will have at least
+          which is published by a responsible organization (person or institution). The dataset can be
+          offered in different ways: as file in a text/csv format or as API Service. Each distribution
+          SHOULD be described by a dcat:Distribution. In general, each dataset will have at least
           one distribution.
         </td>
       </tr>
@@ -1191,22 +1188,21 @@
       <tr>
         <th>Usage</th>
         <td>
-          <p>The dataset will also list distributions if these are only available on an external website, to that the
-            reference is set by the property dcat:landingPage of the dataset </p>
-          <p>In exceptional cases there can also be dataset that have not yet distributions. This can be the case
-            if the publication of those datasets is planned for a future date.</p>
+          <p>The dataset will also list distributions if these are only available on an external website,
+            so that the reference is set by the property dcat:landingPage of the dataset </p>
+          <p>In exceptional cases, there can also be datasets that do not yet have distributions. This can be the case
+            if the publication of these datasets is planned for a future date.</p>
           <p>The property dcat:theme helps to group datasets by topics. Using a controlled vocabulary
-            in the context of a data portal helps with the dicoverabilty of the datasets by topic.
+            in the context of a data portal helps with the discoverability of the datasets by topic.
             Since in DCAT-AP the dcat:theme is optional, it can be ignored on export.</p>
         </td>
       </tr>
       <tr>
         <th>Conformance</th>
-        <td>The definition of a dataset should be redone:
-          to stay conformant to DCAT-AP the dcat:DataService class should be introduced
-          and it must be considered that [[VOCAB-DCAT]] goes more in the direction of
-          allowing datasets to have parts (that could even be catalogs) then in the
-          direction of datasets having distribution as parts.
+        <td>The definition of a dataset should be revised:
+          to stay conformant to DCAT-AP the dcat:DataService class should be introduced.
+          It must be considered that [[VOCAB-DCAT]] recommends that all distributions of one dataset
+          should broadly contain the same data.
           (<a class="no-sectionRef" href="#dataset-concept-issue"></a>) [[DCAT-AP]]
         </td>
       </tr>
@@ -1232,7 +1228,7 @@
         <td><a href="#dataset-title">title</a></td>
         <td><strong>M</strong></td>
         <td>1*</td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_title"><code>dct:title</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
       </tr>
@@ -1240,27 +1236,25 @@
         <td><a href="#dataset-description">description</a></td>
         <td><strong>M</strong></td>
         <td>1*</td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_description"><code>dct:description</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
         </td>
-        <td><a data-cite="RDF-SCHEMA#ch_literal"><code
-                title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
       </tr>
       <tr>
         <td><a href="#dataset-publisher">publisher</a></td>
         <td><strong>M</strong></td>
         <td>n</td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_publisher"><code>dct:publisher</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a>
         </td>
-        <td><a data-cite="FOAF#term_Agent"><code>foaf:Organization</code></a></td>
+        <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
         <td>N</td>
       </tr>
       <tr>
         <td><a href="#dataset-contact-point">contact point</a></td>
         <td><strong>M</strong></td>
         <td>n</td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_contact_point"><code
-                title="http://www.w3.org/ns/dcat#contactPoint">dcat:contactPoint</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:resource_contact_point"><code>dcat:contactPoint</code></a></td>
         <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a>
         </td>
         <td>Y</td>
@@ -1269,7 +1263,7 @@
         <td><a href="#dataset-identifier">identifier</a></td>
         <td><strong>M</strong></td>
         <td>1</td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_identifier"><code>dct:identifier</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dct:identifier</code></a>
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>N</td>
@@ -1278,7 +1272,7 @@
         <td><a href="#dataset-release-date">release date</a></td>
         <td><strong>M</strong></td>
         <td>1</td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_release_date"><code>dct:issued</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a>
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           (typed as
@@ -1310,9 +1304,8 @@
         <td><a href="#dataset-distribution">distribution</a></td>
         <td>C</td>
         <td>n</td>
-        <td><a data-cite="VOCAB-DCAT#Property:dataset_distribution"><code
-                title="http://www.w3.org/ns/dcat#distribution">dcat:distribution</code></a></td>
-        <td><a data-cite="VOCAB-DCAT#class-distribution"><code>dcat:Distribution</code></a>
+        <td><a data-cite="VOCAB-DCAT#Property:dataset_distribution"><code>dcat:distribution</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a>
         </td>
         <td>Y</td>
       </tr>
@@ -1322,8 +1315,7 @@
         <td>1</td>
         <td><a data-cite="VOCAB-DCAT#Property:resoruce_landingpage"><code>dcat:landingPage</code></a>
         </td>
-        <td><a data-cite="FOAF#term_Document"><code
-                title="http://xmlns.com/foaf/0.1/Document">foaf:Document</code></a>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a>
         </td>
         <td>Y</td>
       </tr>
@@ -1331,7 +1323,7 @@
         <td><a href="#dataset-language">language</a></td>
         <td>O</td>
         <td>n</td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_language"><code>dct:language</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
         </td>
@@ -1343,18 +1335,16 @@
         <td>n</td>
         <td><a data-cite="VOCAB-DCAT#Property:resource_keyword"><code>dcat:keyword</code></a>
         </td>
-        <td><a data-cite="RDF-SCHEMA#ch_literal"><code
-                title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
       </tr>
       <tr>
         <td><a href="#dataset-spatial-coverage">spatial coverage</a></td>
         <td><em>O</em></td>
         <td>n</td>
-        <td><a data-cite="VOCAB-DCAT#Property:dataset_spatial"><code title="http://purl.org/dc/terms/spatial">dct:spatial</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
         </td>
-        <td><a data-cite="DCTERMS#DCTERMS#http://purl.org/dc/terms/Location"><code
-                title="http://purl.org/dc/terms/Location">dct:Location</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a></td>
         <td>N</td>
       </tr>
       <tr>
@@ -1373,7 +1363,7 @@
         <td><a href="#dataset-temporal-coverage">temporal coverage</a></td>
         <td><em>O</em></td>
         <td>n</td>
-        <td><a data-cite="VOCAB-DCAT#Property:dataset_temporal"><code>dct:temporal</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/temporal"><code>dct:temporal</code></a>
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dct:PeriodOfTime</code></a>
         </td>
@@ -1383,7 +1373,7 @@
         <td><a href="#dataset-update-frequency">update frequency</a></td>
         <td>O</td>
         <td>1</td>
-        <td><a data-cite="VOCAB-DCAT#Property:dataset_frequency"><code>dct:accrualPeriodicity</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accrualPeriodicity"><code>dct:accrualPeriodicity</code></a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dct:Frequency</code></a>
         </td>
         <td>N</td>
@@ -1392,7 +1382,7 @@
         <td><a href="#dataset-relation">related resource</a></td>
         <td>O</td>
         <td>n</td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_relation"><code>dct:relation</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>dct:relation</code></a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>rdfs:Resource</code></a></td>
         <td>Y</td>
       </tr>
@@ -1440,11 +1430,11 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_title"><code>dct:title</code></a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
         </tr>
         <tr>
@@ -1496,13 +1486,12 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_description"><code
-                  title="http://purl.org/dc/terms/description">dct:description</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
         </tr>
         <tr>
@@ -1674,12 +1663,12 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:dataset_identifier"><code title="http://purl.org/dc/terms/identifier">dct:identifier</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dct:identifier</code></a>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
         </tr>
         <tr>
@@ -1750,7 +1739,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_release_date"><code>dct:issued</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a>
           </td>
         </tr>
         <tr>
@@ -1810,7 +1799,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_update_date"><code>dct:modified</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a>
           </td>
         </tr>
         <tr>
@@ -1877,7 +1866,7 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="SKOS-REFERENCE#concepts"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a>
+          <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
           </td>
         </tr>
         <tr>
@@ -1933,7 +1922,7 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="VOCAB-DCAT#class-distribution"><code>dcat:Distribution</code></a>
+          <td><a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a>
             (<a class="no-sectionRef" href="#Class:Distribution"></a>)
           </td>
         </tr>
@@ -2040,7 +2029,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_language"><code>dct:language</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
           </td>
         </tr>
         <tr>
@@ -2152,7 +2141,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_spatial"><code>dct:spatial</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
           </td>
         </tr>
         <tr>
@@ -2213,7 +2202,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_temporal"><code>dct:temporal</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/temporal"><code>dct:temporal</code></a>
           </td>
         </tr>
         <tr>
@@ -2331,7 +2320,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_frequency"><code>dct:accrualPeriodicity</code></a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accrualPeriodicity"><code>dct:accrualPeriodicity</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
@@ -2386,7 +2375,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_relation"><code>dct:relation</code></a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>dct:relation</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
@@ -2632,7 +2621,7 @@
         <td><a href="#distribution-title">title</a></td>
         <td>C</td>
         <td>1*</td>
-        <td><a data-cite="VOCAB-DCAT#Property:distribution_title"><code>dct:title</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
       </tr>
@@ -2667,14 +2656,14 @@
         <td><a data-cite="VOCAB-DCAT#Property:distribution_media_type">
           <code>dcat:mediaType</code></a>
         </td>
-        <td><a data-cite="DCTERMS##http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a></td>
         <td>N</td>
       </tr>
       <tr>
         <td><a href="#distribution-format">format</a></td>
         <td>C</td>
         <td>1</td>
-        <td><a data-cite="VOCAB-DCAT#Property:distribution_format"><code>dct:format</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a>
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaTypeOrExtent"><code>dct:MediaTypeOrExtent</code></a>
         </td>
@@ -2707,9 +2696,9 @@
         <td><a href="#distribution-license">license</a></td>
         <td>O</td>
         <td>1</td>
-        <td><a data-cite="VOCAB-DCAT#Property:distribution_license"><code>dct:license</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
         </td>
-        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LincenseDocument"><code>dct:LicenseDocument</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a></td>
         <td>N</td>
       </tr>
       <tr>
@@ -2726,10 +2715,9 @@
         <td><a href="#distribution-download-url">download url</a></td>
         <td>O</td>
         <td>n</td>
-        <td><a data-cite="VOCAB-DCAT#Property:dataset_spatial"><code title="http://purl.org/dc/terms/spatial">dcat:downloadURL</code></a>
+        <td><a data-cite="VOCAB-DCAT#http://purl.org/dc/terms/spatial"><code>dcat:downloadURL</code></a>
         </td>
-        <td><a data-cite="DCTERMS#terms-Location"><code
-                title="http://purl.org/dc/terms/Location">rdfs:Resource</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>rdfs:Resource</code></a></td>
         <td>Y</td>
       </tr>
       <tr>
@@ -2784,8 +2772,7 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_literal">
-            <code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal (typed as
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal (typed as
               as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>)</code></a>
           </td>
         </tr>
@@ -2892,7 +2879,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:distribution_rights"><code>dct:rights</code></a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dct:rights</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
@@ -2913,9 +2900,9 @@
               (http://theodi.org/guides/publishers-guide-to-the-open-data-rights-statement-vocabulary)
               <code>
                 <dct:rights>
-                  <odrs:dataLicence>
+                  <odrs:dataLicense>
                     "Angabe der Nutzungsbedingungen"
-                  </odrs:dataLicence>
+                  </odrs:dataLicense>
                 </dct:rights>
               </code>
           </td>
@@ -2949,7 +2936,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:distribution_title"><code>dct:title</code></a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
@@ -3003,7 +2990,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:distribution_description"><code>dct:description</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
           </td>
         </tr>
         <tr>
@@ -3128,7 +3115,7 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS##http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a>
             The values MUST be in
             defined in [[IANA-MEDIA-TYPES]]
           </td>
@@ -3148,7 +3135,7 @@
           <th>Conformance</th>
           <td><p>[[DCAT-AP]] mentions <a
                   data-cite="VOCAB-DCAT#Property:distribution_media_type"><code>dcat:mediaType</code></a>
-            as subproperty of <a data-cite="VOCAB-DCAT#Property:distribution_format"><code>dct:format</code></a></p>
+            as subproperty of <a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a></p>
             <p>[[VOCAB-DCAT]] states: This property SHOULD be used when the media type of the distribution
               is defined in IANA [[IANA-MEDIA-TYPES]],
               otherwise dct:format MAY be used with different values.</p>
@@ -3357,7 +3344,7 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenceDocument</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
           </td>
         </tr>
         <tr>
@@ -3633,8 +3620,7 @@
       </tr>
       <tr>
         <th>RDF Class</th>
-        <td><a data-cite="VOCAB-DCAT#class-dataset"><code
-                title="http://www.w3.org/ns/dcat#Dataset">dcat:Dataset</code></a>
+        <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a>
         </td>
       </tr>
       <tr>
@@ -3675,11 +3661,9 @@
         <td><a href="#dataset-landing-page">type</a></td>
         <td><em>R</em></td>
         <td>1</td>
-        <td><a data-cite="VOCAB-DCAT#Property:dataset_landingpage"><code
-                title="http://www.w3.org/ns/dcat#landingPage">dcat:landingPage</code></a>
+        <td><a data-cite="VOCAB-DCAT#Property:dataset_landingpage"><code>dcat:landingPage</code></a>
         </td>
-        <td><a data-cite="FOAF#term_Document"><code
-                title="http://xmlns.com/foaf/0.1/Document">foaf:Document</code></a>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a>
         </td>
         <td>[[DCAT-AP]]</td>
       </tr>
@@ -3687,11 +3671,9 @@
         <td><a href="#dataset-landing-page">name</a></td>
         <td><em>R</em></td>
         <td>1</td>
-        <td><a data-cite="VOCAB-DCAT#Property:dataset_landingpage"><code
-                title="http://www.w3.org/ns/dcat#landingPage">dcat:landingPage</code></a>
+        <td><a data-cite="VOCAB-DCAT#Property:dataset_landing_page"><code>dcat:landingPage</code></a>
         </td>
-        <td><a data-cite="FOAF#term_Document"><code
-                title="http://xmlns.com/foaf/0.1/Document">foaf:Document</code></a>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a>
         </td>
         <td>[[DCAT-AP]]</td>
       </tr>
@@ -3714,8 +3696,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_title"><code
-                  title="http://purl.org/dc/terms/title">dct:title</code></a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
@@ -3766,7 +3747,7 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
         </tr>
         <tr>
@@ -3929,7 +3910,7 @@
         where it should be a Resource in DCAT-AP CH as in DCAT-AP.
       </li>
       <li><strong>Modelling relationships between datasets</strong></li>
-      <li><strong>Licence and rights</strong></li>
+      <li><strong>License and rights</strong></li>
       <li><strong>Format and media type</strong></li>
       <li><strong>The modeling of Relationship of resources has flaws</strong>
         <code>rdfs:seeAlso</code> is modeled in way that goes against the spirit of Linked Data.
@@ -4290,7 +4271,7 @@
       <p>Some problems that we currently face, for example the need of the attribute <code>dct:coverage</code>
         for dcat:Distribution come from the fact, that we we misinterpret what is meant by a dataset: in [[VOCAB-DCAT]]
         there is a note
-        <a data-cite="VOCAB-DCAT#class-distribution"><code>dcat:Distribution</code></a></p>
+        <a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a></p>
       that states that the Distributions of a dataset should contain the same content, but in different
       format. If there is a series of different content it should rather be modeled as a datasets that relate
       to each other. </p>
