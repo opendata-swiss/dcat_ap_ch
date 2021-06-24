@@ -1689,18 +1689,18 @@
               <dct:identifier>124325@swisstopo</dct:identifier>
             </code></p>
             <p>The identifier should be unique within Switzerland</p>
-            <p>The dataaset can then be linked to other dataset by the element
+            <p>The dataset can then be linked to other dataset by the element
               <code>rdfs:seeAlso</code> by adding the identifier to this property
               on other datasets.</p>
-            <p>Using rdfs:seeAlso for linking to other datasets, makes it necessary that
+            <p>Using rdfs:seeAlso for linking to other datasets makes it necessary that
               a data portal implementing this automatically takes care of consistency
               if datasets get changed or removed:</p>
             <ul>
-              <li>If the identifier of a dataset is changed: all seeAlsos of
+              <li>If the identifier of a dataset is changed: all seeAlso properties of
                 other datasets on the portal should be changed accordingly
               </li>
               <li>If a dataset is deleted: its identifier should be removed
-                of the seeAslso of other datasets.
+                of the seeAlso of other datasets.
               </li>
             </ul>
           </td>
@@ -2430,7 +2430,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="RDF-SCHEMA#ch_seealso"><code>rdfs:seeAlsos</code></a></td>
+          <td><a data-cite="RDF-SCHEMA#ch_seealso"><code>rdfs:seeAlso</code></a></td>
           </td>
         </tr>
         <tr>
@@ -2443,18 +2443,22 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>
-            Mit dem Element "rdfs:seeAlso" kann im Metadateneintrag einer Datensammlung ein Verweis
-            auf eine andere Datensammlung eingefügt werden.Die Verknüpfungen ermöglichenesden
-            Nutzer/-innen, zu einergefundenen Datensammlungverwandte Datensammlungenzu entdecken.Die Elemente
-            "rdfs:seeAlso" im Metadateneintrag einer Datensammlungwerdenvom Datenlieferan-ten bei Bedarf eingefügt.
-            Auf diese Weise können verwandte Datensätze
-            (z.B.dieBevölkerungszahlen von 2013 und dieBevölkerungszahlen von 2014) einfach miteinander verknüpft
-            werden.
-            Zur Darstellung wird systemintern die Form
-            <rdfs:seeAlso>"dct:identifier" der betreffenden Daten-sammlung</rdfs:seeAlso>
-            verwendet.Beispiel:
-            <rdfs:seeAlso>325@statgr</rdfs:seeAlso>
+          <td><p>
+            The element "rdfs:seeAlso" enables data publishers to add a reference, in the metadata of
+            a dataset, to another dataset. This allows users to discover datasets related to one they have
+            already found.
+          </p>
+          <p>
+            The element "rdfs:seeAlso" is added to the metadata of a dataset as necessary. In this way,
+            related datasets (e.g. population data from 2013 and population data from 2014) can be simply
+            connected with one another.
+          </p>
+          <p>
+            Internally, the "dct:identifier" property of the related dataset will be used.
+          </p>
+            <aside class="example" title="rdfs:seeAlso">
+              <pre data-include-format="text" data-include="./examples/dataset/see-also.xml"></pre>
+            </aside>
           </td>
         </tr>
         <tr>
@@ -2463,6 +2467,10 @@
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of rdfs:seeAlso for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/see-also.ttl"></pre>
+      </aside>
 
     </section>
 
