@@ -5,3 +5,9 @@
 
   dcat:themeTaxonomy <https://dcat-ap.ch/vocabulary/themes> ,
                      <http://publications.europa.eu/resource/authority/data-theme>  .
+
+<https://swisstopo/opendata/1234>
+  a dcat:dataset ;
+
+  dcat:themes <http://dcat-ap.ch/theme/vocabulary/themes/work> ,
+              <http://publications.europa.eu/resource/authority/data-theme/ECON>  .

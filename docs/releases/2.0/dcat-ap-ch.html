@@ -26,86 +26,66 @@
   </style>
 </head>
 <body>
-
-<!-- Disclaimer -->
 <aside class="ednote">
   <p>This document is the preparation for version 2 of DCAT-AP-CH. The goal is to reach conformity with the DCAT-AP
-    while remaining in line with the Swiss demands of OGD and NaDB.</p>
-</aside>
+    while remaining in line with the Swiss demands.</p>
 
-<aside class="note">
-  <p>Currently the active version of DCAT-AP-CH is still version 1.0. This is just a draft to be completed.</p>
+  <p>The document has been transferred and translated from the previous version of DCAT-AP-CH, that has been
+    available as PDF in German an French [[DCAT-AP-CH-1]]</p>
+  <ul>
+    <li>The normative sections of the document are just translations of the original documents. The idea is to change
+      them overtime, once issues are processed and conformancy problems have been resolved.
+    </li>
+    <li>On each class and property definition a conformance section has been added in order to point out
+      conformance problems to DCAT-AP
+    </li>
+    <li>Confomance problems have been summarized in a non normative section <a class="no-sectionRef"
+                                                                               href="#dcat-ap-conformance"></a>
+    </li>
+  </ul>
 </aside>
 
 <section id="abstract">
-  <p>DCAT is an RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web.
-    It enables a publisher to describe datasets and data services in a catalog using a standard model and vocabulary
-    that facilitates the consumption and aggregation of metadata from multiple catalogs. This can increase the
-    discoverability of datasets and data services. It also makes it possible to have a decentralized approach to
-    publishing data catalogs and makes federated search for datasets across catalogs in multiple sites possible using
-    the same query mechanism and structure.
+  <p>The DCAT-Applicationprofile for Dataportals in Switzerland (DCAT-AP-CH) is an application profile
+    of the DCAT vocabulary ([[VOCAB-DCAT]]). It serves to describe Data that have been registered on Swiss Dataportals.
+    It targets managers on opendata portals in Switzerland and the publishers of these data. It is in use
+    since 2016 in the Federal dataportals. It has to be considered that the dataportals don't offer the data themselves,
+    but instead offer metadata on the data.</p>
+  <p>The catalog of a dataportal has 3 hierarchical levels of entries: There is a description of the
+    catalog itself, metadata entries on the data collection that are gathered in the portal and metadata on the
+    various distributions of these data. The DCAT applications profile for Dataportals in Switzerland aims at
+    being compatible with the Application profile for dataportals in Europe DCAT-AP.
   </p>
-
-  <p>DCAT-AP is the European application profile for DCAT that aims for interoperability within Europe. It
-    specifies conventions on the usage of DCAT, that make sure metadata can be imported into the Europen Dataportal,
-    in a way, where the metadata information is preserved and can be still understood by a visitor of that Dataportal.
-  <p>
-  <p>DCAT-AP-CH is the Swiss application profile customizes DCAT for the needs of Swiss government agencies.
-    One Swiss specialty are the 3 official languages: German, French and Italian, that are all supported by the
-    DCAT-AP-CH</p>
-</section>
-
-<section id="sotd">
-
-  <aside class="ednote">
-    <p>
-      This document has as a first goal to make the DCAT-AP-CH version 1 into an HTML document, so that
-      discussing it by the community and further developing it is facilitated. Once this transfer of the current
-      standard is ready,
-      the actual work of adapting it to the European DCAT-AP will start.
-    </p>
-  </aside>
-
-  <h3 id="dcat_ap_ch_history">DCAT-AP-CH history</h3>
-  <p>DCAT-AP-CH is the DCAT Applicationprofile for Dataportals in Switzerland. It serves to describe Data published by
-    Swiss governemnt and other organizations. It was developped in parallel with the OGD portal of the Swiss
-    Federal office of Statistics in 2016. It was last updated in 2018.
-  </p>
-  <h3 id="external_terms">External terms</h3>
-  <p>DCAT-AP-CH incorporates terms from pre-existing vocabularies where stable terms with appropriate meanings could be
-    found, Changes to definitions in the references, if any, supersede the summaries given in this specification.
-  </p>
-
-  <h3 id="please_send_comments">Please send comments</h3>
-
 </section>
 
 <section id="introduction" class="informative">
 
-
   <h2>Introduction</h2>
 
-  <p>DCAT-AP-CH is the Swiss application profile for DCAT.
-  <p>
+  <p>The DCAT-Applicationprofile for Dataportals in Switzerland (DCAT-AP-CH) is an application profile
+    of the DCAT vocabulary ([[VOCAB-DCAT]]).It serves to describe Data that have been registered on Swiss
+    Dataportals.</p>
 
-  <p>
-    DCAT-AP-CH aims to be conformant to DCAT-AP
-  </p>
-
-  <p>
-    The Swiss national Opendata portal is <a href="https://opendata.swiss">opendata.swiss</a>
-  </p>
-
+  <p>DCAT is a semantic definition to describe Data by the means of an RDF-vocabulary. It allows
+    for a decentralized approach regarding the publication of catalogs and data. It has been
+    developed for open geovernment data, in oder to facilitate the data and metadata reuse and the interoperability
+    between various data catalogs.</p>
+  <p>DCAT-AP-CH serves to the describe data collections and their distributions. These descriptions
+    have the purpose to make the data discoverable and not to describe the data itself.</p>
+  <p>DCAT-AP-CH targets managers on opendata portals in Switzerland and the publishers of these data. Since 2016 it has
+    been
+    in use on the portal opendata.swiss to describe the data registered by the portal</p>
 </section>
+
 
 <section id="namespaces">
 
   <h2>Namespaces</h2>
 
-  <p>DCAT-AP-CH uses the DCAT namespace <code>http://www.w3.org/ns/dcat#</code>.
-    It also makes extensive use of terms from other vocabularies.</p>
+
   <section>
     <h3>Normative namespaces</h3>
+
     <p>Namespaces and prefixes used in normative parts of this recommendation are shown in the following table.</p>
 
     <table id="table-namespaces" class="simple">
@@ -183,21 +163,6 @@
   DCAT-AP-CH compliant catalogs MAY include additional non-DCAT-AP-CH metadata fields and additional RDF data in the
   catalog's RDF
   description.
-  <p>
-    <strong>That DCAT-AP-CH as a DCAT profile conforms to DCAT-AP</strong> means that it is a specification for a data
-    catalog
-    that adds additional constraints to DCAT-AP. A
-    data catalog that conforms to the DCAT-AP-CH also conforms to DCAT-AP. Additional constraints in a profile MAY
-    include:
-  </p>
-  <ul>
-    <li> Cardinality constraints, including a minimum set of required metadata fields</li>
-    <li> Sub-classes and sub-properties of the standard DCAT classes and properties</li>
-    <li> Classes and properties for additional metadata fields not covered in DCAT vocabulary specification</li>
-    <li> Controlled vocabularies or IRI sets as acceptable values for properties</li>
-    <li> Requirements for specific access mechanisms (RDF syntaxes, protocols) to the catalog's RDF description</li>
-  </ul>
-
 </section>
 
 
@@ -291,278 +256,6 @@
 
 </section>
 
-<section id="dcat-ap-conformance-problems">
-
-  <h2>Conformance to DCAT-AP</h2>
-
-  <p>DCAT-AP-CH is currently not conformant to DCAT-AP-CH. In consequence the
-    harvesting of opendata.swiss by the European Dataportal has serious problems and users
-    of the European Dataportal struggle to get useful information about Swiss open data sources.</p>
-  <p>This section summarizes the issues: some of them are repeated on serveral levels:
-    on Catalogs, Datasets and Distribtutions. Therefore it makes sense to have an extra section for this issues.
-    Here you can find a list of the most pressing problems</p>
-  <ul>
-    <li><strong>Lack of a controlled vocabulary</strong>: DCAT-AP demands some properties
-      to use a controlled vocabulary, where DCAT-AP-CH does not.
-    </li>
-  </ul>
-
-  <table class="simple">
-    <thead>
-    <tr>
-      <th>Class/property</th>
-      <th>RDF domain</th>
-      <th>Issue</th>
-      <th>Proposal</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td><a href="#catalog-language">catalog language</a>,
-        <a href="#dataset-language">dataset language</a>,
-        <a href="#distribution-language">distribution language</a></td>
-      <td>malformed, wrong vocabulary</td>
-      <td>switch to EU vocabulary</td>
-    </tr>
-    <tr>
-      <td><a href="#catalog-publisher">catalog publisher</a>,
-        <a href="#dataset-publisher">dataset pulisher</a></td>
-      <td>malformed, needs vocabulary</td>
-      <td>correct Definition, establish vocabulary</td>
-    </tr>
-    <tr>
-      <td><a href="#dataset-publisher">dataset publisher</a></td>
-      <td>wrong cardinality</td>
-      <td>correct cardinality</td>
-    </tr>
-    <tr>
-      <td><a href="#dataset-theme">dataset theme</a>
-      <td>wrong vocabulary</td>
-      <td>add custom vocabular, also use EU vocabulary</td>
-    </tr>
-    <tr>
-      <td><a href="#dataset-theme">issued, modified</a>
-      <td>wrong implementation</td>
-      <td>implemented with xsd:datetime instea of xsd:date</td>
-    </tr>
-    </tbody>
-  </table>
-
-  <section id="language-issues">
-
-    <h2>Language issues</h2>
-
-    <p>The Language property does not conform to DCAT-A
-      (<a class="no-sectionRef" href="#catalog-language"></a>, <a class="no-sectionRef" href="#dataset-language"></a>,
-      (<a class="no-sectionRef" href="#distribution-language"></a>))
-    </p>
-
-    <p class="issue" data-number="26"></p>
-
-    <aside class="note">
-      <p>According to [[DCAT-AP]] the language should be implemented with [[VOCAB-EU-LANG]] as in the
-        example below:</p>
-    </aside>
-
-    <aside class="example" title="DCAT-AP conformant dct:language">
-      <pre data-include-format="text" data-include="./examples/proposals/language.ttl"></pre>
-    </aside>
-
-  </section>
-
-  <section id="publisher-issues">
-
-    <h2>Publisher issues</h2>
-
-    <p>The Publisher has several problems:</p>
-
-    </div>
-
-    <ul>
-      <li>On dcat:Dataset the cardinality is wrong (<a class="no-sectionRef" href="#dataset-publisher"></a>))</li>
-      <li>The definition contradicts itself (<a class="no-sectionRef" href="#catalog-publisher"></a>,
-        <a class="no-sectionRef" href="#dataset-publisher"></a>))
-      </li>
-      <li>According to DCAT-AP a controlled vocabulary should be used for <code>dct:publisher</code></li>
-    </ul>
-
-    <p class="issue" data-number="19"></p>
-    <p class="issue" data-number="23"></p>
-    <p class="issue" data-number="2"></p>
-    <aside class="note">
-      <p>According to [[DCAT-AP]] the publisher should be implemented as in the example below:
-      </p>
-    </aside>
-    <aside class="example" title="Usage of dct:publisher for dcat:Catalog">
-      <pre data-include-format="text" data-include="./examples/proposals/publisher.ttl"></pre>
-    </aside>
-
-  </section>
-
-  <section id="theme-issues">
-
-    <h2>Theme issues</h2>
-
-    <p>The theme must also map to the EU categories and it MUST use a skos:ConceptScheme for
-      the Swiss categories</p>
-
-    <p class="issue" data-number="31"></p>
-
-    <aside class="note">
-      <p>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</p>
-    </aside>
-
-    <aside class="example" title="Usage of dcat:themeTaxonomay for dcat:Catalog">
-      <pre data-include-format="text" data-include="./examples/proposals/theme.ttl"></pre>
-    </aside>
-
-  </section>
-
-  <section id="relationship-issues">
-
-    <h2>Relationship issues</h2>
-
-    <p>Relationships are not expressed in a DCAT conformant way.</p>
-
-    <p class="issue" data-number="50"></p>
-    <p class="issue" data-number="51"></p>
-    <p class="issue" data-number="53"></p>
-
-  </section>
-
-  <section id="license-issues">
-
-    <h2>License issues</h2>
-
-    <p>Licenses are recommended in DCAT-AP.</p>
-
-  </section>
-
-  <section id="frequency-issues">
-
-    <h2>Frequency issues</h2>
-
-    <p>The Frequency property MUST use [[VOCAB-EU-FREQUENCY]] to conform to DCAT-AP</p>
-
-    <p class="issue" data-number="52"></p>
-
-    <ul>
-      <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
-      <li>Adapt implementation on opendata.swiss</li>
-    </ul>
-
-    <aside class="example" title="Usage of dct:accrualPeriodicty for dcat:Dataset using the EU vocabulary">
-      <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
-    </aside>
-
-  </section>
-
-</section>
-
-
-<section id="dcat-ap-ch-implementation-problems">
-
-  <h2>Implementation Problems</h2>
-
-  <p>Some properties are specified in a DCAT-AP conformant way in DCAT-AP-CH but have been
-    implemented differently on opendata.swiss</p>
-
-  <p>It makes sense to look at those differences and ask whether the implementation
-    conforms at least to DCAT-AP. In these cases it might make change to just change DCAT-AP-CH and
-    adapt it to DCAT-AP</p>
-
-  <table class="simple">
-    <thead>
-    <tr>
-      <th>Class/property</th>
-      <th>Implementation</th>
-      <th>DCAT-AP-CH</th>
-      <th>DCAT-AP</th>
-      <th>Proposal</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td><a href="#dataset-theme">issued, modified</a>
-      <td>implemented as xsd:datetime</td>
-      <td>rdfs:Literal types as xsd:date</td>
-      <td>xsd:date and xsd:datatime are both allowed</td>
-      <td>change DCAT-AP-CH</td>
-    </tr>
-    <tr>
-      <td><a href="#dataset-landing-page">landing-page</a>
-      <td>implemented as rdfs:Literal</td>
-      <td>foaf:Document</td>
-      <td>foaf:Document</td>
-      <td>change Implementation</td>
-    </tr>
-    <tr>
-      <td><a href="#distribution-byte-size">bytes-size</a>
-      <td>implemented as Intenger</td>
-      <td>rdfs:Literal types as xsd:decimal</td>
-      <td>rdfs:Literal types as xsd:decimal</td>
-      <td>change Implementation</td>
-    </tr>
-    </tbody>
-  </table>
-
-  <section id="landing-page-implementation">
-
-    <h2>Landing page implementation</h2>
-
-    <p>The Landing page is specified correctly but implemented in a false way
-      on opendata.swiss</p>
-
-    <p class="issue" data-number="46"></p>
-
-    <aside class="note">
-      <p>According to [[DCAT-AP]] the language should be implemented with [[VOCAB-EU-LANG]] as in the
-        example below:</p>
-    </aside>
-
-    <aside class="example" title="DCAT-AP conformant dct:language">
-      <pre data-include-format="text" data-include="./examples/catalog/catalog-language-dcat-ap.ttl"></pre>
-    </aside>
-
-  </section>
-
-  <section id="issued-modified-implementation">
-
-    <h2>issued/modified implementation</h2>
-
-    <p>dct:issued and dct:modified are demanded as xsd:date in DCAT-AP-CH, but implemented as
-      xsd:datetime on opendata.swiss</p>
-
-    <p class="issue" data-number="48"></p>
-
-    <aside class="note">
-      <p>In [[DCAT-AP]] both <code>xsd:date</code>
-        and <code>xsd:datetime</code> are allowed. It makes sense to adjust DCAT-AP-CH to [[DCAT-AP]]
-        in this regard or to change the implementation on opendata.swiss.
-      </p>
-    </aside>
-
-  </section>
-
-  <section id="byte-size-implementation">
-
-    <h2>byte size implementation</h2>
-
-    <p>All dct:byteSize is demanded as xsd:decimal in DCAT-AP-CH, but implemented as
-      intenger on opendata.swiss</p>
-
-    <p class="issue" data-number="49"></p>
-
-    <aside class="note">
-      <p>It makes sense to change the implementation, since both DCAT-AP-CH and [[DCAT-AP]] agree
-        on this.
-      </p>
-    </aside>
-
-  </section>
-
-</section>
-
 <section id="vocabulary-overview" class="informative">
 
   <h2>Applcation profile overview</h2>
@@ -591,6 +284,9 @@
       </li>
       <li>There are other classes in [[DCAT-AP]] that have not yet become part of DCAT-AP-CH</li>
     </ul>
+    <aside class="ednote">Tha diagram has been adapted to also include
+      the Document class.
+    </aside>
     <div id="diagram" class="mermaid">
       classDiagram
 
@@ -600,6 +296,9 @@
       Dataset --> Distribution : dcat:distribution
       Dataset --> Document: dcat:landingPage
       Dataset --> Agent : dct:publisher
+      Catalog --> ConceptScheme: dcat:themeTaxonomy
+      Dataset --> Concept: dcat:theme
+      ConceptScheme --> Concept: skos:inScheme
       class Catalog {
       Mandatory:
       - dct:title
@@ -617,6 +316,11 @@
       - dct:language
       }
       class Document {
+      }
+      class Concept {
+      }
+      class ConceptScheme {
+      - skos:Concept
       }
       class Dataset {
       Mandatory:
@@ -722,11 +426,17 @@
       </tr>
       <tr>
         <th>Definition</th>
-        <td>A curated collection of metadata about datasets.</td>
+        <td>A Datacatalog is a collection of metadata entries to dataset that are hosted on a dataportal.</td>
       </tr>
       <tr>
         <th>Usage</th>
-        <td>This is usually served at a catalog endpoint provided by the publisher of the data.</td>
+        <td>
+          The catalog has a hierarchical structure and contains references to all the metadata
+          for the data that can be accessed via the portal (The entries have the class dcat:Dataset).
+          The datasets themselves refer to all Distributions of the actual data (class dcat:Distribution).
+          In DCAT-AP there is an additional class dcat:CatalogRecord, which contains Metadata on the Catalog.
+          This class has not been used so far in the implementation of DCAT-AP-CH on opendata.swiss.
+        </td>
       </tr>
       <tr>
         <th>Conformance</th>
@@ -746,7 +456,6 @@
         <th>RDF Property</th>
         <th>Range</th>
         <th><abbr title="Conformance to DCAT-AP">Conforms</abbr></th>
-        <th>Done</th>
       </tr>
       </thead>
       <tbody>
@@ -757,7 +466,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-description">description</a></td>
@@ -766,7 +474,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-issued">issued</a></td>
@@ -778,7 +485,6 @@
           as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>)
         </td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-homepage">homepage</a></td>
@@ -787,7 +493,6 @@
         <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
         <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-publisher">publisher</a></td>
@@ -797,7 +502,6 @@
         </td>
         <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
         <td>N</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-dataset">dataset</a></td>
@@ -808,7 +512,6 @@
         <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a>
         </td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-modified">modified</a></td>
@@ -820,7 +523,6 @@
           as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>)
         </td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-theme-taxonomy">theme-taxonomy</a></td>
@@ -829,7 +531,6 @@
         <td><a data-cite="VOCAB-DCAT#Property:catalog_themes"><code>dcat:themeTaxonomy</code></a></td>
         <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-license">license</a></td>
@@ -840,7 +541,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
         </td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#catalog-rights">rights</a></td>
@@ -851,7 +551,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
         </td>
         <td>N</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#catalog-language">language</a></td>
@@ -862,7 +561,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
         </td>
         <td>N</td>
-        <th>ok</th>
       </tr>
       </tbody>
     </table>
@@ -874,8 +572,6 @@
     <aside class="note">
       <p>The example given below conforms to the DCAT-AP Shacl Shape for the Class:Catalogs</p>
     </aside>
-
-    <p class="issue" data-number="3"></p>
 
     <section id="catalog-title">
 
@@ -1188,7 +884,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td>conforms to [[DCAT-AP]] (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
@@ -1247,8 +943,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]], but there the property is recommended.
-            <p>All used theme taxonomies SHOULD be listed here if possible.</p>
+          <td>To conform [[DCAT-AP]] the requirement level of this property chould be changed to recommended.
+            <p>All used theme taxonomies SHOULD be listed here if possible.
+              (<a class="no-sectionRef" href="#theme-issues"></a>)</p>
           </td>
         </tr>
         </tbody>
@@ -1353,7 +1050,8 @@
         <tr>
           <th>Conformance Notes</th>
           <td>[[DCAT-AP]] recommenends dct:license, that means it should be used if this is possible.
-          (<a class="no-sectionRef" href="#license-issues"></a>)</td>
+            (<a class="no-sectionRef" href="#license-issues"></a>)
+          </td>
         </tr>
         </tbody>
       </table>
@@ -1491,19 +1189,35 @@
       </tr>
       <tr>
         <th>Definition</th>
-        <td>A collection of data, published or curated by a single agent, and available for access or download in one
-          or
-          more formats. [[VOCAB-DCAT]], [[ADMS-SKOS]], [[DCAT-UCR]]
+        <td>The metadata entry of this class describes a single thematically closed data collection,
+          that is published by responsible organization (person or institution). The dataset can be
+          offered in different ways: as file in a text/csv format or as API Service. Each Distribution
+          SHOULD be described by a dcat:Distribution. In general each dataset will have at least
+          one distribution.
         </td>
       </tr>
 
       <tr>
         <th>Usage</th>
-        <td>Datasets are also used for Dataservices since the Dataservice has not yet been added to DCAT-AP-CH</td>
+        <td>
+          <p>The dataset will also list distributions if these are only available on an external website, to that the
+            reference is set by the property dcat:landingPage of the dataset </p>
+          <p>In exceptional cases there can also be dataset that have not yet distributions. This can be the case
+            if the publication of those datasets is planned for a future date.</p>
+          <p>The property dcat:theme helps to group datasets by topics. Using a controlled vocabulary
+            in the context of a dataportal helps with the dicoverabilty of the datasets by topic.
+            Since in DCAT-AP the dcat:theme is optional, it can be ignored on export.</p>
+        </td>
       </tr>
       <tr>
         <th>Conformance</th>
-        <td>[[DCAT-AP]]</td>
+        <td>The definition of a dataset should be redone:
+          to stay conformant to DCAT-AP the dcat:DataService class should be introduced
+          and it must be considered that [[VOCAB-DCAT]] goes more in the direction of
+          allowing datasets to have parts (that could even be catalogs) then in the
+          direction of datasets having distribution as parts.
+          (<a class="no-sectionRef" href="#dataset-concept-issue"></a>) [[DCAT-AP]]
+        </td>
       </tr>
       </tbody>
     </table>
@@ -1519,7 +1233,6 @@
         <th>RDF Property</th>
         <th>Range</th>
         <th><abbr title="Conformance to DCAT-AP">Conforms</abbr></th>
-        <th>Done</th>
       </tr>
       </thead>
       <tbody>
@@ -1531,7 +1244,6 @@
         <td><a data-cite="VOCAB-DCAT#Property:resource_title"><code>dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#dataset-description">description</a></td>
@@ -1542,7 +1254,6 @@
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code
                 title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#dataset-publisher">publisher</a></td>
@@ -1552,7 +1263,6 @@
         </td>
         <td><a data-cite="FOAF#term_Agent"><code>foaf:Organization</code></a></td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-contact-point">contact point</a></td>
@@ -1562,8 +1272,7 @@
                 title="http://www.w3.org/ns/dcat#contactPoint">dcat:contactPoint</code></a></td>
         <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a>
         </td>
-        <td>?</td>
-        <th></th>
+        <td>Y</td>
       </tr>
       <tr>
         <td><a href="#dataset-identifier">identifier</a></td>
@@ -1573,7 +1282,6 @@
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>N</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#dataset-release-date">release date</a></td>
@@ -1586,7 +1294,6 @@
           as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>)
         </td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#dataset-modification-date">modification date</a></td>
@@ -1598,7 +1305,6 @@
         </td>
         <td><a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#dataset-theme">theme</a></td>
@@ -1608,7 +1314,6 @@
         <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
         </td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-distribution">distribution</a></td>
@@ -1619,7 +1324,6 @@
         <td><a data-cite="VOCAB-DCAT#class-distribution"><code>dcat:Distribution</code></a>
         </td>
         <td>Y</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-landing-page">landing page</a></td>
@@ -1631,7 +1335,6 @@
                 title="http://xmlns.com/foaf/0.1/Document">foaf:Document</code></a>
         </td>
         <td>Y</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-language">language</a></td>
@@ -1642,7 +1345,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
         </td>
         <td>N</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#dataset-keyword">keyword</a></td>
@@ -1653,7 +1355,6 @@
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code
                 title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#dataset-spatial-coverage">spatial coverage</a></td>
@@ -1664,7 +1365,6 @@
         <td><a data-cite="DCTERMS#DCTERMS#http://purl.org/dc/terms/Location"><code
                 title="http://purl.org/dc/terms/Location">dct:Location</code></a></td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-coverage">coverage</a></td>
@@ -1677,7 +1377,6 @@
           <code>dct:LocationPeriodOrJurisdiction</code></a>
         </td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-temporal-coverage">temporal coverage</a></td>
@@ -1687,8 +1386,7 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dct:PeriodOfTime</code></a>
         </td>
-        <td>?</td>
-        <th></th>
+        <td>Y</td>
       </tr>
       <tr>
         <td><a href="#dataset-update-frequency">update frequency</a></td>
@@ -1698,7 +1396,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dct:Frequency</code></a>
         </td>
         <td>N</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#dataset-relation">related resource</a></td>
@@ -1706,8 +1403,7 @@
         <td><var>n</var></td>
         <td><a data-cite="VOCAB-DCAT#Property:resource_relation"><code>dct:relation</code></a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>rdfs:Resource</code></a></td>
-        <td>N</td>
-        <th></th>
+        <td>Y</td>
       </tr>
       <tr>
         <td><a href="#dataset-see-alsos">see also</a></td>
@@ -1716,7 +1412,6 @@
         <td><a data-cite="RDF-SCHEMA#ch_seealso"><code>rdfs:seeAlsos</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#dataset-image">image</a></td>
@@ -1726,7 +1421,6 @@
         <td><a href="https://schema-org/url"><code>schema:url</code></a> or
           <a href="https://schema-org/ImageObject"><code>schema:imageObject</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       </tbody>
     </table>
@@ -1882,25 +1576,20 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Das Element "dct:publisher" nennt die Stelle, welche die Datensammlungveröffentlicht hat.
-            Wenn mehrere Stellen an der Publikation des Datensatzes beteiligt sind, können diese mit je einem Element
-            „dct:publisher“ aufgeführt werden.Bei Stellen, für die in TERMDAT ein Eintrag vorhanden ist,
-            wird zusätzlich die betreffende Identifikation eingetragen.Falls der Datenlieferant nur die
-            TERMDAT-Identifikation mitliefert, ermittelt die Portal-Software in TERMDAT den zugeordneten
-            Namen und ergänzt das Element „dct:publisher“ entsprechend. Falls der Datenlieferant nur den Namen
-            mitliefert, ermittelt die Portal-Software in TERMDAT die zuge-ordnete Identifikation und
-            ergänzt das Element „dct:publisher“ entsprechend. Findet die Portal-Software den Namen in TERMDAT
-            nicht, wird im Element „dct:publisher“ kein Verweis auf TERMDAT eingefügt.Falls der
-            Datenlieferant sowohl den Namen als auch die TERMDAT-Identifikation mitliefert, übernimmt
-            die Portal-Software beide Angaben unverändert.Zur Darstellung wird systemintern die Form
-            <dct:publisher>
-              <rdf:Description about="Verweis auf TERMDAT-Eintrag">
-                <rdfs:label>
-                  Name der veröffentlichenden Stelle
-                </rdfs:label>
-              </rdf:Description>
-            </dct:publisher>
-            verwendet.
+          <td><p>This property names the organization responsible for the publication of the data collection.
+            If there are more organizations responsible, the property can be repeated.</p>
+            <p>If a TERMDAT entry exists for the publisher, this identification will be entered additionally. In case
+              the publisher only provides the TERMDAT identification, the portal software determines
+              the corrensponding publisher name via the TERMDAT database. If only the publisher name is provided
+              the portal software adds the TERMDAT indentification from the database, in case it can be found, otherwise
+              the identification is left empty.
+              If the publisher provides both the TERMDAT identification and the name, the portal software
+              takes both informations without changing them.
+            </p>
+            <p>Internally the property will be represented in the following way:</p>
+            <aside class="example" title="Publisher">
+              <pre data-include-format="text" data-include="./examples/agent/publisher.xml"></pre>
+            </aside>
           </td>
         </tr>
         <tr>
@@ -1908,12 +1597,18 @@
           <td>Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
             The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
             but implementing it with <code>rdf:Description</code>
-            Also in [[DCAT-AP]] the Cardinality is maximal 1
+            Also in [[DCAT-AP]] the Cardinality is maximal 1. The TERMDAT data retrieval
+            has never been implemented on opendata.swiss.
             (<a class="no-sectionRef" href="#publisher-issues"></a>)
           </td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example"
+             title="Usage of dcat:contactPoint for dcat:Dataset as it is now implemented on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/dataset/publisher.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -1946,17 +1641,25 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Relevant contact informationwith regard to the dataset</td>
+          <td>Relevant contact information with regard to the dataset</td>
         </tr>
-        Dieses Element soll den Verweis auf eine E-Mail-Adresse enthalten, die von der publizierenden Stelle auch
-        wirklich bedient wird.Wenn mehrere Stellen an der Publikation des Datensatzes beteiligt sind, kann das Element
-        „dcat:contactPoint“ mehrfach vorkommen.
+        <tr>
+          <th>Usage</th>
+          <td>This property SHOULD contain an email adress, that is really serviced by the data publisher.
+            If there are several contributors involved in the publication of the the dataset, the property
+            can be used multiple times.
+          </td>
+        </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of dcat:contactPoint for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/publisher.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -2074,7 +1777,8 @@
         <tr>
           <th>Definition</th>
           <td>date of formal issuance (publication) of the dataset
-             This property should be set using the first known date of issuance.</td>
+            This property should be set using the first known date of issuance.
+          </td>
         </tr>
         <tr>
           <th>Usage</th>
@@ -2193,23 +1897,30 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>main category of the dataset Adataset can have multiple themes;
+          <td>main category of the dataset: a dataset can have multiple themes;
             themes are part of the knowledge organization system (KOS)
             used to classify the catalog's datasets.
           </td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Der Inhalt eines Elements "dcat:theme" muss einem Begriff aus der Klassifikation
-            des skos:ConceptScheme des jeweiligen Portalsentsprechen(sofern vorhanden).
+          <td>The content of the property must be a term
+            of the skos:ConceptScheme of the data-portal, if that exists.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>[[DCAT-AP]] demands the usage of the [[VOCAB-EU-THEME]]. The definition should be changed
+            to explicitely demand this. (<a class="no-sectionRef" href="#theme-issues"></a>)
+          </td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of dcat:theme for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/theme.ttl"></pre>
+      </aside>
+
 
     </section>
 
@@ -2247,18 +1958,23 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Mit dem Element "dcat:distribution" wird auf die Metadateneinträge der Bereitstellungsformen verwiesen.
-            In Ausnahmefällen kann eine Datensammlungbeschrieben werden, zu der(noch) keine Bereitstellungsform
-            existiert.
-            In diesem Fall wird das Element "dcat:distribution" weggelassen.
+          <td>
+            This property contains the reference to the
+            metadata of a distribution of the data. In exceptional cases there can be metadata
+            for data collections that have not been published yet. In theses cases there MAY be
+            datasets that don't have distributions.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>The definition conforms to [[DCAT-AP]].</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of dcat:distribution for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/theme.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -2298,22 +2014,24 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Das Element "dcat:landingPage" wird benötigt, wenn die Datensammlung, dieder Metadateneintragbeschreibt,
-            nur indirekt (über eine Webseite der publizierenden Stelle) verfügbar ist. In diesem Fall muss im
-            Metadateneintrag der Datensammlungtrotzdem eine Bereitstellungsform referenziert wer-den,
-            wobei der Inhalt des Elements "dcat:accessURL"
-            im Metadateneintrag der Bereitstellungsformmit dem Inhalt des Elements "dcat:landingPage" übereinstimmen
-            muss.
+          <td>The property is needed if the data collection described by the metadata is only
+            indirectly accessible vie a webpage of the data publisher. In this case the
+            dataset must still have a distribution, but the url entered in the dcat:accessURL of the distribution
+            will be the same as the url for the dcat:landingPage.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>The defintion conforms to [[DCAT-AP]], but the implementation on opendat.swiss
+          does not, as it is implemented as an rdfs:Literal instead of a foaf:Document.
+          (<a class="no-sectionRef" href="#landing-page-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
 
-      <p class="issue" data-number="46"></p>
+      <aside class="example" title="Correct usage of dcat:landingPage for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -2454,8 +2172,7 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code
-                  title="http://purl.org/dc/terms/Location">dct:Location</code></a>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>
           </td>
         </tr>
         <tr>
@@ -2464,21 +2181,31 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Das Element "dct:spatial" ermöglicht die geografische Zuordnung des Datensatzes. Als Werte für das
-            Element kommen für Datensammlungen, welche sich auf die Schweiz beziehen, vorwiegend die offiziellen
-            Kantonskürzel und die Gemeindenamen des amtlichen Ortschaftenverzeichnisses (Herausgeber: Swisstopo)
-            in Frage.Daneben ist auch dieAngabe der Koordinaten eines Punktes oder die Definition einer
-            rechteckigen "Bounding-Box" zulässig.Der Datentyp "dct:Location" lässt keine Beschreibung der
-            geografischen Abdeckung in Form eines Polygons zu; deshalb soll dafür das Element "dct:coverage" verwendet
-            werden.
+          <td><p>This property allows to add a geographical reference for the dataset. Possible values for
+            Swiss datasets might be the official canton abbreviations or community names as they are
+            published by swisstopo.</p>
+            <p>Another option is to provide point coordinates or a rectangular bounding box.
+              It is not possible with <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>
+              to provide a polygon as geographical coverage, therefore dct:coverage should be used for this purpose
+              (<a class="no-sectionRef" href="#distribution-coverage"></a>)
+            </p>
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>The property does comform to [[DCAT-AP]], but the defintion needs an update.
+            Also the remark with the polygon does not seem
+            to hold true any more, as the example shows. (The example was received by automatically transforming
+            original data from geocat at the [[GEODCAT-AP-API]]) (<a class="no-sectionRef" href="#spatial-issues"></a>).
+          </td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" id="ex-dataset-spatial" title="Usage of dct:spatial for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/spatial.ttl"></pre>
+      </aside>
+
 
     </section>
 
@@ -2516,31 +2243,26 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Für Zeitangaben wird zur Wahrung der Kompatibilität mit dem DCAT AP
-            for Data Portals in Europe immer das Element "dct:temporal" verwendet.
+          <td>For temporal references this property is MUST be used in order to conform to
+            DCAT-AP.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>The definition conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" id="ex-dataset-temporal" title="Usage of dct:temporal for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/temporal.ttl"></pre>
+      </aside>
 
     </section>
 
     <section id="dataset-coverage">
 
       <h2>Property: coverage</h2>
-
-      <p class="issue">
-        This element is too close to DCAT-AP properties and violates therefore conformance.
-        The Usage Instructions don't seem clear to me: I added them in the original German
-        language.
-        What cases cannot be covered by the other two properties <a class="no-sectionRef"
-                                                                    href="#dataset-temporal-coverage"></a>
-        and <a class="no-sectionRef" href="#dataset-spatial-coverage"></a>?
-      </p>
 
       <table class="def">
         <tbody>
@@ -2569,33 +2291,41 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Spatial (and temporal) characteristics of the object or resource .</td>
+          <td>Spatial (and temporal) characteristics of the object or resource.
+          This is the key element for supporting spatial or temporal range
+            searching on document-like objects that are spatially referenced or time-referenced.
+          </td>
         </tr>
         <tr>
           <th>Usage</th>
           <td><p>This is the key element for supporting spatial or temporal range
             searching on document-like objects that are spatially referenced or time-referenced.</p>
-            <p>Das Element "dct:coverage" soll nur dann verwendet werden, wenn die geografische Abdeckung in Form
-              eines
-              Polygons beschrieben werden muss
-              (z.B. name="dc.coverage.polygon" scheme = "WGS84.DD"
+            <p>The property should only be used for spatial coverage that has the shape of a polygon.
+              (for example name="dc.coverage.polygon" scheme = "WGS84.DD"
               content = "9.547 46.737 9.550 46.739 9.556 46.740 9.554 46.743 9.548 46.742 9.547 46.737";
               name= "dc.coverage.placeName content="Heidsee").
-              In diesem Fall muss zur Wahrung der Kompatibilität mit dem DCAT AP for Data Portals in Europe ein
-              Element
-              "dct:spatial"
-              mit einer passenden "Bounding Box" eingefügt werden. Dies wird vom System automatisch erledigt</p>
+              In this case there must a property dct:spatial added as well in order to stay conformant
+              with DCAT-AP. The portal software will do that automatically.</p>
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>DCAT-AP-CH but [[DCAT-AP]] has similar properties
+          <td>This element is too close to the DCAT-AP properties
+            <a class="no-sectionRef" href="#dataset-spatial-coverage"></a> and
+            <a class="no-sectionRef" href="#dataset-temporal-coverage"></a>.
+            It violates therefore conformance. Therefore support for it should be dropped
+            on the dataset class. (
+           <a class="no-sectionRef" href="#coverage-issues"></a>)
           </td>
         </tr>
         </tbody>
       </table>
 
     </section>
+
+    <aside class="ednote">
+      The Example for this property is skipped in order to not encourage its usage.
+    </aside>
 
     <section id="dataset-update-frequency">
 
@@ -2626,12 +2356,12 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Time intervalat which the da-taset is updated</td>
+          <td>Time interval at which the dataset is updated</td>
         </tr>
         <tr>
           <th>Usage</th>
           <td>This property is used to
-            indicate a perodicty in the updates of the dataset.
+            indicate a perodicity in the updates of the dataset, if it applies.
           </td>
         </tr>
         <tr>
@@ -2664,7 +2394,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td>O</td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -2693,17 +2423,18 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td><p>This property's usage is not conformant to [[DCAT-AP]] or [[VOCAB-DCAT]], which states that it should
-            be used
-            if the relationship between the two resources is unclear.</p>
-            <p>Instead of this property dcat:qualifiedRelationShip should be added and used whereever possible.
-              dct:relation should take over the role of rdfs:seeAlso and directly add the resource URIs which feels a
-              lot safer than relaying on identifiers as it does now.</p>
+          <td>conforms to [[DCAT-AP]]. It would make sense to add more vocabulary from DCAT-AP in order
+            to be able to express qualified relationships. In  many cases the type of the relationship is known
+            and can be further specified. (<a class="no-sectionRef" href="#relationship-issues"></a>)</p>
           </td>
         </tr>
         </tbody>
 
       </table>
+
+      <aside class="example" id="ex-dataset-relation" title="Usage of dct:relation for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/relation.ttl"></pre>
+      </aside>
 
     </section>
 
@@ -2840,27 +2571,28 @@
       </tr>
       <tr>
         <th>Definition</th>
-        <td>A specific representation of a dataset or a representation of part of the dataset.
-          A dataset might be available in multiple serializations
-          that may differ in various ways, including natural language, media-type or format, schematic organization,
-          temporal
-          and spatial resolution, level of detail. A dataset might also be split into different distribution, where
-          each
-          distribution
-          covers a part of the data: a spatial or temporal part.
+        <td>A metadata entry of this class
+          describes a distribution of the data.
         </td>
       </tr>
       <tr>
         <th>Usage</th>
-        <td><p>Example where a distribution just covers part of the dataset: When the dataset is about:
-          "Daten zur ständigen Wohnbevölke-rung der Schweiz", the dataset might be split into distributions where
-          each distribution just covers one year.</p>
-          <p>Dataservices are also declared as Distributions since the Dataservice Class
-            has not yet been added to DCAT-AP-CH.</p></td>
+        <td><p>The distribution can contain all the data of the dataset or it can contain just a certain
+          part of the data. For example: it can contain all data
+          about the population in Switzerland or it can contain just on year of this data, say
+          the year 2018.
+          It can also contain the data in an alternative data format, for example a graphical
+          presentation of the data for the years 1990 up to 2010.</p></td>
       </tr>
       <tr>
         <th>Conformance</th>
-        <td>[[DCAT-AP]]</td>
+        <td>According to [[VOCAB-DCAT]] and therefore also according to [[DCAT-AP]]
+          modeling a series of data as distributions of a dataset
+          is an anti pattern. It should rather be modeled as a series of datasets.
+          This concept of a series of datasets is coming with [[VOCAB-DCAT-3]] as
+          <a data-cite="VOCAB-DCAT#Class:Dataset_Series"><code>dcat:DatasetSeries[</code></a>.
+          (<a class="no-sectionRef" href="#dataset-concept-issue"></a>)
+        </td>
       </tr>
       </tbody>
     </table>
@@ -2876,7 +2608,6 @@
         <th>RDF Property</th>
         <th>Range</th>
         <th><abbr title="Conformance to DCAT-AP">Conforms</abbr></th>
-        <th>Done</th>
       </tr>
       </thead>
       <tbody>
@@ -2892,7 +2623,6 @@
           as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>)
         </td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-access-url">access url</a></td>
@@ -2904,7 +2634,6 @@
         <td>
           <a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-rights">rights</a></td>
@@ -2916,7 +2645,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement">
           <code>dct:RightsStatement</code></a></td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-title">title</a></td>
@@ -2925,7 +2653,6 @@
         <td><a data-cite="VOCAB-DCAT#Property:distribution_title"><code>dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-description">description</a></td>
@@ -2936,7 +2663,6 @@
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-byte-size">byte size</a></td>
@@ -2951,7 +2677,6 @@
           as <a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a>)
         </td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-media-type">media type</a></td>
@@ -2962,7 +2687,6 @@
         </td>
         <td><a data-cite="DCTERMS##http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a></td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-format">format</a></td>
@@ -2973,7 +2697,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaTypeOrExtent"><code>dct:MediaTypeOrExtent</code></a>
         </td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-language">language</a></td>
@@ -2984,7 +2707,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
         </td>
         <td>N</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-modification-date">modification date</a></td>
@@ -2998,7 +2720,6 @@
           as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>)
         </td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-license">license</a></td>
@@ -3008,7 +2729,6 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LincenseDocument"><code>dct:LicenseDocument</code></a></td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-identifier">identifier</a></td>
@@ -3019,7 +2739,6 @@
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-download-url">download url</a></td>
@@ -3030,7 +2749,6 @@
         <td><a data-cite="DCTERMS#terms-Location"><code
                 title="http://purl.org/dc/terms/Location">rdfs:Resource</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       <tr>
         <td><a href="#distribution-coverage">coverage</a></td>
@@ -3041,7 +2759,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LocationPeriodOrJurisdiction"><code>LocationPeriodOrJurisdiction</code></a>
         </td>
         <td>N</td>
-        <th></th>
       </tr>
       <tr>
         <td><a href="#distribution-image">image</a></td>
@@ -3051,7 +2768,6 @@
         <td><a href="https://schema-org/url"><code>schema:url</code></a> or
           <a href="https://schema-org/ImageObject"><code>schema:imageObject</code></a></td>
         <td>Y</td>
-        <th>ok</th>
       </tr>
       </tbody>
     </table>
@@ -3776,8 +3492,8 @@
             Because the distribution mights be callable in different ways (HTTP, WebDAV, FTP),
             there MAY be more than one download url. </p>
             <p>
-            In order to ensure the conformance with DCAT-AP each download url
-            must be doubled as access url.</p>
+              In order to ensure the conformance with DCAT-AP each download url
+              must be doubled as access url.</p>
           </td>
         </tr>
         <tr>
@@ -3994,7 +3710,7 @@
     </table>
 
     <aside class="example" id="ex-agent" title="Dataset">
-      <pre data-include-format="text" data-include="./examples/agent.ttl"></pre>
+      <pre data-include-format="text" data-include="./examples/agent/agent.ttl"></pre>
     </aside>
 
     <section id="agent-type">
@@ -4124,14 +3840,14 @@
     <p>The document class is used without any poperties in DCAT-AP-CH.</p>
 
     <aside class="example" id="ex-document" title="Document">
-      <pre data-include-format="text" data-include="./examples/document.ttl"></pre>
+      <pre data-include-format="text" data-include="./examples/document/document.ttl"></pre>
     </aside>
 
   </section>
 
 </section>
 
-<section id="vocabulary-external" class="informative">
+<section id="vocabulary-external">
 
   <h2>External vocabulary</h2>
   <table id="table-vocabulary" class="simple">
@@ -4150,18 +3866,418 @@
     </tr>
     <tr>
       <td><code>Theme Taxonomy</code></td>
-      <td><code>https://dcat-ap.ch/vocabulary/theme.rdf</code></td>
-      <td>DCAT-AP-CH</td>
+      <td><code>https://dcat-ap.ch/vocabulary/themes</code></td>
+      <td>custom to DCAT-AP-CH</td>
     </tr>
     <tr>
       <td><code>Frequency of update</code></td>
-      <td><code>http://publications.europa.eu/resource/authority/frequency/</code></td>
-      <td>[[DCAT-AP]]</td>
+      <td><code>http://purl.org/dc/terms/Frequency</code></td>
+      <td>[[DCTERMS]]</td>
     </tr>
     </tbody>
   </table>
 
 </section>
+
+<section id="dcat-ap-conformance" class="informative">
+
+  <h2>Conformance to DCAT-AP</h2>
+
+  <aside class="ednote">
+    <p>This document is the preparation for version 2 of DCAT-AP-CH. The goal is to reach conformity with the DCAT-AP
+      while remaining in line with the Swiss demands of OGD and NaDB.</p>
+  </aside>
+
+  <section id="dcat-ap-conformance-criteria">
+    <h2>Criteria</h2>
+
+    <p>
+      <strong>That DCAT-AP-CH as a DCAT profile conforms to DCAT-AP</strong> means that it
+      generally follows the spirit of DCAT and DCAT-AP. It may add additional constraints
+      on classes and properties, but it should not enforce whatever DCAT-AP enforces as a minimum.
+      Where DCAT-AP demands controlled vocabulary it is strongly recommended to use this
+      vocabulary. It can define custom properties to cover special Swiss needs, but it
+      should not invent constructs and properties that strech DCAT into unintended directions</p>
+
+  </section>
+  <section id="dcat-ap-conformance-problems-overview">
+
+    <h2>Overview</h2>
+
+    <p>When studying DCAT-AP and DCAT-AP-CH in close detail many problems surface where
+      DCAT-AP-CH does not conform. Some are are easy to fix and not a big deal, why others are more severe
+      and hint on a differnt understanding of the overall structure of the Metadata-Model that needs to be addressed,
+      before DCAT-AP-CH can profit from new developments in DCAT</p>
+
+    <p>In this section you will find a short overview of the problems that will then be analysed in more
+      detail in the sections below.</p>
+
+    <ul>
+      <li><strong>Different understanding of the role of Datasets and Distributions</strong>: The most severe problem
+        is grounded in a different understanding of the role of dcat:Dataset and dcat:Distribution:
+        while in DCAT all Distributions are supposed to have the same content and different content such as
+        series of content always needs datasets that might be connected, in DCAT-AP-CH distributions are supposed
+        to model series of similar data. This general understanding has consequences:
+        in DCAT there is no coverage for Distributions. Coverage can only happen on the dataset level.
+        In DCAT-AP-CH on the other hand the attribute dct:coverage was introduced for exactly that
+        purpose: for expressing what part of the dataset a resource covers. I would suggest to
+        leave that property behind and follow DCAT in this. Otherwise in the long run Distribution will become
+        sort of Mini Dataset and that will cause problems with other properties too.
+      </li>
+      <li><strong>Vocabulary usage</strong>: In some properties DCAT-AP demands the usage
+        of EU vocabulary, where in DCAT-AP-CH the ranges have been defined using DCAT vocabulary. This
+        is true for the language property (<a class="no-sectionRef" href="#language-issues"></a>) as well as
+        for the frequency ((<a class="no-sectionRef" href="#frequency-issues"></a>)). This problems are easy to fix:
+        as well in the definition as in the implemetation on opendata.swiss.
+      </li>
+      <li><strong>Inconsistencies in the implementation on opendata.swiss</strong>:
+        Some of these inconsistencies might be misundertstandings. Therfore examples have been
+        added to this specification, to clarify how the properties should be used.
+        Some of this incoistencies may just resolve by themselves such as the fact that DCAT-AP-Ch
+        specifies Literals of tape date for issuance and modification date, while DCAT-AP also
+        allows datetime for these field and they have been implemented as dattime.
+        Also the homepage has been misunderstood, as it is implemented as a Literal on opendata.swiss
+        where it should be a Resource in DCAT-AP-CH as in DCAT-AP.
+      </li>
+      <li><strong>Modelling relationships between datasets</strong></li>
+      <li><strong>Licence and rights</strong></li>
+      <li><strong>Format and media type</strong></li>
+      <li><strong>The modeling of Relationship of resources has flaws</strong>
+        <code>rdfs:seeAlso</code> is modeled in way that goes against the spirit of Linked Data.
+      </li>
+    </ul>
+    <table class="simple">
+      <thead>
+      <tr>
+        <th>Item</th>
+        <th>Issue</th>
+        <th>Proposal</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="#language-issues">language</a>
+        <td>malformed, wrong vocabulary</td>
+        <td>switch to EU vocabulary and use URIs</td>
+      </tr>
+      <tr>
+        <td><a href="#frequency-issues">frequency</a>
+        <td>wrong vocabulary</td>
+        <td>switch to EU vocabulary</td>
+      </tr>
+      <tr>
+        <td><a href="#issued-modified-implementation">issued, modified</a>
+        <td>implemented with xsd:datetime instead of xsd:date</td>
+        <td>adapt definition to also allow xsd:datetime</td>
+      </tr>
+      <tr>
+        <td><a href="#landing-page-implementation">landing page</a>
+        <td>implemented with literal</td>
+        <td>change implementation to use a resource</td>
+      </tr>
+      <tr>
+        <td><a href="#byte-size-implementation">byte size</a>
+        <td>implemented with as integer without type</td>
+        <td>change implementation to add xsd:decimal</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="dcat-ap-conformance-problems-details">
+
+    <h2>Detailed Analyis</h2>
+    <section id="language-issues">
+
+      <h2>Language: use EU vocabulary</h2>
+
+      <p>The Language property does not conform to DCAT-AP: it MUST use [[VOCAB-EU-LANG]].
+        (<a class="no-sectionRef" href="#catalog-language"></a>, <a class="no-sectionRef" href="#dataset-language"></a>,
+        <a class="no-sectionRef" href="#distribution-language"></a>)
+      </p>
+
+      <p class="issue" data-number="26"></p>
+
+      <aside class="ednote" title="Proposal for a vocabulary change for the language">
+        <strong>Proposal:</strong>
+        <ul>
+          <li>Adapt the range of the language property and demand the use of [[VOCAB-EU-LANG]]</li>
+          <li>Change implementation on opendata.swiss so that in conforms to this change</li>
+          <li>See the example below for how the language is expected in DCAT-AP.</li>
+        </ul>
+      </aside>
+
+      <aside class="example" title="dct:language MUST use the EU vocabulary as URI to conform DCAT-AP">
+        <pre data-include-format="text" data-include="./examples/proposals/language.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="frequency-issues">
+
+      <h2>Frequency: use EU vocabulary</h2>
+
+      <p>The Frequency property (<a class="no-sectionRef" href="#dataset-update-frequency"></a>)
+        MUST use [[VOCAB-EU-FREQUENCY]] to conform to DCAT-AP</p>
+
+      <p class="issue" data-number="52"></p>
+
+      <aside class="ednote" title="Proposal for a vocabulary change for the frequency">
+        <ul>
+          <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
+          <li>Adapt implementation on opendata.swiss</li>
+          <li>See the example below for how the frequency is expected in DCAT-AP</li>
+        </ul>
+      </aside>
+
+      <aside class="example" title="dct:accrualPeriodicty MUST use the EU vocabulary to conform DCAT-AP">
+        <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
+      </aside>
+
+    </section>
+
+
+    <section id="landing-page-implementation">
+
+      <h2>Landing page: use URIs</h2>
+
+      <p>The Landing page is specified correctly but implemented in a false way
+        on opendata.swiss: It's range is <code>rdfs:Resource</code> but it is implemented as an
+        <code>rdfs:Literal</code> (<a class="no-sectionRef" href="#dataset-landing-page"></a>)</p>
+
+      <p class="issue" data-number="46"></p>
+
+      <aside class="ednote" title="Proposal for an implementation change for the landing page">
+        <ul>
+          <li>Correct implementation on opendata.swiss</li>
+          <li>See the example below for how the landing page is expected in DCAT-AP.</li>
+        </ul>
+
+      </aside>
+
+      <aside class="example" title="dcat:landingPage is expected as a URI in DCAT-AP">
+        <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="issued-modified-implementation">
+
+      <h2>Allow xsd:datetime for dates</h2>
+
+      <p>dct:issued and dct:modified are demanded as xsd:date in DCAT-AP-CH, but implemented as
+        xsd:datetime on opendata.swiss. In [[DCAT-AP]] both formats are allowed.
+        (<a class="no-sectionRef" href="#catalog-issued"></a>, <a class="no-sectionRef" href="#catalog-issued"></a>,
+        <a class="no-sectionRef" href="#dataset-release-date"></a>, <a class="no-sectionRef"
+                                                                       href="#dataset-modification-date"></a>
+        <a class="no-sectionRef" href="#distribution-release-date"></a>, <a class="no-sectionRef"
+                                                                            href="#distribution-modification-date"></a>)
+      </p>
+
+      <p class="issue" data-number="48"></p>
+
+      <aside class="ednote" title="Proposal for a definition change on issued and modified properties">
+        <ul>
+          <li>Adapt range in DCAT-AP-CH to also allow <code>rdfs:Literal</code> typed as <code>xsd:datetime</code></li>
+          <li>See the example below for how the issued is currently implemented on opendata.swiss.</li>
+        </ul>
+      </aside>
+
+      <aside class="example"
+             title="dct:issued as it is currently implemented on opendata.swiss does conform to DCAT-AP">
+        <pre data-include-format="text" data-include="./examples/proposals/issued.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="byte-size-implementation">
+
+      <h2>Add xsd:decimal to byte size</h2>
+
+      <p>All <code>dct:byteSize</code> is demanded as xsd:decimal in DCAT-AP-CH, but implemented without
+        this format specification and as integer on opendata.swiss
+        (<a class="no-sectionRef" href="#distribution-byte-size"></a>)</p>
+
+      <p class="issue" data-number="49"></p>
+
+      <aside class="ednote" title="Proposal for an implementation change on byte size property">
+        <p>Change the implementation and add the xsd:Decimal type information, since both DCAT-AP-CH and [[DCAT-AP]]
+          agree
+          on this.
+        </p>
+      </aside>
+
+    </section>
+
+    <section id="publisher-issues">
+
+      <h2>The publisher needs a refactoring</h2>
+
+      <p>The Publisher has several problems:</p>
+
+      <ul>
+        <li>On dcat:Dataset the cardinality is wrong (<a class="no-sectionRef" href="#dataset-publisher"></a>))</li>
+        <li>The definition contradicts itself (<a class="no-sectionRef" href="#catalog-publisher"></a>,
+          <a class="no-sectionRef" href="#dataset-publisher"></a>). Also TERMDAT has never been used in the way
+          described on opendata.swiss.
+        </li>
+        <li>According to DCAT-AP a controlled vocabulary should be used for <code>dct:publisher</code></li>
+      </ul>
+
+      <p class="issue" data-number="19"></p>
+      <p class="issue" data-number="23"></p>
+      <p class="issue" data-number="2"></p>
+      <aside class="ednote" title="Proposal for refactoring the publisher property">
+        <ul>
+          <li>Change the definition on both catalog and dataset to use foaf:Agent instead of rdf:description
+          </li>
+          <li>Change the cardinality on the dataset to 1 in order to be confromant with DCAT-AP</li>
+          <li>Correct implementation on opendata.swiss</li>
+          <li>Build a publisher vocabulary for Swiss datapublishers similar to the one the EU uses
+            for its publishers [[VOCAB-EU-PUBLISHERS]]
+          </li>
+          <li>Before the vocabulary is in place the publisher should at least changed so that
+            it is implemented as in the example below:
+          </li>
+        </ul>
+
+      </aside>
+      <aside class="example" title="Usage of dct:publisher for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/proposals/publisher.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="theme-issues">
+
+      <h2>Add Usage of EU themes</h2>
+
+      <p>The theme must also map to the EU categories and it MUST use a skos:ConceptScheme for
+        the Swiss categories</p>
+
+      <p class="issue" data-number="31"></p>
+
+      <aside class="ednote" title="Proposal for theme and theme taxonomy">
+        <ul>
+          <li>Integrate the [[VOCAB-EU-THEME]] into the defintion of both
+            dcat:themeTaxonomy and dcat:theme
+          </li>
+          <li>Change the usage of dcat:themeTaxonomy from optional to recommended as it is in DCAT-AP</li>
+          <li>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</li>
+        </ul>
+      </aside>
+
+      <aside class="example" title="Usage of dcat:themeTaxonomay and dcat:theme">
+        <pre data-include-format="text" data-include="./examples/proposals/theme.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="relationship-issues">
+
+      <h2>Relationship issues</h2>
+
+      <p>Relationships are not expressed in a DCAT conformant way.</p>
+
+      <p class="issue" data-number="50"></p>
+      <p class="issue" data-number="51"></p>
+      <p class="issue" data-number="53"></p>
+
+    </section>
+
+    <section id="license-issues">
+
+      <h2>License issues</h2>
+
+      <p>Licenses are recommended in DCAT-AP.</p>
+
+    </section>
+
+    <section id="spatial-issues">
+
+      <h2>Improve support for spatial</h2>
+
+      <p>The spatial coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
+        of the [[DCAT-AP]]:</p>
+      <p>"The EU Vocabularies Name Authority Lists must be used for continents, countries and
+        places that are in those lists; if a particular location is not in one of the mentioned
+        Named Authority Lists, Geonames URIs must be used."</p>
+      <p>Also the explanation needs to be corrected: the property can also be used for polygon at
+        this time.</p>
+
+      <p class="issue" data-number="52"></p>
+
+      <ul>
+        <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
+        <li>Adapt implementation on opendata.swiss</li>
+      </ul>
+
+      <aside class="example" title="Usage of dct:accrualPeriodicty for dcat:Dataset using the EU vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
+      </aside>
+
+    </section>
+
+
+    <section id="coverage-issues">
+
+      <h2>Drop support for dct:coverage</h2>
+      <p>dct:coverage (<a class="no-sectionRef" href="#distribution-coverage"></a>) is an attribute that goes counter
+        the general
+        concept in DCAT, that Distribution should have the same content and may just differ in language,
+        format or resolution. But series of data should not be modeled with them. For series
+        of data datasets, that connect to each other should be used. The concept
+        of <code>dcat:Dataseries</code> is new in [[VOCAB-DCAT-3]] and should be used for this purpose
+        in the future.
+      </p>
+      <p>On datasets, dct:coverage is unnecessary since there are already <code>dct:spatial</code>
+        (<a class="no-sectionRef" href="#dataset-spatial-coverage"></a>) and
+        dct:temporal (<a class="no-sectionRef" href="#dataset-temporal-coverage"></a>), which can cover all possible use
+        cases
+      </p>
+
+      <p>The coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
+        of the [[DCAT-AP]]:</p>
+      <p>"The EU Vocabularies Name Authority Lists must be used for continents, countries and
+        places that are in those lists; if a particular location is not in one of the mentioned
+        Named Authority Lists, Geonames URIs must be used."</p>
+
+
+      <p class="issue" data-number="52"></p>
+
+      <ul>
+        <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
+        <li>Adapt implementation on opendata.swiss</li>
+      </ul>
+
+      <aside class="example" title="Usage of dct:accrualPeriodicty for dcat:Dataset using the EU vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="dataset-concept-issue">
+
+      <h2>Concept of a Dataset issue</h2>
+
+
+      <p>Some problems that we currently face, for example the need of the attribute <code>dct:coverage</code>
+        for dcat:Distribution come from the fact, that we we misinterpret what is meant by a dataset: in [[VOCAB-DCAT]]
+        there is a note
+        <a data-cite="VOCAB-DCAT#class-distribution"><code>dcat:Distribution</code></a></p>
+      that states that the Distributions of a dataset should contain the same content, but in different
+      format. If there is a series of different content it should rather be modeled as a datasets that relate
+      to each other. </p>
+      <p>It seems painful to change this defintion what a dataset is now, but in the long run we will be better
+        of if we adapt to [[VOCAB-DCAT]]'s generel concepts. Only this will enable us to profit in the best
+        way from its further development.</p>
+
+    </section>
+
+
+  </section>
+</section>
+
 <section class="appendix" id="issue-summary">
   <!-- A list of issues will magically appear here -->
 </section>
