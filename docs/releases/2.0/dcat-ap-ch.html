@@ -426,9 +426,9 @@
         <th>Usage</th>
         <td>
           The catalog has a hierarchical structure and contains references to all the metadata
-          for the data that can be accessed via the portal (these entries have the class dcat:Dataset).
-          The datasets themselves refer to all distributions of the actual data (class dcat:Distribution).
-          In DCAT-AP there is an additional class, dcat:CatalogRecord, which contains metadata on the catalog.
+          for the data that can be accessed via the portal (these entries have the class <code>dcat:Dataset</code>).
+          The datasets themselves refer to all distributions of the actual data (class <code>dcat:Distribution</code>).
+          In DCAT-AP there is an additional class, <code>dcat:CatalogRecord</code>, which contains metadata on the catalog.
           This class has not been used so far in the implementation of DCAT-AP CH on opendata.swiss.
         </td>
       </tr>
@@ -1044,7 +1044,7 @@
         </tr>
         <tr>
           <th>Conformance Notes</th>
-          <td>[[DCAT-AP]] recommends dct:license, so that should be used if is possible.
+          <td>[[DCAT-AP]] recommends <code>dct:license</code>, so that should be used if is possible.
             (<a class="no-sectionRef" href="#license-issues"></a>)
           </td>
         </tr>
@@ -1197,7 +1197,7 @@
         <td>The metadata entry of this class describes a single thematically closed data collection,
           which is published by a responsible organization (person or institution). The dataset can be
           offered in different ways: as file in a text/csv format or as API Service. Each distribution
-          SHOULD be described by a dcat:Distribution. In general, each dataset will have at least
+          SHOULD be described by a <code>dcat:Distribution</code>. In general, each dataset will have at least
           one distribution.
         </td>
       </tr>
@@ -1206,18 +1206,18 @@
         <th>Usage</th>
         <td>
           <p>The dataset will also list distributions if these are only available on an external website,
-            so that the reference is set by the property dcat:landingPage of the dataset </p>
+            so that the reference is set by the property <code>dcat:landingPage</code> of the dataset </p>
           <p>In exceptional cases, there can also be datasets that do not yet have distributions. This can be the case
             if the publication of these datasets is planned for a future date.</p>
-          <p>The property dcat:theme helps to group datasets by topics. Using a controlled vocabulary
+          <p>The property <code>dcat:theme</code> helps to group datasets by topics. Using a controlled vocabulary
             in the context of a data portal helps with the discoverability of the datasets by topic.
-            Since in DCAT-AP the dcat:theme is optional, it can be ignored on export.</p>
+            Since in DCAT-AP the <code>dcat:theme</code> is optional, it can be ignored on export.</p>
         </td>
       </tr>
       <tr>
         <th>Conformance</th>
         <td>The definition of a dataset should be revised:
-          to stay conformant to DCAT-AP the dcat:DataService class should be introduced.
+          to stay conformant to DCAT-AP the <code>dcat:DataService</code> class should be introduced.
           It must be considered that [[VOCAB-DCAT]] recommends that all distributions of one dataset
           should broadly contain the same data.
           (<a class="no-sectionRef" href="#dataset-concept-issue"></a>) [[DCAT-AP]]
@@ -1706,7 +1706,7 @@
             <p>The dataset can then be linked to other dataset by the element
               <code>rdfs:seeAlso</code> by adding the identifier to this property
               on other datasets.</p>
-            <p>Using rdfs:seeAlso for linking to other datasets makes it necessary that
+            <p>Using <code>rdfs:seeAlso</code> for linking to other datasets makes it necessary that
               a data portal implementing this automatically takes care of consistency
               if datasets get changed or removed:</p>
             <ul>
@@ -1806,7 +1806,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -1894,13 +1894,13 @@
         <tr>
           <th>Usage</th>
           <td>The content of the property must be a term
-            of the skos:ConceptScheme of the data-portal, if that exists.
+            of the <code>skos:ConceptScheme</code> of the data-portal, if that exists.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
           <td>[[DCAT-AP]] demands the usage of the [[VOCAB-EU-THEME]]. The definition should be changed
-            to explicitely demand this. (<a class="no-sectionRef" href="#theme-issues"></a>)
+            to explicitly demand this. (<a class="no-sectionRef" href="#theme-issues"></a>)
           </td>
         </tr>
         </tbody>
@@ -1929,7 +1929,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>RDF Property</th>
@@ -1979,7 +1979,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -1995,24 +1995,24 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Webpage that can be navi-gated to in a Web browser to gain access to the dataset, its distributions
+          <td>A webpage that can be accessed in a Web browser to gain access to the dataset, its distributions
             and/or additional information. If distributions are accessible only through a landing page
             (i.e. direct download URLs are not known), the landing page link should be duplicated as accessURL on the
-            distributions
+            distributions.
           </td>
         </tr>
         <tr>
           <th>Usage</th>
           <td>The property is needed if the data collection described by the metadata is only
-            indirectly accessible vie a webpage of the data publisher. In this case the
-            dataset must still have a distribution, but the url entered in the dcat:accessURL of the distribution
-            will be the same as the url for the dcat:landingPage.
+            indirectly accessible via a webpage of the data publisher. In this case, the
+            dataset must still have a distribution, but the url entered in the <code>dcat:accessURL</code> of the distribution
+            will be the same as the url for the <code>dcat:landingPage</code>.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>The defintion conforms to [[DCAT-AP]], but the implementation on opendat.swiss
-          does not, as it is implemented as an rdfs:Literal instead of a foaf:Document.
+          <td>The definition conforms to [[DCAT-AP]], but the implementation on opendata.swiss
+          does not, as it is implemented as an <code>rdfs:Literal</code> instead of a <code>foaf:Document</code>.
           (<a class="no-sectionRef" href="#landing-page-implementation"></a>)</td>
         </tr>
         </tbody>
@@ -2095,7 +2095,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -2208,7 +2208,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -2259,7 +2259,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Optional</em></td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -2457,17 +2457,17 @@
         <tr>
           <th>Usage</th>
           <td><p>
-            The element "rdfs:seeAlso" enables data publishers to add a reference, in the metadata of
+            The element <code>rdfs:seeAlso</code> enables data publishers to add a reference, in the metadata of
             a dataset, to another dataset. This allows users to discover datasets related to one they have
             already found.
           </p>
           <p>
-            The element "rdfs:seeAlso" is added to the metadata of a dataset as necessary. In this way,
+            The element <code>rdfs:seeAlso</code> is added to the metadata of a dataset as necessary. In this way,
             related datasets (e.g. population data from 2013 and population data from 2014) can be simply
             connected with one another.
           </p>
           <p>
-            Internally, the "dct:identifier" property of the related dataset will be used.
+            Internally, the <code>dct:identifier</code> property of the related dataset will be used.
           </p>
             <aside class="example" title="rdfs:seeAlso">
               <pre data-include-format="text" data-include="./examples/dataset/see-also.xml"></pre>
@@ -2857,10 +2857,10 @@
         <tr>
           <th>Usage</th>
           <td><p>
-            If the dataset is only accessible via a landing page, then the value entered in dcat:landingPage
-            should be the same as the value in dcat:accessURL.</p>
+            If the dataset is only accessible via a landing page, then the value entered in <code>dcat:landingPage</code>
+            should be the same as the value in <code>dcat:accessURL</code>.</p>
             <p>Since the field is mandatory in the DCAT-AP it has to be set even for downloadable distributions.
-              In that case both dcat:accessURL and dcat:downloadURL should contain the same value.</p>
+              In that case both <code>dcat:accessURL</code> and <code>dcat:downloadURL</code> should contain the same value.</p>
             <p>There might be more than one way to access a distribution (HTTP, WebDAV, FTP) there might be several
               access urls for a distribution.</p>
           </td>
@@ -3121,7 +3121,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Conditional</em></td>
+          <td>Conditional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -3147,18 +3147,18 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>This property MUST be provided if the Distribution has the property download url set to
-            downloadble file.
+          <td>This property MUST be provided if the Distribution has the property <code>dcat:downloadURL</code> set to a
+            downloadable file.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
           <td><p>[[DCAT-AP]] mentions <a
                   data-cite="VOCAB-DCAT#Property:distribution_media_type"><code>dcat:mediaType</code></a>
-            as subproperty of <a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a></p>
+            as sub-property of <a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a>.</p>
             <p>[[VOCAB-DCAT]] states: This property SHOULD be used when the media type of the distribution
               is defined in IANA [[IANA-MEDIA-TYPES]],
-              otherwise dct:format MAY be used with different values.</p>
+              otherwise <code>dct:format</code> MAY be used with different values.</p>
           </td>
         </tr>
         </tbody>
@@ -3178,7 +3178,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Conditional</em></td>
+          <td>Conditional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -3293,7 +3293,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Conditional</em></td>
+          <td>Conditional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -3349,7 +3349,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Optional</em></td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -3372,7 +3372,7 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Im Gegensatz zum Element "dct:rights", wo diverse Angaben gemacht werden können,
+          <td>Im Gegensatz zum Element <code>dct:rights</code>, wo diverse Angaben gemacht werden können,
             welche für die Spezifikation der Nutzungsrechte notwendig sind, kann mit dem Element «dct:license» eine
             Lizenz
             angegeben werden. Empfohlen werden gängige internationale Standardlizenzen, wie z.B.
@@ -3434,9 +3434,9 @@
         <tr>
           <th>Conformance</th>
           <td>
-            <p>This property is not given to Distribtuions in [[DCAT-AP]], in [[VOCAB-DCAT]]
-              dcat:Distribution inherits it from dcat:Cataloged Resource. But having the identifier
-              also for resources does not hurt the conformance with DCAT-AP</p>
+            <p>This property is not given to distributions in [[DCAT-AP]]. In [[VOCAB-DCAT]],
+              <code>dcat:Distribution</code> inherits it from <code>dcat:CatalogedResource</code>. Including an identifier
+              for distributions does not break conformance with DCAT-AP</p>
           </td>
         </tr>
         </tbody>
@@ -3514,7 +3514,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Optional</em></td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -3543,7 +3543,7 @@
               population data for different years). For this reason, the specific data in the distributions
               may differ from the general information in the metadata of the dataset, particularly in terms
               of time and location.</p>
-            <p>In this case, the element "dct:coverage", which can contain both time and location information,
+            <p>In this case, the element <code>dct:coverage</code>, which can contain both time and location information,
               is permitted in DCAT-AP CH-compliant metadata.</p>
           </td>
         </tr>
