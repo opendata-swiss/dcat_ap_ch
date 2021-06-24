@@ -434,8 +434,14 @@
       </tr>
       <tr>
         <th>Conformance</th>
-        <td>The class definition conforms to [[DCAT-AP]], even though some of the properties
-        defined for the class do not, as can be seen in the table below.</td>
+        <td><p>The class definition conforms to [[DCAT-AP]], even though some of the properties
+          defined for the class do not, as can be seen in the table below.</p>
+            <p>The implementation on opendata.swiss does not implement the catalog class
+              with all mandatory properties and therefore does not conform
+              either to DCAT-AP or to this specification
+            (see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>).
+          </p>
+        </td>
       </tr>
       </tbody>
     </table>
@@ -598,8 +604,8 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>The title of the catalog im the indicated language. The title must be
-            given in at least one of the four languages German, French, English, Italien. Further languages are
+          <td>The title of the catalog in the indicated language. The title must be
+            given in at least one of the four languages German, French, English, Italian. Further languages are
             optional.
         </tr>
         <tr>
@@ -710,10 +716,7 @@
         <tr>
           <th>Conformance</th>
           <td><p>conforms to [[DCAT-AP]]</p>
-            <p>The implementation on opendata.swiss
-            differs from the definition here but also conforms to DCAT-AP
-              (see <a class="no-sectionRef" href="#issued-modified-implementation"></a>).
-            </p></td>
+          </td>
         </tr>
         </tbody>
       </table>
@@ -876,7 +879,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]] (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -989,7 +992,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -1048,6 +1051,12 @@
         </tbody>
       </table>
 
+      <aside class="ednote">
+        Since the catalog class is not currently implemented the example for dct:license is skipped.
+        For an example see the distribution class: (<a class="no-sectionRef" href="#distribution-license"></a>).
+      </aside>
+
+
     </section>
 
     <section id="catalog-rights">
@@ -1095,6 +1104,11 @@
         </tr>
         </tbody>
       </table>
+
+      <aside class="ednote">
+        Since the catalog class is not currently implemented the example for dct:rights is skipped.
+        For an example see the distribution class: (<a class="no-sectionRef" href="#distribution-rights"></a>).
+      </aside>
 
     </section>
 
@@ -1150,8 +1164,9 @@
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of dct:language for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/language.ttl"></pre>
+      <aside class="ednote">
+        Since the catalog class is not currently implemented the example for dct:language is skipped. For an example
+        see the dataset class: (<a class="no-sectionRef" href="#dataset-language"></a>).
       </aside>
 
     </section>
@@ -4040,6 +4055,11 @@
         of if we adapt to [[VOCAB-DCAT]]'s generel concepts. Only this will enable us to profit in the best
         way from its further development.</p>
 
+    </section>
+
+    <section id="catalog-implementation-issues">
+      <h2>Implement Catalog class on opendata.swiss</h2>
+      to be completed ...
     </section>
 
 
