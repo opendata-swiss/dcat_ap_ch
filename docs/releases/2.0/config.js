@@ -93,6 +93,11 @@ var respecConfig = {
         "href": "https://respec.org/docs/",
         "title": "Respec.org",
         "publisher": "W3C",
+      },
+      "ODI-VOCAB":{
+        "href": "https://theodi.org/article/publishers-guide-to-the-open-data-rights-statement-vocabulary/",
+        "title": "Publisher’s Guide to the Open Data Rights Statement Vocabulary",
+        "publisher": "Open Data Institute",
       }
     }
 };

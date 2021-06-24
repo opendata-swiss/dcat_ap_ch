@@ -154,7 +154,7 @@
 
 </section>
 
-<section id="multilanguages-uris-negociation">
+<section id="multilanguages-uris-negotiation">
 
   <h2>Multiple languages, URIs and content negotiation</h2>
 
@@ -426,9 +426,9 @@
         <th>Usage</th>
         <td>
           The catalog has a hierarchical structure and contains references to all the metadata
-          for the data that can be accessed via the portal (these entries have the class dcat:Dataset).
-          The datasets themselves refer to all distributions of the actual data (class dcat:Distribution).
-          In DCAT-AP there is an additional class, dcat:CatalogRecord, which contains metadata on the catalog.
+          for the data that can be accessed via the portal (these entries have the class <code>dcat:Dataset</code>).
+          The datasets themselves refer to all distributions of the actual data (class <code>dcat:Distribution</code>).
+          In DCAT-AP there is an additional class, <code>dcat:CatalogRecord</code>, which contains metadata on the catalog.
           This class has not been used so far in the implementation of DCAT-AP CH on opendata.swiss.
         </td>
       </tr>
@@ -1044,7 +1044,7 @@
         </tr>
         <tr>
           <th>Conformance Notes</th>
-          <td>[[DCAT-AP]] recommends dct:license, so that should be used if is possible.
+          <td>[[DCAT-AP]] recommends <code>dct:license</code>, so that should be used if is possible.
             (<a class="no-sectionRef" href="#license-issues"></a>)
           </td>
         </tr>
@@ -1197,7 +1197,7 @@
         <td>The metadata entry of this class describes a single thematically closed data collection,
           which is published by a responsible organization (person or institution). The dataset can be
           offered in different ways: as file in a text/csv format or as API Service. Each distribution
-          SHOULD be described by a dcat:Distribution. In general, each dataset will have at least
+          SHOULD be described by a <code>dcat:Distribution</code>. In general, each dataset will have at least
           one distribution.
         </td>
       </tr>
@@ -1206,18 +1206,18 @@
         <th>Usage</th>
         <td>
           <p>The dataset will also list distributions if these are only available on an external website,
-            so that the reference is set by the property dcat:landingPage of the dataset </p>
+            so that the reference is set by the property <code>dcat:landingPage</code> of the dataset </p>
           <p>In exceptional cases, there can also be datasets that do not yet have distributions. This can be the case
             if the publication of these datasets is planned for a future date.</p>
-          <p>The property dcat:theme helps to group datasets by topics. Using a controlled vocabulary
+          <p>The property <code>dcat:theme</code> helps to group datasets by topics. Using a controlled vocabulary
             in the context of a data portal helps with the discoverability of the datasets by topic.
-            Since in DCAT-AP the dcat:theme is optional, it can be ignored on export.</p>
+            Since in DCAT-AP the <code>dcat:theme</code> is optional, it can be ignored on export.</p>
         </td>
       </tr>
       <tr>
         <th>Conformance</th>
         <td>The definition of a dataset should be revised:
-          to stay conformant to DCAT-AP the dcat:DataService class should be introduced.
+          to stay conformant to DCAT-AP the <code>dcat:DataService</code> class should be introduced.
           It must be considered that [[VOCAB-DCAT]] recommends that all distributions of one dataset
           should broadly contain the same data.
           (<a class="no-sectionRef" href="#dataset-concept-issue"></a>) [[DCAT-AP]]
@@ -1330,7 +1330,7 @@
         <td><a href="#dataset-landing-page">landing page</a></td>
         <td>C</td>
         <td>1</td>
-        <td><a data-cite="VOCAB-DCAT#Property:resoruce_landingpage"><code>dcat:landingPage</code></a>
+        <td><a data-cite="VOCAB-DCAT#Property:resource_landing_page"><code>dcat:landingPage</code></a>
         </td>
         <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a>
         </td>
@@ -1404,7 +1404,7 @@
         <td>Y</td>
       </tr>
       <tr>
-        <td><a href="#dataset-see-alsos">see also</a></td>
+        <td><a href="#dataset-see-also">see also</a></td>
         <td>O</td>
         <td>n</td>
         <td><a data-cite="RDF-SCHEMA#ch_seealso"><code>rdfs:seeAlso</code></a></td>
@@ -1461,12 +1461,11 @@
         <tr>
           <th>Usage</th>
           <td><p>The title can be given in several languages.
-            All languages that the dataset offers distributions in should also
-            hava e dataset title. This allows for a fallback for the distribution title
-            in case they don't come with a title themselves.</p>
-            <p>In multiligual data portals the language of the title displayed
+            A dataset title should be given in each language in which the dataset offers distributions.
+            This allows for a fallback for the distribution title in case it is not given.</p>
+            <p>In multilingual data portals, the language of the title displayed
               will depend on the language preferred by the user viewing the dataset.
-              (<a class="no-sectionRef" href="#multilanguages-uris-negociation"></a>)
+              (<a class="no-sectionRef" href="#multilanguages-uris-negotiation"></a>)
             </p>
           </td>
         </tr>
@@ -1521,7 +1520,7 @@
             to
             the user
             is then usually determined by content negotiation and depends on his language preference.
-            (<a class="no-sectionRef" href="#multilanguages-uris-negociation"></a>)
+            (<a class="no-sectionRef" href="#multilanguages-uris-negotiation"></a>)
           </td>
         </tr>
         <tr>
@@ -1576,11 +1575,11 @@
             If there are more organizations responsible, the property can be repeated.</p>
             <p>If a [[TERMDAT]] entry exists for the publisher, this identification will be entered additionally. In case
               the publisher only provides the TERMDAT identification, the portal software determines
-              the corrensponding publisher name via the TERMDAT database. If only the publisher name is provided
-              the portal software adds the TERMDAT indentification from the database, in case it can be found, otherwise
+              the corresponding publisher name via the TERMDAT database. If only the publisher name is provided
+              the portal software adds the TERMDAT identification from the database, in case it can be found. Otherwise,
               the identification is left empty.
               If the publisher provides both the TERMDAT identification and the name, the portal software
-              takes both informations without changing them.
+              accepts both values without changing them.
             </p>
             <p>Internally the property will be represented in the following way:</p>
             <aside class="example" title="Publisher">
@@ -1641,7 +1640,7 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>This property SHOULD contain an email adress, that is really serviced by the data publisher.
+          <td>This property SHOULD contain an email address that is really monitored by the data publisher.
             If there are several contributors involved in the publication of the the dataset, the property
             can be used multiple times.
           </td>
@@ -1690,8 +1689,8 @@
         <tr>
           <th>Definition</th>
           <td>Unique identifier of the dataset.
-            The identifier maybe used as part of the URI of the dataset,
-            but having it represented explic-itly is still useful.
+            The identifier may be used as part of the URI of the dataset,
+            but having it represented explicitly is still useful.
           </td>
         </tr>
         <tr>
@@ -1707,7 +1706,7 @@
             <p>The dataset can then be linked to other dataset by the element
               <code>rdfs:seeAlso</code> by adding the identifier to this property
               on other datasets.</p>
-            <p>Using rdfs:seeAlso for linking to other datasets makes it necessary that
+            <p>Using <code>rdfs:seeAlso</code> for linking to other datasets makes it necessary that
               a data portal implementing this automatically takes care of consistency
               if datasets get changed or removed:</p>
             <ul>
@@ -1722,7 +1721,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>The property is [[DCAT-AP]] comformant, but the defintion is too application related:
+          <td>The property is [[DCAT-AP]] conformant, but the definition is too application-related:
             (<a class="no-sectionRef" href="#identifier-issues"></a>)
           </td>
         </tr>
@@ -1774,10 +1773,10 @@
           <th>Usage</th>
           <td>This property contains the date of the first issuance of the dataset. If this date is not
             known, it can be set to the date of the first reference of the dataset in the corresponding
-            catalog. If the dataset does not yet have any distributions this property can be skipped. But the
-            property can even be set to a future date if the publication of dataset and distribution is already
+            catalog. If the dataset does not yet have any distributions, this property can be skipped. The
+            property can also be set to a future date if the publication of dataset and distribution is already
             planned. It should then contain the date that is scheduled for the publication.
-            In a data portal the the dataset will only get publically be displayed if it has an issued date and
+            In a data portal, the the dataset will only be publicly displayed if it has an issued date and
             if that date is not in the future.
           </td>
         </tr>
@@ -1807,7 +1806,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -1895,13 +1894,13 @@
         <tr>
           <th>Usage</th>
           <td>The content of the property must be a term
-            of the skos:ConceptScheme of the data-portal, if that exists.
+            of the <code>skos:ConceptScheme</code> of the data-portal, if that exists.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
           <td>[[DCAT-AP]] demands the usage of the [[VOCAB-EU-THEME]]. The definition should be changed
-            to explicitely demand this. (<a class="no-sectionRef" href="#theme-issues"></a>)
+            to explicitly demand this. (<a class="no-sectionRef" href="#theme-issues"></a>)
           </td>
         </tr>
         </tbody>
@@ -1930,7 +1929,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>RDF Property</th>
@@ -1980,7 +1979,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -1988,7 +1987,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_landingpage"><code>dcat:landingPage</code></a></td>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_landing_page"><code>dcat:landingPage</code></a></td>
         </tr>
         <tr>
           <th>Range</th>
@@ -1996,24 +1995,24 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Webpage that can be navi-gated to in a Web browser to gain access to the dataset, its distributions
+          <td>A webpage that can be accessed in a Web browser to gain access to the dataset, its distributions
             and/or additional information. If distributions are accessible only through a landing page
             (i.e. direct download URLs are not known), the landing page link should be duplicated as accessURL on the
-            distributions
+            distributions.
           </td>
         </tr>
         <tr>
           <th>Usage</th>
           <td>The property is needed if the data collection described by the metadata is only
-            indirectly accessible vie a webpage of the data publisher. In this case the
-            dataset must still have a distribution, but the url entered in the dcat:accessURL of the distribution
-            will be the same as the url for the dcat:landingPage.
+            indirectly accessible via a webpage of the data publisher. In this case, the
+            dataset must still have a distribution, but the url entered in the <code>dcat:accessURL</code> of the distribution
+            will be the same as the url for the <code>dcat:landingPage</code>.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>The defintion conforms to [[DCAT-AP]], but the implementation on opendat.swiss
-          does not, as it is implemented as an rdfs:Literal instead of a foaf:Document.
+          <td>The definition conforms to [[DCAT-AP]], but the implementation on opendata.swiss
+          does not, as it is implemented as an <code>rdfs:Literal</code> instead of a <code>foaf:Document</code>.
           (<a class="no-sectionRef" href="#landing-page-implementation"></a>)</td>
         </tr>
         </tbody>
@@ -2057,22 +2056,21 @@
           <th>Definition</th>
           <td>Language of the dataset If the dataset is available in multiple languages, use
             multiple values for this property. If each language is available separately, define an instance
-            of dcat:Distribution for each language and describe the specific language of
-            each distribution using dct:language
+            of <code>dcat:Distribution</code> for each language and describe the specific language of
+            each distribution using <code>dct:language</code>.
           </td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>The property MUST be set if the Distribution is not language
-            independent. In that case the language property indicates for which
+          <td>The property MUST be set if the distribution is not language-independent.
+            In that case, the language property indicates for which
             of the languages German, French, English, Italian a distribution is offered by the
             dataset.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. Also
-            the language should be give as an URI.
+          <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. The language should be given as an URI.
             (<a class="no-sectionRef" href="#language-issues"></a>)
           </td>
         </tr>
@@ -2097,7 +2095,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -2176,15 +2174,15 @@
             published by swisstopo.</p>
             <p>Another option is to provide point coordinates or a rectangular bounding box.
               It is not possible with <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>
-              to provide a polygon as geographical coverage, therefore dct:coverage should be used for this purpose
+              to provide a polygon as geographical coverage, therefore <code>dct:coverage</code> should be used for this purpose
               (<a class="no-sectionRef" href="#distribution-coverage"></a>)
             </p>
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>The property does comform to [[DCAT-AP]], but the defintion needs an update.
-            Also the remark with the polygon does not seem
+          <td>The property does conform to [[DCAT-AP]], but the definition needs to be revised.
+            Also, the remark with the polygon does not seem
             to hold true any more, as the example shows. (The example was received by automatically transforming
             original data from geocat at the [[GEODCAT-AP-API]]) (<a class="no-sectionRef" href="#spatial-issues"></a>).
           </td>
@@ -2210,7 +2208,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Recommended</em></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -2261,7 +2259,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Optional</em></td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -2293,7 +2291,7 @@
               (for example name="dc.coverage.polygon" scheme = "WGS84.DD"
               content = "9.547 46.737 9.550 46.739 9.556 46.740 9.554 46.743 9.548 46.742 9.547 46.737";
               name= "dc.coverage.placeName content="Heidsee").
-              In this case there must a property dct:spatial added as well in order to stay conformant
+              In this case there must a property <code>dct:spatial</code> added as well in order to stay conformant
               with DCAT-AP. The portal software will do that automatically.</p>
           </td>
         </tr>
@@ -2350,20 +2348,20 @@
         <tr>
           <th>Usage</th>
           <td>This property is used to
-            indicate a perodicity in the updates of the dataset, if it applies.
+            indicate a periodicity in the updates of the dataset, if it applies.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>In order to [[DCAT-AP]] the vocabulary that MUST be used is
-            [[VOCAB-EU-FREQUENCY]. This should be added to the Range in this definition.
+          <td>In order to conform to [[DCAT-AP]], the vocabulary that MUST be used is
+            [[VOCAB-EU-FREQUENCY]]. This should be added to the Range in this definition.
             (<a class="no-sectionRef" href="#frequency-issues"></a>)
           </td>
         </tr>
         </tbody>
       </table>
 
-      <aside class="example" id="ex-dataset-frequency" title="Usage of dct:accrualPeriodicty
+      <aside class="example" id="ex-dataset-frequency" title="Usage of dct:accrualPeriodicity
                             for dcat:Dataset as it is currently implemented on opendata.swiss:
         the vocabulary used http://purl.org/dc/terms/Frequency">
         <pre data-include-format="text" data-include="./examples/dataset/frequency.ttl"></pre>
@@ -2403,10 +2401,10 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td><p>With this property the dataset can link to a related dataset</p>
-            <p>Also addintinal material such as an article, example or documentation helpful in the context
-              of the dataset can be linked in this way.</p>
-            <p>The Element is also used to link to legal foundations, that apply to the publication or usage
+          <td><p>With this property, a dataset can link to a related dataset.</p>
+            <p>Additional material such as an article, example or documentation helpful in the context
+              of the dataset can also be linked in this way.</p>
+            <p>The element is also used to link to legal foundations that apply to the publication or usage
               of the dataset.</p>
           </td>
         </tr>
@@ -2425,7 +2423,7 @@
 
     </section>
 
-    <section id="dataset-see-alsos">
+    <section id="dataset-see-also">
 
       <h2>Property: see also</h2>
 
@@ -2459,17 +2457,17 @@
         <tr>
           <th>Usage</th>
           <td><p>
-            The element "rdfs:seeAlso" enables data publishers to add a reference, in the metadata of
+            The element <code>rdfs:seeAlso</code> enables data publishers to add a reference, in the metadata of
             a dataset, to another dataset. This allows users to discover datasets related to one they have
             already found.
           </p>
           <p>
-            The element "rdfs:seeAlso" is added to the metadata of a dataset as necessary. In this way,
+            The element <code>rdfs:seeAlso</code> is added to the metadata of a dataset as necessary. In this way,
             related datasets (e.g. population data from 2013 and population data from 2014) can be simply
             connected with one another.
           </p>
           <p>
-            Internally, the "dct:identifier" property of the related dataset will be used.
+            Internally, the <code>dct:identifier</code> property of the related dataset will be used.
           </p>
             <aside class="example" title="rdfs:seeAlso">
               <pre data-include-format="text" data-include="./examples/dataset/see-also.xml"></pre>
@@ -2519,21 +2517,21 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>thumbnail picture illustrating the content of the dataset.</td>
+          <td>A thumbnail picture illustrating the content of the dataset.</td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>For Distributions that consist of visual content (Photographies,
-            Videos, Maps, etc.) it makes sense to add a limit number of thumbnails
+          <td>For distributions that consist of visual content (photographs,
+            videos, maps, etc.) it makes sense to add a limited number of thumbnails
             to the metadata.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>A DCAT-AP CH special, does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]] yet,
-            but is in discussion for [[VOCAB-DCAT-3]] at least for dcat:Dataset, see here:
-            <a href="https://google-github.herokuapp.com/https/github.com/w3c/dxwg/issues/1357">W3C issue on
-              thumbnails for DCAT</a>
+          <td>A custom DCAT-AP CH element that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]] yet,
+            but is in discussion for [[VOCAB-DCAT-3]] at least for <code>dcat:Dataset</code>, see here:
+            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
+              thumbnails for DCAT</a>.
         </tr>
         </tbody>
       </table>
@@ -2859,10 +2857,10 @@
         <tr>
           <th>Usage</th>
           <td><p>
-            If the dataset is only accessible via a landing page, then the value entered in dcat:landingPage
-            should be the same as the value in dcat:accessURL.</p>
+            If the dataset is only accessible via a landing page, then the value entered in <code>dcat:landingPage</code>
+            should be the same as the value in <code>dcat:accessURL</code>.</p>
             <p>Since the field is mandatory in the DCAT-AP it has to be set even for downloadable distributions.
-              In that case both dcat:accessURL and dcat:downloadURL should contain the same value.</p>
+              In that case both <code>dcat:accessURL</code> and <code>dcat:downloadURL</code> should contain the same value.</p>
             <p>There might be more than one way to access a distribution (HTTP, WebDAV, FTP) there might be several
               access urls for a distribution.</p>
           </td>
@@ -2919,9 +2917,7 @@
           <th>Usage</th>
           <td>
             <p>
-              The Element <code>dct:rights</code> is supposed to be formed with the
-              open-data-rights-statement-vocabulary of the Open Data Institute
-              (http://theodi.org/guides/publishers-guide-to-the-open-data-rights-statement-vocabulary)
+              The element <code>dct:rights</code> is supposed to be formed with the vocabulary [[ODI-VOCAB]].
               <code>
                 <dct:rights>
                   <odrs:dataLicense>
@@ -2977,8 +2973,8 @@
             offered by the dataset.
             <a class="no-sectionRef" href="#Class:Distribution"></a>.</p>
             <p>The title can be given in several languages.
-              In multiligual data portals ususally the title of the
-              language selected by a user will be shown as title for the distribution.</p>
+              In multilingual data portals, the title in the
+              language selected by a user will usually be shown as title for the distribution.</p>
           </td>
         </tr>
         <tr>
@@ -3032,8 +3028,8 @@
             data offered by the dataset.
             <a class="no-sectionRef" href="#Class:Distribution"></a>.</p>
             <p>The description can be given in several languages.
-              In multiligual data portals ususally the description of the
-              language selected by a user will be shown as description for the distribution.</p>
+              In multilingual data portals, the description in the
+              language selected by a user will usually be shown as description for the distribution.</p>
           </td>
         </tr>
         <tr>
@@ -3125,7 +3121,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Conditional</em></td>
+          <td>Conditional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -3151,18 +3147,18 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>This property MUST be provided if the Distribution has the property download url set to
-            downloadble file.
+          <td>This property MUST be provided if the Distribution has the property <code>dcat:downloadURL</code> set to a
+            downloadable file.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
           <td><p>[[DCAT-AP]] mentions <a
                   data-cite="VOCAB-DCAT#Property:distribution_media_type"><code>dcat:mediaType</code></a>
-            as subproperty of <a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a></p>
+            as sub-property of <a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a>.</p>
             <p>[[VOCAB-DCAT]] states: This property SHOULD be used when the media type of the distribution
               is defined in IANA [[IANA-MEDIA-TYPES]],
-              otherwise dct:format MAY be used with different values.</p>
+              otherwise <code>dct:format</code> MAY be used with different values.</p>
           </td>
         </tr>
         </tbody>
@@ -3182,7 +3178,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Conditional</em></td>
+          <td>Conditional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -3205,8 +3201,8 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>This property MUST be used for Distributions that offer a dowonload url,
-            that has file format that is not in [[IANA-MEDIA-TYPES]].
+          <td>This property MUST be used for distributions that offer a download url
+            that has file format not in [[IANA-MEDIA-TYPES]].
           </td>
         </tr>
         <tr>
@@ -3259,17 +3255,16 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td><p>The property MUST be set if the Distribution is langauge dependent or if it is
-            only given in some of the languages German, French, Italian and English but not in all four languages.
+          <td><p>The property MUST be set if the distribution is language-dependent, or if it is
+            given in some of the languages German, French, Italian and English but not in all four languages.
           </p>
-            <p>If their is a Distribution with a language property set, the Dataset MUST also provide a
+            <p>If there is a distribution with a language property set, the dataset MUST also provide a
               title in that language (<a class="no-sectionRef" href="#dataset-title"></a>)</p>
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. Also
-            the language should be give as an URI.
+          <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. The language should also be given as an URI.
             (<a class="no-sectionRef" href="#language-issues"></a>)
           </td>
         </tr>
@@ -3277,8 +3272,8 @@
       </table>
 
       <aside class="example" id="ex-distribution-language"
-             title="Usage of dct:language for dcat:Distribution. The implementation conforms the
-              definition above, but does not conform DCAT-AP: the controlled EU vocabulary and URIs schould be used
+             title="Usage of dct:language for dcat:Distribution. The implementation conforms to the
+              definition above, but does not conform to DCAT-AP: the controlled EU vocabulary and URIs should be used
               instead of 2 letter language codes as string Literals">
         <pre data-include-format="text" data-include="./examples/dataset/language.ttl"></pre>
       </aside>
@@ -3298,7 +3293,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Conditional</em></td>
+          <td>Conditional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -3354,7 +3349,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Optional</em></td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -3377,7 +3372,7 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Im Gegensatz zum Element "dct:rights", wo diverse Angaben gemacht werden können,
+          <td>Im Gegensatz zum Element <code>dct:rights</code>, wo diverse Angaben gemacht werden können,
             welche für die Spezifikation der Nutzungsrechte notwendig sind, kann mit dem Element «dct:license» eine
             Lizenz
             angegeben werden. Empfohlen werden gängige internationale Standardlizenzen, wie z.B.
@@ -3439,9 +3434,9 @@
         <tr>
           <th>Conformance</th>
           <td>
-            <p>This property is not given to Distribtuions in [[DCAT-AP]], in [[VOCAB-DCAT]]
-              dcat:Distribution inherits it from dcat:Cataloged Resource. But having the identifier
-              also for resources does not hurt the conformance with DCAT-AP</p>
+            <p>This property is not given to distributions in [[DCAT-AP]]. In [[VOCAB-DCAT]],
+              <code>dcat:Distribution</code> inherits it from <code>dcat:CatalogedResource</code>. Including an identifier
+              for distributions does not break conformance with DCAT-AP</p>
           </td>
         </tr>
         </tbody>
@@ -3519,7 +3514,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><em>Optional</em></td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -3548,7 +3543,7 @@
               population data for different years). For this reason, the specific data in the distributions
               may differ from the general information in the metadata of the dataset, particularly in terms
               of time and location.</p>
-            <p>In this case, the element "dct:coverage", which can contain both time and location information,
+            <p>In this case, the element <code>dct:coverage</code>, which can contain both time and location information,
               is permitted in DCAT-AP CH-compliant metadata.</p>
           </td>
         </tr>
@@ -3600,16 +3595,16 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>For Distributions that consist of visual content (Photographies,
-            Videos, Maps, etc.) it makes sense to add a limit number of thumbnails
+          <td>For distributions that consist of visual content (photographs,
+            videos, maps, etc.) it makes sense to add a limited number of thumbnails
             to the metadata.
           </td>
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>A DCAT-AP CH special, does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]] yet,
-            but is in discussion for [[VOCAB-DCAT-3]] at least for dcat:Dataset, see here:
-            <a href="https://google-github.herokuapp.com/https/github.com/w3c/dxwg/issues/1357">W3C issue on
+          <td>A custom DCAT-AP CH element that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]] yet,
+            but is in discussion for [[VOCAB-DCAT-3]] at least for <code>dcat:Dataset</code>, see here:
+            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
               thumbnails for DCAT</a></td>
         </tr>
         </tbody>
