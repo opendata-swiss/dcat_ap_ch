@@ -2889,7 +2889,7 @@
         <tbody>
         <tr>
           <th>Label</th>
-          <td>Rights</td>
+          <td>rights</td>
         </tr>
         <tr>
           <th>Obligation</th>
@@ -2911,20 +2911,54 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Information about rights held in and over the distribution</td>
+          <td>Information about rights held in and over the distribution.</td>
         </tr>
         <tr>
           <th>Usage</th>
           <td>
             <p>
-              The element <code>dct:rights</code> is supposed to be formed with the vocabulary [[ODI-VOCAB]].
-              <code>
-                <dct:rights>
-                  <odrs:dataLicense>
-                    "Angabe der Nutzungsbedingungen"
-                  </odrs:dataLicense>
-                </dct:rights>
-              </code>
+              To specify the rights statement for a distribution on a Swiss open data portal, the following
+              information is necessary:
+            </p>
+            <ul>
+              <li>
+                Attribution: required/not required
+              </li>
+              <li>
+                Non-commercial use: allowed/not allowed
+              </li>
+              <li>
+                Commercial use: allowed/not allowed/only with approval
+              </li>
+            </ul>
+            <p>
+              The element <code>dct:rights</code> should be formed with the vocabulary [[ODI-VOCAB]]:
+            </p>
+            <aside class="example" title="dct:rights">
+              <pre data-include-format="text" data-include="./examples/distribution/rights-1.xml"></pre>
+            </aside>
+            <p>
+              The individual conditions are formulated as follows:
+            </p>
+            <ul>
+              <li>ReferenceRequired / ReferenceNotRequired</li>
+              <li>NonCommercialAllowed / NonCommercialNotAllowed</li>
+              <li>CommercialAllowed / CommercialNotAllowed / CommercialWithApprovalOnly</li>
+            </ul>
+            <p>The fully-specified rights statement is then assembled from the three relevant conditions:</p>
+            <aside class="example" title="Fully-specified dct:rights element">
+              <pre data-include-format="text" data-include="./examples/distribution/rights-2.xml"></pre>
+            </aside>
+            <p>In case attribution is required, the text to be used must additionally be included:</p>
+            <aside class="example" title="odrs:attributionText">
+              <pre data-include-format="text" data-include="./examples/distribution/rights-3.xml"></pre>
+            </aside>
+            <p>The data owner must also be able to list the legal basis for the collection and publication
+            of the data. For this, the element <code>dct:relation</code> may be included in the element
+            <code>dct:rights</code>, with the following form.</p>
+            <aside class="example" title="dct:relation">
+              <pre data-include-format="text" data-include="./examples/distribution/rights-4.xml"></pre>
+            </aside>
           </td>
         </tr>
         <tr>
