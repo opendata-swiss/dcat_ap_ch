@@ -1,50 +1,141 @@
-#sub_header {
-    color:red;
-}
-
-/* font family */
-
 body {
-   font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
 }
 
-/* link color */
-
-#logo {
-    height:50px;
-    margin-top:15px;
+.header {
+  background: #d3d3d3;
+  padding: 1.5rem 0;
 }
 
-#logo .title {
-    margin-top: 50px;
+.header .row .col-12 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.header__logo {
+  height: 4rem;
+}
+
+.header__title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2rem;
+  color: #d00d28;
 }
 
 .breadcrumb {
-    background:white;
+  background: none;
+  margin: 0.5rem 0;
+  padding: 0;
+  font-size: 0.8rem;
 }
 
-a, a:hover, a:visited, a:active, a:focus {
-    color: #009688;
+.breadcrumb a,
+.breadcrumb a:hover,
+.breadcrumb a:visited,
+.breadcrumb a:active,
+.breadcrumb a:focus {
+  color: #fff;
+}
+
+.breadcrumb-item.active {
+  color: rgb(255 255 255 / 60%);
+}
+
+.page {
+  padding-top: 1.5rem;
+}
+
+a,
+a:hover,
+a:visited,
+a:active,
+a:focus {
+  color: #d00d28;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 h1 {
-    font-size: 1.6em;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #d00d28;
 }
 
-
 h2 {
-    font-size: 1.2em;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 .col-name {
-    width: 20%;
+  width: 20%;
 }
 .col-version {
-    width: 10%;
+  width: 15%;
 }
 .col-format {
-    width: 10%;
+  width: 20%;
 }
 .col-description {
-    width: 60%;
+  width: 45%;
+}
+
+.table th {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 0.4rem;
+}
+
+.external::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f35d";
+}
+
+.external-after::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f35d";
+  margin-right: 0;
+  margin-left: 0.4rem;
+}
+
+.download::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f019";
+}
+
+.code::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f1c9";
+}
+
+.table {
+  margin-bottom: 2rem;
+}
+
+.table tr:last-child td {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 1rem;
+}
+
+footer .nav-link {
+  font-size: 0.8rem;
+  font-weight: 700;
 }

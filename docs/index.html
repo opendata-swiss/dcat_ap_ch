@@ -1,158 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DCAT-AP-CH Def</title>
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="_layout/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="_layout/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a38bff75ad.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DCAT AP CH Def</title>
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="_layout/css/custom.css" type="text/css"/>
-  <link rel="shortcut icon" href="_layout/images/favicon.png"/>
-
-</head>
-
-<body>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-1">
-      <img id="logo" class="align-self-center mr-3"
-           src="_layout/images/ech-logo.png" alt="DCAT-AP.de Logo">
+  <body>
+    <div class="container-fluid header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img
+              class="header__logo"
+              src="_layout/images/logo-ech.svg"
+              alt="eCH Logo"
+            />
+            <span class="header__title">DCAT-AP-CH</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-11">
-      <ol class="breadcrumb mt-4">
-        <li class="breadcrumb-item"><a href="#">DCAT-AP-CH</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Standard</li>
-      </ol>
+    <div class="container-fluid bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">DCAT-AP-CH</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Standard
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+    <!-- Page Content -->
+    <div class="container page">
+      <div class="row">
+        <div class="col-12">
+          <h1>Vocabularies and Documents</h1>
+          <p>Here you can find all documentation on the DCAT-AP-CH.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>Standard Definition</h2>
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th class="col-name">Name</th>
+                <th class="col-version">Version</th>
+                <th class="col-format">Formats</th>
+                <th class="col-description">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="releases/2.0/dcat-ap-ch.html" class="icon external"
+                    >DCAT-AP-CH</a
+                  >
+                </td>
+                <td>Version 2, Draft</td>
+                <td>html</td>
+                <td>
+                  The PDF version was transferred into an HTML
+                  <a href="https://respec.org/docs/" class="icon external-after"
+                    >respec</a
+                  >
+                  Document, in order to ease the further development of the
+                  Application profile.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://ech.ch/ech/ech-0200" class="icon external"
+                    >eCH-0200 DCAT-Anwendungsprofil für Datenportale in der
+                    Schweiz</a
+                  >
+                </td>
+                <td>Version 1</td>
+                <td>pdf</td>
+                <td>Currently valid Datastandard.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>Vocabularies</h2>
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th class="col-name">Name</th>
+                <th class="col-version">Version</th>
+                <th class="col-format">Formats</th>
+                <th class="col-description">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="vocabulary/themes/20210623.html"
+                    >List of categories</a
+                  >
+                </td>
+                <td>Version 1.0</td>
+                <td>
+                  html |
+                  <a href="vocabulary/themes/20210623.ttl" class="icon code"
+                    >turtle</a
+                  >
+                  |
+                  <a href="vocabulary/themes/20210623.rdf" class="icon download"
+                    >rdf</a
+                  >
+                </td>
+                <td>
+                  Swiss theme vocabulary that is used for dcat:theme and
+                  dcat:themeTaxonomy for Open Goverment Data
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="vocabulary/licenses/20210623.html"
+                    >List of Licenses</a
+                  >
+                </td>
+                <td>Version 1.0</td>
+                <td>
+                  html |
+                  <a href="vocabulary/licenses/20210623.ttl" class="icon code"
+                    >turtle</a
+                  >
+                  |
+                  <a
+                    href="vocabulary/licenses/20210623.rdf"
+                    class="icon download"
+                    >rdf</a
+                  >
+                </td>
+                <td>License vocabulary</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="vocabulary/publishers/20210623.html"
+                    >List of Publishers</a
+                  >
+                </td>
+                <td>Version 1.0</td>
+                <td>
+                  html |
+                  <a href="vocabulary/publishers/20210623.ttl" class="icon code"
+                    >turtle</a
+                  >
+                  |
+                  <a
+                    href="vocabulary/publishers/20210623.rdf"
+                    class="icon download"
+                    >rdf</a
+                  >
+                </td>
+                <td>
+                  Publisher vocabulary: needed for conformance with DCAT-AP. All
+                  publisher that are authorized for publishing their data on
+                  opendata.swiss. This are valid entries for dct:publisher.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>Implementation on opendata.swiss</h2>
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th class="col-name">Name</th>
+                <th class="col-version">Version</th>
+                <th class="col-format">Format</th>
+                <th class="col-description">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a
+                    href="https://handbook.opendata.swiss/de/"
+                    class="icon external"
+                    >Handbook opendata.swiss
+                  </a>
+                </td>
+                <td>v1.1</td>
+                <td>html</td>
+                <td>Guidelines for publishing data on opendata.swiss</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://ogdch-new-handbook.clients.liip.ch/de/content/glossar/bibliothek/dcat-ap-ch.html"
+                    class="icon external"
+                    >DCAT-AP-CH Implementation</a
+                  >
+                </td>
+                <td>part of the handbook</td>
+                <td>html</td>
+                <td>
+                  This page in the handbook describes the way the Application
+                  profile is currently implemented on opendata.swiss. It helps
+                  data publishers to prepare their metadata, so that they will
+                  appear in the intend way on opendata.swiss
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://ogdch-new-handbook.clients.liip.ch/de/content/glossar/bibliothek/geocat-mapping.html"
+                    class="icon external"
+                    >Mapping of Geodata</a
+                  >
+                </td>
+                <td>part of the handbook</td>
+                <td>html</td>
+                <td>
+                  This page in the handbook describes the mapping of geodata
+                  coming from GM03 to DCAT as it is currently implented on
+                  opendata.swiss.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid maxwidth bg-dark text-center text-white">
+        <nav class="nav">
+          <a class="nav-link text-white" href="https://ech.ch/de/impressum"
+            >Imprint</a
+          >
+          <a
+            class="nav-link text-white"
+            href="https://ech.ch/de/datenschutzerklaerung"
+            >Data Protection</a
+          >
+        </nav>
+      </div>
+    </footer>
 
-<!-- Page Content -->
-<div class="container-fluid">
-  <h1>Vocabularies and Documents for the DCAT-AP-CH</h1>
-  <p>Here you can find all documentation on the DCAT-AP-CH</p>
-</div>
-<div class="container-fluid">
-  <h2>DCAT-AP-CH Standard Definition</h2>
-  <table class="table">
-    <thead>
-    <tr>
-      <th class="col-name">Name</th>
-      <th class="col-version">Version</th>
-      <th class="col-format">Formats</th>
-      <th class="col-description">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td><a href="releases/2.0/dcat-ap-ch.html">DCAT-AP-CH</a></td>
-      <td>Version 2, Draft</td>
-      <td>html</td>
-      <td>The PDF version was transferred into an HTML <a href="https://respec.org/docs/">respec</a> Document, in order to ease the further
-      development of the Application profile.</td>
-    </tr>
-    <tr>
-      <td><a href="https://ech.ch/ech/ech-0200">eCH-0200 DCAT-Anwendungsprofil für Datenportale in der
-        Schweiz</a></td>
-      <td>Version 1</td>
-      <td>pdf</td>
-      <td>Currently valid Datastandard.</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<div class="container-fluid">
-  <h2>Vocabularies</h2>
-  <table class="table">
-    <thead>
-    <tr>
-      <th class="col-name">Name</th>
-      <th class="col-version">Version</th>
-      <th class="col-format">Formats</th>
-      <th class="col-description">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td><a href="vocabulary/themes/20210623.html">List of categories</a></td>
-      <td>Version 1.0</td>
-      <td>html | <a href="vocabulary/themes/20210623.ttl">turtle</a> | <a href="vocabulary/themes/20210623.rdf">rdf</a></td>
-      <td>Swiss theme vocabulary that is used for dcat:theme and dcat:themeTaxonomy for Open Goverment Data</td>
-    </tr>
-    <tr>
-      <td><a href="vocabulary/licenses/20210623.html">List of Licenses</a></td>
-      <td>Version 1.0</td>
-      <td>html | <a href="vocabulary/licenses/20210623.ttl">turtle</a> | <a href="vocabulary/licenses/20210623.rdf">rdf</a></td>
-      <td>License vocabulary</td>
-    </tr>
-    <tr>
-      <td><a href="vocabulary/publishers/20210623.html">List of Publishers</a></td>
-      <td>Version 1.0</td>
-      <td>html | <a href="vocabulary/publishers/20210623.ttl">turtle</a> | <a href="vocabulary/publishers/20210623.rdf">rdf</a></td>
-      <td>Publisher vocabulary: needed for conformance with DCAT-AP. All publisher that are authorized for publishing
-      their data on opendata.swiss. This are valid entries for dct:publisher.</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<div class="container-fluid">
-  <h2>Implementation on opendata.swiss</h2>
-  <table class="table">
-    <thead>
-    <tr>
-      <th class="col-name">Name</th>
-      <th class="col-version">Version</th>
-      <th class="col-format">Format</th>
-      <th class="col-description">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td><a href="https://handbook.opendata.swiss/de/">Handbook opendata.swiss</a></td>
-      <td>v1.1</td>
-      <td>html</td>
-      <td>Guidelines for publishing data on opendata.swiss</td>
-    </tr>
-    <tr>
-      <td><a href="https://ogdch-new-handbook.clients.liip.ch/de/content/glossar/bibliothek/dcat-ap-ch.html">
-        DCAT-AP-CH Implementation</a></td>
-      <td>part of the handbook</td>
-      <td>html</td>
-      <td>This page in the handbook describes the way the Application profile is currently implemented on opendata.swiss. It helps data publishers
-        to prepare their metadata, so that they will appear in the intend way on opendata.swiss
-      </td>
-    </tr>
-    <tr>
-      <td><a href="https://ogdch-new-handbook.clients.liip.ch/de/content/glossar/bibliothek/geocat-mapping.html">
-        Mapping of Geodata</a></td>
-      <td>part of the handbook</td>
-      <td>html</td>
-      <td>This page in the handbook describes the mapping of geodata coming from GM03 to DCAT as it is currently implented on opendata.swiss.</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-<footer>
-  <div class="container-fluid maxwidth bg-dark text-center text-white">
-    <nav class="nav">
-      <a class="nav-link text-white" href="https://ech.ch/de/impressum">Imprint</a>
-      <a class="nav-link text-white" href="https://ech.ch/de/datenschutzerklaerung">Data Protection</a>
-    </nav>
-  </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
