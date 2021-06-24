@@ -3,7 +3,7 @@
 
 <https://opendata.swisstopo/1234>
   a dcat:Dataset ;
-  foaf:homepage <https://opendata.swisstopo/1234/about> .
+  dcat:landingPage <https://opendata.swisstopo/1234/about> .
 
 <https://opendata.swisstopo/1234/about>
   a foaf:Document .

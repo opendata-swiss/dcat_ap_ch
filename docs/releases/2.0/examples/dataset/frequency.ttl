@@ -3,4 +3,4 @@
 
 <https://swisstopo/reforestation-data/1234>
   a dcat:Dataset ;
-  dcat:accrualPeriodicity dct:accrualPeriodicity <http://purl.org/cld/freq/daily>  .
+  dct:accrualPeriodicity <http://purl.org/cld/freq/daily>  .
