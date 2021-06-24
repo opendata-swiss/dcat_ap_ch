@@ -3529,15 +3529,12 @@
           <th>Usage</th>
           <td><p>This is the key element for supporting spatial or temporal range
             searching on document-like objects that are spatially referenced or time-referenced.</p>
-            <p>Die verschiedenen Bereitstellungsformen einer Datensammlung können sich inhaltlich voneinander
-              unterscheiden
-              (z.B. Angaben zur Wohnbevölkerung verschiedener Jahre).Deshalb können sich spezifische Angaben zu den
-              Bereitstellungsformen von den allgemeinen Angaben im Metadateneintrag der betreffenden Datensammlung
-              unterscheiden,
-              insbesondere, was Zeit-und Ortsangaben anbelangt. Deshalb ist das Element "dct:coverage",
-              mit dem sowohl zeitliche als auch örtliche Angaben
-              festgehalten werden können, in Metadateneinträgen von Bereitstellungsformengemäss DCAT-AP CH
-              zulässig</p>
+            <p>The content of various distributions in a dataset can differ from one another (e.g.
+              population data for different years). For this reason, the specific data in the distributions
+              may differ from the general information in the metadata of the dataset, particularly in terms
+              of time and location.</p>
+            <p>In this case, the element "dct:coverage", which can contain both time and location information,
+              is permitted in DCAT-AP CH-compliant metadata.</p>
           </td>
         </tr>
         <tr>
@@ -3547,6 +3544,10 @@
         </tr>
         </tbody>
       </table>
+
+      <aside class="example" title="Usage of dct:coverage for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/coverage.ttl"></pre>
+      </aside>
 
     </section>
 
