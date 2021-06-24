@@ -715,7 +715,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td><p>conforms to [[DCAT-AP]]</p>
+          <td><p>Conforms to [[DCAT-AP]]</p>
           </td>
         </tr>
         </tbody>
@@ -764,7 +764,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]]</td>
+          <td>Conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -879,7 +879,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]]</td>
+          <td>Conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -992,7 +992,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>conforms to [[DCAT-AP]]</td>
+          <td>Conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -1219,8 +1219,8 @@
         <td>The definition of a dataset should be revised:
           to stay conformant to DCAT-AP the <code>dcat:DataService</code> class should be introduced.
           It must be considered that [[VOCAB-DCAT]] recommends that all distributions of one dataset
-          should broadly contain the same data.
-          (<a class="no-sectionRef" href="#dataset-concept-issue"></a>) [[DCAT-AP]]
+          should broadly contain the same data
+          (see <a class="no-sectionRef" href="#dataset-concept-issue"></a>).
         </td>
       </tr>
       </tbody>
@@ -1424,7 +1424,7 @@
     </table>
 
     <aside class="example" id="ex-dataset" title="Dataset">
-      <pre data-include-format="text" data-include="./examples/dataset.ttl"></pre>
+      <pre data-include-format="text" data-include="./examples/dataset/dataset.ttl"></pre>
     </aside>
 
     <section id="dataset-title">
@@ -1589,12 +1589,16 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
+          <td><p>Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]].</p>
             The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
-            but implementing it with <code>rdf:Description</code>
-            Also in [[DCAT-AP]] the Cardinality is maximal 1. The TERMDAT data retrieval
-            has never been implemented on opendata.swiss.
-            (<a class="no-sectionRef" href="#publisher-issues"></a>)
+            but implementing it with <code>rdf:Description</code>.</p>
+            <p>Also, in [[DCAT-AP]] the maximum cardinality is 1. </p>
+            <p>
+              The TERMDAT data retrieval
+              has never been implemented on opendata.swiss.</p>
+            <p>See
+            <a class="no-sectionRef" href="#publisher-issues"></a> for a
+              detailed discussion of these issues.</p>
           </td>
         </tr>
         </tbody>
@@ -1721,14 +1725,19 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>The property is [[DCAT-AP]] conformant, but the definition is too application-related:
-            (<a class="no-sectionRef" href="#identifier-issues"></a>)
+          <td><p>The property is [[DCAT-AP]] conformant.</p>
+            <p>The exact recipe on how to form an identifier is closely related
+              to the implementation on opendata.swiss and does not follow the best practice
+              approach for DCAT identifiers. It is worth a
+              discussion whether the definition should be generalized (see
+              <a class="no-sectionRef" href="#identifier-issues"></a>).</p>
           </td>
         </tr>
         </tbody>
       </table>
 
-      <aside class="example" id="ex-dataset-identifier" title="Usage of dct:identifier for dcat:Dataset">
+      <aside class="example" id="ex-dataset-identifier" title="Usage of dct:identifier for dcat:Dataset
+       as it is currently implemented on opendata.swiss">
         <pre data-include-format="text" data-include="./examples/dataset/identifier.ttl"></pre>
       </aside>
 
@@ -1782,7 +1791,14 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td><p>Conforms to [[DCAT-AP]]</p>
+            <p>The implemtation on opendata.swiss uses <code>xsd:datatime</code> instead of
+              <code>xsd:date</code> and does therefore
+              not conform to this specification while it does conform to DCAT-AP. Therefore it might
+              make sense to broaden the definition to accept the same range of values as DCAT-AP. See
+              <a class="no-sectionRef" href="#issued-modified-implementation"></a>.
+            </p>
+          </td>
         </tr>
         </tbody>
       </table>
@@ -1846,7 +1862,12 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td><p>Conforms to [[DCAT-AP]]</p>
+            <p>The implementation on opendata.swiss does not conform this specification
+              but does conform the DCAT-AP specification of this property.
+              See <a class="no-sectionRef" href="#issued-modified-implementation"></a>.
+            <p>
+          </td>
         </tr>
         </tbody>
       </table>
@@ -2013,7 +2034,7 @@
           <th>Conformance</th>
           <td>The definition conforms to [[DCAT-AP]], but the implementation on opendata.swiss
           does not, as it is implemented as an <code>rdfs:Literal</code> instead of a <code>foaf:Document</code>.
-          (<a class="no-sectionRef" href="#landing-page-implementation"></a>)</td>
+          See <a class="no-sectionRef" href="#landing-page-implementation"></a></td>
         </tr>
         </tbody>
       </table>
@@ -2071,7 +2092,7 @@
         <tr>
           <th>Conformance</th>
           <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. The language should be given as an URI.
-            (<a class="no-sectionRef" href="#language-issues"></a>)
+            See <a class="no-sectionRef" href="#language-issues"></a>.
           </td>
         </tr>
         </tbody>
@@ -2117,7 +2138,7 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>As keywords terms from TERMDAT can be used.
+          <td>As keywords terms from [[TERMDAT]] can be used.
             But also free tags can be used for this purpose.
             It is good practice to mark the language of the keywords.
           </td>
@@ -2184,7 +2205,8 @@
           <td>The property does conform to [[DCAT-AP]], but the definition needs to be revised.
             Also, the remark with the polygon does not seem
             to hold true any more, as the example shows. (The example was received by automatically transforming
-            original data from geocat at the [[GEODCAT-AP-API]]) (<a class="no-sectionRef" href="#spatial-issues"></a>).
+            original data from geocat at the [[GEODCAT-AP-API]].
+            See <a class="no-sectionRef" href="#spatial-issues"></a>.
           </td>
         </tr>
         </tbody>
@@ -2298,9 +2320,10 @@
           <td>This element is too close to the DCAT-AP properties
             <a class="no-sectionRef" href="#dataset-spatial-coverage"></a> and
             <a class="no-sectionRef" href="#dataset-temporal-coverage"></a>.
-            It violates therefore conformance. Therefore support for it should be dropped
-            on the dataset class. (
-           <a class="no-sectionRef" href="#coverage-issues"></a>)
+            It violates therefore conformance criteria
+            (<a class="no-sectionRef" href="#dcat-ap-conformance-criteria"></a>).
+            Therefore support for it should be dropped
+            on the dataset class. See <a class="no-sectionRef" href="#coverage-issues"></a>.
           </td>
         </tr>
         </tbody>
@@ -2352,8 +2375,8 @@
         <tr>
           <th>Conformance</th>
           <td>In order to conform to [[DCAT-AP]], the vocabulary that MUST be used is
-            [[VOCAB-EU-FREQUENCY]]. This should be added to the Range in this definition.
-            (<a class="no-sectionRef" href="#frequency-issues"></a>)
+            [[VOCAB-EU-FREQUENCY]]. This should be added to the range in this definition.
+            See <a class="no-sectionRef" href="#frequency-issues"></a>.
           </td>
         </tr>
         </tbody>
@@ -2474,12 +2497,16 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Does not conform to DCAT-AP  (<a class="no-sectionRef" href="#see-also-issues"></a>)</td>
+          <td><p>This property is custom for DCAT-AP CH.</p>
+            <p>The property does not conform to DCAT-AP since there is already
+            vocabulary in [[DCAT-AP]] for modeling relationships
+            between datasets. See <a class="no-sectionRef" href="#see-also-issues"></a>.</td>
         </tr>
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of rdfs:seeAlso for dcat:Dataset">
+      <aside class="example" title="Usage of rdfs:seeAlso for dcat:Dataset as
+                                    it is currently implemented on opendata.swiss">
         <pre data-include-format="text" data-include="./examples/dataset/see-also.ttl"></pre>
       </aside>
 
@@ -2526,10 +2553,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>A custom DCAT-AP CH element that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]] yet,
-            but is in discussion for [[VOCAB-DCAT-3]] at least for <code>dcat:Dataset</code>, see here:
-            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
-              thumbnails for DCAT</a>.
+          <td>A custom DCAT-AP CH element that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]] yet.
+            See here for a discussion of this property: <a class="no-sectionRef" href="#thumbnail-issues"></a>.
+          </td>
         </tr>
         </tbody>
       </table>
@@ -4090,6 +4116,13 @@
       to be completed ...
     </section>
 
+    <section id="thumbnail-issues">
+      <h2>Watch Thumbnail property on DCAT</h2>
+       <p>There is a discussion to add something like this to [[VOCAB-DCAT-3]]
+              at least for <code>dcat:Dataset</code>, see here for a discussion:
+            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
+              thumbnails for DCAT</a>.</p>
+    </section>
 
   </section>
 </section>
