@@ -4,4 +4,4 @@
 
 <https://swisstopo/reforestation-data/1234>
   a dcat:Distribution ;
-  dct:identifier "https://swisstopo/reforestation-data/1234" .
+  dct:identifier "12356-3fefefe-3232@swisstopo.ch" .

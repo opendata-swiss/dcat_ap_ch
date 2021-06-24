@@ -610,7 +610,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -664,7 +664,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -1219,8 +1219,8 @@
         <td>The definition of a dataset should be revised:
           to stay conformant to DCAT-AP the dcat:DataService class should be introduced.
           It must be considered that [[VOCAB-DCAT]] recommends that all distributions of one dataset
-          should broadly contain the same data.
-          (<a class="no-sectionRef" href="#dataset-concept-issue"></a>) [[DCAT-AP]]
+          should broadly contain the same data
+          (see <a class="no-sectionRef" href="#dataset-concept-issue"></a>).
         </td>
       </tr>
       </tbody>
@@ -1472,7 +1472,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -1526,7 +1526,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -1590,12 +1590,15 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
+          <td><p>Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
             The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
-            but implementing it with <code>rdf:Description</code>
-            Also in [[DCAT-AP]] the Cardinality is maximal 1. The TERMDAT data retrieval
-            has never been implemented on opendata.swiss.
-            (<a class="no-sectionRef" href="#publisher-issues"></a>)
+            but implementing it with <code>rdf:Description</code>.
+            Also in DCAT-AP the Cardinality is maximal 1.</p>
+            <p>The TERMDAT data retrieval
+              has never been implemented on opendata.swiss.</p>
+            <p>See
+            <a class="no-sectionRef" href="#publisher-issues"></a> for a
+              detailed discussion of these issues.</p>
           </td>
         </tr>
         </tbody>
@@ -1648,13 +1651,13 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
 
       <aside class="example" title="Usage of dcat:contactPoint for dcat:Dataset">
-        <pre data-include-format="text" data-include="./examples/dataset/publisher.ttl"></pre>
+        <pre data-include-format="text" data-include="./examples/dataset/contact-point.ttl"></pre>
       </aside>
 
     </section>
@@ -1722,14 +1725,19 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>The property is [[DCAT-AP]] comformant, but the defintion is too application related:
-            (<a class="no-sectionRef" href="#identifier-issues"></a>)
+          <td><p>The property is [[DCAT-AP]] conformant.</p>
+            <p>The exact recipe on how to form an identifier is closely related
+              to the implementation on opendata.swiss and does not follow the best practice
+              approach for DCAT identifiers. It is worth a
+              discussion whether the definition should be generalized (see
+               <a class="no-sectionRef" href="#identifier-issues"></a>).
           </td>
         </tr>
         </tbody>
       </table>
 
-      <aside class="example" id="ex-dataset-identifier" title="Usage of dct:identifier for dcat:Dataset">
+      <aside class="example" id="ex-dataset-identifier" title="Usage of dct:identifier for dcat:Dataset
+       as it is currently implemented on opendata.swiss">
         <pre data-include-format="text" data-include="./examples/distribution/identifier.ttl"></pre>
       </aside>
 
@@ -1847,7 +1855,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td>conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
