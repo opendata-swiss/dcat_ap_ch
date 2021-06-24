@@ -1694,18 +1694,18 @@
               <dct:identifier>124325@swisstopo</dct:identifier>
             </code></p>
             <p>The identifier should be unique within Switzerland</p>
-            <p>The dataaset can then be linked to other dataset by the element
+            <p>The dataset can then be linked to other dataset by the element
               <code>rdfs:seeAlso</code> by adding the identifier to this property
               on other datasets.</p>
-            <p>Using rdfs:seeAlso for linking to other datasets, makes it necessary that
+            <p>Using rdfs:seeAlso for linking to other datasets makes it necessary that
               a data portal implementing this automatically takes care of consistency
               if datasets get changed or removed:</p>
             <ul>
-              <li>If the identifier of a dataset is changed: all seeAlsos of
+              <li>If the identifier of a dataset is changed: all seeAlso properties of
                 other datasets on the portal should be changed accordingly
               </li>
               <li>If a dataset is deleted: its identifier should be removed
-                of the seeAslso of other datasets.
+                of the seeAlso of other datasets.
               </li>
             </ul>
           </td>
@@ -2435,7 +2435,7 @@
         </tr>
         <tr>
           <th>RDF Property</th>
-          <td><a data-cite="RDF-SCHEMA#ch_seealso"><code>rdfs:seeAlsos</code></a></td>
+          <td><a data-cite="RDF-SCHEMA#ch_seealso"><code>rdfs:seeAlso</code></a></td>
           </td>
         </tr>
         <tr>
