@@ -31,21 +31,24 @@
     while remaining in line with Swiss demands.</p>
 
   <p>The document has been transferred and translated from DCAT-AP CH version 1.0, which is
-    available as PDF in German and French [[DCAT-AP-CH-1]]</p>
+    available as PDF in German and French [[DCAT-AP-CH-1]].</p>
   <ul>
-    <li>Normative sections of this document have been translated from DCAT-AP CH version 1.0.
-      As the issues identified with version 1.0 are processed, and conformance problems are resolved,
-      they will be updated.
+    <li>Normative sections of this document have been translated from DCAT-AP CH version 1.0. Over time
+    they will be updated by the eCH Fachgruppe.</li>
+    <li>Deviations from the original specification have been marked as such by an editor's note.</li>
+    <li>To every class and property definition an extra section has been added that deals
+    with the conformance of that property or class with [[DCAT-AP]].
     </li>
-    <li>Conformance problems with DCAT-AP are noted alongside the definition of each class and property.
-    </li>
-    <li>All conformance problems are summarized in the non-normative section <a class="no-sectionRef"
-                                                                                href="#dcat-ap-conformance"></a>.
+    <li>A non-normative section has been added at the end of this specification, which gives an overview
+      about the performance problems as well as discussing each one in detail
+      (<a class="no-sectionRef" href="#dcat-ap-conformance"></a>).
     </li>
   </ul>
 </aside>
 
 <section id="abstract">
+  <aside class="ednote">This has been translated from the section "Zusammenfassung" of [[DCAT-AP-CH-1]]
+  </aside>
   <p>The DCAT Application Profile for data portals in Switzerland (DCAT-AP CH) is an application profile
     of the DCAT vocabulary ([[VOCAB-DCAT]]). It serves to describe data that have been registered on Swiss data portals.
     It is directed to managers on open data portals in Switzerland and the publishers of these data, and has been used by
@@ -61,6 +64,8 @@
 <section id="introduction" class="informative">
 
   <h2>Introduction</h2>
+  <aside class="ednote">This has been translated from the section "1.2 Anwendungsgebiet" of [[DCAT-AP-CH-1]]
+  </aside>
 
   <p>The DCAT Application Profile for data portals in Switzerland (DCAT-AP CH) is an application profile
     of the DCAT vocabulary ([[VOCAB-DCAT]]). It serves to describe data that have been registered on Swiss data portals.</p>
@@ -75,6 +80,8 @@
     Since 2016, it has been in use on the portal opendata.swiss to describe the data registered by the portal.</p>
 </section>
 
+<section id="conformance">
+</section>
 
 <section id="namespaces">
 
@@ -147,24 +154,13 @@
 
 </section>
 
-<section id="conformance">
-  <p><strong>A data catalog conforms to DCAT-AP CH</strong> if:</p>
-  <ul>
-    <li>It contains all mandatory classes specified in the specification.</li>
-    <li>An RDF description of the catalog itself is available.
-    </li>
-    <li> All classes and properties defined in the catalog are used in a way consistent with the semantics declared in
-      this specification.
-    </li>
-  </ul>
-  DCAT-AP CH compliant catalogs MAY include additional non-DCAT-AP CH metadata fields and additional RDF data in the
-  catalog's RDF description.
-</section>
-
-
 <section id="multilanguages-uris-negociation">
 
   <h2>Multiple languages, URIs and content negotiation</h2>
+
+  <aside class="ednote">This section has been added in order to give more guidance
+  on the use of URIs and how they can help with translations.
+</aside>
 
   <p>Switzerland is a multilingual country. Therefore, supporting multiple languages
     is very important in DCAT-AP CH. Multiple languages are handled as follows.
@@ -248,12 +244,21 @@
     </tbody>
   </table>
 
-
 </section>
 
 <section id="vocabulary-overview" class="informative">
 
   <h2>Application profile overview</h2>
+
+  <aside class="ednote">The vocabulary overview has been redone and the content of chapter 1 "Einleitung" of
+    [[DCAT-AP-CH-1]] has not been fully integrated yet. Not yet translated are the following chapters:
+    <ul>
+      <li>1.3 Bestandteile des Standards</li>
+      <li>1.4 Modellierung von strukturellen und thematischen Beziehungen zwischen einzelnen Datensammlungen</li>
+      <li>1.5 Bereitstellungsform des Katalogs</li>
+      <li>1.6 Kompatibilität mit dem europäischen Anwendungsprofil</li>
+    </ul>
+  </aside>
 
   <section id="dcat-scope">
     <h3>DCAT-AP CH scope</h3>
@@ -276,9 +281,6 @@
       </li>
       <li>There are other classes in [[DCAT-AP]] that have not yet become part of DCAT-AP CH.</li>
     </ul>
-    <aside class="ednote">The diagram below has been adapted from that in DCAT-AP CH version 1.0 to also include
-      the Document class.
-    </aside>
     <div id="diagram" class="mermaid">
       classDiagram
 
@@ -372,13 +374,16 @@
 
   <h2>Vocabulary specification</h2>
 
+  <aside class="ednote">This vocabulary specification has been added in order to provide
+    a legend for the class property overview tables that have been added for each class.
+  </aside>
+
   <p>The tables in the following sections include these columns:</p>
   <ul>
     <li>Column <strong><abbr title="Obligation">Obl.</abbr></strong> ("Obligation"), denotes whether the class /
       property is mandatory ("<strong><abbr title="Mandatory">M</abbr></strong>"), conditional (<strong><abbr
-              title="Conditional">C</abbr></strong>) or optional (<strong><abbr title="Optional">O</abbr></strong>)
-      -
-      where conditional means "mandatory if given conditions are met".
+              title="Conditional">C</abbr></strong>) or optional (<strong><abbr title="Optional">O</abbr></strong>).
+      Conditional means that the property becomes mandatory under certain conditions.
     </li>
     <li>Column <strong><abbr title="Max Cardinality">MC</abbr></strong> specifies the maximum cardinality of the
       corresponding property (the minimum cardinality is always 1 for all mandatory properties, and 0 for the other
@@ -432,7 +437,8 @@
       </tr>
       <tr>
         <th>Conformance</th>
-        <td>conforms to [[DCAT-AP]]</td>
+        <td>The class definition conforms to [[DCAT-AP]], even though some of the properties
+        defined for the class do not, as can be seen in the table below.</td>
       </tr>
       </tbody>
     </table>
@@ -557,12 +563,8 @@
       </tbody>
     </table>
 
-    <aside class="example" title="Example for a dcat:Catalog">
+    <aside class="example" title="Example for a dcat:Catalog class">
       <pre data-include-format="text" data-include="./examples/catalog/catalog.ttl"></pre>
-    </aside>
-
-    <aside class="note">
-      <p>The example given above conforms to the DCAT-AP SHACL Shape for the class dcat:Catalog.</p>
     </aside>
 
     <section id="catalog-title">
@@ -710,7 +712,11 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td><p>conforms to [[DCAT-AP]]</p>
+            <p>The implementation on opendata.swiss
+            differs from the definition here but also conforms to DCAT-AP
+              (see <a class="no-sectionRef" href="#issued-modified-implementation"></a>).
+            </p></td>
         </tr>
         </tbody>
       </table>
@@ -758,7 +764,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
+          <td>conforms to [[DCAT-AP]]</td>
         </tr>
         </tbody>
       </table>
@@ -874,7 +880,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]] (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td>conforms to [[DCAT-AP]] (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
@@ -1536,7 +1542,7 @@
         </tr>
         <tr>
           <th>Max card.</th>
-          <td>N</td>
+          <td>n</td>
         </tr>
         <tr>
           <th>RDF Property</th>
@@ -1558,7 +1564,7 @@
           <th>Usage</th>
           <td><p>This property names the organization responsible for the publication of the data collection.
             If there are more organizations responsible, the property can be repeated.</p>
-            <p>If a TERMDAT entry exists for the publisher, this identification will be entered additionally. In case
+            <p>If a [[TERMDAT]] entry exists for the publisher, this identification will be entered additionally. In case
               the publisher only provides the TERMDAT identification, the portal software determines
               the corrensponding publisher name via the TERMDAT database. If only the publisher name is provided
               the portal software adds the TERMDAT indentification from the database, in case it can be found, otherwise
@@ -1586,7 +1592,7 @@
       </table>
 
       <aside class="example"
-             title="Usage of dcat:contactPoint for dcat:Dataset as it is now implemented on opendata.swiss">
+             title="Usage of dct:publisher for dcat:Dataset as it is now implemented on opendata.swiss">
         <pre data-include-format="text" data-include="./examples/dataset/publisher.ttl"></pre>
       </aside>
 
@@ -1608,7 +1614,7 @@
         </tr>
         <tr>
           <th>Max card.</th>
-          <td>1</td>
+          <td>n</td>
         </tr>
         <tr>
           <th>RDF Property</th>
@@ -2421,7 +2427,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td>O</td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>

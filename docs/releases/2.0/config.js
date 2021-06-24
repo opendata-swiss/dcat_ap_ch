@@ -89,5 +89,10 @@ var respecConfig = {
         "title": "EU Vocabularies",
         "publisher": "Publications Office of the European Union",
       },
+      "RESPEC":{
+        "href": "https://respec.org/docs/",
+        "title": "Respec.org",
+        "publisher": "W3C",
+      }
     }
 };
