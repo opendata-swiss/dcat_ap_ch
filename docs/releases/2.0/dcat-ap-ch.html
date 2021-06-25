@@ -3857,136 +3857,30 @@
 
   <section id="dcat-ap-conformance-problems-details">
 
-    <h2>Detailed Analyis</h2>
-    <section id="language-issues">
-
-      <h2>Language: use EU vocabulary</h2>
-
-      <p>The Language property does not conform to DCAT-AP: it MUST use [[VOCAB-EU-LANG]].
-        (<a class="no-sectionRef" href="#catalog-language"></a>, <a class="no-sectionRef" href="#dataset-language"></a>,
-        <a class="no-sectionRef" href="#distribution-language"></a>)
-      </p>
-
-      <p class="issue" data-number="26"></p>
-
-      <aside class="ednote" title="Proposal for a vocabulary change for the language">
-        <strong>Proposal:</strong>
+    <h2>Detailed Analysis</h2>
+      <aside class="ednote" title="issues with dct:language">
+        Each conformance problem discussed in this section is structured
+        in the following way:
         <ul>
-          <li>Adapt the range of the language property and demand the use of [[VOCAB-EU-LANG]]</li>
-          <li>Change implementation on opendata.swiss so that in conforms to this change</li>
-          <li>See the example below for how the language is expected in DCAT-AP.</li>
+          <li>Short introduction on the conformance issue</li>
+          <li>Link to the affected part of the specification are provided</li>
+          <li>A github issue has been raised an included: go to it to further
+          discuss the problem within the community.</li>
+          <li>If possible an example has been added to show a conformant usage or
+            replacement of the property or class</li>
         </ul>
       </aside>
-
-      <aside class="example" title="dct:language MUST use the EU vocabulary as URI to conform DCAT-AP">
-        <pre data-include-format="text" data-include="./examples/proposals/language.ttl"></pre>
-      </aside>
-
-    </section>
-
-    <section id="frequency-issues">
-
-      <h2>Frequency: use EU vocabulary</h2>
-
-      <p>The Frequency property (<a class="no-sectionRef" href="#dataset-update-frequency"></a>)
-        MUST use [[VOCAB-EU-FREQUENCY]] to conform to DCAT-AP</p>
-
-      <p class="issue" data-number="52"></p>
-
-      <aside class="ednote" title="Proposal for a vocabulary change for the frequency">
-        <ul>
-          <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
-          <li>Adapt implementation on opendata.swiss</li>
-          <li>See the example below for how the frequency is expected in DCAT-AP</li>
-        </ul>
-      </aside>
-
-      <aside class="example" title="dct:accrualPeriodicty MUST use the EU vocabulary to conform DCAT-AP">
-        <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
-      </aside>
-
-    </section>
-
-    <section id="landing-page-implementation">
-
-      <h2>Landing page: use URIs</h2>
-
-      <p>The Landing page is specified correctly but implemented in a false way
-        on opendata.swiss: It's range is <code>rdfs:Resource</code> but it is implemented as an
-        <code>rdfs:Literal</code> (<a class="no-sectionRef" href="#dataset-landing-page"></a>)</p>
-
-      <p class="issue" data-number="46"></p>
-
-      <aside class="ednote" title="Proposal for an implementation change for the landing page">
-        <ul>
-          <li>Correct implementation on opendata.swiss</li>
-          <li>See the example below for how the landing page is expected in DCAT-AP.</li>
-        </ul>
-
-      </aside>
-
-      <aside class="example" title="dcat:landingPage is expected as a URI in DCAT-AP">
-        <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
-      </aside>
-
-    </section>
-
-    <section id="issued-modified-implementation">
-
-      <h2>Allow xsd:datetime for dates</h2>
-
-      <p>dct:issued and dct:modified are demanded as xsd:date in DCAT-AP CH, but implemented as
-        xsd:datetime on opendata.swiss. In [[DCAT-AP]] both formats are allowed.
-        (<a class="no-sectionRef" href="#catalog-issued"></a>, <a class="no-sectionRef" href="#catalog-issued"></a>,
-        <a class="no-sectionRef" href="#dataset-release-date"></a>, <a class="no-sectionRef"
-                                                                       href="#dataset-modification-date"></a>
-        <a class="no-sectionRef" href="#distribution-release-date"></a>, <a class="no-sectionRef"
-                                                                            href="#distribution-modification-date"></a>)
-      </p>
-
-      <p class="issue" data-number="48"></p>
-
-      <aside class="ednote" title="Proposal for a definition change on issued and modified properties">
-        <ul>
-          <li>Adapt range in DCAT-AP CH to also allow <code>rdfs:Literal</code> typed as <code>xsd:datetime</code></li>
-          <li>See the example below for how the issued is currently implemented on opendata.swiss.</li>
-        </ul>
-      </aside>
-
-      <aside class="example"
-             title="dct:issued as it is currently implemented on opendata.swiss does conform to DCAT-AP">
-        <pre data-include-format="text" data-include="./examples/proposals/issued.ttl"></pre>
-      </aside>
-
-    </section>
-
-    <section id="byte-size-implementation">
-
-      <h2>Add xsd:decimal to byte size</h2>
-
-      <p>All <code>dct:byteSize</code> is demanded as xsd:decimal in DCAT-AP CH, but implemented without
-        this format specification and as integer on opendata.swiss
-        (<a class="no-sectionRef" href="#distribution-byte-size"></a>)</p>
-
-      <p class="issue" data-number="49"></p>
-
-      <aside class="ednote" title="Proposal for an implementation change on byte size property">
-        <p>Change the implementation and add the xsd:Decimal type information, since both DCAT-AP CH and [[DCAT-AP]]
-          agree
-          on this.
-        </p>
-      </aside>
-
-      <aside class="example"
-             title="Usage of byte size with xsd type specification as xsd:decimal">
-        <pre data-include-format="text" data-include="./examples/distribution/byte-size.ttl"></pre>
-      </aside>
-
-    </section>
 
     <section id="publisher-issues">
 
       <h2>The publisher needs a refactoring</h2>
+
+        <ul>
+          <li><strong>Classification of the problem: </strong>DCAT-AP conformance issue</li>
+          <li><strong>Details: </strong>[[ISO 639-1]] is used instead of [[VOCAB-EU-LANG]]</li>
+          <li><strong>Links to the affected property definitions: </strong><a class="no-sectionRef" href="#dataset-publisher"></a>,
+            <a class="no-sectionRef" href="#catalog-publisher"></a></li>
+        </ul>
 
       <p>The Publisher has several problems:</p>
 
@@ -4023,6 +3917,60 @@
 
     </section>
 
+    <section id="rights-issues">
+
+      <h2>Rights issues</h2>
+
+      <p>to be filled</p>
+
+    </section>
+
+    <section id="license-issues">
+
+      <h2>License issues</h2>
+
+      <p>Licenses are recommended in DCAT-AP.</p>
+
+    </section>
+
+    <section id="language-issues">
+
+      <h2>Language: use EU vocabulary</h2>
+
+        <ul>
+          <li><strong>Classification of the problem:</strong> DCAT-AP conformance issue</li>
+          <li><strong>Details</strong>: [[ISO 639-1]] is used instead of [[VOCAB-EU-LANG]]</li>
+          <li><strong>Links to the affected property definitions</strong>: <a class="no-sectionRef" href="#catalog-language"></a>,
+            <a class="no-sectionRef" href="#dataset-language"></a>,
+            <a class="no-sectionRef" href="#distribution-language"></a></li>
+        </ul>
+      <p class="issue" data-number="26"></p>
+
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:language">
+        <pre data-include-format="text" data-include="./examples/proposals/language.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="frequency-issues">
+
+      <h2>Frequency: use EU vocabulary</h2>
+
+        <ul>
+          <li><strong>Classification of the problem:</strong> DCAT-AP conformance issue</li>
+          <li><strong>Details</strong>: [[VOCAB-DCAT-FREQUENCY]] is used instead of [[VOCAB-EU-FREQUENCY]]</li>
+          <li><strong>Links to the affected property definitions</strong>: <a class="no-sectionRef" href="#dataset-update-frequency"></a>,
+          </li>
+        </ul>
+
+      <p class="issue" data-number="52"></p>
+
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:accrualPeriodicty">
+        <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
+      </aside>
+
+    </section>
+
     <section id="theme-issues">
 
       <h2>Add Usage of EU themes</h2>
@@ -4048,40 +3996,6 @@
 
     </section>
 
-    <section id="see-also-issues">
-
-      <h2>See Also should be replaced</h2>
-
-      <p>See Alsos is not a a DCAT conformant way to express relationships between datasets.</p>
-
-      <p class="issue" data-number="53"></p>
-
-    </section>
-
-    <section id="license-issues">
-
-      <h2>License issues</h2>
-
-      <p>Licenses are recommended in DCAT-AP.</p>
-
-    </section>
-
-    <section id="rights-issues">
-
-      <h2>Rights issues</h2>
-
-      <p>to be filled</p>
-
-    </section>
-
-    <section id="media-type-issues">
-
-      <h2>Add Media types to IANA</h2>
-
-      <p>To be filles</p>
-
-    </section>
-
     <section id="format-issues">
 
       <h2>Use EU vocabulary for format</h2>
@@ -4104,6 +4018,96 @@
 
       <aside class="example" title="Usage of dct:format using the EU vocabulary">
         <pre data-include-format="text" data-include="./examples/proposals/format.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="media-type-issues">
+
+      <h2>Add Media types to IANA</h2>
+
+      <p>To be filles</p>
+
+    </section>
+
+    <section id="see-also-issues">
+
+      <h2>See Also should be replaced</h2>
+
+      <p>See Alsos is not a a DCAT conformant way to express relationships between datasets.</p>
+
+      <p class="issue" data-number="53"></p>
+
+    </section>
+
+    <section id="coverage-issues">
+
+      <h2>Drop support for dct:coverage</h2>
+      <p>dct:coverage (<a class="no-sectionRef" href="#distribution-coverage"></a>) is an attribute that goes counter
+        the general
+        concept in DCAT, that Distribution should have the same content and may just differ in language,
+        format or resolution. But series of data should not be modeled with them. For series
+        of data datasets, that connect to each other should be used. The concept
+        of <code>dcat:Dataseries</code> is new in [[VOCAB-DCAT-3]] and should be used for this purpose
+        in the future.
+      </p>
+      <p>On datasets, dct:coverage is unnecessary since there are already <code>dct:spatial</code>
+        (<a class="no-sectionRef" href="#dataset-spatial-coverage"></a>) and
+        dct:temporal (<a class="no-sectionRef" href="#dataset-temporal-coverage"></a>), which can cover all possible use
+        cases
+      </p>
+
+      <p>The coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
+        of the [[DCAT-AP]]:</p>
+      <p>"The EU Vocabularies Name Authority Lists must be used for continents, countries and
+        places that are in those lists; if a particular location is not in one of the mentioned
+        Named Authority Lists, Geonames URIs must be used."</p>
+
+      <p class="issue" data-number="79"></p>
+
+      <aside class="ednote" title="Proposal for dct:coverage">
+        <ul>
+          <li>Drop support for dct:coverage on dcat:Dataset
+          </li>
+          <li>Deappreciate the use of dct:coverage for dcat:Distribution
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="thumbnail-issues">
+      <h2>Watch Thumbnail property on DCAT</h2>
+       <p>There is a discussion to add something like this to [[VOCAB-DCAT-3]]
+              at least for <code>dcat:Dataset</code>, see here for a discussion:
+            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
+              thumbnails for DCAT</a>.</p>
+    </section>
+
+    <section id="issued-modified-implementation">
+
+      <h2>Allow xsd:datetime for dates</h2>
+
+      <p>dct:issued and dct:modified are demanded as xsd:date in DCAT-AP CH, but implemented as
+        xsd:datetime on opendata.swiss. In [[DCAT-AP]] both formats are allowed.
+        (<a class="no-sectionRef" href="#catalog-issued"></a>, <a class="no-sectionRef" href="#catalog-issued"></a>,
+        <a class="no-sectionRef" href="#dataset-release-date"></a>, <a class="no-sectionRef"
+                                                                       href="#dataset-modification-date"></a>
+        <a class="no-sectionRef" href="#distribution-release-date"></a>, <a class="no-sectionRef"
+                                                                            href="#distribution-modification-date"></a>)
+      </p>
+
+      <p class="issue" data-number="48"></p>
+
+      <aside class="ednote" title="Proposal for a definition change on issued and modified properties">
+        <ul>
+          <li>Adapt range in DCAT-AP CH to also allow <code>rdfs:Literal</code> typed as <code>xsd:datetime</code></li>
+          <li>See the example below for how the issued is currently implemented on opendata.swiss.</li>
+        </ul>
+      </aside>
+
+      <aside class="example"
+             title="dct:issued as it is currently implemented on opendata.swiss does conform to DCAT-AP">
+        <pre data-include-format="text" data-include="./examples/proposals/issued.ttl"></pre>
       </aside>
 
     </section>
@@ -4145,41 +4149,6 @@
 
     </section>
 
-    <section id="coverage-issues">
-
-      <h2>Drop support for dct:coverage</h2>
-      <p>dct:coverage (<a class="no-sectionRef" href="#distribution-coverage"></a>) is an attribute that goes counter
-        the general
-        concept in DCAT, that Distribution should have the same content and may just differ in language,
-        format or resolution. But series of data should not be modeled with them. For series
-        of data datasets, that connect to each other should be used. The concept
-        of <code>dcat:Dataseries</code> is new in [[VOCAB-DCAT-3]] and should be used for this purpose
-        in the future.
-      </p>
-      <p>On datasets, dct:coverage is unnecessary since there are already <code>dct:spatial</code>
-        (<a class="no-sectionRef" href="#dataset-spatial-coverage"></a>) and
-        dct:temporal (<a class="no-sectionRef" href="#dataset-temporal-coverage"></a>), which can cover all possible use
-        cases
-      </p>
-
-      <p>The coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
-        of the [[DCAT-AP]]:</p>
-      <p>"The EU Vocabularies Name Authority Lists must be used for continents, countries and
-        places that are in those lists; if a particular location is not in one of the mentioned
-        Named Authority Lists, Geonames URIs must be used."</p>
-
-      <p class="issue" data-number="79"></p>
-
-      <aside class="ednote" title="Proposal for dct:coverage">
-        <ul>
-          <li>Drop support for dct:coverage on dcat:Dataset
-          </li>
-          <li>Deappreciate the use of dct:coverage for dcat:Distribution
-          </li>
-        </ul>
-      </aside>
-    </section>
-
     <section id="dataset-concept-issue">
 
       <h2>Concept of a Dataset issue</h2>
@@ -4198,17 +4167,57 @@
 
     </section>
 
+    <section id="landing-page-implementation">
+
+      <h2>Landing page: use URIs</h2>
+
+      <p>The Landing page is specified correctly but implemented in a false way
+        on opendata.swiss: It's range is <code>rdfs:Resource</code> but it is implemented as an
+        <code>rdfs:Literal</code> (<a class="no-sectionRef" href="#dataset-landing-page"></a>)</p>
+
+      <p class="issue" data-number="46"></p>
+
+      <aside class="ednote" title="Proposal for an implementation change for the landing page">
+        <ul>
+          <li>Correct implementation on opendata.swiss</li>
+          <li>See the example below for how the landing page is expected in DCAT-AP.</li>
+        </ul>
+
+      </aside>
+
+      <aside class="example" title="dcat:landingPage is expected as a URI in DCAT-AP">
+        <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="byte-size-implementation">
+
+      <h2>Add xsd:decimal to byte size</h2>
+
+      <p>All <code>dct:byteSize</code> is demanded as xsd:decimal in DCAT-AP CH, but implemented without
+        this format specification and as integer on opendata.swiss
+        (<a class="no-sectionRef" href="#distribution-byte-size"></a>)</p>
+
+      <p class="issue" data-number="49"></p>
+
+      <aside class="ednote" title="Proposal for an implementation change on byte size property">
+        <p>Change the implementation and add the xsd:Decimal type information, since both DCAT-AP CH and [[DCAT-AP]]
+          agree
+          on this.
+        </p>
+      </aside>
+
+      <aside class="example"
+             title="Usage of byte size with xsd type specification as xsd:decimal">
+        <pre data-include-format="text" data-include="./examples/distribution/byte-size.ttl"></pre>
+      </aside>
+
+    </section>
+
     <section id="catalog-implementation-issues">
       <h2>Implement Catalog class on opendata.swiss</h2>
       to be completed ...
-    </section>
-
-    <section id="thumbnail-issues">
-      <h2>Watch Thumbnail property on DCAT</h2>
-       <p>There is a discussion to add something like this to [[VOCAB-DCAT-3]]
-              at least for <code>dcat:Dataset</code>, see here for a discussion:
-            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
-              thumbnails for DCAT</a>.</p>
     </section>
 
   </section>

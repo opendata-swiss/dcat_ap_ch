@@ -53,6 +53,11 @@ var respecConfig = {
         "title":"Data Theme",
         "publisher":"European Commission",
      },
+    "VOCAB-DCAT-FREQUENCY":{
+        "href":"http://dublincore.org/specifications/dublin-core/collection-description/frequency/freq.rdf",
+        "title":"The Collection Description Frequency Namespace",
+        "publisher":"Dublin Core Collection Description Task Group",
+    },
      "DCAT-AP-USE":{
         "href":"https://joinup.ec.europa.eu/sites/default/files/document/2018-04/Report%20on%20DCAT-AP%20use.pdf",
         "title":"Report on DCAT-AP use",
