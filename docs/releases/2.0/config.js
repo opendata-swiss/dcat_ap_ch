@@ -43,6 +43,11 @@ var respecConfig = {
         "title":"Language",
         "publisher":"European Commission",
       },
+      "VOCAB-DCAT-FREQUENCY":{
+          "href":"http://dublincore.org/specifications/dublin-core/collection-description/frequency/freq.rdf",
+          "title":"The Collection Description Frequency Namespace",
+          "publisher":"Dublin Core Collection Description Task Group",
+      },
      "VOCAB-EU-PUBLISHERS":{
         "href":"http://publications.europa.eu/resource/authority/corporate-body",
         "title":"Corperate Body",
