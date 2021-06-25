@@ -3894,22 +3894,16 @@
 
       <h2>Frequency: use EU vocabulary</h2>
 
-      <p>The Frequency property (<a class="no-sectionRef" href="#dataset-update-frequency"></a>)
-        MUST use [[VOCAB-EU-FREQUENCY]] to conform to DCAT-AP</p>
+      <ul>
+        <li><strong>Details</strong>: [[VOCAB-DCAT-FREQUENCY]] is used instead of [[VOCAB-EU-FREQUENCY]]</li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-update-frequency"></a>
+      </ul>
 
-      <p class="issue" data-number="52"></p>
-
-      <aside class="ednote" title="Proposal for a vocabulary change for the frequency">
-        <ul>
-          <li>Add [[VOCAB-EU-FREQUENCY]] vocabulary to the range of the definition as a MUST</li>
-          <li>Adapt implementation on opendata.swiss</li>
-          <li>See the example below for how the frequency is expected in DCAT-AP</li>
-        </ul>
-      </aside>
-
-      <aside class="example" title="dct:accrualPeriodicty MUST use the EU vocabulary to conform DCAT-AP">
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:accrualPeriodicty">
         <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
       </aside>
+
+      <p class="issue" data-number="52"></p>
 
     </section>
 
