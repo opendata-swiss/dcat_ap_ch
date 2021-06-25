@@ -3857,30 +3857,36 @@
 
   <section id="dcat-ap-conformance-problems-details">
 
-    <h2>Detailed Analyis</h2>
-    <section id="language-issues">
-
-      <h2>Language: use EU vocabulary</h2>
-
-      <p>The Language property does not conform to DCAT-AP: it MUST use [[VOCAB-EU-LANG]].
-        (<a class="no-sectionRef" href="#catalog-language"></a>, <a class="no-sectionRef" href="#dataset-language"></a>,
-        <a class="no-sectionRef" href="#distribution-language"></a>)
-      </p>
-
-      <p class="issue" data-number="26"></p>
-
-      <aside class="ednote" title="Proposal for a vocabulary change for the language">
-        <strong>Proposal:</strong>
+    <h2>Detailed Analysis</h2>
+      <aside class="ednote" title="issues with dct:language">
+        Each conformance problem discussed in this section is structured
+        in the following way:
         <ul>
-          <li>Adapt the range of the language property and demand the use of [[VOCAB-EU-LANG]]</li>
-          <li>Change implementation on opendata.swiss so that in conforms to this change</li>
-          <li>See the example below for how the language is expected in DCAT-AP.</li>
+          <li>Details on the conformance issue</li>
+          <li>Links to the affected property or class definitions in the specification</li>
+          <li>If possible an example has been added to show a conformant usage or
+            replacement of the property or class</li>
+          <li>The conformance problem has been raised as a github issue. That github issue is included.
+            The further discussion should then continue within the community directly on the github repo.</li>
         </ul>
       </aside>
 
-      <aside class="example" title="dct:language MUST use the EU vocabulary as URI to conform DCAT-AP">
+
+     <section id="language-issues">
+
+      <h2>Language: use EU vocabulary</h2>
+
+        <ul>
+          <li><strong>Details</strong>: [[ISO 639-1]] is used instead of [[VOCAB-EU-LANG]]</li>
+          <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#catalog-language"></a>,
+            <a class="no-sectionRef" href="#dataset-language"></a>,
+            <a class="no-sectionRef" href="#distribution-language"></a></li>
+        </ul>
+
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:language">
         <pre data-include-format="text" data-include="./examples/proposals/language.ttl"></pre>
       </aside>
+      <p class="issue" data-number="26"></p>
 
     </section>
 
