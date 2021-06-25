@@ -3986,40 +3986,34 @@
 
     <section id="publisher-issues">
 
-      <h2>The publisher needs a refactoring</h2>
-
-      <p>The Publisher has several problems:</p>
-
+      <h2>The publisher property needs a refactoring</h2>
       <ul>
-        <li>On dcat:Dataset the cardinality is wrong (<a class="no-sectionRef" href="#dataset-publisher"></a>))</li>
-        <li>The definition contradicts itself (<a class="no-sectionRef" href="#catalog-publisher"></a>,
-          <a class="no-sectionRef" href="#dataset-publisher"></a>). Also TERMDAT has never been used in the way
-          described on opendata.swiss.
-        </li>
-        <li>According to DCAT-AP a controlled vocabulary should be used for <code>dct:publisher</code></li>
-      </ul>
-
+          <li><strong>Details</strong>:
+            <p>On <code>dcat:Dataset</code> the cardinality does not conform DCAT-AP's cardinaltiy of maximum 1.</p>
+            <p>The definition of <code>dct:publisher</code> is unclear and does not conform DCAT:
+            the range says <code>foaf:Agent</code>, but the example given uses rdfs:Description. This is also
+            the way the publisher is currently implemented on opendata.swiss</p>
+            <p>DCAT-AP demands the usage of a publisher vocabulary. DCAT-AP uses [[VOCAB-EU-PUBLISHERS]].
+            In conversations with them they recommended us to build our own vocabulary for this.</p>
+          </li>
+          <li><strong>Affected definitions</strong>:
+            <a class="no-sectionRef" href="#catalog-publisher"></a>,
+            <a class="no-sectionRef" href="#dataset-publisher"></a></li>
+        </ul>
+      <aside class="note">
+        A <code>foaf:Organization</code> is a subclass of <code>foaf:Agent</code>. Since the
+        publisher is the legal authority to publish the data, ist is usually entered as this subclass,
+        rather then as the an <code>foaf:Agent</code>.
+      </aside>
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:publisher without the use of a controlled vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/publisher.ttl"></pre>
+      </aside>
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:publisher with the use of a controlled vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/publisher-with-vocabulary.ttl"></pre>
+      </aside>
       <p class="issue" data-number="19"></p>
       <p class="issue" data-number="23"></p>
       <p class="issue" data-number="2"></p>
-      <aside class="ednote" title="Proposal for refactoring the publisher property">
-        <ul>
-          <li>Change the definition on both catalog and dataset to use foaf:Agent instead of rdf:description
-          </li>
-          <li>Change the cardinality on the dataset to 1 in order to be confromant with DCAT-AP</li>
-          <li>Correct implementation on opendata.swiss</li>
-          <li>Build a publisher vocabulary for Swiss datapublishers similar to the one the EU uses
-            for its publishers [[VOCAB-EU-PUBLISHERS]]
-          </li>
-          <li>Before the vocabulary is in place the publisher should at least changed so that
-            it is implemented as in the example below:
-          </li>
-        </ul>
-
-      </aside>
-      <aside class="example" title="Usage of dct:publisher for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/proposals/publisher.ttl"></pre>
-      </aside>
 
     </section>
 
