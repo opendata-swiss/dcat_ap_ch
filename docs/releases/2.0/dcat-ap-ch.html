@@ -3911,23 +3911,19 @@
 
       <h2>Landing page: use URIs</h2>
 
-      <p>The Landing page is specified correctly but implemented in a false way
-        on opendata.swiss: It's range is <code>rdfs:Resource</code> but it is implemented as an
-        <code>rdfs:Literal</code> (<a class="no-sectionRef" href="#dataset-landing-page"></a>)</p>
-
-      <p class="issue" data-number="46"></p>
-
-      <aside class="ednote" title="Proposal for an implementation change for the landing page">
-        <ul>
-          <li>Correct implementation on opendata.swiss</li>
-          <li>See the example below for how the landing page is expected in DCAT-AP.</li>
-        </ul>
-
+      <ul>
+        <li><strong>Details</strong>: dcat:landingPage is implemented as an <code>rdfs:Literal</code> on opendata.swiss,
+        but DCAT-AP demands a <code>foaf:Document</code></li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-landing-page"></a>
+      </ul>
+      <aside class="example" title="Example of dcat:landingPage as it is currently implemented on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/implemented/landing-page.ttl"></pre>
       </aside>
-
-      <aside class="example" title="dcat:landingPage is expected as a URI in DCAT-AP">
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dcat:landingPage">
         <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
       </aside>
+
+      <p class="issue" data-number="46"></p>
 
     </section>
 
