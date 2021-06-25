@@ -3688,7 +3688,7 @@
       while remaining in line with the Swiss demands of [[OGD]] and [[NaDB]]. </p>
     <p>Therefore this
     section explains the conformance criteria and points out conformance violations, so that they can
-      be further discussed and hopefully solved by the community around DCAT-AP CH.</p>
+      be further discussed and solved by the community around DCAT-AP CH.</p>
   </aside>
 
   <section id="dcat-ap-conformance-criteria">
@@ -3730,24 +3730,24 @@
       <li><strong>Conformance to DCAT:</strong> All classes and properties MUST be used in a way that they were meant for by the DCAT vocabulary:
       For example: DCAT vocabulary states that the distributions of a dataset should only differ in resolution,
       language and format but not in the content that they cover. Therefore an attrbitute such as
-        <code>dct:coverage</code> on <code>dcat:Distribution</code> hurts that principle and is discusses
+        <code>dct:coverage</code> on <code>dcat:Distribution</code> hurts that principle and is discussed
         in this section as being not conformant to DCAT. See
         <a class="no-sectionRef" href="#coverage-issues"></a> for the details.
       </li>
       <li><strong>Conformance to DCAT:</strong>
         DCAT-AP CH MAY introduce Swiss specific properties and vocabulary, such as the cantons of Switzerland, that
         don't exist in the DCAT vocabulary.
-        It should however not invent properties, that are alreay in DCAT expressed with different vocabulary. In that case the DCAT vocabulary
-        should be used instead.
+        It should however not introduce its own (custom) properties that are already expressed in DCAT with different vocabularies.
+        In those cases the DCAT vocabulary has to be used.
         For example the Swiss <code>rdfs:seeAlso</code> is used
-        to express Relationships between Datasets. But DCAT already has vocabulary to express
-        those relationships. Therefore these Swiss constructs are also considered to
-        not conform to DCAT. They wont be understood on an international or European level.
+        to express relationships between datasets. But DCAT already has vocabulary to express
+        those relationships. Therefore these Swiss constructs are not conforming to DCAT.
+        These relationships can not be interpreted on an international or European level.
         See <a class="no-sectionRef" href="#see-also-issues"></a>.
       </li>
       <li><strong>Conformance to DCAT-AP:</strong>
-        DCAT-AP CH can restrict more that DCAT-AP regarding mandatory fields and mandatory vocabulary, but it can't
-        restrict less. For example currently DCAT-AP CH uses DCAT vocabulary for many properties, such as <code>dct:language</code>,
+        DCAT-AP CH can restrict more than DCAT-AP regarding mandatory fields and mandatory vocabulary, but it is not allowed
+        to restrict less. For example currently DCAT-AP CH uses DCAT vocabulary for many properties, such as <code>dct:language</code>,
         <code>dct:accrualPeriodicty</code>. This usage conforms DCAT, but not DCAT-AP. Therefore these vocabulary usages are also
         considered to be a conformance issue. See <a class="no-sectionRef" href="#frequency-issues"></a> and
         <a class="no-sectionRef" href="#language-issues"></a>.
@@ -3756,7 +3756,7 @@
   </section>
   <section id="dcat-ap-conformance-issues-summary">
     <h3>Conformance Issues Summary</h3>
-    <p>The following tables gives an overview on all conformance issues, that have been noted so far:</p>
+    <p>The following tables give an overview on all conformance issues, that have been noted so far:</p>
     <table class="simple">
       <thead>
       <tr>
@@ -3823,12 +3823,12 @@
       </tr>
       <tr>
         <td><code>dct:spatial</code></td>
-        <td>defintion and usage</td>
+        <td>definition and usage</td>
         <td><a class="no-sectionRef" href="#spatial-issues"></a></td>
       </tr>
       <tr>
         <td><code>dct:identifier</code></td>
-        <td>defintion and usage</td>
+        <td>definition and usage</td>
         <td><a class="no-sectionRef" href="#identifier-issues"></a></td>
       </tr>
       <tr>
@@ -4076,9 +4076,9 @@
 
     <section id="media-type-issues">
 
-      <h2>Add Media types to IANA</h2>
+      <h2>Add Media types to [[IANA-MEDIA-TYPES]]</h2>
 
-      <p>To be filles</p>
+      <p>To be filled</p>
 
     </section>
 
