@@ -3684,101 +3684,172 @@
   <h2>Conformance to DCAT-AP</h2>
 
   <aside class="ednote">
-    <p>This document is the preparation for version 2 of DCAT-AP CH. The goal is to reach conformity with the DCAT-AP
-      while remaining in line with the Swiss demands of OGD and NaDB.</p>
+    <p>This document is the preparation for version 2 of DCAT-AP CH. The goal is to reach conformity with DCAT-AP
+      while remaining in line with the Swiss demands of [[OGD]] and [[NaDB]]. </p>
+    <p>Therefore this
+    section explains the conformance criteria and points out conformance violations, so that they can
+      be further discussed and solved by the community around DCAT-AP CH.</p>
   </aside>
 
   <section id="dcat-ap-conformance-criteria">
-    <h2>Criteria</h2>
+    <h3>Conformance Criteria</h3>
 
-    <p>
-      <strong>That DCAT-AP CH as a DCAT profile conforms to DCAT-AP</strong> means that it
-      generally follows the spirit of DCAT and DCAT-AP. It may add additional constraints
-      on classes and properties, but it should not enforce whatever DCAT-AP enforces as a minimum.
-      Where DCAT-AP demands controlled vocabulary it is strongly recommended to use this
-      vocabulary. It can define custom properties to cover special Swiss needs, but it
-      should not invent constructs and properties that strech DCAT into unintended directions</p>
+    <p>DCAT-AP CH and DCAT-AP are both application profiles for DCAT.<p>
+    <p>The [[DCAT-PROFILE-GUIDANCE]] states that application profiles may form hierarchies.<p>
+    <p>For interoperabilty reasons DCAT-AP CH aims to be a subprofile of DCAT-AP. That way
+    the data using DCAT-AP CH can be harvested by the European dataportal without loosing
+    important information on its metadata.</p>
 
-  </section>
-  <section id="dcat-ap-conformance-problems-overview">
+    <p>The following diagramm captures the relationship between DCAT, DCAT-AP and DCAT-AP CH:
 
-    <h2>Overview</h2>
+    <div id="diagram2" class="mermaid">
+      classDiagram
 
-    <p>When studying DCAT-AP and DCAT-AP CH in close detail many problems surface where
-      DCAT-AP CH does not conform. Some are are easy to fix and not a big deal, why others are more severe
-      and hint on a differnt understanding of the overall structure of the Metadata-Model that needs to be addressed,
-      before DCAT-AP CH can profit from new developments in DCAT</p>
+      DCAT -->  DCAT_AP: is_profile_of
+      DCAT_AP --> DCAT_AP_CH: is_subprofile_of
+      DCAT --> DCAT_AP_CH: is_profile_of
+      class DCAT {
+        - defines classes
+        - defines properties
+        - base vocabulary
+      }
+      class  DCAT_AP {
+        - mandatory/recommended classes
+        - mandatory/recommended properties
+        - mandatory/recommended vocabulary
+      }
+      class DCAT_AP_CH {
+        - can restrict more than DCAT_AP
+        - cannot restrict less than DCAT_AP
+      }
+    </div>
 
-    <p>In this section you will find a short overview of the problems that will then be analysed in more
-      detail in the sections below.</p>
-
+    <p>DCAT-AP CH must conform to both DCAT and DCAT-AP.
+      This conformance of DCAT-AP CH means in detail:</p>
     <ul>
-      <li><strong>Different understanding of the role of Datasets and Distributions</strong>: The most severe problem
-        is grounded in a different understanding of the role of dcat:Dataset and dcat:Distribution:
-        while in DCAT all Distributions are supposed to have the same content and different content such as
-        series of content always needs datasets that might be connected, in DCAT-AP CH distributions are supposed
-        to model series of similar data. This general understanding has consequences:
-        in DCAT there is no coverage for Distributions. Coverage can only happen on the dataset level.
-        In DCAT-AP CH on the other hand the attribute dct:coverage was introduced for exactly that
-        purpose: for expressing what part of the dataset a resource covers. I would suggest to
-        leave that property behind and follow DCAT in this. Otherwise in the long run Distribution will become
-        sort of Mini Dataset and that will cause problems with other properties too.
+      <li><strong>Conformance to DCAT:</strong> All classes and properties MUST be used in a way that they were meant for by the DCAT vocabulary:
+      For example: DCAT vocabulary states that the distributions of a dataset should only differ in resolution,
+      language and format but not in the content that they cover. Therefore an attrbitute such as
+        <code>dct:coverage</code> on <code>dcat:Distribution</code> hurts that principle and is discussed
+        in this section as being not conformant to DCAT. See
+        <a class="no-sectionRef" href="#coverage-issues"></a> for the details.
       </li>
-      <li><strong>Vocabulary usage</strong>: In some properties DCAT-AP demands the usage
-        of EU vocabulary, where in DCAT-AP CH the ranges have been defined using DCAT vocabulary. This
-        is true for the language property (<a class="no-sectionRef" href="#language-issues"></a>) as well as
-        for the frequency ((<a class="no-sectionRef" href="#frequency-issues"></a>)). This problems are easy to fix:
-        as well in the definition as in the implemetation on opendata.swiss.
+      <li><strong>Conformance to DCAT:</strong>
+        DCAT-AP CH MAY introduce Swiss specific properties and vocabulary, such as the cantons of Switzerland, that
+        don't exist in the DCAT vocabulary.
+        It should however not introduce its own (custom) properties that are already expressed in DCAT with different vocabularies.
+        In those cases the DCAT vocabulary has to be used.
+        For example the Swiss <code>rdfs:seeAlso</code> is used
+        to express relationships between datasets. But DCAT already has vocabulary to express
+        those relationships. Therefore these Swiss constructs are not conforming to DCAT.
+        These relationships can not be interpreted on an international or European level.
+        See <a class="no-sectionRef" href="#see-also-issues"></a>.
       </li>
-      <li><strong>Inconsistencies in the implementation on opendata.swiss</strong>:
-        Some of these inconsistencies might be misundertstandings. Therfore examples have been
-        added to this specification, to clarify how the properties should be used.
-        Some of this incoistencies may just resolve by themselves such as the fact that DCAT-AP-Ch
-        specifies Literals of tape date for issuance and modification date, while DCAT-AP also
-        allows datetime for these field and they have been implemented as dattime.
-        Also the homepage has been misunderstood, as it is implemented as a Literal on opendata.swiss
-        where it should be a Resource in DCAT-AP CH as in DCAT-AP.
-      </li>
-      <li><strong>Modelling relationships between datasets</strong></li>
-      <li><strong>License and rights</strong></li>
-      <li><strong>Format and media type</strong></li>
-      <li><strong>The modeling of Relationship of resources has flaws</strong>
-        <code>rdfs:seeAlso</code> is modeled in way that goes against the spirit of Linked Data.
+      <li><strong>Conformance to DCAT-AP:</strong>
+        DCAT-AP CH can restrict more than DCAT-AP regarding mandatory fields and mandatory vocabulary, but it is not allowed
+        to restrict less. For example currently DCAT-AP CH uses DCAT vocabulary for many properties, such as <code>dct:language</code>,
+        <code>dct:accrualPeriodicty</code>. This usage conforms DCAT, but not DCAT-AP. Therefore these vocabulary usages are also
+        considered to be a conformance issue. See <a class="no-sectionRef" href="#frequency-issues"></a> and
+        <a class="no-sectionRef" href="#language-issues"></a>.
       </li>
     </ul>
+  </section>
+  <section id="dcat-ap-conformance-issues-summary">
+    <h3>Conformance Issues Summary</h3>
+    <p>The following tables give an overview on all conformance issues, that have been noted so far:</p>
     <table class="simple">
       <thead>
       <tr>
-        <th>Item</th>
-        <th>Issue</th>
-        <th>Proposal</th>
+        <th>Property/Class</th>
+        <th>Issue-Type</th>
+        <th>Discussion</th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <td><a href="#language-issues">language</a>
-        <td>malformed, wrong vocabulary</td>
-        <td>switch to EU vocabulary and use URIs</td>
+        <td><code>dct:publisher</code></td>
+        <td>multiple issues</td>
+        <td><a class="no-sectionRef" href="#publisher-issues"></a></td>
       </tr>
       <tr>
-        <td><a href="#frequency-issues">frequency</a>
-        <td>wrong vocabulary</td>
-        <td>switch to EU vocabulary</td>
+        <td><code>dct:rights</code></td>
+        <td>multiple issues</td>
+        <td><a class="no-sectionRef" href="#rights-issues"></a></td>
       </tr>
       <tr>
-        <td><a href="#issued-modified-implementation">issued, modified</a>
-        <td>implemented with xsd:datetime instead of xsd:date</td>
-        <td>adapt definition to also allow xsd:datetime</td>
+        <td><code>dct:license</code></td>
+        <td>definition and vocabulary</td>
+        <td><a class="no-sectionRef" href="#license-issues"></a></td>
       </tr>
       <tr>
-        <td><a href="#landing-page-implementation">landing page</a>
-        <td>implemented with literal</td>
-        <td>change implementation to use a resource</td>
+        <td><code>dct:language</code></td>
+        <td>vocabulary</td>
+        <td><a class="no-sectionRef" href="#language-issues"></a></td>
       </tr>
       <tr>
-        <td><a href="#byte-size-implementation">byte size</a>
-        <td>implemented with as integer without type</td>
-        <td>change implementation to add xsd:decimal</td>
+        <td><code>dct:accrualPeriodicity</code></td>
+        <td>vocabulary</td>
+        <td><a class="no-sectionRef" href="#frequency-issues"></a></td>
+      </tr>
+      <tr>
+        <td><code>dct:format</code></td>
+        <td>vocabulary</td>
+        <td><a class="no-sectionRef" href="#format-issues"></a></td>
+      </tr>
+      <tr>
+        <td><code>dct:mediaType</code></td>
+        <td>vocabulary</td>
+        <td><a class="no-sectionRef" href="#media-type-issues"></a></td>
+      </tr>
+      <tr>
+        <td><code>rdfs:seeAlso</code></td>
+        <td>custom property, not DCAT conform</td>
+        <td><a class="no-sectionRef" href="#see-also-issues"></a></td>
+      </tr>
+      <tr>
+        <td><code>dct:coverage</code></td>
+        <td>custom property, not DCAT conform</td>
+        <td><a class="no-sectionRef" href="#coverage-issues"></a></td>
+      </tr>
+      <tr>
+        <td><code>schema:Image</code></td>
+        <td>custom property needs a discussion</td>
+        <td><a class="no-sectionRef" href="#thumbnail-issues"></a></td>
+      </tr>
+      <tr>
+        <td><code>dct:issued</code>, <code>dct:modified</code></td>
+        <td>definition and usage</td>
+        <td><a class="no-sectionRef" href="#issued-modified-implementation"></a></td>
+      </tr>
+      <tr>
+        <td><code>dct:spatial</code></td>
+        <td>definition and usage</td>
+        <td><a class="no-sectionRef" href="#spatial-issues"></a></td>
+      </tr>
+      <tr>
+        <td><code>dct:identifier</code></td>
+        <td>definition and usage</td>
+        <td><a class="no-sectionRef" href="#identifier-issues"></a></td>
+      </tr>
+      <tr>
+        <td><code>dcat:Distribution</code></td>
+        <td>definition and usage</td>
+        <td><a class="no-sectionRef" href="#dataset-concept-issue"></a></td>
+      </tr>
+      <tr>
+        <td><code>dct:landingPage</code></td>
+        <td>usage</td>
+        <td><a class="no-sectionRef" href="#landing-page-implementation"></a></td>
+      </tr>
+      <tr>
+        <td><code>dct:byteSize</code></td>
+        <td>usage</td>
+        <td><a class="no-sectionRef" href="#byte-size-implementation"></a></td>
+      </tr>
+      <tr>
+        <td><code>dcat:Catalog</code></td>
+        <td>usage</td>
+        <td><a class="no-sectionRef" href="#catalog-implementation-issues"></a></td>
       </tr>
       </tbody>
     </table>
@@ -3995,6 +4066,22 @@
 
     </section>
 
+    <section id="rights-issues">
+
+      <h2>Rights issues</h2>
+
+      <p>to be filled</p>
+
+    </section>
+
+    <section id="media-type-issues">
+
+      <h2>Add Media types to [[IANA-MEDIA-TYPES]]</h2>
+
+      <p>To be filled</p>
+
+    </section>
+
     <section id="format-issues">
 
       <h2>Use EU vocabulary for format</h2>
@@ -4101,7 +4188,7 @@
       <p>Some problems that we currently face, for example the need of the attribute <code>dct:coverage</code>
         for dcat:Distribution come from the fact, that we we misinterpret what is meant by a dataset: in [[VOCAB-DCAT]]
         there is a note
-        <a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a></p>
+        <a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a>
       that states that the Distributions of a dataset should contain the same content, but in different
       format. If there is a series of different content it should rather be modeled as a datasets that relate
       to each other. </p>

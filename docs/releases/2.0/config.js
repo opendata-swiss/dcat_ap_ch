@@ -98,6 +98,21 @@ var respecConfig = {
         "href": "https://theodi.org/article/publishers-guide-to-the-open-data-rights-statement-vocabulary/",
         "title": "Publisher’s Guide to the Open Data Rights Statement Vocabulary",
         "publisher": "Open Data Institute",
-      }
+      },
+      "DCAT-PROFILE-GUIDANCE":{
+        "href": "https://w3c.github.io/dxwg/profiles/",
+        "title": "Profile Guidancey",
+        "publisher": "W3C",
+      },
+      "OGD":{
+        "href": "https://www.bfs.admin.ch/bfs/en/home/services/ogd.html",
+        "title": "Open Government Data",
+        "publisher": "Swiss Federal Statistical Office ",
+      },
+      "NaDB":{
+        "href": "https://www.bfs.admin.ch/bfs/en/home/nadb/nadb.html",
+        "title": "National data management NaDB",
+        "publisher": "Swiss Federal Statistical Office ",
+      },
     }
 };
