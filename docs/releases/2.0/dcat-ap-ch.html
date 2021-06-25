@@ -3931,28 +3931,24 @@
 
       <h2>Allow xsd:datetime for dates</h2>
 
-      <p>dct:issued and dct:modified are demanded as xsd:date in DCAT-AP CH, but implemented as
-        xsd:datetime on opendata.swiss. In [[DCAT-AP]] both formats are allowed.
-        (<a class="no-sectionRef" href="#catalog-issued"></a>, <a class="no-sectionRef" href="#catalog-issued"></a>,
-        <a class="no-sectionRef" href="#dataset-release-date"></a>, <a class="no-sectionRef"
-                                                                       href="#dataset-modification-date"></a>
-        <a class="no-sectionRef" href="#distribution-release-date"></a>, <a class="no-sectionRef"
-                                                                            href="#distribution-modification-date"></a>)
-      </p>
-
-      <p class="issue" data-number="48"></p>
-
-      <aside class="ednote" title="Proposal for a definition change on issued and modified properties">
-        <ul>
-          <li>Adapt range in DCAT-AP CH to also allow <code>rdfs:Literal</code> typed as <code>xsd:datetime</code></li>
-          <li>See the example below for how the issued is currently implemented on opendata.swiss.</li>
-        </ul>
-      </aside>
-
+      <ul>
+        <li><strong>Details</strong>: <code>dct:issued</code> and <code>dct:modified</code> are demanded as <code>rdfs:Literal</code>
+        typed as <code>xsd:date</code> in DCAT-AP CH. But they are
+        implemented as as <code>rdfs:Literal</code> typed <code>xsd:datetime</code> on opendata.swiss. This implementation
+        does not conform DCAT-AP CH but it does conform DCAT-AP. Therefore it would be an option to adapt the
+        definition of those properties to the DCAT-AP definition in order to solve this non conformance to DCAT-AP CH.</li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#catalog-issued"></a>,
+          <a class="no-sectionRef" href="#catalog-issued"></a>,
+        <a class="no-sectionRef" href="#dataset-release-date"></a>,
+          <a class="no-sectionRef" href="#dataset-modification-date"></a>
+        <a class="no-sectionRef" href="#distribution-release-date"></a>,
+          <a class="no-sectionRef" href="#distribution-modification-date"></a>
+      </ul>
       <aside class="example"
-             title="dct:issued as it is currently implemented on opendata.swiss does conform to DCAT-AP">
+             title="Example for the current implementation of dct:issued on opendata.swiss that does conform to DCAT-AP but not to DCAT-AP CH">
         <pre data-include-format="text" data-include="./examples/proposals/issued.ttl"></pre>
       </aside>
+      <p class="issue" data-number="48"></p>
 
     </section>
 
