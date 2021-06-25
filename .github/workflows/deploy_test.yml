@@ -2,6 +2,7 @@ name: Deploy to TEST
 
 on:
   push:
+    # temporary change to be able to deploy code that hasn't yet been merged into main
     branches: [ main, develop ]
   workflow_dispatch:
 
