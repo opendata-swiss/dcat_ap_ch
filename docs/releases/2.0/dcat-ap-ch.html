@@ -4045,9 +4045,26 @@
 
     <section id="media-type-issues">
 
-      <h2>Add Media types to [[IANA-MEDIA-TYPES]]</h2>
+      <h2>Media type as second choice to format</h2>
+      <ul>
+        <li><strong>Details</strong>: <code>dct:mediaTypes</code> MUST use the [[IANA-MEDIA-TYPES]] vocabulary.
+          DCAT-AP prefers <strong>dct:format</strong> with the [[VOCAB-EU-FILETYPE]]. If the file format does not exist
+          there and is rejected as a contribution, only then <code>dct:mediaTypes</code> should be used.
+          In case it does not exists it should be contributed to the [[IANA-MEDIA-TYPES]].
+        </li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-media-type"></a>
+      </ul>
 
-      <p>To be filled</p>
+      <aside class="example" title="Example of the current implenetation of dcat:mediaType on opendata.swiss: it is
+      implemented as an rdfs:literal">
+        <pre data-include-format="text" data-include="./examples/implemented/media-type.ttl"></pre>
+      </aside>
+
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:format with the file type vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/media-type.ttl"></pre>
+      </aside>
+
+      <p class="issue" data-number="111"></p>
 
     </section>
 
