@@ -48,6 +48,11 @@ var respecConfig = {
           "title":"The Collection Description Frequency Namespace",
           "publisher":"Dublin Core Collection Description Task Group",
       },
+     "OP-EU-VOCABULARIES":{
+          "href":"https://op.europa.eu/en/web/eu-vocabularies",
+          "title":"EU Vocabularies",
+          "publisher":"Publications Office of the European Union",
+     },
      "VOCAB-EU-PUBLISHERS":{
         "href":"http://publications.europa.eu/resource/authority/corporate-body",
         "title":"Corperate Body",
