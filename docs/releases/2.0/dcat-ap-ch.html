@@ -4075,34 +4075,34 @@
 
     <section id="theme-issues">
 
-      <h2>Add Usage of EU themes</h2>
+      <h2>Add usage of EU themes and vocubulary for Swiss categries</h2>
 
-      <p>The theme must also map to the EU categories and it MUST use a skos:ConceptScheme for
-        the Swiss categories</p>
-
-      <p class="issue" data-number="31"></p>
-
-      <aside class="ednote" title="Proposal for theme and theme taxonomy">
-        <ul>
-          <li>Integrate the [[VOCAB-EU-THEME]] into the defintion of both
-            dcat:themeTaxonomy and dcat:theme
-          </li>
-          <li>Change the usage of dcat:themeTaxonomy from optional to recommended as it is in DCAT-AP</li>
-          <li>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</li>
-        </ul>
-      </aside>
+      <ul>
+        <li><strong>Details</strong>: <code>dcat:theme</code> is expected
+          as a controlled vocabulary. Also the EU categories [[VOCAB-EU-THEME]] is expected
+          to be supported.</li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-theme"></a>,
+        <a class="no-sectionRef" href="#catalog-theme-taxonomy"></a>
+      </ul>
 
       <aside class="example" title="Usage of dcat:themeTaxonomay and dcat:theme">
         <pre data-include-format="text" data-include="./examples/proposals/theme.ttl"></pre>
       </aside>
 
+      <p class="issue" data-number="31"></p>
+
     </section>
 
     <section id="see-also-issues">
 
-      <h2>See Also should be replaced</h2>
+      <h2>Use DCAT vocabulary instead of seeAlso</h2>
 
-      <p>See Alsos is not a a DCAT conformant way to express relationships between datasets.</p>
+      <ul>
+        <li><strong>Details</strong>: <code>rdfs:seeAlsos</code> is a custom Swiss construct to
+          express relationsships between dataset. But there is already vocabulary in DCAT for this
+          purpose. In case to stay in line with DCAT the DCAT vocabulary MUST be used.</li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-see-also"></a></li>
+      </ul>
 
       <p class="issue" data-number="53"></p>
 
@@ -4111,44 +4111,39 @@
     <section id="coverage-issues">
 
       <h2>Drop support for dct:coverage</h2>
-      <p>dct:coverage (<a class="no-sectionRef" href="#distribution-coverage"></a>) is an attribute that goes counter
-        the general
-        concept in DCAT, that Distribution should have the same content and may just differ in language,
-        format or resolution. But series of data should not be modeled with them. For series
-        of data datasets, that connect to each other should be used. The concept
-        of <code>dcat:Dataseries</code> is new in [[VOCAB-DCAT-3]] and should be used for this purpose
-        in the future.
-      </p>
-      <p>On datasets, dct:coverage is unnecessary since there are already <code>dct:spatial</code>
-        (<a class="no-sectionRef" href="#dataset-spatial-coverage"></a>) and
-        dct:temporal (<a class="no-sectionRef" href="#dataset-temporal-coverage"></a>), which can cover all possible use
-        cases
-      </p>
 
-      <p>The coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
-        of the [[DCAT-AP]]:</p>
-      <p>"The EU Vocabularies Name Authority Lists must be used for continents, countries and
-        places that are in those lists; if a particular location is not in one of the mentioned
-        Named Authority Lists, Geonames URIs must be used."</p>
+      <ul>
+        <li><strong>Details</strong>: <code>dct:coverage</code> on <code>dcat:Dataset</code> is too close
+          to <code>dct:spatial</code> and <code>dct:temporal</code> and replaceable by these two more
+          specific properties. Therefore its usage for dataset has already been discouraged.
+          On <code>dcat:Distribution</code> its use hurts the prinicple, that distribution should all have an
+          equal scope of content. They may only differ
+          in language, format and resolution. See
+          Therefore DCAT has also vocabulary to express the resolution
+          of Distributions but none to express their coverage. The use of the property should
+          therefore be depricated and datasets, that use it should be modeled as <code>dcat:DataSeries</code> instead.</li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-coverage"></a>,
+          <a class="no-sectionRef" href="#distribution-coverage"></a></li>
+      </ul>
 
       <p class="issue" data-number="79"></p>
 
-      <aside class="ednote" title="Proposal for dct:coverage">
-        <ul>
-          <li>Drop support for dct:coverage on dcat:Dataset
-          </li>
-          <li>Deappreciate the use of dct:coverage for dcat:Distribution
-          </li>
-        </ul>
-      </aside>
     </section>
 
     <section id="thumbnail-issues">
       <h2>Watch Thumbnail property on DCAT</h2>
-       <p>There is a discussion to add something like this to [[VOCAB-DCAT-3]]
-              at least for <code>dcat:Dataset</code>, see here for a discussion:
-            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
-              thumbnails for DCAT</a>.</p>
+       <ul>
+        <li><strong>Details</strong>: <code>schema:Image</code> is a custom Swiss construct to
+          include thumbnails for datasets and distributions.
+          In DCAT there is a discussion about this topic:
+          <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
+              thumbnails for DCAT</a>. In order to stay aligned with DCAT this discussion has
+          to be watched. In case DCAT adds similar vocabulary, it might be necessary to switch to the
+          DCAT vocabulary in the future.</li>
+        <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#dataset-image"></a>,
+        <a class="no-sectionRef" href="#distribution-image"></a>
+        </li>
+      </ul>
     </section>
 
     <section id="issued-modified-implementation">
@@ -4180,25 +4175,17 @@
 
       <h2>Improve support for spatial</h2>
 
-      <p>The spatial coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
-        of the [[DCAT-AP]]:</p>
-      <p>"The EU Vocabularies Name Authority Lists must be used for continents, countries and
-        places that are in those lists; if a particular location is not in one of the mentioned
-        Named Authority Lists, Geonames URIs must be used."</p>
-      <p>Also the explanation needs to be corrected: the property can also be used for polygon at
-        this time.</p>
+      <ul>
+        <li><strong>Details</strong>: <code>dct:spatial</code> must use a controlled vocabulary
+          for locations to conform DCAT-AP. "The EU Vocabularies Name Authority Lists must be used for continents,
+          countries and
+          places that are in those lists; if a particular location is not in one of the mentioned
+          Named Authority Lists, Geonames URIs must be used." Also the explanation needs to be updated:
+          the property can also be used with polygons but the property needs more explanation on this usage.</li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-spatial-coverage"></a>
+      </ul>
 
-      <p class="issue" data-number="52"></p>
-
-      <aside class="ednote" title="Proposal for spatial defintion change">
-        <ul>
-          <li>Flesh out the definition for spatial and give more guidance there
-          </li>
-          <li>Update the section about polygons</li>
-          <li>Check with geocat on vocabulary that can be used for locations. Add
-          the vocabulary to [[VOCAB-DCAT-AP-DEF]]</li>
-        </ul>
-      </aside>
+      <p class="issue" data-number="61"></p>
 
     </section>
 
@@ -4206,8 +4193,14 @@
 
       <h2>Rethink dataset identifiers</h2>
 
-      <p>The dataset identifiers are defined in a too application oriented way. This
-      should be changed</p>
+      <ul>
+        <li><strong>Details</strong>: <code>dct:identifier</code> on <code>dcat:Dataset</code> is
+          defined and implemented in a very application oriented way related to the
+          usage on opendata.swiss. The definition does conform both DCAT and DCAT-AP, but if the DCAT-AP CH
+          is used in another context such as [[NaDB]] it might make sense to generalize the definition.
+        </li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-identifier"></a></li>
+      </ul>
 
       <p class="issue" data-number="50"></p>
 
@@ -4296,6 +4289,8 @@
     </section>
 
   </section>
+
+
 </section>
 
 <section class="appendix" id="issue-summary">
