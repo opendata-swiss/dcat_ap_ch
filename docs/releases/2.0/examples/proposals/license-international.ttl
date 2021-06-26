@@ -1,0 +1,7 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://swisstopo/reforestation-data/1234>
+  a dcat:Distribution ;
+  dcat:accessURL <https://tierstatistik.identitas.ch/data/fig-equids-size> ;
+  dct:license <http://dcat-ap.ch/vocabulary/licenses/cc-by/4.0> .
