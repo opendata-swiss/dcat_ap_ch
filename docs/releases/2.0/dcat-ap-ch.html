@@ -4326,7 +4326,14 @@
        <li><strong>Don't mix in application logic</strong>
 
          In DCAT-AP CH some properties contain application logic. See <a class="no-sectionRef" href="#identifier-issues"></a>
-       and <a class="no-sectionRef" href="#see-also-issues"></a></li>
+       and <a class="no-sectionRef" href="#see-also-issues"></a>. The problem with this is that it hurts interoperability.
+          The <code>rdfs:seeAlso</code> property using identifiers, in the way that they are constructed on opendata.swiss
+          can only be understood in that applications context, but not anywhere else. Becasue how should any application
+          know what to do with the identifier that is stored in that property? Universally understood on the other hand is the use
+          of URIs. They are the real heros, that are cabable to establish connections between dataset, that can be understood regardless
+          of the context. <a class="no-sectionRef" href="#multilanguages-uris-negotiation"></a> has been a
+          shy beginning in that regard to educate about URI best practices and uses. But this has to be continued and
+          should replace the application driven identifier approach in the long run.</li>
 
         <li><strong>Let the profile grow</strong>
 
