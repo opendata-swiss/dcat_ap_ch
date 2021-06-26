@@ -1139,7 +1139,7 @@
         <tr>
           <th>Range</th>
           <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>
-            dct:LinguisticSystem</code></a> as ISO two letter code [[ISO 639-1]]
+            dct:LinguisticSystem</code></a> (ISO two letter code [[ISO 639-1]])
           </td>
         </tr>
         <tr>
@@ -1811,7 +1811,7 @@
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of dct:issued for dcat:Dataset">
+      <aside class="example" title="Usage of dct:issued for dcat:Dataset as specified in this definition">
         <pre data-include-format="text" data-include="./examples/dataset/issued.ttl"></pre>
       </aside>
 
@@ -1880,7 +1880,7 @@
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of dct:modified for dcat:Dataset">
+      <aside class="example" title="Usage of dct:modified for dcat:Dataset as specified in this definition">
         <pre data-include-format="text" data-include="./examples/dataset/modified.ttl"></pre>
       </aside>
 
@@ -2078,12 +2078,13 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            as ISO two letter code ([[ISO 639-1]])</a>
           </td>
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Language of the dataset If the dataset is available in multiple languages, use
+          <td>Language of the dataset. If the dataset is available in multiple languages, use
             multiple values for this property. If each language is available separately, define an instance
             of <code>dcat:Distribution</code> for each language and describe the specific language of
             each distribution using <code>dct:language</code>.
@@ -3177,15 +3178,6 @@
 
       <h2>Property: media type</h2>
 
-      <aside class="issue">
-        <p>A reference to the format-property could be added, to provide more guidance in this regard.
-          Also many Swiss formats such as INTERLIS can't use this property but must use the format property instead
-          This is implemented the wrong way on opendata.swiss.
-        </p>
-        <p>The condition should be refined: use this property if the distribution offers a download url of a file
-          with a format in the [[IANA-MEDIA-TYPES]], otherwise use the format property.</p>
-      </aside>
-
       <table class="def">
         <tbody>
         <tr>
@@ -3314,8 +3306,8 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code>
-            (ISO two letter code [[ISO 639-1]])</a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            as ISO two letter code ([[ISO 639-1]])</a>
           </td>
         </tr>
         <tr>

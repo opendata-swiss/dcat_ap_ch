@@ -12,10 +12,10 @@
             "Offene Daten der Stadt Zurich"@de ;
   dct:description "Datenkatalog der Stadt Zurich"@de ;
 
-  dct:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
+  dct:issued "2021-01-07"^^xsd:date ;
   foaf:homepage <https://swisstopo/homepage> ;
   dct:publisher <https://publishers/swisstopo> ;
-  dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
+  dct:modified "2021-01-07"^^xsd:date ;
   dct:language: <http://id.loc.gov/vocabulary/iso639-1/en> .
 
 <https://swisstopo/data/123>

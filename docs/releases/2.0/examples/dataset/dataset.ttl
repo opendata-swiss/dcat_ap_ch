@@ -12,10 +12,10 @@
   dct:title "Reforestation Kanton Zürich"@en ,
             "Aufforstung Kanton Zürich"@de ;
   dct:description "Aufforsterungsarbeiten des Waldbestands im Kanton Zürich"@de ;
-  dct:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
-  foaf:landingPage "https://swisstopo/waldbestand/index.html" ;
+  dct:issued "2021-01-07"^^xsd:date ;
+  foaf:landingPage <https://swisstopo/waldbestand/index.html> ;
   dct:publisher <https://swisstopo> ;
-  dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
+  dct:modified "2021-01-07"^^xsd:date ;
   dct:language: "en" ;
   dct:identifier "15684929@bundesamt-fur-statistik-bfs" ;
   dct:spatial "Schweiz" ;
