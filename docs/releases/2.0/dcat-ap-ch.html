@@ -3980,12 +3980,12 @@
       <h2>The publisher property needs a refactoring</h2>
       <ul>
           <li><strong>Details</strong>:
-            <p>On <code>dcat:Dataset</code> the cardinality does not conform DCAT-AP's cardinaltiy of maximum 1.</p>
-            <p>The definition of <code>dct:publisher</code> is unclear and does not conform DCAT:
-            the range says <code>foaf:Agent</code>, but the example given uses rdfs:Description. This is also
-            the way the publisher is currently implemented on opendata.swiss</p>
-            <p>DCAT-AP demands the usage of a publisher vocabulary. DCAT-AP uses [[VOCAB-EU-PUBLISHERS]].
-            In conversations with them they recommended us to build our own vocabulary for this.</p>
+            On <code>dcat:Dataset</code> the cardinality does not conform DCAT-AP's cardinaltiy of maximum 1.
+            The definition of <code>dct:publisher</code> is unclear and does not conform DCAT:
+            the range says <code>foaf:Agent</code>, but the example in the defintion uses rdfs:Description.
+            This is also the way the publisher is currently implemented on opendata.swiss.
+            DCAT-AP demands the usage of a publisher vocabulary. DCAT-AP uses [[VOCAB-EU-PUBLISHERS]].
+            In conversations with them they recommended us to build up our own publisher vocabulary.</p>
           </li>
           <li><strong>Affected definitions</strong>:
             <a class="no-sectionRef" href="#catalog-publisher"></a>,
