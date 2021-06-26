@@ -126,6 +126,12 @@ h2 {
   content: "\f1c9";
 }
 
+.copy::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f24d";
+}
+
 .table {
   margin-bottom: 2rem;
 }

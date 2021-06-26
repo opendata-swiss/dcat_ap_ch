@@ -26,6 +26,20 @@
       src="https://kit.fontawesome.com/a38bff75ad.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+    <script>
+      // see https://jsfiddle.net/alvaroAV/a2pt16yq/
+      function copyToClipboard(elementId) {
+        var aux = document.createElement("input");
+        var target = document.getElementById(elementId).getElementsByTagName('a')[0].text;
+        alert(target);
+        aux.setAttribute("value", target);
+        document.body.appendChild(aux);
+        aux.select();
+        document.execCommand("copy");
+        document.body.removeChild(aux);
+      }
+    </script>
   </head>
 
   <body>
@@ -93,6 +107,7 @@
                   <a href="#terms_open"
                     >http://dcat-ap.ch/vocabulary/licenses/terms_open</a
                   >
+                  <span class="icon copy" onclick="copyToClipboard('terms_open')"></span>
                 </td>
                 <td>
                   Datenlizenz Schweiz
@@ -107,9 +122,10 @@
               </tr>
               <tr id="terms_by">
                 <td>
-                  <a href="#terms_open"
+                  <a href="#terms_by"
                     >http://dcat-ap.ch/vocabulary/licenses/terms_by</a
                   >
+                  <span class="icon copy" onclick="copyToClipboard('terms_by')"></span>
                 </td>
                 <td>
                   Datenlizenz Schweiz
@@ -124,9 +140,10 @@
               </tr>
               <tr id="terms_ask">
                 <td>
-                  <a href="#terms_open"
+                  <a href="#terms_ask"
                     >http://dcat-ap.ch/vocabulary/licenses/terms_ask</a
                   >
+                  <span class="icon copy" onclick="copyToClipboard('terms_ask')"></span>
                 </td>
                 <td>
                   Datenlizenz Schweiz
@@ -141,9 +158,10 @@
               </tr>
               <tr id="terms_by_ask">
                 <td>
-                  <a href="#terms_open"
+                  <a href="#terms_by_ask"
                     >http://dcat-ap.ch/vocabulary/licenses/terms_by_ask</a
                   >
+                  <span class="icon copy" onclick="copyToClipboard('terms_by_ask')"></span>
                 </td>
                 <td>
                   Datenlizenz Schweiz
@@ -161,6 +179,7 @@
                   <a href="#cc-by/4.0"
                     >http://dcat-ap.ch/vocabulary/licenses/cc-by/4.0</a
                   >
+                  <span class="icon copy" onclick="copyToClipboard('cc-by/4.0')"></span>
                 </td>
                 <td>
                   Creative Commons Namensnennung – 4.0 International (CC BY 4.0)
@@ -177,6 +196,7 @@
                   <a href="#cc-zero"
                     >http://dcat-ap.ch/vocabulary/licenses/cc-zero</a
                   >
+                  <span class="icon copy" onclick="copyToClipboard('cc-zero')"></span>
                 </td>
                 <td>Creative Commons CC Zero License (cc-zero)</td>
                 <td>cc-zero</td>
@@ -189,8 +209,9 @@
               <tr id="cc-by-sa">
                 <td>
                   <a href="#cc-by-sa"
-                    >http://dcat-ap.ch/vocabulary/licenses//cc-by-sa</a
+                    >http://dcat-ap.ch/vocabulary/licenses/cc-by-sa</a
                   >
+                  <span class="icon copy" onclick="copyToClipboard('cc-by-sa')"></span>
                 </td>
                 <td>
                   Creative Commons Namensnennung - Weitergabe unter gleichen
@@ -208,6 +229,7 @@
                   <a href="#cc-by-sa/4.0"
                     >http://dcat-ap.ch/vocabulary/licenses/cc-by-sa/4.0</a
                   >
+                  <span class="icon copy" onclick="copyToClipboard('cc-by-sa/4.0')"></span>
                 </td>
                 <td>
                   Creative Commons Namensnennung - Weitergabe unter gleichen
