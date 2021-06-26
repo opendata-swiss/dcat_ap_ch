@@ -4288,13 +4288,71 @@
     </section>
 
   </section>
-
-
 </section>
+
+
+  <section class="learnings">
+    <h2>Learnings</h2>
+    <aside class="ednote">
+      This section reflects solely the opiniom of the editor. It is added to prepare the
+      discussion about the next the steps for DCAT-AP CH
+    </aside>
+        <ul>
+      <li><strong>Don't add general custom vocabulary</strong>
+           This is strongly discouraged by DCAT,
+          but has been done by DCAT-AP CH. See <a class="no-sectionRef" href="#distribution-coverage"></a>
+          or <a class="no-sectionRef" href="#see-also-issues"></a>
+          Interesting in that regard is, that adding for example the property <code>dct:coverage</code> to
+          <code>dcat:Distribution</code> has lead to a different understanding of what a dataset or distribution is,
+          see <a class="no-sectionRef" href="#dataset-concept-issue"></a>. These side effects
+          will be hard to correct, but anyway correction will be needed in order to profit
+          from future developments in DCAT. These sideeffects are also the reason, why these custom properties
+          are strongly discouraged.</li>
+        </p>
+          <li><strong>Without examples properties are very likely to be misunderstood</strong>
+
+       And one reason for this might
+          be that both DCAT-AP CH and DCAT-AP have very long and detailed explanations but they both lack examples.
+          Examples are the meat in the game. Without them it is hard to reason about abstract vocabulary such as DCAT.</li>
+
+      <li><strong>The most important task of an application profile is localisation</strong>
+
+         DCAT-AP CH is a subprofile of DCAT-AP. So why is it necessary? What can't be preovided by DCAT-AP
+         is the localization of its rules but especially of its vocabulary:
+         What is to do if DCAT-AP demands a certain vocabulary that just does not cover the Swiss needs, such as
+         [[VOCAB-EU-PUBLISHERS]] or [[VOCAB-EU-FILETYPE]]. Also the geographic terms and license usage have
+         to be localized.</li>
+
+       <li><strong>Don't mix in application logic</strong>
+
+         In DCAT-AP CH some properties contain application logic. See <a class="no-sectionRef" href="#identifier-issues"></a>
+       and <a class="no-sectionRef" href="#see-also-issues"></a></li>
+
+        <li><strong>Let the profile grow</strong>
+
+         It is important for everyone involved that new properties can be used as they
+          evolve from DCAT vocabulary. Therefore in a sense the application profile is more a convention handbook
+          that interpretes DCAT vocabulary in the local context. But if it wants to be complete, it will propably always
+          be outdated.
+
+        <li><strong>It should define what it means for an application to conform</strong>
+
+         While the profile shoud not add application logic to its property definitions, it should state more clearly
+          what an application has to do in order to conform to it. [[DCAT-AP]] has such a section and opendata.swiss
+          does not conform to it. It demands that the application understands all DCAT-AP vocabulary and is able to
+          import and export it correctly. What matters is not what the application does with the vocabulary but it does
+          not get a blocker of metadata as it passes through the application. This has been a big problem of opendata.swiss,
+          as metadata is lost as it passes through on its way to the European dataportal. One very important next step
+          will be to exactly flesh this out. What does DCAT-AP or DCAT-AP CH expect form an application in oder to conform to
+          it. Even in that regard DCAT-AP CH's task might be to localize the conditions that DCAT-AP states and apply them to
+          the Swiss situation.
+       </ul>
+  </section>
 
 <section class="appendix" id="issue-summary">
   <!-- A list of issues will magically appear here -->
 </section>
+
 
 </body>
 </html>
