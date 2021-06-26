@@ -3871,6 +3871,57 @@
         </ul>
       </aside>
 
+    <section id="publisher-issues">
+
+      <h2>The publisher property needs a refactoring</h2>
+      <ul>
+          <li><strong>Details</strong>:
+            On <code>dcat:Dataset</code> the cardinality does not conform DCAT-AP's cardinaltiy, that allows
+            only one publisher per dataset.
+            The definition of <code>dct:publisher</code> is unclear and does not conform DCAT:
+            the range says <code>foaf:Agent</code>, but the the defintion rdfs:Description is used instead.
+            (On opendata.swiss the publisher is currently implemented as stated in the defintition.)
+            Also DCAT-AP demands the usage of a publisher vocabulary. For organizations of the European Union
+            [[VOCAB-EU-PUBLISHERS]]
+            can be be used. For Swiss data publishers [[OP-EU-VOCABULARIES]] recommends to build up a similar
+            vocabulary.
+          </li>
+          <li><strong>Affected definitions</strong>:
+            <a class="no-sectionRef" href="#catalog-publisher"></a>,
+            <a class="no-sectionRef" href="#dataset-publisher"></a></li>
+        </ul>
+      <aside class="note">
+        A <code>foaf:Organization</code> is a subclass of <code>foaf:Agent</code>. Since the
+        publisher is the legal authority to publish the data, ist is usually entered as this subclass,
+        rather then as the an <code>foaf:Agent</code>.
+      </aside>
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:publisher without the use of a controlled vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/publisher.ttl"></pre>
+      </aside>
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:publisher with the use of a controlled vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/publisher-with-vocabulary.ttl"></pre>
+      </aside>
+      <p class="issue" data-number="19"></p>
+      <p class="issue" data-number="23"></p>
+      <p class="issue" data-number="2"></p>
+
+    </section>
+
+    <section id="rights-issues">
+
+      <h2>Rights issues</h2>
+
+      <p>to be filled</p>
+
+    </section>
+
+    <section id="license-issues">
+
+      <h2>License issues</h2>
+
+      <p>Licenses are recommended in DCAT-AP.</p>
+
+    </section>
 
     <section id="language-issues">
 
@@ -3908,24 +3959,91 @@
 
     </section>
 
-    <section id="landing-page-implementation">
+    <section id="format-issues">
 
-      <h2>Landing page: use URIs</h2>
+      <h2>Use EU vocabulary for format</h2>
 
-      <ul>
-        <li><strong>Details</strong>: <code>dcat:landingPage</code> is implemented as an <code>rdfs:Literal</code> on opendata.swiss,
-        but DCAT-AP demands a <code>foaf:Document</code></li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-landing-page"></a>
-      </ul>
-      <aside class="example" title="Example of dcat:landingPage as it is currently implemented on opendata.swiss">
-        <pre data-include-format="text" data-include="./examples/implemented/landing-page.ttl"></pre>
+      <p>The format property MUST use a EU controlled vocabulary [[VOCAB-EU-FILETYPE]] in order to be
+        conformant with [[DCAT-AP]]:</p>
+      <p>There is an option to add custom Swiss formats to that vocabulary. The DCAT-AP has
+      this property as recommended and dcat:mediaType only as optional. This is because the file
+      types are much shorter than media types and much closer to what a data user would search for.</p>
+      <p class="issue" data-number="78"></p>
+
+      <aside class="ednote" title="Proposal for distribution format definition change">
+        <ul>
+          <li>Change defintion and demand the use of [[VOCAB-EU-FILETYPE]]
+          </li>
+          <li>Give guidance on how a new format can be added to [[VOCAB-EU-FILETYPE]]</li>
+          <li>See example below on how the format property can be used in a DCAT-AP conformant way</li>
+        </ul>
       </aside>
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dcat:landingPage">
-        <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
+
+      <aside class="example" title="Usage of dct:format using the EU vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/format.ttl"></pre>
       </aside>
 
-      <p class="issue" data-number="46"></p>
+    </section>
 
+    <section id="media-type-issues">
+
+      <h2>Add Media types to [[IANA-MEDIA-TYPES]]</h2>
+
+      <p>To be filled</p>
+
+    </section>
+
+    <section id="see-also-issues">
+
+      <h2>See Also should be replaced</h2>
+
+      <p>See Alsos is not a a DCAT conformant way to express relationships between datasets.</p>
+
+      <p class="issue" data-number="53"></p>
+
+    </section>
+
+    <section id="coverage-issues">
+
+      <h2>Drop support for dct:coverage</h2>
+      <p>dct:coverage (<a class="no-sectionRef" href="#distribution-coverage"></a>) is an attribute that goes counter
+        the general
+        concept in DCAT, that Distribution should have the same content and may just differ in language,
+        format or resolution. But series of data should not be modeled with them. For series
+        of data datasets, that connect to each other should be used. The concept
+        of <code>dcat:Dataseries</code> is new in [[VOCAB-DCAT-3]] and should be used for this purpose
+        in the future.
+      </p>
+      <p>On datasets, dct:coverage is unnecessary since there are already <code>dct:spatial</code>
+        (<a class="no-sectionRef" href="#dataset-spatial-coverage"></a>) and
+        dct:temporal (<a class="no-sectionRef" href="#dataset-temporal-coverage"></a>), which can cover all possible use
+        cases
+      </p>
+
+      <p>The coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
+        of the [[DCAT-AP]]:</p>
+      <p>"The EU Vocabularies Name Authority Lists must be used for continents, countries and
+        places that are in those lists; if a particular location is not in one of the mentioned
+        Named Authority Lists, Geonames URIs must be used."</p>
+
+      <p class="issue" data-number="79"></p>
+
+      <aside class="ednote" title="Proposal for dct:coverage">
+        <ul>
+          <li>Drop support for dct:coverage on dcat:Dataset
+          </li>
+          <li>Deappreciate the use of dct:coverage for dcat:Distribution
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="thumbnail-issues">
+      <h2>Watch Thumbnail property on DCAT</h2>
+       <p>There is a discussion to add something like this to [[VOCAB-DCAT-3]]
+              at least for <code>dcat:Dataset</code>, see here for a discussion:
+            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
+              thumbnails for DCAT</a>.</p>
     </section>
 
     <section id="issued-modified-implementation">
@@ -3950,149 +4068,6 @@
         <pre data-include-format="text" data-include="./examples/proposals/issued.ttl"></pre>
       </aside>
       <p class="issue" data-number="48"></p>
-
-    </section>
-
-    <section id="byte-size-implementation">
-
-      <h2>Add xsd:decimal to byte size</h2>
-
-      <ul>
-        <li><strong>Details</strong>: <code>dct:byteSize</code> is demanded as <code>rdfs:Literal</code>
-        typed as <code>xsd:decimal</code> in both DCAT-AP CH and DCAT-AP. But on opendata.swiss it is currently
-          implemented as Intenger without any type information.</li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-byte-size"></a>
-      </ul>
-      <aside class="example"
-             title="Example for the current implementation of dct:byteSize on opendata.swiss">
-        <pre data-include-format="text" data-include="./examples/implemented/byte-size.ttl"></pre>
-      </aside>
-      <aside class="example"
-             title="Example for the DCAT-AP and DCAT-AP CH conformant usage of dct:byteSize">
-        <pre data-include-format="text" data-include="./examples/distribution/byte-size.ttl"></pre>
-      </aside>
-
-      <p class="issue" data-number="49"></p>
-    </section>
-
-    <section id="publisher-issues">
-
-      <h2>The publisher property needs a refactoring</h2>
-      <ul>
-          <li><strong>Details</strong>:
-            On <code>dcat:Dataset</code> the cardinality does not conform DCAT-AP's cardinaltiy, that allows
-            only one publisher per dataset.
-            The definition of <code>dct:publisher</code> is unclear and does not conform DCAT:
-            the range says <code>foaf:Agent</code>, but the the defintion rdfs:Description is used instead.
-            (On opendata.swiss the publisher is currently implemented as stated in the defintition.)
-            Also DCAT-AP demands the usage of a publisher vocabulary. For organizations of the European Union
-            [[VOCAB-EU-PUBLISHERS]]
-            can be be used. For Swiss data publishers [[OP-EU-VOCABULARIES]] recommends to build up a similar
-            vocabulary.
-          </li>
-          <li><strong>Affected definitions</strong>:
-            <a class="no-sectionRef" href="#catalog-publisher"></a>,
-            <a class="no-sectionRef" href="#dataset-publisher"></a></li>
-        </ul>
-      <aside class="note">
-        A <code>foaf:Organization</code> is a subclass of <code>foaf:Agent</code>. Since the
-        publisher is the legal authority to publish the data, ist is usually entered as this subclass,
-        rather then as the an <code>foaf:Agent</code>.
-      </aside>
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:publisher without the use of a controlled vocabulary">
-        <pre data-include-format="text" data-include="./examples/proposals/publisher.ttl"></pre>
-      </aside>
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:publisher with the use of a controlled vocabulary">
-        <pre data-include-format="text" data-include="./examples/proposals/publisher-with-vocabulary.ttl"></pre>
-      </aside>
-      <p class="issue" data-number="19"></p>
-      <p class="issue" data-number="23"></p>
-      <p class="issue" data-number="2"></p>
-
-    </section>
-
-    <section id="theme-issues">
-
-      <h2>Add Usage of EU themes</h2>
-
-      <p>The theme must also map to the EU categories and it MUST use a skos:ConceptScheme for
-        the Swiss categories</p>
-
-      <p class="issue" data-number="31"></p>
-
-      <aside class="ednote" title="Proposal for theme and theme taxonomy">
-        <ul>
-          <li>Integrate the [[VOCAB-EU-THEME]] into the defintion of both
-            dcat:themeTaxonomy and dcat:theme
-          </li>
-          <li>Change the usage of dcat:themeTaxonomy from optional to recommended as it is in DCAT-AP</li>
-          <li>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</li>
-        </ul>
-      </aside>
-
-      <aside class="example" title="Usage of dcat:themeTaxonomay and dcat:theme">
-        <pre data-include-format="text" data-include="./examples/proposals/theme.ttl"></pre>
-      </aside>
-
-    </section>
-
-    <section id="see-also-issues">
-
-      <h2>See Also should be replaced</h2>
-
-      <p>See Alsos is not a a DCAT conformant way to express relationships between datasets.</p>
-
-      <p class="issue" data-number="53"></p>
-
-    </section>
-
-    <section id="license-issues">
-
-      <h2>License issues</h2>
-
-      <p>Licenses are recommended in DCAT-AP.</p>
-
-    </section>
-
-    <section id="rights-issues">
-
-      <h2>Rights issues</h2>
-
-      <p>to be filled</p>
-
-    </section>
-
-    <section id="media-type-issues">
-
-      <h2>Add Media types to [[IANA-MEDIA-TYPES]]</h2>
-
-      <p>To be filled</p>
-
-    </section>
-
-    <section id="format-issues">
-
-      <h2>Use EU vocabulary for format</h2>
-
-      <p>The format property MUST use a EU controlled vocabulary [[VOCAB-EU-FILETYPE]] in order to be
-        conformant with [[DCAT-AP]]:</p>
-      <p>There is an option to add custom Swiss formats to that vocabulary. The DCAT-AP has
-      this property as recommended and dcat:mediaType only as optional. This is because the file
-      types are much shorter than media types and much closer to what a data user would search for.</p>
-      <p class="issue" data-number="78"></p>
-
-      <aside class="ednote" title="Proposal for distribution format definition change">
-        <ul>
-          <li>Change defintion and demand the use of [[VOCAB-EU-FILETYPE]]
-          </li>
-          <li>Give guidance on how a new format can be added to [[VOCAB-EU-FILETYPE]]</li>
-          <li>See example below on how the format property can be used in a DCAT-AP conformant way</li>
-        </ul>
-      </aside>
-
-      <aside class="example" title="Usage of dct:format using the EU vocabulary">
-        <pre data-include-format="text" data-include="./examples/proposals/format.ttl"></pre>
-      </aside>
 
     </section>
 
@@ -4133,41 +4108,6 @@
 
     </section>
 
-    <section id="coverage-issues">
-
-      <h2>Drop support for dct:coverage</h2>
-      <p>dct:coverage (<a class="no-sectionRef" href="#distribution-coverage"></a>) is an attribute that goes counter
-        the general
-        concept in DCAT, that Distribution should have the same content and may just differ in language,
-        format or resolution. But series of data should not be modeled with them. For series
-        of data datasets, that connect to each other should be used. The concept
-        of <code>dcat:Dataseries</code> is new in [[VOCAB-DCAT-3]] and should be used for this purpose
-        in the future.
-      </p>
-      <p>On datasets, dct:coverage is unnecessary since there are already <code>dct:spatial</code>
-        (<a class="no-sectionRef" href="#dataset-spatial-coverage"></a>) and
-        dct:temporal (<a class="no-sectionRef" href="#dataset-temporal-coverage"></a>), which can cover all possible use
-        cases
-      </p>
-
-      <p>The coverage property MUST use URIs for locations to conform to DCAT-AP: see Section 5.2
-        of the [[DCAT-AP]]:</p>
-      <p>"The EU Vocabularies Name Authority Lists must be used for continents, countries and
-        places that are in those lists; if a particular location is not in one of the mentioned
-        Named Authority Lists, Geonames URIs must be used."</p>
-
-      <p class="issue" data-number="79"></p>
-
-      <aside class="ednote" title="Proposal for dct:coverage">
-        <ul>
-          <li>Drop support for dct:coverage on dcat:Dataset
-          </li>
-          <li>Deappreciate the use of dct:coverage for dcat:Distribution
-          </li>
-        </ul>
-      </aside>
-    </section>
-
     <section id="dataset-concept-issue">
 
       <h2>Concept of a Dataset issue</h2>
@@ -4186,17 +4126,76 @@
 
     </section>
 
+    <section id="landing-page-implementation">
+
+      <h2>Landing page: use URIs</h2>
+
+      <ul>
+        <li><strong>Details</strong>: <code>dcat:landingPage</code> is implemented as an <code>rdfs:Literal</code> on opendata.swiss,
+        but DCAT-AP demands a <code>foaf:Document</code></li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-landing-page"></a>
+      </ul>
+      <aside class="example" title="Example of dcat:landingPage as it is currently implemented on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/implemented/landing-page.ttl"></pre>
+      </aside>
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dcat:landingPage">
+        <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
+      </aside>
+
+      <p class="issue" data-number="46"></p>
+
+    </section>
+
+    <section id="byte-size-implementation">
+
+      <h2>Add xsd:decimal to byte size</h2>
+
+      <ul>
+        <li><strong>Details</strong>: <code>dct:byteSize</code> is demanded as <code>rdfs:Literal</code>
+        typed as <code>xsd:decimal</code> in both DCAT-AP CH and DCAT-AP. But on opendata.swiss it is currently
+          implemented as Intenger without any type information.</li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-byte-size"></a>
+      </ul>
+      <aside class="example"
+             title="Example for the current implementation of dct:byteSize on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/implemented/byte-size.ttl"></pre>
+      </aside>
+      <aside class="example"
+             title="Example for the DCAT-AP and DCAT-AP CH conformant usage of dct:byteSize">
+        <pre data-include-format="text" data-include="./examples/distribution/byte-size.ttl"></pre>
+      </aside>
+
+      <p class="issue" data-number="49"></p>
+    </section>
+
     <section id="catalog-implementation-issues">
       <h2>Implement Catalog class on opendata.swiss</h2>
       to be completed ...
     </section>
 
-    <section id="thumbnail-issues">
-      <h2>Watch Thumbnail property on DCAT</h2>
-       <p>There is a discussion to add something like this to [[VOCAB-DCAT-3]]
-              at least for <code>dcat:Dataset</code>, see here for a discussion:
-            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
-              thumbnails for DCAT</a>.</p>
+    <section id="theme-issues">
+
+      <h2>Add Usage of EU themes</h2>
+
+      <p>The theme must also map to the EU categories and it MUST use a skos:ConceptScheme for
+        the Swiss categories</p>
+
+      <p class="issue" data-number="31"></p>
+
+      <aside class="ednote" title="Proposal for theme and theme taxonomy">
+        <ul>
+          <li>Integrate the [[VOCAB-EU-THEME]] into the defintion of both
+            dcat:themeTaxonomy and dcat:theme
+          </li>
+          <li>Change the usage of dcat:themeTaxonomy from optional to recommended as it is in DCAT-AP</li>
+          <li>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</li>
+        </ul>
+      </aside>
+
+      <aside class="example" title="Usage of dcat:themeTaxonomay and dcat:theme">
+        <pre data-include-format="text" data-include="./examples/proposals/theme.ttl"></pre>
+      </aside>
+
     </section>
 
   </section>
