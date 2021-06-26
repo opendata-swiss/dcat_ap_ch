@@ -1179,7 +1179,9 @@
     <h2>Class: Dataset</h2>
 
       <aside class="ednote">
-        The class description of the catalog class has been translated from section 1.3.3 of [[DCAT-AP-CH-1]].
+        The class description of the dataset class has been translated from section 1.3.2 "Datensammlung"
+        of [[DCAT-AP-CH-1]]. It may make sense to move some content of that description to the
+        <a class="no-sectionRef" href="#vocabulary-overview"></a>
       </aside>
 
     <table class="def">
@@ -2836,7 +2838,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td>Conforms to [[DCAT-AP]], but the implementation
+            on opendata.swiss does not conform the range given in this definition. See
+            <a class="no-sectionRef" href="#issued-modified-implementation"></a>.</td>
         </tr>
         </tbody>
       </table>
@@ -2894,7 +2898,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
+          <td>Conforms to [[DCAT-AP]], but the implementation on opendata.swiss does not conform since it uses
+          <code>rdfs:literal</code> for the landing page.
+            See <a class="no-sectionRef" href="#landing-page-implementation"></a>.</td>
         </tr>
         </tbody>
 
@@ -2909,8 +2915,6 @@
     <section id="distribution-rights">
 
       <h2>Property: rights</h2>
-
-      <p class="issue">There is a lot to discuss regarding this field.</p>
 
       <table class="def">
         <tbody>
@@ -2990,10 +2994,18 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>The defintion of this property is unclear and the definition and the implementation
+            do not conform [[VOCAB-DCAT]] and also not [[DCAT-AP]].
+            See <a class="no-sectionRef" href="#rights-issues"></a> for a discussion.</td>
         </tr>
         </tbody>
+
       </table>
+
+        <aside class="ednote">
+          Because this property has so many issues, the example is skipped.
+          Examples are given at the discussion of the problem: <a class="no-sectionRef" href="#rights-issues"></a>.
+        </aside>
 
     </section>
 
@@ -3150,7 +3162,7 @@
         <tr>
           <th>Conformance</th>
           <td>Conforms to [[DCAT-AP]], but implementation on opendata.swiss should be corrected.
-            (<a class="no-sectionRef" href="#byte-size-implementation"></a>)</td>
+            See <a class="no-sectionRef" href="#byte-size-implementation"></a>.</td>
         </tr>
         </tbody>
       </table>
@@ -3214,12 +3226,8 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td><p>[[DCAT-AP]] mentions <a
-                  data-cite="VOCAB-DCAT#Property:distribution_media_type"><code>dcat:mediaType</code></a>
-            as sub-property of <a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a>.</p>
-            <p>[[VOCAB-DCAT]] states: This property SHOULD be used when the media type of the distribution
-              is defined in IANA [[IANA-MEDIA-TYPES]],
-              otherwise <code>dct:format</code> MAY be used with different values.</p>
+          <td>The property defintion conforms to [[DCAT-AP]], but the current usage on opendata.swiss does not.
+            See <a class="no-sectionRef" href="#media-type-issues"></a>.
           </td>
         </tr>
         </tbody>
@@ -3269,7 +3277,7 @@
         <tr>
           <th>Conformance</th>
           <td>Not conformant to [[DCAT-AP]], since DCAT-AP demands the use
-          of a controlled vocabulary [[VOCAB-EU-FILETYPE]] (<a class="no-sectionRef" href="#format-issues"></a>)
+          of a controlled vocabulary [[VOCAB-EU-FILETYPE]]. See <a class="no-sectionRef" href="#format-issues"></a>.
           </td>
         </tr>
         </tbody>
@@ -3325,8 +3333,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. The language should also be given as an URI.
-            (<a class="no-sectionRef" href="#language-issues"></a>)
+          <td>Does not conform to [[DCAT-AP]]: See <a class="no-sectionRef" href="#language-issues"></a>.
           </td>
         </tr>
         </tbody>
@@ -3387,7 +3394,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td>Conforms to [[DCAT-AP]], but the implementation
+            on opendata.swiss does not conform the range given in this definition. See
+            <a class="no-sectionRef" href="#issued-modified-implementation"></a>.</td>
         </tr>
         </tbody>
       </table>
@@ -3443,7 +3452,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]] recommended</td>
+          <td>This property is recommended in [[DCAT-AP]] and should be used. This property
+          cannot be replaced by <code>dct:rights</code>.
+            See <a class="no-sectionRef" href="#license-issues"></a> for a discussion.</td>
         </tr>
         </tbody>
       </table>
@@ -3496,9 +3507,8 @@
         <tr>
           <th>Conformance</th>
           <td>
-            <p>This property is not given to distributions in [[DCAT-AP]]. In [[VOCAB-DCAT]],
-              <code>dcat:Distribution</code> inherits it from <code>dcat:CatalogedResource</code>. Including an identifier
-              for distributions does not break conformance with DCAT-AP</p>
+            <p>This property conforms with [[DCAT-AP]]. In [[VOCAB-DCAT]],
+              <code>dcat:Distribution</code> inherits it from <code>dcat:CatalogedResource</code>.
           </td>
         </tr>
         </tbody>
@@ -3611,7 +3621,8 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Custom DCAT-AP CH
+          <td>This property does not conform to DCAT, see here for a discussion:
+            <a class="no-sectionRef" href="#coverage-issues"></a>
           </td>
         </tr>
         </tbody>
@@ -3665,9 +3676,8 @@
         <tr>
           <th>Conformance</th>
           <td>A custom DCAT-AP CH element that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]] yet,
-            but is in discussion for [[VOCAB-DCAT-3]] at least for <code>dcat:Dataset</code>, see here:
-            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
-              thumbnails for DCAT</a></td>
+            but is in discussion for [[VOCAB-DCAT-3]].
+            See <a class="no-sectionRef" href="#thumbnail-issues"></a>.</td>
         </tr>
         </tbody>
       </table>
