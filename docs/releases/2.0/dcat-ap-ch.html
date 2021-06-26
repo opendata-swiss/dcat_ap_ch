@@ -2611,10 +2611,7 @@
         <th>Conformance</th>
         <td>According to [[VOCAB-DCAT]] and therefore also according to [[DCAT-AP]]
           modeling a series of data as distributions of a dataset
-          is an anti pattern. It should rather be modeled as a series of datasets.
-          This concept of a series of datasets is coming with [[VOCAB-DCAT-3]] as
-          <a data-cite="VOCAB-DCAT#Class:Dataset_Series"><code>dcat:DatasetSeries[</code></a>.
-          (<a class="no-sectionRef" href="#dataset-concept-issue"></a>)
+          is an anti pattern. See here for a discussion <a class="no-sectionRef" href="#dataset-concept-issue"></a>.
         </td>
       </tr>
       </tbody>
@@ -4218,17 +4215,19 @@
 
       <h2>Concept of a Dataset issue</h2>
 
+      <ul>
+        <li><strong>Details</strong>: <code>dcat:Distribution</code>s of a <code>dcat:Dataset</code>
+          should cover the same content, but differ in the pysical representation of that content: that means
+          they MAY have diffeent languages, formats or resolution. They MUST however not differ in their
+          coverage of a series of different data. For that DCAT will offer another construct soon:
+          <a data-cite="VOCAB-DCAT#Class:Dataset_Series"><code>dcat:DatasetSeries</code></a>.</li>
+        <li><strong>Affected definitions</strong>:
+          <a class="no-sectionRef" href="#Class:Distribution"></a>,
+          <a class="no-sectionRef" href="#dataset-distribution"></a>,
+         <a class="no-sectionRef" href="#distribution-coverage"></a>,
+      </ul>
 
-      <p>Some problems that we currently face, for example the need of the attribute <code>dct:coverage</code>
-        for dcat:Distribution come from the fact, that we we misinterpret what is meant by a dataset: in [[VOCAB-DCAT]]
-        there is a note
-        <a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a>
-      that states that the Distributions of a dataset should contain the same content, but in different
-      format. If there is a series of different content it should rather be modeled as a datasets that relate
-      to each other. </p>
-      <p>It seems painful to change this defintion what a dataset is now, but in the long run we will be better
-        of if we adapt to [[VOCAB-DCAT]]'s generel concepts. Only this will enable us to profit in the best
-        way from its further development.</p>
+      <p class="issue" data-number="112"></p>
 
     </section>
 
