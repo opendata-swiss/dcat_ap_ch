@@ -39,6 +39,11 @@
         document.body.removeChild(aux);
       }
     </script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
   </head>
 
   <body>
@@ -51,7 +56,7 @@
               src="../../_layout/images/logo-ech.svg"
               alt="eCH Logo"
             />
-            <span class="header__title">DCAT-AP-CH</span>
+            <button class="header__title">DCAT-AP-CH</button>
           </div>
         </div>
       </div>
@@ -106,7 +111,10 @@
                   <a href="#terms_open"
                     >http://dcat-ap.ch/vocabulary/licenses/terms_open</a
                   >
-                  <span class="icon copy" onclick="copyToClipboard('terms_open')"></span>
+                  <button class="icon copy btn-neutral"
+                          onclick="copyToClipboard('terms_open')"
+                          data-toggle="tooltip" title="Copy license">
+                  </button>
                 </td>
                 <td>
                   Datenlizenz Schweiz
@@ -124,7 +132,10 @@
                   <a href="#terms_by"
                     >http://dcat-ap.ch/vocabulary/licenses/terms_by</a
                   >
-                  <span class="icon copy" onclick="copyToClipboard('terms_by')"></span>
+                  <button class="icon copy"
+                          onclick="copyToClipboard('terms_by')"
+                          data-toggle="tooltip" title="Copy license">
+                  </button>
                 </td>
                 <td>
                   Datenlizenz Schweiz
@@ -142,7 +153,9 @@
                   <a href="#terms_ask"
                     >http://dcat-ap.ch/vocabulary/licenses/terms_ask</a
                   >
-                  <span class="icon copy" onclick="copyToClipboard('terms_ask')"></span>
+                  <button class="icon copy"
+                          onclick="copyToClipboard('terms_ask')"
+                          data-toggle="tooltip" title="Copy license">
                 </td>
                 <td>
                   Datenlizenz Schweiz
@@ -160,7 +173,10 @@
                   <a href="#terms_by_ask"
                     >http://dcat-ap.ch/vocabulary/licenses/terms_by_ask</a
                   >
-                  <span class="icon copy" onclick="copyToClipboard('terms_by_ask')"></span>
+                  <button class="icon copy"
+                          onclick="copyToClipboard('terms_by_ask')"
+                          data-toggle="tooltip" title="Copy license">
+                  </button>
                 </td>
                 <td>
                   Datenlizenz Schweiz
@@ -178,7 +194,10 @@
                   <a href="#cc-by/4.0"
                     >http://dcat-ap.ch/vocabulary/licenses/cc-by/4.0</a
                   >
-                  <span class="icon copy" onclick="copyToClipboard('cc-by/4.0')"></span>
+                  <button class="icon copy"
+                          onclick="copyToClipboard('cc-by/4.0')"
+                          data-toggle="tooltip" title="Copy license">
+                  </button>
                 </td>
                 <td>
                   Creative Commons Namensnennung – 4.0 International (CC BY 4.0)
@@ -195,7 +214,10 @@
                   <a href="#cc-zero"
                     >http://dcat-ap.ch/vocabulary/licenses/cc-zero</a
                   >
-                  <span class="icon copy" onclick="copyToClipboard('cc-zero')"></span>
+                  <button class="icon copy"
+                          onclick="copyToClipboard('cc-zero')"
+                          data-toggle="tooltip" title="Copy license">
+                  </button>
                 </td>
                 <td>Creative Commons CC Zero License (cc-zero)</td>
                 <td>cc-zero</td>
@@ -210,7 +232,10 @@
                   <a href="#cc-by-sa"
                     >http://dcat-ap.ch/vocabulary/licenses/cc-by-sa</a
                   >
-                  <span class="icon copy" onclick="copyToClipboard('cc-by-sa')"></span>
+                  <button class="icon copy"
+                          onclick="copyToClipboard('cc-by-sa')"
+                          data-toggle="tooltip" title="Copy license">
+                  </button>
                 </td>
                 <td>
                   Creative Commons Namensnennung - Weitergabe unter gleichen
@@ -228,7 +253,10 @@
                   <a href="#cc-by-sa/4.0"
                     >http://dcat-ap.ch/vocabulary/licenses/cc-by-sa/4.0</a
                   >
-                  <span class="icon copy" onclick="copyToClipboard('cc-by-sa/4.0')"></span>
+                  <button class="icon copy"
+                          onclick="copyToClipboard('cc-by-sa/4.0')"
+                          data-toggle="tooltip" title="Copy license">
+                  </button>
                 </td>
                 <td>
                   Creative Commons Namensnennung - Weitergabe unter gleichen
