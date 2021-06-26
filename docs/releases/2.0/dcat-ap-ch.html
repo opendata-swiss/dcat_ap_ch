@@ -3957,24 +3957,22 @@
 
       <h2>Add xsd:decimal to byte size</h2>
 
-      <p>All <code>dct:byteSize</code> is demanded as xsd:decimal in DCAT-AP CH, but implemented without
-        this format specification and as integer on opendata.swiss
-        (<a class="no-sectionRef" href="#distribution-byte-size"></a>)</p>
-
-      <p class="issue" data-number="49"></p>
-
-      <aside class="ednote" title="Proposal for an implementation change on byte size property">
-        <p>Change the implementation and add the xsd:Decimal type information, since both DCAT-AP CH and [[DCAT-AP]]
-          agree
-          on this.
-        </p>
-      </aside>
-
+      <ul>
+        <li><strong>Details</strong>: <code>dct:byteSize</code> is demanded as <code>rdfs:Literal</code>
+        typed as <code>xsd:decimal</code> in both DCAT-AP CH and DCAT-AP. But on opendata.swiss it is currently
+          implemented as Intenger without any type information.</li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-byte-size"></a>
+      </ul>
       <aside class="example"
-             title="Usage of byte size with xsd type specification as xsd:decimal">
+             title="Example for the current implementation of dct:byteSize on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/implemented/byte-size.ttl"></pre>
+      </aside>
+      <aside class="example"
+             title="Example for the DCAT-AP and DCAT-AP CH conformant usage of dct:byteSize">
         <pre data-include-format="text" data-include="./examples/distribution/byte-size.ttl"></pre>
       </aside>
 
+      <p class="issue" data-number="49"></p>
     </section>
 
     <section id="publisher-issues">
