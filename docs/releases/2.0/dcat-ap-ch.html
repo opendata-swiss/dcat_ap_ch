@@ -4013,27 +4013,33 @@
 
     <section id="format-issues">
 
-      <h2>Use EU vocabulary for format</h2>
+      <h2>Format: use EU vocabulary</h2>
 
-      <p>The format property MUST use a EU controlled vocabulary [[VOCAB-EU-FILETYPE]] in order to be
-        conformant with [[DCAT-AP]]:</p>
-      <p>There is an option to add custom Swiss formats to that vocabulary. The DCAT-AP has
-      this property as recommended and dcat:mediaType only as optional. This is because the file
-      types are much shorter than media types and much closer to what a data user would search for.</p>
-      <p class="issue" data-number="78"></p>
+      <ul>
+        <li><strong>Details</strong>: <code>dct:format</code> MUST use a EU controlled vocabulary
+        [[VOCAB-EU-FILETYPE]] in order to be
+        conformant with [[DCAT-AP]]. Also <code>dct:format</code> is recommended in DCAT-AP whereas
+        <code>dcat:mediaType</code> is only optional. It is the preferred property since
+        the file type the vocabulary matches better with what a user is searching for regarding the format
+        of distributions. It is recommended by [[OP-EU-VOCABULARIES]] to contribute used file formats
+        for the [[VOCAB-EU-FILETYPE]]. Even though not all file formats will get accepted, it should
+        always be a first step, when introducing a file format. If the file format cannot be added, it should instead
+        be contributed as a <code>dcat:mediaType</code>. But both properties are expected to use
+        registered formats only. See <a class="no-sectionRef" href="#media-type-issues"></a>
+        </li>
+        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-format"></a>
+      </ul>
 
-      <aside class="ednote" title="Proposal for distribution format definition change">
-        <ul>
-          <li>Change defintion and demand the use of [[VOCAB-EU-FILETYPE]]
-          </li>
-          <li>Give guidance on how a new format can be added to [[VOCAB-EU-FILETYPE]]</li>
-          <li>See example below on how the format property can be used in a DCAT-AP conformant way</li>
-        </ul>
+      <aside class="example" title="Example of the current implenetation of dct:format on opendata.swiss: it is
+      implemented as an rdfs:literal">
+        <pre data-include-format="text" data-include="./examples/implemented/format.ttl"></pre>
       </aside>
 
-      <aside class="example" title="Usage of dct:format using the EU vocabulary">
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:format with the file type vocabulary">
         <pre data-include-format="text" data-include="./examples/proposals/format.ttl"></pre>
       </aside>
+
+      <p class="issue" data-number="78"></p>
 
     </section>
 
