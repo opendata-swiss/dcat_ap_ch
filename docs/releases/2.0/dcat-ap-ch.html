@@ -3914,9 +3914,33 @@
 
     <section id="rights-issues">
 
-      <h2>Rights issues</h2>
+      <h2>Rights cannot replace a license</h2>
 
-      <p>to be filled</p>
+       <ul>
+           <li><strong>Details</strong>: The defintiton of <code>dct:rights</code> is unclear and
+             the usage of that property on opendata.swiss shows, how that property seems to have been
+             misunderstood. [[ODI-VOCAB]] explains "A Rights Statement is a resource that describes
+             the relationship between a Dataset and its Licence(s). It is also used to describe additional contextual
+             information that applies to the re-use of a dataset. This means that it is not meant to replace
+             <code>dct:license</code> but rather meant to add aditional information if a very general
+             international license is used for the data, that does not fully capture the usage conditions
+             for the data at hand.
+           </li>
+          <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#distribution-rights"></a>,
+            <a class="no-sectionRef" href="#distribution-license"></a></li>
+        </ul>
+      <aside class="example" title="Example of a DCAT-AP a the usage of dct:rights as it is currently
+      implemented on opendata.swiss: as the dct:rights is only given as rdf:Literal without reference
+      to a license the usage conditions can not be understood on the European level">
+        <pre data-include-format="text" data-include="./examples/proposals/rights.ttl"></pre>
+      </aside>
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:rights where it adds
+      additional usage conditions to an inernational license">
+        <pre data-include-format="text" data-include="./examples/proposals/rights.ttl"></pre>
+      </aside>
+
+      <p class="issue" data-number="110"></p>
+
 
     </section>
 
