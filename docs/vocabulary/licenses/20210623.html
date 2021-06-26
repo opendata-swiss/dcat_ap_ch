@@ -32,7 +32,6 @@
       function copyToClipboard(elementId) {
         var aux = document.createElement("input");
         var target = document.getElementById(elementId).getElementsByTagName('a')[0].text;
-        alert(target);
         aux.setAttribute("value", target);
         document.body.appendChild(aux);
         aux.select();
