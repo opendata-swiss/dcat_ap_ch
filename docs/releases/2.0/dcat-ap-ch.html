@@ -3802,6 +3802,11 @@
         <td><a class="no-sectionRef" href="#media-type-issues"></a></td>
       </tr>
       <tr>
+        <td><code>dcat:theme</code></td>
+        <td>vocabulary</td>
+        <td><a class="no-sectionRef" href="#theme-issues"></a></td>
+      </tr>
+      <tr>
         <td><code>rdfs:seeAlso</code></td>
         <td>custom property, not DCAT conform</td>
         <td><a class="no-sectionRef" href="#see-also-issues"></a></td>
@@ -3993,6 +3998,31 @@
 
     </section>
 
+    <section id="theme-issues">
+
+      <h2>Add Usage of EU themes</h2>
+
+      <p>The theme must also map to the EU categories and it MUST use a skos:ConceptScheme for
+        the Swiss categories</p>
+
+      <p class="issue" data-number="31"></p>
+
+      <aside class="ednote" title="Proposal for theme and theme taxonomy">
+        <ul>
+          <li>Integrate the [[VOCAB-EU-THEME]] into the defintion of both
+            dcat:themeTaxonomy and dcat:theme
+          </li>
+          <li>Change the usage of dcat:themeTaxonomy from optional to recommended as it is in DCAT-AP</li>
+          <li>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</li>
+        </ul>
+      </aside>
+
+      <aside class="example" title="Usage of dcat:themeTaxonomay and dcat:theme">
+        <pre data-include-format="text" data-include="./examples/proposals/theme.ttl"></pre>
+      </aside>
+
+    </section>
+
     <section id="see-also-issues">
 
       <h2>See Also should be replaced</h2>
@@ -4171,31 +4201,6 @@
     <section id="catalog-implementation-issues">
       <h2>Implement Catalog class on opendata.swiss</h2>
       to be completed ...
-    </section>
-
-    <section id="theme-issues">
-
-      <h2>Add Usage of EU themes</h2>
-
-      <p>The theme must also map to the EU categories and it MUST use a skos:ConceptScheme for
-        the Swiss categories</p>
-
-      <p class="issue" data-number="31"></p>
-
-      <aside class="ednote" title="Proposal for theme and theme taxonomy">
-        <ul>
-          <li>Integrate the [[VOCAB-EU-THEME]] into the defintion of both
-            dcat:themeTaxonomy and dcat:theme
-          </li>
-          <li>Change the usage of dcat:themeTaxonomy from optional to recommended as it is in DCAT-AP</li>
-          <li>According to [[DCAT-AP]] the themeTaxonomy should be implemented as in the example below:</li>
-        </ul>
-      </aside>
-
-      <aside class="example" title="Usage of dcat:themeTaxonomay and dcat:theme">
-        <pre data-include-format="text" data-include="./examples/proposals/theme.ttl"></pre>
-      </aside>
-
     </section>
 
   </section>
