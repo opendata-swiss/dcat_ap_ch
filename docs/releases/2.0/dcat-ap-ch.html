@@ -4291,34 +4291,27 @@
 </section>
 
 
-  <section class="learnings">
-    <h2>Learnings</h2>
+  <section class="next-steps">
+    <h2>Learnings and Next Steps</h2>
     <aside class="ednote">
       This section reflects solely the opiniom of the editor. It is added to prepare the
       discussion about the next the steps for DCAT-AP CH
     </aside>
+
+  <section class="learnings">
+    <h2>Learnings</h2>
         <ul>
           <li><strong>Get and stay in touch with DCAT-AP community:</strong> The best impulses for this work were received
         in discussions with the DCAT-AP community. They bring the fresh view of a native of DCAT-AP, but a stranger to
         DCAT-AP CH. Therefore many problems only became clearer in discussions with them. Good touchpoints
         are [[OP-EU-VOCABULARIES]] and [[DCAT-AP-GITHUB]].</li>
-
       <li><strong>The most important task of an application profile is localisation:</strong>
          DCAT-AP CH is a subprofile of DCAT-AP. So why is it necessary? DCAT-AP targets the European community, but
         many of its rules cannot be directly applied to the situation in Switzerland or any other country in Europe.
-        Localization of vocabulary is a big point in that regard. DCAT-AP has a strong focus on making the use of controlled
-        vocabulary mandatory for many properties. But the European vocabulary often can't be used without further
-        adaptions: DCAT-AP CH has to decide where Swiss vocabulary is needed and where we can contribute our terms to the
-        DCAT-AP vocabulary.</li>
-      <li><strong>Rules for the gap are missing:</strong> DCAT offers such a vast amount of vocabulary
-        that is growing at a fast pace. Any application profile has to answer that question on how to deal with
-        vocabulary, that is not mentioned yet in its own specification. My impression is that DCAT-AP chooses to
-        stay in line with DCAT and make rules for its new terms as fast as they get released. But DCAT-AP CH cannot
-        do that. So there is the choice between being always outdated, as it currently is or making a rule for
-        the gap, the vocabulary of DCAT-AP that is not yet localized, for a variety of reasons. If I understand
-
-        </li>
-      <li><strong>Don't add general custom vocabulary</strong>
+        For example DCAT-AP has a strong focus on demanding the use of controlled
+        vocabulary for many properties. But the European vocabulary often can't be used without further
+        adaptions.</li>
+     <li><strong>Don't add general custom vocabulary:</strong>
            This is strongly discouraged by DCAT,
           but has been done by DCAT-AP CH. See <a class="no-sectionRef" href="#distribution-coverage"></a>
           or <a class="no-sectionRef" href="#see-also-issues"></a>
@@ -4328,47 +4321,58 @@
           will be hard to correct, but anyway correction will be needed in order to profit
           from future developments in DCAT. These sideeffects are also the reason, why these custom properties
           are strongly discouraged.</li>
-          <li><strong>Without examples properties are very likely to be misunderstood</strong>
-
-       And one reason for this might
-          be that both DCAT-AP CH and DCAT-AP have very long and detailed explanations but they both lack examples.
-          Examples are the meat in the game. Without them it is hard to reason about abstract vocabulary such as DCAT.</li>
-
-
-
-       <li><strong>Don't mix in application logic</strong>
-
+          <li><strong>Without examples properties are very likely to be misunderstood: </strong>
+          Both DCAT-AP CH and DCAT-AP currently lack examples. The
+            <a class="no-sectionRef" href="#dcat-ap-conformance-issues-summary"></a> lists many issues where
+            properties have been misunderstood, such as <a class="no-sectionRef" href="#landing-page-implementation"></a>
+            or <a class="no-sectionRef" href="#rights-issues"></a>.</li>
+       <li><strong>Don't mix in application logic:</strong>
          In DCAT-AP CH some properties contain application logic. See <a class="no-sectionRef" href="#identifier-issues"></a>
-       and <a class="no-sectionRef" href="#see-also-issues"></a>. The problem with this is that it hurts interoperability.
-          The <code>rdfs:seeAlso</code> property using identifiers, in the way that they are constructed on opendata.swiss
-          can only be understood in that applications context, but not anywhere else. Becasue how should any application
-          know what to do with the identifier that is stored in that property? Universally understood on the other hand is the use
-          of URIs. They are the real heros, that are cabable to establish connections between dataset, that can be understood regardless
-          of the context. <a class="no-sectionRef" href="#multilanguages-uris-negotiation"></a> has been a
-          shy beginning in that regard to educate about URI best practices and uses. But this has to be continued and
-          should replace the application driven identifier approach in the long run.</li>
-
-        <li><strong>Let the profile grow</strong>
-
+       and <a class="no-sectionRef" href="#see-also-issues"></a>. This hurts interoperability since
+         the application logic is not known on the European or international level. It also stand in the
+       way of the reuse of DCAT-AP CH for other applications.</li>
+         <li><strong>URI's power is not used:</strong>
+         URI's have a lot of potential in regards to connecting data, localize data. This potential
+         is not yet used. For example localization of a landing page is supposed to be done by using a
+         language neutral URI and then use content negotiation to redirect to the appropriate language
+         on the side of the datapublisher. See <a class="no-sectionRef" href="#multilanguages-uris-negotiation"></a>.
+         Also the identifiers of datasets would not have to be defined in such an application oriented way, if
+         URI's for all datasets would exist. See  <a class="no-sectionRef" href="#identifier-issues"></a>.
+         </li>
+        <li><strong>The profile must be able to grow:</strong>
          It is important for everyone involved that new properties can be used as they
           evolve from DCAT vocabulary. Therefore in a sense the application profile is more a convention handbook
           that interpretes DCAT vocabulary in the local context. But if it wants to be complete, it will propably always
           be outdated.
-
-        <li><strong>It should define what it means for an application to conform</strong>
-
-         While the profile shoud not add application logic to its property definitions, it should state more clearly
-          what an application has to do in order to conform to it. [[DCAT-AP]] has such a section and opendata.swiss
-          does not conform to it. It demands that the application understands all DCAT-AP vocabulary and is able to
-          import and export it correctly. What matters is not what the application does with the vocabulary but it does
-          not get a blocker of metadata as it passes through the application. This has been a big problem of opendata.swiss,
-          as metadata is lost as it passes through on its way to the European dataportal. One very important next step
-          will be to exactly flesh this out. What does DCAT-AP or DCAT-AP CH expect form an application in oder to conform to
-          it. Even in that regard DCAT-AP CH's task might be to localize the conditions that DCAT-AP states and apply them to
-          the Swiss situation.
-
-
-       </ul>
+ </ul>
+  </section>
+  <section class="todos">
+    <h2>Open Tasks</h2>
+    <ul>
+      <li><strong>Rules for how to deal with DCAT vocabulary that is not mentioned in DCAT-AP CH are missing:</strong>
+        DCAT offers such a vast amount of vocabulary
+        that is growing at a fast pace. Any application profile has to answer that question on how to deal with
+        vocabulary, that is not mentioned yet in its own specification. My impression is that DCAT-AP chooses to
+        stay in line with DCAT and make rules for its new terms as fast as they get released. But DCAT-AP CH cannot
+        do that, otherwise it would always be outdated as it is now.
+        </li>
+       <li><strong>More spcifically: a section is needed on what it means for am application to conform
+       to DCAT-AP CH with regards of conformance to DCAT-AP:</strong>
+        DCAT-AP has such a section: "6.2.Receiver requirements", which states that an applcation MUST be able to import and
+        export all DCAT-AP vocabulary in order to comform to DCAT. This section needs to be disscussed with
+         [[DCAT-AP-GITHUB]], so that it is fully understood, localized and added to this application profile.
+        </li>
+       <li><strong>Add a provider requirements section:</strong>
+        DCAT-AP has also a section: "6.1.Provider requirements", which states explicitly what a DCAT-AP metadata
+         collection MUST contain in order to comform DCAT-AP. A similar section should be added here:
+         so that the application profile can serve as a reference also for data publishers,
+         on whether their data catalogs conform DCAT-AP CH.
+        </li>
+        <li><strong>Demands on URI usage are needed:</strong>
+        Rules for URI's should be added. Then they could overtake the role of identifying datasets.
+        </li>
+    </ul>
+  </section>
   </section>
 
 <section class="appendix" id="issue-summary">
