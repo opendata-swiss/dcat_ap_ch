@@ -48,6 +48,11 @@ var respecConfig = {
           "title":"The Collection Description Frequency Namespace",
           "publisher":"Dublin Core Collection Description Task Group",
       },
+     "DCAT-AP-GITHUB":{
+         "href": "https://github.com/SEMICeu/DCAT-AP",
+         "title":"DCAT-AP github repo",
+         "publisher":"Semantic Interoperability Community",
+     },
      "OP-EU-VOCABULARIES":{
           "href":"https://op.europa.eu/en/web/eu-vocabularies",
           "title":"EU Vocabularies",
