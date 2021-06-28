@@ -43,6 +43,36 @@ var respecConfig = {
         "title":"Language",
         "publisher":"European Commission",
       },
+      "VOCAB-DCAT-FREQUENCY":{
+          "href":"http://dublincore.org/specifications/dublin-core/collection-description/frequency/freq.rdf",
+          "title":"The Collection Description Frequency Namespace",
+          "publisher":"Dublin Core Collection Description Task Group",
+      },
+     "DCAT-AP-GITHUB":{
+         "href": "https://github.com/SEMICeu/DCAT-AP",
+         "title":"DCAT-AP github repo",
+         "publisher":"Semantic Interoperability Community",
+     },
+     "OP-EU-VOCABULARIES":{
+          "href":"https://op.europa.eu/en/web/eu-vocabularies",
+          "title":"EU Vocabularies",
+          "publisher":"Publications Office of the European Union",
+     },
+     "OGD-TERMS-OF-USE":{
+          "href":"https://opendata.swiss/terms-of-use",
+          "title":"Opendata Swiss Terms of Use",
+          "publisher":"Swiss Federal Statistical Office",
+     },
+     "VOCAB-DCAT-AP-CH-LICENSES":{
+          "href":"https://dcat-ap.ch/vocabulary/licenses",
+          "title":"Publisher vocabulary for DCAT-AP CH",
+          "publisher":"Verein eCH",
+     },
+     "VOCAB-DCAT-AP-CH-PUBLISHERS":{
+          "href":"https://dcat-ap.ch/vocabulary/publishers",
+          "title":"Publisher vocabulary for DCAT-AP CH",
+          "publisher":"Verein eCH",
+     },
      "VOCAB-EU-PUBLISHERS":{
         "href":"http://publications.europa.eu/resource/authority/corporate-body",
         "title":"Corperate Body",
@@ -107,7 +137,7 @@ var respecConfig = {
       "OGD":{
         "href": "https://www.bfs.admin.ch/bfs/en/home/services/ogd.html",
         "title": "Open Government Data",
-        "publisher": "Swiss Federal Statistical Office ",
+        "publisher": "Swiss Federal Statistical Office",
       },
       "NaDB":{
         "href": "https://www.bfs.admin.ch/bfs/en/home/nadb/nadb.html",
