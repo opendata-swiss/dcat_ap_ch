@@ -3883,7 +3883,7 @@
             (On opendata.swiss the publisher is currently implemented as stated in the defintition.)
             Also DCAT-AP demands the usage of a publisher vocabulary. For organizations of the European Union
             [[VOCAB-EU-PUBLISHERS]]
-            can be be used. For Swiss data publishers [[OP-EU-VOCABULARIES]] recommends to build up a similar
+            can be be used. For Swiss data publishers [[EUROVOC]] recommends to build up a similar
             vocabulary.
           </li>
           <li><strong>Affected definitions</strong>:
@@ -3924,8 +3924,8 @@
           <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#distribution-rights"></a>,
             <a class="no-sectionRef" href="#distribution-license"></a></li>
         </ul>
-      <aside class="example" title="Example of a DCAT-AP a the usage of dct:rights as it is currently
-      implemented on opendata.swiss: as the dct:rights is only given as rdf:Literal without reference
+      <aside class="example" title="Example of a DCAT-AP non-conformant usage of dct:rights as it is currently
+      implemented on opendata.swiss: as the <code>dct:rights</code> is only given as rdf:Literal without reference
       to a license the usage conditions can not be understood on the European level">
         <pre data-include-format="text" data-include="./examples/proposals/rights.ttl"></pre>
       </aside>
@@ -3994,7 +3994,7 @@
 
       <ul>
         <li><strong>Details</strong>: <code>dcat:accrualPeriodicity</code> uses the DCAT vocabulary
-          [[VOCAB-DCAT-FREQUENCY]]. DCAT-AP demands the use of [[VOCAB-EU-FREQUENCY]] for this property.</li>
+          [[VOCAB-DCT-FREQUENCY]]. DCAT-AP demands the use of [[VOCAB-EU-FREQUENCY]] for this property.</li>
         <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-update-frequency"></a>
       </ul>
 
@@ -4016,7 +4016,7 @@
         conformant with [[DCAT-AP]]. Also <code>dct:format</code> is recommended in DCAT-AP whereas
         <code>dcat:mediaType</code> is only optional. It is the preferred property since
         the file type the vocabulary matches better with what a user is searching for regarding the format
-        of distributions. It is recommended by [[OP-EU-VOCABULARIES]] to contribute used file formats
+        of distributions. It is recommended by [[EUROVOC]] to contribute used file formats
         for the [[VOCAB-EU-FILETYPE]]. Even though not all file formats will get accepted, it should
         always be a first step, when introducing a file format. If the file format cannot be added, it should instead
         be contributed as a <code>dcat:mediaType</code>. But both properties are expected to use
@@ -4043,7 +4043,7 @@
       <h2>Media type as second choice to format</h2>
       <ul>
         <li><strong>Details</strong>: <code>dct:mediaTypes</code> MUST use the [[IANA-MEDIA-TYPES]] vocabulary.
-          DCAT-AP prefers <strong>dct:format</strong> with the [[VOCAB-EU-FILETYPE]]. If the file format does not exist
+          DCAT-AP prefers <code>dct:format</code> with the [[VOCAB-EU-FILETYPE]]. If the file format does not exist
           there and is rejected as a contribution, only then <code>dct:mediaTypes</code> should be used.
           In case it does not exists it should be contributed to the [[IANA-MEDIA-TYPES]].
         </li>
@@ -4085,12 +4085,16 @@
 
     <section id="see-also-issues">
 
-      <h2>Use DCAT vocabulary instead of seeAlso</h2>
+      <h2>Use DCAT properties relation instead of seeAlso</h2>
 
       <ul>
         <li><strong>Details</strong>: <code>rdfs:seeAlsos</code> is a custom Swiss construct to
-          express relationsships between dataset. But there is already vocabulary in DCAT for this
-          purpose. In case to stay in line with DCAT the DCAT vocabulary MUST be used.</li>
+          express relationsships between dataset. But there are already properties in DCAT for this
+          purpose. DCAT gives the choice
+          between <a data-cite=VOCAB-DCAT#Property:resource_relation><code>dct:relation<</code></a>
+          and <a data-cite=VOCAB-DCAT#Property:resource_qualified_relation><code>dcat:qualifiedRelation</code></a>.
+          In order to conform to DCAT one of those properties MUST be used.
+        </li>
         <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-see-also"></a></li>
       </ul>
 
@@ -4108,7 +4112,9 @@
           specific properties. Therefore its usage for dataset has already been discouraged.
           On <code>dcat:Distribution</code> its use hurts the prinicple, that distribution should all have an
           equal scope of content. They may only differ
-          in language, format and resolution. See
+          in language, format and resolution. See the note in
+          <a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a>
+          https://www.w3.org/TR/vocab-dcat-2/#Class:Distribution
           Therefore DCAT has also vocabulary to express the resolution
           of Distributions but none to express their coverage. The use of the property should
           therefore be depricated and datasets, that use it should be modeled as <code>dcat:DataSeries</code> instead.</li>

@@ -43,7 +43,7 @@ var respecConfig = {
         "title":"Language",
         "publisher":"European Commission",
       },
-      "VOCAB-DCAT-FREQUENCY":{
+      "VOCAB-DCT-FREQUENCY":{
           "href":"http://dublincore.org/specifications/dublin-core/collection-description/frequency/freq.rdf",
           "title":"The Collection Description Frequency Namespace",
           "publisher":"Dublin Core Collection Description Task Group",
@@ -52,11 +52,6 @@ var respecConfig = {
          "href": "https://github.com/SEMICeu/DCAT-AP",
          "title":"DCAT-AP github repo",
          "publisher":"Semantic Interoperability Community",
-     },
-     "OP-EU-VOCABULARIES":{
-          "href":"https://op.europa.eu/en/web/eu-vocabularies",
-          "title":"EU Vocabularies",
-          "publisher":"Publications Office of the European Union",
      },
      "OGD-TERMS-OF-USE":{
           "href":"https://opendata.swiss/terms-of-use",
