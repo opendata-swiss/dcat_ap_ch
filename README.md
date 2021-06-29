@@ -1,11 +1,16 @@
 # DCAT-AP-CH
 
-This github repo is intended to prepare the further development of 
-DCAT-AP-CH by providing a definition area for all its documents.
+This github repo is intended to serve as a definition area for DCAT-AP CH.
 
 ## About
 
-The Specification uses respec: https://respec.org/docs/
+The repository includes the following parts:
+
+- the html DCAT-AP CH specification version 2, that is currently a draft and undergoing a review 
+  process.
+The repositoySpecification uses respec: https://respec.org/docs/
+
+
 
 ## Install pyshacl
 
