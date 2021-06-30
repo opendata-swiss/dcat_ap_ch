@@ -4338,6 +4338,27 @@
 
     </section>
 
+    <section id="import-export-issues">
+      <h2>opendata.swiss must pass through well formed DCAT-AP classes and properties</h2>
+      <ul>
+        <li><strong>Details</strong>: <p>The 6.2 "Receiver requirements" of [[DCAT-AP]] state that
+          an application in order to conform to DCAT-AP must be able to process all classes, properties and controlled
+          vocabulary of DCAT-AP. This would mean for opendata.swiss to import and export these
+          datacatalog as they are without transforming them by applying own business logic.
+          So when a publisher uses a certain DCAT-AP class such as for example <code>dcat:DataService</code> in its
+          catalog specification, then opendata.swiss may chose to display as a <code>dcat:Dataset</code> on
+          its dataportal, but when harvested by the European data portal the catalog must be exported in the
+          way it originally came in using the <code>dcat:DataService</code>. See also
+          <a href="https://github.com/SEMICeu/DCAT-AP/issues/198">this dicsussion on the DCAT-AP github repo</a>.
+        </li>
+        <li><strong>Affected definitions</strong>: This applies to all defintions in [[DCAT-AP]] that are not mentioned
+        in this specification.
+      </ul>
+
+      <p class="issue" data-number="119"></p>
+
+    </section>
+
   </section>
 </section>
 
