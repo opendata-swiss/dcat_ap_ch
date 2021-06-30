@@ -278,7 +278,7 @@
   <h2>Multiple languages, URIs and content negotiation</h2>
 
   <aside class="ednote">This section has been added in order to give more guidance
-  on the use of URIs and how they can help with translations.
+  on the use of URIs and translations.
 </aside>
 
   <p>Switzerland is a multilingual country. Therefore, supporting multiple languages
@@ -288,26 +288,29 @@
     <li><strong>Multilingual literals</strong>: Properties of Range
       <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> support
       multiple languages and the Swiss Profile makes use of this. It also
-      adds some additional constraints on what languages are expected.
+      adds some additional constraints on what languages are expected in its property descriptions.
+      See for example <a class="no-sectionRef" href="#dataset-title"></a>
     </li>
     <li><strong>Content negotiation</strong>: Properties of Range
-      <a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a> should be URIs.
+      <a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a> SHOULD be URIs.
       It is good practice to use URIs that are language independent, so that content
-      negotiation can be used at these URIs to provide the desired language to users that follow
-      them.
+      negotiation can be used in the process of dispatching these URIs. The URIs
+      might redirect to the language that is added in the HTTP request. Because of this
+      URIs such as a for example the <a class="no-sectionRef" href="#dataset-landing-page"></a>
+      don't have translations in the way that strings have them.
     </li>
   </ul>
 
   <div class="practice">
     <p class="practicedesc">
       <span class="practicelab">Best practice for Resource URIs</span>
-      They should be language and format neutral:
+      URIs should be language and format neutral:
       <code>http://my-dataset-name-language-and-format-neutral</code>.
       Content negotiation can then be applied to get the desired language and format.
     </p>
   </div>
-  <p>The table shows which multilanguage strategy applies to which property.</p>
-
+  <p>The table lists multilingual properties of DCAT-AP CH and the translation strategies that
+    apply to them:</p>
   <table class="simple">
     <thead>
     <tr>
@@ -331,12 +334,6 @@
       <td>Language encoded string</td>
     </tr>
     <tr>
-      <td><a href="#catalog-homepage">Catalog homepage</a></td>
-      <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
-      <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
-      <td>Content negotiation</td>
-    </tr>
-    <tr>
       <td><a href="#dataset-title">Dataset title</a></td>
       <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
       <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
@@ -355,10 +352,28 @@
       <td>Language encoded string</td>
     </tr>
     <tr>
+      <td><a href="#catalog-homepage">Catalog homepage</a></td>
+      <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
+      <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+      <td>Content negotiation</td>
+    </tr>
+    <tr>
       <td><a href="#dataset-landing-page">Dataset landing Page</a></td>
       <td><a data-cite="VOCAB-DCAT#Property:resource_landing_page"><code>dcat:landingPage</code></a></td>
       <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
       <td>Content negotiation</td>
+    </tr>
+    <tr>
+      <td><a href="#catalog-publisher">Catalog publisher</a></td>
+      <td><a data-cite="VOCAB-DCAT#Property:resource_publisher"><code>dct:publisher</code></a></td>
+      <td><a data-cite="FOAF#term_Document"><code>foaf:Agent</code></a></td>
+      <td>Content negotiation for the URI and language encoded string for the name</td>
+    </tr>
+    <tr>
+      <td><a href="#dataset-publisher">Dataset publisher</a></td>
+      <td><a data-cite="VOCAB-DCAT#Property:resource_publisher"><code>dct:publisher</code></a></td>
+      <td><a data-cite="FOAF#term_Document"><code>foaf:Agent</code></a></td>
+      <td>Content negotiation for the URI and language encoded string for the name</td>
     </tr>
     </tbody>
   </table>
