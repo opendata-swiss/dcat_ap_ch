@@ -437,34 +437,43 @@
        </ul>
   </section>
      <section id="overview-scope">
-          <h2>Overview of the scope</h2>
-    <strong>Classes in the scope of DCAT-AP CH</strong>
-    <p>This is a list of primary classes that are further defined by this specification.</p>
+          <h2>Scope of DCAT-AP CH</h2>
+
+    <p>DCAT-AP CH only specifies three of the primary classes of DCAT-AP:</p>
     <ul>
       <li>
-        <a href="#Class:Catalog"><code>dcat:Catalog</code></a> is a container of datasets in DCAT-AP CH.
+        <a href="#Class:Catalog"><code>dcat:Catalog</code></a> is a repository that contains a collection of datasets published by
+        a data publisher.
       </li>
       <li>
-        <a href="#Class:Dataset"><code>dcat:Dataset</code></a> is a container of distributions.
+        <a href="#Class:Dataset"><code>dcat:Dataset</code></a> is a collection of data, published or curated
+        by a single source, and available for access or download in one or more formats.
       </li>
       <li>
-        <a href="#Class:Distribution"><code>dcat:Distribution</code></a> represents an accessible form of a dataset
-        such as a downloadable file.
+        <a href="#Class:Distribution"><code>dcat:Distribution</code></a> represents an accessible distribution of a dataset
+        such as a downloadable file or an access page where the data can be received
       </li>
-      <li>There are other classes in [[DCAT-AP]] that have not yet become part of DCAT-AP CH.</li>
+    </ul>
+
+    <p>The diagram shows the classes with their properties.</p>
+
+    <p>DCAT-AP CH has three requirement levels:</p>
+    <ul>
+      <li><strong>mandatory</strong> is an exact match of the DCAT-AP's requirement level <strong>mandatory</strong> and means the
+        information MUST be given.</li>
+      <li><strong>conditional</strong> is close to DCAT-AP's requirement level <strong>recommended</strong>. [[DCAT-AP]]
+        defines "recommended" in its section 2 in the way that the information MUST be given if it is available. [[DCAT-AP-CH-1]] uses
+        "conditional" instead of "recommended", but includes no general definition of this requirement level and only explains
+        it on a case per case basis. See <a class="no-sectionRef" href="#conditional-issue"></a> for a
+      discussion of this custom requirement level of DCAT-AP CH.
+      <li><strong>optional</strong> is an exact match of the DCAT-AP's requirement level <strong>optional</strong> and means
+      the information MAY be provided, but there is no need to do so, even if the information is available.
     </ul>
     <div id="diagram" class="mermaid">
       classDiagram
 
       Catalog --> Dataset : dcat:dataset
-      Catalog --> Document : foaf:Homepage
-      Catalog --> Agent : dct:publisher
       Dataset --> Distribution : dcat:distribution
-      Dataset --> Document: dcat:landingPage
-      Dataset --> Agent : dct:publisher
-      Catalog --> ConceptScheme: dcat:themeTaxonomy
-      Dataset --> Concept: dcat:theme
-      ConceptScheme --> Concept: skos:inScheme
       class Catalog {
       Mandatory:
       - dct:title
@@ -480,13 +489,6 @@
       - dct:license
       - dct:rights
       - dct:language
-      }
-      class Document {
-      }
-      class Concept {
-      }
-      class ConceptScheme {
-      - skos:Concept
       }
       class Dataset {
       Mandatory:
@@ -531,11 +533,6 @@
       - dcat:downloadURL
       - dct:coverage
       - schema:image
-      }
-      class Agent {
-      Mandatory:
-      - foaf:name
-      - foaf:type
       }
     </div>
   </section>
@@ -3930,7 +3927,8 @@
   </section>
   <section id="dcat-ap-conformance-issues-summary">
     <h3>Conformance Issues Summary</h3>
-    <p>The following tables give an overview on all conformance issues, that have been noted so far:</p>
+    <p>The following table gives an overview on conformance issues that have been noted so far and that relate to
+      the definition of classes and properties:</p>
     <table class="simple">
       <thead>
       <tr>
@@ -4028,10 +4026,18 @@
       </tbody>
     </table>
 
-    <p>In addition to this list of known issues regarding the specification or implmentation of
-    classes and properties, opendata.swiss currently does not conform to DCAT-AP as an application as
-    it does not fulfill 6.2 "Receiver requirements" of DCAT-AP. For a discussion on this see
-      <a class="no-sectionRef" href="#import-export-issues"></a>< </p>
+    <p>In addition, the following problems have been noted:
+      <ul>
+    <li>
+      <a class="no-sectionRef" href="#import-export-issues"></a>: opendata.swiss currently does not conform to DCAT-AP as an application as
+    it does not comply to section 6.2 "Receiver requirements" of DCAT-AP.
+    </li>
+    <li>
+      <a class="no-sectionRef" href="#conditional-issue"></a>: DCAT-AP CH deviates from DCAT-AP terminology in the way it
+      specifies its requirements without motivating this decision.
+    </li>
+  </ul>
+
   </section>
 
   <section id="dcat-ap-conformance-problems-details">
@@ -4480,6 +4486,37 @@
       </ul>
 
       <p class="issue" data-number="119"></p>
+
+    </section>
+
+    <section id="conditional-issue">
+      <h2>DCAT-AP CH uses conditional instead of recommended</h2>
+      <ul>
+        <li><strong>Details</strong>: DCAT-AP CH uses the requirement level "conditional" for
+          specifying the requirements of its classes and properties instead of the requirement level "recommended" that is used
+          and also defined by DCAT-AP.
+          While this may not be an obstacle regarding
+          conformance to DCAT-AP, it makes it harder to compare the requirements. Since DCAT-AP CH
+          does not give a definition of "conditional" the reason for that deviation of DCAT-AP terminology remains
+          unclear and needs to be discussed.
+        </li>
+        <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#catalog-modified"></a>,
+        <a class="no-sectionRef" href="#dataset-landing-page"></a>,
+        <a class="no-sectionRef" href="#dataset-theme"></a>,
+        <a class="no-sectionRef" href="#dataset-language"></a>,
+        <a class="no-sectionRef" href="#dataset-release-date"></a>,
+        <a class="no-sectionRef" href="#dataset-modification-date"></a>,
+        <a class="no-sectionRef" href="#dataset-distribution"></a>,
+        <a class="no-sectionRef" href="#distribution-title"></a>,
+        <a class="no-sectionRef" href="#distribution-description"></a>,
+        <a class="no-sectionRef" href="#distribution-byte-size"></a>,
+        <a class="no-sectionRef" href="#distribution-media-type"></a>,
+        <a class="no-sectionRef" href="#distribution-modification-date"></a>,
+        <a class="no-sectionRef" href="#distribution-language"></a>,
+        <a class="no-sectionRef" href="#distribution-format"></a>
+      </ul>
+
+      <p class="issue" data-number="125"></p>
 
     </section>
 
