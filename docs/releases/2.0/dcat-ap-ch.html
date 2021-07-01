@@ -547,10 +547,16 @@
   <h2>Vocabulary specification</h2>
 
   <aside class="ednote">This vocabulary specification has been added in order to provide
-    a legend for the class property overview tables that have been added for each class.
+    legends for <a class="no-sectionRef" href="#vocabulary-specification"></a>:
+    <ul>
+      <li>the overview tables of properties that have been added for each class</li>
+      <li>the class and property specifications tables</li>
+    </ul>
+    Most content has been transferred from the corresponding definitions in [[DCAT-AP-CH-1]]. An additional
+    row/field has been added to provide information about the conformance to DCAT-AP.
   </aside>
 
-  <p>The tables in the following sections include these columns:</p>
+  <p>The <strong>class property overview tables</strong> in the following sections include these columns:</p>
   <ul>
     <li>Column <strong><abbr title="Obligation">Obl.</abbr></strong> ("Obligation"), denotes whether the class /
       property is mandatory ("<strong><abbr title="Mandatory">M</abbr></strong>"), conditional (<strong><abbr
@@ -565,7 +571,34 @@
     </li>
     <li>Column <strong><abbr title="Conformance">Conf.</abbr></strong> ("Conformance"), denotes whether the class /
       property definition is conformant ("<strong><abbr title="Conformant to DCAT-AP">Y</abbr></strong>") or
-      not conformant (<strong><abbr title="NOT Conformant to DCAT-AP">N</abbr></strong>) to DCAT-AP.
+      not conformant (<strong><abbr title="NOT Conformant to DCAT-AP">N</abbr></strong>) to DCAT-AP. (This column
+      just considers the conformance of the definition, not the conformance of any implementation.)
+    </li>
+  </ul>
+
+  <p>The <strong>class and property definitions tables</strong> in the following sections include these fields:</p>
+  <ul>
+    <li><strong>Label</strong>: denotes the label that the class
+      or property is given in DCAT-AP or DCAT-AP CH.
+    </li>
+    <li><strong>Obligation</strong> specifies the requirement level
+    </li>
+    <li><strong><abbr title="Max Cardinality">Max Card.</abbr></strong> (Properties only): specifies the maximum cardinality of the
+      property.
+    </li>
+    <li><strong>RDF Class / RDF Property</strong>: denotes the
+      RDF class or property URI
+    </li>
+    <li><strong>Range</strong> (Properties only): specifies the range of values
+      that is expected for the property
+    </li>
+    <li><strong>Definition</strong>: provides a short definition of the class or property.
+    </li>
+    <li><strong>Usage</strong>: specifies custom usage instructions and provides background information.
+    </li>
+    <li><strong>Conformance</strong>:
+      Adds information about the conformance of the specification of the class or property to DCAT-AP. The conformance
+      of opendata.swiss as a receiver of the information (see <a class="no-sectionRef" href="#receiver-requirements"></a>) is also considered.
     </li>
   </ul>
 </section>
