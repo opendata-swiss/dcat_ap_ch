@@ -642,11 +642,11 @@
       </tr>
       <tr>
         <th>Conformance</th>
-        <td><p>The class definition conforms to [[DCAT-AP]], even though some of the properties
-          defined for the class do not, as can be seen in the table below.</p>
+        <td>The class specification does not conform to [[DCAT-AP]], since some of the properties
+          defined for the class do not conform.
             <p>The implementation on opendata.swiss does not implement the catalog class
-              with all mandatory properties and therefore does not conform
-              either to DCAT-AP or to this specification
+              with all mandatory properties and therefore does not conform to either
+              DCAT-AP or to this specification
             (see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>).
           </p>
         </td>
@@ -739,7 +739,7 @@
         <td>n</td>
         <td><a data-cite="VOCAB-DCAT#Property:catalog_themes"><code>dcat:themeTaxonomy</code></a></td>
         <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></td>
-        <td>Y</td>
+        <td>N</td>
       </tr>
       <tr>
         <td><a href="#catalog-license">license</a></td>
@@ -802,8 +802,8 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code>
-            [[ISO 639-1]] two letter code</a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> as a
+            [[ISO 639-1]] two letter code indicating the language
           </td>
         </tr>
         <tr>
