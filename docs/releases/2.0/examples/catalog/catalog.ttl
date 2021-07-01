@@ -3,20 +3,16 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://swisstopo/opendata/catalog>
+<https://swisstopo/catalog-endpoint.rdf>
   a dcat:Catalog ;
 
   dcat:dataset <https://swisstopo/data/123>, <https://swisstopo/data/345> ;
 
-  dct:title "Open Data City of Zurich"@en ,
-            "Offene Daten der Stadt Zurich"@de ;
-  dct:description "Datenkatalog der Stadt Zurich"@de ;
-
-  dct:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
-  foaf:homepage <https://swisstopo/homepage> ;
-  dct:publisher <https://publishers/swisstopo> ;
-  dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
-  dct:language: <http://id.loc.gov/vocabulary/iso639-1/en> .
+  dct:title "Offene Daten Swisstopo"@de ;
+  dct:description "Datenkatalog von Swisstopo"@de ;
+  dct:issued "2021-01-07"^^xsd:date ;
+  foaf:homepage <https://swisstopo/index.html> ;
+  dct:modified "2021-01-07"^^xsd:date .
 
 <https://swisstopo/data/123>
   a dcat:Dataset .
@@ -27,5 +23,3 @@
 <https://swisstopo/index.html>
   a foaf:Document .
 
-<https://publishers/swisstopo>
-  a foaf:Agent .

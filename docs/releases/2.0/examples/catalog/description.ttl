@@ -1,7 +1,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
-<https://swisstopo/opendata/catalog>
+<https://stadt-zurich/opendata/catalog>
   a dcat:Catalog ;
   dct:description """Opendata Collection of the city of Zurich
                  - [read more here](https://opendata.zurich/)"""@en,

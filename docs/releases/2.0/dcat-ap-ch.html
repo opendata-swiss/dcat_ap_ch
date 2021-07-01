@@ -165,7 +165,10 @@
      a discussion on this see <a class="no-sectionRef" href="#import-export-issues"></a>.
    </aside>
 
-    <p><strong>A data catalog conforms to DCAT-AP CH if:</strong></p>
+  <section id="provider-requirements">
+    <h2>Provider requirements</h2>
+
+    <p><strong>A data catalog conforms to DCAT-AP CH if:</strong>
     <ul>
     <li>An RDF description of the catalog is available</li>
     <li>All classes and properties defined in DCAT-AP CH are used in a way consistent with the
@@ -174,7 +177,9 @@
     <a data-cite="VOCAB-DCAT#conformance">DCAT Conformance Criteria</a>) and
        [[DCAT-AP]] (Section 6.1 "Provider requirements") apply.</li>
     </ul>
-
+  </section>
+  <section id="receiver-requirements">
+    <h2>Receiver requirements</h2>
     <p><strong>An application (data portal) conforms to DCAT-AP CH if:</strong></p>
     <ul>
      <li>It is able to process RDF catalogs that conform to DCAT-AP CH.</li>
@@ -187,8 +192,7 @@
        that are well formed according to the semantics of in DCAT-AP correctly and pass them through as they are
       when harvested by the Europen dataportal.</li>
     </ul>
-
-
+  </section>
 
 </section>
 
@@ -543,10 +547,16 @@
   <h2>Vocabulary specification</h2>
 
   <aside class="ednote">This vocabulary specification has been added in order to provide
-    a legend for the class property overview tables that have been added for each class.
+    legends for <a class="no-sectionRef" href="#vocabulary-specification"></a> for:
+    <ul>
+      <li>the overview tables of properties that have been added for each class</li>
+      <li>the the class and property specifications tables</li>
+    </ul>
+    Most rows and columns have been transferred form [[DCAT-AP-CH-1]]. Rows and columns to make the conformance
+    to DCAT-AP transparent have been added.
   </aside>
 
-  <p>The tables in the following sections include these columns:</p>
+  <p>The <strong>class property overview tables</strong> in the following sections include these columns:</p>
   <ul>
     <li>Column <strong><abbr title="Obligation">Obl.</abbr></strong> ("Obligation"), denotes whether the class /
       property is mandatory ("<strong><abbr title="Mandatory">M</abbr></strong>"), conditional (<strong><abbr
@@ -561,7 +571,48 @@
     </li>
     <li>Column <strong><abbr title="Conformance">Conf.</abbr></strong> ("Conformance"), denotes whether the class /
       property definition is conformant ("<strong><abbr title="Conformant to DCAT-AP">Y</abbr></strong>") or
-      not conformant (<strong><abbr title="NOT Conformant to DCAT-AP">N</abbr></strong>) to DCAT-AP.
+      not conformant (<strong><abbr title="NOT Conformant to DCAT-AP">N</abbr></strong>) to DCAT-AP. This
+      corresponds to the field <a class="no-sectionRef" href="#specification-conformance">Specification Conformance</a>
+      in the property definition table.
+    </li>
+    <li>Column <strong><abbr title="Conformance">Impl.</abbr></strong> ("Conformance"), denotes whether the class /
+      property definition is conformant ("<strong><abbr title="Conformant to DCAT-AP">Y</abbr></strong>") or
+      not conformant (<strong><abbr title="NOT Conformant to DCAT-AP">N</abbr></strong>) to DCAT-AP. This
+      corresponds to the field <a class="no-sectionRef" href="#specification-conformance">Specification Conformance</a>
+      in the property definition table.
+    </li>
+  </ul>
+
+  <p>The <strong>class and property defintions tables</strong> in the following sections include these fields:</p>
+  <ul>
+    <li><strong>Label</strong>: denotes the label that the class
+      or property is given in DCAT-AP or DCAT-AP CH.
+    </li>
+    <li><strong>Obligation</strong> specifies the requirement level
+    </li>
+    <li><strong><abbr title="Max Cardinality">Max Card.</abbr></strong> (Properties only): specifies the maximum cardinality of the
+      property.
+    </li>
+    <li><strong>RDF Class / RDF Property</strong>: denotes the
+      RDF class or property URI
+    </li>
+    <li><strong>Range</strong> (Properties only): specifies the range of values
+      that is expected for the property
+    </li>
+    <li><strong>Definition</strong>: provides a short defintion of the class or property.
+    </li>
+    <li><strong>Usage</strong>: specifies custom usage instructions, if there are any. Otherwise
+      this field may be missing.
+    </li>
+    <li><strong>Differences to DCAT-AP</strong>: denotes all differences to DCAT-AP in Obligation, Cardinality, Range or Usage
+    </li>
+    <li id="specification-conformance"><strong>Specification Conformance</strong>: denotes
+      whether this specification of the class or property conforms to DCAT-AP. This is the case exactly when data formed according to the
+      specification will also conform to DCAT-AP
+    </li>
+    <li><strong>Implementation Conformance</strong>: denotes
+      whether opendata.swiss implementatiton of the class or property conforms to
+      <a class="no-sectionRef" href="#receiver-requirements"></a>
     </li>
   </ul>
 </section>
@@ -570,7 +621,18 @@
 
   <h2>Primary classes</h2>
 
+  <aside class="ednote">The class and property definitions have been copied and translated
+    form [[DCAT-AP-CH-1]]. They have also been complemented by a detailed analysis on:
+    <ul>
+      <li>the conformance of the defintions to DCAT-AP, see <a class="no-sectionRef" href="#dcat-ap-conformance-criteria"></a></li>
+      <li>the conformance of opendata.swiss as a
+    receiver of the class or property, see <a class="no-sectionRef" href="#receiver-requirements"></a></li>
+    </ul>
+    Examples have been only provided where the specification conforms to DCAT-AP CH.
+  </aside>
+
   <section id="Class:Catalog">
+
     <h3>Class: Catalog</h3>
 
     <table class="def">
@@ -590,34 +652,31 @@
       </tr>
       <tr>
         <th>Definition</th>
-        <td>A data catalog is a curated collection of metadata corresponding to the datasets that are hosted
-          on a data portal.</td>
+        <td>A catalogue or repository that hosts the datasets being described</td>
       </tr>
       <tr>
-        <th>Usage</th>
-        <td>
-          The catalog has a hierarchical structure and contains references to all the metadata
-          for the data that can be accessed via the portal (these entries have the class <code>dcat:Dataset</code>).
-          The datasets themselves refer to all distributions of the actual data (class <code>dcat:Distribution</code>).
-          In DCAT-AP there is an additional class, <code>dcat:CatalogRecord</code>, which contains metadata on the catalog.
-          This class has not been used so far in the implementation of DCAT-AP CH on opendata.swiss.
+        <th>Differences to DCAT-AP</th>
+        <td>Only differs regarding its properties.
         </td>
       </tr>
       <tr>
-        <th>Conformance</th>
-        <td><p>The class definition conforms to [[DCAT-AP]], even though some of the properties
-          defined for the class do not, as can be seen in the table below.</p>
-            <p>The implementation on opendata.swiss does not implement the catalog class
-              with all mandatory properties and therefore does not conform
-              either to DCAT-AP or to this specification
-            (see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>).
-          </p>
+        <th>Specification Conformance</th>
+        <td><strong>Y</strong>: The class specification conforms to [[DCAT-AP]], even though some of the properties
+          defined for the class do not.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: The implementation on opendata.swiss does not conform to [[DCAT-AP]] since opendata.swiss
+              does not process any of the catalog properties, except for the dataset property
+              <a class="no-sectionRef" href="#catalog-dataset"></a>, see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
         </td>
       </tr>
       </tbody>
     </table>
 
-    <p>The following table lists the properties used for describing a catalog.</p>
+    <p>The following table lists the properties used for describing a catalog.
+      See <a class="no-sectionRef" href="#vocabulary-specification"></a> for a legend for the columns.</p>
 
     <table class="simple">
       <thead>
@@ -628,6 +687,7 @@
         <th>RDF Property</th>
         <th>Range</th>
         <th><abbr title="Conformance to DCAT-AP">Conf.</abbr></th>
+        <th><abbr title="Conformance to DCAT-AP">Impl.</abbr></th>
       </tr>
       </thead>
       <tbody>
@@ -637,7 +697,8 @@
         <td>1*</td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-        <td>Y</td>
+        <td><strong>Y</strong></td>
+        <td>N</td>
       </tr>
       <tr>
         <td><a href="#catalog-description">description</a></td>
@@ -645,7 +706,8 @@
         <td>1*</td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
-        <td>Y</td>
+        <td><strong>Y</strong></td>
+        <td>N</td>
       </tr>
       <tr>
         <td><a href="#catalog-issued">issued</a></td>
@@ -656,7 +718,8 @@
           (typed as
           as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>)
         </td>
-        <td>Y</td>
+        <td><strong>Y</strong></td>
+        <td>N</td>
       </tr>
       <tr>
         <td><a href="#catalog-homepage">homepage</a></td>
@@ -664,7 +727,8 @@
         <td>1*</td>
         <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
         <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
-        <td>Y</td>
+        <td><strong>Y</strong></td>
+        <td>N</td>
       </tr>
       <tr>
         <td><a href="#catalog-publisher">publisher</a></td>
@@ -673,6 +737,7 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a>
         </td>
         <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
+        <td><strong>N</strong></td>
         <td>N</td>
       </tr>
       <tr>
@@ -683,6 +748,7 @@
         </td>
         <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a>
         </td>
+        <td><strong>Y</strong></td>
         <td>Y</td>
       </tr>
       <tr>
@@ -694,7 +760,8 @@
           (typed as
           as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>)
         </td>
-        <td>Y</td>
+        <td><strong>Y</strong></td>
+        <td>N</td>
       </tr>
       <tr>
         <td><a href="#catalog-theme-taxonomy">theme-taxonomy</a></td>
@@ -702,7 +769,8 @@
         <td>n</td>
         <td><a data-cite="VOCAB-DCAT#Property:catalog_themes"><code>dcat:themeTaxonomy</code></a></td>
         <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></td>
-        <td>Y</td>
+        <td><strong>N</strong></td>
+        <td>N</td>
       </tr>
       <tr>
         <td><a href="#catalog-license">license</a></td>
@@ -712,6 +780,7 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
         </td>
+        <td><strong>N</strong></td>
         <td>N</td>
       </tr>
       <tr>
@@ -722,6 +791,7 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
         </td>
+        <td><strong>N</strong></td>
         <td>N</td>
       </tr>
       <tr>
@@ -732,12 +802,14 @@
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
         </td>
+        <td><strong>N</strong></td>
         <td>N</td>
       </tr>
       </tbody>
     </table>
 
-    <aside class="example" title="Example for a dcat:Catalog class">
+    <aside class="example" title="Example for a dcat:Catalog class in DCAT-AP CH: only properties where the specification conforms to
+    DCAT-AP have been included. Therefore even some mandatory classes such as the dct:publisher have been skipped. ">
       <pre data-include-format="text" data-include="./examples/catalog/catalog.ttl"></pre>
     </aside>
 
@@ -765,8 +837,8 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code>
-            [[ISO 639-1]] two letter code</a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> with a
+            [[ISO 639-1]] two letter code indicating the language
           </td>
         </tr>
         <tr>
@@ -775,18 +847,31 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>The title of the catalog in the indicated language. The title must be
-            given in at least one of the four languages German, French, English, Italian. Further languages are
-            optional.
+          <td>The title must be
+            provides in at least one of the four languages German, French, English, Italian.
+            Further languages are optional.
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>There is an additional restriction regarding the language choice.
+        </td>
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>Y</strong>: An additional restriction means that data conforming to this specification will still conform to DCAT-AP
+          and is therefore allowed.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: opendata.swiss as a receiver of data does not conform since it does not process this property,
+          see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
+        </td>
+      </tr>
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of dct:title for dcat:Catalog">
+      <aside class="example" title="Example for a the usage of dct:title on dcat:Catalog in DCAT-AP CH">
         <pre data-include-format="text" data-include="./examples/catalog/title.ttl"></pre>
       </aside>
 
@@ -828,18 +913,30 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>The description of the catalog in the indicated language. The description must be
-            given in at least one of the four languages German, French, English, and Italian.
-            Further languages are optional.
-          </td>
+          <td>The description must be
+            provided in at least one of the four languages German, French, English, Italian.
+            Further languages are optional.</td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>There is an additional restriction regarding the language choice.
+        </td>
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>Y</strong>: An additional restriction means that data conforming to this specification will still conform to DCAT-AP
+          and is therefore allowed.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: opendata.swiss as a receiver of data does not conform since it does not process this property,
+          see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
+        </td>
+      </tr>
         </tbody>
       </table>
-      <aside class="example" title="Usage of dct:description for dcat:Catalog">
+      <aside class="example" title="Example for a the usage of dct:description on dcat:Catalog in DCAT-AP CH">
         <pre data-include-format="text" data-include="./examples/catalog/description.ttl"></pre>
       </aside>
     </section>
@@ -879,19 +976,29 @@
             publication) of the catalog.
           </td>
         </tr>
-        <tr>
-          <th>Usage</th>
-          <td>The date when the catalog was published.
-          </td>
-        </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>Conforms to [[DCAT-AP]]</p>
-          </td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>The range is restricted as DCAT AP also allows
+          <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> (typed as
+            as <a data-cite="XMLSCHEMA11-2#datetime"><code>xsd:datetime</code></a>).
+          The obligation is raised from recommended to mandatory.
+        </td>
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>Y</strong>:
+          An additional restriction means that data conforming to this specification will still conform to DCAT-AP and is therefore allowed.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: opendata.swiss as a receiver of data does not conform since it does not process this property,
+          see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
+        </td>
+      </tr>
         </tbody>
       </table>
-      <aside class="example" title="Usage of dct:issued for dcat:Catalog">
+      <aside class="example" title="Example for a the usage of dct:issued on dcat:Catalog in DCAT-AP CH">
         <pre data-include-format="text" data-include="./examples/catalog/issued.ttl"></pre>
       </aside>
 
@@ -927,20 +1034,27 @@
           <th>Definition</th>
           <td>Homepage of the catalog.</td>
         </tr>
-        <tr>
-          <th>Usage</th>
-          <td>For example https://opendata.swiss would be the homepage of the catalog exported to the European
-            Data Portal.
-          </td>
-        </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>The obligation is raised from recommended to mandatory.
+        </td>
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>Y</strong>: An additional restriction means that data conforming to
+          this specification will still conform to DCAT-AP and is therefore allowed.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: opendata.swiss as a receiver of data does not conform since it does not process this property,
+          see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
+        </td>
+      </tr>
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of foaf:homepage for dcat:Catalog">
+      <aside class="example" title="Example for a the usage of foaf:homepage on dcat:Catalog in DCAT-AP CH">
         <pre data-include-format="text" data-include="./examples/catalog/homepage.ttl"></pre>
       </aside>
 
@@ -987,20 +1101,26 @@
             </aside>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
-            The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
-            but implementing it with <code>rdf:Description</code>
-            (<a class="no-sectionRef" href="#publisher-issues"></a>)
-          </td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>The usage is further specified. The oblisgation is raised from recommended to mandatory.
+        </td>
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>N</strong>: The usage note contradicts the range of <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>. The
+          specification is therefore not well defined.
+          See <a class="no-sectionRef" href="#publisher-issues"></a>.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: opendata.swiss as a receiver of data does not conform since it does not process this property,
+          see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
+        </td>
+      </tr>
         </tbody>
       </table>
-
-      <aside class="example" title="Usage of dct:publisher for dcat:Catalog with foaf:Agent">
-        <pre data-include-format="text" data-include="./examples/catalog/publisher.ttl"></pre>
-      </aside>
 
     </section>
 
@@ -1048,14 +1168,30 @@
             last update.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>The range is restricted as DCAT AP also allows
+          <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> (typed as
+            as <a data-cite="XMLSCHEMA11-2#datetime"><code>xsd:datetime</code></a>).
+          The obligation is changed from recommended to condtional, but since the way the condition is formulated means
+          that in this case conditional is rather stricter that recommended.
+        </td>
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>Y</strong>: An additional restriction means that data conforming to this specification will still conform to DCAT-AP and is therefore allowed.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: opendata.swiss as a receiver of data does not conform since it does not process this property,
+          see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
+        </td>
+      </tr>
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+      <aside class="example" title="Example for a the usage of dct:modified on dcat:Catalog in DCAT-AP CH">
         <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
       </aside>
 
@@ -1098,29 +1234,34 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td><p>
-            As a basis for classification might be used, for example, [[TERMDAT]], [[PLZO_CH]], or a growing
-            terminology gathered by a portal itself. Terminologies determined by the eCH Standards might also be
+          <td>Possible taxomomies could be [[TERMDAT]], [[PLZO_CH]], or a growing
+            terminology gathered by a data portal. Terminologies determined by the eCH Standards might also be
             appropriate (for example eCH-0049, eCH-0070 and eCH-0145 for describing the services or tasks of the
-            public administration.)</p>
-            <p>For exchange with other European portals, the upper level of the multilingual EU thesaurus [[EUROVOC]]
-              is supported.</p>
+            public administration.)
+            For exchange with other European portals, the upper level of the multilingual EU thesaurus [[EUROVOC]]
+            is supported.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>To conform to [[DCAT-AP]], the requirement level of this property should be changed to recommended.
-            <p>All theme taxonomies used SHOULD be listed here if possible.
-              (<a class="no-sectionRef" href="#theme-issues"></a>)</p>
-          </td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>A non normative usage note was added providing examples.
+          The obligation was downgraded from recommended to optional.
+        </td>
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>N</strong>: Since the obligation is downgraded data that might conform this specification might not conform
+          DCAT-AP. Therefore the sepcification does not conform DCAT-AP.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: opendata.swiss as a receiver of data does not conform since it does not process this property,
+          see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
+        </td>
+      </tr>
         </tbody>
       </table>
-
-      <aside class="example" title="Usage of dcat:themeTaxonomy for dcat:Catalog: the example lists
-      all the theme taxonomies that are used in DCAT-AP CH">
-        <pre data-include-format="text" data-include="./examples/catalog/theme-taxonomy.ttl"></pre>
-      </aside>
 
     </section>
 
@@ -1157,18 +1298,24 @@
           <th>Definition</th>
           <td>Dataset that is part of the catalog.</td>
         </tr>
-        <tr>
-          <th>Usage</th>
-          <td>Reference to the dataset that is contained in the catalog.</td>
-        </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>No differences have been found
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>Y</strong>: since the defintion is exactly the same as for the DCAT-AP property
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>Y: opendata.swiss as a receiver of data processes this information correctly.
+        </td>
+      </tr>
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of dcat:dataset for dcat:Catalog">
+      <aside class="example" title="Example for a the usage of dcat:dataset on dcat:Catalog in DCAT-AP CH">
         <pre data-include-format="text" data-include="./examples/catalog/dataset.ttl"></pre>
       </aside>
 
@@ -1210,23 +1357,30 @@
         <tr>
           <th>Usage</th>
           <td>If the license of the catalog applies to all of its datasets and distributions,
-            the attribute should be replicated on each distribution. Alternatively, the property rights can be used.
+            the attribute should be replicated on each distribution.
+            Alternatively, the property rights can be used.
           </td>
         </tr>
-        <tr>
-          <th>Conformance Notes</th>
-          <td>[[DCAT-AP]] recommends <code>dct:license</code>, so that should be used if is possible.
-            (<a class="no-sectionRef" href="#license-issues"></a>)
-          </td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>A usage note was added, stating options.
+          The obligation was downgraded from recommended to optional.
+        </td>
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>N</strong>: Since the obligation is downgraded data that might conform this specification might not conform
+          DCAT-AP. Therefore the sepcification does not conform DCAT-AP.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: opendata.swiss as a receiver of data does not conform since it does not process this property,
+          see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
+        </td>
+      </tr>
         </tbody>
       </table>
-
-      <aside class="ednote">
-        Since the catalog class is not currently implemented the example for dct:license is skipped.
-        For an example see the distribution class: (<a class="no-sectionRef" href="#distribution-license"></a>).
-      </aside>
-
 
     </section>
 
@@ -1260,26 +1414,38 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Rights under which the catalog (and not the datasets) is made available, if the same rights
-            apply to all the datasets and distributions,
-            the attribute should be replicated on each distribution.
+          <td>Rights under which the catalog (and not the datasets) is made available.
           </td>
         </tr>
         <tr>
           <th>Usage</th>
-          <td>Alternatively the property license can be used.</td>
+          <td>If the same rights
+            apply to all the datasets and distributions,
+            the attribute should be replicated on each distribution.
+            Alternatively the property license can be used.
+          </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>(<a class="no-sectionRef" href="#license-issues"></a>)</td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>A usage note has been added.
+        </td>
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>N</strong>: Even though their is not anything obvious that hurts the conformance with DCAT-AP, the usage note
+          is confusing since <code>dct:license</code> is a recommended property in DCAT-AP. It does not seem that their is a choice
+          between <code>dct:rights</code> and <code>dct:license</code> in DCAT-AP as the usage note indicates, but the license has to be
+          provided if available and the rights statement is an optional extra.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: opendata.swiss as a receiver of data does not conform since it does not process this property,
+          see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
+        </td>
+      </tr>
         </tbody>
       </table>
-
-      <aside class="ednote">
-        Since the catalog class is not currently implemented the example for dct:rights is skipped.
-        For an example see the distribution class: (<a class="no-sectionRef" href="#distribution-rights"></a>).
-      </aside>
 
     </section>
 
@@ -1325,20 +1491,27 @@
             the Catalog level.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.
-            The language should also be given as an URI. Furthermore, in DCAT this property is not optional
-            but recommended for the catalog. (<a class="no-sectionRef" href="#language-issues"></a>)
-          </td>
-        </tr>
+      <tr>
+        <th>Differences to DCAT-AP</th>
+        <td>A non normative usage note is added. The obligation is downgraded from recommended to optional. The range
+          of does not conform to the range in DCAT-AP that demands the use of the controlled vocabulary [[VOCAB-EU-LANG]].
+          See <a class="no-sectionRef" href="#language-issues"></a>)
+        </td>
+      </tr>
+      <tr>
+        <th>Specification Conformance</th>
+        <td><strong>N</strong>: Downgrading the obligation and changing the range to a different vocabulary does
+          both mean that data conforming to this specification will not conform to DCAT-AP. It is therefore not allowed.
+        </td>
+      </tr>
+      <tr>
+        <th>Implementation Conformance</th>
+        <td>N: opendata.swiss as a receiver of data does not conform since it does not process this property,
+          see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>.
+        </td>
+      </tr>
         </tbody>
       </table>
-
-      <aside class="ednote">
-        Since the catalog class is not currently implemented the example for dct:language is skipped. For an example
-        see the dataset class: (<a class="no-sectionRef" href="#dataset-language"></a>).
-      </aside>
 
     </section>
 
