@@ -1146,9 +1146,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>To conform to [[DCAT-AP]], the requirement level of this property should be changed to recommended.
-            <p>All theme taxonomies used SHOULD be listed here if possible.
-              (<a class="no-sectionRef" href="#theme-issues"></a>)</p>
+          <td>Does not conform to [[DCAT-AP]] since in DCAT-AP the requirement level of this property is recommended. That
+            means theme taxonomies that are used in the catalog MUST be listed in case they are available.
+              (<a class="no-sectionRef" href="#theme-issues"></a>)
           </td>
         </tr>
         </tbody>
@@ -1252,19 +1252,17 @@
         </tr>
         <tr>
           <th>Conformance Notes</th>
-          <td>[[DCAT-AP]] recommends <code>dct:license</code>, so that should be used if is possible.
-            (<a class="no-sectionRef" href="#license-issues"></a>)
+          <td>Does not conform to [[DCAT-AP]] since the requirement level in DCAT-AP is recommended.
+            This means that a license MUST be provided if it is available.
+            (see <a class="no-sectionRef" href="#license-issues"></a>)
           </td>
         </tr>
         </tbody>
       </table>
 
       <aside class="ednote">
-        Since the catalog class is not currently implemented the example for dct:license is skipped.
-        For an example see the distribution class: (<a class="no-sectionRef" href="#distribution-license"></a>).
+        See the discussion <a class="no-sectionRef" href="#license-issues"></a> for an example on the usage of dct:license
       </aside>
-
-
     </section>
 
     <section id="catalog-rights">
@@ -1308,16 +1306,15 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>(<a class="no-sectionRef" href="#license-issues"></a>)</td>
+          <td>The usage not does not conform to DCAT-AP, since in DCAT-AP the license "cannot be used alternatively"
+           but is the recommended was to go. (<a class="no-sectionRef" href="#rights-issues"></a>)</td>
         </tr>
         </tbody>
       </table>
 
       <aside class="ednote">
-        Since the catalog class is not currently implemented the example for dct:rights is skipped.
-        For an example see the distribution class: (<a class="no-sectionRef" href="#distribution-rights"></a>).
+        See the discussion <a class="no-sectionRef" href="#rights-issues"></a> for an example on the usage of dct:rights
       </aside>
-
     </section>
 
     <section id="catalog-language">
@@ -1373,8 +1370,7 @@
       </table>
 
       <aside class="ednote">
-        Since the catalog class is not currently implemented the example for dct:language is skipped. For an example
-        see the dataset class: (<a class="no-sectionRef" href="#dataset-language"></a>).
+        See the discussion <a class="no-sectionRef" href="#language-issues"></a> for an example on the usage of dct:language
       </aside>
 
     </section>
