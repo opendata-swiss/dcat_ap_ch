@@ -1,20 +1,19 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix adms: <http://www.w3.org/ns/adms#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
-@prefix locn: <http://www.w3.org/ns/locn#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix time: <http://www.w3.org/2006/time> .
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xml1: <http://www.w3.org/2001/XMLSchema> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://swisstopo/reforestation-data/1234>
-  a dcat:Distribution .
+<http://bundesamt-fur-gesundheit-bag/11/daily-cases-json> a dcat:Distribution ;
+    dct:description """Daily record timelines by geoRegion for cases.
+### Documentation
+- [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailyincomingdata.md)
+- [general documentation](https://www.covid19.admin.ch/api/data/documentation)"""@en ;
+    dct:format "JSON" ;
+    dct:identifier "daily-cases-json" ;
+    dct:issued "2020-11-05"^^xsd:date ;
+    dct:modified "2021-07-02"^^xsd:date ;
+    dct:title "COVID19Cases_geoRegion"@en ;
+    dct:rights "NonCommercialAllowed-CommercialAllowed-ReferenceRequired" ;
+    dcat:accessURL <https://www.covid19.admin.ch/api/data/20210702-uzngydwd/sources/COVID19Cases_geoRegion.json> ;
+    dcat:byteSize "13448271.0"^^xsd:decimal ;
+    dcat:downloadURL <https://www.covid19.admin.ch/api/data/20210702-uzngydwd/sources/COVID19Cases_geoRegion.json> ;
+    dcat:mediaType "application/json" .

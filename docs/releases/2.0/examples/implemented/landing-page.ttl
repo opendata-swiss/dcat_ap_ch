@@ -1,0 +1,5 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://opendata.swisstopo/1234>
+  a dcat:Dataset ;
+  dcat:landingPage "https://opendata.swisstopo/1234/about" .

@@ -63,6 +63,11 @@ var respecConfig = {
           "title":"Publisher vocabulary for DCAT-AP CH",
           "publisher":"Verein eCH",
      },
+     "VOCAB-DCAT-AP-CH-THEMES":{
+          "href":"https://dcat-ap.ch/vocabulary/themes",
+          "title":"Publisher vocabulary for DCAT-AP CH",
+          "publisher":"Verein eCH",
+     },
      "VOCAB-DCAT-AP-CH-PUBLISHERS":{
           "href":"https://dcat-ap.ch/vocabulary/publishers",
           "title":"Publisher vocabulary for DCAT-AP CH",
