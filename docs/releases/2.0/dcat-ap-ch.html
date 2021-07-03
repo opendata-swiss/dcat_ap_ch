@@ -4560,9 +4560,90 @@
   </section>
 </section>
 
-<section id="learning-and-next-steps">
-  <h2>Learnings and Next Steps</h2>
-</section>
+  <section id="learning-and-next-steps">
+    <h2>Learnings and Next Steps</h2>
+    <aside class="ednote">
+      This section reflects solely the opiniom of the editor. It is added to prepare the
+      discussion about the next the steps for DCAT-AP CH:
+      <ul>
+        <li><a class="no-sectionRef" href="#learnings">Learnings</a></li>
+        <li><a class="no-sectionRef" href="#next-steps">Next Steps</a></li>
+      </ul>
+    </aside>
+    <section id="learnings">
+    <h2>Learnings</h2>
+        <ul>
+          <li><strong>Get and stay in touch with DCAT-AP community:</strong> The best impulses for this work were received
+        in discussions with the DCAT-AP community. They bring the fresh view of being native to DCAT-AP, but a strangers to
+        DCAT-AP CH. Therefore many problems only became clearer in discussions with them. Good touchpoints
+        are [[EUROVOC]] and [[DCAT-AP-GITHUB]].</li>
+      <li><strong>The most important task of an application profile is localisation:</strong>
+         DCAT-AP CH is a subprofile of DCAT-AP. So why is it necessary? DCAT-AP targets the European community, but
+        many of its rules cannot be directly applied to the situation in Switzerland.
+        For example DCAT-AP has a strong focus on demanding the use of controlled
+        vocabulary for many properties. But the European vocabulary often can't be used without further
+        adaptions.</li>
+     <li><strong>Don't add general custom vocabulary:</strong>
+           This does not conform to DCAT's rules for vocabulary extension
+          (<a data-cite="VOCAB-DCAT#conformance" data-no-xref="">DCAT:Conformance</a>),
+          but has been done by DCAT-AP CH. See <a class="no-sectionRef" href="#distribution-coverage"></a>
+          or <a class="no-sectionRef" href="#see-also-issues"></a>.
+          Interesting in that regard is, that adding for example the property <code>dct:coverage</code> to
+          <code>dcat:Distribution</code> has lead to a different understanding of what kind of distributions a dataset can hold,
+          see <a class="no-sectionRef" href="#dataset-concept-issue"></a>. These side effects
+          will be hard to correct, but anyway correction will be needed in order to profit
+          from future developments in DCAT.</li>
+          <li><strong>Without examples properties are very likely to be misunderstood: </strong>
+          Both DCAT-AP CH and DCAT-AP currently lack examples. The
+            <a class="no-sectionRef" href="#dcat-ap-conformance-issues-summary"></a> lists many issues where
+            properties have been misunderstood. Examples are <a class="no-sectionRef" href="#landing-page-implementation"></a> and
+            <a class="no-sectionRef" href="#rights-issues"></a>.</li>
+       <li><strong>Don't mix in application logic:</strong>
+         In DCAT-AP CH some properties contain application logic. See <a class="no-sectionRef" href="#identifier-issues"></a>
+       and <a class="no-sectionRef" href="#see-also-issues"></a>. This hurts interoperability since
+         the application logic is not known on the European or international level. It also stand in the
+       way of the reuse of DCAT-AP CH for other applications.</li>
+         <li><strong>URI's power is not used:</strong>
+         URI's have a lot of potential in regards to identifying and localizing data. This potential
+         is not yet used in DCAT-AP CH. For example localization of a landing page is supposed to be done with content negotiation
+           by using a
+         language neutral URI (<a class="no-sectionRef" href="#multilanguages-uris-negotiation"></a>). And
+         relations between dataset are supposed to be expressed with DCAT-Vocabulary by connecting datasets by their URIs
+           with <a data-cite="VOCAB-DCAT#qualified-relationship" data-no-xref="">
+             DCAT:Relationships between datasets and other resources</a> instead of using application bound identifiers for that purpose
+           (<a class="no-sectionRef" href="#identifier-issues"></a>)
+         </li>
+        <li><strong>The relationship to DCAT-AP needs to be explicitely defined in the specification</strong>: Providers of Data and Portal
+          Managers need guidance on how to understand what it means that a class or property is specified in DCAT-AP
+          but not in DCAT-AP-CH: Do providers of data need to look at both specifications in order to
+          arrive at a well formed data catalog? That would be the case if DCAT-AP CH does not include defintions for all
+          mandatory and recommended classes and fields. DCAT-AP conformance is in many ways decided in the treament
+          of the gap between DCAT-AP CH and DCAT-AP (<a class="no-sectionRef" href="#import-export-issues"></a>).
+        </li>
+ </ul>
+  </section>
+    <section id="next-steps">
+    <h2>Next Steps</h2>
+    <ul>
+      <li><strong>Continue to discuss the issues:</strong>
+        For each issue mentioned in <a class="no-sectionRef" href="#issue-summary"></a>
+        a github issue has been set up, so that the discussion
+        can continue within the eCH-Fachgruppe.
+      </li>
+      <li><strong>Rewrite the class and property definitions:</strong>
+        Most of the class and property definitions have been copied and translated from [[DCAT-AP-CH-1]].
+        They should be reviewed and
+        in many cases reformulated in the process of solving the issues
+        (<a class="no-sectionRef" href="#issue-summary"></a>).
+        </li>
+      <li><strong>Add the editors of this specfication:</strong>
+        So far this specification has just one editor, this editor should be replaced
+        by the names of the eCH-Fachgruppe standing behind DCAT-AP CH, once this application profile has
+        been reviewed and accepted.
+        </li>
+    </ul>
+    </section>
+  </section>
 
 <section class="appendix" id="issue-summary">
   <!-- A list of issues will magically appear here -->
