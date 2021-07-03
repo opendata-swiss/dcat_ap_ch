@@ -2811,13 +2811,17 @@
       </tr>
       <tr>
         <th>Conformance</th>
-        <td>Does not conform to [[DCAT-AP]] as some of its properties do not conform to DCAT-AP.
+        <td><p>Does not conform to [[DCAT-AP]] as some of its properties do not conform to DCAT-AP.</p>
+          <p>Also the usage note does not conform to DCAT, since in DCAT distributions SHOULD only differ
+          in format, resolution or language but not in regards to their content
+            (<a class="no-sectionRef" href="#dataset-concept-issue"></a>)</p>
         </td>
       </tr>
       </tbody>
     </table>
 
-    <p>The following table lists the properties used for describing a distribution.</p>
+    <p>The following table lists of <code>dcat:Distribution</code> the properties that are specified
+      by DCAT-AP-CH.</p>
 
     <table class="simple">
       <thead>
@@ -2985,13 +2989,14 @@
         <td>3</td>
         <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
         <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
-          <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code>/a></td>
+          <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a></td>
         <td>Y</td>
       </tr>
       </tbody>
     </table>
 
-    <aside class="example" id="ex-distribution" title="Distribution">
+    <aside class="example" id="ex-distribution" title="Distribution that follows this specification except
+    for dct:rights that is given as it is currently implemented on opendata.swiss">
       <pre data-include-format="text" data-include="./examples/distribution/distribution.ttl"></pre>
     </aside>
 
@@ -3036,11 +3041,14 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td>This specification conforms to [[DCAT-AP]], but the implementation on
+            opendata.swiss does not conform to this specification since it uses <code>xsd:datetime</code> instead of
+            <code>xsd:date</code>
+            (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
-      <aside class="example" title="Usage of dct:issued for dcat:Distribution">
+      <aside class="example" title="Usage of dct:issued for dcat:Distribution as specified by this specification">
         <pre data-include-format="text" data-include="./examples/distribution/issued.ttl"></pre>
       </aside>
     </section>
@@ -3094,7 +3102,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
+          <td>Conforms to [[DCAT-AP]], but the implementation on opendata.swiss does not conform since it uses
+          <code>rdfs:literal</code> for the landing page.
+            See <a class="no-sectionRef" href="#landing-page-implementation"></a>.</td>
         </tr>
         </tbody>
 
@@ -3109,8 +3119,6 @@
     <section id="distribution-rights">
 
       <h2>Property: rights</h2>
-
-      <p class="issue">There is a lot to discuss regarding this field.</p>
 
       <table class="def">
         <tbody>
@@ -3190,10 +3198,15 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]]</td>
+          <td>The usage not does not conform to DCAT-AP, since in DCAT-AP the license "cannot be used alternatively"
+           but is the recommended was to go. (<a class="no-sectionRef" href="#rights-issues"></a>)</td>
         </tr>
         </tbody>
       </table>
+
+     <aside class="ednote">
+        See the discussion <a class="no-sectionRef" href="#rights-issues"></a> for an example on the usage of dct:rights
+      </aside>
 
     </section>
 
@@ -3365,15 +3378,6 @@
 
       <h2>Property: media type</h2>
 
-      <aside class="issue">
-        <p>A reference to the format-property could be added, to provide more guidance in this regard.
-          Also many Swiss formats such as INTERLIS can't use this property but must use the format property instead
-          This is implemented the wrong way on opendata.swiss.
-        </p>
-        <p>The condition should be refined: use this property if the distribution offers a download url of a file
-          with a format in the [[IANA-MEDIA-TYPES]], otherwise use the format property.</p>
-      </aside>
-
       <table class="def">
         <tbody>
         <tr>
@@ -3414,12 +3418,8 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td><p>[[DCAT-AP]] mentions <a
-                  data-cite="VOCAB-DCAT#Property:distribution_media_type"><code>dcat:mediaType</code></a>
-            as sub-property of <a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a>.</p>
-            <p>[[VOCAB-DCAT]] states: This property SHOULD be used when the media type of the distribution
-              is defined in IANA [[IANA-MEDIA-TYPES]],
-              otherwise <code>dct:format</code> MAY be used with different values.</p>
+          <td>The property defintion conforms to [[DCAT-AP]], but the current usage on opendata.swiss does not.
+            See <a class="no-sectionRef" href="#media-type-issues"></a>.
           </td>
         </tr>
         </tbody>
@@ -3506,8 +3506,8 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code>
-            (ISO two letter code [[ISO 639-1]])</a>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            as ISO two letter code ([[ISO 639-1]])</a>
           </td>
         </tr>
         <tr>
@@ -3525,8 +3525,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. The language should also be given as an URI.
-            (<a class="no-sectionRef" href="#language-issues"></a>)
+          <td>Does not conform to [[DCAT-AP]]: See <a class="no-sectionRef" href="#language-issues"></a>.
           </td>
         </tr>
         </tbody>
@@ -3587,12 +3586,15 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]], (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
+          <td>This specification conforms to [[DCAT-AP]], but the implementation on
+            opendata.swiss does not conform to this specification since it uses <code>xsd:datetime</code> instead of
+            <code>xsd:date</code>
+            (<a class="no-sectionRef" href="#issued-modified-implementation"></a>)</td>
         </tr>
         </tbody>
       </table>
 
-      <aside class="example" title="Usage of dct:modified for dcat:Distribution">
+      <aside class="example" title="Usage of dct:modified for dcat:Distribution as specified in this definition">
         <pre data-include-format="text" data-include="./examples/distribution/modified.ttl"></pre>
       </aside>
 
@@ -3643,10 +3645,16 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>[[DCAT-AP]] recommended</td>
+          <td>Does not conform to [[DCAT-AP]] since the requirement level in DCAT-AP is recommended.
+            This means that a license MUST be provided if it is available.
+            (see <a class="no-sectionRef" href="#license-issues"></a>)
+          </td>
         </tr>
         </tbody>
       </table>
+      <aside class="ednote">
+        See the discussion <a class="no-sectionRef" href="#license-issues"></a> for an example on the usage of dct:license
+      </aside>
 
     </section>
 
@@ -3698,7 +3706,7 @@
           <td>
             <p>This property is not given to distributions in [[DCAT-AP]]. In [[VOCAB-DCAT]],
               <code>dcat:Distribution</code> inherits it from <code>dcat:CatalogedResource</code>. Including an identifier
-              for distributions does not break conformance with DCAT-AP</p>
+              for distributions does not break the conformance with DCAT-AP</p>
           </td>
         </tr>
         </tbody>
@@ -3811,7 +3819,8 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>Custom DCAT-AP CH
+          <td>This property does not conform to DCAT, see here for a discussion:
+            <a class="no-sectionRef" href="#coverage-issues"></a>
           </td>
         </tr>
         </tbody>
@@ -3864,10 +3873,9 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>A custom DCAT-AP CH element that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]] yet,
-            but is in discussion for [[VOCAB-DCAT-3]] at least for <code>dcat:Dataset</code>, see here:
-            <a href="https://github.com/w3c/dxwg/issues/1357">W3C issue on
-              thumbnails for DCAT</a></td>
+          <td>A custom DCAT-AP CH element that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]]
+            but is in discussion for [[VOCAB-DCAT-3]].
+            See <a class="no-sectionRef" href="#thumbnail-issues"></a>.</td>
         </tr>
         </tbody>
       </table>
