@@ -10,7 +10,7 @@
   a skos:ConceptScheme ;
   owl:versionInfo "202100623" ;
   owl:versionIRI <http://dcat-ap.ch/vocabulary/publishers/20210623/> ;
-  rdfs:comment "Liste der Publisher, die im Feld dct:publisher einer DCAT-AP-CH-konformen dcat:Distribution für die Zulieferung an opendata.swiss erlaubt sind."@de ;
+  rdfs:comment "Liste der Publisher, die im Feld dct:publisher einer DCAT-AP CH-konformen dcat:Distribution für die Zulieferung an opendata.swiss erlaubt sind."@de ;
   rdfs:label "List of publishers"@en;
   skos:prefLabel "List of Publishers"@en ;
   dct:identifier "http://dcat-ap.ch/vocabulary/publishers" .

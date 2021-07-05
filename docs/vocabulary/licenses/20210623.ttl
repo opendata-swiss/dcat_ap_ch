@@ -11,7 +11,7 @@
   a owl:Ontology, skos:ConceptScheme ;
   owl:versionInfo "202100623" ;
   owl:versionIRI <http://dcat-ap.ch/vocabulary/licenses/20210623/> ;
-  rdfs:comment "Liste der Lizenzen, die im Feld dct:license einer DCAT-AP-CH-konformen dcat:distribution für die Zulieferung an opendata.swiss erlaubt sind."@de ,
+  rdfs:comment "Liste der Lizenzen, die im Feld dct:license einer DCAT-AP CH-konformen dcat:distribution für die Zulieferung an opendata.swiss erlaubt sind."@de ,
                "List of licenses that are allowed in the field dct:license for delivering a dcat:Distribution in a way that conforms to DCAT-AP CH"@en ;
   rdfs:label "Liste der Lizenzen"@de, "List of Licenses"@en;
   skos:prefLabel "Liste der Lizenzen"@de ;
