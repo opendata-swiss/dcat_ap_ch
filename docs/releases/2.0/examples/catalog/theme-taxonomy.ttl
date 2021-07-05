@@ -3,6 +3,6 @@
 <https://swisstopo/opendata/catalog>
   a dcat:Catalog ;
 
-  dcat:themeTaxonomy <https://dcat-ap.ch/vocabulary/themes> ,
+  dcat:themeTaxonomy <http://dcat-ap.ch/vocabulary/themes> ,
                      <http://publications.europa.eu/resource/authority/data-theme>  ,
                      <https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/> .

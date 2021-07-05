@@ -6,7 +6,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dc11: <http://purl.org/dc/elements/1.1/> .
 
-<http://dcat-ap.ch/vocabulary/theme/>
+<http://dcat-ap.ch/vocabulary/themes/>
   a skos:ConceptScheme ;
   dc11:title "Categories for Swiss Open Government Data"@en ;
   dc11:description "Custom vocabulary for OGD dataset categories in Switzerland"@en ;
@@ -14,42 +14,42 @@
   owl:versionInfo "202100623" ;
   owl:versionIRI <http://dcat-ap.ch/vocabulary/licenses/20210623/> .
 
-<http://dcat-ap.ch/vocabulary/theme//work>
+<http://dcat-ap.ch/vocabulary/themes/work>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Arbeit, Erwerb"@de,
                  "Travail, rémunération"@fr,
                  "Lavoro e reddito"@it,
                  "Work and income"@en ;
   skos:mappingRelation euthemes:ECON ,
                        geothemes:economy .
-<http://dcat-ap.ch/vocabulary/theme//construction>
+<http://dcat-ap.ch/vocabulary/themes/construction>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Bau- und Wohnungswesen"@de,
                  "Construction, logement"@fr,
                  "Costruzione e abitazione"@it ;
   skos:mappingRelation geothemes:structure .
-<http://dcat-ap.ch/vocabulary/theme//population>
+<http://dcat-ap.ch/vocabulary/themes/population>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Bevölkerung"@de,
                  "Population"@fr,
                  "Popolazione"@it,
                  "Population"@en ;
   skos:mappingRelation euthemes:SOCI ,
                        geothemes:geothemes:society .
-<http://dcat-ap.ch/vocabulary/theme//education>
+<http://dcat-ap.ch/vocabulary/themes/education>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Bildung, Wissenschaft"@de,
                  "Education, science"@fr,
                  "Formazione e scienza"@it,
                  "Education and science"@en ;
   skos:mappingRelation euthemes:EDUC.
-<http://dcat-ap.ch/vocabulary/theme//energy>
+<http://dcat-ap.ch/vocabulary/themes/energy>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Energie"@de,
                  "Energie"@fr,
                  "Energia"@it,
@@ -57,17 +57,17 @@
   skos:mappingRelation euthemes:ENER ,
                        geothemes:utilitiesCommunication_Energy ,
                        geothemes:utilitiesCommunication .
-<http://dcat-ap.ch/vocabulary/theme//finances>
+<http://dcat-ap.ch/vocabulary/themes/finances>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Finanzen"@de,
                  "Finances"@fr,
                  "Finanze"@it,
                  "Finances"@en ;
   skos:mappingRelation euthemes:ECON .
-<http://dcat-ap.ch/vocabulary/theme//geography>
+<http://dcat-ap.ch/vocabulary/themes/geography>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Geographie"@de,
                  "Géographie"@fr,
                  "Geografia"@it,
@@ -105,50 +105,50 @@
                        geothemes:intelligenceMilitary ,
                        geothemes:farming ,
                        geothemes:economy .
-<http://dcat-ap.ch/vocabulary/theme//legislation>
+<http://dcat-ap.ch/vocabulary/themes/legislation>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Gesetzgebung"@de,
                  "Législation"@fr,
                  "Legislazione"@it,
                  "Legislation"@en ;
   skos:mappingRelation euthemes:JUST .
-<http://dcat-ap.ch/vocabulary/theme//health>
+<http://dcat-ap.ch/vocabulary/themes/health>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Gesundheit"@de,
                  "Santé"@fr,
                  "Sanità"@it,
                  "Health"@en ;
   skos:mappingRelation euthemes:HEAL ,
                        geothemes:health .
-<http://dcat-ap.ch/vocabulary/theme//trade>
+<http://dcat-ap.ch/vocabulary/themes/trade>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Handel"@de,
                  "Commerce"@fr,
                  "Commercio"@it,
                  "Trade"@en ;
   skos:mappingRelation euthemes:ECON .
-<http://dcat-ap.ch/vocabulary/theme//industry>
+<http://dcat-ap.ch/vocabulary/themes/industry>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Industrie, Dienstleistungen"@de,
                  "Industrie, services"@fr,
                  "Industria, servizi"@it,
                  "Industry and services"@en ;
   skos:mappingRelation euthemes:ECON .
-<http://dcat-ap.ch/vocabulary/theme//crime>
+<http://dcat-ap.ch/vocabulary/themes/crime>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Kriminalität, Strafrecht"@de,
                  "Criminalité, droit pénal"@fr,
                  "Criminalità, diritto penale"@it,
                  "Crime, criminal justice"@en ;
   skos:mappingRelation euthemes:JUST .
-<http://dcat-ap.ch/vocabulary/theme//culture>
+<http://dcat-ap.ch/vocabulary/themes/culture>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Kultur, Medien, Informationsgesellschaft, Sport"@de,
                  "Culture, médias, société de l'information, sport"@fr,
                  "Cultura, media, società dell'informazione, sport"@it,
@@ -157,9 +157,9 @@
                        geothemes:geothemes:society ,
                        geothemes:utilitiesCommunication_Communication ,
                        geothemes:utilitiesCommunication .
-<http://dcat-ap.ch/vocabulary/theme//agriculture>
+<http://dcat-ap.ch/vocabulary/themes/agriculture>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Land- und Forstwirtschaft"@de,
                  "Agriculture, sylviculture"@fr,
                  "Agricoltura, selvicoltura"@it,
@@ -167,43 +167,43 @@
   skos:mappingRelation euthemes:AGRI ,
                        geothemes:geothemes:biota ,
                        geothemes:farming .
-<http://dcat-ap.ch/vocabulary/theme//mobility>
+<http://dcat-ap.ch/vocabulary/themes/mobility>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Mobilität und Verkehr"@de,
                  "Mobilité et transports"@fr,
                  "Mobilità e trasporti"@it,
                  "Mobility and Transport"@en ;
   skos:mappingRelation euthemes:TRAN ,
                        geothemes:transportation .
-<http://dcat-ap.ch/vocabulary/theme//public-order>
+<http://dcat-ap.ch/vocabulary/themes/public-order>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Öffentliche Ordnung und Sicherheit"@de,
                  "Ordre et sécurité publics"@fr,
                  "Ordine pubblico e sicurezza pubblica"@it,
                  "Public order and security"@en ;
   skos:mappingRelation euthemes:GOVE ,
                        geothemes:intelligenceMilitary .
-<http://dcat-ap.ch/vocabulary/theme//politics>
+<http://dcat-ap.ch/vocabulary/themes/politics>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Politik"@de,
                  "Politique"@fr,
                  "Politica"@it,
                  "Politics"@en ;
   skos:mappingRelation euthemes:GOVE .
-<http://dcat-ap.ch/vocabulary/theme//prices>
+<http://dcat-ap.ch/vocabulary/themes/prices>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Preise"@de,
                  "Prix"@fr,
                  "Prezzi"@it,
                  "Prices"@en ;
   skos:mappingRelation euthemes:ECON .
-<http://dcat-ap.ch/vocabulary/theme//territory>
+<http://dcat-ap.ch/vocabulary/themes/territory>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Raum und Umwelt"@de,
                  "Territoire et environnement"@fr,
                  "Territorio e ambiente"@it,
@@ -235,39 +235,39 @@
                        geothemes:utilitiesCommunication_Utilities ,
                        geothemes:utilitiesCommunication_Energy ,
                        geothemes:utilitiesCommunication .
-<http://dcat-ap.ch/vocabulary/theme//social-security>
+<http://dcat-ap.ch/vocabulary/themes/social-security>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Soziale Sicherheit"@de,
                  "Protection sociale"@fr,
                  "Sicurezza sociale"@it,
                  "Social security"@en ;
   skos:mappingRelation euthemes:SOCI .
-<http://dcat-ap.ch/vocabulary/theme//statistical-basis>
+<http://dcat-ap.ch/vocabulary/themes/statistical-basis>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Statistische Grundlagen"@de,
                  "Bases statistiques"@fr,
                  "Basi statistiche"@it,
                  "Statistical basis"@en .
-<http://dcat-ap.ch/vocabulary/theme//tourism>
+<http://dcat-ap.ch/vocabulary/themes/tourism>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Tourismus"@de,
                  "Tourisme"@fr,
                  "Turismo"@it,
                  "Tourism"@en .
-<http://dcat-ap.ch/vocabulary/theme//administration>
+<http://dcat-ap.ch/vocabulary/themes/administration>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Verwaltung"@de,
                  "Administration"@fr,
                  "Amministrazione"@it,
                  "Administration"@en ;
   skos:mappingRelation euthemes:GOVE .
-<http://dcat-ap.ch/vocabulary/theme//national-economy>
+<http://dcat-ap.ch/vocabulary/themes/national-economy>
   a skos:Concept ;
-  skos:inScheme <http://dcat-ap.ch/vocabulary/theme/> ;
+  skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
   skos:prefLabel "Volkswirtschaft"@de,
                  "Economie nationale"@fr,
                  "Economia"@it,
