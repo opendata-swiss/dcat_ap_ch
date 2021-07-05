@@ -3,4 +3,4 @@
 
 <https://swisstopo/opendata/resource/1234>
   a dcat:Distribution ;
-  dct:language: "en", "fr" .
+  dct:language: "de", "fr" .

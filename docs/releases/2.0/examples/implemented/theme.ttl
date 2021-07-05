@@ -1,0 +1,7 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://swisstopo/opendata/1234>
+  a dcat:Dataset ;
+
+  dcat:theme <http://opendata.swiss/themes/politics>,
+             <http://opendata.swiss/themes/population> .

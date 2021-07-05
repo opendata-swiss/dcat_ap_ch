@@ -1,7 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
-<https://swisstopo/opendata/dataset/1234>
+<https://swisstopo/123>
   a dcat:Dataset ;
-
-  dct:language: "en", "fr" .
+  dct:publisher <https://dcat-ap.ch/vocabulary/publishers/swisstopo> .
