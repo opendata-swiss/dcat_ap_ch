@@ -387,9 +387,9 @@
   <h2>Application profile overview</h2>
 
   <aside class="ednote">There has not been an application overview chapter in [[DCAT-AP-CH-1]] apart from the
-    overview given in the "1. Einleitung". Part of this "Einleitung" has been integrated in
-    <a class="no-sectionRef" href="#introduction"></a>, the other part will be integrated in
-    here with some adaptations by the editor.
+    overview given in the "1. Einleitung". Part of the "Einleitung" has been integrated in
+    <a class="no-sectionRef" href="#introduction"></a>, the other part has been added in this section with
+    adaptations by the editor.
   </aside>
   <section id="localization-of-dcat-ap">
     <h2>Localization of DCAT-AP</h2>
@@ -412,12 +412,14 @@
        set this property to mandatory. Examples for this are <a class="no-sectionRef" href="#catalog-homepage"></a>
        and <a class="no-sectionRef" href="#dataset-contact-point"></a>. When overwriting the requirements of a property
        DCAT-AP CH must make sure that if metadata conforms to these changed requirements, it will also conform to the original requirements
-       of DCAT-AP. Therefore <a class="no-sectionRef" href="#dataset-title"></a>, which is mandatory in DCAT-AP must remain mandatory
-       in DCAT-AP CH.</li>
-     <li><strong>Overriding usage notes:</strong> DCAT-AP CH MAY also overwrite how a property or class SHOULD
+       of DCAT-AP. This means in practice that the requirements in DCAT-AP CH may become stricter, but not less strict. For example the title
+       of a dataset that is already mandatory in DCAT-AP can't be set to optional in DCAT-AP CH.</li>
+     <li><strong>Overriding ranges and usage notes:</strong> DCAT-AP CH MAY also overwrite the range of a property or
+       how a property or class SHOULD
        be used. But again this has to be done in a way, that honors the restrictions given by DCAT-AP.
        For example, when DCAT-AP makes the use of a controlled vocabulary mandatory for a property, then DCAT-AP CH can't recommend a
-       different vocabulary in its usage notes. But it can specify that a property is given in a specific format as it does
+       different vocabulary, unless this vocabulary is a subset of the DCAT-AP vocabulary.
+       But it can specify that a property has to be provided in a specific format as it does
        for <a class="no-sectionRef" href="#dataset-identifier"></a>. Or it can demand certain languages for
        a string field as done in <a class="no-sectionRef" href="#dataset-title"></a>.</li>
       </ul>
@@ -436,7 +438,7 @@
          As noted in <a class="no-sectionRef" href="#conformance"></a> all classes and properties
          of DCAT-AP should
        receive at least basic support at Swiss open data portals. And the data portals are free to add any extra support for those
-         classes and properties.
+         classes and properties that are mentioned only in DCAT-AP.
        </li>
        </ul>
   </section>
