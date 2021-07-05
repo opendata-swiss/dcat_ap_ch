@@ -90,7 +90,7 @@
   <strong>About</strong>
 
   <p>The DCAT Application Profile for data portals in Switzerland (DCAT-AP CH) is an application profile
-    of the DCAT vocabulary ([[VOCAB-DCAT]]). It serves to describe data that have been registered on Swiss data portals.</p>
+    of the DCAT vocabulary ([[VOCAB-DCAT]]). It serves to describe data that has been registered on Swiss data portals.</p>
 
 
   <p>DCAT [[VOCAB-DCAT]] is a semantic definition to describe data by the means of an RDF vocabulary. It allows
@@ -106,44 +106,57 @@
   developing their application profile DCAT-AP. Therefore staying in line with the DCAT-AP is not only a goal in itself,
   but means that DCAT-AP CH will stay embeded in a bigger community of stakeholders.</p>
 
-   <strong>Metadata structure</strong>
-    <p>DCAT vocabulary generelly consists of classes and properties. These are used to describe metadata, that
-      is data about data.
+     <strong>Metadata</strong>
+    <p>>Neither DCAT-AP CH nor DCAT-AP provide data, only metadata. Metadata is by definition
+      secondary information on the data: when and by whom were they published, which usage conditions apply, how often are they updated,
+      whom to contact about them and where and how can they be accessed.
+    </p>
 
+   <strong>DCAT vocabulary building blocks</strong>
+  <p>In DCAT the vocabulary consists of <strong>classes</strong> and <strong>properties</strong>.
     </p>
     <ul>
       <li><strong>Classes are things on the internet</strong>: Not all of them have URIs,
-        but it is reccommended to provided an URI for them. They are complex things like a person, an organization, a data collection, a
-        website, a downloadable data file.</li>
+        but it is recommended to provide an URI for them. They are complex things like a person, an organization, a data collection, a
+        website or a downloadable data file.</li>
        <li><strong>Classes have properties</strong>: The properties are the attributes describing these things. Some properties
          occur on more than one class, a title for example is a common attribute.
-         Other properties are very specialized such as a file format describing a
-         datafile.</li>
+         Other properties are very specialized such as a file format that only makes sense for a datafile.</li>
        <li><strong>Properties can be simple or complex</strong>: Some properties are classes.
            For example an organization can have a website. Or a dataset can have a data publisher. In general
           a class can be recognized by its spelling: A property name starts with a lower case letter such as <code>dcat:dataset</code>
          (<a class="no-sectionRef" href="#catalog-dataset"></a>),
             while a class starts with a capital letter such as <code>dcat:Dataset</code>
          (<a class="no-sectionRef" href="#Class:Dataset"></a>).</li>
-     <li><strong>The main classes of DCAT-AP CH are the classes used to describe a data catalog</strong>:
-       They are called primary classes <a class="no-sectionRef" href="#classes-primary"></a> and they consist of
-       <a class="no-sectionRef" href="#Class:Catalog"></a>,
-       <a class="no-sectionRef" href="#Class:Dataset"></a> and <a class="no-sectionRef" href="#Class:Distribution"></a>. Secondary
-       classes are classes that are used in properties, for exapmple the data publisher of a dataset as
-       <code>foaf:Organization</code> or the landing page of a dataset as <code>dcat:LandingPage</code>.
-     </li>
-     <li><strong>In DCAT-AP CH the primary classes form a hierarchy</strong>:
-       A catalog (<a class="no-sectionRef" href="#Class:Catalog"></a>) is a collection of data at a data portal. A catalog
-       bundles datasets:
-       a dataset (<a class="no-sectionRef" href="#Class:Dataset"></a>) is a collection of similar data.
-       And a distribution <a class="no-sectionRef" href="#Class:Distribution"></a> is a description of a source of data that
-       is at the bottom of this hierarchy the source where the data can directly accessed.
-      <li><strong>DCAT is disolving these hierarchies</strong> While the distribution as the actual data source remains a
-      leaf of the of the data catalog, the overall structure of the data catalog, can be a lot more complex in DCAT and DCAT-AP.
-      The question whether DCAT-AP CH has to adjust to these mor complex catalog structures is discussed in the section on DCAT-AP conformance:
-      <a class="no-sectionRef" href="#dcat-ap-conformance-criteria"></a>
-     </li>
     </ul>
+
+     <strong>Classes used in DCAT-AP CH</strong>
+     <p>Classes and properties are used to
+       deliver the metadata in a structured way: The exact specification of these classes in the Swiss context
+       is the topic of this specfication as it is the topic of DCAT-AP to define the structure in the European context:
+     </p>
+     <ul>
+     <li><strong>The catalog class</strong>: <a class="no-sectionRef" href="#Class:Catalog"></a> This is the top
+       level class used to describe the data of one provider.
+       DCAT-AP CH and DCAT-AP are all about how this top level class is further structured.
+     </li>
+     <li><strong>The distribution class</strong>: <a class="no-sectionRef" href="#Class:Distribution"></a>
+       This is the bottom class that describes the physical data that can be accessed. The goal of both DCAT-AP CH and DCAT-AP is to make
+       these distributions discoverable by embedding them into a structure that is universally understood.
+     </li>
+     <li><strong>The dataset class</strong>: <a class="no-sectionRef" href="#Class:Dataset"></a>
+       In DCAT-AP CH there is only the dataset class in between catalog and distributions. Datasets are supposed to bundle similar
+       distributions in units that can be described together.
+       DCAT and DCAT-AP on the other hand allow for a more complex structure between catalogs and distribution by adding additional
+       classes such as a <a data-cite="VOCAB-DCAT#Class:Catalog_Record"><code>Catalog Record</code></a> or a
+       <a data-cite="VOCAB-DCAT#Class:Data_Service"><code>Data Service</code></a> class. One of the conformance issues
+       between DCAT-AP CH and DCAT-AP is their different understanding of how distributions can be packaged into datasets, see
+       <a class="no-sectionRef" href="#dataset-concept-issue"></a>
+     </li>
+     </ul>
+
+     <p>The three classes above are called primary classes <a class="no-sectionRef" href="#classes-primary"></a> in contrast to
+      secondary classes that are used in properties of the primary classes.</p>
 
    <strong>Interoperability</strong>
 
@@ -151,7 +164,8 @@
       the nessary metadata in a form that can be understood by both humans and machines.</p>
     <p>A precondition this
       for interoperability is that the DCAT language is used correctly. Therefore this specification aims at enabling
-      datapublishers to specify their data catalog in a way that conforms to both DCAT-AP CH and DCAT-AP.
+      data publishers to specify their data catalog in a way that conforms to both DCAT-AP CH and DCAT-AP. It also gives guidance
+      to data portal managers on how the data catalogs should be received and processed in a DCAT-AP CH and DCAT-AP conformant way.
     </p>
 
 
