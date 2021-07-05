@@ -303,18 +303,23 @@
   </p>
   <ul>
     <li><strong>Multilingual literals</strong>: Properties of Range
-      <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> support
-      multiple languages and the Swiss Profile makes use of this. It also
-      adds some additional constraints on what languages are expected in its property descriptions.
-      See for example <a class="no-sectionRef" href="#dataset-title"></a>
+      <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a> can be provided in
+      multiple languages by adding so called language encoded strings: these add the language as
+      a [[ISO 639-1]] two letter code after the string in the way that is shown in the example below:
     </li>
+      <aside class="example" title="Example for localizing an rdfs:Literal">
+        <pre data-include-format="text" data-include="./examples/multiple-languages/title.ttl"></pre>
+      </aside>
+
     <li><strong>Content negotiation</strong>: Properties of Range
       <a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a> SHOULD be URIs.
-      It is good practice to use URIs that are language independent, so that content
-      negotiation can be used in the process of dispatching these URIs. The URIs
-      might redirect to the language that is added in the HTTP request. Because of this
-      URIs such as a for example the <a class="no-sectionRef" href="#dataset-landing-page"></a>
-      don't have translations in the way that strings have them.
+      It is good practice to use URIs that are language independent. Then content
+      negotiation can be used by the data publisher in the process of dispatching these URIs.</li>
+       <aside class="example" title="Example for a rdfs:Resource that is language independent. The hoster of that landing
+       page can redirect a request coming in for 'https://opendata.swisstopo/1234/about' to a page that matches
+       with the language of the user">
+        <pre data-include-format="text" data-include="./examples/multiple-languages/title.ttl"></pre>
+      </aside>
     </li>
   </ul>
 
@@ -322,8 +327,9 @@
     <p class="practicedesc">
       <span class="practicelab">Best practice for Resource URIs</span>
       URIs should be language and format neutral:
-      <code>http://my-dataset-name-language-and-format-neutral</code>.
-      Content negotiation can then be applied to get the desired language and format.
+      <code>http://my-dataset-name-language-and-format-neutral</code>. They are generally not translateable
+      in the ways strings are because it is assumed that content negotion is used to
+      best match the users needs with the URI's availabilities.
     </p>
   </div>
   <p>The table lists multilingual properties of DCAT-AP CH and the translation strategies that
