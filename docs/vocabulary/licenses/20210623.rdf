@@ -13,7 +13,7 @@
     <owl:versionInfo>202100623</owl:versionInfo>
     <owl:versionIRI rdf:resource="http://dcat-ap.ch/vocabulary/licenses/20210623/"/>
     <rdfs:comment xml:lang="de">Liste der Lizenzen, die im Feld dct:license einer DCAT-AP-CH-konformen dcat:distribution für die Zulieferung an opendata.swiss erlaubt sind.</rdfs:comment>
-    <rdfs:comment xml:lang="en">List of licenses that are allowed in the field dct:license for delivering a dcat:Distribution in a way that conforms DCAT-AP-CH</rdfs:comment>
+    <rdfs:comment xml:lang="en">List of licenses that are allowed in the field dct:license for delivering a dcat:Distribution in a way that conforms to DCAT-AP CH</rdfs:comment>
     <rdfs:label xml:lang="de">Liste der Lizenzen</rdfs:label>
     <rdfs:label xml:lang="en">List of Licenses</rdfs:label>
     <skos:prefLabel xml:lang="de">Liste der Lizenzen</skos:prefLabel>
