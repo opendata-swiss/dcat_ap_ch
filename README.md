@@ -2,7 +2,7 @@
 
 This github repo is intended to prepare the further development of 
 DCAT-AP CH by providing a definition area for all its documents.
-The defintion area is availabe at https://www.dcat-ap.ch/
+The definition area is availabe at https://www.dcat-ap.ch/
 
 ## Dependecy to W3C
 
