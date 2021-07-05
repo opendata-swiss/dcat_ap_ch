@@ -9,7 +9,7 @@ assignees: ''
 **Property**:
 **Class**:
 **Implementation**:
-**Conformance to DCAT-AP-CH**:
+**Conformance to DCAT-AP CH**:
 **Conformance to DCAT-AP**:
 **Details**:
 **Proposal**:
