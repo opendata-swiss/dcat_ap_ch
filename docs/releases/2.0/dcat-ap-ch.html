@@ -3961,8 +3961,8 @@
 
   <aside class="ednote">
     <p>This document is the preparation for version 2 of DCAT-AP CH. The goal is to reach conformity with DCAT-AP
-      while remaining in line with the Swiss demands. </p>
-    <p>Therefore this
+      while remaining in line with the Swiss demands.</p>
+    <p>Therefore, this
     section explains the conformance criteria and points out conformance violations, so that they can
       be further discussed and solved by the community around DCAT-AP CH.</p>
   </aside>
@@ -3972,7 +3972,7 @@
 
     <p>DCAT-AP CH and DCAT-AP are both application profiles for DCAT.<p>
     <p>The [[DCAT-PROFILE-GUIDANCE]] states that application profiles may form hierarchies.<p>
-    <p>For interoperability reasons DCAT-AP CH aims to be a sub-profile of DCAT-AP. That way
+    <p>For interoperability reasons, DCAT-AP CH aims to be a sub-profile of DCAT-AP. That way
     the data using DCAT-AP CH can be harvested by the European data portal without losing
     important information on its metadata.</p>
 
@@ -4168,7 +4168,7 @@
           <li><strong>Details</strong>: provides details on the conformance issue</li>
           <li><strong>Affected Definitions</strong>: lists all classes and property definitions
           affected by the issue.</li>
-          <li><strong>Examples</strong>: Where it makes sense example have been added to support a more concrete
+          <li><strong>Examples</strong>: Where it makes sense, examples have been added to support a more concrete
           discussion of the issue</li>
           <li><strong>Github Issue</strong>:
             Each conformance problem has also been raised as a github issue, so that it
@@ -4182,9 +4182,9 @@
       <ul>
           <li><strong>Details</strong>:
             <ul>
-              <li>On <code>dcat:Dataset</code> the cardinality does not conform DCAT-AP's cardinality, that allows
+              <li>On <code>dcat:Dataset</code> the cardinality does not conform to DCAT-AP's cardinality, which allows
             only one publisher per dataset.</li>
-              <li>The definition of <code>dct:publisher</code> is unclear and does not conform DCAT:
+              <li>The definition of <code>dct:publisher</code> is unclear and does not conform to DCAT:
             the range says <code>foaf:Agent</code>, but in the definition rdfs:Description is used instead.
               (On opendata.swiss the publisher is currently implemented as stated in the definition.)
               </li>
@@ -4500,7 +4500,7 @@
           <a class="no-sectionRef" href="#distribution-coverage"></a></li>
       </ul>
 
-      <aside class="example" title="Usage of dct:coverage for dcat:Distribution that does not conform DCAT">
+      <aside class="example" title="Usage of dct:coverage for dcat:Distribution that does not conform to DCAT">
         <pre data-include-format="text" data-include="./examples/distribution/coverage.ttl"></pre>
       </aside>
 
@@ -4532,7 +4532,7 @@
         <li><strong>Details</strong>: <code>dct:issued</code> and <code>dct:modified</code> are demanded as <code>rdfs:Literal</code>
         typed as <code>xsd:date</code> in DCAT-AP CH. But they are
         implemented as as <code>rdfs:Literal</code> typed <code>xsd:datetime</code> on opendata.swiss. This implementation
-        does not conform DCAT-AP CH but it does conform DCAT-AP. Therefore it would be an option to adapt the
+        does not conform to DCAT-AP CH but it does conform to DCAT-AP. Therefore it would be an option to adapt the
         definition of those properties to the DCAT-AP specification in order to solve this non conformance
           of opendata.swiss to DCAT-AP CH.</li>
         <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#catalog-issued"></a>,
