@@ -1424,7 +1424,7 @@
       <tr>
         <th>Conformance</th>
         <td>Does not conform to [[DCAT-AP]] since some of the property definitions do not
-          conform to DCAT-AP. Also the understanding of what kind of distributions can be bundeled into
+          conform to DCAT-AP. Also the understanding of what kind of distributions can be bundled into
           a dataset is differs from DCAT-AP
           (see <a class="no-sectionRef" href="#dataset-concept-issue"></a>).
         </td>
@@ -2188,7 +2188,7 @@
                gathered into a dataset differs from DCAT and DCAT-AP. DCAT-AP CH allows the distributions
                to cover only parts of the content of a dataset while DCAT and DCAT-AP
                demand that all distributions of a dataset SHOULD have the same content: They may only differ
-               regarding the pysical representation of the content
+               regarding the physical representation of the content
               (<a class="no-sectionRef" href="#dataset-concept-issue"></a>).</p></td>
         </tr>
         </tbody>
@@ -2421,7 +2421,7 @@
           <td><p>The property does conform to [[DCAT-AP]].</p>
             <p>The usage note seems outdated since it is possible to use this property
               for a polygon.</p>
-            <p>In DCAT-AP a controlled vocabulary must be used when providing geographical loacations: the definition
+            <p>In DCAT-AP a controlled vocabulary must be used when providing geographical locations: the definition
             here on the other hand does not specify sounds as if strings can be entered for the geographical names.
             See <a class="no-sectionRef" href="#spatial-issues"></a>.</p>
           </td>
@@ -3858,7 +3858,7 @@
           <th>Conformance</th>
           <td><p>This is a custom DCAT-AP CH property that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]].</p>
             <p>It does not conform to DCAT, since does not conform to the concept of a distribution in DCAT that
-            distributions of a dataset should only differ in their pysical properties, but not
+            distributions of a dataset should only differ in their physical properties, but not
             in regards of their coverage (<a class="no-sectionRef" href="#dataset-concept-issue"></a>,
             <a class="no-sectionRef" href="#coverage-issues"></a>).</p>
           </td>
@@ -3951,8 +3951,8 @@
 
     <p>DCAT-AP CH and DCAT-AP are both application profiles for DCAT.<p>
     <p>The [[DCAT-PROFILE-GUIDANCE]] states that application profiles may form hierarchies.<p>
-    <p>For interoperabilty reasons DCAT-AP CH aims to be a subprofile of DCAT-AP. That way
-    the data using DCAT-AP CH can be harvested by the European dataportal without loosing
+    <p>For interoperability reasons DCAT-AP CH aims to be a sub profile of DCAT-AP. That way
+    the data using DCAT-AP CH can be harvested by the European data portal without loosing
     important information on its metadata.</p>
 
     <p>The following diagramm captures the relationship between DCAT, DCAT-AP and DCAT-AP CH:
@@ -3984,7 +3984,7 @@
     <ul>
       <li><strong>Conformance to DCAT:</strong> All classes and properties MUST be used in a way that they were meant for by the DCAT vocabulary:
       For example: DCAT vocabulary states that the distributions of a dataset should only differ in resolution,
-      language and format but not in the content that they cover. Therefore an attrbitute such as
+      language and format but not in the content that they cover. Therefore an attribute such as
         <code>dct:coverage</code> on <code>dcat:Distribution</code> hurts that principle and is discussed
         in this section as being not conformant to DCAT. See
         <a class="no-sectionRef" href="#coverage-issues"></a> for the details.
@@ -4161,11 +4161,11 @@
       <ul>
           <li><strong>Details</strong>:
             <ul>
-              <li>On <code>dcat:Dataset</code> the cardinality does not conform DCAT-AP's cardinaltiy, that allows
+              <li>On <code>dcat:Dataset</code> the cardinality does not conform DCAT-AP's cardinality, that allows
             only one publisher per dataset.</li>
               <li>The definition of <code>dct:publisher</code> is unclear and does not conform DCAT:
             the range says <code>foaf:Agent</code>, but in the definition rdfs:Description is used instead.
-              (On opendata.swiss the publisher is currently implemented as stated in the defintition.)
+              (On opendata.swiss the publisher is currently implemented as stated in the definition.)
               </li>
            <li>DCAT-AP demands the usage of a publisher vocabulary. For organizations of the European Union
             [[VOCAB-EU-PUBLISHERS]]
@@ -4203,14 +4203,14 @@
       <h2>Rights cannot replace a license</h2>
 
        <ul>
-           <li><strong>Details</strong>: The defintiton of <code>dct:rights</code> is unclear and
+           <li><strong>Details</strong>: The definition of <code>dct:rights</code> is unclear and
              the usage of that property on opendata.swiss shows how the property seems to have been
              misunderstood.
              <p>[[ODI-VOCAB]] explains "A Rights Statement is a resource that describes
              the relationship between a Dataset and its Licence(s). It is also used to describe additional contextual
                information that applies to the re-use of a dataset."</p>
              <p>This means that it is not meant to replace
-             <code>dct:license</code> but may add aditional information if a very general
+             <code>dct:license</code> but may add additional information if a very general
              international license is used for the data, that does not fully capture the individual usage conditions.</p>
            </li>
           <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#distribution-rights"></a>,
@@ -4365,7 +4365,7 @@
       <ul>
         <li><strong>Details</strong>: DCAT-AP CH conforms to DCAT-AP as both
           make the controlled vocabulary [[IANA-MEDIA-TYPES]] mandatory for <code>dct:mediaTypes</code>.
-          <p>In the implemetation on opendata.swiss <code>dct:mediaTypes</code> is implemented as
+          <p>In the implementation on opendata.swiss <code>dct:mediaTypes</code> is implemented as
           <code>rdfs:Literal</code>. This does not conform.
         </li>
         <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-media-type"></a>
@@ -4400,7 +4400,7 @@
         <a class="no-sectionRef" href="#catalog-theme-taxonomy"></a>
       </ul>
 
-      <aside class="example" title="Example of dcat:theme for dcat:Dataset as it is currently implemeted on opendata.swiss:
+      <aside class="example" title="Example of dcat:theme for dcat:Dataset as it is currently implemented on opendata.swiss:
         the theme URIs are not part of a controlled vocabulary.">
         <pre data-include-format="text" data-include="./examples/implemented/theme.ttl"></pre>
       </aside>
@@ -4590,7 +4590,7 @@
       <ul>
         <li><strong>Details</strong>: <code>dcat:Distribution</code>s of a <code>dcat:Dataset</code>
           SHOULD cover the same content, but MAY differ in the physical representation of that content: that means
-          they MAY have differnt languages, formats or resolutions. They SHOULD however not differ in their
+          they MAY have different languages, formats or resolutions. They SHOULD however not differ in their
           coverage of the data. See the note in the definition of
           <a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a>.</li>
         <li><strong>Affected definitions</strong>:
@@ -4632,7 +4632,7 @@
       <ul>
         <li><strong>Details</strong>: <code>dct:byteSize</code> is demanded as <code>rdfs:Literal</code>
         typed as <code>xsd:decimal</code> in both DCAT-AP CH and DCAT-AP. But on opendata.swiss it is currently
-          implemented as Intenger without any type information.</li>
+          implemented as integer without any type information.</li>
         <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-byte-size"></a>
       </ul>
       <aside class="example"
@@ -4652,8 +4652,8 @@
       <ul>
         <li><strong>Details</strong>: Metadata for <code>dcat:Catalog</code>
           is currently not imported to opendata.swiss and also not exported from opendata.swiss.
-          Since there are manadatory properties on the catalog class, this hurts DCAT-AP conformancy as well
-          as DCAT-AP CH conformancy.
+          Since there are mandatory properties on the catalog class, this hurts DCAT-AP conformance as well
+          as DCAT-AP CH conformance.
         </li>
         <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#Class:Catalog"></a>,
           <a class="no-sectionRef" href="#catalog-title"></a>,
@@ -4673,11 +4673,11 @@
           an application in order to conform to DCAT-AP must be able to process all classes, properties and controlled
           vocabulary of DCAT-AP.
           <p>This would mean for opendata.swiss to import and export these
-            datacatalog as they are without transforming them.</p>
+            data catalog as they are without transforming them.</p>
           <p>An example: when a data provider uses a certain DCAT-AP class such as <code>dcat:DataService</code> in his
           catalog, then opendata.swiss may chose to display the class
             as a <code>dcat:Dataset</code> on
-          its dataportal, but when harvested by the European data portal the catalog must be exported in the
+          its data portal, but when harvested by the European data portal the catalog must be exported in the
           way it cam in using <code>dcat:DataService</code>. See
           <a href="https://github.com/SEMICeu/DCAT-AP/issues/198">Issue 198 on the DCAT-AP github repo</a>.
         </li>
@@ -4723,14 +4723,14 @@
     <section id="guidance-on-dcat-ap-issue">
       <h2>Use DCAT-AP CH's potential as subprofile of DCAT-AP</h2>
       <ul>
-        <li><strong>Details</strong>: DCAT-AP CH is a subprofile of DCAT-AP and in theory
+        <li><strong>Details</strong>: DCAT-AP CH is a sub profile of DCAT-AP and in theory
           its data providers can use all classes and properties of DCAT-AP, with the restriction that
           for classes and properties mentioned in DCAT-AP CH the rules in DCAT-AP CH overwrite the specifications
           in DCAT-AP.
           <p>But the support of classes and properties in that gap between DCAT-AP and DCAT-AP CH is currently lacking
             and guidance on that topic is missing in this specification.
           </p>
-          <p>This should change, since the very benefit of being a subprofile to DCAT-AP
+          <p>This should change, since the very benefit of being a sub profile to DCAT-AP
             is that the quickly growing vocabulary of DCAT might be available without the need to specify
             every class and property in DCAT-AP CH.</p>
         </li>
