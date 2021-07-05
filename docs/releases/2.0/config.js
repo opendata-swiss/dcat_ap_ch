@@ -30,7 +30,7 @@ var respecConfig = {
       },
       "VOCAB-DCAT-AP-DEF":{
         "href":"http://dcat-ap.ch",
-        "title":"DCAT-AP-CH Standard",
+        "title":"DCAT-AP CH Standard",
         "publisher":"Verein eCH",
       },
       "DCAT-AP-CH-1":{
