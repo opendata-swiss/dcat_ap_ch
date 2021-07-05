@@ -73,7 +73,7 @@
   skosxl:prefLabel [
     a skosxl:Label ;
     skosxl:literalForm "NonCommercialAllowed-CommercialWithPermission-ReferenceRequired"@en ;
-    rdfs:label "NonCommercialAllowed-CommercialWithPermission-ReferenceRequiredd"@de
+    rdfs:label "NonCommercialAllowed-CommercialWithPermission-ReferenceRequired"@de
   ] ;
   foaf:homepage <https://opendata.swiss/en/terms-of-use/#terms_by_ask> .
 
