@@ -3,4 +3,4 @@
 
 <https://swisstopo/123>
   a dcat:Dataset ;
-  dct:publisher <https://dcat-ap.ch/vocabulary/publishers/swisstopo> .
+  dct:publisher <http://dcat-ap.ch/vocabulary/publishers/swisstopo> .
