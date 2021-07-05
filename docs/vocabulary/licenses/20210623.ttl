@@ -15,7 +15,7 @@
                "List of licenses that are allowed in the field dct:license for delivering a dcat:Distribution in a way that conforms DCAT-AP-CH"@en ;
   rdfs:label "Liste der Lizenzen"@de, "List of Licenses"@en;
   skos:prefLabel "Liste der Lizenzen"@de ;
-  dct:identifier "http://www.dcat-ap.ch/vocabulary/licenses" .
+  dct:identifier "http://dcat-ap.ch/vocabulary/licenses" .
 
 <http://dcat-ap.ch/vocabulary/licenses/terms_open>
   a skos:Concept ;

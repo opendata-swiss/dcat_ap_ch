@@ -12,7 +12,7 @@
     <rdfs:comment xml:lang="de">Liste der Publisher, die im Feld dct:publisher einer DCAT-AP-CH-konformen dcat:Distribution für die Zulieferung an opendata.swiss erlaubt sind.</rdfs:comment>
     <rdfs:label xml:lang="en">List of publishers</rdfs:label>
     <ns0:coreprefLabel xml:lang="en">List of Publishers</ns0:coreprefLabel>
-    <dc:identifier>http://www.dcat-ap.ch/vocabulary/publishers</dc:identifier>
+    <dc:identifier>http://dcat-ap.ch/vocabulary/publishers</dc:identifier>
   </rdf:Description>
 
   <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/publishers/gis-luzern">
