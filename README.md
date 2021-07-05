@@ -2,36 +2,13 @@
 
 This github repo is intended to prepare the further development of 
 DCAT-AP-CH by providing a definition area for all its documents.
+The defintion area is availabe at https://www.dcat-ap.ch/
 
-## About
+## Dependecy to W3C
 
-The Specification uses respec: https://respec.org/docs/
+The specification of DCAT-AP CH 2.0 uses respec: https://respec.org/docs/
 
-## Install pyshacl
-
-```
-git clone <repo>
-python3 -m venv p3venv
-source p3venv/bin/activate
-pip install -r requirements.txt
-```
-
-To run pyshacl use the following command:
-
-```
-pyshacl -s /path/to/shapesGraph.ttl -m -i rdfs -a -j -f human /path/to/dataGraph.ttl
-```
-
-## Validate with the EU-Testbed
-
-https://www.itb.ec.europa.eu/shacl/dcat-ap/upload
-
-Here is what the validators on that page mean: https://github.com/ISAITB/validator-resources-dcat-ap
-
-## Known Issues
-
-The specfication needs the W3C Server to be up to render correctly. This server
-seems to have downtimes with some frequency: so if the specification looks funny:
-check here: https://www.isitdownrightnow.com/w3.org.html and see whether the W3C Server is up,
+It needs the W3C Server to be up to render correctly. In case there is an issue with the 
+specification, it might be related to a downtime of the W3C Server:
+Please check here: https://www.isitdownrightnow.com/w3.org.html and see whether the W3C Server is up,
 before filing an issue.
-
