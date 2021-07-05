@@ -6,7 +6,7 @@
          xmlns:dc="http://purl.org/dc/terms/"
          xmlns:ns0="http://www.w3.org/2004/02/skos/">
 
-  <rdf:Description rdf:about="http://dcat-ap.ch/vocabulary/theme/">
+  <rdf:Description rdf:about="http://dcat-ap.ch/vocabulary/themes/">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/coreConceptScheme"/>
     <dc11:title xml:lang="en">Categories for Swiss Open Government Data</dc11:title>
     <dc11:description xml:lang="en">Custom vocabulary for OGD dataset categories in Switzerland</dc11:description>
@@ -22,9 +22,9 @@
     <dc:modified>2021-06-23</dc:modified>
   </rdf:Description>
 
-  <rdf:Description rdf:about="http://dcat-ap.ch/vocabulary/theme//work">
+  <rdf:Description rdf:about="http://dcat-ap.ch/vocabulary/themes/work">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/coreConcept"/>
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Arbeit, Erwerb</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Travail, rémunération</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Lavoro e reddito</ns0:coreprefLabel>
@@ -33,16 +33,16 @@
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/economy"/>
   </rdf:Description>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//construction">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/construction">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Bau- und Wohnungswesen</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Construction, logement</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Costruzione e abitazione</ns0:coreprefLabel>
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/structure"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//population">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/population">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Bevölkerung</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Population</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Popolazione</ns0:coreprefLabel>
@@ -51,8 +51,8 @@
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geothemes:society"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//education">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/education">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Bildung, Wissenschaft</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Education, science</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Formazione e scienza</ns0:coreprefLabel>
@@ -60,8 +60,8 @@
     <ns0:coremappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/EDUC"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//energy">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/energy">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Energie</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Energie</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Energia</ns0:coreprefLabel>
@@ -71,8 +71,8 @@
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//finances">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/finances">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Finanzen</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Finances</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Finanze</ns0:coreprefLabel>
@@ -80,8 +80,8 @@
     <ns0:coremappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//geography">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/geography">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Geographie</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Géographie</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Geografia</ns0:coreprefLabel>
@@ -121,8 +121,8 @@
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/economy"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//legislation">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/legislation">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Gesetzgebung</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Législation</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Legislazione</ns0:coreprefLabel>
@@ -130,8 +130,8 @@
     <ns0:coremappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/JUST"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//health">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/health">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Gesundheit</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Santé</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Sanità</ns0:coreprefLabel>
@@ -140,8 +140,8 @@
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/health"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//trade">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/trade">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Handel</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Commerce</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Commercio</ns0:coreprefLabel>
@@ -149,8 +149,8 @@
     <ns0:coremappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//industry">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/industry">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Industrie, Dienstleistungen</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Industrie, services</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Industria, servizi</ns0:coreprefLabel>
@@ -158,8 +158,8 @@
     <ns0:coremappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//crime">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/crime">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Kriminalität, Strafrecht</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Criminalité, droit pénal</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Criminalità, diritto penale</ns0:coreprefLabel>
@@ -167,8 +167,8 @@
     <ns0:coremappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/JUST"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//culture">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/culture">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Kultur, Medien, Informationsgesellschaft, Sport</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Culture, médias, société de l'information, sport</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Cultura, media, società dell'informazione, sport</ns0:coreprefLabel>
@@ -179,8 +179,8 @@
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//agriculture">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/agriculture">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Land- und Forstwirtschaft</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Agriculture, sylviculture</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Agricoltura, selvicoltura</ns0:coreprefLabel>
@@ -190,8 +190,8 @@
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/farming"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//mobility">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/mobility">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Mobilität und Verkehr</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Mobilité et transports</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Mobilità e trasporti</ns0:coreprefLabel>
@@ -200,8 +200,8 @@
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/transportation"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//public-order">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/public-order">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Öffentliche Ordnung und Sicherheit</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Ordre et sécurité publics</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Ordine pubblico e sicurezza pubblica</ns0:coreprefLabel>
@@ -210,8 +210,8 @@
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/intelligenceMilitary"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//politics">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/politics">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Politik</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Politique</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Politica</ns0:coreprefLabel>
@@ -219,8 +219,8 @@
     <ns0:coremappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//prices">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/prices">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Preise</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Prix</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Prezzi</ns0:coreprefLabel>
@@ -228,8 +228,8 @@
     <ns0:coremappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//territory">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/territory">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Raum und Umwelt</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Territoire et environnement</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Territorio e ambiente</ns0:coreprefLabel>
@@ -261,8 +261,8 @@
     <ns0:coremappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication_Utilities"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//social-security">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/social-security">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Soziale Sicherheit</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Protection sociale</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Sicurezza sociale</ns0:coreprefLabel>
@@ -270,24 +270,24 @@
     <ns0:coremappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/SOCI"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//statistical-basis">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/statistical-basis">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Statistische Grundlagen</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Bases statistiques</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Basi statistiche</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="en">Statistical basis</ns0:coreprefLabel>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//tourism">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/tourism">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Tourismus</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Tourisme</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Turismo</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="en">Tourism</ns0:coreprefLabel>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//administration">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/administration">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Verwaltung</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Administration</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Amministrazione</ns0:coreprefLabel>
@@ -295,8 +295,8 @@
     <ns0:coremappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
   </ns0:coreConcept>
 
-  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/theme//national-economy">
-    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/theme/"/>
+  <ns0:coreConcept rdf:about="http://dcat-ap.ch/vocabulary/themes/national-economy">
+    <ns0:coreinScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
     <ns0:coreprefLabel xml:lang="de">Volkswirtschaft</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="fr">Economie nationale</ns0:coreprefLabel>
     <ns0:coreprefLabel xml:lang="it">Economia</ns0:coreprefLabel>
