@@ -3,4 +3,4 @@
 
 <https://opendata.zurich/opendata/data/1234>
     a dcat:Dataset ;
-    dct:spatial <http://publications.europa.eu/resource/authority/country/CHE> . [
+    dct:spatial <http://publications.europa.eu/resource/authority/country/CHE> .

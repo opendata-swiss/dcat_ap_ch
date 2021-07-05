@@ -1,10 +1,10 @@
 # DCAT-AP CH
 
-This github repo is intended to prepare the further development of 
+This GitHub repo is intended to prepare the further development of 
 DCAT-AP CH by providing a definition area for all its documents.
-The definition area is availabe at https://www.dcat-ap.ch/
+The definition area is available at https://www.dcat-ap.ch/
 
-## Dependecy to W3C
+## Dependence on W3C
 
 The specification of DCAT-AP CH 2.0 uses respec: https://respec.org/docs/
 

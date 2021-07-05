@@ -6,4 +6,4 @@
   dcat:theme <http://opendata.swiss/themes/politics> ,
              <http://opendata.swiss/themes/population> ,
              <http://publications.europa.eu/resource/authority/data-theme/GOVE> ,
-             <http://publications.europa.eu/resource/authority/data-theme/SOCI>
+             <http://publications.europa.eu/resource/authority/data-theme/SOCI> .

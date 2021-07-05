@@ -131,7 +131,7 @@ var respecConfig = {
       },
       "DCAT-PROFILE-GUIDANCE":{
         "href": "https://w3c.github.io/dxwg/profiles/",
-        "title": "Profile Guidancey",
+        "title": "Profile Guidance",
         "publisher": "W3C",
       },
       "OGD":{
