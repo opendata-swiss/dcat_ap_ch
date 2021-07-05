@@ -35,7 +35,7 @@
 <http://dcat-ap.ch/vocabulary/licenses/terms_by>
   a skos:Concept ;
   skos:prefLabel "Opendata BY: Open use. Must provide the source."@en,
-                 "Opendata BY: Utilisation libre. Obligation dâ€™indiquer la source."@fr,
+                 "Opendata BY: Utilisation libre. Obligation d’indiquer la source."@fr,
                  "Opendata BY: Freie Nutzung. Quellenangabe ist Pflicht."@de,
                  "Opendata BY: Libero utilizzo. Indicazione della fonte obbligatoria. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati"@it ;
   skos:altLabel "Freie Nutzung. Quellenangabe ist Pflicht."@de,
@@ -50,8 +50,8 @@
 <http://dcat-ap.ch/vocabulary/licenses/terms_ask>
   a skos:Concept ;
   skos:prefLabel "Opendata ASK: Open use. Use for commercial purposes requires permission of the data owner."@en,
-                 "Opendata ASK: Utilisation libre. Utilisation Ã  des fins commerciales uniquement avec lâ€™autorisation du fournisseur des donnÃ©es."@fr,
-                 "Opendata ASK: Freie Nutzung. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulÃ¤ssig."@de,
+                 "Opendata ASK: Utilisation libre. Utilisation à des fins commerciales uniquement avec l’autorisation du fournisseur des données."@fr,
+                 "Opendata ASK: Freie Nutzung. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulässig."@de,
                  "Opendata ASK: Libero utilizzo. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati."@it ;
   skos:altLabel "Freie Nutzung. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulässig."@de,
                 "Utilisation libre. Utilisation à des fins commerciales uniquement avec l’autorisation du fournisseur des données."@fr ;
@@ -65,8 +65,8 @@
 <http://dcat-ap.ch/vocabulary/licenses/terms_by_ask>
   a skos:Concept ;
   skos:prefLabel "Opendata BY ASK: Open use. Must provide the source. Use for commercial purposes requires permission of the data owner."@en,
-                 "Opendata BY ASK: Utilisation libre. Obligation dâ€™indiquer la source. Utilisation commerciale uniquement avec lâ€™autorisation du fournisseur des donnÃ©es."@fr,
-                 "Opendata BY ASK: Freie Nutzung. Quellenangabe ist Pflicht. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulÃ¤ssig."@de,
+                 "Opendata BY ASK: Utilisation libre. Obligation d’indiquer la source. Utilisation commerciale uniquement avec l’autorisation du fournisseur des données."@fr,
+                 "Opendata BY ASK: Freie Nutzung. Quellenangabe ist Pflicht. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulässig."@de,
                  "Opendata BY ASK: Libero utilizzo. Indicazione della fonte obbligatoria. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati."@it ;
   skos:altLabel "Freie Nutzung. Quellenangabe ist Pflicht. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulässig."@de,
                 "Utilisation libre. Obligation d’indiquer la source. Utilisation commerciale uniquement avec l’autorisation du fournisseur des données."@fr ;

@@ -39,7 +39,7 @@
 
   <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/licenses/terms_by">
     <skos:prefLabel xml:lang="en">Opendata BY: Open use. Must provide the source.</skos:prefLabel>
-    <skos:prefLabel xml:lang="fr">Opendata BY: Utilisation libre. Obligation dâ€™indiquer la source.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Opendata BY: Utilisation libre. Obligation d’indiquer la source.</skos:prefLabel>
     <skos:prefLabel xml:lang="de">Opendata BY: Freie Nutzung. Quellenangabe ist Pflicht.</skos:prefLabel>
     <skos:prefLabel xml:lang="it">Opendata BY: Libero utilizzo. Indicazione della fonte obbligatoria. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati</skos:prefLabel>
     <skos:altLabel xml:lang="de">Freie Nutzung. Quellenangabe ist Pflicht.</skos:altLabel>
@@ -56,8 +56,8 @@
 
   <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/licenses/terms_ask">
     <skos:prefLabel xml:lang="en">Opendata ASK: Open use. Use for commercial purposes requires permission of the data owner.</skos:prefLabel>
-    <skos:prefLabel xml:lang="fr">Opendata ASK: Utilisation libre. Utilisation Ã  des fins commerciales uniquement avec lâ€™autorisation du fournisseur des donnÃ©es.</skos:prefLabel>
-    <skos:prefLabel xml:lang="de">Opendata ASK: Freie Nutzung. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulÃ¤ssig.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Opendata ASK: Utilisation libre. Utilisation à des fins commerciales uniquement avec l’autorisation du fournisseur des données.</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Opendata ASK: Freie Nutzung. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulässig.</skos:prefLabel>
     <skos:prefLabel xml:lang="it">Opendata ASK: Libero utilizzo. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati.</skos:prefLabel>
     <skos:altLabel xml:lang="de">Freie Nutzung. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulässig.</skos:altLabel>
     <skos:altLabel xml:lang="fr">Utilisation libre. Utilisation à des fins commerciales uniquement avec l’autorisation du fournisseur des données.</skos:altLabel>
@@ -73,15 +73,15 @@
 
   <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/licenses/terms_by_ask">
     <skos:prefLabel xml:lang="en">Opendata BY ASK: Open use. Must provide the source. Use for commercial purposes requires permission of the data owner.</skos:prefLabel>
-    <skos:prefLabel xml:lang="fr">Opendata BY ASK: Utilisation libre. Obligation dâ€™indiquer la source. Utilisation commerciale uniquement avec lâ€™autorisation du fournisseur des donnÃ©es.</skos:prefLabel>
-    <skos:prefLabel xml:lang="de">Opendata BY ASK: Freie Nutzung. Quellenangabe ist Pflicht. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulÃ¤ssig.</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Opendata BY ASK: Utilisation libre. Obligation d’indiquer la source. Utilisation commerciale uniquement avec l’autorisation du fournisseur des données.</skos:prefLabel>
+    <skos:prefLabel xml:lang="de">Opendata BY ASK: Freie Nutzung. Quellenangabe ist Pflicht. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulässig.</skos:prefLabel>
     <skos:prefLabel xml:lang="it">Opendata BY ASK: Libero utilizzo. Indicazione della fonte obbligatoria. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati.</skos:prefLabel>
     <skos:altLabel xml:lang="de">Freie Nutzung. Quellenangabe ist Pflicht. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulässig.</skos:altLabel>
     <skos:altLabel xml:lang="fr">Utilisation libre. Obligation d’indiquer la source. Utilisation commerciale uniquement avec l’autorisation du fournisseur des données.</skos:altLabel>
     <skosxl:prefLabel>
       <skosxl:Label>
         <skosxl:literalForm xml:lang="en">NonCommercialAllowed-CommercialWithPermission-ReferenceRequired</skosxl:literalForm>
-        <rdfs:label xml:lang="de">NonCommercialAllowed-CommercialWithPermission-ReferenceRequiredd</rdfs:label>
+        <rdfs:label xml:lang="de">NonCommercialAllowed-CommercialWithPermission-ReferenceRequired</rdfs:label>
       </skosxl:Label>
     </skosxl:prefLabel>
 
