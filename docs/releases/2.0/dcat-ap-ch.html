@@ -4178,14 +4178,14 @@
 
     <section id="publisher-issues">
 
-      <h2>The publisher property needs a refactoring</h2>
+      <h2>The publisher property should be revised</h2>
       <ul>
           <li><strong>Details</strong>:
             <ul>
               <li>On <code>dcat:Dataset</code> the cardinality does not conform to DCAT-AP's cardinality, which allows
             only one publisher per dataset.</li>
               <li>The definition of <code>dct:publisher</code> is unclear and does not conform to DCAT:
-            the range says <code>foaf:Agent</code>, but in the definition rdfs:Description is used instead.
+                the range says <code>foaf:Agent</code>, but in the definition <code>rdfs:Description</code> is used instead.
               (On opendata.swiss the publisher is currently implemented as stated in the definition.)
               </li>
            <li>DCAT-AP demands the usage of a publisher vocabulary. For organizations of the European Union
