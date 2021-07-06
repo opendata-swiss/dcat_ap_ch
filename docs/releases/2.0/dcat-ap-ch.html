@@ -4341,24 +4341,24 @@
 
     <section id="format-issues">
 
-      <h2>Format: use EU vocabulary and make it recommended</h2>
+      <h2>Format: use EU vocabulary and make property recommended</h2>
 
       <ul>
         <li><strong>Details</strong>:
-          <ul><li><code>dct:format</code> MUST use a EU controlled vocabulary
+          <ul><li><code>dct:format</code> MUST use the EU controlled vocabulary
         [[VOCAB-EU-FILETYPE]] in order to be
             conformant with [[DCAT-AP]].</li>
           <li>The requirement level does not conform to DCAT-AP: <code>dct:format</code> is
-            recommended in DCAT-AP whereas
+            recommended in DCAT-AP, whereas
            <code>dcat:mediaType</code> is only optional. In DCAT-AP CH both properties are
             conditional and <code>dct:format</code> is only used when [[IANA-MEDIA-TYPES]] is not
-            registered
+            registered.
             </li>
-            <li>[[EUROVOC]] recommends to contribute file formats
-        at [[VOCAB-EU-FILETYPE]]. Even though not all file formats will get accepted, it should
-        always be a first step, when introducing a file format.
+            <li>[[EUROVOC]] recommends contributing file formats
+        to [[VOCAB-EU-FILETYPE]]. Even though not all file formats will be accepted, this should
+        always be the first step when introducing a file format.
             If the file format cannot be added, it should instead
-        be contributed at [[IANA-MEDIA-TYPES]]. Both properties <code>dct:format</code>
+        be contributed to [[IANA-MEDIA-TYPES]]. Both properties <code>dct:format</code>
         and <code>dcat:mediaType</code> are expected to use
         registered file formats only. See <a class="no-sectionRef" href="#media-type-issues"></a>
         </li>
