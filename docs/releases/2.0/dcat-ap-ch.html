@@ -117,7 +117,7 @@
     </p>
     <ul>
       <li><strong>Classes are things on the internet</strong>: Not all of them have URIs,
-        but it is recommended to provide an URI for them. They are complex things like a person, an organization, a data collection, a
+        but it is recommended to provide a URI for them. They are complex things like a person, an organization, a data collection, a
         website or a downloadable data file.</li>
        <li><strong>Classes have properties</strong>: The properties are the attributes describing these things. Some properties
          occur on more than one class, a title for example is a common attribute.
@@ -449,7 +449,7 @@
        <ul>
       <li><strong>In theory: </strong> That the class or property is already well defined in DCAT-AP: no further adjustments
         need to be made for the Swiss context. It can be used as it is.</li>
-       <li><strong>In practice: </strong> Most classes and properties with good support on Swiss opendata portals
+       <li><strong>In practice: </strong> Most classes and properties with good support on Swiss open data portals
          have been added in this specification with some Swiss adjustments. Therefore
        currently, if a property is not further specified by DCAT-AP CH, it will very likely be not be supported by Swiss data portals
        in the way a data publisher might expect (<a class="no-sectionRef" href="#guidance-on-dcat-ap-issue"></a>).</li>
@@ -1387,7 +1387,7 @@
           <td><p>The requirement level does not conform to [[DCAT-AP]] since in DCAT-AP this property is recommended
               for the catalog.</p>
             <p>The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.
-            The language should be given as an URI (<a class="no-sectionRef" href="#language-issues"></a>).</p>
+            The language should be given as a URI (<a class="no-sectionRef" href="#language-issues"></a>).</p>
           </td>
         </tr>
         </tbody>
@@ -2312,7 +2312,7 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Language of the dataset If the dataset is available in multiple languages, use
+          <td>Language of the dataset. If the dataset is available in multiple languages, use
             multiple values for this property. If each language is available separately, define an instance
             of <code>dcat:Distribution</code> for each language and describe the specific language of
             each distribution using <code>dct:language</code>.
@@ -2328,7 +2328,7 @@
         </tr>
         <tr>
           <th>Conformance</th>
-          <td>The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. The language should be given as an URI.
+          <td>The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. The language should be given as a URI.
             See <a class="no-sectionRef" href="#language-issues"></a>.
           </td>
         </tr>
@@ -3519,12 +3519,12 @@
         <tr>
           <th>Conformance</th>
           <td><p>The range does not conform to [[DCAT-AP]], since DCAT-AP demands the use
-            of a controlled vocabulary [[VOCAB-EU-FILETYPE]].
+            of the controlled vocabulary [[VOCAB-EU-FILETYPE]].
           </p>
-           <p>The requirement level does not conform to DCAT-AP since in DCAT-AP <code>dct:format</code>
-           is recommended where as <code>dcat:mediaType</code> is optional.
-           The usage note in this definition on the other hand hints on <code>dct:format</code> being
-           considered as the second choice to <code>dcat:mediaType</code>.
+           <p>The requirement level does not conform to DCAT-AP, since in DCAT-AP <code>dct:format</code>
+           is recommended whereas <code>dcat:mediaType</code> is optional.
+           The usage note in this definition, however, implies that<code>dct:format</code> is
+           the second choice to <code>dcat:mediaType</code>.
            </p>
             <p>(<a class="no-sectionRef" href="#format-issues"></a>)</p>
           </td>
@@ -3584,7 +3584,7 @@
         <tr>
           <th>Conformance</th>
           <td>The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.
-            The language should also be given as an URI. Furthermore, in DCAT this property is not optional
+            The language should also be given as a URI. Furthermore, in DCAT this property is not optional
             but recommended for the catalog. (<a class="no-sectionRef" href="#language-issues"></a>)
           </td>
         </tr>
@@ -4018,13 +4018,13 @@
         For example the Swiss <code>rdfs:seeAlso</code> is used
         to express relationships between datasets. But DCAT already has vocabulary to express
         those relationships. Therefore these Swiss constructs are not conforming to DCAT.
-        These relationships can not be interpreted on an international or European level.
+        These relationships cannot be interpreted on an international or European level.
         See <a class="no-sectionRef" href="#see-also-issues"></a>.
       </li>
       <li><strong>Conformance to DCAT-AP:</strong>
         DCAT-AP CH can restrict more than DCAT-AP regarding mandatory fields and mandatory vocabulary, but it is not allowed
         to restrict less. For example currently DCAT-AP CH uses DCAT vocabulary for many properties, such as <code>dct:language</code>,
-        <code>dct:accrualPeriodicity</code>. This usage conforms DCAT, but not DCAT-AP. Therefore these vocabulary usages are also
+        <code>dct:accrualPeriodicity</code>. This usage conforms to DCAT, but not DCAT-AP. Therefore these vocabulary usages are also
         considered to be a conformance issue. See <a class="no-sectionRef" href="#frequency-issues"></a> and
         <a class="no-sectionRef" href="#language-issues"></a>.
       </li>
@@ -4085,12 +4085,12 @@
       </tr>
       <tr>
         <td><code>rdfs:seeAlso</code></td>
-        <td>custom property, not DCAT conform</td>
+        <td>custom property, not DCAT conformant</td>
         <td><a class="no-sectionRef" href="#see-also-issues"></a></td>
       </tr>
       <tr>
         <td><code>dct:coverage</code></td>
-        <td>custom property, not DCAT conform</td>
+        <td>custom property, not DCAT conformant</td>
         <td><a class="no-sectionRef" href="#coverage-issues"></a></td>
       </tr>
       <tr>
@@ -4239,11 +4239,11 @@
         </ul>
       <aside class="example" title="Example of a DCAT-AP non-conformant usage of dct:rights as it is currently
       implemented on opendata.swiss: as the dct:rights is only given as rdf:Literal without reference
-      to a license the usage conditions can not be understood on the European level">
+      to a license, the usage conditions cannot be understood on the European level">
         <pre data-include-format="text" data-include="./examples/implemented/rights.ttl"></pre>
       </aside>
       <aside class="example" title="Example of a DCAT-AP conformant usage of dct:rights where a custom attribution text
-      is added to a general licence">
+      is added to a general license">
         <pre data-include-format="text" data-include="./examples/proposals/rights.ttl"></pre>
       </aside>
 
@@ -4276,7 +4276,7 @@
         <pre data-include-format="text" data-include="./examples/proposals/license-international.ttl"></pre>
       </aside>
       <aside class="example" title="Example of a DCAT-AP conformant usage of dct:license
-      with an custom license integrated into a Swiss license vocabulary">
+      with a custom license integrated into a Swiss license vocabulary">
         <pre data-include-format="text" data-include="./examples/proposals/license-custom.ttl"></pre>
       </aside>
       <aside class="example" title="Excerpt of two license definitions in the swiss license vocabulary: an international
@@ -4294,7 +4294,7 @@
         <ul>
           <li><strong>Details</strong>: <ul>
             <li>DCAT-AP makes the use of its controlled vocabulary
-            [[VOCAB-EU-LANG]] mandatory for <code>dct:language</code>, but in DCAT-AP CH specifies the use of [[ISO 639-1]]
+            [[VOCAB-EU-LANG]] mandatory for <code>dct:language</code>, but DCAT-AP CH specifies the use of [[ISO 639-1]]
             two letter code provided as an
             <code>rdfs:literal</code>.</li>
             <li>On the catalog class the requirement level is noted as "optional". This does not
@@ -4386,7 +4386,7 @@
       <ul>
         <li><strong>Details</strong>: DCAT-AP CH conforms to DCAT-AP as both
           make the controlled vocabulary [[IANA-MEDIA-TYPES]] mandatory for <code>dct:mediaTypes</code>.
-          <p>In the implementation on opendata.swiss <code>dct:mediaTypes</code> is implemented as
+          <p>In the implementation on opendata.swiss, <code>dct:mediaTypes</code> is implemented as
           <code>rdfs:Literal</code>. This does not conform.
         </li>
         <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-media-type"></a>
@@ -4411,7 +4411,7 @@
 
       <ul>
         <li><strong>Details</strong>: <code>dcat:theme</code> is expected
-          as a controlled vocabulary. Additionally to the Swiss categories the EU categories
+          as a controlled vocabulary. Additionally to the Swiss categories, the EU categories
           [[VOCAB-EU-THEME]] MUST
           be supported.
           <p>A controlled vocabulary for Swiss categories has been proposed: [[VOCAB-DCAT-AP-CH-THEMES]]
@@ -4441,7 +4441,7 @@
 
       <ul>
         <li><strong>Details</strong>: On the catalog class the requirement level of
-          <code>dcat:themeTaxonomy</code> is noted as "optional".
+          <code>dcat:themeTaxonomy</code> is noted as optional.
             This does not conform to DCAT-AP where the property is recommended for <code>dcat:Catalog</code>.
         <li><strong>Affected definitions</strong>:
         <a class="no-sectionRef" href="#catalog-theme-taxonomy"></a>
