@@ -83,6 +83,26 @@ var respecConfig = {
       "title":"Data Theme",
       "publisher":"Publications Office of the European Union",
     },
+    "VOCAB-EU-CONTINENT":{
+      "href":"http://publications.europa.eu/resource/authority/continent",
+      "title":"Continent",
+      "publisher":"Publications Office of the European Union",
+    },
+    "VOCAB-EU-COUNTRY":{
+      "href":"https://publications.europa.eu/resource/authority/country",
+      "title":"Country",
+      "publisher":"Publications Office of the European Union",
+    },
+    "VOCAB-EU-PLACE":{
+      "href":"https://publications.europa.eu/resource/authority/place",
+      "title":"Place",
+      "publisher":"Publications Office of the European Union",
+    },
+    "GEONAMES":{
+      "href":"http://sws.geonames.org/",
+      "title":"GeoNames",
+      "publisher":"GeoNames",
+    },
      "DCAT-AP-USE":{
         "href":"https://joinup.ec.europa.eu/sites/default/files/document/2018-04/Report%20on%20DCAT-AP%20use.pdf",
         "title":"Report on DCAT-AP use",
