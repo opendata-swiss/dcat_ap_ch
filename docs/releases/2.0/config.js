@@ -21,12 +21,12 @@ var respecConfig = {
       "VOCAB-EU-LANG":{
         "href":"http://publications.europa.eu/resource/authority/language",
         "title":"Language",
-        "publisher":"European Commission",
+        "publisher":"Publications Office of the European Union",
       },
       "VOCAB-EU-FILETYPE":{
         "href":"http://publications.europa.eu/resource/authority/filetype",
         "title":"Filetype Vocabulary",
-        "publisher":"European Commission",
+        "publisher":"Publications Office of the European Union",
       },
       "VOCAB-DCAT-AP-DEF":{
         "href":"http://dcat-ap.ch",
@@ -41,7 +41,7 @@ var respecConfig = {
       "VOCAB-EU-FREQUENCY":{
         "href":"http://publications.europa.eu/resource/authority/frequency",
         "title":"Language",
-        "publisher":"European Commission",
+        "publisher":"Publications Office of the European Union",
       },
       "VOCAB-DCT-FREQUENCY":{
           "href":"http://dublincore.org/specifications/dublin-core/collection-description/frequency/freq.rdf",
@@ -75,14 +75,34 @@ var respecConfig = {
      },
      "VOCAB-EU-PUBLISHERS":{
         "href":"http://publications.europa.eu/resource/authority/corporate-body",
-        "title":"Corperate Body",
-        "publisher":"European Commission",
+        "title":"Corporate Body",
+        "publisher":"Publications Office of the European Union",
      },
-     "VOCAB-EU-THEME":{
-        "href":"https://publications.europa.eu/resource/authority/data-theme",
-        "title":"Data Theme",
-        "publisher":"European Commission",
-     },
+    "VOCAB-EU-THEME":{
+      "href":"https://publications.europa.eu/resource/authority/data-theme",
+      "title":"Data Theme",
+      "publisher":"Publications Office of the European Union",
+    },
+    "VOCAB-EU-CONTINENT":{
+      "href":"http://publications.europa.eu/resource/authority/continent",
+      "title":"Continent",
+      "publisher":"Publications Office of the European Union",
+    },
+    "VOCAB-EU-COUNTRY":{
+      "href":"https://publications.europa.eu/resource/authority/country",
+      "title":"Country",
+      "publisher":"Publications Office of the European Union",
+    },
+    "VOCAB-EU-PLACE":{
+      "href":"https://publications.europa.eu/resource/authority/place",
+      "title":"Place",
+      "publisher":"Publications Office of the European Union",
+    },
+    "GEONAMES":{
+      "href":"http://sws.geonames.org/",
+      "title":"GeoNames",
+      "publisher":"GeoNames",
+    },
      "DCAT-AP-USE":{
         "href":"https://joinup.ec.europa.eu/sites/default/files/document/2018-04/Report%20on%20DCAT-AP%20use.pdf",
         "title":"Report on DCAT-AP use",
