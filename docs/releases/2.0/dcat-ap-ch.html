@@ -4170,8 +4170,8 @@
           affected by the issue.</li>
           <li><strong>Examples</strong>: Where it makes sense, examples have been added to support a more concrete
           discussion of the issue</li>
-          <li><strong>Github Issue</strong>:
-            Each conformance problem has also been raised as a github issue, so that it
+          <li><strong>GitHub Issue</strong>:
+            Each conformance problem has also been raised as a GitHub issue, so that it
             can be further discussed by the community.</li>
         </ul>
       </aside>
@@ -4526,7 +4526,7 @@
         <li><strong>Details</strong>: <code>dct:issued</code> and <code>dct:modified</code> are demanded
           as <code>rdfs:Literal</code> typed as <code>xsd:date</code> in DCAT-AP CH, but
           implemented as <code>rdfs:Literal</code> typed as <code>xsd:datetime</code> on opendata.swiss. This implementation
-          does not conform to DCAT-AP CH but it does conform to DCAT-AP. Therefore it would be an option to adapt the
+          does not conform to DCAT-AP CH, but it does conform to DCAT-AP. Therefore it would be an option to adapt the
           definition of those properties to the DCAT-AP specification in order to solve this non-conformance
           of opendata.swiss to DCAT-AP CH.</li>
         <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#catalog-issued"></a>,
@@ -4580,14 +4580,13 @@
 
       <ul>
         <li><strong>Details</strong>: <code>dct:identifier</code> on <code>dcat:Dataset</code>
-          The usage note of the dataset identifier does not conforms to [[VOCAB-DCAT]]
-           as it is no metadata description,
-            but an application oriented formula. Without internal knowledge of opendata.swiss this property
-            definition cannot be understood.
-            <p>The usage note goes beyond a metadata description: it prepares
-              the use of another custom Swiss property <a class="no-sectionRef" href="#dataset-see-also"></a>
-              for linking datasets together (
-              <a class="no-sectionRef" href="#see-also-issues"></a>).</p>
+          The usage note of the dataset identifier does not conform to [[VOCAB-DCAT]] as it is not a metadata
+          description, but an application-oriented formula. Without internal knowledge of opendata.swiss, this
+          property definition cannot be understood.
+          <p>The usage note goes beyond a metadata description: it prepares
+            the use of another custom Swiss property <a class="no-sectionRef" href="#dataset-see-also"></a>
+            for linking datasets together (
+            <a class="no-sectionRef" href="#see-also-issues"></a>).</p>
         </li>
         <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#dataset-identifier"></a>,
           <a class="no-sectionRef" href="#dataset-see-also"></a>
@@ -4646,8 +4645,8 @@
 
       <ul>
         <li><strong>Details</strong>: <code>dct:byteSize</code> is demanded as <code>rdfs:Literal</code>
-        typed as <code>xsd:decimal</code> in both DCAT-AP CH and DCAT-AP. But on opendata.swiss it is currently
-          implemented as integer without any type information.</li>
+          typed as <code>xsd:decimal</code> in both DCAT-AP CH and DCAT-AP. On opendata.swiss, however, it is
+          currently implemented as integer without any type information.</li>
         <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-byte-size"></a>
       </ul>
       <aside class="example"
@@ -4711,8 +4710,8 @@
           specifying the requirements of its classes and properties instead of the requirement level "recommended" that is used
           and also defined by DCAT-AP.
           While this may not be an obstacle regarding
-          conformance to DCAT-AP, it makes it harder to compare the requirements levels. Since DCAT-AP CH
-          does not give a definition of "conditional" the reason for that deviation of DCAT-AP terminology remains
+          conformance to DCAT-AP, it makes it harder to compare the requirement levels. Since DCAT-AP CH
+          does not give a definition of "conditional", the reason for that deviation from DCAT-AP terminology remains
           unclear and needs to be discussed.
         </li>
         <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#catalog-modified"></a>,
@@ -4742,7 +4741,7 @@
           its data providers can use all classes and properties of DCAT-AP, with the restriction that
           for classes and properties mentioned in DCAT-AP CH the rules in DCAT-AP CH overwrite the specifications
           in DCAT-AP.
-          <p>But the support of classes and properties in that gap between DCAT-AP and DCAT-AP CH is currently lacking
+          <p>Currently, support for classes and properties in that gap between DCAT-AP and DCAT-AP CH is lacking,
             and guidance on that topic is missing in this specification.
           </p>
           <p>This should change, since the very benefit of being a sub-profile to DCAT-AP
