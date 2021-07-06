@@ -4478,28 +4478,23 @@
       <h2>Drop support for dct:coverage</h2>
 
       <ul>
-        <li><strong>Details</strong>:<code>dct:coverage</code> is a custom Swiss property
-          that is used on <code>dcat:Dataset</code> and on <code>dcat:Distribution</code>.
-          It does not conform to DCAT for these reasons:
-          <ul>
-          <li>For the dataset its definition
-          does not conform to DCAT, since it hurts the principle, that the definition of custom vocabulary
-          is only allowed, when DCAT does not offer similar vocabulary. DCAT already offers
-          <code>dct:spatial</code> and <code>dct:temporal</code> (
-            <a class="no-sectionRef" href="#dataset-spatial-coverage"></a>,
-            <a class="no-sectionRef" href="#dataset-temporal-coverage"></a>). These SHOULD be used instead.</li>
-          <li>For distribution the property does not conform to DCAT, since it does not conform to DCAT's
-          general the class structure(<a class="no-sectionRef" href="#localization-of-dcat-ap"></a>). In DCAT
-            all distributions of a dataset
-            SHOULD cover the same content: the content of the dataset. Therefore in DCAT coverage is only a
-            property on datasets, but not on distributions.
-          (<a class="no-sectionRef" href="#dataset-concept-issue"></a>)</li>
-          </ul></li>
-       <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-coverage"></a>,
+        <li><strong>Details</strong>: <code>dct:coverage</code> is a custom Swiss property
+          that is included in <code>dcat:Dataset</code> and on <code>dcat:Distribution</code>.
+          <p>Using <code>dct:coverage</code> for <code>dcat:Dataset</code> is non-conformant to DCAT because
+            it goes against the principle that the definition of custom vocabulary is only allowed when DCAT
+            does not offer similar vocabulary. DCAT already offers <code>dct:spatial</code> and
+            <code>dct:temporal</code> (<a class="no-sectionRef" href="#dataset-spatial-coverage"></a>,
+            <a class="no-sectionRef" href="#dataset-temporal-coverage"></a>). These SHOULD be used instead.</p>
+          <p>When used for <code>dcat:Distribution</code>, it reflects the same misunderstanding
+            of the DCAT class structure discussed in <a class="no-sectionRef" href="#dataset-concept-issue"></a>.
+            In DCAT, all distributions of a dataset should represent the same content: the content of the dataset.
+            Therefore, coverage would only apply on the dataset level, not to distributions.</p>
+        </li>
+        <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#dataset-coverage"></a>,
           <a class="no-sectionRef" href="#distribution-coverage"></a></li>
       </ul>
 
-      <aside class="example" title="Usage of dct:coverage for dcat:Distribution that does not conform to DCAT">
+      <aside class="example" title="Usage of dct:coverage for dcat:Distribution that shows incorrect interpretation of DCAT">
         <pre data-include-format="text" data-include="./examples/distribution/coverage.ttl"></pre>
       </aside>
 
