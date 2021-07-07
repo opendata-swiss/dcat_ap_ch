@@ -12,3 +12,16 @@ It needs the W3C Server to be up to render correctly. In case there is an issue 
 specification, it might be related to a downtime of the W3C Server:
 Please check here: https://www.isitdownrightnow.com/w3.org.html and see whether the W3C Server is up,
 before filing an issue.
+
+## Local development
+
+No server is required for local development: the file `docs/index.html` can be
+opened directly in a browser.
+
+## Deployment
+
+Deployment from the `main` branch to the server is done as follows:
+
+- go to https://github.com/opendata-swiss/dcat_ap_ch/actions/workflows/deploy_production.yml
+- click "run workflow"
+- the most recent state of `main` will be deployed
