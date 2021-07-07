@@ -20,8 +20,8 @@ opened directly in a browser.
 
 ## Deployment
 
-Deployment from the `main` branch to the server is done as follows:
+To deploy to the server:
 
 - go to https://github.com/opendata-swiss/dcat_ap_ch/actions/workflows/deploy_production.yml
 - click "run workflow"
-- the most recent state of `main` will be deployed
+- select the branch to deploy (default is `main`) and then click the green "run workflow" button
