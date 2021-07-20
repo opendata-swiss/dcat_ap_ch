@@ -75,24 +75,21 @@
   <strong>About</strong>
 
   <p>The DCAT Application Profile for data portals in Switzerland (DCAT-AP CH) is an application profile
-    of the DCAT vocabulary ([[VOCAB-DCAT]]). It serves to describe data that has been registered on Swiss data portals.</p>
-
-
+    of the DCAT vocabulary ([[VOCAB-DCAT]]). It serves to describe data that are registered on Swiss data portals.</p>
   <p>DCAT [[VOCAB-DCAT]] is a semantic definition to describe data by the means of an RDF vocabulary. It allows
     for a decentralized approach regarding the publication of data by enforcing interoperability via the use of a common
-    language to describe the data. It has been
-    developed for open government data, in order to facilitate the reuse of this data.</p>
+    language to describe the data.</p>
   <p>Since DCAT is only a language, it can be applied in many contexts. An application profile applies DCAT to one specific context.
-    In the case of DCAT-AP CH the context is that of publishing open data on data portals in Switzerland.</p>
+    In the case of DCAT-AP CH the context is that of data portals in Switzerland.</p>
   <p>This context alone would allow for a very flexible usage of DCAT in DCAT-AP CH, but Switzerland is also part of Europe and
   therefore the interoperability with the data portal of the European Union has been a topic from
   the start. Europe has it's own application profile [[DCAT-AP]], that has established a role of a de facto standard within Europe.
-  Swiss data is also harvested by and represented on the European data portal. The EU puts a lot of power behind further
+  Swiss data is also harvested by and represented by the official portal for European data. The EU puts a lot of power behind further
   developing their application profile DCAT-AP. Therefore staying in line with the DCAT-AP is not only a goal in itself,
   but means that DCAT-AP CH will stay embedded in a bigger community of stakeholders.</p>
 
      <strong>Metadata</strong>
-    <p>Neither DCAT-AP CH nor DCAT-AP provide data, only metadata. Metadata is by definition
+    <p>Neither DCAT-AP CH nor DCAT-AP provide data, only metadata. Metadata is by definition [METADATA-DEF]
       secondary information on the data: when and by whom were they published, which usage conditions apply, how often are they updated,
       whom to contact about them and where and how can they be accessed.
     </p>
@@ -101,7 +98,7 @@
   <p>In DCAT the vocabulary consists of <strong>classes</strong> and <strong>properties</strong>.
     </p>
     <ul>
-      <li><strong>Classes are things on the internet</strong>: Not all of them have URIs,
+      <li><strong>Classes are things on the internet</strong>: Not all of them have URIs [W3C-URI],
         but it is recommended to provide a URI for them. They are complex things like a person, an organization, a data collection, a
         website or a downloadable data file.</li>
        <li><strong>Classes have properties</strong>: The properties are the attributes describing these things. Some properties
@@ -134,9 +131,7 @@
        distributions in units that can be described together.
        DCAT and DCAT-AP on the other hand allow for a more complex structure between catalogs and distribution by adding additional
        classes such as a <a data-cite="VOCAB-DCAT#Class:Catalog_Record"><code>Catalog Record</code></a> or a
-       <a data-cite="VOCAB-DCAT#Class:Data_Service"><code>Data Service</code></a> class. One of the conformance issues
-       between DCAT-AP CH and DCAT-AP is their different understanding of how distributions can be packaged into datasets, see
-       <a class="no-sectionRef" href="#dataset-concept-issue"></a>
+       <a data-cite="VOCAB-DCAT#Class:Data_Service"><code>Data Service</code></a> class.
      </li>
      </ul>
 
@@ -646,6 +641,10 @@
           This class has not been used so far in the implementation of DCAT-AP CH on opendata.swiss.
         </td>
       </tr>
+      </tbody>
+    </table>
+    <table class="def conf">
+      <tbody>
       <tr>
         <th>Conformance</th>
         <td>The class specification does not conform to [[DCAT-AP]], since some of the properties
@@ -657,7 +656,7 @@
           </p>
         </td>
       </tr>
-      </tbody>
+          </tbody>
     </table>
 
     <p>The following table lists the properties used for describing a catalog.</p>

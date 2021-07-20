@@ -49,3 +49,8 @@ hr {
     list-style: none;
     display: block !important;
 }
+
+table.def.conf {
+    background: var(--note-bg);
+    border-left: 0.5em solid var(--note-border);
+}

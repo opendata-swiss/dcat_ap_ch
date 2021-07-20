@@ -16,6 +16,7 @@ var respecConfig = {
   },
   edDraftURI: "https://www.dcat-ap.ch/releases/2.0/dcat-ap-ch.html",
   prevED: "https://ech.ch/ech/ech-0200",
+  prevRecURI: "https://www.w3.org/TR/2020/REC-vocab-dcat-2-20200204/",
   subtitle: "A DCAT Application Profile for Switzerland",
   localBiblio: {
       "ADMS-SKOS":{
