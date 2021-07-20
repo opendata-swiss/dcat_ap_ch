@@ -2,8 +2,13 @@ var respecConfig = {
   specStatus: "base",
   logos: [],
   editors: [{
-    name: "Sabine Maennel",
-    url: "https://github.com/sabinem",
+    name:"Juan Pablo Lovato",
+    company:"BFS",
+    companyURL:"https://www.bfs.admin.ch"
+  }, {
+    name:"Sabine Maennel",
+    company:"Liip",
+    companyURL: "https://www.liip.ch",
   }],
   github: {
     branch: "main",
