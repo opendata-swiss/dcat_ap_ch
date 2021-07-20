@@ -118,6 +118,16 @@ var respecConfig = {
         "title": "GeoDCAT AP API: ISO 19139 records in RDF",
         "publisher":"ARe3NA, SEMIC, EU ISA",
       },
+      "W3C-URI":{
+        "href":"https://www.w3.org/TR/cooluris/",
+        "title": "Cool URIs for the Semantic Web\n",
+        "publisher":"W3C",
+      },
+     "METADATA-DEF":{
+        "href":"https://en.wikipedia.org/wiki/Metadata",
+        "title": "Metadata",
+        "publisher":"Wikipedia",
+     },
       "DCAT-UCR":{
         "href":"https://www.w3.org/TR/dcat-ucr/",
         "title":"Dataset Exchange Use Cases and Requirements",
