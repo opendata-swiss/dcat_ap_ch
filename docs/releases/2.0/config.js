@@ -179,5 +179,15 @@ var respecConfig = {
         "title": "National data management NaDB",
         "publisher": "Swiss Federal Statistical Office ",
       },
+      "HYPOTHES-IS":{
+        "href":"https://web.hypothes.is",
+        "title": "hypothes.is",
+        "publisher": "https://web.hypothes.is"
+      },
+      "DCAT-AP-CH-GITHUB-ISSUES":{
+        "href":"https://github.com/opendata-swiss/dcat_ap_ch/issues",
+        "title": "github issues for DCAT-AP CH Version 2",
+        "publisher": "https://github.com/opendata-swiss"
+      }
     }
 };
