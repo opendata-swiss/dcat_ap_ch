@@ -1378,6 +1378,12 @@
 
     <h2>Class: Dataset</h2>
 
+      <aside class="ednote" title="dcat:Dataset Defintion and Usage Note">
+        In [[DCAT-AP-CH-1]] the dataset class is only described in the introduction, section 1.3.2 "Datensammlung":
+        The first paragraph there has been added as the definition. All further paragraphs describing special
+        cases have been added as usage notes.
+      </aside>
+
     <table class="def">
       <tbody>
       <tr>
@@ -1397,7 +1403,8 @@
         <th>Definition</th>
         <td>The metadata entry of this class describes a single thematically closed data collection,
           which is published by a responsible organization (person or institution). The dataset can be
-          offered in different ways: as file in a text/csv format or as API Service. Each distribution
+          made available in different forms: as file in a text/csv format or as API Service.
+          Each physical representation
           SHOULD be described by a <code>dcat:Distribution</code>. In general, each dataset will have at least
           one distribution.
         </td>
@@ -1406,13 +1413,16 @@
       <tr>
         <th>Usage</th>
         <td>
-          <p>The dataset will also list distributions if these are only available on an external website,
-            so that the reference is set by the property <code>dcat:landingPage</code> of the dataset </p>
-          <p>In exceptional cases, there can also be datasets that do not yet have distributions. This can be the case
-            if the publication of these datasets is planned for a future date.</p>
-          <p>The property <code>dcat:theme</code> helps to group datasets by topics. Using a controlled vocabulary
+          Special cases:
+          <ul>
+          <li>The dataset will also list distributions if these are only available on an external website,
+            so that the reference is set by the property <code>dcat:landingPage</code> of the dataset </li>
+          <li>In exceptional cases, there can also be datasets that do not yet have distributions. This can be the case
+            if the publication of these datasets is planned for a future date.</li>
+          <li>The property <code>dcat:theme</code> helps to group datasets by topics. Using a controlled vocabulary
             in the context of a data portal helps with the discoverability of the datasets by topic.
-            Since in DCAT-AP the <code>dcat:theme</code> is optional, it can be ignored on export.</p>
+            Since in DCAT-AP the <code>dcat:theme</code> is optional, it can be ignored on export.</li>
+          </ul>
         </td>
       </tr>
       </tbody>
