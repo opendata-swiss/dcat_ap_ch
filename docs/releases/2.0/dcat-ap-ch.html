@@ -641,19 +641,17 @@
           This class has not been used so far in the implementation of DCAT-AP CH on opendata.swiss.
         </td>
       </tr>
-      <tr>
-        <th>Conformance</th>
-        <td>The class specification does not conform to [[DCAT-AP]], since some of the properties
-          defined for the class do not conform.
-            <p>The implementation on opendata.swiss does not implement the catalog class
-              with all mandatory properties and therefore does not conform to either
-              DCAT-AP or to this specification
-            (see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>).
-          </p>
-        </td>
-      </tr>
       </tbody>
     </table>
+
+    <aside class="ednote" title="Conformance of dcat:Catalog">The class specification does not conform to [[DCAT-AP]], since some of the properties
+        defined for the class do not conform.
+          <p>The implementation on opendata.swiss does not implement the catalog class
+            with all mandatory properties and therefore does not conform to either
+            DCAT-AP or to this specification
+          (see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>).
+        </p>
+    </aside>
 
     <p>The following table lists the properties used for describing a catalog.</p>
 
@@ -817,12 +815,11 @@
             given in at least one of the four languages German, French, English, Italian. Further languages are
             optional.
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
         </tbody>
       </table>
+
+    <aside class="ednote" title="Conformance of dct:title on dcat:Catalog">Conforms to [[DCAT-AP]]
+    </aside>
 
       <aside class="example" title="Usage of dct:title for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/title.ttl"></pre>
@@ -871,12 +868,10 @@
             Further languages are optional.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
         </tbody>
       </table>
+    <aside class="ednote" title="Conformance of dct:description on dcat:Catalog">Conforms to [[DCAT-AP]]
+    </aside>
       <aside class="example" title="Usage of dct:description for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/description.ttl"></pre>
       </aside>
@@ -922,13 +917,10 @@
           <td>The date when the catalog was published.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>Conforms to [[DCAT-AP]]</p>
-          </td>
-        </tr>
         </tbody>
       </table>
+    <aside class="ednote" title="Conformance of dct:issued on dcat:Catalog">Conforms to [[DCAT-AP]]
+    </aside>
       <aside class="example" title="Usage of dct:issued for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/issued.ttl"></pre>
       </aside>
@@ -971,13 +963,10 @@
             Data Portal.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
         </tbody>
       </table>
-
+      <aside class="ednote" title="Conformance of foaf:homepage on dcat:Catalog">Conforms to [[DCAT-AP]]
+      </aside>
       <aside class="example" title="Usage of foaf:homepage for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/homepage.ttl"></pre>
       </aside>
@@ -1025,18 +1014,16 @@
             </aside>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
-            The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
-            but implementing it with <code>rdf:Description</code>
-            (<a class="no-sectionRef" href="#publisher-issues"></a>)
-          </td>
-        </tr>
         </tbody>
       </table>
+      <aside class="ednote" title="Conformance of dct:publisher on dcat:Catalog">
+        Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
+        The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
+        but implementing it with <code>rdf:Description</code>
+        (<a class="no-sectionRef" href="#publisher-issues"></a>)
+      </aside>
 
-      <aside class="ednote">
+      <aside class="ednote" title="Example of dct:publisher on dcat:Catalog">
         See the discussion <a class="no-sectionRef" href="#publisher-issues"></a> for an example on the usage of dct:publisher
       </aside>
 
@@ -1086,12 +1073,11 @@
             last update.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
         </tbody>
       </table>
+      <aside class="ednote" title="Conformance of dct:modified on dcat:Catalog">
+        Conforms to [[DCAT-AP]]
+      </aside>
 
       <aside class="example" title="Usage of dct:modified for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
@@ -1145,16 +1131,14 @@
               is supported.</p>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>The requirement level does not conform to [[DCAT-AP]]
-            since in DCAT-AP the requirement level of this property is recommended. That
-            means theme taxonomies that are used in the catalog SHOULD be listed if they are available.
-              (<a class="no-sectionRef" href="#theme-taxonomy-issue"></a>)
-          </td>
-        </tr>
         </tbody>
       </table>
+      <aside class="ednote" title="Conformance of dcat:themeTaxonomy on dcat:Catalog">
+        The requirement level does not conform to [[DCAT-AP]]
+        since in DCAT-AP the requirement level of this property is recommended. That
+        means theme taxonomies that are used in the catalog SHOULD be listed if they are available.
+        (<a class="no-sectionRef" href="#theme-taxonomy-issue"></a>)
+      </aside>
 
       <aside class="example" title="Usage of dcat:themeTaxonomy for dcat:Catalog: the example lists
       the Swiss theme taxonomy, the European theme taxonomy and the theme taxonomy used by Swiss geodata.">
@@ -1200,12 +1184,10 @@
           <th>Usage</th>
           <td>Reference to the dataset that is contained in the catalog.</td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
         </tbody>
       </table>
+      <aside class="ednote" title="Conformance of dcat:dataset on dcat:Catalog">Conforms to [[DCAT-AP]]
+      </aside>
 
       <aside class="example" title="Usage of dcat:dataset for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/dataset.ttl"></pre>
@@ -1252,18 +1234,16 @@
             the attribute should be replicated on each distribution. Alternatively, the property rights can be used.
           </td>
         </tr>
-        <tr>
-          <th>Conformance Notes</th>
-          <td>The requirement level does not conform to [[DCAT-AP]] since in DCAT-AP
-            the property is recommended.
-            This means that a license MUST be provided if it is available.
-            (see <a class="no-sectionRef" href="#license-issues"></a>)
-          </td>
-        </tr>
         </tbody>
       </table>
+      <aside class="ednote" title="Conformance of dct:license on dcat:Catalog">
+        The requirement level does not conform to [[DCAT-AP]] since in DCAT-AP
+        the property is recommended.
+        This means that a license MUST be provided if it is available.
+        (see <a class="no-sectionRef" href="#license-issues"></a>)
+      </aside>
 
-      <aside class="ednote">
+      <aside class="ednote" title="Example of dct:license on dcat:Catalog">
         See the discussion <a class="no-sectionRef" href="#license-issues"></a> for an example on the usage of dct:license
       </aside>
     </section>
@@ -1307,15 +1287,14 @@
           <th>Usage</th>
           <td>Alternatively the property license can be used.</td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>The usage not does not conform to DCAT-AP, since in DCAT-AP the license "cannot be used alternatively"
-           but is the recommended was to go. (<a class="no-sectionRef" href="#rights-issues"></a>)</td>
-        </tr>
         </tbody>
       </table>
+      <aside class="ednote" title="Conformance of dct:rights on dcat:Catalog">
+        The usage not does not conform to DCAT-AP, since in DCAT-AP the license "cannot be used alternatively"
+        but is the recommended was to go. (<a class="no-sectionRef" href="#rights-issues"></a>)
+      </aside>
 
-      <aside class="ednote">
+      <aside class="ednote" title="Example of dct:rights on dcat:Catalog">
         See the discussion <a class="no-sectionRef" href="#rights-issues"></a> for an example on the usage of dct:rights
       </aside>
     </section>
@@ -1362,18 +1341,16 @@
             the Catalog level.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>The requirement level does not conform to [[DCAT-AP]] since in DCAT-AP this property is recommended
-              for the catalog.</p>
-            <p>The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.
-            The language should be given as a URI (<a class="no-sectionRef" href="#language-issues"></a>).</p>
-          </td>
-        </tr>
         </tbody>
       </table>
+      <aside class="ednote" title="Conformance of dct:language on dcat:Catalog">
+        The requirement level does not conform to [[DCAT-AP]] since in DCAT-AP this property is recommended
+        for the catalog.
+        <p>The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.
+        The language should be given as a URI (<a class="no-sectionRef" href="#language-issues"></a>).</p>
+      </aside>
 
-      <aside class="ednote">
+      <aside class="ednote" title="Example of dct:language on dcat:Catalog">
         See the discussion <a class="no-sectionRef" href="#language-issues"></a> for an example on the usage of dct:language
       </aside>
 
