@@ -1917,10 +1917,10 @@
             <aside class="example" title="identifier">
               <pre data-include-format="text" data-include="./examples/dataset/identifier.xml"></pre>
             </aside>
-            <p>The identifier should be unique within Switzerland</p>
-            <p>The dataset can then be linked to other dataset by the element
-              <code>rdfs:seeAlso</code> by adding the identifier to this property
-              on other datasets.</p>
+            <p>The data provider selects a data provider identifier which, based on human discretion, is
+              nationally unique.</p>
+            <p>Datasets will be linked via the element "rdfs:seeAlso" by specifying in each case
+              the corresponding element <code>dct:identifier</code>>.</p>
             <p>Using <code>rdfs:seeAlso</code> for linking to other datasets makes it necessary that
               a data portal implementing this automatically takes care of consistency
               if datasets get changed or removed:</p>
