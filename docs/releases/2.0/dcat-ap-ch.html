@@ -2802,16 +2802,16 @@
           It can also contain the data in an alternative data format, for example a graphical
           presentation of the data for the years 1990 up to 2010.</p></td>
       </tr>
-      <tr>
-        <th>Conformance</th>
-        <td><p>Does not conform to [[DCAT-AP]] as some of its properties do not conform to DCAT-AP.</p>
-          <p>Also the usage note does not conform to DCAT, since in DCAT distributions SHOULD only differ
-          in format, resolution or language but not in regards to their content
-            (<a class="no-sectionRef" href="#dataset-concept-issue"></a>)</p>
-        </td>
-      </tr>
       </tbody>
     </table>
+
+    <aside class="ednote" title="Conformance of dcat:Distribution">
+      Does not conform to [[DCAT-AP]] as some of its properties do not conform to DCAT-AP.
+      <p>Also the usage note does not conform to DCAT, since in DCAT distributions SHOULD only differ
+        in format, resolution or language but not in regards to their content
+        (<a class="no-sectionRef" href="#dataset-concept-issue"></a>)
+      </p>
+    </aside>
 
     <p>The following table lists of <code>dcat:Distribution</code> the properties that are specified
       by DCAT-AP CH.</p>
@@ -3032,17 +3032,15 @@
           <td>The first time issuance of the distribution.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>Conforms to [[DCAT-AP]]</p>
-            <p>The implementation on opendata.swiss does not conform this specification
-              but does conform the DCAT-AP specification of this property.
-              See <a class="no-sectionRef" href="#issued-modified-implementation"></a>.
-            <p>
-          </td>
-        </tr>
         </tbody>
       </table>
+      <aside class="ednote" title="Conformance of dct:issued on dcat:Distribution">
+        Conforms to [[DCAT-AP]].
+        <p>The implementation on opendata.swiss does not conform this specification
+          but does conform the DCAT-AP specification of this property.
+          See <a class="no-sectionRef" href="#issued-modified-implementation"></a>.
+        <p>
+      </aside>
       <aside class="example" title="Usage of dct:issued for dcat:Distribution as specified by this specification">
         <pre data-include-format="text" data-include="./examples/distribution/issued.ttl"></pre>
       </aside>
@@ -3095,13 +3093,13 @@
               access urls for a distribution.</p>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
         </tbody>
 
       </table>
+
+      <aside class="ednote" title="Conformance of dcat:accessURL on dcat:Distribution">
+        Conforms to [[DCAT-AP]].
+      </aside>
 
       <aside class="example" title="Usage of dcat:accessURL for dcat:Distribution">
         <pre data-include-format="text" data-include="./examples/distribution/access-url.ttl"></pre>
@@ -3189,14 +3187,15 @@
             </aside>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>This specification does not conform to [[DCAT-AP]].
-            usage not does not conform to DCAT-AP, since in DCAT-AP the license "cannot be used alternatively"
-           but is the recommended was to go. (<a class="no-sectionRef" href="#rights-issues"></a>)</td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dct:rights on dcat:Distribution">
+        This specification does not conform to [[DCAT-AP]].
+        <p>The usage not does not conform to DCAT-AP, since in DCAT-AP the license "cannot be used alternatively"
+          but is the recommended was to go. (<a class="no-sectionRef" href="#rights-issues"></a>)
+        </p>
+      </aside>
 
      <aside class="ednote">
         See the discussion <a class="no-sectionRef" href="#rights-issues"></a> for an example on the usage of dct:rights
@@ -3245,17 +3244,17 @@
               language selected by a user will usually be shown as title for the distribution.</p>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>Range and requirement level do conforms to [[DCAT-AP]].</p>
-            <p>The usage note does not conform to DCAT-AP since the
-              the distribution of a dataset SHOULD all cover the same content and MAY vary
-              only in format, language or resolution
-              (<a class="no-sectionRef" href="#dataset-concept-issue"></a>).</p>
-          </td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dct:title on dcat:Distribution">
+        Range and requirement level do conforms to [[DCAT-AP]].
+        <p>The usage note does not conform to DCAT-AP since the
+          the distribution of a dataset SHOULD all cover the same content and MAY vary
+          only in format, language or resolution
+          (<a class="no-sectionRef" href="#dataset-concept-issue"></a>).
+        </p>
+      </aside>
 
       <aside class="example" id="ex-distribution-title" title="Usage of dct:title for dcat:Distribution">
         <pre data-include-format="text" data-include="./examples/distribution/title.ttl"></pre>
@@ -3305,17 +3304,17 @@
               language selected by a user will usually be shown as description for the distribution.</p>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>Range and requirement level do conforms to [[DCAT-AP]].</p>
-            <p>The usage note does not conform to DCAT-AP since the
-              the distribution of a dataset SHOULD all cover the same content and MAY vary
-              only in format, language or resolution
-              (<a class="no-sectionRef" href="#dataset-concept-issue"></a>).</p>
-          </td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dct:description on dcat:Distribution">
+        Range and requirement level do conforms to [[DCAT-AP]].
+        <p>The usage note does not conform to DCAT-AP since the
+          the distribution of a dataset SHOULD all cover the same content and MAY vary
+          only in format, language or resolution
+          (<a class="no-sectionRef" href="#dataset-concept-issue"></a>).
+        </p>
+      </aside>
 
       <aside class="example" id="ex-distribution-description" title="Usage of dct:description for dcat:Distribution">
         <pre data-include-format="text" data-include="./examples/distribution/description.ttl"></pre>
@@ -3364,15 +3363,16 @@
           <td>If the distribution is a file the size SHOULD be indicated if possible with this property.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>Conforms to [[DCAT-AP]]</p>
-            <p>The implementation on opendata.swiss should be corrected as it does not
-            conform to this specification
-            (<a class="no-sectionRef" href="#byte-size-implementation"></a>).</td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dcat:byteSize on dcat:Distribution">
+        Conforms to [[DCAT-AP]].
+        <p>The implementation on opendata.swiss should be corrected as it does not
+          conform to this specification
+          (<a class="no-sectionRef" href="#byte-size-implementation"></a>).
+        </p>
+      </aside>
 
       <aside class="example" id="ex-distribution-byte-size" title="Usage of dcat:byteSize for dcat:Distribution">
         <pre data-include-format="text" data-include="./examples/distribution/byte-size.ttl"></pre>
@@ -3422,16 +3422,16 @@
             downloadable file.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>The property definition conforms to [[DCAT-AP]].</p>
-            <p>The current usage on opendata.swiss does not conform as it does not use [[IANA-MEDIA-TYPES]]
-              as a controlled vocabulary.
-              See <a class="no-sectionRef" href="#media-type-issues"></a>.</p>
-          </td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dcat:mediaType on dcat:Distribution">
+        The property definition conforms to [[DCAT-AP]].
+        <p>The current usage on opendata.swiss does not conform as it does not use [[IANA-MEDIA-TYPES]]
+          as a controlled vocabulary.
+          See <a class="no-sectionRef" href="#media-type-issues"></a>.
+        </p>
+      </aside>
 
       <aside class="ednote">
         See the discussion <a class="no-sectionRef" href="#media-type-issues"></a> for an example on the usage
@@ -3479,21 +3479,18 @@
             that has file format not in [[IANA-MEDIA-TYPES]].
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>The range does not conform to [[DCAT-AP]], since DCAT-AP demands the use
-            of the controlled vocabulary [[VOCAB-EU-FILETYPE]].
-          </p>
-           <p>The requirement level does not conform to DCAT-AP, since in DCAT-AP <code>dct:format</code>
-           is recommended whereas <code>dcat:mediaType</code> is optional.
-           The usage note in this definition, however, implies that<code>dct:format</code> is
-           the second choice to <code>dcat:mediaType</code>.
-           </p>
-            <p>(<a class="no-sectionRef" href="#format-issues"></a>)</p>
-          </td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dct:format on dcat:Distribution">
+        The range does not conform to [[DCAT-AP]], since DCAT-AP demands the use
+        of the controlled vocabulary [[VOCAB-EU-FILETYPE]].
+        <p>The requirement level does not conform to DCAT-AP, since in DCAT-AP <code>dct:format</code>
+         is recommended whereas <code>dcat:mediaType</code> is optional.
+         The usage note in this definition, however, implies that<code>dct:format</code> is
+         the second choice to <code>dcat:mediaType</code>.
+        </p>
+      </aside>
 
       <aside class="ednote">
         See the discussion <a class="no-sectionRef" href="#format-issues"></a> for an example on the usage
@@ -3544,15 +3541,14 @@
               title in that language (<a class="no-sectionRef" href="#dataset-title"></a>)</p>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.
-            The language should also be given as a URI. Furthermore, in DCAT this property is not optional
-            but recommended for the catalog. (<a class="no-sectionRef" href="#language-issues"></a>)
-          </td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dct:language on dcat:Distribution">
+        The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.
+        The language should also be given as a URI. Furthermore, in DCAT this property is not optional
+        but recommended for the catalog. (<a class="no-sectionRef" href="#language-issues"></a>)
+      </aside>
 
       <aside class="ednote">
         See the discussion <a class="no-sectionRef" href="#language-issues"></a> for an example on the usage of dct:language
@@ -3603,17 +3599,16 @@
             use the data that their application might need to be updated as well.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>Conforms to [[DCAT-AP]]</p>
-            <p>The implementation on opendata.swiss does not conform this specification
-              but does conform the DCAT-AP specification of this property.
-              See <a class="no-sectionRef" href="#issued-modified-implementation"></a>.
-            <p>
-          </td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dct:modified on dcat:Distribution">
+        Conforms to [[DCAT-AP]].
+        <p>The implementation on opendata.swiss does not conform this specification
+          but does conform the DCAT-AP specification of this property.
+          See <a class="no-sectionRef" href="#issued-modified-implementation"></a>.
+        <p>
+      </aside>
 
       <aside class="example" title="Usage of dct:modified for dcat:Distribution as specified in this definition">
         <pre data-include-format="text" data-include="./examples/distribution/modified.ttl"></pre>
@@ -3664,15 +3659,15 @@
             </p>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>The requirement level does not conform to [[DCAT-AP]] since the requirement level in DCAT-AP is recommended.
-            This means that a license MUST be provided if it is available.
-            (see <a class="no-sectionRef" href="#license-issues"></a>)
-          </td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dct:license on dcat:Distribution">
+        The requirement level does not conform to [[DCAT-AP]] since the requirement level in DCAT-AP is recommended.
+        This means that a license MUST be provided if it is available.
+        (see <a class="no-sectionRef" href="#license-issues"></a>).
+      </aside>
+
       <aside class="ednote">
         See the discussion <a class="no-sectionRef" href="#license-issues"></a> for an example on the usage of dct:license
       </aside>
@@ -3722,16 +3717,14 @@
             representations of the data in his internal system.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>
-            <p>This property is not given to distributions in [[DCAT-AP]]. In [[VOCAB-DCAT]],
-              <code>dcat:Distribution</code> inherits it from <code>dcat:CatalogedResource</code>. Including an identifier
-              for distributions does not break the conformance with DCAT-AP</p>
-          </td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dct:identifier on dcat:Distribution">
+        This property is not given to distributions in [[DCAT-AP]]. In [[VOCAB-DCAT]],
+        <code>dcat:Distribution</code> inherits it from <code>dcat:CatalogedResource</code>. Including an identifier
+        for distributions does not break the conformance with DCAT-AP.
+      </aside>
 
       <aside class="example" id="ex-distribution-identifier" title="Usage of dct:identifier for dcat:Distribution">
         <pre data-include-format="text" data-include="./examples/distribution/identifier.ttl"></pre>
@@ -3782,12 +3775,13 @@
               must be doubled as access url.</p>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>Conforms to [[DCAT-AP]]</td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dcat:downloadURL on dcat:Distribution">
+        Conforms to [[DCAT-AP]].
+      </aside>
+
       <aside class="example" title="Usage of dcat:downloadURL for dcat:Distribution">
         <pre data-include-format="text" data-include="./examples/distribution/download-url.ttl"></pre>
       </aside>
@@ -3838,17 +3832,16 @@
               is permitted in DCAT-AP CH-compliant metadata.</p>
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td><p>This is a custom DCAT-AP CH property that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]].</p>
-            <p>It does not conform to DCAT, since does not conform to the concept of a distribution in DCAT that
-            distributions of a dataset should only differ in their physical properties, but not
-            in regards of their coverage (<a class="no-sectionRef" href="#dataset-concept-issue"></a>,
-            <a class="no-sectionRef" href="#coverage-issues"></a>).</p>
-          </td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of dct:coverage on dcat:Distribution">
+        This is a custom DCAT-AP CH property that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]].
+        <p>It does not conform to DCAT, since does not conform to the concept of a distribution in DCAT that
+          distributions of a dataset should only differ in their physical properties, but not
+          in regards of their coverage (<a class="no-sectionRef" href="#dataset-concept-issue"></a>,
+          <a class="no-sectionRef" href="#coverage-issues"></a>).</p>
+      </aside>
 
       <aside class="ednote">
         See the discussion <a class="no-sectionRef" href="#coverage-issues"></a> for
@@ -3896,17 +3889,16 @@
             to the metadata.
           </td>
         </tr>
-        <tr>
-          <th>Conformance</th>
-          <td>
-            <p>Conforms to [[DCAT-AP]]</p>
-            <p>This is a custom DCAT-AP CH property that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]]
-            but is in discussion for [[VOCAB-DCAT-3]].
-            See <a class="no-sectionRef" href="#thumbnail-issues"></a>.</p>
-          </td>
-        </tr>
         </tbody>
       </table>
+
+      <aside class="ednote" title="Conformance of schema:image on dcat:Distribution">
+        Conforms to [[DCAT-AP]].
+        <p>This is a custom DCAT-AP CH property that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]]
+          but is in discussion for [[VOCAB-DCAT-3]].
+          See <a class="no-sectionRef" href="#thumbnail-issues"></a>.
+        </p>
+      </aside>
 
       <aside class="example" title="Usage of schema:Image for dcat:Distribution">
         <pre data-include-format="text" data-include="./examples/distribution/image.ttl"></pre>
