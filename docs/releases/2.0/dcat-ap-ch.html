@@ -1669,12 +1669,18 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td><p>The title can be given in several languages.
-            A dataset title should be given in each language in which the dataset offers distributions.
-            This allows for a fallback for the distribution title in case it is not given.</p>
-            <p>In multilingual data portals, the language of the title displayed
-              will depend on the language preferred by the user viewing the dataset.
-              (<a class="no-sectionRef" href="#multilanguages-uris-negotiation"></a>)
+          <td><p>The element <code>dct:title</code> can occur more than once,
+            in order to express the title in several languages.</p>
+            On the user interface of
+            data portals the title is shown in the language selected by the user.
+            If the
+            title is not available in that language one of the available titles in another
+            language is displayed.
+            <p>Multilingual titles don't mean that the data of the dataset is available
+            in those languages. But if the dataset has a physical representation in a language
+            it MUST also come with a title in that language. This way a title can be given
+            to the physical representation even if the pysical representation does not come
+            with a title itself (<a class="no-sectionRef" href="#distribution-title"></a>).
             </p>
           </td>
         </tr>
