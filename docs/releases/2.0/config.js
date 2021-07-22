@@ -188,6 +188,11 @@ var respecConfig = {
         "href":"https://github.com/opendata-swiss/dcat_ap_ch/issues",
         "title": "github issues for DCAT-AP CH Version 2",
         "publisher": "https://github.com/opendata-swiss"
+      },
+      "CADASTRE-PLZ-CH":{
+        "href": "https://www.cadastre.ch/de/services/service/registry/plz.html",
+        "title":"Amtliches Ortschaftenverzeichnis",
+        "publisher": "cadastre.ch"
       }
     }
 };
