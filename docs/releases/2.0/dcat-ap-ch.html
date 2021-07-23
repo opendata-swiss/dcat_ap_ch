@@ -3398,12 +3398,18 @@
       <aside class="ednote" title="Conformance of dcat:byteSize on dcat:Distribution">
         Conforms to [[DCAT-AP]].
         <p>The implementation on opendata.swiss should be corrected as it does not
-          conform to this specification
-          (<a class="no-sectionRef" href="#byte-size-implementation"></a>).
+          conform to this specification.
         </p>
       </aside>
 
-      <aside class="example" id="ex-distribution-byte-size" title="Usage of dcat:byteSize for dcat:Distribution">
+      <p class="issue" data-number="49"></p>
+
+      <aside class="example"
+             title="Example for the current implementation of dct:byteSize on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/implemented/byte-size.ttl"></pre>
+      </aside>
+      <aside class="example"
+             title="Example for the DCAT-AP and DCAT-AP CH conformant usage of dct:byteSize">
         <pre data-include-format="text" data-include="./examples/distribution/byte-size.ttl"></pre>
       </aside>
 
@@ -4403,29 +4409,6 @@
 
       <p class="issue" data-number="112"></p>
 
-    </section>
-
-
-    <section id="byte-size-implementation">
-
-      <h2>Add xsd:decimal to byte size</h2>
-
-      <ul>
-        <li><strong>Details</strong>: <code>dct:byteSize</code> is demanded as <code>rdfs:Literal</code>
-          typed as <code>xsd:decimal</code> in both DCAT-AP CH and DCAT-AP. On opendata.swiss, however, it is
-          currently implemented as integer without any type information.</li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-byte-size"></a>
-      </ul>
-      <aside class="example"
-             title="Example for the current implementation of dct:byteSize on opendata.swiss">
-        <pre data-include-format="text" data-include="./examples/implemented/byte-size.ttl"></pre>
-      </aside>
-      <aside class="example"
-             title="Example for the DCAT-AP and DCAT-AP CH conformant usage of dct:byteSize">
-        <pre data-include-format="text" data-include="./examples/distribution/byte-size.ttl"></pre>
-      </aside>
-
-      <p class="issue" data-number="49"></p>
     </section>
 
     <section id="import-export-issues">
