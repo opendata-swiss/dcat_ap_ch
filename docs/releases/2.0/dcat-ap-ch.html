@@ -665,10 +665,11 @@
         defined for the class do not conform.
           <p>The implementation on opendata.swiss does not implement the catalog class
             with all mandatory properties and therefore does not conform to either
-            DCAT-AP or to this specification
-          (see <a class="no-sectionRef" href="#catalog-implementation-issues"></a>).
+            DCAT-AP or to this specification.
         </p>
     </aside>
+
+    <p class="issue" data-number="3"></p>
 
     <p>The following table lists the properties used for describing a catalog.</p>
 
@@ -4425,25 +4426,6 @@
       </aside>
 
       <p class="issue" data-number="49"></p>
-    </section>
-
-    <section id="catalog-implementation-issues">
-      <h2>Implement Catalog class on opendata.swiss</h2>
-      <ul>
-        <li><strong>Details</strong>: Metadata for <code>dcat:Catalog</code>
-          is currently not imported to opendata.swiss and also not exported from opendata.swiss.
-          Since there are mandatory properties on the catalog class, this hurts DCAT-AP conformance as well
-          as DCAT-AP CH conformance.
-        </li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#Class:Catalog"></a>,
-          <a class="no-sectionRef" href="#catalog-title"></a>,
-          <a class="no-sectionRef" href="#catalog-description"></a>,
-        <a class="no-sectionRef" href="#catalog-issued"></a>,
-        <a class="no-sectionRef" href="#catalog-homepage"></a>
-      </ul>
-
-      <p class="issue" data-number="3"></p>
-
     </section>
 
     <section id="import-export-issues">
