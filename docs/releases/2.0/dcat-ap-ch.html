@@ -2266,12 +2266,16 @@
         Conforms to [[DCAT-AP]].
         <p>The implementation on opendata.swiss does not conform this specification
           since <code>dcat:landingPage</code> is implemented as an <code>rdfs:Literal</code>
-          instead of a <code>foaf:Document</code>
-          (<a class="no-sectionRef" href="#landing-page-implementation"></a>).
+          instead of a <code>foaf:Document</code>.
         </p>
       </aside>
 
-      <aside class="example" title="Usage of dcat:landingPage for dcat:Dataset">
+      <p class="issue" data-number="46"></p>
+
+      <aside class="example" title="Example of dcat:landingPage as it is currently implemented on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/implemented/landing-page.ttl"></pre>
+      </aside>
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dcat:landingPage">
         <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
       </aside>
 
@@ -4412,25 +4416,6 @@
 
     </section>
 
-    <section id="landing-page-implementation">
-
-      <h2>Landing page: use URIs</h2>
-
-      <ul>
-        <li><strong>Details</strong>: <code>dcat:landingPage</code> is implemented as an <code>rdfs:Literal</code> on opendata.swiss,
-        but DCAT-AP demands a <code>foaf:Document</code></li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-landing-page"></a>
-      </ul>
-      <aside class="example" title="Example of dcat:landingPage as it is currently implemented on opendata.swiss">
-        <pre data-include-format="text" data-include="./examples/implemented/landing-page.ttl"></pre>
-      </aside>
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dcat:landingPage">
-        <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
-      </aside>
-
-      <p class="issue" data-number="46"></p>
-
-    </section>
 
     <section id="byte-size-implementation">
 
