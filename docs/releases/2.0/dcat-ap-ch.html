@@ -2731,8 +2731,11 @@
         This property is custom for DCAT-AP CH.
         <p>The property does not conform to DCAT-AP since there is already
         vocabulary in [[DCAT-AP]] for modeling relationships
-        between datasets. See <a class="no-sectionRef" href="#see-also-issues"></a>.</p>
+        between datasets.</p>
       </aside>
+
+      <p class="issue" data-number="53"></p>
+
       <aside class="example" title="Usage of rdfs:seeAlso for dcat:Dataset as
                                     it is currently implemented on opendata.swiss">
         <pre data-include-format="text" data-include="./examples/dataset/see-also.ttl"></pre>
@@ -4260,24 +4263,6 @@
       </aside>
 
       <p class="issue" data-number="8"></p>
-
-    </section>
-
-    <section id="see-also-issues">
-
-      <h2>Use DCAT properties relation instead of seeAlso</h2>
-
-      <ul>
-        <li><strong>Details</strong>: <code>rdfs:seeAlso</code> is a custom Swiss property to
-          express relationships between datasets. DCAT already includes properties for this purpose, however.
-          DCAT gives the choice between <a data-cite=VOCAB-DCAT#Property:resource_relation><code>dct:relation</code></a>
-          and <a data-cite=VOCAB-DCAT#Property:resource_qualified_relation><code>dcat:qualifiedRelation</code></a>.
-          In order to conform to DCAT, one of those properties MUST be used instead.
-        </li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-see-also"></a></li>
-      </ul>
-
-      <p class="issue" data-number="53"></p>
 
     </section>
 
