@@ -1035,12 +1035,12 @@
       <aside class="ednote" title="Conformance of dct:publisher on dcat:Catalog">
         Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
         The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
-        but implementing it with <code>rdf:Description</code>
-        (<a class="no-sectionRef" href="#publisher-issues"></a>)
+        but implementing it with <code>rdf:Description</code>.
       </aside>
 
       <aside class="ednote" title="Example of dct:publisher on dcat:Catalog">
-        See the discussion <a class="no-sectionRef" href="#publisher-issues"></a> for an example on the usage of dct:publisher
+        The <a class="no-sectionRef" href="#dataset-publisher"></a> on dcat:Dataset for an example on the
+        usage of dct:publisher.
       </aside>
 
     </section>
@@ -1806,19 +1806,40 @@
         Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]].
         <ul>
         <li>The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
-        but implementing it with <code>rdf:Description</code>.</li>
+        but implementing it with <code>rdf:Description</code>. (On opendata.swiss the publisher is currently
+          implemented as stated in the definition.)</li>
         <li>The maximum cardinality does not conform to
           DCAT-AP that states the maximum cardinality as 1.</li>
+        <li>DCAT-AP demands the usage of a publisher vocabulary. For organizations of the European Union
+          [VOCAB-EU-PUBLISHERS] can be be used. For Swiss data publishers
+          [EUROVOC] recommends to build up a similar vocabulary or to use existing Swiss vocabularies.</li>
         <li>
           The TERMDAT data retrieval
           has never been implemented on opendata.swiss.</li>
        </ul>
-       See <a class="no-sectionRef" href="#publisher-issues"></a> for a
-       detailed discussion of these issues.
       </aside>
 
-      <aside class="ednote" title="Example for dct:publisher on dcat:Dataset">
-        See the discussion <a class="no-sectionRef" href="#publisher-issues"></a> for an example on the usage of dct:publisher
+      <p class="issue" data-number="19"></p>
+      <p class="issue" data-number="23"></p>
+      <p class="issue" data-number="2"></p>
+
+      <aside class="example"
+             title="Usage of dct:publisher for dcat:Dataset as it is now implemented on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/implemented/publisher.ttl"></pre>
+      </aside>
+
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:publisher without the use of a controlled vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/publisher.ttl"></pre>
+      </aside>
+
+       <aside class="note">
+        A <code>foaf:Organization</code> is a subclass of <code>foaf:Agent</code>. Since the
+        publisher is the legal authority that has the permission to publish the data, it is usually entered as this subclass:
+        as a <code>foaf:Agent</code> of type Organization.
+      </aside>
+
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:publisher with the use of a controlled vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/publisher-with-vocabulary.ttl"></pre>
       </aside>
 
     </section>
@@ -3989,49 +4010,6 @@
   <section id="dcat-ap-conformance-problems-details">
 
     <h2>Detailed Analysis</h2>
-
-    <section id="publisher-issues">
-
-      <h2>The publisher property should be revised</h2>
-      <ul>
-          <li><strong>Details</strong>:
-            <ul>
-              <li>On <code>dcat:Dataset</code> the cardinality does not conform to DCAT-AP's cardinality, which allows
-            only one publisher per dataset.</li>
-              <li>The definition of <code>dct:publisher</code> is unclear and does not conform to DCAT:
-                the range says <code>foaf:Agent</code>, but in the definition <code>rdfs:Description</code> is used instead.
-              (On opendata.swiss the publisher is currently implemented as stated in the definition.)
-              </li>
-           <li>DCAT-AP demands the usage of a publisher vocabulary. For organizations of the European Union
-            [[VOCAB-EU-PUBLISHERS]]
-            can be be used. For Swiss data publishers [[EUROVOC]] recommends to build up a similar
-        vocabulary or to use existing Swiss vocabularies.</li>
-            </ul>
-          <li><strong>Affected definitions</strong>:
-            <a class="no-sectionRef" href="#catalog-publisher"></a>,
-            <a class="no-sectionRef" href="#dataset-publisher"></a></li>
-        </ul>
-      <aside class="note">
-        A <code>foaf:Organization</code> is a subclass of <code>foaf:Agent</code>. Since the
-        publisher is the legal authority that has the permission to publish the data, it is usually entered as this subclass:
-        as a <code>foaf:Agent</code> of type Organization.
-      </aside>
-      <aside class="example"
-             title="Usage of dct:publisher for dcat:Dataset as it is now implemented on opendata.swiss">
-        <pre data-include-format="text" data-include="./examples/implemented/publisher.ttl"></pre>
-      </aside>
-
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:publisher without the use of a controlled vocabulary">
-        <pre data-include-format="text" data-include="./examples/proposals/publisher.ttl"></pre>
-      </aside>
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:publisher with the use of a controlled vocabulary">
-        <pre data-include-format="text" data-include="./examples/proposals/publisher-with-vocabulary.ttl"></pre>
-      </aside>
-      <p class="issue" data-number="19"></p>
-      <p class="issue" data-number="23"></p>
-      <p class="issue" data-number="2"></p>
-
-    </section>
 
     <section id="rights-issues">
 
