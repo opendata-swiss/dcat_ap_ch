@@ -1258,11 +1258,12 @@
         The requirement level does not conform to [[DCAT-AP]] since in DCAT-AP
         the property is recommended.
         This means that a license MUST be provided if it is available.
-        (see <a class="no-sectionRef" href="#license-issues"></a>)
       </aside>
 
+      <p class="issue" data-number="109"></p>
+
       <aside class="ednote" title="Example of dct:license on dcat:Catalog">
-        See the discussion <a class="no-sectionRef" href="#license-issues"></a> for an example on the usage of dct:license
+        See the <a class="no-sectionRef" href="#distribution-license"></a> for an example on the usage of dct:license
       </aside>
     </section>
 
@@ -3714,13 +3715,31 @@
       </table>
 
       <aside class="ednote" title="Conformance of dct:license on dcat:Distribution">
-        The requirement level does not conform to [[DCAT-AP]] since the requirement level in DCAT-AP is recommended.
-        This means that a license MUST be provided if it is available.
-        (see <a class="no-sectionRef" href="#license-issues"></a>).
+        The requirement level does not conform to [[DCAT-AP]] since the requirement level in DCAT-AP is recommended:
+        <ul>
+           <li>In DCAT-AP <code>dct:license</code> is recommended and <code>dct:rights</code>
+             is optional. In order to conform to DCAT-AP, DCAT-AP CH must go the same way and
+             change the requirement level of <code>dct:license</code> to recommended. Since a license should always
+             be available, the requirement level should be set to mandatory.</li>
+           <li>To facilitate this change a license vocabulary should be set up,
+             where the current [[OGD-TERMS-OF-USE]] is integrated. See [[VOCAB-DCAT-AP-CH-LICENSES]]
+             as proposal for the vocabulary.</li>
+        </ul>
       </aside>
 
-      <aside class="ednote">
-        See the discussion <a class="no-sectionRef" href="#license-issues"></a> for an example on the usage of dct:license
+      <p class="issue" data-number="109"></p>
+
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:license
+      with an international license integrated into a Swiss license vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/license-international.ttl"></pre>
+      </aside>
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:license
+      with a custom license integrated into a Swiss license vocabulary">
+        <pre data-include-format="text" data-include="./examples/proposals/license-custom.ttl"></pre>
+      </aside>
+      <aside class="example" title="Excerpt of two license definitions in the swiss license vocabulary: an international
+      license and a custom Swiss license">
+        <pre data-include-format="text" data-include="./examples/proposals/license-definition.ttl"></pre>
       </aside>
 
     </section>
@@ -4041,42 +4060,6 @@
   <section id="dcat-ap-conformance-problems-details">
 
     <h2>Detailed Analysis</h2>
-
-    <section id="license-issues">
-
-      <h2>Make license mandatory</h2>
-
-         <ul>
-           <li><strong>Details</strong>:
-             <ul>
-               <li>In DCAT-AP <code>dct:license</code> is recommended and <code>dct:rights</code>
-             is optional. In order to conform to DCAT-AP, DCAT-AP CH must go the same way and
-             change the requirement level of <code>dct:license</code> to recommended. Since a license should always
-             be available, the requirement level should be set to mandatory.</li>
-             <li>To facilitate this change a license vocabulary should be set up,
-             where the current [[OGD-TERMS-OF-USE]] is integrated. See [[VOCAB-DCAT-AP-CH-LICENSES]]
-             as proposal for the vocabulary.</li>
-            </ul>
-           </li>
-          <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#distribution-license"></a>,
-            <a class="no-sectionRef" href="#distribution-rights"></a></li>
-        </ul>
-
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:license
-      with an international license integrated into a Swiss license vocabulary">
-        <pre data-include-format="text" data-include="./examples/proposals/license-international.ttl"></pre>
-      </aside>
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:license
-      with a custom license integrated into a Swiss license vocabulary">
-        <pre data-include-format="text" data-include="./examples/proposals/license-custom.ttl"></pre>
-      </aside>
-      <aside class="example" title="Excerpt of two license definitions in the swiss license vocabulary: an international
-      license and a custom Swiss license">
-        <pre data-include-format="text" data-include="./examples/proposals/license-definition.ttl"></pre>
-      </aside>
-      <p class="issue" data-number="109"></p>
-
-    </section>
 
     <section id="language-issues">
 
