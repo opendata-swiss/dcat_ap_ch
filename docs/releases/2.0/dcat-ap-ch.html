@@ -463,7 +463,7 @@
        <li><strong>In practice: </strong> Most classes and properties with good support on Swiss open data portals
          have been added in this specification with some Swiss adjustments. Therefore
        currently, if a property is not further specified by DCAT-AP CH, it will very likely be not be supported by Swiss data portals
-       in the way a data publisher might expect (<a class="no-sectionRef" href="#guidance-on-dcat-ap-issue"></a>).</li>
+       in the way a data publisher might expect.</li>
        <li><strong>Once DCAT-AP CH becomes fully DCAT-AP conformant: </strong>
        The theory given above should hold true.
          As noted in <a class="no-sectionRef" href="#conformance"></a> all classes and properties
@@ -472,6 +472,20 @@
          classes and properties that are mentioned only in DCAT-AP.
        </li>
        </ul>
+
+     <aside class="ednote" title="Guidance on DCAT-AP CH specification missing">
+      DCAT-AP CH is a sub-profile of DCAT-AP and in theory
+      its data providers can use all classes and properties of DCAT-AP, with the restriction that
+      for classes and properties mentioned in DCAT-AP CH the rules in DCAT-AP CH overwrite the specifications
+      in DCAT-AP.
+      <p>Currently, support for classes and properties in that gap between DCAT-AP and DCAT-AP CH is lacking,
+        and guidance on that topic is missing in this specification.
+      </p>
+      <p>This should change, since the very benefit of being a sub-profile to DCAT-AP
+        is that the quickly growing vocabulary of DCAT might be available without the need to specify
+        every class and property in DCAT-AP CH.</p>
+     </aside>
+      <p class="issue" data-number="156"></p>
   </section>
      <section id="overview-scope">
           <h2>Scope of DCAT-AP CH</h2>
@@ -4151,39 +4165,6 @@
       </li>
     </ul>
   </section>
-
-  <section id="dcat-ap-conformance-problems-details">
-
-    <h2>Detailed Analysis</h2>
-
-
-
-
-    <section id="guidance-on-dcat-ap-issue">
-      <h2>Use DCAT-AP CH's potential as sub-profile of DCAT-AP</h2>
-      <ul>
-        <li><strong>Details</strong>: DCAT-AP CH is a sub-profile of DCAT-AP and in theory
-          its data providers can use all classes and properties of DCAT-AP, with the restriction that
-          for classes and properties mentioned in DCAT-AP CH the rules in DCAT-AP CH overwrite the specifications
-          in DCAT-AP.
-          <p>Currently, support for classes and properties in that gap between DCAT-AP and DCAT-AP CH is lacking,
-            and guidance on that topic is missing in this specification.
-          </p>
-          <p>This should change, since the very benefit of being a sub-profile to DCAT-AP
-            is that the quickly growing vocabulary of DCAT might be available without the need to specify
-            every class and property in DCAT-AP CH.</p>
-        </li>
-        <li><strong>Affected definitions</strong>:
-          <a class="no-sectionRef" href="#receiver-requirements"></a>
-          <a class="no-sectionRef" href="#localization-of-dcat-ap"></a>
-          <a class="no-sectionRef" href="#classes-in-dcat-ap-ch"></a>
-      </ul>
-
-      <p class="issue" data-number="156"></p>
-
-    </section>
-  </section>
-</section>
 
   <section id="learning-and-next-steps">
     <h2>Learnings and Next Steps</h2>
