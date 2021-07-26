@@ -1308,12 +1308,14 @@
         </tbody>
       </table>
       <aside class="ednote" title="Conformance of dct:rights on dcat:Catalog">
-        The usage not does not conform to DCAT-AP, since in DCAT-AP the license "cannot be used alternatively"
-        but is the recommended was to go. (<a class="no-sectionRef" href="#rights-issues"></a>)
+        The usage not does not conform to DCAT-AP, since in DCAT-AP
+        the license "cannot be used alternatively" but <code>dct:rights</code> complements <code>dct:license</code>.
       </aside>
 
+      <p class="issue" data-number="110"></p>
+
       <aside class="ednote" title="Example of dct:rights on dcat:Catalog">
-        See the discussion <a class="no-sectionRef" href="#rights-issues"></a> for an example on the usage of dct:rights
+        See <a class="no-sectionRef" href="#distribution-rights"></a> for an example on the usage of dct:rights.
       </aside>
     </section>
 
@@ -3169,7 +3171,7 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Information about rights held in and over the distribution.</td>
+          <td>This property refers to a statement that specifies rights associated with the Distribution.</td>
         </tr>
         <tr>
           <th>Usage</th>
@@ -3224,13 +3226,24 @@
 
       <aside class="ednote" title="Conformance of dct:rights on dcat:Distribution">
         This specification does not conform to [[DCAT-AP]].
-        <p>The usage not does not conform to DCAT-AP, since in DCAT-AP the license "cannot be used alternatively"
-          but is the recommended was to go. (<a class="no-sectionRef" href="#rights-issues"></a>)
-        </p>
+          <p>The definition of <code>dct:rights</code> is unclear and
+             the usage of that property on opendata.swiss shows how the property seems to have been
+             misunderstood.</p>
+          <p>As [[ODI-VOCAB]] explains: a Rights Statement is a resource that describes
+             the relationship between a Dataset and its Licence(s) and adds additional contextual
+             information that applies to the re-use of a dataset.</p>
       </aside>
 
-     <aside class="ednote">
-        See the discussion <a class="no-sectionRef" href="#rights-issues"></a> for an example on the usage of dct:rights
+      <p class="issue" data-number="110"></p>
+
+      <aside class="example" title="Example of a DCAT-AP non-conformant usage of dct:rights as it is currently
+      implemented on opendata.swiss: as the dct:rights is only given as rdf:Literal without reference
+      to a license, the usage conditions cannot be understood on the European level">
+        <pre data-include-format="text" data-include="./examples/implemented/rights.ttl"></pre>
+      </aside>
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:rights where a custom attribution text
+      is added to a general license">
+        <pre data-include-format="text" data-include="./examples/proposals/rights.ttl"></pre>
       </aside>
 
     </section>
@@ -4029,39 +4042,6 @@
 
     <h2>Detailed Analysis</h2>
 
-    <section id="rights-issues">
-
-      <h2>Rights cannot replace a license</h2>
-
-       <ul>
-           <li><strong>Details</strong>: The definition of <code>dct:rights</code> is unclear and
-             the usage of that property on opendata.swiss shows how the property seems to have been
-             misunderstood.
-             <p>[[ODI-VOCAB]] explains "A Rights Statement is a resource that describes
-             the relationship between a Dataset and its Licence(s). It is also used to describe additional contextual
-               information that applies to the re-use of a dataset."</p>
-             <p>This means that it is not meant to replace
-             <code>dct:license</code> but may add additional information if a very general
-             international license is used for the data, that does not fully capture the individual usage conditions.</p>
-           </li>
-          <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#distribution-rights"></a>,
-            <a class="no-sectionRef" href="#distribution-license"></a></li>
-        </ul>
-      <aside class="example" title="Example of a DCAT-AP non-conformant usage of dct:rights as it is currently
-      implemented on opendata.swiss: as the dct:rights is only given as rdf:Literal without reference
-      to a license, the usage conditions cannot be understood on the European level">
-        <pre data-include-format="text" data-include="./examples/implemented/rights.ttl"></pre>
-      </aside>
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:rights where a custom attribution text
-      is added to a general license">
-        <pre data-include-format="text" data-include="./examples/proposals/rights.ttl"></pre>
-      </aside>
-
-      <p class="issue" data-number="110"></p>
-
-
-    </section>
-
     <section id="license-issues">
 
       <h2>Make license mandatory</h2>
@@ -4476,7 +4456,7 @@
           Both DCAT-AP CH and DCAT-AP currently lack examples.
             <a class="no-sectionRef" href="#issue-summary"></a> lists many issues where
             properties have been misunderstood. Examples are <a class="no-sectionRef" href="#dataset-landing-page"></a> and
-            <a class="no-sectionRef" href="#rights-issues"></a>.</li>
+            <a class="no-sectionRef" href="#distribution-rights"></a>.</li>
        <li><strong>Don't mix in application logic:</strong>
          In DCAT-AP CH some properties contain application logic. See <a class="no-sectionRef" href="#identifier-issues"></a>
        and <a class="no-sectionRef" href="#dataset-see-also"></a>. This hurts interoperability, since
