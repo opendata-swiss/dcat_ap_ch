@@ -1969,8 +1969,14 @@
         The usage note of the property does not conform to [[VOCAB-DCAT]] as it is
         an application-oriented formula, which cannot be understood outside
         the context of opendata.swiss: A vocabulary for the <code>ID_Datapublisher</code>
-        is missing in this definition (<a class="no-sectionRef" href="#identifier-issues"></a>).
+        is missing in this definition.
+        <p>The usage note goes beyond a metadata description: it prepares
+          the use of another custom Swiss property
+          for linking datasets together (<a class="no-sectionRef" href="#dataset-see-also"></a>).</p>
       </aside>
+
+      <p class="issue" data-number="50"></p>
+
       <aside class="example" id="ex-dataset-identifier" title="Usage of dct:identifier for dcat:Dataset
        as it is currently implemented on opendata.swiss">
         <pre data-include-format="text" data-include="./examples/dataset/identifier.ttl"></pre>
@@ -4130,29 +4136,6 @@
 
     <h2>Detailed Analysis</h2>
 
-    <section id="identifier-issues">
-
-      <h2>Rethink dataset identifiers</h2>
-
-      <ul>
-        <li><strong>Details</strong>: <code>dct:identifier</code> on <code>dcat:Dataset</code>
-          The usage note of the dataset identifier does not conform to [[VOCAB-DCAT]] as it is not a metadata
-          description, but an application-oriented formula. Without internal knowledge of opendata.swiss, this
-          property definition cannot be understood.
-          <p>The usage note goes beyond a metadata description: it prepares
-            the use of another custom Swiss property <a class="no-sectionRef" href="#dataset-see-also"></a>
-            for linking datasets together (
-            <a class="no-sectionRef" href="#dataset-see-also"></a>).</p>
-        </li>
-        <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#dataset-identifier"></a>,
-          <a class="no-sectionRef" href="#dataset-see-also"></a>
-        </li>
-      </ul>
-
-      <p class="issue" data-number="50"></p>
-
-    </section>
-
     <section id="dataset-concept-issue">
 
       <h2>Distributions should not be in a Series</h2>
@@ -4257,7 +4240,7 @@
             properties have been misunderstood. Examples are <a class="no-sectionRef" href="#dataset-landing-page"></a> and
             <a class="no-sectionRef" href="#distribution-rights"></a>.</li>
        <li><strong>Don't mix in application logic:</strong>
-         In DCAT-AP CH some properties contain application logic. See <a class="no-sectionRef" href="#identifier-issues"></a>
+         In DCAT-AP CH some properties contain application logic. See <a class="no-sectionRef" href="#dataset-identifier"></a>
        and <a class="no-sectionRef" href="#dataset-see-also"></a>. This hurts interoperability, since
          the application logic is not known on the European or international level. It also stands in the
        way of the reuse of DCAT-AP CH for other applications.</li>
@@ -4268,7 +4251,7 @@
          Relations between datasets should be expressed with DCAT vocabulary by connecting datasets by their URIs,
            as described in <a data-cite="VOCAB-DCAT#qualified-relationship" data-no-xref="">
              DCAT:Relationships between datasets and other resources</a>, instead of using application-bound identifiers for that purpose
-           (<a class="no-sectionRef" href="#identifier-issues"></a>).
+           (<a class="no-sectionRef" href="#dataset-identifier"></a>).
          </li>
         <li><strong>The relationship to DCAT-AP needs to be explicitly defined in the specification</strong>: Providers of data and portal
           managers need guidance on how to understand what it means that a class or property is specified in DCAT-AP
