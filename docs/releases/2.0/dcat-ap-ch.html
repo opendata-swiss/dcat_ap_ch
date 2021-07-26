@@ -1152,11 +1152,13 @@
         </tbody>
       </table>
       <aside class="ednote" title="Conformance of dcat:themeTaxonomy on dcat:Catalog">
-        The requirement level does not conform to [[DCAT-AP]]
-        since in DCAT-AP the requirement level of this property is recommended. That
-        means theme taxonomies that are used in the catalog SHOULD be listed if they are available.
-        (<a class="no-sectionRef" href="#theme-taxonomy-issue"></a>)
+        The requirement level does not conform to [[DCAT-AP]]:
+        On the catalog class the requirement level of
+        <code>dcat:themeTaxonomy</code> is noted as optional.
+        This does not conform to DCAT-AP where the property is recommended.
       </aside>
+
+      <p class="issue" data-number="8"></p>
 
       <aside class="example" title="Usage of dcat:themeTaxonomy for dcat:Catalog: the example lists
       the Swiss theme taxonomy, the European theme taxonomy and the theme taxonomy used by Swiss geodata.">
@@ -2573,16 +2575,16 @@
       </table>
       <aside class="ednote" title="Conformance of dct:coverage on dcat:Dataset">
         This is a custom DCAT-AP CH property that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]].
-        <p>It does not conform to DCAT, since it is too close
-          to the DCAT properties
-          <a class="no-sectionRef" href="#dataset-spatial-coverage"></a> and
-          <a class="no-sectionRef" href="#dataset-temporal-coverage"></a>. Its usage should be dropped
-          in favour of those DCAT properties (<a class="no-sectionRef" href="#coverage-issues"></a>).
-        </p>
+        <p>This property is non-conformant to DCAT because
+        it goes against the principle that the definition of custom vocabulary is only allowed when DCAT
+        does not offer similar vocabulary. DCAT already offers <code>dct:spatial</code> and
+        <code>dct:temporal</code> (<a class="no-sectionRef" href="#dataset-spatial-coverage"></a>,
+        <a class="no-sectionRef" href="#dataset-temporal-coverage"></a>). These SHOULD be used instead.</p>
       </aside>
+
       <aside class="ednote" title="Example for dct:coverage on dcat:Dataset">
-      The Example for this property is skipped in order to not encourage its usage.
-    </aside>
+        The Example for this property is skipped in order to not encourage its usage.
+      </aside>
 
     </section>
 
@@ -3957,15 +3959,16 @@
 
       <aside class="ednote" title="Conformance of dct:coverage on dcat:Distribution">
         This is a custom DCAT-AP CH property that does not exist in [[VOCAB-DCAT]] or [[DCAT-AP]].
-        <p>It does not conform to DCAT, since does not conform to the concept of a distribution in DCAT that
-          distributions of a dataset should only differ in their physical properties, but not
-          in regards of their coverage (<a class="no-sectionRef" href="#dataset-concept-issue"></a>,
-          <a class="no-sectionRef" href="#coverage-issues"></a>).</p>
+        <p>It does not conform to DCAT, since does not conform to the concept of a distribution in DCAT.
+          In DCAT, all distributions of a dataset should represent the same content: the content of the dataset.
+          They should only differ in their physical properties such as language, format and resolution.
+          Therefore, coverage would only apply on the dataset level, not to the distributions.</p>
       </aside>
 
-      <aside class="ednote">
-        See the discussion <a class="no-sectionRef" href="#coverage-issues"></a> for
-        an example on the usage of dct:coverage
+      <p class="issue" data-number="79"></p>
+
+      <aside class="example" title="Usage of dct:coverage for dcat:Distribution that shows incorrect interpretation of DCAT">
+        <pre data-include-format="text" data-include="./examples/distribution/coverage.ttl"></pre>
       </aside>
 
     </section>
@@ -4082,9 +4085,9 @@
       <li><strong>Conformance to DCAT:</strong> All classes and properties MUST be used in a way that they were meant for by the DCAT vocabulary:
       For example: DCAT vocabulary states that the distributions of a dataset should only differ in resolution,
       language and format but not in the content that they cover. Therefore an attribute such as
-        <code>dct:coverage</code> on <code>dcat:Distribution</code> hurts that principle and is discussed
-        in this section as being not conformant to DCAT. See
-        <a class="no-sectionRef" href="#coverage-issues"></a> for the details.
+        <code>dct:coverage</code> on <code>dcat:Distribution</code> hurts that principle and
+        is therefore not conformant to DCAT. See
+        <a class="no-sectionRef" href="#distribution-coverage"></a> for the details.
       </li>
       <li><strong>Conformance to DCAT:</strong>
         DCAT-AP CH MAY introduce Swiss specific properties and vocabulary, such as the cantons of Switzerland, that
@@ -4110,55 +4113,6 @@
   <section id="dcat-ap-conformance-problems-details">
 
     <h2>Detailed Analysis</h2>
-
-    <section id="theme-taxonomy-issue">
-
-      <h2>Raise requirement level for theme taxonomy</h2>
-
-      <ul>
-        <li><strong>Details</strong>: On the catalog class the requirement level of
-          <code>dcat:themeTaxonomy</code> is noted as optional.
-            This does not conform to DCAT-AP where the property is recommended for <code>dcat:Catalog</code>.
-        <li><strong>Affected definitions</strong>:
-        <a class="no-sectionRef" href="#catalog-theme-taxonomy"></a>
-      </ul>
-
-      <aside class="example" title="Example declaring dcat:themeTaxonomy on a dcat:catalog">
-        <pre data-include-format="text" data-include="./examples/proposals/theme-taxonomy.ttl"></pre>
-      </aside>
-
-      <p class="issue" data-number="8"></p>
-
-    </section>
-
-    <section id="coverage-issues">
-
-      <h2>Drop support for dct:coverage</h2>
-
-      <ul>
-        <li><strong>Details</strong>: <code>dct:coverage</code> is a custom Swiss property
-          that is included in <code>dcat:Dataset</code> and on <code>dcat:Distribution</code>.
-          <p>Using <code>dct:coverage</code> for <code>dcat:Dataset</code> is non-conformant to DCAT because
-            it goes against the principle that the definition of custom vocabulary is only allowed when DCAT
-            does not offer similar vocabulary. DCAT already offers <code>dct:spatial</code> and
-            <code>dct:temporal</code> (<a class="no-sectionRef" href="#dataset-spatial-coverage"></a>,
-            <a class="no-sectionRef" href="#dataset-temporal-coverage"></a>). These SHOULD be used instead.</p>
-          <p>When used for <code>dcat:Distribution</code>, it reflects the same misunderstanding
-            of the DCAT class structure discussed in <a class="no-sectionRef" href="#dataset-concept-issue"></a>.
-            In DCAT, all distributions of a dataset should represent the same content: the content of the dataset.
-            Therefore, coverage would only apply on the dataset level, not to distributions.</p>
-        </li>
-        <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#dataset-coverage"></a>,
-          <a class="no-sectionRef" href="#distribution-coverage"></a></li>
-      </ul>
-
-      <aside class="example" title="Usage of dct:coverage for dcat:Distribution that shows incorrect interpretation of DCAT">
-        <pre data-include-format="text" data-include="./examples/distribution/coverage.ttl"></pre>
-      </aside>
-
-      <p class="issue" data-number="79"></p>
-
-    </section>
 
     <section id="issued-modified-implementation">
 
