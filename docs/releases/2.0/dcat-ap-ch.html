@@ -2620,11 +2620,17 @@
       <aside class="ednote" title="Conformance of dct:spatial on dcat:Dataset">
         The range does not conform to [[DCAT-AP]]: The use of [[VOCAB-EU-FREQUENCY]] is mandatory
         in DCAT-AP for this property. But DCAT-AP CH specifies the use of [[VOCAB-DCT-FREQUENCY]].
-        See <a class="no-sectionRef" href="#frequency-issues"></a>.
       </aside>
-      <aside class="example" id="ex-dataset-frequency" title="Usage of dct:accrualPeriodicity
-                            for dcat:Dataset">
+
+      <p class="issue" data-number="52"></p>
+
+      <aside class="example" id="ex-dataset-frequency" title="Usage of dct:accrualPeriodicity on dcat:Dataset
+         that conforms to this specification">
         <pre data-include-format="text" data-include="./examples/dataset/frequency.ttl"></pre>
+      </aside>
+
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:accrualPeriodicity">
+        <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
       </aside>
 
     </section>
@@ -4063,7 +4069,7 @@
         DCAT-AP CH can restrict more than DCAT-AP regarding mandatory fields and mandatory vocabulary, but it is not allowed
         to restrict less. For example currently DCAT-AP CH uses DCAT vocabulary for many properties, such as <code>dct:language</code>,
         <code>dct:accrualPeriodicity</code>. This usage conforms to DCAT, but not DCAT-AP. Therefore these vocabulary usages are also
-        considered to be a conformance issue. See <a class="no-sectionRef" href="#frequency-issues"></a> and
+        considered to be a conformance issue. See <a class="no-sectionRef" href="#dataset-update-frequency"></a> and
         <a class="no-sectionRef" href="#dataset-language"></a>.
       </li>
     </ul>
@@ -4072,26 +4078,6 @@
   <section id="dcat-ap-conformance-problems-details">
 
     <h2>Detailed Analysis</h2>
-
-    <section id="frequency-issues">
-
-      <h2>Frequency: use EU vocabulary</h2>
-
-      <ul>
-        <li><strong>Details</strong>: DCAT-AP makes the use of its controlled vocabulary
-           [[VOCAB-EU-FREQUENCY]] mandatory for <code>dcat:accrualPeriodicity</code>, but DCAT-AP CH
-          specifies the use of
-          [[VOCAB-DCT-FREQUENCY]].</li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-update-frequency"></a>
-      </ul>
-
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:accrualPeriodicity">
-        <pre data-include-format="text" data-include="./examples/proposals/frequency.ttl"></pre>
-      </aside>
-
-      <p class="issue" data-number="52"></p>
-
-    </section>
 
     <section id="format-issues">
 
