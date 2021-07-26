@@ -2031,8 +2031,14 @@
         Conforms to [[DCAT-AP]].
         <p>The implementation on opendata.swiss does not conform this specification
           but does conform the DCAT-AP specification of this property.
-          See <a class="no-sectionRef" href="#issued-modified-implementation"></a>.
         <p>
+      </aside>
+
+      <p class="issue" data-number="48"></p>
+
+      <aside class="example"
+             title="Example for the current implementation of dct:issued on opendata.swiss that does conform to DCAT-AP but not to DCAT-AP CH">
+        <pre data-include-format="text" data-include="./examples/proposals/issued.ttl"></pre>
       </aside>
 
       <aside class="example" title="Usage of dct:issued for dcat:Dataset">
@@ -2098,9 +2104,10 @@
         Conforms to [[DCAT-AP]].
         <p>The implementation on opendata.swiss does not conform this specification
           but does conform the DCAT-AP specification of this property.
-          See <a class="no-sectionRef" href="#issued-modified-implementation"></a>.
         <p>
       </aside>
+
+      <p class="issue" data-number="48"></p>
       <aside class="example" title="Usage of dct:modified for dcat:Dataset">
         <pre data-include-format="text" data-include="./examples/dataset/modified.ttl"></pre>
       </aside>
@@ -3090,13 +3097,15 @@
       <aside class="ednote" title="Conformance of dct:issued on dcat:Distribution">
         Conforms to [[DCAT-AP]].
         <p>The implementation on opendata.swiss does not conform this specification
-          but does conform the DCAT-AP specification of this property.
-          See <a class="no-sectionRef" href="#issued-modified-implementation"></a>.
+          but does conform the DCAT-AP specification of this property.</a></p>
         <p>
       </aside>
+
+      <p class="issue" data-number="48"></p>
       <aside class="example" title="Usage of dct:issued for dcat:Distribution as specified by this specification">
         <pre data-include-format="text" data-include="./examples/distribution/issued.ttl"></pre>
       </aside>
+
     </section>
 
     <section id="distribution-access-url">
@@ -3709,10 +3718,11 @@
       <aside class="ednote" title="Conformance of dct:modified on dcat:Distribution">
         Conforms to [[DCAT-AP]].
         <p>The implementation on opendata.swiss does not conform this specification
-          but does conform the DCAT-AP specification of this property.
-          See <a class="no-sectionRef" href="#issued-modified-implementation"></a>.
+          but does conform the DCAT-AP specification of this property. (See
         <p>
       </aside>
+
+      <p class="issue" data-number="48"></p>
 
       <aside class="example" title="Usage of dct:modified for dcat:Distribution as specified in this definition">
         <pre data-include-format="text" data-include="./examples/distribution/modified.ttl"></pre>
@@ -4113,32 +4123,6 @@
   <section id="dcat-ap-conformance-problems-details">
 
     <h2>Detailed Analysis</h2>
-
-    <section id="issued-modified-implementation">
-
-      <h2>Allow xsd:datetime for dates</h2>
-
-      <ul>
-        <li><strong>Details</strong>: <code>dct:issued</code> and <code>dct:modified</code> are demanded
-          as <code>rdfs:Literal</code> typed as <code>xsd:date</code> in DCAT-AP CH, but
-          implemented as <code>rdfs:Literal</code> typed as <code>xsd:datetime</code> on opendata.swiss. This implementation
-          does not conform to DCAT-AP CH, but it does conform to DCAT-AP. Therefore it would be an option to adapt the
-          definition of those properties to the DCAT-AP specification in order to solve this non-conformance
-          of opendata.swiss to DCAT-AP CH.</li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#catalog-issued"></a>,
-          <a class="no-sectionRef" href="#catalog-issued"></a>,
-        <a class="no-sectionRef" href="#dataset-release-date"></a>,
-          <a class="no-sectionRef" href="#dataset-modification-date"></a>
-        <a class="no-sectionRef" href="#distribution-release-date"></a>,
-          <a class="no-sectionRef" href="#distribution-modification-date"></a>
-      </ul>
-      <aside class="example"
-             title="Example for the current implementation of dct:issued on opendata.swiss that does conform to DCAT-AP but not to DCAT-AP CH">
-        <pre data-include-format="text" data-include="./examples/proposals/issued.ttl"></pre>
-      </aside>
-      <p class="issue" data-number="48"></p>
-
-    </section>
 
     <section id="spatial-issues">
 
