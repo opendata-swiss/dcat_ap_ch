@@ -1367,12 +1367,13 @@
       <aside class="ednote" title="Conformance of dct:language on dcat:Catalog">
         The requirement level does not conform to [[DCAT-AP]] since in DCAT-AP this property is recommended
         for the catalog.
-        <p>The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.
-        The language should be given as a URI (<a class="no-sectionRef" href="#language-issues"></a>).</p>
+        <p>The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.</p>
       </aside>
+      <p class="issue" data-number="26"></p>
+      <p class="issue" data-number="51"></p>
 
       <aside class="ednote" title="Example of dct:language on dcat:Catalog">
-        See the discussion <a class="no-sectionRef" href="#language-issues"></a> for an example on the usage of dct:language
+        See the <a class="no-sectionRef" href="#distribution-language"></a> for an example on the usage of dct:language
       </aside>
 
     </section>
@@ -2335,11 +2336,12 @@
 
       <aside class="ednote" title="Conformance of dct:language on dcat:Dataset">
         The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used. The language should be given as a URI.
-        See <a class="no-sectionRef" href="#language-issues"></a>.
       </aside>
 
+      <p class="issue" data-number="26"></p>
+
       <aside class="ednote" title="Example for dct:language on dcat:Dataset">
-        See the discussion <a class="no-sectionRef" href="#language-issues"></a> for an example on the usage of dct:language
+        See the discussion <a class="no-sectionRef" href="#distribution-language"></a> for an example on the usage of dct:language
       </aside>
 
     </section>
@@ -3598,12 +3600,22 @@
 
       <aside class="ednote" title="Conformance of dct:language on dcat:Distribution">
         The range does not conform to [[DCAT-AP]]: [[VOCAB-EU-LANG]] MUST be used.
-        The language should also be given as a URI. Furthermore, in DCAT this property is not optional
-        but recommended for the catalog. (<a class="no-sectionRef" href="#language-issues"></a>)
+        DCAT-AP makes the use of its controlled vocabulary
+        [[VOCAB-EU-LANG]] mandatory for <code>dct:language</code>, but DCAT-AP CH specifies the use of [[ISO 639-1]]
+        two letter code provided as an
+        <code>rdfs:literal</code>.
       </aside>
 
-      <aside class="ednote">
-        See the discussion <a class="no-sectionRef" href="#language-issues"></a> for an example on the usage of dct:language
+      <p class="issue" data-number="26"></p>
+
+      <aside class="example" id="ex-distribution-language"
+             title="Example showing the usage of dct:language as it is specified by DCAT-AP CH
+             and implemented on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/implemented/language.ttl"></pre>
+      </aside>
+
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:language">
+        <pre data-include-format="text" data-include="./examples/proposals/language.ttl"></pre>
       </aside>
 
     </section>
@@ -4052,7 +4064,7 @@
         to restrict less. For example currently DCAT-AP CH uses DCAT vocabulary for many properties, such as <code>dct:language</code>,
         <code>dct:accrualPeriodicity</code>. This usage conforms to DCAT, but not DCAT-AP. Therefore these vocabulary usages are also
         considered to be a conformance issue. See <a class="no-sectionRef" href="#frequency-issues"></a> and
-        <a class="no-sectionRef" href="#language-issues"></a>.
+        <a class="no-sectionRef" href="#dataset-language"></a>.
       </li>
     </ul>
   </section>
@@ -4060,38 +4072,6 @@
   <section id="dcat-ap-conformance-problems-details">
 
     <h2>Detailed Analysis</h2>
-
-    <section id="language-issues">
-
-      <h2>Language: use EU vocabulary</h2>
-
-        <ul>
-          <li><strong>Details</strong>: <ul>
-            <li>DCAT-AP makes the use of its controlled vocabulary
-            [[VOCAB-EU-LANG]] mandatory for <code>dct:language</code>, but DCAT-AP CH specifies the use of [[ISO 639-1]]
-            two letter code provided as an
-            <code>rdfs:literal</code>.</li>
-            <li>On the catalog class the requirement level is noted as "optional". This does not
-            conform to DCAT-AP where the property is recommended for <code>dcat:Catalog</code>.</li>
-          </ul>
-          <li><strong>Affected definitions</strong>: <a class="no-sectionRef" href="#catalog-language"></a>,
-            <a class="no-sectionRef" href="#dataset-language"></a>,
-            <a class="no-sectionRef" href="#distribution-language"></a></li>
-        </ul>
-
-      <aside class="example" id="ex-distribution-language"
-             title="Example showing the usage of dct:language as it is specified by DCAT-AP CH
-             and implemented on opendata.swiss">
-        <pre data-include-format="text" data-include="./examples/implemented/language.ttl"></pre>
-      </aside>
-
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dct:language">
-        <pre data-include-format="text" data-include="./examples/proposals/language.ttl"></pre>
-      </aside>
-      <p class="issue" data-number="26"></p>
-      <p class="issue" data-number="51"></p>
-
-    </section>
 
     <section id="frequency-issues">
 
