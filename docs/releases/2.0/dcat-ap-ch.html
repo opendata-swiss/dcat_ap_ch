@@ -2467,17 +2467,23 @@
 
       <aside class="ednote" title="Conformance of dct:spatial on dcat:Dataset">
         The requirement level of this property does conform to [[DCAT-AP]].
-        <p>The usage note seems outdated since it is possible to use this property
-          for a polygon.
-        </p>
-        <p>In DCAT-AP a controlled vocabulary must be used when providing geographical locations: the definition
-          here on the other hand does not specify sounds as if strings can be entered for the geographical names.
-          See <a class="no-sectionRef" href="#spatial-issues"></a>.
-        </p>
+        The usage note for <code>dct:spatial</code> does not conform to DCAT-AP:
+          <p>DCAT-AP demands the use of a controlled vocabulary for locations: [[VOCAB-EU-CONTINENT]],
+            [[VOCAB-EU-COUNTRY]], [[VOCAB-EU-PLACE]] or, if none of those contain the location, [[GEONAMES]].</p>
+          <p>The remark about the polygon in the usage note is outdated.</p>
+          <p>Examples for polygons, points and bounding boxes would be helpful, similar to those given in DCAT:
+            <a data-cite="VOCAB-DCAT#spatial-properties">Spatial properties</a>
       </aside>
 
-      <aside class="ednote">
-        See the discussion <a class="no-sectionRef" href="#spatial-issues"></a> for an example on the usage of dct:spatial
+      <p class="issue" data-number="61"></p>
+
+      <aside class="example" id="ex-dataset-spatial-implemented" title="Example of dct:spatial with a geographical name as it is implemented on opendata.swiss">
+        <pre data-include-format="text" data-include="./examples/implemented/spatial.ttl"></pre>
+      </aside>
+
+      <aside class="example" id="ex-dataset-spatial-proposal"
+             title="Example of dct:spatial with a geographical name as it would conform to DCAT-AP">
+        <pre data-include-format="text" data-include="./examples/proposals/spatial.ttl"></pre>
       </aside>
 
     </section>
@@ -4123,36 +4129,6 @@
   <section id="dcat-ap-conformance-problems-details">
 
     <h2>Detailed Analysis</h2>
-
-    <section id="spatial-issues">
-
-      <h2>Improve usage note for spatial coverage</h2>
-
-      <ul>
-        <li><strong>Details</strong>: The usage note for <code>dct:spatial</code> does not conform to DCAT-AP:
-          <p>DCAT-AP demands the use of a controlled vocabulary for locations: [[VOCAB-EU-CONTINENT]],
-            [[VOCAB-EU-COUNTRY]], [[VOCAB-EU-PLACE]] or, if none of those contain the location, [[GEONAMES]].</p>
-          <p>The remark about the polygon in the usage note is outdated.</p>
-          <p>Examples for polygons, points and bounding boxes would be helpful, similar to those given in DCAT:
-            <a data-cite="VOCAB-DCAT#spatial-properties">Spatial properties</a>
-          </p>
-        </li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-spatial-coverage"></a>
-      </ul>
-
-      <aside class="example" id="ex-dataset-spatial-implemented" title="Example of dct:spatial with a geographical name as it is implemented on opendata.swiss">
-        <pre data-include-format="text" data-include="./examples/implemented/spatial.ttl"></pre>
-      </aside>
-
-      <aside class="example" id="ex-dataset-spatial-proposal"
-             title="Example of dct:spatial with a geographical name as it would conform to DCAT-AP">
-        <pre data-include-format="text" data-include="./examples/proposals/spatial.ttl"></pre>
-      </aside>
-
-
-      <p class="issue" data-number="61"></p>
-
-    </section>
 
     <section id="identifier-issues">
 
