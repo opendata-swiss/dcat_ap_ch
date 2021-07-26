@@ -3487,17 +3487,24 @@
 
       <aside class="ednote" title="Conformance of dcat:mediaType on dcat:Distribution">
         The property definition conforms to [[DCAT-AP]].
-        <p>The current usage on opendata.swiss does not conform as it does not use [[IANA-MEDIA-TYPES]]
-          as a controlled vocabulary.
-          See <a class="no-sectionRef" href="#media-type-issues"></a>.
+        <p>DCAT-AP CH and DCAT-AP
+          make the usage of the controlled vocabulary [[IANA-MEDIA-TYPES]] mandatory for <code>dct:mediaTypes</code>.
+          But in the implementation on opendata.swiss, <code>dct:mediaTypes</code> is implemented as
+          <code>rdfs:Literal</code>. This does not conform.
         </p>
       </aside>
 
-      <aside class="ednote">
-        See the discussion <a class="no-sectionRef" href="#media-type-issues"></a> for an example on the usage
-        of dcat:mediaType
+      <p class="issue" data-number="111"></p>
+
+      <aside class="example" title="Example of the current implementation of dcat:mediaType on opendata.swiss: it is
+      implemented as an rdfs:literal">
+        <pre data-include-format="text" data-include="./examples/implemented/media-type.ttl"></pre>
       </aside>
 
+      <aside class="example" title="Example of a DCAT-AP conformant usage of dcat:mediaType">
+        <pre data-include-format="text" data-include="./examples/proposals/media-type.ttl"></pre>
+      </aside>
+      
     </section>
 
     <section id="distribution-format">
@@ -4095,33 +4102,6 @@
   <section id="dcat-ap-conformance-problems-details">
 
     <h2>Detailed Analysis</h2>
-
-
-
-    <section id="media-type-issues">
-
-      <h2>Media type must use controlled vocabulary</h2>
-      <ul>
-        <li><strong>Details</strong>: DCAT-AP CH conforms to DCAT-AP as both
-          make the controlled vocabulary [[IANA-MEDIA-TYPES]] mandatory for <code>dct:mediaTypes</code>.
-          <p>In the implementation on opendata.swiss, <code>dct:mediaTypes</code> is implemented as
-          <code>rdfs:Literal</code>. This does not conform.
-        </li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#distribution-media-type"></a>
-      </ul>
-
-      <aside class="example" title="Example of the current implementation of dcat:mediaType on opendata.swiss: it is
-      implemented as an rdfs:literal">
-        <pre data-include-format="text" data-include="./examples/implemented/media-type.ttl"></pre>
-      </aside>
-
-      <aside class="example" title="Example of a DCAT-AP conformant usage of dcat:mediaType">
-        <pre data-include-format="text" data-include="./examples/proposals/media-type.ttl"></pre>
-      </aside>
-
-      <p class="issue" data-number="111"></p>
-
-    </section>
 
     <section id="theme-issues">
 
