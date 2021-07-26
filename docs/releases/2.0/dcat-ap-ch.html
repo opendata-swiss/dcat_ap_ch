@@ -2152,13 +2152,21 @@
         <p>DCAT-AP makes the use of [[VOCAB-EU-THEME]] mandatory.</p>
         <p>Additionally a custom
         <code>skos:ConceptScheme</code> MAY be used, but it SHOULD be specified at
-        <a class="no-sectionRef" href="#catalog-theme-taxonomy"></a>
-        (<a class="no-sectionRef" href="#theme-issues"></a>).
+          <a class="no-sectionRef" href="#catalog-theme-taxonomy"></a>.</p>
+        <p>A controlled vocabulary for Swiss categories has been proposed: [[VOCAB-DCAT-AP-CH-THEMES]]
+        </p>
       </aside>
 
-      <aside class="ednote" title="Example of dcat:theme on dcat:Dataset">
-        See the discussion <a class="no-sectionRef" href="#theme-issues"></a> for an
-        example on the usage of dcat:theme
+      <p class="issue" data-number="31"></p>
+
+      <aside class="example" title="Example of dcat:theme for dcat:Dataset as it is currently implemented on opendata.swiss:
+        the theme URIs are not part of a controlled vocabulary.">
+        <pre data-include-format="text" data-include="./examples/implemented/theme.ttl"></pre>
+      </aside>
+
+      <aside class="example" title="Example for a DCAT-AP conformant use of dcat:theme: both EU and Swiss categories
+      come from the corresponding controlled vocabularies.">
+        <pre data-include-format="text" data-include="./examples/proposals/theme.ttl"></pre>
       </aside>
 
     </section>
@@ -3504,7 +3512,7 @@
       <aside class="example" title="Example of a DCAT-AP conformant usage of dcat:mediaType">
         <pre data-include-format="text" data-include="./examples/proposals/media-type.ttl"></pre>
       </aside>
-      
+
     </section>
 
     <section id="distribution-format">
@@ -4102,36 +4110,6 @@
   <section id="dcat-ap-conformance-problems-details">
 
     <h2>Detailed Analysis</h2>
-
-    <section id="theme-issues">
-
-      <h2>Add usage of EU themes and add Swiss categories as a controlled vocabulary</h2>
-
-      <ul>
-        <li><strong>Details</strong>: <code>dcat:theme</code> is expected
-          as a controlled vocabulary. Additionally to the Swiss categories, the EU categories
-          [[VOCAB-EU-THEME]] MUST
-          be supported.
-          <p>A controlled vocabulary for Swiss categories has been proposed: [[VOCAB-DCAT-AP-CH-THEMES]]
-          </p>
-        </li>
-        <li><strong>Affected definitions</strong>:  <a class="no-sectionRef" href="#dataset-theme"></a>,
-        <a class="no-sectionRef" href="#catalog-theme-taxonomy"></a>
-      </ul>
-
-      <aside class="example" title="Example of dcat:theme for dcat:Dataset as it is currently implemented on opendata.swiss:
-        the theme URIs are not part of a controlled vocabulary.">
-        <pre data-include-format="text" data-include="./examples/implemented/theme.ttl"></pre>
-      </aside>
-
-      <aside class="example" title="Example for a DCAT-AP conformant use of dcat:theme: both EU and Swiss categories
-      come from the corresponding controlled vocabularies.">
-        <pre data-include-format="text" data-include="./examples/proposals/theme.ttl"></pre>
-      </aside>
-
-      <p class="issue" data-number="31"></p>
-
-    </section>
 
     <section id="theme-taxonomy-issue">
 
