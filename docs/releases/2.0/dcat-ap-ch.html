@@ -3560,7 +3560,12 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Size of a distribution in bytes; if the precise size is not known, an approximate size can be indicated.
+          <td>The property media type is only necessary if the physical representation is a file, that is
+            referred to by a <a class="no-sectionRef" href="#distribution-download-url"></a>.
+            If the physical representation is a file but if it is only accessible by a
+            <a class="no-sectionRef" href="#dataset-landing-page"></a> and if therefore the
+            download URL is not set, the property media type can be skipped.
+            <p>The value of the media type MUST be a IANA MIME type, see [[IANA-MEDIA-TYPES]].</p>
           </td>
         </tr>
         <tr>
