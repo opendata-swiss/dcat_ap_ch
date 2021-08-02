@@ -4133,8 +4133,8 @@
 
     <p>DCAT-AP CH and DCAT-AP are both application profiles for DCAT.<p>
     <p>The [[DCAT-PROFILE-GUIDANCE]] states that application profiles may form hierarchies.<p>
-    <p>For interoperability reasons, DCAT-AP CH aims to be a sub-profile of DCAT-AP. That way
-    the data using DCAT-AP CH can be harvested by the European data portal without losing
+    <p>For interoperability reasons, DCAT-AP CH should aim to be a sub-profile of DCAT-AP. That way
+    the data using DCAT-AP CH can be harvested by data.europe.eu without losing
     important information on its metadata.</p>
 
     <p>The following diagram captures the relationship between DCAT, DCAT-AP and DCAT-AP CH:
@@ -4164,15 +4164,16 @@
     <p>DCAT-AP CH must conform to both DCAT and DCAT-AP.
       This conformance of DCAT-AP CH means in detail:</p>
     <ul>
-      <li><strong>Conformance to DCAT:</strong> All classes and properties MUST be used in a way that they were meant for by the DCAT vocabulary:
+      <li><strong>Usage of DCAT properties:</strong> All classes and properties MUST be used in the intended way
+      by the DCAT vocabulary:
       For example: DCAT vocabulary states that the distributions of a dataset should only differ in resolution,
       language and format but not in the content that they cover. Therefore an attribute such as
         <code>dct:coverage</code> on <code>dcat:Distribution</code> hurts that principle and
         is therefore not conformant to DCAT. See
         <a class="no-sectionRef" href="#distribution-coverage"></a> for the details.
       </li>
-      <li><strong>Conformance to DCAT:</strong>
-        DCAT-AP CH MAY introduce Swiss specific properties and vocabulary, such as the cantons of Switzerland, that
+      <li><strong>Introduction of new properties:</strong>
+        DCAT-AP CH MAY introduce Swiss specific properties and vocabulary, such as the list of cantons of Switzerland, that
         don't exist in the DCAT vocabulary.
         It should however not introduce its own (custom) properties that are already expressed in DCAT with different vocabularies.
         In those cases the DCAT vocabulary has to be used.
