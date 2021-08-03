@@ -186,7 +186,7 @@ var respecConfig = {
       },
       "DCAT-AP-CH-GITHUB-ISSUES":{
         "href":"https://github.com/opendata-swiss/dcat_ap_ch/issues",
-        "title": "github issues for DCAT-AP CH Version 2",
+        "title": "GitHub issues for DCAT-AP CH Version 2",
         "publisher": "https://github.com/opendata-swiss"
       },
       "CADASTRE-PLZ-CH":{
