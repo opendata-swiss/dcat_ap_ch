@@ -193,6 +193,11 @@ var respecConfig = {
         "href": "https://www.cadastre.ch/de/services/service/registry/plz.html",
         "title":"Amtliches Ortschaftenverzeichnis",
         "publisher": "cadastre.ch"
+      },
+      "DATAPORTAL-EU":{
+        "href": "https://data.europa.eu/",
+        "title": "data.europa.eu - The official portal for European Data",
+        "publisher": "Publication Office of the European Union"
       }
     }
 };

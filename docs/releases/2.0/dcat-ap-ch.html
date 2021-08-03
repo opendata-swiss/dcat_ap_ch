@@ -98,9 +98,9 @@
   <p>Since DCAT is only a language, it can be applied in many contexts. An application profile applies DCAT to one specific context.
     In the case of DCAT-AP CH the context is that of data portals in Switzerland.</p>
   <p>This context alone would allow for a very flexible usage of DCAT in DCAT-AP CH, but Switzerland is also part of Europe and
-  therefore the interoperability with the data portal of the European Union has been a topic from
+  therefore the interoperability with the [[DATAPORTAL-EU]] has been a topic from
   the start. Europe has it's own application profile [[DCAT-AP]], that has established a role of a de facto standard within Europe.
-  Swiss data is also harvested and represented by the official portal for European data. The EU puts a lot of power behind further
+  Swiss data is also harvested and represented by the [[DATAPORTAL-EU]]. The EU puts a lot of power behind further
   developing their application profile DCAT-AP. Therefore staying in line with the DCAT-AP is not only a goal in itself,
   but means that DCAT-AP CH will stay embedded in a bigger community of stakeholders.</p>
 
@@ -200,7 +200,7 @@
     <li>For any additional classes and properties, especially those coming from [[DCAT-AP]] the conformance rules of [[VOCAB-DCAT]]
       and [[DCAT-AP]] (Section 6.2 "Receiver requirements") apply: the application must be able to import and export classes and properties
        that are well-formed according to the semantics of DCAT-AP correctly and pass them through as they are
-      when harvested by the European data portal.</li>
+      when harvested by the [[DATAPORTAL-EU]].</li>
     </ul>
   </section>
 
@@ -212,7 +212,7 @@
         <p>This requires opendata.swiss to import and export these data catalogs as they are without transforming them.</p>
         <p>An example: when a data provider uses a certain DCAT-AP class such as <code>dcat:DataService</code> in their
         catalog, then opendata.swiss may chose to display the class as a <code>dcat:Dataset</code> on
-        its data portal, but when harvested by the European data portal the catalog must be exported in the
+        its data portal, but when harvested by the [[DATAPORTAL-EU]] the catalog must be exported in the
         way it was provided, using <code>dcat:DataService</code>. See
         <a href="https://github.com/SEMICeu/DCAT-AP/issues/198">Issue 198 on the DCAT-AP GitHub repo</a>.
       </p>
@@ -1007,7 +1007,7 @@
         </tr>
         <tr>
           <th>Usage</th>
-          <td>For example https://opendata.swiss would be the homepage of the catalog exported to the European
+          <td>For example https://opendata.swiss would be the homepage of the catalog exported to the [[DATAPORTAL-EU]]
             Data Portal.
           </td>
         </tr>
@@ -4134,7 +4134,7 @@
     <p>DCAT-AP CH and DCAT-AP are both application profiles for DCAT.<p>
     <p>The [[DCAT-PROFILE-GUIDANCE]] states that application profiles may form hierarchies.<p>
     <p>For interoperability reasons, DCAT-AP CH should aim to be a sub-profile of DCAT-AP. That way
-    the data using DCAT-AP CH can be harvested by data.europe.eu without losing
+    the data using DCAT-AP CH can be harvested by [[DATAPORTAL-EU]] without losing
     important information on its metadata.</p>
 
     <p>The following diagram captures the relationship between DCAT, DCAT-AP and DCAT-AP CH:
