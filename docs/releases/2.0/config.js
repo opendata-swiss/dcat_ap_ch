@@ -125,7 +125,7 @@ var respecConfig = {
       },
       "W3C-URI":{
         "href":"https://www.w3.org/TR/cooluris/",
-        "title": "Cool URIs for the Semantic Web\n",
+        "title": "Cool URIs for the Semantic Web",
         "publisher":"W3C",
       },
      "METADATA-DEF":{
