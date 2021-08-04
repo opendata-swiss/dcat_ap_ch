@@ -2,8 +2,13 @@ var respecConfig = {
   specStatus: "base",
   logos: [],
   editors: [{
-    name: "Sabine Maennel",
-    url: "https://github.com/sabinem",
+    name:"Juan Pablo Lovato",
+    company:"BFS",
+    companyURL:"https://www.bfs.admin.ch"
+  }, {
+    name:"Sabine Maennel",
+    company:"Liip",
+    companyURL: "https://www.liip.ch",
   }],
   github: {
     branch: "main",
@@ -118,6 +123,16 @@ var respecConfig = {
         "title": "GeoDCAT AP API: ISO 19139 records in RDF",
         "publisher":"ARe3NA, SEMIC, EU ISA",
       },
+      "W3C-URI":{
+        "href":"https://www.w3.org/TR/cooluris/",
+        "title": "Cool URIs for the Semantic Web",
+        "publisher":"W3C",
+      },
+     "METADATA-DEF":{
+        "href":"https://en.wikipedia.org/wiki/Metadata",
+        "title": "Metadata",
+        "publisher":"Wikipedia",
+     },
       "DCAT-UCR":{
         "href":"https://www.w3.org/TR/dcat-ucr/",
         "title":"Dataset Exchange Use Cases and Requirements",
@@ -164,5 +179,25 @@ var respecConfig = {
         "title": "National data management NaDB",
         "publisher": "Swiss Federal Statistical Office ",
       },
+      "HYPOTHES-IS":{
+        "href":"https://web.hypothes.is",
+        "title": "hypothes.is",
+        "publisher": "https://web.hypothes.is"
+      },
+      "DCAT-AP-CH-GITHUB-ISSUES":{
+        "href":"https://github.com/opendata-swiss/dcat_ap_ch/issues",
+        "title": "GitHub issues for DCAT-AP CH Version 2",
+        "publisher": "https://github.com/opendata-swiss"
+      },
+      "CADASTRE-PLZ-CH":{
+        "href": "https://www.cadastre.ch/de/services/service/registry/plz.html",
+        "title":"Amtliches Ortschaftenverzeichnis",
+        "publisher": "cadastre.ch"
+      },
+      "DATAPORTAL-EU":{
+        "href": "https://data.europa.eu/",
+        "title": "data.europa.eu - The official portal for European Data",
+        "publisher": "Publication Office of the European Union"
+      }
     }
 };
