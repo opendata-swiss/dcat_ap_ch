@@ -19,4 +19,5 @@
   a skos:Concept ;
   skos:inScheme <http://dcat-ap.ch/vocabulary/publishers/> ;
   dct:identifier "http://dcat-ap.ch/vocabulary/publishers/gis-luzern" ;
-  skos:prefLabel "Geoinformationszentrum (GIS) Stadt Luzern"@de .
+  a foaf:Organization ;
+  foaf:name: "Geoinformationszentrum (GIS) Stadt Luzern"@de .
