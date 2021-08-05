@@ -66,7 +66,7 @@
     in regards to the relationship between DCAT-AP CH and DCAT-AP.
   </aside>
   <p>The DCAT Application Profile for data portals in Switzerland DCAT-AP CH is an application profile
-    of the DCAT vocabulary [[VOCAB-DCAT]]. It serves to describe data that has been registered on Swiss data portals.
+    of the DCAT vocabulary [[VOCAB-DCAT]]. It serves to describe data that are registered on Swiss data portals.
     Its target group are managers of open data portals in Switzerland and the providers of these data.
     DCAT-AP CH has been used by the Open Government Data Portal of the Swiss Federal Statistical Office
     since 2016.</p>
@@ -115,7 +115,7 @@
     </p>
     <ul>
       <li><strong>Classes are things on the internet</strong>: Not all of them have URIs [W3C-URI],
-        but it is recommended to provide a URI for them. They are complex things like a person, an organization, a data collection, a
+        but it is recommended to provide a URI for them. They are complex things like a person, an organization, a dataset, a
         website or a downloadable data file.</li>
        <li><strong>Classes have properties</strong>: The properties are the attributes describing these things. Some properties
          occur on more than one class, a title for example is a common attribute.
@@ -1065,7 +1065,7 @@
         </tbody>
       </table>
       <aside class="ednote" title="Conformance of dct:publisher on dcat:Catalog">
-        Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
+        The current definition does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]]
         The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
         but implementing it with <code>rdf:Description</code>.
       </aside>
@@ -1440,18 +1440,19 @@
       <tr>
         <th>Definition</th>
         <td>The metadata entry of this class describes a single thematically closed data collection,
-          which is published by a responsible organization (person or institution). The dataset can be
-          made available in different forms: as file in a text/csv format or as API Service.
-          Each physical representation
-          SHOULD be described by a <code>dcat:Distribution</code>. In general, each dataset will have at least
-          one distribution.
+          which is published by a responsible organization (person or institution).
         </td>
       </tr>
 
       <tr>
         <th>Usage</th>
         <td>
-          Special cases:
+          The dataset can be
+          made available in different forms: as file in a text/csv format or as API Service.
+          Each physical representation
+          SHOULD be described by a <code>dcat:Distribution</code>. In general, each dataset will have at least
+          one distribution.
+          <p>Special cases:</p>
           <ul>
           <li>The dataset will also list distributions if these are only available on an external website,
             so that the reference is set by the property <code>dcat:landingPage</code> of the dataset </li>
@@ -1841,7 +1842,7 @@
         </tbody>
       </table>
       <aside class="ednote" title="Conformance of dct:publisher on dcat:Dataset">
-        Does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]].
+        The current definition does not conform to [[DCAT-AP]], also not to [[VOCAB-DCAT]].
         <ul>
         <li>The definition contradicts itself: declaring the range to be <code>foaf:Agent</code>
         but implementing it with <code>rdf:Description</code>. (On opendata.swiss the publisher is currently
@@ -2539,7 +2540,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td>Recommended</td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -2654,7 +2655,7 @@
         </tr>
         <tr>
           <th>Obligation</th>
-          <td><strong>Mandatory</strong></td>
+          <td>Optional</td>
         </tr>
         <tr>
           <th>Max card.</th>
@@ -2927,7 +2928,7 @@
     </table>
 
     <aside class="ednote" title="Conformance of dcat:Distribution">
-      Does not conform to [[DCAT-AP]] as some of its properties do not conform to DCAT-AP.
+      The current definition does not conform to [[DCAT-AP]] as some of its properties do not conform to DCAT-AP.
       <p>Also the usage note does not conform to DCAT:
         <code>dcat:Distribution</code>s of a <code>dcat:Dataset</code>
           should cover the same content, but may differ in the physical representation of that content: that means
@@ -3860,6 +3861,9 @@
            <li>To facilitate this change a license vocabulary should be set up,
              where the current [[OGD-TERMS-OF-USE]] is integrated. See [[VOCAB-DCAT-AP-CH-LICENSES]]
              as proposal for the vocabulary.</li>
+          <li>The recommendation of the "Arbeitsgruppe Recht"
+            on using Terms of Use instead of licenses have to be taken in account. (See [[RIGHTS-LICENSE-RECOMMENDATION-CH]].)
+          </li>
         </ul>
       </aside>
 
@@ -3974,7 +3978,7 @@
         <tr>
           <th>Usage</th>
           <td><p>
-            Because the distribution mights be callable in different ways (HTTP, WebDAV, FTP),
+            Because the distribution mights be callable in different forms (HTTP, WebDAV, FTP),
             there MAY be more than one download url. </p>
             <p>
               In order to ensure the conformance with DCAT-AP each download url
@@ -4134,7 +4138,8 @@
     <p>DCAT-AP CH and DCAT-AP are both application profiles for DCAT.<p>
     <p>The [[DCAT-PROFILE-GUIDANCE]] states that application profiles may form hierarchies.<p>
     <p>For interoperability reasons, DCAT-AP CH should aim to be a sub-profile of DCAT-AP. That way
-    the data using DCAT-AP CH can be harvested by [[DATAPORTAL-EU]] without losing
+    it can be assured that metadata structured as DCAT-AP CH can efficiently be harvester by
+    [[DATAPORTAL-EU]] without losing
     important information on its metadata.</p>
 
     <p>The following diagram captures the relationship between DCAT, DCAT-AP and DCAT-AP CH:
