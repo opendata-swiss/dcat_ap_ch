@@ -198,6 +198,11 @@ var respecConfig = {
         "href": "https://data.europa.eu/",
         "title": "data.europa.eu - The official portal for European Data",
         "publisher": "Publication Office of the European Union"
+      },
+      "RIGHTS-LICENSE-RECOMMENDATION-CH":{
+        "href": "https://www.bfs.admin.ch/bfs/de/home/dienstleistungen/ogd/dokumentation.assetdetail.11147095.html",
+        "title": "Konzept Rechtliche Rahmenbedingungen",
+        "publisher":"Swiss Federal Statistical Office",
       }
     }
 };
