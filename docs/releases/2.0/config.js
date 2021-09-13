@@ -16,7 +16,7 @@ var respecConfig = {
   },
   edDraftURI: "https://www.dcat-ap.ch/releases/2.0/dcat-ap-ch.html",
   prevED: "https://ech.ch/ech/ech-0200",
-  subtitle: "A DCAT Application Profile for Switzerland",
+  subtitle: "A DCAT Application Profile for Switzerland (Working Draft)",
   localBiblio: {
       "ADMS-SKOS":{
         "href":"https://joinup.ec.europa.eu/svn/adms/ADMS_v1.00/ADMS_SKOS_v1.00.html",
