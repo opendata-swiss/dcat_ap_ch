@@ -4,6 +4,7 @@
          xmlns:foaf="http://xmlns.com/foaf/0.1/"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
          xmlns:ns0="http://www.w3.org/2004/02/skos/">
 
   <rdf:Description rdf:about="http://dcat-ap.ch/vocabulary/themes/">
