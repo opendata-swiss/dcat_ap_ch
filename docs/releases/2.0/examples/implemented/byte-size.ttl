@@ -1,8 +1,0 @@
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://swisstopo/reforestation-data/1234>
-  a dcat:Distribution ;
-  dcat:accessURL <https://tierstatistik.identitas.ch/data/fig-equids-size> ;
-  dcat:downloadURL <https://tierstatistik.identitas.ch/data/fig-equids-size> ;
-  dcat:byteSize 1944 .
