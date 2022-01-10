@@ -1,19 +1,27 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix odrs: <http://schema.theodi.org/odrs#> .
 
-<http://bundesamt-fur-gesundheit-bag/11/daily-cases-json> a dcat:Distribution ;
-    dct:description """Daily record timelines by geoRegion for cases.
-### Documentation
-- [model documentation](https://www.covid19.admin.ch/api/data/documentation/models/sources-definitions-dailyincomingdata.md)
-- [general documentation](https://www.covid19.admin.ch/api/data/documentation)"""@en ;
-    dct:format "JSON" ;
-    dct:identifier "daily-cases-json" ;
-    dct:issued "2020-11-05"^^xsd:date ;
-    dct:modified "2021-07-02"^^xsd:date ;
-    dct:title "COVID19Cases_geoRegion"@en ;
-    dct:rights "NonCommercialAllowed-CommercialAllowed-ReferenceRequired" ;
-    dcat:accessURL <https://www.covid19.admin.ch/api/data/20210702-uzngydwd/sources/COVID19Cases_geoRegion.json> ;
-    dcat:byteSize "13448271.0"^^xsd:decimal ;
-    dcat:downloadURL <https://www.covid19.admin.ch/api/data/20210702-uzngydwd/sources/COVID19Cases_geoRegion.json> ;
-    dcat:mediaType "application/json" .
+# ---------- class Distribution ---------------------------------------------
+<https://swisstopo/data/1234>
+  a dcat:Distribution ;
+
+  # mandatory properties
+
+  dct:accessURL <https://swisstopo/data/1234/access> ;
+  dct:license <http://dcat-ap.ch/vocabulary/licenses/cc-by/4.0> ;
+
+  # recommended properties
+
+  dct:availability <http://publications.europa.eu/resource/authority/planned-availability/STABLE> ;
+  dct:description "some description of the data"@en, "eine Beschreibung der Daten"@de ;
+  dct:format dcat:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+  dct:rights :swisstopo-rights-statement ;
+  dct:title "some title of the distribution"@en, "ein Titel der Distribution"@de ;
+  dct:modified "2019-04-26"^^xsd:date .
+
+# ---------- class RightsStatement ------------------------------------------
+:swisstopo-rights-statement
+    a odrs:RightsStatement;
+    odrs:attributionText "The swisstopo organization" .

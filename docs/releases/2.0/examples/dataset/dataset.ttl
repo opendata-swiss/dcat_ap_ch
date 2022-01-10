@@ -1,29 +1,63 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix schema: <http://schema.org/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://swisstopo/catalog-endpoint/dataset/reforestation>
-  a dcat:Dataset ;
+# ---------- class Dataset --------------------------------------------------
+<https://swisstopo/api>
+  a dcat:DataService ;
 
-  dcat:distribution <https://swisstopo/data/123>, <https://swisstopo/data/345> ;
-  dct:title "Reforestation Kanton Zürich"@en ,
-            "Aufforstung Kanton Zürich"@de ;
-  dct:description "Aufforsterungsarbeiten des Waldbestands im Kanton Zürich"@de ;
-  dct:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
-  foaf:landingPage "https://swisstopo/waldbestand/index.html" ;
-  dct:publisher <https://swisstopo> ;
-  dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
-  dct:language: "en" ;
-  dct:identifier "15684929@bundesamt-fur-statistik-bfs" ;
-  dct:spatial "Schweiz" ;
-  dct:temporal [ a dct:PeriodOfTime ;
-        schema:endDate "2019-12-31T00:00:00"^^xsd:dateTime ;
-        schema:startDate "2019-01-01T00:00:00"^^xsd:dateTime ] ;
-  dcat:contactPoint [ a vcard:Organization ;
-        vcard:fn "info@bfs.admin.ch" ;
-        vcard:hasEmail <auskunftsdienst@bfs.admin.ch> ] .
+  # mandatory properties
 
+  dcat:contactPoint [
+    a vcard:Organization ;
+    vcard:fn "Abteilung Lärm BAFU" ;
+    vcard:hasEmail <mailto:noise@bafu.admin.ch> .
+  ], [
+    a vcard:Individual ;
+    vcard:fn "Sekretariat BAFU" ;
+    vcard:hasEmail <mailto:sekretariat@bafu.admin.ch> .
+  ] ;
+  dct:description """In diesem Dataset finden Sie Daten zum
+                 Waldbestand im Kanton Zürich
+                 - Anzahl der Bäume per year
+                 - Gesundheit der bäume"""@de,
+                 """This dataset contains information regarding the
+                 forests in Canton Zurich:
+                 - nr of trees per year
+                 - health of trees"""@en ;
+  dct:publisher <https://swisstopo/> ;
+  dct:title "Waldbestand Zürich"@en, "Forests of Zurich"@de ;
 
+  # recommended properties
+
+  dcat:distribution <https://swisstopo/data/123> ,
+                    <https://swisstopo/data/456> ;
+  dcat:keyword "ereigniskataster"@de,
+               "hochwasser"@de,
+               "lawine"@de,
+               "murgang"@de,
+               "naturereignis"@de ;
+  dcat:landingPage <https://opendata.swisstopo/1234/about> ;
+  dct:issued "2021-04-26"^^xsd:date ;
+  dct:spatial <http://publications.europa.eu/resource/authority/country/CHE> ;
+  dct:temporal: [ a dct:PeriodOfTime ;
+            schema:endDate "2021-06-22T00:00:00"^^xsd:dateTime ;
+            schema:startDate "2020-01-01T00:00:00"^^xsd:dateTime ] ;
+  dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE> ;
+             <http://publications.europa.eu/resource/authority/data-theme/SOCI> ;
+  dct:modified "2021-04-26"^^xsd:date .
+
+# ---------- class Publisher ------------------------------------------------
+<https://swisstopo>
+  a foaf:Organization ;
+  foaf:name: "Landesamt für Topographie Swisstopo"@de ,
+             "Federal Office of Topography"@en .
+
+# ---------- class Distribution ----------------------------------------------
+<https://swisstopo/data/123>
+  a dcat:Distribution .
+
+<https://swisstopo/data/456>
+  a dcat:Distribution .

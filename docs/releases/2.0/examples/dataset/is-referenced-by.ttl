@@ -3,4 +3,7 @@
 
 <https://swisstopo/123>
   a dcat:Dataset ;
-  dct:publisher <http://dcat-ap.ch/vocabulary/publishers/swisstopo> .
+    dct:isReferencedBy <https://swisstopo/456> .
+
+<https://swisstopo/456>
+  a dcat:Dataset .

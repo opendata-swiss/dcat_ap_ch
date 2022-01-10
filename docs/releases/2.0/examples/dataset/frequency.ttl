@@ -1,6 +1,5 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
 
 <https://swisstopo/reforestation-data/1234>
   a dcat:Dataset ;
-  dct:accrualPeriodicity <http://purl.org/cld/freq/daily>  .
+  dcat:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/ANNUAL> .

@@ -1,7 +1,0 @@
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://ckan.opendata.swiss/perma/302801@bundesamt-fur-statistik-bfs>
-  a dcat:Dataset ;
-  dct:issued "2015-02-25T00:00:00"^^xsd:dateTime ; .

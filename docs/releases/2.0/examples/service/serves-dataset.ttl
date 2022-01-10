@@ -1,0 +1,6 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://swisstopo/opendata/service>
+  a dcat:DataService ;
+
+  dcat:servesDataset <https://swisstopo/data/123>, <https://swisstopo/data/345> .

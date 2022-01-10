@@ -3,4 +3,4 @@
 
 <https://opendata.zurich/opendata/data/1234>
     a dcat:Dataset ;
-    dct:spatial "Schweiz" .
+    dct:spatial <http://publications.europa.eu/resource/authority/place/CHE_LAU>.

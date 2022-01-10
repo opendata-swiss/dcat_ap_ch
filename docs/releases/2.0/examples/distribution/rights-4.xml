@@ -1,6 +1,0 @@
-<dct:relation>
-    <rdf:Description
-            about="URI of a document with the corresponding legal basis">
-        <rdfs:label>Designation of the relevant document</rdfs:label>
-    </rdf:Description>
-</dct:relation>
