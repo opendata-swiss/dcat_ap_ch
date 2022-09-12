@@ -43,8 +43,8 @@
   dct:issued "2021-04-26"^^xsd:date ;
   dct:spatial <http://publications.europa.eu/resource/authority/country/CHE> ;
   dct:temporal: [ a dct:PeriodOfTime ;
-            schema:endDate "2021-06-22T00:00:00"^^xsd:dateTime ;
-            schema:startDate "2020-01-01T00:00:00"^^xsd:dateTime ] ;
+            dcat:endDate "2021-06-22T00:00:00"^^xsd:dateTime ;
+            dcat:startDate "2020-01-01T00:00:00"^^xsd:dateTime ] ;
   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/GOVE> ;
              <http://publications.europa.eu/resource/authority/data-theme/SOCI> ;
   dct:modified "2021-04-26"^^xsd:date .
