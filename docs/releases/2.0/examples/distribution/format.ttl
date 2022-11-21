@@ -3,4 +3,4 @@
 
 <https://swisstopo/data/1234>
   a dcat:Distribution ;
-  dcat:format <http://publications.europa.eu/resource/authority/file-type/CSV> .
+  dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> .
