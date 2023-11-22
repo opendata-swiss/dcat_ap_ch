@@ -6,14 +6,21 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dc11: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
 
 <http://dcat-ap.ch/vocabulary/themes/>
     a skos:ConceptScheme ;
     dc11:title "Categories for Swiss Open Government Data"@en ;
     dc11:description "Custom vocabulary for OGD dataset categories in Switzerland"@en ;
+    dc11:creator [
+                     a foaf:Organization ;
+                     foaf:name "bfs.admin.ch"
+                 ] ;
     rdfs:label "Kategorien"@de,"Categories"@en;
-    owl:versionInfo "202100623" ;
-    owl:versionIRI <http://dcat-ap.ch/vocabulary/licenses/20210623/> .
+    dc:issued "2016-06-23" ;
+    dc:modified "2023-11-22" ;
+    owl:versionInfo "20231122" ;
+    owl:versionIRI <http://dcat-ap.ch/vocabulary/licenses/20231122/> .
 
 <http://dcat-ap.ch/vocabulary/themes/work>
     a skos:Concept ;
