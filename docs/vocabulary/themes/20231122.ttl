@@ -30,7 +30,8 @@
     skos:prefLabel "Bau- und Wohnungswesen"@de,
     "Construction, logement"@fr,
     "Costruzione e abitazione"@it ;
-    skos:mappingRelation geothemes:structure .
+    skos:mappingRelation euthemes:SOCI ,
+    geothemes:structure .
 <http://dcat-ap.ch/vocabulary/themes/population>
     a skos:Concept ;
     skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
@@ -250,14 +251,16 @@
     skos:prefLabel "Statistische Grundlagen"@de,
     "Bases statistiques"@fr,
     "Basi statistiche"@it,
-    "Statistical basis"@en .
+    "Statistical basis"@en ;
+    skos:mappingRelation euthemes:GOVE .
 <http://dcat-ap.ch/vocabulary/themes/tourism>
     a skos:Concept ;
     skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
     skos:prefLabel "Tourismus"@de,
     "Tourisme"@fr,
     "Turismo"@it,
-    "Tourism"@en .
+    "Tourism"@en ;
+    skos:mappingRelation euthemes:ECON .
 <http://dcat-ap.ch/vocabulary/themes/administration>
     a skos:Concept ;
     skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
