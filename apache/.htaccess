@@ -1,0 +1,37 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+# If the request contains .rdf, .ttl or .html, pass it through
+RewriteCond %{REQUEST_URI} .*\.(html|ttl|rdf).*
+RewriteRule ^.* - [L]
+
+# Redirect vocabulary urls to most recent version of vocabulary in requested format
+RewriteCond %{HTTP:Accept} application/rdf\+xml
+RewriteRule ^vocabulary/themes/.*$ /vocabulary/themes/20210623.rdf [L,R=303]
+RewriteCond %{HTTP:Accept} text/turtle
+RewriteRule ^vocabulary/themes/.*$ /vocabulary/themes/20210623.ttl [L,R=303]
+RewriteCond %{HTTP:Accept} text/html
+RewriteRule ^vocabulary/themes/$ /vocabulary/themes/20210623.html [L,R=303]
+
+RewriteCond %{HTTP:Accept} application/rdf\+xml
+RewriteRule ^vocabulary/licenses/.*$ /vocabulary/licenses/20210623.rdf [L,R=303]
+RewriteCond %{HTTP:Accept} text/turtle
+RewriteRule ^vocabulary/licenses/.*$ /vocabulary/licenses/20210623.ttl [L,R=303]
+RewriteCond %{HTTP:Accept} text/html
+RewriteRule ^vocabulary/licenses/$ /vocabulary/licenses/20210623.html [L,R=303]
+
+RewriteCond %{HTTP:Accept} application/rdf\+xml
+RewriteRule ^vocabulary/publishers/.*$ /vocabulary/publishers/20210623.rdf [L,R=303]
+RewriteCond %{HTTP:Accept} text/turtle
+RewriteRule ^vocabulary/publishers/.*$ /vocabulary/publishers/20210623.ttl [L,R=303]
+RewriteCond %{HTTP:Accept} text/html
+RewriteRule ^vocabulary/publishers/$ /vocabulary/publishers/20210623.html [L,R=303]
+
+# Redirect urls for vocabulary terms to anchors in most recent version
+# This is only relevant for HTML requests
+RewriteCond %{HTTP:Accept} text/html
+RewriteRule ^vocabulary/themes/(.*) /vocabulary/themes/20210623.html#$1 [L,NE,R=303]
+RewriteCond %{HTTP:Accept} text/html
+RewriteRule ^vocabulary/licenses/(.*) /vocabulary/licenses/20210623.html#$1 [L,NE,R=303]
+RewriteCond %{HTTP:Accept} text/html
+RewriteRule ^vocabulary/publishers/(.*) /vocabulary/publishers/20210623.html#$1 [L,NE,R=303]
