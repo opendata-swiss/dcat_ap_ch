@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dc11="http://purl.org/dc/elements/1.1/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:owl="http://www.w3.org/2002/07/owl#">
+
+  <skos:ConceptScheme rdf:about="http://dcat-ap.ch/vocabulary/themes/">
+    <dc11:title xml:lang="en">Categories for Swiss Open Government Data</dc11:title>
+    <dc11:description xml:lang="en">Custom vocabulary for OGD dataset categories in Switzerland</dc11:description>
+    <dc11:creator>
+      <foaf:Organization>
+        <foaf:name>bfs.admin.ch</foaf:name>
+      </foaf:Organization>
+    </dc11:creator>
+
+    <rdfs:label xml:lang="de">Kategorien</rdfs:label>
+    <rdfs:label xml:lang="en">Categories</rdfs:label>
+    <rdfs:label xml:lang="fr">Catégories</rdfs:label>
+    <rdfs:label xml:lang="it">Categorie</rdfs:label>
+    <dc:issued>2016-06-23</dc:issued>
+    <dc:modified>2023-11-22</dc:modified>
+    <owl:versionInfo>20231122</owl:versionInfo>
+    <owl:versionIRI rdf:resource="http://dcat-ap.ch/vocabulary/themes/20231122/"/>
+  </skos:ConceptScheme>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/work">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Arbeit, Erwerb</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Travail, rémunération</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Lavoro e reddito</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Work and income</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/economy"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/construction">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Bau- und Wohnungswesen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Construction, logement</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Costruzione e abitazione</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Construction and housing</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/SOCI"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/structure"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/population">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Bevölkerung</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Population</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Popolazione</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Population</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/SOCI"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geothemes:society"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/education">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Bildung, Wissenschaft</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Education, science</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Formazione e scienza</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Education and science</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/EDUC"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/energy">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Energie</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Energie</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Energia</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Energy</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ENER"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication_Energy"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/finances">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Finanzen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Finances</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Finanze</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Finances</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/geography">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Geographie</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Géographie</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Geografia</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Geography</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/REGI"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/imageryBaseMapsEarthCover"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/imageryBaseMapsEarthCover_BaseMaps"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/imageryBaseMapsEarthCover_Imagery"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/imageryBaseMapsEarthCover_EarthCover"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/location"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/elevation"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/boundaries"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/planningCadastre"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/planningCadastre_Planning"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/planningCadastre_Cadastre"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geoscientificInformation"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geoscientificInformation_Geology"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geoscientificInformation_Soils"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geoscientificInformation_NaturalHazards"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/biota"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/oceans"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/inlandWaters"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/climatologyMeteorologyAtmosphere"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/environment"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/environment_EnvironmentalProtection"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/environment_NatureProtection"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/society"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/health"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/structure"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/transportation"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication_Energy"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication_Utilities"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication_Communication"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/intelligenceMilitary"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/farming"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/economy"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/legislation">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Gesetzgebung</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Législation</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Legislazione</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Legislation</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/JUST"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/health">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Gesundheit</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Santé</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Sanità</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Health</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/HEAL"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/health"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/trade">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Handel</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Commerce</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Commercio</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Trade</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/industry">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Industrie, Dienstleistungen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Industrie, services</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Industria, servizi</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Industry and services</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/crime">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Kriminalität, Strafrecht</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Criminalité, droit pénal</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Criminalità, diritto penale</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Crime, criminal justice</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/JUST"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/culture">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Kultur, Medien, Informationsgesellschaft, Sport</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Culture, médias, société de l'information, sport</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Cultura, media, società dell'informazione, sport</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Culture, media, information society, sport</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/EDUC"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geothemes:society"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication_Communication"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/agriculture">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Land- und Forstwirtschaft</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Agriculture, sylviculture</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Agricoltura, selvicoltura</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Agriculture, forestry</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/AGRI"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geothemes:biota"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/farming"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/mobility">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Mobilität und Verkehr</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Mobilité et transports</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Mobilità e trasporti</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Mobility and Transport</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/TRAN"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/transportation"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/public-order">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Öffentliche Ordnung und Sicherheit</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Ordre et sécurité publics</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Ordine pubblico e sicurezza pubblica</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Public order and security</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/intelligenceMilitary"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/politics">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Politik</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Politique</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Politica</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Politics</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/prices">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Preise</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Prix</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Prezzi</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Prices</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/territory">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Raum und Umwelt</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Territoire et environnement</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Territorio e ambiente</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Territory and environment</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ENVI"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/imageryBaseMapsEarthCover"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/imageryBaseMapsEarthCover_BaseMaps"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/imageryBaseMapsEarthCover_Imagery"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/imageryBaseMapsEarthCover_EarthCover"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/location"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/elevation"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/boundaries"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/planningCadastre"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/planningCadastre_Planning"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/planningCadastre_Cadastre"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geoscientificInformation"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geoscientificInformation_Geology"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geoscientificInformation_Soils"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geoscientificInformation_NaturalHazards"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/biota"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/oceans"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/inlandWaters"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/climatologyMeteorologyAtmosphere"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/environment"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/environment_EnvironmentalProtection"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/environment_NatureProtection"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication_Energy"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/utilitiesCommunication_Utilities"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/social-security">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Soziale Sicherheit</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Protection sociale</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Sicurezza sociale</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Social security</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/SOCI"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/statistical-basis">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Statistische Grundlagen</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Bases statistiques</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Basi statistiche</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Statistical basis</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/tourism">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Tourismus</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Tourisme</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Turismo</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Tourism</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/administration">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Verwaltung</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Administration</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Amministrazione</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Administration</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/GOVE"/>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/national-economy">
+    <skos:inScheme rdf:resource="http://dcat-ap.ch/vocabulary/themes/"/>
+    <skos:prefLabel xml:lang="de">Volkswirtschaft</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Economie nationale</skos:prefLabel>
+    <skos:prefLabel xml:lang="it">Economia</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">National economy</skos:prefLabel>
+    <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+    <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/economy"/>
+  </skos:Concept>
+
+</rdf:RDF>
