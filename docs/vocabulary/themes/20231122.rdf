@@ -39,6 +39,7 @@
     <skos:prefLabel xml:lang="de">Bau- und Wohnungswesen</skos:prefLabel>
     <skos:prefLabel xml:lang="fr">Construction, logement</skos:prefLabel>
     <skos:prefLabel xml:lang="it">Costruzione e abitazione</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Construction and housing</skos:prefLabel>
     <skos:mappingRelation rdf:resource="http://publications.europa.eu/resource/authority/data-theme/SOCI"/>
     <skos:mappingRelation rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/TopicCategory/structure"/>
   </skos:Concept>

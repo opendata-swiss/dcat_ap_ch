@@ -36,7 +36,8 @@
     skos:inScheme <http://dcat-ap.ch/vocabulary/themes/> ;
     skos:prefLabel "Bau- und Wohnungswesen"@de,
     "Construction, logement"@fr,
-    "Costruzione e abitazione"@it ;
+    "Costruzione e abitazione"@it,
+    "Construction and housing"@en ;
     skos:mappingRelation euthemes:SOCI ,
     geothemes:structure .
 <http://dcat-ap.ch/vocabulary/themes/population>
