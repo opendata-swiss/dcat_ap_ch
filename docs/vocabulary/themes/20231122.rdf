@@ -18,10 +18,12 @@
 
     <rdfs:label xml:lang="de">Kategorien</rdfs:label>
     <rdfs:label xml:lang="en">Categories</rdfs:label>
+    <rdfs:label xml:lang="fr">Catégories</rdfs:label>
+    <rdfs:label xml:lang="it">Categorie</rdfs:label>
     <dc:issued>2016-06-23</dc:issued>
     <dc:modified>2023-11-22</dc:modified>
     <owl:versionInfo>20231122</owl:versionInfo>
-    <owl:versionIRI rdf:resource="http://dcat-ap.ch/vocabulary/licenses/20231122/"/>
+    <owl:versionIRI rdf:resource="http://dcat-ap.ch/vocabulary/themes/20231122/"/>
   </skos:ConceptScheme>
 
   <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/themes/work">

@@ -16,11 +16,11 @@
                      a foaf:Organization ;
                      foaf:name "bfs.admin.ch"
                  ] ;
-    rdfs:label "Kategorien"@de,"Categories"@en;
+    rdfs:label "Kategorien"@de,"Categories"@en,"Catégories"@fr,"Categorie"@it;
     dc:issued "2016-06-23" ;
     dc:modified "2023-11-22" ;
     owl:versionInfo "20231122" ;
-    owl:versionIRI <http://dcat-ap.ch/vocabulary/licenses/20231122/> .
+    owl:versionIRI <http://dcat-ap.ch/vocabulary/themes/20231122/> .
 
 <http://dcat-ap.ch/vocabulary/themes/work>
     a skos:Concept ;
