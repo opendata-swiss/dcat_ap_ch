@@ -100,7 +100,7 @@
       </skosxl:Label>
     </skosxl:prefLabel>
 
-    <skos:exactMatch rdf:resource="http://dcat-ap.de/def/licenses/cc-by/4.0"/>
+    <skos:exactMatch rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
     <skos:altLabel xml:lang="de">cc-by/4.0</skos:altLabel>
     <dc:references rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
     <foaf:homepage rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>

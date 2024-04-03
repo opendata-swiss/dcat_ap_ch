@@ -1,0 +1,4793 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>DCAT-AP CH - Version 3.0 Working Draft</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c" defer></script>
+  <script class="remove" src="config.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="small.css" media="only all and (max-width: 649px)">
+  <style>
+      table.simple {
+          width: 100%;
+      }
+
+      #table-sdo-mapping th:first-child,
+      #table-sdo-mapping td:first-child {
+          text-align: right;
+      }
+
+      .prop-list {
+          columns: 4;
+      }
+  </style>
+</head>
+<body>
+
+<section id="abstract" class="informative">
+  <p style="background: yellow; font-size: larger;"><b>This is an initial draft. All contents of this page are subject to change.</b></p>
+  <p>
+    Das DCAT-Anwendungsprofil für Datenportale in der Schweiz (DCAT-AP CH) ist ein Anwendungsprofil
+    des Data Catalog Vocabulary [[VOCAB-DCAT]] und dient zur Beschreibung der in Schweizer Datenportalen (z.B. opendata.swiss)
+    verzeichneten Daten. Seine Zielgruppe sind die Betreiber von Datenportalen in der
+    Schweiz (gemäss DCAT Terminologie “Data Receivers”) und die Anbieter dieser Daten,
+    welche Datenkataloge führen (gemäss DCAT Terminologie “Data Sender").
+  </p>
+  <p>
+    Datenportale stellen in der Regel nicht die Daten selbst bereit, sondern nur Metadaten zu den Daten. Diese dienen dem Zweck,
+    die Daten auffindbar und wiederverwendbar zu machen. So fokussiert DCAT-AP CH primär auf die Beschreibung von Metadaten.
+  </p>
+  <p>
+    DCAT-AP CH soll ebenfalls die Kompatibilität mit dem Anwendungsprofil für Datenportale in Europa (DCAT-AP) sicherstellen.
+    Denn dies mit der Version 1 nicht mehr gegeben war, wurde im Rahmen der eCH-Fachgruppe “Open Government Data” die
+    vorliegende Version 2 definiert, welche die höchstmögliche Kompatibilität mit [[DCAT-AP]] (aktuelle Version 2.1.0) sicherstellt.
+  </p>
+</section>
+
+<aside class="ednote" title="Hinweis">
+  <p>Aus Gründen der besseren Lesbarkeit und Verständlichkeit wird im vorliegenden Dokument bei der
+    Bezeichnung von Personen ausschliesslich die maskuline Form verwendet. Diese Formulierung schliesst
+    Frauen in ihrer jeweiligen Funktion ausdrücklich mit ein.</p>
+</aside>
+
+<section id="introduction" class="informative">
+  <h2>Einleitung</h2>
+
+  <section id="document-status">
+    <h3>Status des Dokuments</h3>
+    <p>In Arbeit: Der Gebrauch ist nur innerhalb der Fachgruppe, bzw. im Expertenausschuss zugelassen.</p>
+    <p>Entwurf: Das Dokument wurde von den zuständigen Referenten aus dem Expertenausschuss zur
+      öffentlichen Konsultation freigegeben und entsprechend publiziert.</p>
+    <p>Vorschlag: Das Dokument wird dem Expertenausschuss zur Genehmigung TT-MM-JJJJ vorgelegt, ist aber normativ noch nicht gültig.</p>
+    <p>Genehmigt: Das Dokument wurde vom Expertenausschuss genehmigt. Es hat für das definierte Einsatzgebiet
+      im festgelegten Gültigkeitsbereich normative Kraft.</p>
+    <p>Abgelöst: Das Dokument wurde durch eine neue, aktuellere Version ersetzt. Die Benutzung ist zwar noch möglich,
+      es wird aber empfohlen, die neuere Version einzusetzen.</p>
+    <p>Aufgehoben: Das Dokument wurde von eCH zurückgezogen. Er darf nicht mehr genutzt werden.</p>
+    <p>Sistiert: Das Dokument wurde von eCH zurückgezogen. Es darf nicht genutzt werden. Es hat den Status «Genehmigt» nicht erreicht.</p>
+
+  </section>
+
+  <section id="area-of-application" >
+    <h3>Area of application</h3>
+    <p>The DCAT Application Profile for data portals in Switzerland (DCAT-AP CH) is an Application Profile of the DCAT vocabulary
+      and a Subprofile of the European Application Profile DCAT-AP.</p>
+    <ul>
+      <li><strong>DCAT (“Data Catalog Vocabulary”)</strong> is a semantic definition to describe data by the means of an RDF vocabulary.
+        It allows for a decentralized approach regarding the publication of data by enforcing interoperability
+        via the use of a common language to describe the data.
+      </li>
+      <li>Being DCAT a generic language, it can be applied in various contexts.
+        An Application Profile specifies its utilization within a specific domain, context or application,
+        with the goal of facilitating data exchange. In Europe the application profile DCAT-AP was defined,
+        which assumed the role of a de facto standard within Europe. Many European Countries defined based on
+        DCAT-AP their own localized, tailored to their specific needs, Application Profiles.
+      </li>
+      <li>The Swiss community defined DCAT-AP CH to provide guidance for Swiss data publishers on how to specify their data
+        catalogues and to data portal managers on how to process data catalogues, in a DCAT-AP CH and DCAT-AP conformant manner,
+        so that interoperability with DCAT-AP is assured.
+      </li>
+    </ul>
+        <p>It should be always kept in mind that both DCAT-AP CH and DCAT-AP primarily focus on metadata.
+          Metadata is by definition secondary information on the data: when and by whom were they published,
+          which usage conditions apply, how often are they updated, whom to contact about them and where
+          and how can they be accessed.
+        </p>
+  </section>
+
+  <section id="changes-overview" >
+    <h3>Überblick der Änderungen gegenüber Version 2.0.0</h3>
+  </section>
+
+</section>
+
+<section id="dcat-ap-building-blocks">
+  <h2>DCAT-AP CH: Building Blocks</h2>
+
+  <section id="dcat-vocabulary">
+    <h3>DCAT as a universal vocabulary</h3>
+    <p>The Application Profile specified in this document is based on the specification of the Data Catalog Vocabulary (DCAT)
+      developed under the responsibility of the Government Linked Data Working Group at W3C. DCAT is an RDF vocabulary
+      designed to facilitate interoperability between data catalogues published on the Web. Additional
+      classes and properties from other well-known vocabularies are re-used where necessary.
+    </p>
+    <p>The DCAT vocabulary consists of classes and properties.</p>
+    <ul>
+      <li><strong>Classes are things on the internet</strong>: Not all of them have URIs, but it is recommended to provide a URI for them.
+        They are complex things like a person, an organization, a dataset, a website or a downloadable data file.
+      </li>
+      <li><strong>Classes have properties</strong>: The properties are the attributes describing these things. Some properties occur
+        in more than one class, a title for example is a common attribute. Other properties are very specialized such
+        as a file format that only makes sense for a data file.
+      </li>
+      <li><strong>Properties can be simple or complex</strong>: Some properties are classes. For example, an organization can have a website. Or a dataset can have a data publisher. In general, a class can be recognized by its spelling: A property name starts with a lowercase letter such as dcat:dataset , while a class starts with a capital letter such as dcat:Dataset.
+      </li>
+    </ul>
+    <p>Classes and properties are used to deliver the metadata in a structured way.</p>
+
+  </section>
+
+  <section id="core-structure">
+    <h3>The core structure of DCAT-AP CH v2 replicates the core structure of DCAT-AP</h3>
+    <p>Being a Subprofile of DCAT-AP, DCAT-AP CH replicates its core structure and concepts.</p>
+
+    <section id="classes">
+      <h4>Classes</h4>
+      <p>The Swiss Application Profile (“DCAT-AP CH”) as well as the European Application Profile (“DCAT-AP”)
+        are structured around the following main 4 classes:
+      </p>
+      <table class="simple">
+        <thead>
+        <tr>
+          <th>Class name</th>
+          <th>Usage note for the Application Profile</th>
+          <th>URI and Reference</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="#Class:Catalog">Catalog</a></td>
+          <td>A catalogue or repository that hosts the Datasets or Data Services being described.</td>
+          <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:Catalog</code></a></td>
+        </tr>
+        <tr>
+          <td><a href="#catalog-publisher">Dataset</a></td>
+          <td>A conceptual entity that represents the information published.</td>
+           <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a></td>
+        </tr>
+        <tr>
+          <td><a href="#catalog-dataset">Distribution</a></td>
+          <td>A physical embodiment of the Dataset in a particular format.</td>
+          <td><a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a></td>
+        </tr>
+        <tr>
+          <td><a href="#catalog-title">Data Service</a></td>
+          <td>A collection of operations that provides access to one or more datasets or data processing functions.</td>
+          <td><a data-cite="VOCAB-DCAT#Class:DataService"><code>dcat:DataService</code></a></td>
+        </tr>
+        </tbody>
+      </table>
+      <p>Note that in the previous versions of DCAT-AP and DCAT-AP CH, classes were categorised to be mandatory,
+        recommended and optional, like it’s currently the case for properties. This categorisation has been removed
+        in favour of the above overview and guidelines to create a common expectation for DCAT-AP catalogues.</p>
+      <p>
+        To improve the coherency by the description of shared Dataset, Distribution and the new introduced class Data Services,
+        DCAT-AP provided guidelines on their usage:
+        [[DCAT-AP-USAGEGUIDE]].
+      </p>
+      <div id="diagram" class="mermaid">
+        classDiagram
+        Catalog --> Dataset : dcat:dataset
+        Catalog --> DataService : dcat:service
+        DataService --> Dataset : dcat:servesDataset
+        Dataset --> Distribution : dcat:distribution
+        Distribution --> DataService : dcat:accessService
+        class Catalog {
+        Mandatory:
+        - dct:description
+        - dct:publisher
+        - dct:title
+        Recommended:
+        - dcat:dataset
+        - foaf:homepage
+        - dct:language
+        - dct:license
+        - dct:issued
+        - dct:rights
+        - dcat:service
+        - dct:spatial
+        - dcat:themeTaxonomy
+        - dct:modified
+        }
+        class DataService {
+        Mandatory:
+        - dcat:endpointURL
+        - dcat:contactPoint
+        - dct:publisher
+        - dct:title
+        Recommended:
+        - dct:endpointDescription
+        - dct:license
+        - dcat:servesDataset
+        }
+        class Dataset {
+        Mandatory:
+        - dcat:contactPoint
+        - dct:description
+        - dct:identifier
+        - dct:publisher
+        - dct:title
+        Recommended:
+        - dcat:distribution
+        - dct:keyword
+        - dcat:landingPage
+        - dct:issued
+        - dct:spatial
+        - dct:temporal
+        - dcat:theme
+        - dct:modified
+        }
+        class Distribution {
+        Mandatory:
+        - dct:accessURL
+        - dct:license
+        Recommended:
+        - dctap:avaliability
+        - dct:description
+        - dct:format
+        - dct:rights
+        - dct:title
+        - dct:modified
+        Optional
+        - dcat:accessService
+        }
+    </div>
+    </section>
+
+    <section id="requirement-levels">
+      <h4>Requirement levels</h4>
+      <p>DCAT-AP CH defines four requirement levels for data receivers and senders:</p>
+      <ul>
+        <li><strong>Mandatory property</strong>: a receiver MUST be able to process the information for that property;
+          a sender MUST provide the information for that property.
+        </li>
+        <li><strong>Recommended property</strong>: a receiver MUST be able to process the information for that property;
+          a sender SHOULD provide the information for that property if it is available.
+        </li>
+        <li><strong>Optional property</strong>: a receiver MUST be able to process the information for that property;
+          a sender MAY provide the information for that property but is not obliged to do so.
+        </li>
+        <li><strong>Deprecated property</strong>: a receiver SHOULD be able to process information about instances
+          of that property; a sender SHOULD NOT provide the information about instances of that property.
+        </li>
+      </ul>
+      <p>The meaning of the terms MUST, MUST NOT, SHOULD and MAY in this section and in the following sections are as
+        defined in RFC 2119.
+      </p>
+      <p>
+        In the given context, the term "processing" means that receivers MUST accept incoming data and transparently
+        provide these data to applications and services. It does neither imply nor prescribe what applications and
+        services finally do with the data (parse, convert, store, make searchable, display to users, etc.).
+      </p>
+    </section>
+
+    <section id="controlled-vocabulary">
+      <h4>Controlled vocabularies of DCAT-AP CH v2</h4>
+      <p>In the table below, a number of properties are listed with controlled vocabularies (CV) that MUST be used for
+        the listed properties.
+      </p>
+      <p>Where possible the same controlled vocabularies as DCAT-AP were utilized.
+        However not every vocabulary proposed by DCAT-AP is currently applied for DCAT-AP CH v2.
+        In some cases, the eCH-Expert Group is still evaluating the application of the proposed vocabulary,
+        while in other cases the eCH-Expert Group decided to evaluate the introduction of a new, Swiss-specific vocabulary.
+        In particular for the property dct:publisher, which refers to an entity (organisation) responsible for making
+        a Catalogue, a Dataset or a Data Service available, a CV is still being discussed within the eCH-Expert
+        Group “Open Government Data” - its introduction will be evaluated for the next iterations of
+        this standard eCH-0200.
+      </p>
+      <table class="simple">
+        <thead>
+        <tr>
+          <th>Property URI</th>
+          <th>Used for Class</th>
+          <th>URI</th>
+          <th>Usage note</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><code>dcatap:availability</code></td>
+          <td>Distribution</td>
+          <td>[[VOCAB-EU-AVAILABLITY]]
+          </td>
+          <td>The list of terms for the availability levels of a dataset distribution in the DCAT-AP specification.</td>
+        </tr>
+        <tr>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accessRights"><code>dct:accessRights</code></a></td>
+          <td>Dataset, Data Service</td>
+          <td>[[VOCAB-EU-ACCESS-RIGHT]]
+          </td>
+          <td>Use one of the following values (:public, :restricted, :non-public).</td>
+        </tr>
+        <tr>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accrualPeriodicity"><code>dct:accrualPeriodicity</code></a></td>
+          <td>Dataset</td>
+          <td>[[VOCAB-EU-FREQUENCY]]
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a></td>
+          <td>Distribution</td>
+          <td>[[VOCAB-EU-FILE-TYPE]]
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a></td>
+          <td>Catalog, Dataset, Catalog Record, Distribution
+          </td>
+          <td>[[VOCAB-EU-LANGUAGE]]
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a></td>
+          <td>Distribution</td>
+          <td>[[VOCAB-CH-LICENSE]]
+          </td>
+          <td>Within the federal level only the “Terms of use opendata.swiss are applicable”</td>
+        </tr>
+        <tr>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_media_type">
+            <code>dcat:mediaType</code></a>
+          </td>
+          <td>Distribution</td>
+          <td>[[IANA-MEDIA-TYPES]]
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a></td>
+          <td>Catalog, Dataset</td>
+          <td>[[VOCAB-EU-CONTINENT]], [[VOCAB-EU-COUNTRY]], [[VOCAB-EU-PLACE]], [[GEONAMES]]</td>
+          <td></td>
+        <tr>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_theme">
+            <code>dcat:theme</code></a>
+          </td>
+          <td>Dataset</td>
+          <td>[[VOCAB-EU-THEME]]
+          </td>
+          <td>The values to be used for this property are the URIs of the concepts in the vocabulary.
+            A possible (non-normative) “mapping” to the current themes on opendata.swiss is proposed here:
+            [[VOCAB-CH-THEME]]
+          </td>
+        </tr>
+        <tr>
+          <td><a data-cite="VOCAB-DCAT#Property:catalog_theme_taxonomy">
+            <code>dcat:themeTaxonomy</code></a>
+          </td>
+          <td>Catalog</td>
+          <td>[[VOCAB-EU-THEME]]
+          </td>
+          <td>The value to be used for this property is the URI of the vocabulary itself, i.e.
+            the concept scheme, not the URIs of the concepts in the vocabulary.</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </section>
+
+  <section id="multilingualism">
+    <h3>Multilingualism</h3>
+    <p>Switzerland is a multilingual country. Therefore, supporting multiple languages is particularly
+      important. For this reason, DCAT-AP CH defines guidelines regarding the content and the technical
+      publication of this content in different languages.
+    </p>
+    <p>In terms of content:</p>
+    <ul>
+      <li><strong>Organisations at the federal level MUST provide metadata in at least
+        2 official languages </strong>, for instance German and French or Italian and German.
+      </li>
+      <li><strong>Every other organisation MUST provide this metadata in at least one of the following four
+        languages: English, German, French or Italian.</strong> The specification in other languages is optional.
+      </li>
+    </ul>
+    <p>From a technical perspective multilingualism SHOULD be handled as follows:</p>
+    <ul>
+      <li><strong>Multilingual literals</strong>: Properties of Range rdfs:Literal can be provided in
+        multiple languages by adding so called language encoded strings: these add the language as an
+        [[ISO 639-1]] two letter code after the string in the way that is shown in the example below:
+      </li>
+      <aside class="example" title="Example for localizing an rdfs:Literal">
+        <pre data-include-format="text" data-include="./examples/multiple-languages/title.ttl"></pre>
+      </aside>
+      <li><strong>Content negotiation</strong>: Properties of Range rdfs:Resource SHOULD be URIs.
+        It is important to use URIs that are language independent. Then the data publisher
+        in the process of dispatching these URIs can use content negotiation.
+      </li>
+       <aside class="example" title="Example for a rdfs:Resource that is language independent. The host of that landing
+       page can redirect a request coming in for 'https://opendata.swisstopo/1234/about' to a page that matches
+       with the language of the user">
+        <pre data-include-format="text" data-include="./examples/multiple-languages/landing-page.ttl"></pre>
+      </aside>
+    </ul>
+    <p>The table lists multilingual properties of DCAT-AP CH and the translation strategies that apply to them:</p>
+    <table class="simple">
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>RDF property</th>
+      <th>Range</th>
+      <th>Multilingual Support</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><a href="#catalog-title">Catalog title</a></td>
+      <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+      <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+      <td>Language encoded string</td>
+    </tr>
+    <tr>
+      <td><a href="#catalog-description">Catalog description</a></td>
+      <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
+      <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+      <td>Language encoded string</td>
+    </tr>
+    <tr>
+      <td><a href="#dataset-title">Dataset title</a></td>
+      <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+      <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+      <td>Language encoded string</td>
+    </tr>
+    <tr>
+      <td><a href="#dataset-title">Dataset description</a></td>
+      <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
+      <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+      <td>Language encoded string</td>
+    </tr>
+    <tr>
+      <td><a href="#dataset-keyword">Dataset keyword</a></td>
+      <td><a data-cite="VOCAB-DCAT#Property:resource_keyword"><code>dcat:keyword</code></a></td>
+      <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+      <td>Language encoded string</td>
+    </tr>
+    <tr>
+      <td><a href="#catalog-homepage">Catalog homepage</a></td>
+      <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
+      <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+      <td>Content negotiation</td>
+    </tr>
+    <tr>
+      <td><a href="#dataset-landing-page">Dataset landing Page</a></td>
+      <td><a data-cite="VOCAB-DCAT#Property:resource_landing_page"><code>dcat:landingPage</code></a></td>
+      <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+      <td>Content negotiation</td>
+    </tr>
+    <tr>
+      <td><a href="#catalog-publisher">Catalog publisher</a></td>
+      <td><a data-cite="VOCAB-DCAT#Property:resource_publisher"><code>dct:publisher</code></a></td>
+      <td><a data-cite="FOAF#term_Document"><code>foaf:Agent</code></a></td>
+      <td>Content negotiation for the URI and language encoded string for the name</td>
+    </tr>
+    <tr>
+      <td><a href="#dataset-publisher">Dataset publisher</a></td>
+      <td><a data-cite="VOCAB-DCAT#Property:resource_publisher"><code>dct:publisher</code></a></td>
+      <td><a data-cite="FOAF#term_Document"><code>foaf:Agent</code></a></td>
+      <td>Content negotiation for the URI and language encoded string for the name</td>
+    </tr>
+    </tbody>
+  </table>
+  </section>
+
+</section>
+
+<section id="properties-per-class">
+  <h2>DCAT-AP-CH: Properties per Class</h2>
+
+  <section id="notation">
+    <h3>Notation</h3>
+    <ul>
+      <li><strong>Property</strong>: denotes the Property that the class or property is given in DCAT-AP and/or
+        DCAT-AP CH.
+      </li>
+      <li><strong>URI</strong>: denotes the property URI.</li>
+      <li><strong>Range</strong>: specifies the range of values that is expected for the property.</li>
+      <li><strong>ReqLevel</strong> (“Requirement level”): denotes whether the class / property is mandatory, recommended or optional.</li>
+      <li><strong>Card</strong> (“Cardinality”): specifies the minimum number of values that MUST be provided for that
+        property and the maximum number of values that MAY be provided.
+      </li>
+      <li><strong>Usage Note</strong>: specifies custom usage instructions and provides background information.</li>
+      <li><strong>CV</strong> (“Controlled Vocabulary”): defines which controlled vocabulary SHOULD be used.</li>
+    </ul>
+
+  </section>
+
+  <section id="Class:Catalog">
+    <h3>Class: Catalog</h3>
+    <p>
+      A Catalogue or repository that hosts the Datasets or Data Services being described.
+    </p>
+    <p>
+      DCAT-AP CH allows Catalogues of only Datasets, but also Catalogues of only Data Services,
+      but usually it will be a mixture of both.
+    </p>
+
+    <table class="simple">
+      <thead>
+      <tr>
+        <th>Property</th>
+        <th>URI</th>
+        <th>Range</th>
+        <th>ReqLevel</th>
+        <th>Card</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="#catalog-description">description</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-publisher">publisher</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a></td>
+        <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-title">Title</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-dataset">dataset</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:catalog_dataset"><code>dcat:dataset</code></a>
+        </td>
+        <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a>
+        </td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-homepage">homepage</a></td>
+        <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-language">language</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
+        </td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-license">license</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-issued">release date</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-rights">Rights</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dct:rights</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-service">service</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:catalog_service"><code>dcat:service</code></a>
+        </td>
+        <td><a data-cite="VOCAB-DCAT#Class:Data_Service"><code>dcat:DataService</code></a>
+        </td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-spatial-geographic">spatial /geographic</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a></td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-theme-taxonomy">themes</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:catalog_themes"><code>dcat:themeTaxonomy</code></a></td>
+        <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-modified">update/ modification date</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <aside class="example" title="Example for a dcat:Catalog class">
+      <pre data-include-format="text" data-include="./examples/catalog/catalog.ttl"></pre>
+    </aside>
+
+    <strong>Manadatory Properties</strong>
+
+    <section id="catalog-description">
+      <h4>Property: description</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>description</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>Free-text description of the
+            catalog (in the language indicated in the attribute).
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a free-text account of the data
+                Catalogue (in the language indicated in the attribute).
+              </li>
+              <li>This property can be repeated for parallel language versions of
+                the description (see <a class="no-sectionRef" href="#multilingualism"></a>).
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:description for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/description.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-publisher">
+      <h4>Property: publisher</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>publisher</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>Entity responsible for making the catalog available.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to an entity (organisation) responsible for making the Catalogue available.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:publisher for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/publisher.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-title">
+      <h4>Property: Title</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Title</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>The title of the catalogue in the indicated language</li>
+              <li>This property can be repeated for parallel language versions of the description
+                (see <a class="no-sectionRef" href="#multilingualism"></a>)</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:title for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/title.ttl"></pre>
+      </aside>
+    </section>
+
+    <strong>Recommended Properties</strong>
+
+    <section id="catalog-dataset">
+      <h4>Property: dataset</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>dataset</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:catalog_dataset"><code>dcat:dataset</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a>
+            (<a class="no-sectionRef" href="#Class:Dataset"></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>Dataset that is part of the catalog.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property links the Catalogue with a Dataset that is part of the Catalogue.</li>
+              <li>As empty Catalogues are usually indications of problems, this property SHOULD be combined
+                with the property service to implement an empty Catalogue check.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:dataset for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/dataset.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-homepage">
+      <h4>Property: homepage</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>homepage</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a web page that acts as the main page for the Catalogue</li>
+              <li>For instance opendata.swiss, would be the homepage of the Swiss Catalogue exported
+                to [[DATAPORTAL-EU]].</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of foaf:homepage for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/homepage.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-language">
+      <h4>Property: language</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>language</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite=VOCAB-DCAT#Property:resource_language><code>dct:language</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>
+            dct:LinguisticSystem</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a language used in the textual metadata describing
+                titles, descriptions, etc. of the Datasets in the Catalogue.
+              </li>
+              <li>The properties title and description of Catalogues, Datasets or Distribution
+                can be provided in multiple languages. In that case, it makes sense to also list
+                these languages on the Catalogue level.
+              </li>
+              <li>CV to be used: [[VOCAB-EU-LANGUAGE]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:language for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/language.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-license">
+      <h4>Property: license</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>license</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to the licence under which the Catalogue can be used or reused.
+              </li>
+              <li>CV to be used: [[VOCAB-CH-LICENSE]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:license for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/license.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-issued">
+      <h4>Property: release date</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>release date</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            (typed as
+            as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+            <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+            <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+            or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the date of formal issuance (e.g., fir publication of the Catalogue).</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:issued for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/issued.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-rights">
+      <h4>Property: Rights</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Rights</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dct:rights</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a statement that specifies rights associated with the Catalogue.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:rights for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-service">
+      <h4>Property: service</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>service</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:catalog_service"><code>dcat:service</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Data_Service"><code>dcat:DataService</code></a>
+            (<a class="no-sectionRef" href="#Class:Data_Service"></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a site or end-point (Data Service) that is listed in the Catalogue.</li>
+              <li>As empty Catalogues are usually indications of problems, this property SHOULD be combined
+                with the property Dataset to implement an empty Catalogue check.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:service for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/service.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-spatial-geographic">
+      <h4>Property: spatial/ geographic</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>spatial/ geographic</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a geographical area covered by the Catalogue.</li>
+              <li>CV to be used: The EU Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used:
+                [[VOCAB-EU-CONTINENT]],
+                [[VOCAB-EU-COUNTRY]],
+                [[VOCAB-EU-PLACE]],
+                [[GEONAMES]]
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:spatial for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/spatial.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-theme-taxonomy">
+      <h4>Property: themes</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>themes</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:catalog_themes"><code>dcat:themeTaxonomy</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td>
+            <p><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></p>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a knowledge organization system used to classify the Catalogue's Datasets.</li>
+              <li>CV to be used: http://publications.europa.eu/resource/dataset/data-theme </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:themeTaxonomy for dcat:Catalog.">
+        <pre data-include-format="text" data-include="./examples/catalog/theme-taxonomy.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-modified">
+      <h4>Property: update/ modification date</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>update/ modification date</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            (typed as
+            as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+            <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+            <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+            or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the most recent date on which the Catalogue was modified.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+      </aside>
+    </section>
+
+  </section>
+
+  <section id="Class:Dataset">
+
+    <h2>Class: Dataset</h2>
+
+    <p>A Dataset is a collection of data, published or curated by a single source and related by a common
+      idea or concept. In contrast to a Data Service a Dataset is expected to be a collection of data that is
+      available for access or download in one or more formats, as Distributions. Distributions belonging to
+      the same Dataset should not differ in regards to the idea of the data that they represent. They may differ
+      in regards to the physical representation of the data such as format or resolution. Or they may split the
+      data of the dataset into portions of comparable size such as data per time period or location.
+    </p>
+    <p>
+      DCAT-AP provides guidelines about the usage of Data services and Distribution in relation to Datasets:
+      [[DCAT-AP-USAGEGUIDE]].
+    </p>
+
+    <table class="simple">
+      <thead>
+      <tr>
+        <th>Property</th>
+        <th>URI</th>
+        <th>Range</th>
+        <th>ReqLevel</th>
+        <th>Card</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="#dataset-contact-point">contact point</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:resource_contact_point"><code>dcat:contactPoint</code></a></td>
+        <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a>
+        <td><strong>M</strong></td>
+        <td>1..n</td>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-description">description</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-identifier">identifier</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dct:identifier</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-publisher">publisher</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a>
+        </td>
+        <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..1</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-title">Title</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-distribution">dataset distribution</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:dataset_distribution"><code>dcat:distribution</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a>
+        </td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-keyword">keyword/tag</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:resource_keyword"><code>dcat:keyword</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-landing-page">landing page</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:resource_landing_page"><code>dcat:landingPage</code></a>
+        </td>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a>
+        </td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-release-date">release date</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-spatial-geographical-coverage">spatial/ geographical coverage</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a></td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-temporal-coverage">temporal coverage</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/temporal"><code>dct:temporal</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dct:PeriodOfTime</code></a>
+        </td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-theme-category">theme/category</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:dataset_theme"><code>dcat:theme</code></a></td>
+        <td><a data-cite="SKOS-REFERENCE#concepts"><code>skos:Concept</code></a>
+        </td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-update-modification-date">update/ modification date</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-access-rights">access rights</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accessRights"><code>dct:accessRights</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
+        </td>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-conforms-to">conforms to</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/conformsTo"><code>dct:conformsTo</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dct:Standard</code></a>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-documentation">documentation</a></td>
+        <td><a data-cite="FOAF#term_page"><code>foaf:page</code></a></td>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-frequency">frequency</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accrualPeriodicity"><code>dct:accrualPeriodicity</code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dct:Frequency</code></a>
+        </td>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-image">image</a></td>
+        <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
+        <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
+          <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a></td>
+        <td>O</td>
+        <td>0..3</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-is-referenced-by">is referenced by</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/isReferencedBy"><code>dct:isReferencedBy</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-language">language</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-qualified-attribution">qualified attribution</a></td>
+        <td><a data-cite="PROV#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a></td>
+        <td><a data-cite="PROV#Attribution">
+          <code>prov:Attribution</code></a>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-qualified-relation">qualified relation</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:resource_qualified_relation">
+          <code>dcat:qualifiedRelation</code></a>
+        </td>
+        <td><a data-cite="VOCAB-DCAT#Class:Relationship">
+          <code>dcat:Relationship</code></a>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-related-resource">related resource</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>dct:relation</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <aside class="example" id="ex-dataset" title="Dataset">
+      <pre data-include-format="text" data-include="./examples/dataset/dataset.ttl"></pre>
+    </aside>
+
+    <strong>Manadatory Properties</strong>
+
+    <section id="dataset-contact-point">
+
+      <h4>Property: contact point</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>contact point</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_contact_point"><code>dcat:contactPoint</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains contact information that can be used for sending comments about the Dataset.</li>
+              <li>This property MUST contain an email address that is continuously monitored by the data publisher.</li>
+              <li>If there are several contributors involved in the publication of the Dataset, the property can
+                be used multiple times.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dcat:contactPoint for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/contact-point.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="dataset-description">
+
+      <h4>Property: description</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>description</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a free-text account of the Dataset.</li>
+              <li>
+                This property can be repeated for parallel language versions of the
+                description (see <a class="no-sectionRef" href="#multilingualism"></a>). On the user interface of
+                data portals, the content of the element whose language corresponds to the
+                display language selected by the user is displayed.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dct:description for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/description.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="dataset-identifier">
+
+      <h4>Property: identifier</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>identifier</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/identifier"><code>dct:identifier</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the unique identifier for the Dataset, e.g. the URI or other
+                unique identifier in the context of the Catalogue.
+              </li>
+              <li>
+                The identifier may be used as part of the URI of the Dataset.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" id="ex-dataset-identifier" title="Usage of dct:identifier for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/identifier.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="dataset-publisher">
+
+      <h4>Property: publisher</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>publisher</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_publisher">
+            <code>dct:publisher</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to an entity (organisation) responsible for making the Dataset available.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dct:publisher for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/publisher.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="dataset-title">
+
+      <h4>Property: Title</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Title</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a name given to the Dataset.</li>
+              <li>This property can be repeated for parallel language versions of the title
+                (see <a class="no-sectionRef" href="#multilingualism"></a>).
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dct:title for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/title.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <strong>Recommended Properties</strong>
+
+    <section id="dataset-distribution">
+
+      <h4>Property: dataset distribution</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>dataset distribution</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:dataset_distribution"><code>dcat:distribution</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a>
+            (<a class="no-sectionRef" href="#Class:Distribution"></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property links the Dataset to an available Distribution.</li>
+              <li>In exceptional cases, a Dataset for which no distribution form exists (yet) can
+                be described in the Catalogue. In this case, the element dcat:distribution may be omitted.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dcat:distribution for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/distribution.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="dataset-keyword">
+
+      <h4>Property: keyword/tag</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>keyword/ tag</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_keyword"><code>dcat:keyword</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a keyword or tag describing the Dataset.</li>
+              <li>If a suitable keyword is available in [[TERMDAT]] then this SHOULD be used.</li>
+              <li>Good practice: mark the language of the keywords with the [[ISO 639-1]] language code such as "geodata"@en.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" id="ex-dataset-keyword" title="Usage of dcat:keyword for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/keyword.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="dataset-landing-page">
+
+      <h4>Property: landing page</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>landing page</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_landing_page"><code>dcat:landingPage</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>
+                This property refers to a web page that provides access to the Dataset,
+                its Distributions and/or additional information.
+              </li>
+              <li>
+                It is intended to point to a landing page at the original data provider,
+                not to a page on a site of a third party, such as an aggregator.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Example of dcat:landingPage for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/landing-page.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="dataset-release-date">
+
+      <h4>Property: release date</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>release date</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the date of formal issuance (e.g., first publication of the Dataset).</li>
+              <li>If this date is not known, the date of the first referencing of the data collection in
+                the Catalogue can be entered.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:issued for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/issued.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-spatial-geographical-coverage">
+
+      <h4>Property: spatial/ geographical coverage</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>spatial/ geographical coverage </td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/spatial"><code>dct:spatial</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>
+                This property refers to a geographic region that is covered by the Dataset.
+              </li>
+              <li>CV to be used: The EU Vocabularies Name Authority Lists MUST be used for continents,
+              countries and places that are in those lists; if a particular location is not in one of
+              the mentioned Named Authority Lists, Geonames URIs MUST be used:
+                [[VOCAB-EU-CONTINENT]],
+                [[VOCAB-EU-COUNTRY]],
+                [[VOCAB-EU-PLACE]],
+                [[GEONAMES]]
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" id="ex-dataset-spatial-proposal"
+             title="Usage of dct:spatial for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/spatial.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-temporal-coverage">
+      <h4>Property: temporal coverage</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>temporal coverage</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/temporal"><code>dct:temporal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/PeriodOfTime"><code>dct:PeriodOfTime</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>For temporal references this property is MUST be used in order to conform to
+            DCAT-AP.
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" id="ex-dataset-temporal" title="Usage of dct:temporal for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/temporal.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-theme-category">
+      <h4>Property: theme/category</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>theme/category</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_theme"><code>dcat:theme</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>
+                This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+              </li>
+              <li>CV to be used: [[VOCAB-EU-THEME]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Example for dcat:theme for dcat:Dataset.">
+        <pre data-include-format="text" data-include="./examples/dataset/theme.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-update-modification-date">
+      <h4>Property: update/ modification date</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>update/ modification date</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the most recent date on which the Dataset was changed or modified.</li>
+              <li>No value may indicate that the Dataset has never changed after its initial publication,
+                or that the date of the last modification is not known, or that the
+                Dataset is continuously updated
+              </li>
+              <li>This property MUST only be set if the distributions (the actual data) that
+                the Dataset describes have been updated after it has been issued. In this case the property
+                MUST contain the date of the last update. That way a person or institution using the data
+                for an analysis or application will know when to update the report or application on their side.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:modified for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/modified.ttl"></pre>
+      </aside>
+    </section>
+
+    <strong>Optional Properties</strong>
+
+    <section id="dataset-access-rights">
+      <h4>Property: access rights</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>access rights</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accessRights"><code>dct:accessRights</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to information that indicates whether the Dataset is open data, has access
+                restrictions or is not public.
+              </li>
+              <li>
+                CV to be used: [[VOCAB-EU-ACCESS-RIGHT]].
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:rights for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-conforms-to">
+      <h4>Property: conforms to</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>conforms to</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/conformsTo"><code>dct:conformsTo</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dct:Standard</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to an implementing rule or other specification.</li>
+              <li>This property SHOULD be used to indicate the model, schema, ontology, view or profile
+                that this representation of a Dataset conforms to. This is (generally) a complementary concern
+                to the media-type or format.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:conformsTo for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/conforms-to.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-documentation">
+      <h4>Property: documentation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>documentation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="FOAF#term_page"><code>foaf:page</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a page or document about this Dataset.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of foaf:page for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/documentation.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-frequency">
+
+      <h4>Property: frequency</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>frequency</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accrualPeriodicity"><code>dct:accrualPeriodicity</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dct:Frequency</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to the frequency at which the Dataset is updated.</li>
+              <li>CV to be used: [[VOCAB-EU-FREQUENCY]].</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:accrualPeriodicity for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/frequency.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-image">
+
+      <h4>Property: image</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>image</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..3</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
+            <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>A thumbnail picture illustrating the content of the dataset.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>
+                A thumbnail picture illustrating the content of the Dataset.
+              </li>
+              <li>For distributions that consist of visual content (photographs, videos, maps, etc.)
+                it makes sense to add a limited number of thumbnails to the metadata.
+              </li>
+              <li>
+                It’s a DCAT-AP CH Custom Class (not present in DCAT-AP)
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of schema:Image for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/image.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-is-referenced-by">
+
+      <h4>Property: is referenced by</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>is referenced by</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/isReferencedBy"><code>dct:isReferencedBy</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property is about a related resource, such as a publication, that references,
+                cites, or otherwise points to the Dataset.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:isReferencedBy for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/is-referenced-by.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-language">
+
+      <h4>Property: language</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>language</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td>Optional</td>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a language of the Dataset.
+                This property can be repeated if there are multiple languages in the Dataset.
+              </li>
+              <li>CV to be used: [[VOCAB-EU-LANGUAGE]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:language for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/language.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-qualified-attribution">
+
+      <h4>Property: qualified attribution</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>qualified attribution</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="PROV#qualifiedAttribution"><code>prov:qualifiedAttribution</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="PROV#Attribution">
+            <code>prov:Attribution</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a link to an Agent having some form of responsibility for the resource</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" id="ex-dataset-qualified-attribution"  title="Example for dcat:qualifiedAttribution on dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/qualified-attribution.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-qualified-relation">
+
+      <h4>Property: qualified relation</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>qualified relation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_qualified_relation">
+            <code>dcat:qualifiedRelation</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Relationship">
+            <code>dcat:Relationship</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property provides a link to a description of a relationship with another resource and
+                it’s especially meant for relationships between Dataset.</li>
+              <li>It replaces the property rdfs:seeAlso of DCAT-AP CH v1.</li>
+              <li>See here for examples on how to use
+                it: <a data-cite="VOCAB-DCAT#Property:resource_qualified_relation">
+                <code>dcat:qualifiedRelation</code></a>.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" id="ex-dataset-qualified-relation"  title="Example for dcat:qualifiedRelationship on dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/qualified-relation.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-related-resource">
+
+      <h4>Property: related resource</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>related resource</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>dct:relation</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a related resource where the relationship cannot be further specified as a
+                dcat:qualifiedRelationship. This may be additional material such as an article, example or
+                documentation helpful in the context of the Dataset.
+              </li>
+              <li>
+                The element can also be used to link to legal foundations that apply to the publication or usage
+                of the Dataset.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+      <aside class="example" id="ex-dataset-relation" title="Usage of dct:relation for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/relation.ttl"></pre>
+      </aside>
+
+    </section>
+
+  </section>
+
+  <section id="Class:Distribution">
+
+    <h2>Class: Distribution</h2>
+
+    <p>A metadata entry of this class describes a distribution of the data, which is a specific representation
+      of a Dataset. A Dataset might be available in multiple serializations that may differ in various ways,
+      including natural language, media-type or format, schematic organization, temporal and spatial resolution,
+      level of detail or profiles (which might specify any or all of the above).
+    </p>
+    <p>The distribution can contain all the data of the Dataset or it can contain just a part of the data.
+      For example: it can contain all data about the population in Switzerland or it can contain just one year of
+      this data, say the year 2018. It can also contain the data in an alternative data format, for example a
+      graphical presentation of the data for the years 1990 up to 2010.
+    </p>
+    <p>DCAT-AP allows the representation of various relationships within Dataset or between Datasets: The simplest
+      relationship is the aggregation of various physical representations of data (“Distributions”) into a Dataset.
+      One possible such Dataset would be a time series where each distribution covers one year of the data and the
+      Dataset spans several years.
+    </p>
+    <p>A distribution represents a general availability of a Dataset. It implies
+      no information about the actual access method of the data, i.e. whether by direct download or
+      through a Web page. The use of dcat:downloadURL property indicates directly downloadable distributions.
+    </p>
+    <p>DCAT-AP provides guidelines about the usage of Data services and Distribution in relation to Dataset:
+      [[DCAT-AP-USAGEGUIDE]].
+    </p>
+
+    <table class="simple">
+      <thead>
+      <tr>
+        <th>Property</th>
+        <th>URI</th>
+        <th>Range</th>
+        <th>ReqLevel</th>
+        <th>Card</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="#distribution-access-url">access URL</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:distribution_access_url">
+          <code>dcat:accessURL</code></a>
+        </td>
+        <td>
+          <a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a>
+        </td>
+        <td><strong>M</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-license">license</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-availability">availability</a></td>
+        <td><code>dcatap:availability</code></td>
+        <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-description">description</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:distribution_description">
+          <code>dct:description</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-format">format</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/format"><code>dct:format</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaTypeOrExtent"><code>dct:MediaTypeOrExtent</code></a>
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-rights">Rights</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights">
+          <code>dct:rights</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement">
+          <code>dct:RightsStatement</code></a></td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-title">Title</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-modification-date">update/ modification date</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:distribution_update_date">
+          <code>dct:modified</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-access-service">access service</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:distribution_access_service"><code>dcat:accessService</code></a>
+        <td><a data-cite="VOCAB-DCAT#Class:Data_Service"><code>dcat:DataService</code></a>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-byte-size">byte size</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:distribution_size">
+          <code>dcat:byteSize</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal">
+          <code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a>)
+        </td>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-checksum">Checksum</a></td>
+        <td><a data-cite="SPDX#checksum">
+          <code>spdx:checksum</code></a>
+        </td>
+        <td><a data-cite="SPDX#Checksum"><code>spdx:Checksum</code></a>
+        </td>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-coverage">Coverage</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/coverage"><code>dct:coverage</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LocationPeriodOrJurisdiction"><code>LocationPeriodOrJurisdiction</code></a>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-documentation">Documentation</a></td>
+        <td><a data-cite="FOAF#term_page"><code>foaf:page</code></a></td>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-download-url">download URL</a></td>
+        <td><a data-cite="VOCAB-DCAT#http://purl.org/dc/terms/spatial"><code>dcat:downloadURL</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>rdfs:Resource</code></a></td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-identifier">identifier</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:resource_identifier">
+          <code>dct:identifier</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-image">image</a></td>
+        <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
+        <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
+          <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a></td>
+        <td>O</td>
+        <td>0..3</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-language">Language</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-linked-schemas">linked schemas</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/conformsTo"><code>dct:conformsTo</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dct:Standard</code></a>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-media-type">media type</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:distribution_media_type">
+          <code>dcat:mediaType</code></a> subproperty of dct:format
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a></td>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-packaging-format">packaging format</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:distribution_packaging_format"><code>dcat:packageFormat</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:distribution_media_type">
+          <code>dcat:mediaType</code></a>
+        </td>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-release-date">release date</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:distribution_release_date">
+          <code>dct:issued</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2#gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-temporal-resolution">temporal resolution</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:distribution_release_date">
+          <code>dcat:temporalResolution</code></a>
+        </td>
+        <td><a data-cite="XMLSCHEMA11-2#duration"><code>xsd:duration</code></a>
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <aside class="example" id="ex-distribution" title="Distribution that follows this specification except
+    for dct:rights that is given as it is currently implemented on opendata.swiss">
+      <pre data-include-format="text" data-include="./examples/distribution/distribution.ttl"></pre>
+    </aside>
+
+    <strong>Manadatory Properties</strong>
+
+    <section id="distribution-access-url">
+
+      <h4>Property: access URL</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>access URL</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_access_url">
+            <code>dcat:accessURL</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_resource">
+            <code>rdfs:Resource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a URL that gives access to a Distribution of the Dataset. The resource at
+                the access URL may contain information about how to get the Dataset.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+
+      <aside class="example" title="Usage of dcat:accessURL for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/access-url.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-license">
+
+      <h4>Property: license</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>license</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_license">
+            <code>dct:license</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to the licence under which the Distribution is made available.</li>
+              <li>CV to used: [[VOCAB-CH-LICENSE]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:license for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/service/license.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <strong>Recommended Properties</strong>
+
+    <section id="distribution-availability">
+
+      <h4>Property: availability</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>availability</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td>
+            <code>dcatap:availability</code>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property indicates how long it is planned to keep the Distribution of the Dataset available.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcatap:availiablity for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/availability.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-description">
+
+      <h4>Property: description</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>description</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a free-text account of the Distribution.</li>
+              <li>The description MUST be provided if the distribution contains only part of the data
+                offered by the Dataset.</li>
+              <li>This property can be repeated for parallel language versions of the description
+                (see <a class="no-sectionRef" href="#multilingualism"></a>).
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" id="ex-distribution-description" title="Usage of dct:description for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/description.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-format">
+
+      <h4>Property: format</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>format</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_format">
+            <code>dct:format</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaTypeOrExtent"><code>dct:MediaTypeOrExtent</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to the file format of the Distribution.</li>
+              <li>CV to be used: [[VOCAB-EU-FILE-TYPE]]</li>
+              <li>If a format is not available:
+                a) media type ([[IANA-MEDIA-TYPES]]) should be used
+                b) If necessary, a discussion to evaluate the adoption within the EU should be
+                launched (Contact point: [[VOCAB-EU-OP-CONTACT]]).
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" ttitle="Usage of dct:format for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/format.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-rights">
+
+      <h4>Property: Rights</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Rights</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dct:rights</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement">
+            <code>dct:RightsStatement</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a statement that specifies rights associated with the Distribution.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dct:rights for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/rights.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-title">
+
+      <h4>Property: Title</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Title</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a name given to the Distribution. This property can be repeated for
+                parallel language versions of the description
+                (see <a class="no-sectionRef" href="#multilingualism"></a>).</li>
+              <li>The title MUST be given if the distribution contains only part of the data offered by the Dataset</li>
+              <li>The title can be given in several languages. In multilingual data portals, the title in the
+                language selected by a user will usually be shown as title for the distribution.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" id="ex-distribution-title" title="Usage of dct:title for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/title.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-modification-date">
+
+      <h4>Property: update/modification date</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>update/ modification date</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_update_date">
+            <code>dct:modified</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            (typed as
+            as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+            <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+            <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+            or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <ul>
+            <li>This property contains the most recent date on which the Distribution was changed or modified.</li>
+          </ul>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dct:modified for dcat:Distribution as specified in this definition">
+        <pre data-include-format="text" data-include="./examples/distribution/modified.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <strong>Optional Properties</strong>
+
+    <section id="distribution-access-service">
+      <h4>Property: access service</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>access service</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_access_service"><code>dcat:accessService</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Data_Service"><code>dcat:DataService</code></a>
+            (<a class="no-sectionRef" href="#Class:Data_Service"></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a data service that gives access to the distribution of the Dataset</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:accessService for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/access-service.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="distribution-byte-size">
+
+      <h4>Property: byte size</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>byte size</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_size">
+            <code>dcat:byteSize</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            (typed as
+            as <a data-cite="XMLSCHEMA11-2#decimal"><code>xsd:decimal</code></a>).
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the size of a Distribution in bytes.
+                If the precise size is not known, an approximate size can be indicated.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example"
+             title="Usage of dcat:byteSize for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/byte-size.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-checksum">
+
+      <h4>Property: Checksum</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Checksum</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="SPDX#checksum">
+            <code>spdx:checksum</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="SPDX#Checksum"><code>spdx:Checksum</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property provides a mechanism that can be used to verify that the contents of a distribution
+                have not changed.
+              </li>
+              <li>The checksum is related to the downloadURL.</li>
+              <li>Property added in [[VOCAB-DCAT-3]]:
+                <a data-cite="VOCAB-DCAT#Property:distribution_checksum">
+                  <code>spdx:checksum</code>
+                </a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of spdx:checksum for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/checksum.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-coverage">
+
+      <h4>Property: Coverage</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Coverage</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/coverage"><code>dct:coverage</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LocationPeriodOrJurisdiction">
+            <code>dct:LocationPeriodOrJurisdiction</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>If a dataset contains distributions that differ regarding their content beyond just differences
+                in format or resolution this property can be used to specify temporal or spatial coverage of the
+                data that the distribution contains.</li>
+              <li>
+                It’s a DCAT-AP CH Custom Class (not present in DCAT-AP).
+            </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dct:coverage for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/coverage.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-documentation">
+      <h4>Property: documentation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Documentation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="FOAF#term_page"><code>foaf:page</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a page or document about this Distribution.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of foaf:page for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/documentation.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="distribution-download-url">
+
+      <h4>Property: download URL</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>download URL</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_download_url">
+            <code>dcat:downloadURL</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_resource">
+            <code>rdfs:Resource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>
+                In case of a downloadable file, it is good practice to repeat the mandatory accessURL
+                in this more specific property, to indicate to the data user that the distribution has this
+                extra characteristic of being downloadable. The downloadURLs MAY thus be the same as the
+                accessURLs but they MAY also differ.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:downloadURL for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/download-url.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="distribution-identifier">
+
+      <h4>Property: identifier</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>identifier</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_identifier">
+            <code>dct:identifier</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal">
+            <code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>An identifier for the distribution, that identifies it as a
+                resource mainly for the organisation publishing the data.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" id="ex-distribution-identifier" title="Usage of dct:identifier for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/identifier.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-image">
+
+      <h4>Property: image</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>image</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..3</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="SCHEMA-ORG/image" data-no-xref=""><code>schema:image</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="SCHEMA-ORG/url" data-no-xref=""><code>schema:url</code></a> or
+            <a data-cite="SCHEMA-ORG/ImageObject" data-no-xref=""><code>schema:ImageObject</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>A thumbnail picture illustrating the content of the Distribution.</li>
+              <li>
+                For distributions that consist of visual content (photographs, videos, maps, etc.) it makes
+                sense to add a limited number of thumbnails to the metadata.</li>
+              <li>
+                It’s a DCAT-AP CH Custom Class (not present in [[DCAT-AP]]).
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of schema:Image for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/image.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="distribution-language">
+
+      <h4>Property: Language</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Language</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite=VOCAB-DCAT#Property:resource_language><code>dct:language</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a language used in the Distribution.</li>
+              <li>This property can be repeated if the metadata is provided in multiple languages.</li>
+              <li>The property MUST be set if the distribution is language-dependent, or if it is given in
+                some of the languages German, French, Italian and English but not in all four languages.</li>
+              <li>CV to be used: [[VOCAB-EU-LANGUAGE]]
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <aside class="example" title="Usage of dct:language for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/language.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="distribution-linked-schemas">
+      <h4>Property: linked schemas</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>linked schemas</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/conformsTo"><code>dct:conformsTo</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Standard"><code>dct:Standard</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a page or document about this Data Service.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:conformsTo for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/conforms-to.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="distribution-media-type">
+
+      <h4>Property: media type</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>media type</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_media_type">
+            <code>dcat:mediaType</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to the media type of the Distribution as defined in the official register of
+                media types managed by IANA.
+              </li>
+              <li>
+                The value of the element "dcat:mediaType" must correspond to a MIME type according to IANA: [[IANA-MEDIA-TYPES]].
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dcat:mediaType for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/media-type.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-packaging-format">
+
+      <h4>Property: packaging format</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>packaging format</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_packaging_format">
+            <code>dcat:packageFormat</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/MediaType"><code>dct:MediaType</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to the format of the file in which one or more data files are
+                grouped together, e.g. to enable a set of related files to be downloaded together.
+              </li>
+              <li>
+                It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dcat:packageFormat for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/packaging-format.ttl"></pre>
+      </aside>
+
+    </section>
+
+    <section id="distribution-release-date">
+
+      <h4>Property: release date</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>release date</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_release_date">
+            <code>dct:issued</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            (typed as
+            as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+            <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+            <a data-cite="XMLSCHEMA11-2#gYear"><code>xsd:gYear</code></a>
+            or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the date of formal issuance (e.g., publication) of the Distribution.</li>
+              <li>Date of formal issuance (publication) of the distribution</li>
+              <li>UsageThe first time issuance of the distribution.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:issued for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/issued.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="distribution-temporal-resolution">
+      <h4>Property: temporal resolution</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>temporal resolution</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:distribution_temporal_resolution">
+            <code>dcat:temporalResolution</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="XMLSCHEMA11-2#duration"><code>xsd:duration</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to the minimum time period resolvable in the Dataset distribution.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:temporalResolution for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/temporal-resolution.ttl"></pre>
+      </aside>
+    </section>
+
+  </section>
+
+  <section id="Class:Data_Service">
+
+    <h2>Class: Data Service</h2>
+
+    <p>A Data Service is a collection of operations that provides access to one or more Datasets or data
+      processing functions. If a dcat:DataService is bound to one or more specified Datasets, they are
+      indicated by the dcat:servesDataset property.
+    </p>
+    <p>DCAT-AP provides guidelines about the usage of Data services and Distribution in relation to
+      Datasets:
+      [[DCAT-AP-USAGEGUIDE]].
+    </p>
+
+    <table class="simple">
+      <thead>
+      <tr>
+        <th>Property</th>
+        <th>URI</th>
+        <th>Range</th>
+        <th>ReqLevel</th>
+        <th>Card</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="#data-service-endpoint-url">endpoint URL</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:data_service_endpoint_url">
+          <code>dcat:endpointURL</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-contact-point">Contact Point</a></td>
+        <td>
+          <a data-cite="VOCAB-DCAT#Property:resource_contact_point">
+            <code>dcat:contactPoint</code>
+          </a>
+        </td>
+        <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-publisher">Publisher</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a></td>
+        <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>
+        </td>
+        <td><strong>M</strong></td>
+        <td>1..1</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-title">Title</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+        <td><strong>M</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-endpoint-description">endpoint description</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:data_service_endpoint_description">
+          <code>dct:endpointDescription</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-license">license</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-serves-dataset">serves dataset</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:data_service_serves_dataset"><code>dcat:servesDataset</code></a>
+        </td>
+        <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a>
+        </td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-access-rights">access rights</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accessRights"><code>dct:accessRights</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
+        </td>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-documentation">Documentation</a></td>
+        <td><a data-cite="FOAF#term_page"><code>foaf:page</code></a></td>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-keyword">Keyword</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:resource_keyword"><code>dcat:keyword</code></a>
+        </td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-landing-page">Landing page</a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:resource_landing_page"><code>dcat:landingPage</code></a>
+        <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <aside class="example" id="ex-data-service" title="dcat:DataService with mandatory and recommended properties">
+      <pre data-include-format="text" data-include="./examples/service/service.ttl"></pre>
+    </aside>
+
+    <strong>Manadatory Properties</strong>
+
+    <section id="data-service-endpoint-url">
+
+      <h4>Property: endpoint URL</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>endpoint URL</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td>
+            <a data-cite="VOCAB-DCAT#Property:data_service_endpoint_url">
+              <code>dcat:endpointURL</code>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_resource">
+            <code>rdfs:Resource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>The root location or primary endpoint of the service (an IRI)</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:endpointURL for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/endpoint-url.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="data-service-contact-point">
+
+      <h4>Property: Contact Point</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Contact Point</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td>
+            <a data-cite="VOCAB-DCAT#Property:resource_contact_point">
+              <code>dcat:contactPoint</code>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains contact information that can be used for sending
+                comments about the Dataset.</li>
+              <li>This property MUST contain an email address that is continuously monitored
+                by the data publisher.</li>
+              <li>If there are several contributors involved in the publication of the Dataset,
+                the property can be used multiple times.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:contactPoint for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/contact-point.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="data-service-publisher">
+      <h4>Property: Publisher</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Publisher</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>This property refers to an entity (organisation) responsible for making the Data Service available.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to an entity (organisation) responsible for making the Catalogue available.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:publisher for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/publisher.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="data-service-title">
+      <h4>Property: Title</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Title</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>The title of the catalogue in the indicated language</li>
+              <li>This property can be repeated for parallel language versions of the
+                description (see <a class="no-sectionRef" href="#multilingualism"></a>)</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:title for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/title.ttl"></pre>
+      </aside>
+    </section>
+
+    <strong>Recommended Properties</strong>
+
+    <section id="data-service-endpoint-description">
+      <h4>Property: endpoint description</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>endpoint description</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:data_service_endpoint_description">
+            <code>dcat:endpointDescription</code></a>
+          </td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a description of the services available via the end-points,
+                including their operations, parameters etc.The property gives specific details of the actual
+                endpoint instances.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:endpointDescription for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/endpoint-description.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="data-service-license">
+      <h4>Property: license</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>license</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to the licence under which the Data Service is made available.</li>
+              <li>CV to used: [[VOCAB-CH-LICENSE]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:license for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/license.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="data-service-serves-dataset">
+      <h4>Property: serves dataset</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>serves dataset</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:data_service_serves_dataset"><code>dcat:servesDataset</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a>
+            (<a class="no-sectionRef" href="#Class:Dataset"></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>Dataset that is part of the catalog.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a collection of data that this data service can distribute.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:servesDataset for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/serves-dataset.ttl"></pre>
+      </aside>
+    </section>
+
+    <strong>Optional Properties</strong>
+
+    <section id="data-service-access-rights">
+      <h4>Property: access rights</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>access rights</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accessRights"><code>dct:accessRights</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property MAY include information regarding access or restrictions based on privacy,
+                security, or other policies.</li>
+              <li>CV must be used: [[VOCAB-EU-ACCESS-RIGHT]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:accessRights for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/access-rights.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="data-service-documentation">
+      <h4>Property: Documentation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Documentation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="FOAF#term_page"><code>foaf:page</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a page or document about this Data Service.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of foaf:page for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/documentation.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="data-service-keyword">
+      <h4>Property: Keyword</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Keyword</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_keyword"><code>dcat:keyword</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a keyword or tag describing the Data Service.</li>
+              <li>If available, the keyword from [[TERMDAT]] SHOULD be used.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:keyword for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/keyword.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="data-service-landing-page">
+      <h4>Property: Landing page</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Landing page</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Property:resource_landing_page"><code>dcat:landingPage</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a web page that provides access to the Data Service and/or
+                additional information. It is intended to point to a
+                landing page at the original data provider, not to a page on a site of a third party, such as an aggregator.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of foaf:landingPage for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/landing-page.ttl"></pre>
+      </aside>
+    </section>
+
+  </section>
+
+</section>
+
+<section id="conformance-to-dcat-ap">
+  <h2>Conformance to DCAT-AP</h2>
+  <p>DCAT-AP CH is a Subprofile of DCAT-AP and DCAT-AP is an application profile of DCAT.</p>
+  <p>The DCAT-Profile Guidance states that application profiles may form hierarchies.</p>
+  <p>There is a close collaboration between DCAT-AP and DCAT-AP CH which takes place mostly as an
+    online discussion on GitHub at [[DCAT-AP-GITHUB-ISSUES]].</p>
+  <p>The following diagram captures the relationship between DCAT, DCAT-AP and DCAT-AP CH:</p>
+  <div id="diagram2" class="mermaid">
+    classDiagram
+
+    DCAT -->  DCAT_AP: is_profile_of
+    DCAT_AP --> DCAT_AP_CH: is_subprofile_of
+    DCAT --> DCAT_AP_CH: is_profile_of
+    class DCAT {
+      - defines classes
+      - defines properties
+      - base vocabulary
+    }
+    class  DCAT_AP {
+      - uses classes of DCAT
+      - specifies requirement levels
+      - specifies controlled vocabulary
+    }
+    class DCAT_AP_CH {
+      - localizes DCAT-AP for Swiss context
+      - can restrict more but not less than DCAT-AP
+    }
+  </div>
+  <p>For the previously mentioned interoperability reasons, DCAT-AP CH aims to stay a sub-profile of [[DCAT-AP]].
+    Furthermore, this way it can be assured that metadata structured as DCAT-AP CH can be efficiently
+    harvested by [[DATAPORTAL-EU]].</p>
+  <p>DCAT-AP CH also aims for completeness, in the way that a data provider that only uses DCAT-AP CH
+    as guidance should be able to form a data catalogue that automatically conforms to DCAT-AP.
+  </p>
+  <p>Therefore:</p>
+  <ul>
+    <li>DCAT-AP CH contains all core classes currently known to be in DCAT-AP (Version 2.1.0, Chapter 3)</li>
+    <li>DCAT-AP CH contains all currently known recommended and mandatory properties of DCAT-AP (Version 2.0.1).
+      For these mentioned properties the usage conditions of DCAT-AP CH apply.
+    </li>
+    <li>Properties of DCAT-AP or DCAT that are not mentioned in DCAT-AP CH are considered to be optional. For
+      these properties the usage conditions of DCAT-AP and DCAT apply in the following order: if the property
+      is part of DCAT-AP, DCAT-AP’s usage conditions apply, if it is a property of DCAT only,
+      then DCAT’s usage conditions apply.
+    </li>
+  </ul>
+  <p>
+  <strong>Custom properties in DCAT-AP CH</strong>
+  <p>DCAT-AP CH MAY introduce Swiss specific properties and vocabulary, such as the list of cantons of Switzerland,
+    which don't exist in the DCAT or DCAT-AP vocabulary. It SHOULD however not introduce its own (custom) properties
+    that can already be expressed in DCAT with different vocabularies. In those cases, the
+    DCAT-AP or DCAT vocabulary have to be used.
+  </p>
+  <p>Therefore, some properties that were custom in Version 1 have been removed in Version 2 of DCAT-AP CH:</p>
+  <ul>
+    <li>
+      dct:coverage on dcat:Dataset can be now be expressed by dct:temporal and dct:spatial
+    </li>
+    <li>
+      rdfs:seeAlso on dcat:Dataset can now be expressed by dcat:qualifiedRelation
+    </li>
+  </ul>
+  <p>DCAT-AP CH still defines custom properties where a replacement by DCAT-AP or DCAT vocabulary is currently
+    not considered possible or useful (in DCAT-AP Version 2.1.0):
+  </p>
+  <ul>
+    <li>
+      schema:image on dcat:Dataset and dcat:Distribution: this property is used to provide
+      thumbnails for Distributions that contain visual data
+    </li>
+    <li>
+      dct:coverage on dcat:Distribution is needed to model distributions of datasets as a series of data
+    </li>
+  </ul>
+</section>
+
+<section id="conformance">
+  <strong>Conformance to DCAT-AP CH</strong>
+  <aside class="ednote" title="Conformance statement">
+   The first part of the conformance statement (above this note) is generated by [[RESPEC]] as it is considered an
+   integral part of any specification.
+   The second part (below this note) has been added by the editor and follows similar conformance notes in [[VOCAB-DCAT]] and
+   [[DCAT-AP]].
+  </aside>
+
+  <section id="provider-requirements">
+    <h3>Data Provider requirements</h3>
+    <p>A data catalogue conforms to DCAT-AP CH if:</p>
+    <ul>
+      <li>
+        An RDF description of the catalogue is available
+      </li>
+      <li>
+        All classes and properties defined in DCAT-AP CH v2 are used in a way consistent with the
+        semantics declared in this specification.
+      </li>
+      <li>
+        Properties not mentioned in this specification MAY be used if they are included in either
+        DCAT-AP or DCAT and their usage conforms to DCAT-AP if they are
+        included in DCAT-AP or to DCAT if they are only included in DCAT.
+      </li>
+    </ul>
+  </section>
+
+  <section id="receiver-requirements">
+    <h3>Receiver requirements</h3>
+    <p>An application (data portal) conforms to DCAT-AP if:</p>
+    <ul>
+      <li>
+        It is able to process RDF catalogues that conform to DCAT-AP CH.
+      </li>
+      <li>
+        Processing means that it MUST accept incoming data and transparently provide this
+        data to applications and services.
+      </li>
+      <li>
+        Processing does not prescribe whether and how the metadata is stored internally,
+        displayed or made searchable.
+      </li>
+      <li>
+        This processing of metadata also applies to classes and properties not mentioned in DCAT-AP CH that are part of
+        DCAT-AP or DCAT. A DCAT-AP CH conformant receiver MUST also be able to process these classes and properties].
+      </li>
+    </ul>
+  </section>
+
+</section>
+
+<section id="haftungsausschluss">
+  <h2>Haftungsausschluss</h2>
+  <p>eCH-Standards, welche der Verein eCH dem Benutzer zur unentgeltlichen Nutzung zur Verfügung stellen oder
+    welche eCH referenzieren, haben nur den Status von Empfehlungen. Der Verein eCH haftet in keinem Fall
+    für Entscheidungen oder Massnahmen, welche der Benutzer auf Grund dieser Dokumente trifft und / oder ergreift.
+    Der Benutzer ist verpflichtet, die Dokumente vor deren Nutzung selbst zu überprüfen und sich gegebenenfalls
+    beraten zu lassen. eCH-Standards können und sollen die technische, organisatorische oder juristische
+    Beratung im konkreten Einzelfall nicht ersetzen.
+  </p>
+  <p>In eCH-Standards referenzierte Dokumente, Verfahren, Methoden, Produkte und Standards sind unter Umständen
+    markenrechtlich, urheberrechtlich oder patentrechtlich geschützt. Es liegt in der ausschliesslichen
+    Verantwortlichkeit des Benutzers, sich die allenfalls erforderlichen Rechte bei den jeweils berechtigten
+    Personen und/oder Organisationen zu beschaffen.
+  </p>
+  <p>Obwohl der Verein eCH all seine Sorgfalt darauf verwendet, die eCH-Standards sorgfältig auszuarbeiten, kann
+    keine Zusicherung oder Garantie auf Aktualität, Vollständigkeit, Richtigkeit bzw. Fehlerfreiheit der zur
+    Verfügung gestellten Informationen und Dokumente gegeben werden. Der Inhalt von eCH-Standards kann jederzeit
+    und ohne Ankündigung geändert werden.
+  </p>
+  <p>Jede Haftung für Schäden, welche dem Benutzer aus dem Gebrauch der eCH-Standards entstehen ist, soweit
+    gesetzlich zulässig, wegbedungen.
+  </p>
+</section>
+
+<section id="urheberrechte">
+  <h2>Urheberrechte</h2>
+  <p>
+    Wer eCH-Standards erarbeitet, behält das geistige Eigentum an diesen. Allerdings verpflichtet sich
+    der Erarbeitende, sein betreffendes geistiges Eigentum oder seine Rechte an geistigem Eigentum anderer,
+    sofern möglich, den jeweiligen Fachgruppen und dem Verein eCH kostenlos zur uneingeschränkten Nutzung
+    und Weiterentwicklung im Rahmen des Vereinszweckes zur Verfügung zu stellen.
+  </p>
+  <p>
+    Die von den Fachgruppen erarbeiteten Standards können unter Nennung der jeweiligen Urheber von eCH
+    unentgeltlich und uneingeschränkt genutzt, weiterverbreitet und weiterentwickelt werden.
+  </p>
+  <p>
+    eCH-Standards sind vollständig dokumentiert und frei von lizenz- und/oder patentrechtlichen
+    Einschränkungen. Die dazugehörige Dokumentation kann unentgeltlich bezogen werden.
+  </p>
+  <p>
+    Diese Bestimmungen gelten ausschliesslich für die von eCH erarbeiteten Standards, nicht jedoch
+    für Standards oder Produkte Dritter, auf welche in den eCH-Standards Bezug genommen wird. Die
+    Standards enthalten die entsprechenden Hinweise auf die Rechte Dritter.
+  </p>
+</section>
+
+<section class="appendix" id="mitarbeit">
+  <h2>Mitarbeit & Überprüfung</h2>
+</section>
+
+<section class="appendix" id="aenderungen">
+  <h2>Änderungen gegenüber Vorversion</h2>
+</section>
+
+<section class="appendix" id="namespaces">
+  <h2>Verzeichnis der referenzierten Namensräume</h2>
+  <p>Namespaces and prefixes used in normative parts of this recommendation are shown in the following table:</p>
+  <table id="table-namespaces" class="simple">
+      <thead>
+      <tr>
+        <th>Prefix</th>
+        <th>Namespace IRI</th>
+        <th>Source</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>dcat</code></td>
+        <td><code>http://www.w3.org/ns/dcat#</code></td>
+        <td>[[VOCAB-DCAT]]</td>
+      </tr>
+      <tr>
+        <td><code>dct</code></td>
+        <td><code>http://purl.org/dc/terms/</code></td>
+        <td>[[DCTERMS]]</td>
+      </tr>
+      <tr>
+        <td><code>foaf</code></td>
+        <td><code>http://xmlns.com/foaf/0.1/</code></td>
+        <td>[[FOAF]]</td>
+      </tr>
+      <tr>
+        <td><code>schema</code></td>
+        <td><code>http://schema.org/</code></td>
+        <td>[[schema-org]]</td>
+      </tr>
+      <tr>
+        <td><code>rdf</code></td>
+        <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td>
+        <td>[[RDF-SYNTAX-GRAMMAR]]</td>
+      </tr>
+      <tr>
+        <td><code>rdfs</code></td>
+        <td><code>http://www.w3.org/2000/01/rdf-schema#</code></td>
+        <td>[[RDF-SCHEMA]]</td>
+      </tr>
+      <tr>
+        <td><code>vcard</code></td>
+        <td><code>http://www.w3.org/2006/vcard/ns#</code></td>
+        <td>[[VCARD-RDF]]</td>
+      </tr>
+      <tr>
+        <td><code>xsd</code></td>
+        <td><code>http://www.w3.org/2001/XMLSchema#</code></td>
+        <td>[[XMLSCHEMA11-2]]</td>
+      </tr>
+      <tr>
+        <td><code>adms</code></td>
+        <td><code>http://www.w3.org/ns/adms#</code></td>
+        <td>[[VOCAB-ADMS]]</td>
+      </tr>
+      <tr>
+        <td><code>skos</code></td>
+        <td><code>http://www.w3.org/2004/02/skos/core#</code></td>
+        <td>[[SKOS-REFERENCE]]</td>
+      </tr>
+      <tr>
+        <td><code>locn</code></td>
+        <td><code>http://www.w3.org/ns/locn#</code></td>
+        <td>[[LOCN]]</td>
+      </tr>
+      <tr>
+        <td><code>prov</code></td>
+        <td><code>http://www.w3.org/ns/prov#</code></td>
+        <td>[[PROV]]</td>
+      </tr>
+      <tr>
+        <td><code> spdx</code></td>
+        <td><code>http://spdx.org/rdf/terms#</code></td>
+        <td>[[SPDX]]</td>
+      </tr>
+      <tr>
+        <td><code> gsp</code></td>
+        <td><code>http://www.opengis.net/ont/geosparql#</code></td>
+        <td>[[GeoSPARQL]]</td>
+      </tr>
+      </tbody>
+    </table>
+</section>
+
+<section class="appendix" id="abbildungsverzeichnis">
+  <h2>Abbildungsverzeichnis</h2>
+</section>
+
+<section class="appendix" id="tabellenverzeichnis">
+  <h2>Tabellenverzeichnis</h2>
+</section>
+
+</body>
+</html>
