@@ -2,29 +2,32 @@ var respecConfig = {
   specStatus: "base",
   logos: [],
   editors: [{
-    name: "Mitglieder der eCH-Fachgruppe Open Government Data",
-  }, {
-    name: "S. Haller",
+    name: "Members of the eCH Open Government Data specialist group",
+    company: "eCH Open Government Data specialist group",
+    companyURL:"https://www.ech.ch/de/der-verein/fachgruppen/open_government_data"
+  },{
+    name:"Maik Roth",
+    company:"Open Government Data Office, BFS",
+    companyURL:"https://www.bfs.admin.ch/bfs/en/home/services/ogd/office.html",
+    note: "Head of eCH Open Government Data specialist group",
+  },{
+    name: "Stephan Haller",
     company:"BFH",
     companyURL:"https://www.bfh.ch",
-    note: "Co-Leiter eCH-Fachgruppe",
-  }, {
-    name:"Juan Pablo Lovato",
-    company:"BFS",
-    companyURL:"https://www.bfs.admin.ch",
-  }, {
-    name:"Sabine Maennel",
-    company:"Liip",
-    companyURL: "https://www.liip.ch",
-    note: "Unterstützung Leitung eCH-Fachgruppe",
+    note: "Co-Head of eCH Open Government Data Specialist Group",
+  },  {
+    name:"Michèle Spichtig",
+    company:"Open Government Data Office, BFS",
+    companyURL: "https://www.bfs.admin.ch/bfs/en/home/services/ogd/office.html",
+    note: "Support Head of eCH Open Government Data specialist group ",
   }],
   github: {
     branch: "main",
     repoURL: "https://github.com/opendata-swiss/dcat_ap_ch",
   },
-  edDraftURI: "https://www.dcat-ap.ch/releases/2.0/dcat-ap-ch.html",
+  edDraftURI: "https://dcat-ap.ch/releases/3.0_workingdraft/dcat-ap-ch_3.0_workingdraft.html",
   prevED: "https://ech.ch/ech/ech-0200",
-  subtitle: "A DCAT Application Profile for Switzerland",
+  subtitle: "A DCAT Application Profile for Switzerland (Working Draft)",
   localBiblio: {
     "DATAPORTAL-EU":{
       "href": "https://data.europa.eu/",
