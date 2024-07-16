@@ -88,6 +88,11 @@
   skos:altLabel "cc-zero"@en,
                 "CC Zero"@en,
                 "CC0"@en ;
+  skosxl:prefLabel [
+    a skosxl:Label ;
+    skosxl:literalForm "Creative Commons Zero 1.0 Universal (CC0 1.0)"@en ;
+    rdfs:label "Creative Commons Zero 1.0 Universell (CC0 1.0)"@de
+  ] ;
   foaf:homepage <http://www.opendefinition.org/licenses/cc-zero> ;
   dct:references <http://www.opendefinition.org/licenses/cc-zero> ;
   cc:legalcode <http://creativecommons.org/publicdomain/zero/1.0/legalcode.de> ;
@@ -106,6 +111,11 @@
                 "cc-by"@en,
                 "CC BY 4.0"@en,
                 "CC-BY-4.0"@en ;
+  skosxl:prefLabel [
+    a skosxl:Label ;
+    skosxl:literalForm "Creative Commons Attribution 4.0 International(CC BY 4.0)"@en ;
+    rdfs:label "Creative Commons Namensnennung 4.0 International (CC BY 4.0)"@de
+  ] ;
   foaf:homepage <http://www.opendefinition.org/licenses/cc-by/> ;
   dct:references <http://www.opendefinition.org/licenses/cc-by/> ;
   cc:legalcode <http://creativecommons.org/licenses/by/4.0/legalcode.de> ;
@@ -124,6 +134,11 @@
                 "cc-by-sa"@en,
                 "CC BY-SA 4.0"@en,
                 "CC-BY-SA-4.0"@en ;
+  skosxl:prefLabel [
+    a skosxl:Label ;
+    skosxl:literalForm "Creative Commons Attribution-Sharealike 4.0 International (CC BY-SA 4.0)"@en ;
+    rdfs:label "Creative Commons Namensnennung-Share Alike 4.0 International (CC BY-SA 4.0)"@de
+  ] ;
   foaf:homepage <http://www.opendefinition.org/licenses/cc-by-sa> ;
   dct:references <http://www.opendefinition.org/licenses/cc-by-sa> ;
   cc:legalcode <http://creativecommons.org/licenses/by-sa/4.0/legalcode.de> ;

@@ -85,7 +85,7 @@
     <foaf:homepage rdf:resource="https://opendata.swiss/en/terms-of-use/#terms_by_ask"/>
   </skos:Concept>
 
-  <skos:Concept rdf:about="https://creativecommons.org/publicdomain/zero/1.0/">
+ <skos:Concept rdf:about="https://creativecommons.org/publicdomain/zero/1.0/">
     <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
     <dc11:identifier>cc-zero</dc11:identifier>
     <skos:prefLabel xml:lang="en">Creative Commons Zero 1.0 Universal (CC0 1.0)</skos:prefLabel>
@@ -95,6 +95,12 @@
     <skos:altLabel xml:lang="en">cc-zero</skos:altLabel>
     <skos:altLabel xml:lang="en">CC Zero</skos:altLabel>
     <skos:altLabel xml:lang="en">CC0</skos:altLabel>
+    <skosxl:prefLabel>
+      <skosxl:Label>
+        <skosxl:literalForm xml:lang="en">Creative Commons Zero 1.0 Universal (CC0 1.0)</skosxl:literalForm>
+        <rdfs:label xml:lang="de">Creative Commons Zero 1.0 Universell (CC0 1.0)</rdfs:label>
+      </skosxl:Label>
+    </skosxl:prefLabel>
     <foaf:homepage rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
     <dc:references rdf:resource="http://www.opendefinition.org/licenses/cc-zero"/>
     <cc:legalcode rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/legalcode.de"/>
@@ -114,6 +120,12 @@
     <skos:altLabel xml:lang="en">cc-by</skos:altLabel>
     <skos:altLabel xml:lang="en">CC BY 4.0</skos:altLabel>
     <skos:altLabel xml:lang="en">CC-BY-4.0</skos:altLabel>
+    <skosxl:prefLabel>
+      <skosxl:Label>
+        <skosxl:literalForm xml:lang="en">Creative Commons Attribution 4.0 International(CC BY 4.0)</skosxl:literalForm>
+        <rdfs:label xml:lang="de">Creative Commons Namensnennung 4.0 International (CC BY 4.0)</rdfs:label>
+      </skosxl:Label>
+    </skosxl:prefLabel>
     <foaf:homepage rdf:resource="http://www.opendefinition.org/licenses/cc-by/"/>
     <dc:references rdf:resource="http://www.opendefinition.org/licenses/cc-by/"/>
     <cc:legalcode rdf:resource="http://creativecommons.org/licenses/by/4.0/legalcode.de"/>
@@ -122,7 +134,7 @@
     <cc:legalcode rdf:resource="http://creativecommons.org/licenses/by/4.0/legalcode.it"/>
   </skos:Concept>
 
-    <skos:Concept rdf:about="https://creativecommons.org/licenses/by-sa/4.0/">
+  <skos:Concept rdf:about="https://creativecommons.org/licenses/by-sa/4.0/">
     <rdf:type rdf:resource="http://creativecommons.org/ns#License"/>
     <dc11:identifier>cc-by-sa/4.0</dc11:identifier>
     <skos:prefLabel xml:lang="en">Creative Commons Attribution-Sharealike 4.0 International (CC BY-SA 4.0)</skos:prefLabel>
@@ -133,6 +145,12 @@
     <skos:altLabel xml:lang="en">cc-by-sa</skos:altLabel>
     <skos:altLabel xml:lang="en">CC BY-SA 4.0</skos:altLabel>
     <skos:altLabel xml:lang="en">CC-BY-SA-4.0</skos:altLabel>
+    <skosxl:prefLabel>
+      <skosxl:Label>
+        <skosxl:literalForm xml:lang="en">Creative Commons Attribution-Sharealike 4.0 International (CC BY-SA 4.0)</skosxl:literalForm>
+        <rdfs:label xml:lang="de">Creative Commons Namensnennung-Share Alike 4.0 International (CC BY-SA 4.0)</rdfs:label>
+      </skosxl:Label>
+    </skosxl:prefLabel>
     <foaf:homepage rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
     <dc:references rdf:resource="http://www.opendefinition.org/licenses/cc-by-sa"/>
     <cc:legalcode rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/legalcode.de"/>
