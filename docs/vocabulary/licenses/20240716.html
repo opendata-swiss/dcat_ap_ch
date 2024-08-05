@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DCAT-AP CH</title>
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../../_layout/css/custom.css"
+      type="text/css"
+    />
+    <link rel="shortcut icon" href="../../_layout/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/edc0267a8f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container-fluid header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <img
+              class="header__logo"
+              src="../../_layout/images/logo-ech.svg"
+              alt="eCH Logo"
+            />
+            <span class="header__title">DCAT-AP CH</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="../../index.html">DCAT-AP CH</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <a href="../../index.html">Standard</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                License vocabulary
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container page">
+      <div class="row">
+        <div class="col-12">
+          <h1>License vocabulary</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>List of licenses for Swiss opendata to enter in dct:license</h2>
+          <p>
+            Other Formats:
+            <a href="20240716.rdf" class="icon download">RDF/XML</a> |
+            <a href="20240716.ttl" class="icon code">Turtle</a>
+          </p>
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th class="col-uri">URI</th>
+                <th class="col-name">Description</th>
+                <th class="col-name">Code</th>
+                <th class="col-name">License text</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="terms_open">
+                <td>
+                  <a href="#terms_open"
+                    >http://dcat-ap.ch/vocabulary/licenses/terms_open</a
+                  >
+                </td>
+                <td>
+                  <b>Open use</b><br />
+                  Terms of Use opendata.swiss
+                </td>
+                <td>terms_open</td>
+                <td>
+                  <a href="https://opendata.swiss/terms-of-use#terms_open"
+                    >https://opendata.swiss/terms-of-use#terms_open</a
+                  >
+                </td>
+              </tr>
+              <tr id="terms_by">
+                <td>
+                  <a href="#terms_by"
+                    >http://dcat-ap.ch/vocabulary/licenses/terms_by</a
+                  >
+                </td>
+                <td>
+                  <b>Open use. Must provide the source.</b><br />
+                  Terms of Use opendata.swiss 
+                </td>
+                <td>terms_by</td>
+                <td>
+                  <a href="https://opendata.swiss/terms-of-use#terms_by"
+                    >https://opendata.swiss/terms-of-use#terms_by</a
+                  >
+                </td>
+              </tr>
+              <tr id="terms_ask">
+                <td>
+                  <a href="#terms_ask"
+                    >http://dcat-ap.ch/vocabulary/licenses/terms_ask</a
+                  >
+                </td>
+                <td>
+                   <b>Open use. Use for commercial purposes requires permission of the data owner.</b><br />
+                   Terms of Use opendata.swiss 
+                </td>
+                <td>terms_ask</td>
+                <td>
+                  <a href="https://opendata.swiss/terms-of-use#terms_ask"
+                    >https://opendata.swiss/terms-of-use#terms_ask</a
+                  >
+                </td>
+              </tr>
+              <tr id="terms_by_ask">
+                <td>
+                  <a href="#terms_by_ask"
+                    >http://dcat-ap.ch/vocabulary/licenses/terms_by_ask</a
+                  >
+                </td>
+                <td>
+                  <b>Open use. Must provide the source. Use for commercial purposes requires permission of the data owner.</b><br />
+                  Terms of Use opendata.swiss
+                </td>
+                <td>terms_by_ask</td>
+                <td>
+                  <a href="https://opendata.swiss/terms-of-use#terms_by_ask"
+                    >https://opendata.swiss/terms-of-use#terms_by_ask</a
+                  >
+                </td>
+              </tr>
+              <tr id="cc-zero">
+                <td>
+                  <a href="#cc-zero">
+                    https://creativecommons.org/publicdomain/zero/1.0/
+                  </a>
+                </td>
+                <td>Creative Commons Zero 1.0 Universell (CC0 1.0)</td>
+                <td>cc-zero</td>
+                <td>
+                  <a href="http://www.opendefinition.org/licenses/cc-zero">
+                    http://www.opendefinition.org/licenses/cc-zero
+                  </a>
+                </td>
+              </tr>
+              <tr id="cc-by/4.0">
+                <td>
+                  <a href="#cc-by/4.0"
+                    >https://creativecommons.org/licenses/by/4.0/</a
+                  >
+                </td>
+                <td>
+                  Creative Commons Namensnennung 4.0 International (CC BY 4.0)
+                </td>
+                <td>cc-by/4.0</td>
+                <td>
+                  <a href="http://www.opendefinition.org/licenses/cc-by/"
+                    >http://www.opendefinition.org/licenses/cc-by/</a
+                  >
+                </td>
+              </tr>
+              <tr id="cc-by-sa/4.0">
+                <td>
+                  <a href="#cc-by-sa/4.0"
+                    >https://creativecommons.org/licenses/by-sa/4.0/</a
+                  >
+                </td>
+                <td>
+                  Creative Commons Namensnennung-Share Alike 4.0 International (CC BY-SA 4.0)
+                </td>
+                <td>cc-by-sa</td>
+                <td>
+                  <a href="http://www.opendefinition.org/licenses/cc-by-sa"
+                    >http://www.opendefinition.org/licenses/cc-by-sa</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid maxwidth bg-dark text-center text-white">
+        <nav class="nav">
+          <a class="nav-link text-white" href="https://ech.ch/de/impressum"
+            >Imprint</a
+          >
+          <a
+            class="nav-link text-white"
+            href="https://ech.ch/de/datenschutzerklaerung"
+            >Data Protection</a
+          >
+        </nav>
+      </div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

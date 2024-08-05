@@ -1,0 +1,147 @@
+@prefix cc: <http://creativecommons.org/ns#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://dcat-ap.ch/vocabulary/licenses>
+  a owl:Ontology, skos:ConceptScheme ;
+  owl:versionInfo "20240716" ;
+  owl:versionIRI <http://dcat-ap.ch/vocabulary/licenses/20240716/> ;
+  rdfs:comment "Liste der Lizenzen, die im Feld dct:license einer DCAT-AP CH-konformen dcat:distribution fÃ¼r die Zulieferung an opendata.swiss erlaubt sind."@de ,
+               "List of licenses that are allowed in the field dct:license for delivering a dcat:Distribution in a way that conforms to DCAT-AP CH"@en ;
+  rdfs:label "Liste der Lizenzen"@de, "List of Licenses"@en;
+  skos:prefLabel "Liste der Lizenzen"@de ;
+  dct:identifier "http://dcat-ap.ch/vocabulary/licenses" .
+
+<http://dcat-ap.ch/vocabulary/licenses/terms_open>
+  a skos:Concept ;
+  skos:prefLabel "Opendata OPEN: Open use."@en,
+                 "Opendata OPEN: Utilisation libre."@fr,
+                 "Opendata OPEN: Freie Nutzung."@de,
+                 "Opendata OPEN: Libero utilizzo."@it ;
+  skos:altLabel  "Freie Nutzung"@de,
+                 "Utilisation libre"@fr ;
+  skosxl:prefLabel [
+    a skosxl:Label ;
+    skosxl:literalForm "NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired"@en ;
+    rdfs:label "NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired"@en
+  ] ;
+  foaf:homepage <https://opendata.swiss/terms-of-use/#terms_open> .
+
+<http://dcat-ap.ch/vocabulary/licenses/terms_by>
+  a skos:Concept ;
+  skos:prefLabel "Opendata BY: Open use. Must provide the source."@en,
+                 "Opendata BY: Utilisation libre. Obligation dâ€™indiquer la source."@fr,
+                 "Opendata BY: Freie Nutzung. Quellenangabe ist Pflicht."@de,
+                 "Opendata BY: Libero utilizzo. Indicazione della fonte obbligatoria. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati"@it ;
+  skos:altLabel "Freie Nutzung. Quellenangabe ist Pflicht."@de,
+                "Utilisation libre. Obligation dâ€™indiquer la source."@fr ;
+  skosxl:prefLabel [
+    a skosxl:Label ;
+    skosxl:literalForm "NonCommercialAllowed-CommercialAllowed-ReferenceRequired"@en ;
+    rdfs:label "NonCommercialAllowed-CommercialAllowed-ReferenceRequired"@de
+  ] ;
+  foaf:homepage <https://opendata.swiss/en/terms-of-use/#terms_by> .
+
+<http://dcat-ap.ch/vocabulary/licenses/terms_ask>
+  a skos:Concept ;
+  skos:prefLabel "Opendata ASK: Open use. Use for commercial purposes requires permission of the data owner."@en,
+                 "Opendata ASK: Utilisation libre. Utilisation Ã  des fins commerciales uniquement avec lâ€™autorisation du fournisseur des donnÃ©es."@fr,
+                 "Opendata ASK: Freie Nutzung. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulÃ¤ssig."@de,
+                 "Opendata ASK: Libero utilizzo. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati."@it ;
+  skos:altLabel "Freie Nutzung. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulÃ¤ssig."@de,
+                "Utilisation libre. Utilisation Ã  des fins commerciales uniquement avec lâ€™autorisation du fournisseur des donnÃ©es."@fr ;
+  skosxl:prefLabel [
+    a skosxl:Label ;
+    skosxl:literalForm "NonCommercialAllowed-CommercialWithPermission-ReferenceNotRequired"@en ;
+    rdfs:label "NonCommercialAllowed-CommercialWithPermission-ReferenceNotRequired"@de
+  ] ;
+  foaf:homepage <https://opendata.swiss/en/terms-of-use/#terms_ask> .
+
+<http://dcat-ap.ch/vocabulary/licenses/terms_by_ask>
+  a skos:Concept ;
+  skos:prefLabel "Opendata BY ASK: Open use. Must provide the source. Use for commercial purposes requires permission of the data owner."@en,
+                 "Opendata BY ASK: Utilisation libre. Obligation dâ€™indiquer la source. Utilisation commerciale uniquement avec lâ€™autorisation du fournisseur des donnÃ©es."@fr,
+                 "Opendata BY ASK: Freie Nutzung. Quellenangabe ist Pflicht. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulÃ¤ssig."@de,
+                 "Opendata BY ASK: Libero utilizzo. Indicazione della fonte obbligatoria. Utilizzo a fini commerciali ammesso soltanto previo consenso del titolare dei dati."@it ;
+  skos:altLabel "Freie Nutzung. Quellenangabe ist Pflicht. Kommerzielle Nutzung nur mit Bewilligung des Datenlieferanten zulÃ¤ssig."@de,
+                "Utilisation libre. Obligation dâ€™indiquer la source. Utilisation commerciale uniquement avec lâ€™autorisation du fournisseur des donnÃ©es."@fr ;
+  skosxl:prefLabel [
+    a skosxl:Label ;
+    skosxl:literalForm "NonCommercialAllowed-CommercialWithPermission-ReferenceRequired"@en ;
+    rdfs:label "NonCommercialAllowed-CommercialWithPermission-ReferenceRequired"@de
+  ] ;
+  foaf:homepage <https://opendata.swiss/en/terms-of-use/#terms_by_ask> .
+
+<https://creativecommons.org/publicdomain/zero/1.0/>
+  a skos:Concept, cc:License ;
+  dc:identifier "cc-zero" ;
+  skos:prefLabel "Creative Commons Zero 1.0 Universal (CC0 1.0)"@en,
+                 "Creative Commons Zero 1.0 Universell (CC0 1.0)"@de,
+                 "Creative Commons Zero 1.0 Universel (CC0 1.0)"@fr,
+                 "Creative Commons Zero 1.0 Universale (CC0 1.0)"@it ;
+  skos:altLabel "cc-zero"@en,
+                "CC Zero"@en,
+                "CC0"@en ;
+  skosxl:prefLabel [
+    a skosxl:Label ;
+    skosxl:literalForm "Creative Commons Zero 1.0 Universal (CC0 1.0)"@en ;
+    rdfs:label "Creative Commons Zero 1.0 Universell (CC0 1.0)"@de
+  ] ;
+  foaf:homepage <http://www.opendefinition.org/licenses/cc-zero> ;
+  dct:references <http://www.opendefinition.org/licenses/cc-zero> ;
+  cc:legalcode <http://creativecommons.org/publicdomain/zero/1.0/legalcode.de> ;
+  cc:legalcode <http://creativecommons.org/publicdomain/zero/1.0/legalcode.en> ;
+  cc:legalcode <http://creativecommons.org/publicdomain/zero/1.0/legalcode.fr> ;
+  cc:legalcode <http://creativecommons.org/publicdomain/zero/1.0/legalcode.it> .
+
+<https://creativecommons.org/licenses/by/4.0/>
+  a skos:Concept, cc:License ;
+  dc:identifier "cc-by/4.0" ;
+  skos:prefLabel "Creative Commons Attribution 4.0 International(CC BY 4.0)"@en,
+                 "Creative Commons Namensnennung 4.0 International (CC BY 4.0)"@de,
+                 "Creative Commons Attribution 4.0 International (CC BY 4.0)"@fr,
+                 "Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0)"@it ;
+  skos:altLabel "cc-by/4.0"@en,
+                "cc-by"@en,
+                "CC BY 4.0"@en,
+                "CC-BY-4.0"@en ;
+  skosxl:prefLabel [
+    a skosxl:Label ;
+    skosxl:literalForm "Creative Commons Attribution 4.0 International(CC BY 4.0)"@en ;
+    rdfs:label "Creative Commons Namensnennung 4.0 International (CC BY 4.0)"@de
+  ] ;
+  foaf:homepage <http://www.opendefinition.org/licenses/cc-by/> ;
+  dct:references <http://www.opendefinition.org/licenses/cc-by/> ;
+  cc:legalcode <http://creativecommons.org/licenses/by/4.0/legalcode.de> ;
+  cc:legalcode <http://creativecommons.org/licenses/by/4.0/legalcode.en> ;
+  cc:legalcode <http://creativecommons.org/licenses/by/4.0/legalcode.fr> ;
+  cc:legalcode <http://creativecommons.org/licenses/by/4.0/legalcode.it> .
+
+<https://creativecommons.org/licenses/by-sa/4.0/>
+  a skos:Concept, cc:License ;
+  dc:identifier "cc-by-sa/4.0" ;
+  skos:prefLabel "Creative Commons Attribution-Sharealike 4.0 International (CC BY-SA 4.0)"@en,
+                 "Creative Commons Namensnennung-Share Alike 4.0 International (CC BY-SA 4.0)"@de,
+                 "Creative Commons Attribution-Partage Dans les Mêmes Conditions 4.0 International (CC BY-SA 4.0)"@fr,
+                 "Creative Commons Attribuzione-Condividiallostessomodo 4.0 Internazionale (CC BY-SA 4.0)"@it ;
+  skos:altLabel "cc-by-sa/4.0"@en,
+                "cc-by-sa"@en,
+                "CC BY-SA 4.0"@en,
+                "CC-BY-SA-4.0"@en ;
+  skosxl:prefLabel [
+    a skosxl:Label ;
+    skosxl:literalForm "Creative Commons Attribution-Sharealike 4.0 International (CC BY-SA 4.0)"@en ;
+    rdfs:label "Creative Commons Namensnennung-Share Alike 4.0 International (CC BY-SA 4.0)"@de
+  ] ;
+  foaf:homepage <http://www.opendefinition.org/licenses/cc-by-sa> ;
+  dct:references <http://www.opendefinition.org/licenses/cc-by-sa> ;
+  cc:legalcode <http://creativecommons.org/licenses/by-sa/4.0/legalcode.de> ;
+  cc:legalcode <http://creativecommons.org/licenses/by-sa/4.0/legalcode.en> ;
+  cc:legalcode <http://creativecommons.org/licenses/by-sa/4.0/legalcode.fr> ;
+  cc:legalcode <http://creativecommons.org/licenses/by-sa/4.0/legalcode.it> .
