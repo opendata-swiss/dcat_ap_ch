@@ -7,13 +7,35 @@ assignees: ''
 
 ---
 
-Title: Give the issue a short but meaningful title, e.g. the class or property to which the issue relates
+**Title:**
 
-Content:
-Name and/or affiliation of the author
-Portal, service or software product presented or affected
-Clear and concise description of the aid and/or Tool
-Proposed solution, if available
-Link to the aid and/or tool, screenshot (if helpful)
+Give the issue a short but meaningful title, e.g. a reference to the DCAT-AP CH class or property for which the aid/tool is intended, or a general reference to the topic with which the aid/tool deals.
 
-Project: Under Project, please add the project "Aids and Tools".
+**Content:**
+
+Describe your proposed change
+
+**Name and/or affiliation of the author:**
+
+Describe who you are or on behalf of whom you are writing this issue.
+
+**Portal, service or software product presented or affected**
+
+**Clear and concise description of the aid and/or tool**
+
+Describe the problem domain.
+
+**Proposed solution, if available**
+
+Describe (a) possible solution(s).
+
+**Link to the class/property or section, screenshot (if helpful)**
+
+Add any additional information like links, screenshots etc.
+
+* Link to additional information: 
+* Screenshot: 
+
+**Add the issue to a Project**
+ 
+Please add the issue to the existing project "Aids and Tools". https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart#adding-the-issue-to-a-project
