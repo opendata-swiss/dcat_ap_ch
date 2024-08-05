@@ -38,4 +38,4 @@ Add any additional information like links, screenshots etc.
 
 **Add the issue to a Project**
  
-Please add the issue to the existing project "Aids and Tools". https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart#adding-the-issue-to-a-project
+Please add the issue to the existing project "Aids and Tools". Under "Projects", click on the gear icon (Zahnradsymbol) and select the " Aids and tools" project. Help needed: https://docs.github.com/en/issues/tracking-your-work-with-issues/quickstart#adding-the-issue-to-a-project
