@@ -14,11 +14,11 @@ RewriteCond %{HTTP:Accept} text/html
 RewriteRule ^vocabulary/themes/$ /vocabulary/themes/20231122.html [L,R=303]
 
 RewriteCond %{HTTP:Accept} application/rdf\+xml
-RewriteRule ^vocabulary/licenses/.*$ /vocabulary/licenses/20210623.rdf [L,R=303]
+RewriteRule ^vocabulary/licenses/.*$ /vocabulary/licenses/20240716.rdf [L,R=303]
 RewriteCond %{HTTP:Accept} text/turtle
-RewriteRule ^vocabulary/licenses/.*$ /vocabulary/licenses/20210623.ttl [L,R=303]
+RewriteRule ^vocabulary/licenses/.*$ /vocabulary/licenses/20240716.ttl [L,R=303]
 RewriteCond %{HTTP:Accept} text/html
-RewriteRule ^vocabulary/licenses/$ /vocabulary/licenses/20210623.html [L,R=303]
+RewriteRule ^vocabulary/licenses/$ /vocabulary/licenses/20240716.html [L,R=303]
 
 RewriteCond %{HTTP:Accept} application/rdf\+xml
 RewriteRule ^vocabulary/publishers/.*$ /vocabulary/publishers/20210623.rdf [L,R=303]
@@ -32,6 +32,6 @@ RewriteRule ^vocabulary/publishers/$ /vocabulary/publishers/20210623.html [L,R=3
 RewriteCond %{HTTP:Accept} text/html
 RewriteRule ^vocabulary/themes/(.*) /vocabulary/themes/20231122.html#$1 [L,NE,R=303]
 RewriteCond %{HTTP:Accept} text/html
-RewriteRule ^vocabulary/licenses/(.*) /vocabulary/licenses/20210623.html#$1 [L,NE,R=303]
+RewriteRule ^vocabulary/licenses/(.*) /vocabulary/licenses/20240716.html#$1 [L,NE,R=303]
 RewriteCond %{HTTP:Accept} text/html
 RewriteRule ^vocabulary/publishers/(.*) /vocabulary/publishers/20210623.html#$1 [L,NE,R=303]
