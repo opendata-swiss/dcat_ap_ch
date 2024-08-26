@@ -34,7 +34,7 @@
         <rdfs:label xml:lang="en">NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired</rdfs:label>
       </skosxl:Label>
     </skosxl:prefLabel>
-    <foaf:homepage rdf:resource="https://opendata.swiss/terms-of-use/#terms_open"/>
+    <foaf:homepage rdf:resource="https://opendata.swiss/terms-of-use#terms_open"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/licenses/terms_by">
@@ -50,7 +50,7 @@
         <rdfs:label xml:lang="de">NonCommercialAllowed-CommercialAllowed-ReferenceRequired</rdfs:label>
       </skosxl:Label>
     </skosxl:prefLabel>
-    <foaf:homepage rdf:resource="https://opendata.swiss/en/terms-of-use/#terms_by"/>
+    <foaf:homepage rdf:resource="https://opendata.swiss/en/terms-of-use#terms_by"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/licenses/terms_ask">
@@ -66,7 +66,7 @@
         <rdfs:label xml:lang="de">NonCommercialAllowed-CommercialWithPermission-ReferenceNotRequired</rdfs:label>
       </skosxl:Label>
     </skosxl:prefLabel>
-    <foaf:homepage rdf:resource="https://opendata.swiss/en/terms-of-use/#terms_ask"/>
+    <foaf:homepage rdf:resource="https://opendata.swiss/en/terms-of-use#terms_ask"/>
   </skos:Concept>
 
   <skos:Concept rdf:about="http://dcat-ap.ch/vocabulary/licenses/terms_by_ask">
@@ -82,7 +82,7 @@
         <rdfs:label xml:lang="de">NonCommercialAllowed-CommercialWithPermission-ReferenceRequired</rdfs:label>
       </skosxl:Label>
     </skosxl:prefLabel>
-    <foaf:homepage rdf:resource="https://opendata.swiss/en/terms-of-use/#terms_by_ask"/>
+    <foaf:homepage rdf:resource="https://opendata.swiss/en/terms-of-use#terms_by_ask"/>
   </skos:Concept>
 
  <skos:Concept rdf:about="https://creativecommons.org/publicdomain/zero/1.0/">
