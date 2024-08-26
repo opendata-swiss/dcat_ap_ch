@@ -31,7 +31,7 @@
     skosxl:literalForm "NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired"@en ;
     rdfs:label "NonCommercialAllowed-CommercialAllowed-ReferenceNotRequired"@en
   ] ;
-  foaf:homepage <https://opendata.swiss/terms-of-use/#terms_open> .
+  foaf:homepage <https://opendata.swiss/terms-of-use#terms_open> .
 
 <http://dcat-ap.ch/vocabulary/licenses/terms_by>
   a skos:Concept ;
@@ -46,7 +46,7 @@
     skosxl:literalForm "NonCommercialAllowed-CommercialAllowed-ReferenceRequired"@en ;
     rdfs:label "NonCommercialAllowed-CommercialAllowed-ReferenceRequired"@de
   ] ;
-  foaf:homepage <https://opendata.swiss/en/terms-of-use/#terms_by> .
+  foaf:homepage <https://opendata.swiss/en/terms-of-use#terms_by> .
 
 <http://dcat-ap.ch/vocabulary/licenses/terms_ask>
   a skos:Concept ;
@@ -61,7 +61,7 @@
     skosxl:literalForm "NonCommercialAllowed-CommercialWithPermission-ReferenceNotRequired"@en ;
     rdfs:label "NonCommercialAllowed-CommercialWithPermission-ReferenceNotRequired"@de
   ] ;
-  foaf:homepage <https://opendata.swiss/en/terms-of-use/#terms_ask> .
+  foaf:homepage <https://opendata.swiss/en/terms-of-use#terms_ask> .
 
 <http://dcat-ap.ch/vocabulary/licenses/terms_by_ask>
   a skos:Concept ;
@@ -76,7 +76,7 @@
     skosxl:literalForm "NonCommercialAllowed-CommercialWithPermission-ReferenceRequired"@en ;
     rdfs:label "NonCommercialAllowed-CommercialWithPermission-ReferenceRequired"@de
   ] ;
-  foaf:homepage <https://opendata.swiss/en/terms-of-use/#terms_by_ask> .
+  foaf:homepage <https://opendata.swiss/en/terms-of-use#terms_by_ask> .
 
 <https://creativecommons.org/publicdomain/zero/1.0/>
   a skos:Concept, cc:License ;
