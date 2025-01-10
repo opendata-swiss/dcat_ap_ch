@@ -43,10 +43,8 @@
   </p>
 </section>
 
-<aside class="ednote" title="Hinweis">
-  <p>Aus Gründen der besseren Lesbarkeit und Verständlichkeit wird im vorliegenden Dokument bei der
-    Bezeichnung von Personen ausschliesslich die maskuline Form verwendet. Diese Formulierung schliesst
-    Frauen in ihrer jeweiligen Funktion ausdrücklich mit ein.</p>
+<aside class="ednote" title="note">
+  <p>For ease of reading and understanding, only the masculine form is used in this document when referring to persons. This wording expressly includes women in their respective functions.</p>
 </aside>
 
 <section id="introduction" class="informative">
@@ -646,6 +644,13 @@
         </td>
         <td>R</td>
         <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-applicablelegislation">applicable legislation</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+        <td>O</td>
+        <td>0..n</td>
       </tr>
       </tbody>
     </table>
@@ -1474,6 +1479,14 @@
         <td><a href="#dataset-related-resource">related resource</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>dct:relation</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-creator">creator</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/elements/1.1/creator"><code>dct:creator</code></a></td>
+        <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
+        </td>
         <td>O</td>
         <td>0..n</td>
       </tr>
@@ -2467,10 +2480,15 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to a link to an Agent having some form of responsibility for the dataset</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to a link to an Agent having some form of responsibility for the resource</li>
+              <li>Used to link to an Agent where the nature of the relationship is known but does not match one of the standard [<a href="https://www.w3.org/TR/vocab-dcat-3/"> DCTERMS </a>]  properties (<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#creator"> dcterms:creator </a> , <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher)"> dcterms:publisher </a>).</li>
+              <li>Use dcat:hadRole on the <a data-cite="PROV#Attribution"> <code>prov:Attribution</code> </a> to capture the responsibility of the Agent with respect to the Resource. See <a href="https://www.w3.org/TR/vocab-dcat-3/#qualified-attribution"> 15.1 Relationships between datasets and agents </a>  for usage examples.</li>
             </ul>
           </td>
         </tr>
@@ -2572,6 +2590,55 @@
               </li>
             </ul>
           </td>
+        </tr>
+        </tbody>
+
+      </table>
+      <aside class="example" id="ex-dataset-relation" title="Usage of dct:relation for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/relation.ttl"></pre>
+      </aside>
+
+    </section>
+    <section id="dataset-creator">
+
+      <h4>Property: creator</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>creator</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/elements/1.1/creator"><code>dct:creator</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
+        </tr>
+        <th>Definition</th>
+          <td>An entity responsible for producing the dataset. </td>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>Resources of type <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> are recommended as values for this property.
+              </li>
+            </ul>
+            <tr>
+            <th>See also</th>
+          <td><a href=" https://www.w3.org/TR/vocab-dcat-3/#Class:Organization_Person ">DCAT 3 - 6.12 Class: Organization/Person</a></td>
+          </td>
+        </tr>
         </tr>
         </tbody>
 
@@ -5252,6 +5319,11 @@
         <td><code>dcat</code></td>
         <td><code>http://www.w3.org/ns/dcat#</code></td>
         <td>[[VOCAB-DCAT]]</td>
+      </tr>
+      <tr>
+        <td><code>dcatap</code></td>
+        <td><code>http://data.europa.eu/r5r/</code></td>
+        <td>[[VOCAB-DCAT-AP]]</td>
       </tr>
       <tr>
         <td><code>dct</code></td>
