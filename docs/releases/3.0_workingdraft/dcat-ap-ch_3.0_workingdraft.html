@@ -1250,6 +1250,43 @@
       </aside>
     </section>
 
+    <section id="catalog-applicablelegislation">
+      <h4>Property: applicable legislation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>applicable legislation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The legislation that mandates the creation or management of the Catalog.</td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+      </aside>
+    </section>
+
   </section>
 
   <section id="Class:Dataset">
@@ -1487,6 +1524,13 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/elements/1.1/creator"><code>dct:creator</code></a></td>
         <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
         </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-applicablelegislation">applicable legislation</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
         <td>O</td>
         <td>0..n</td>
       </tr>
@@ -2648,6 +2692,50 @@
       </aside>
 
     </section>
+    <section id="dataset-applicablelegislation">
+      <h4>Property: applicable legislation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>applicable legislation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The legislation that mandates the creation or management of the Dataset.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>The use of an ELI identifier is recommended. The FedLex identifier should be used for the federal level. If there is no ELI or FedLex identifier, then the dct:relation property (see <a class="no-sectionRef" href="#dataset-related-resource"></a>) must be used to indicate the legal basis.
+              </li>
+            </ul>
+            <tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+      </aside>
+    </section>
 
   </section>
 
@@ -2897,6 +2985,13 @@
         </td>
         <td>R</td>
         <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-applicablelegislation">applicable legislation</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+        <td>O</td>
+        <td>0..n</td>
       </tr>
       </tbody>
     </table>
@@ -3964,6 +4059,43 @@
       </aside>
     </section>
 
+  <section id="distribution-applicablelegislation">
+    <h4>Property: applicable legislation</h4>
+    <table class="def">
+      <tbody>
+      <tr>
+        <th>Property</th>
+        <td>applicable legislation</td>
+      </tr>
+      <tr>
+        <th>Requirement level</th>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <th>Cardinality</th>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <th>URI</th>
+        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        </td>
+      </tr>
+      <tr>
+        <th>Range</th>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+        </td>
+      </tr>
+      <tr>
+        <th>Definition</th>
+        <td>The legislation that mandates the creation or management of the Distribution.</td>
+      </tr>
+      </tbody>
+    </table>
+    <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+      <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+    </aside>
+  </section>
+
   </section>
 
   <section id="Class:Data_Service">
@@ -4080,6 +4212,13 @@
         <td><a data-cite="VOCAB-DCAT#Property:resource_landing_page"><code>dcat:landingPage</code></a>
         <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
         </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-applicablelegislation">applicable legislation</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
         <td>O</td>
         <td>0..n</td>
       </tr>
@@ -4576,6 +4715,42 @@
       </table>
       <aside class="example" title="Usage of foaf:landingPage for dcat:DataService">
         <pre data-include-format="text" data-include="./examples/service/landing-page.ttl"></pre>
+      </aside>
+    </section>
+    <section id="data-service-applicablelegislation">
+      <h4>Property: applicable legislation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>applicable legislation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The legislation that mandates the creation or management of the Data Service.</td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
       </aside>
     </section>
 
@@ -5115,7 +5290,7 @@
         </tbody>
       </table>
     </section>
-
+   
   </section>
 
 </section>
