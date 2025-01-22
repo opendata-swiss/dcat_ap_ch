@@ -64,6 +64,16 @@ var respecConfig = {
       "title":"SPDX 2.2.1",
       "publisher":"The Linux Foundation",
     },
+    "ODRL":{
+      "href":"https://www.w3.org/ns/odrl/2/",
+      "title":"ODRL Version 2.2 Ontology",
+      "publisher":"W3C",
+    },
+    "VOCAB-ODRL":{
+      "href":"https://www.w3.org/TR/odrl-vocab/",
+      "title":"ODRL Vocabulary & Expression 2.2",
+      "publisher":"W3C",
+    },
     "RESPEC":{
       "href": "https://respec.org/docs/",
       "title": "Respec.org",

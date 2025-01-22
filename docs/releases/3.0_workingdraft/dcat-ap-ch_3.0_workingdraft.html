@@ -2993,6 +2993,13 @@
         <td>O</td>
         <td>0..n</td>
       </tr>
+      <tr>
+        <td><a href="#distribution-has-policy">has policy</a></td>
+        <td><a data-cite="VOCAB-ODRL#term-hasPolicy"><code>odrl:hasPolicy</code></a></td>
+        <td><a data-cite="VOCAB-ODRL#term-Policy"><code>odrl:Policy</code></a>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
       </tbody>
     </table>
 
@@ -4088,6 +4095,51 @@
       <tr>
         <th>Definition</th>
         <td>The legislation that mandates the creation or management of the Distribution.</td>
+      </tr>
+      </tbody>
+    </table>
+    <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+      <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+    </aside>
+  </section>
+
+  <section id="distribution-has-policy">
+    <h4>Property: has policy</h4>
+    <table class="def">
+      <tbody>
+      <tr>
+        <th>Property</th>
+        <td>has policy</td>
+      </tr>
+      <tr>
+        <th>Requirement level</th>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <th>Cardinality</th>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <th>URI</th>
+        <td><a data-cite="VOCAB-ODRL#term-hasPolicy"><code>odrl:hasPolicy</code></a></td>
+        </td>
+      </tr>
+      <tr>
+        <th>Range</th>
+        <td><a data-cite="VOCAB-ODRL#term-Policy"><code>odrl:Policy</code></a>
+        </td>
+      </tr>
+      <tr>
+        <th>Definition</th>
+        <td>The policy expressing the rights associated with the distribution if using the [ODRL] vocabulary. .</td>
+      </tr>
+      <tr>
+        <th>Usage Note</th>
+        <td>
+          <ul>
+            <li>Information about rights expressed as an ODRL policy [ODRL-MODEL] using the ODRL vocabulary [ODRL-VOCAB] MAY be provided for the distribution. See also guidance at 9. License and rights statements.</li>
+          </ul>
+        </td>
       </tr>
       </tbody>
     </table>
@@ -5556,14 +5608,19 @@
         <td>[[PROV]]</td>
       </tr>
       <tr>
-        <td><code> spdx</code></td>
+        <td><code>spdx</code></td>
         <td><code>http://spdx.org/rdf/terms#</code></td>
         <td>[[SPDX]]</td>
       </tr>
       <tr>
-        <td><code> gsp</code></td>
+        <td><code>gsp</code></td>
         <td><code>http://www.opengis.net/ont/geosparql#</code></td>
         <td>[[GeoSPARQL]]</td>
+      </tr>
+      <tr>
+        <td><code>odrl</code></td>
+        <td><code>http://www.w3.org/ns/odrl/2/#</code></td>
+        <td>[[ODRL]]</td>
       </tr>
       </tbody>
     </table>
