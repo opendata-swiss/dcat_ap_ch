@@ -74,6 +74,11 @@ var respecConfig = {
       "title":"ODRL Vocabulary & Expression 2.2",
       "publisher":"W3C",
     },
+    "MODEL-ODRL":{
+      "href":"https://www.w3.org/TR/odrl-model/",
+      "title":"ODRL Information Model 2.2",
+      "publisher":"W3C",
+    },
     "RESPEC":{
       "href": "https://respec.org/docs/",
       "title": "Respec.org",
