@@ -301,7 +301,7 @@
         <tbody>
         <tr>
           <td><code>dcatap:availability</code></td>
-          <td>Distribution</td>
+          <td>Dataset, Distribution</td>
           <td>[[VOCAB-EU-AVAILABLITY]]
           </td>
           <td>The list of terms for the availability levels of a dataset distribution in the DCAT-AP specification.</td>
@@ -1433,6 +1433,13 @@
         <td>0..1</td>
       </tr>
       <tr>
+        <td><a href="#dataset-availability">availability</a></td>
+        <td><code>dcatap:availability</code></td>
+        <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
         <td><a href="#dataset-access-rights">access rights</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accessRights"><code>dct:accessRights</code></a>
         </td>
@@ -2172,6 +2179,53 @@
       <aside class="example" title="Usage of dct:modified for dcat:Dataset">
         <pre data-include-format="text" data-include="./examples/dataset/modified.ttl"></pre>
       </aside>
+    </section>
+    <section id="dataset-availability">
+
+      <h4>Property: availability</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>availability</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td>
+            <code>dcatap:availability</code>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>This property indicates how long it is planned to keep the Dataset available.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>CV to be used [[VOCAB-EU-AVAILABLITY]]. Vocabulary in human-readable form: <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/planned-availability"> Planned availability </a>.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcatap:availiablity for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/availability.ttl"></pre>
+      </aside>
+
     </section>
 
     <strong>Optional Properties</strong>

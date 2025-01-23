@@ -111,7 +111,7 @@ var respecConfig = {
     },
     "VOCAB-EU-AVAILABLITY":{
       "href":"http://publications.europa.eu/resource/authority/planned-availability",
-      "title":"Distribution availability vocabulary",
+      "title":"availability vocabulary",
       "publisher":"Publications Office of the European Union",
     },
     "VOCAB-EU-CONTINENT":{
