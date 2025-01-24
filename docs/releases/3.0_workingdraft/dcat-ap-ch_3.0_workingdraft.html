@@ -3054,6 +3054,13 @@
         <td>O</td>
         <td>0..1</td>
       </tr>
+      <tr>
+        <td><a href="#distribution-status">status</a></td>
+        <td><a data-cite="ADMS#status"><code>adms:status</code></a></td>
+        <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
       </tbody>
     </table>
 
@@ -4185,13 +4192,62 @@
       </tr>
       <tr>
         <th>Definition</th>
-        <td>The policy expressing the rights associated with the distribution if using the [ODRL] vocabulary. .</td>
+        <td>The policy expressing the rights associated with the distribution if using the [ODRL] vocabulary.</td>
       </tr>
       <tr>
         <th>Usage Note</th>
         <td>
           <ul>
             <li>Information about rights expressed as an ODRL policy [<a data-cite="MODEL-ODRL#"><code>ODRL MODEL</code></a>] using the ODRL vocabulary [<a data-cite="VOCAB-ODRL#"><code>VOCAB ODRL</code></a>] MAY be provided for the distribution. See also guidance at <a href="https://www.w3.org/TR/vocab-dcat-3/#license-rights"> DCAT 3 - 9. License and rights statements </a>.</li>
+          </ul>
+        </td>
+        <tr>
+          <th>See also</th>
+        <td>see <a class="no-sectionRef" href="#distribution-license"></a>, see <a class="no-sectionRef" href="#dataset-access-rights"></a>, see <a class="no-sectionRef" href="#distribution-rights"></a></td>
+        </td>
+      </tr>
+      </tr>
+      </tbody>
+    </table>
+    <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+      <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+    </aside>
+  </section>
+  <section id="distribution-status">
+    <h4>Property: status</h4>
+    <table class="def">
+      <tbody>
+      <tr>
+        <th>Property</th>
+        <td>status</td>
+      </tr>
+      <tr>
+        <th>Requirement level</th>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <th>Cardinality</th>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <th>URI</th>
+        <td><a data-cite="ADMS#status"><code>adms:status</code></a></td>
+        </td>
+      </tr>
+      <tr>
+        <th>Range</th>
+        <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+        </td>
+      </tr>
+      <tr>
+        <th>Definition</th>
+        <td>The status of the distribution in the context of maturity lifecycle.</td>
+      </tr>
+      <tr>
+        <th>Usage Note</th>
+        <td>
+          <ul>
+            <li>CV to be used [[VOCAB-EU-STATUS]]. Vocabulary in human-readable form: <a href="https://op.europa.eu/de/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/distribution-status">Status</a>.</li>
           </ul>
         </td>
         <tr>

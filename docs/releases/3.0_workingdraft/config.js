@@ -79,6 +79,11 @@ var respecConfig = {
       "title":"ODRL Information Model 2.2",
       "publisher":"W3C",
     },
+    "ADMS":{
+      "href":"https://semiceu.github.io/ADMS/releases/2.00/",
+      "title":"ADMS Vocabulary",
+      "publisher":"Semic",
+    },
     "RESPEC":{
       "href": "https://respec.org/docs/",
       "title": "Respec.org",
@@ -112,6 +117,11 @@ var respecConfig = {
     "VOCAB-EU-AVAILABLITY":{
       "href":"http://publications.europa.eu/resource/authority/planned-availability",
       "title":"availability vocabulary",
+      "publisher":"Publications Office of the European Union",
+    },
+    "VOCAB-EU-STATUS":{
+      "href":" 	http://publications.europa.eu/resource/authority/distribution-status/",
+      "title":"status vocabulary",
       "publisher":"Publications Office of the European Union",
     },
     "VOCAB-EU-CONTINENT":{
