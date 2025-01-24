@@ -1440,6 +1440,14 @@
         <td>0..1</td>
       </tr>
       <tr>
+        <td><a href="#dataset-other-identifier">identifier</a></td>
+        <td><a data-cite="ADMS#identifier"><code>adms:identifier</code></a>
+        </td>
+        <td><a data-cite="DCAT-AP#identifier"><code>Identifier</code></a></td>
+        <td><strong>O</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
         <td><a href="#dataset-access-rights">access rights</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accessRights"><code>dct:accessRights</code></a>
         </td>
@@ -2229,6 +2237,65 @@
     </section>
 
     <strong>Optional Properties</strong>
+
+    <section id="dataset-other-identifier">
+
+      <h4>Property: other identifier</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>other identifier</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Optional</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="ADMS#identifier"><code>adms:identifier</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCAT-AP#identifier"><code>Identifier</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>A secondary identifier of the Dataset.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li> This property allows for more detailed information about the identifer, including the identifier scheme, version, and the agency managing the scheme. This is useful when datasets are 
+                referenced across different systems or organizations, ensuring clarity and consistency. 
+              </li>
+              <li>
+                Examples are MASTADS [[MASTADS]], DOI [[DOI]], EZID [[EZID]], W3ID [[W3ID]], DataCite [[DataCite]] or other subject-specific identifiers.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>See also</th>
+        <td>See recommended property <a class="no-sectionRef" href="#dataset-identifier"></a>. For more on dereferencable identifiers, see <a href="https://www.w3.org/TR/vocab-dcat-3/#dereferenceable-identifiers">DCAT 3 - 8. Dereferenceable identifiers</a></td>
+        </td>
+      </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" id="ex-dataset-identifier" title="Usage of dct:identifier for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/identifier.ttl"></pre>
+      </aside>
+
+    </section>
 
     <section id="dataset-access-rights">
       <h4>Property: access rights</h4>

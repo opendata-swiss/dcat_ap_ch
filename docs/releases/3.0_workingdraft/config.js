@@ -34,6 +34,11 @@ var respecConfig = {
       "title": "data.europa.eu - The official portal for European Data",
       "publisher": "Publication Office of the European Union"
     },
+    "DCAT-AP":{
+      "href": "https://semiceu.github.io/DCAT-AP/releases/3.0.0/",
+      "title": "DCAT-AP 3.0",
+      "publisher": "Semic"
+    },
     "DCAT-AP-GITHUB-ISSUES":{
       "href":"https://github.com/opendata-swiss/dcat_ap_ch/issues",
       "title": "GitHub issues for DCAT-AP CH Version 2",
@@ -163,6 +168,31 @@ var respecConfig = {
       "href":"https://op.europa.eu/en/web/about-us/contact-us",
       "title":"EU Vocabularies",
       "publisher":"Publications Office of the European Union",
+    },
+    "MASTADS":{
+      "href":"https://archive.stsci.edu/pub_dsn.html",
+      "title":"Referencing Data Sets in Astronomical Literature",
+      "publisher":"Mikulski Archive for Space Telescopes",
+    },
+    "DOI":{
+      "href":"https://www.doi.org/",
+      "title":"DOI",
+      "publisher":"DOI Foundation",
+    },
+    "EZID":{
+      "href":"https://ezid.cdlib.org/",
+      "title":"EZID identifiers made easy",
+      "publisher":"California Digital Library",
+    },
+    "EZID":{
+      "href":"https://w3id.org/",
+      "title":"Permanent Identifiers for the Web",
+      "publisher":"W3C Permanent Identifier Community Group",
+    },
+    "DATACITE":{
+      "href":"https://datacite.org/",
+      "title":"DataCite",
+      "publisher":"DataCite",
     },
   }
 };
