@@ -1737,6 +1737,10 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to an entity (organisation) responsible for making the Dataset available.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
@@ -2914,8 +2918,8 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a></td>
-        <td><strong>M</strong></td>
-        <td>1..1</td>
+        <td>R</td>
+        <td>0..1</td>
       </tr>
       <tr>
         <td><a href="#distribution-availability">availability</a></td>
@@ -3186,6 +3190,8 @@
 
     </section>
 
+    <strong>Recommended Properties</strong>
+
     <section id="distribution-license">
 
       <h4>Property: license</h4>
@@ -3198,11 +3204,11 @@
         </tr>
         <tr>
           <th>Requirement level</th>
-          <td><strong>Mandatory</strong></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>Cardinality</th>
-          <td>1..1</td>
+          <td>0..1</td>
         </tr>
         <tr>
           <th>URI</th>
@@ -3231,8 +3237,6 @@
       </aside>
 
     </section>
-
-    <strong>Recommended Properties</strong>
 
     <section id="distribution-availability">
 
@@ -3263,12 +3267,17 @@
           <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property indicates how long it is planned to keep the Distribution of the Dataset available.</li>
-            </ul>
-          </td>
+          <th>Definition</th>
+          <td>This property indicates how long it is planned to keep the Distribution of the Dataset available.</td>
+        </tr>
+          <tr>
+            <th>Usage Note</th>
+            <td>
+              <ul>
+                <li>CV to be used [[VOCAB-EU-AVAILABLITY]]. Vocabulary in human-readable form: <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/planned-availability"> Planned availability </a>.</li>
+              </ul>
+            </td>
+          </tr>
         </tr>
         </tbody>
       </table>
@@ -4319,7 +4328,7 @@
         </td>
         <tr>
           <th>See also</th>
-        <td>see <a class="no-sectionRef" href="#distribution-license"></a>, see <a class="no-sectionRef" href="#dataset-access-rights"></a>, see <a class="no-sectionRef" href="#distribution-rights"></a></td>
+        <td>see Distribution <a class="no-sectionRef" href="#distribution-availability"></a> and Dataset <a class="no-sectionRef" href="#dataset-availability"></a>. For more information about a resource lifecycle see <a href="https://www.w3.org/TR/vocab-dcat-3/#life-cycle">DCAT 3 - 11.3 Resource life-cycle</a>.
         </td>
       </tr>
       </tr>
@@ -4366,17 +4375,6 @@
         <td>1..n</td>
       </tr>
       <tr>
-        <td><a href="#data-service-contact-point">Contact Point</a></td>
-        <td>
-          <a data-cite="VOCAB-DCAT#Property:resource_contact_point">
-            <code>dcat:contactPoint</code>
-          </a>
-        </td>
-        <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
-        <td><strong>M</strong></td>
-        <td>1..n</td>
-      </tr>
-      <tr>
         <td><a href="#data-service-publisher">Publisher</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a></td>
         <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>
@@ -4390,6 +4388,17 @@
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td><strong>M</strong></td>
         <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-contact-point">Contact Point</a></td>
+        <td>
+          <a data-cite="VOCAB-DCAT#Property:resource_contact_point">
+            <code>dcat:contactPoint</code>
+          </a>
+        </td>
+        <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
+        <td>R</td>
+        <td>0..n</td>
       </tr>
       <tr>
         <td><a href="#data-service-endpoint-description">endpoint description</a></td>
@@ -4512,57 +4521,6 @@
       </aside>
     </section>
 
-    <section id="data-service-contact-point">
-
-      <h4>Property: Contact Point</h4>
-
-      <table class="def">
-        <tbody>
-        <tr>
-          <th>Property</th>
-          <td>Contact Point</td>
-        </tr>
-        <tr>
-          <th>Requirement level</th>
-          <td><strong>Mandatory</strong></td>
-        </tr>
-        <tr>
-          <th>Cardinality</th>
-          <td>1..n</td>
-        </tr>
-        <tr>
-          <th>URI</th>
-          <td>
-            <a data-cite="VOCAB-DCAT#Property:resource_contact_point">
-              <code>dcat:contactPoint</code>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th>Range</th>
-          <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
-        </tr>
-        <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property contains contact information that can be used for sending
-                comments about the Dataset.</li>
-              <li>This property MUST contain an email address that is continuously monitored
-                by the data publisher.</li>
-              <li>If there are several contributors involved in the publication of the Dataset,
-                the property can be used multiple times.
-              </li>
-            </ul>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-      <aside class="example" title="Usage of dcat:contactPoint for dcat:DataService">
-        <pre data-include-format="text" data-include="./examples/service/contact-point.ttl"></pre>
-      </aside>
-    </section>
-
     <section id="data-service-publisher">
       <h4>Property: Publisher</h4>
       <table class="def">
@@ -4596,7 +4554,7 @@
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to an entity (organisation) responsible for making the Catalogue available.</li>
+              <li>This property refers to an entity (organisation) responsible for making the Data Service available.</li>
             </ul>
           </td>
         </tr>
@@ -4651,6 +4609,57 @@
 
     <strong>Recommended Properties</strong>
 
+    <section id="data-service-contact-point">
+
+      <h4>Property: Contact Point</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Contact Point</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td>
+            <a data-cite="VOCAB-DCAT#Property:resource_contact_point">
+              <code>dcat:contactPoint</code>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains contact information that can be used for sending
+                comments about the Dataset.</li>
+              <li>This property MUST contain an email address that is continuously monitored
+                by the data publisher.</li>
+              <li>If there are several contributors involved in the publication of the Dataset,
+                the property can be used multiple times.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:contactPoint for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/contact-point.ttl"></pre>
+      </aside>
+    </section>
+    
     <section id="data-service-endpoint-description">
       <h4>Property: endpoint description</h4>
       <table class="def">
@@ -4951,6 +4960,7 @@
         <pre data-include-format="text" data-include="./examples/service/landing-page.ttl"></pre>
       </aside>
     </section>
+
     <section id="data-service-applicablelegislation">
       <h4>Property: applicable legislation</h4>
       <table class="def">
@@ -5016,6 +5026,7 @@
           , <a href="#dataset-series.issued">release date</a>
           , <a href="#dataset-series.temporal-coverage">temporal coverage</a>
           , <a href="#dataset-series.title">title</a>
+          , <a href="#dataset-series.applicablelegislation">applicable legislation</a>
           .
   </dd>
 
@@ -5055,6 +5066,13 @@
         </td>
         <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
         <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-series.applicablelegislation">applicable legislation</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+        <td>O</td>
         <td>0..n</td>
       </tr>
       <tr>
@@ -5161,6 +5179,7 @@
         </tbody>
       </table>
     </section>
+
     <section id="dataset-series.description">
       <h4>Property: description</h4>
       <table class="def">
@@ -5260,10 +5279,45 @@
 
     <strong>Optional Properties</strong>
 
+    <section id="dataset-series-applicablelegislation">
+      <h4>Property: applicable legislation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>applicable legislation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The legislation that mandates the creation or management of the Dataset Series.</td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+      </aside>
+    </section>
+
     <section id="dataset-series.frequency">
-
       <h4>Property: frequency</h4>
-
       <table class="def">
         <tbody>
         <tr>
