@@ -28,7 +28,7 @@
 <body>
 
 <section id="abstract" class="informative">
-  <p style="background: yellow; font-size: larger;"><b>This is an initial draft. All contents of this page are subject to change.</b></p>
+  <p style="background: yellow; font-size: larger;"><b>This is an initial draft (status: in progress). All contents of this page are subject to change.</b></p>
   <p>
     The DCAT Application Profile for Data Portals in Switzerland (DCAT-AP CH) serves as an application profile of the Data Catalog Vocabulary [[VOCAB-DCAT]] and is utilized to detail the datasets and data services featured in Swiss data portals, such as opendata.swiss. 
     It primarily addresses the operators of these data portals (termed 'data receivers' in DCAT language) and the data providers who curate the data catalogues (known as 'data senders' in DCAT language).
@@ -53,7 +53,7 @@
 
   <section id="document-status">
     <h3>Document status</h3>
-    <p>In progress: Use is only authorised within the specialist group or expert committee.</p>
+    <p><strong>In progress: Use is only authorised within the specialist group or expert committee.</strong></p>
     <p>Draft: The document was released for public consultation by the responsible speakers from the expert committee and published accordingly.</p>
     <p>Proposal: The document is submitted to the Committee of Experts for approval DD-MM-YYYY, but is not yet standardised.</p>
     <p>Approved: The document has been approved by the Expert Committee. It has normative force for the defined scope in the defined area of validity.</p>
@@ -5762,6 +5762,35 @@ respective references to the rights of third parties.
 
 <section class="appendix" id="changelog">
   <h2>Changelog</h2>
+  <h3>Alignment with DCAT-AP 3</h3>
+
+  <p>The main focus of the eCH Expert Group by the creation of DCAT-AP CH V3 was to ensure the compatibility to DCAT-AP V3.</p>
+    <ul>
+      <li>
+        DCAT and DCAT-AP introduced the new Dataset Series class. This class will be adopted in V3 of DCAT-AP CH.
+      </li>
+      <li>
+        DCAT AP 3 introduced the property dcatap:applicableLegislation. DCAT-AP CH V3 adopted this property for the classes dcat:Catalog, dcat:Dataset, dcat:Distribution, dcat:DataService and dcat:DatasetSeries.
+      </li>
+      <li>
+        Terminology: Updated the list of prefixes.
+      </li>
+    </ul>
+  <h3>Class dcat:Catalog</h3>
+  <ul>
+    <li>
+      Introduction of the property dcatap:applicableLegislation.
+    </li>
+  </ul>
+  <h3>Class dcat:Dataset</h3>
+  <ul>
+    <li>
+      The properties dcatap:applicableLegislation, odrl:hasPolicy have been added. 
+    </li>
+    <li>
+      The dcatap:availability property, which is already located at dcat:Distribution level, has also been added to the dcat:Dataset class. For the property, the controlled EU vocabulary for availability must be used. 
+    </li>
+  </ul>
 </section>
 
 <section class="appendix" id="namespaces">
