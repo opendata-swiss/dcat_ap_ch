@@ -189,7 +189,7 @@ var respecConfig = {
       "title":"EZID identifiers made easy",
       "publisher":"California Digital Library",
     },
-    "EZID":{
+    "W3ID":{
       "href":"https://w3id.org/",
       "title":"Permanent Identifiers for the Web",
       "publisher":"W3C Permanent Identifier Community Group",
