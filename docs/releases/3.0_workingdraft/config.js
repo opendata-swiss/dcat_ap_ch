@@ -34,6 +34,11 @@ var respecConfig = {
       "title": "data.europa.eu - The official portal for European Data",
       "publisher": "Publication Office of the European Union"
     },
+    "DCAT-AP":{
+      "href": "https://semiceu.github.io/DCAT-AP/releases/3.0.0/",
+      "title": "DCAT-AP 3.0",
+      "publisher": "Semic"
+    },
     "DCAT-AP-GITHUB-ISSUES":{
       "href":"https://github.com/opendata-swiss/dcat_ap_ch/issues",
       "title": "GitHub issues for DCAT-AP CH Version 2",
@@ -64,6 +69,26 @@ var respecConfig = {
       "title":"SPDX 2.2.1",
       "publisher":"The Linux Foundation",
     },
+    "ODRL":{
+      "href":"https://www.w3.org/ns/odrl/2/",
+      "title":"ODRL Version 2.2 Ontology",
+      "publisher":"W3C",
+    },
+    "VOCAB-ODRL":{
+      "href":"https://www.w3.org/TR/odrl-vocab/",
+      "title":"ODRL Vocabulary & Expression 2.2",
+      "publisher":"W3C",
+    },
+    "MODEL-ODRL":{
+      "href":"https://www.w3.org/TR/odrl-model/",
+      "title":"ODRL Information Model 2.2",
+      "publisher":"W3C",
+    },
+    "ADMS":{
+      "href":"https://semiceu.github.io/ADMS/releases/2.00/",
+      "title":"ADMS Vocabulary",
+      "publisher":"Semic",
+    },
     "RESPEC":{
       "href": "https://respec.org/docs/",
       "title": "Respec.org",
@@ -84,6 +109,11 @@ var respecConfig = {
       "title":"Themes vocabulary for DCAT-AP CH",
       "publisher":"Verein eCH",
     },
+    "VOCAB-DCAT-AP":{
+      "href":"https://semiceu.github.io/DCAT-AP/r5r/releases/3.0.0/",
+      "title": "DCAT-AP vocabulary, the r5r namespace",
+      "publisher": "Semic",
+    },
     "VOCAB-EU":{
        "href":"http://publications.europa.eu/resource/authority/",
       "title":"EU Vocabularies",
@@ -96,7 +126,12 @@ var respecConfig = {
     },
     "VOCAB-EU-AVAILABLITY":{
       "href":"http://publications.europa.eu/resource/authority/planned-availability",
-      "title":"Distribution availability vocabulary",
+      "title":"availability vocabulary",
+      "publisher":"Publications Office of the European Union",
+    },
+    "VOCAB-EU-STATUS":{
+      "href":" 	http://publications.europa.eu/resource/authority/distribution-status/",
+      "title":"status vocabulary",
       "publisher":"Publications Office of the European Union",
     },
     "VOCAB-EU-CONTINENT":{
@@ -138,6 +173,31 @@ var respecConfig = {
       "href":"https://op.europa.eu/en/web/about-us/contact-us",
       "title":"EU Vocabularies",
       "publisher":"Publications Office of the European Union",
+    },
+    "MASTADS":{
+      "href":"https://archive.stsci.edu/pub_dsn.html",
+      "title":"Referencing Data Sets in Astronomical Literature",
+      "publisher":"Mikulski Archive for Space Telescopes",
+    },
+    "DOI":{
+      "href":"https://www.doi.org/",
+      "title":"DOI",
+      "publisher":"DOI Foundation",
+    },
+    "EZID":{
+      "href":"https://ezid.cdlib.org/",
+      "title":"EZID identifiers made easy",
+      "publisher":"California Digital Library",
+    },
+    "EZID":{
+      "href":"https://w3id.org/",
+      "title":"Permanent Identifiers for the Web",
+      "publisher":"W3C Permanent Identifier Community Group",
+    },
+    "DATACITE":{
+      "href":"https://datacite.org/",
+      "title":"DataCite",
+      "publisher":"DataCite",
     },
   }
 };

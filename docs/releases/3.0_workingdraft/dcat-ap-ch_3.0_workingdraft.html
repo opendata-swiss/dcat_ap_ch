@@ -5,6 +5,7 @@
   <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+  <script src="https://hypothes.is/embed.js" async></script>
   <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c" defer></script>
   <script class="remove" src="config.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -43,10 +44,8 @@
   </p>
 </section>
 
-<aside class="ednote" title="Hinweis">
-  <p>Aus Gründen der besseren Lesbarkeit und Verständlichkeit wird im vorliegenden Dokument bei der
-    Bezeichnung von Personen ausschliesslich die maskuline Form verwendet. Diese Formulierung schliesst
-    Frauen in ihrer jeweiligen Funktion ausdrücklich mit ein.</p>
+<aside class="ednote" title="note">
+  <p>For ease of reading and understanding, only the masculine form is used in this document when referring to persons. This wording expressly includes women in their respective functions.</p>
 </aside>
 
 <section id="introduction" class="informative">
@@ -303,7 +302,7 @@
         <tbody>
         <tr>
           <td><code>dcatap:availability</code></td>
-          <td>Distribution</td>
+          <td>Dataset, Distribution</td>
           <td>[[VOCAB-EU-AVAILABLITY]]
           </td>
           <td>The list of terms for the availability levels of a dataset distribution in the DCAT-AP specification.</td>
@@ -647,6 +646,13 @@
         <td>R</td>
         <td>0..1</td>
       </tr>
+      <tr>
+        <td><a href="#catalog-applicablelegislation">applicable legislation</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
       </tbody>
     </table>
 
@@ -748,7 +754,7 @@
         </tbody>
       </table>
       <aside class="example" title="Usage of dct:publisher for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/publisher.ttl"></pre>
+        <pre data-include-format="text" data-include="3.0_workingdraft/examples/catalog/publisher.ttl"></pre>
       </aside>
     </section>
 
@@ -1231,17 +1237,50 @@
           </td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property contains the most recent date on which the Catalogue was modified.</li>
-            </ul>
-          </td>
+          <th>Definition</th>
+          <td>This property contains the most recent date on which the Catalogue was modified</td>
         </tr>
         </tbody>
       </table>
       <aside class="example" title="Usage of dct:modified for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-applicablelegislation">
+      <h4>Property: applicable legislation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>applicable legislation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The legislation that mandates the creation or management of the Catalog.</td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/applicableLegislation.ttl"></pre>
       </aside>
     </section>
 
@@ -1391,6 +1430,21 @@
         <td>0..1</td>
       </tr>
       <tr>
+        <td><a href="#dataset-availability">availability</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></a></td>
+        <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-other-identifier">identifier</a></td>
+        <td><a data-cite="ADMS#identifier"><code>adms:identifier</code></a>
+        </td>
+        <td><a data-cite="DCAT-AP#identifier"><code>Identifier</code></a></td>
+        <td><strong>O</strong></td>
+        <td>1..n</td>
+      </tr>
+      <tr>
         <td><a href="#dataset-access-rights">access rights</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accessRights"><code>dct:accessRights</code></a>
         </td>
@@ -1474,6 +1528,21 @@
         <td><a href="#dataset-related-resource">related resource</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/relation"><code>dct:relation</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-creator">creator</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/elements/1.1/creator"><code>dct:creator</code></a></td>
+        <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-applicablelegislation">applicable legislation</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a></td>
         <td>O</td>
         <td>0..n</td>
       </tr>
@@ -1663,6 +1732,10 @@
           <th>Range</th>
           <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>
           </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>This property refers to an entity (organisation) responsible for making the Dataset available.</td>
         </tr>
         <tr>
           <th>Usage Note</th>
@@ -2094,10 +2167,13 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property contains the most recent date on which the Dataset was changed or modified.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property contains the most recent date on which the Dataset was changed or modified.</li>
               <li>No value may indicate that the Dataset has never changed after its initial publication,
                 or that the date of the last modification is not known, or that the
                 Dataset is continuously updated
@@ -2116,8 +2192,114 @@
         <pre data-include-format="text" data-include="./examples/dataset/modified.ttl"></pre>
       </aside>
     </section>
+    <section id="dataset-availability">
+
+      <h4>Property: availability</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>availability</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td>
+            <a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>This property indicates how long it is planned to keep the Dataset available.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>CV to be used [[VOCAB-EU-AVAILABLITY]]. Vocabulary in human-readable form: <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/planned-availability"> Planned availability </a>.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcatap:availiablity for dcat:Distribution">
+        <pre data-include-format="text" data-include="./examples/distribution/availability.ttl"></pre>
+      </aside>
+
+    </section>
 
     <strong>Optional Properties</strong>
+
+    <section id="dataset-other-identifier">
+
+      <h4>Property: other identifier</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>other identifier</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Optional</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="ADMS#identifier"><code>adms:identifier</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCAT-AP#identifier"><code>Identifier</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>A secondary identifier of the Dataset.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li> This property allows for more detailed information about the identifer, including the identifier scheme, version, and the agency managing the scheme. This is useful when datasets are 
+                referenced across different systems or organizations, ensuring clarity and consistency. 
+              </li>
+              <li>
+                Examples are MASTADS [[MASTADS]], DOI [[DOI]], EZID [[EZID]], W3ID [[W3ID]], DataCite [[DataCite]] or other subject-specific identifiers.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>See also</th>
+        <td>See recommended property <a class="no-sectionRef" href="#dataset-identifier"></a>. For more on dereferencable identifiers, see <a href="https://www.w3.org/TR/vocab-dcat-3/#dereferenceable-identifiers">DCAT 3 - 8. Dereferenceable identifiers</a></td>
+        </td>
+      </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" id="ex-dataset-identifier" title="Usage of dct:identifier for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/identifier.ttl"></pre>
+      </aside>
+
+    </section>
 
     <section id="dataset-access-rights">
       <h4>Property: access rights</h4>
@@ -2467,10 +2649,15 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to a link to an Agent having some form of responsibility for the dataset</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to a link to an Agent having some form of responsibility for the resource</li>
+              <li>Used to link to an Agent where the nature of the relationship is known but does not match one of the standard [<a href="https://www.w3.org/TR/vocab-dcat-3/"> DCTERMS </a>]  properties (<a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#creator"> dcterms:creator </a> , <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher)"> dcterms:publisher </a>).</li>
+              <li>Use dcat:hadRole on the <a data-cite="PROV#Attribution"> <code>prov:Attribution</code> </a> to capture the responsibility of the Agent with respect to the Resource. See <a href="https://www.w3.org/TR/vocab-dcat-3/#qualified-attribution"> DCAT 3 - 15.1 Relationships between datasets and agents </a>  for usage examples.</li>
             </ul>
           </td>
         </tr>
@@ -2581,6 +2768,99 @@
       </aside>
 
     </section>
+    <section id="dataset-creator">
+
+      <h4>Property: creator</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>creator</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/elements/1.1/creator"><code>dct:creator</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
+        </tr>
+        <th>Definition</th>
+          <td>An entity responsible for producing the dataset. </td>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>Resources of type <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> are recommended as values for this property.
+              </li>
+            </ul>
+            <tr>
+            <th>See also</th>
+          <td><a href=" https://www.w3.org/TR/vocab-dcat-3/#Class:Organization_Person ">DCAT 3 - 6.12 Class: Organization/Person</a></td>
+          </td>
+        </tr>
+        </tr>
+        </tbody>
+
+      </table>
+      <aside class="example" id="ex-dataset-relation" title="Usage of dct:relation for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/relation.ttl"></pre>
+      </aside>
+
+    </section>
+    <section id="dataset-applicablelegislation">
+      <h4>Property: applicable legislation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>applicable legislation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The legislation that mandates the creation or management of the Dataset.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>The use of an ELI identifier is recommended. The FedLex identifier should be used for the federal level. If there is no ELI or FedLex identifier, then the dct:relation property (see <a class="no-sectionRef" href="#dataset-related-resource"></a>) must be used to indicate the legal basis.
+              </li>
+            </ul>
+            <tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/applicableLegislation.ttl"></pre>
+      </aside>
+    </section>
 
   </section>
 
@@ -2638,12 +2918,12 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a></td>
-        <td><strong>M</strong></td>
-        <td>1..1</td>
+        <td>R</td>
+        <td>0..1</td>
       </tr>
       <tr>
         <td><a href="#distribution-availability">availability</a></td>
-        <td><code>dcatap:availability</code></td>
+        <td><a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></a></td>
         <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
         <td>R</td>
         <td>0..1</td>
@@ -2831,6 +3111,27 @@
         <td>R</td>
         <td>0..1</td>
       </tr>
+      <tr>
+        <td><a href="#distribution-applicablelegislation">applicable legislation</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-has-policy">has policy</a></td>
+        <td><a data-cite="VOCAB-ODRL#term-hasPolicy"><code>odrl:hasPolicy</code></a></td>
+        <td><a data-cite="VOCAB-ODRL#term-Policy"><code>odrl:Policy</code></a>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#distribution-status">status</a></td>
+        <td><a data-cite="ADMS#status"><code>adms:status</code></a></td>
+        <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
       </tbody>
     </table>
 
@@ -2889,6 +3190,8 @@
 
     </section>
 
+    <strong>Recommended Properties</strong>
+
     <section id="distribution-license">
 
       <h4>Property: license</h4>
@@ -2901,11 +3204,11 @@
         </tr>
         <tr>
           <th>Requirement level</th>
-          <td><strong>Mandatory</strong></td>
+          <td>Recommended</td>
         </tr>
         <tr>
           <th>Cardinality</th>
-          <td>1..1</td>
+          <td>0..1</td>
         </tr>
         <tr>
           <th>URI</th>
@@ -2935,8 +3238,6 @@
 
     </section>
 
-    <strong>Recommended Properties</strong>
-
     <section id="distribution-availability">
 
       <h4>Property: availability</h4>
@@ -2958,7 +3259,7 @@
         <tr>
           <th>URI</th>
           <td>
-            <code>dcatap:availability</code>
+            <a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></a>
           </td>
         </tr>
         <tr>
@@ -2966,12 +3267,17 @@
           <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property indicates how long it is planned to keep the Distribution of the Dataset available.</li>
-            </ul>
-          </td>
+          <th>Definition</th>
+          <td>This property indicates how long it is planned to keep the Distribution of the Dataset available.</td>
+        </tr>
+          <tr>
+            <th>Usage Note</th>
+            <td>
+              <ul>
+                <li>CV to be used [[VOCAB-EU-AVAILABLITY]]. Vocabulary in human-readable form: <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/planned-availability"> Planned availability </a>.</li>
+              </ul>
+            </td>
+          </tr>
         </tr>
         </tbody>
       </table>
@@ -3213,10 +3519,8 @@
           </td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <ul>
-            <li>This property contains the most recent date on which the Distribution was changed or modified.</li>
-          </ul>
+          <th>Definition</th>
+          <td>This property contains the most recent date on which the Distribution was changed or modified.</td>
         </tr>
         </tbody>
       </table>
@@ -3897,6 +4201,142 @@
       </aside>
     </section>
 
+  <section id="distribution-applicablelegislation">
+    <h4>Property: applicable legislation</h4>
+    <table class="def">
+      <tbody>
+      <tr>
+        <th>Property</th>
+        <td>applicable legislation</td>
+      </tr>
+      <tr>
+        <th>Requirement level</th>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <th>Cardinality</th>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <th>URI</th>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        </td>
+      </tr>
+      <tr>
+        <th>Range</th>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+        </td>
+      </tr>
+      <tr>
+        <th>Definition</th>
+        <td>The legislation that mandates the creation or management of the Distribution.</td>
+      </tr>
+      </tbody>
+    </table>
+    <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:Distribution">
+      <pre data-include-format="text" data-include="./examples/distribution/applicableLegislation.ttl"></pre>
+    </aside>
+  </section>
+
+  <section id="distribution-has-policy">
+    <h4>Property: has policy</h4>
+    <table class="def">
+      <tbody>
+      <tr>
+        <th>Property</th>
+        <td>has policy</td>
+      </tr>
+      <tr>
+        <th>Requirement level</th>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <th>Cardinality</th>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <th>URI</th>
+        <td><a data-cite="VOCAB-ODRL#term-hasPolicy"><code>odrl:hasPolicy</code></a></td>
+        </td>
+      </tr>
+      <tr>
+        <th>Range</th>
+        <td><a data-cite="VOCAB-ODRL#term-Policy"><code>odrl:Policy</code></a>
+        </td>
+      </tr>
+      <tr>
+        <th>Definition</th>
+        <td>The policy expressing the rights associated with the distribution if using the [ODRL] vocabulary.</td>
+      </tr>
+      <tr>
+        <th>Usage Note</th>
+        <td>
+          <ul>
+            <li>Information about rights expressed as an ODRL policy [<a data-cite="MODEL-ODRL#"><code>ODRL MODEL</code></a>] using the ODRL vocabulary [<a data-cite="VOCAB-ODRL#"><code>VOCAB ODRL</code></a>] MAY be provided for the distribution. See also guidance at <a href="https://www.w3.org/TR/vocab-dcat-3/#license-rights"> DCAT 3 - 9. License and rights statements </a>.</li>
+          </ul>
+        </td>
+        <tr>
+          <th>See also</th>
+        <td>see <a class="no-sectionRef" href="#distribution-license"></a>, see <a class="no-sectionRef" href="#dataset-access-rights"></a>, see <a class="no-sectionRef" href="#distribution-rights"></a></td>
+        </td>
+      </tr>
+      </tr>
+      </tbody>
+    </table>
+    <aside class="example" title="Usage of odrl:hasPolicy for dcat:Distribution">
+      <pre data-include-format="text" data-include="./examples/distribution/hasPolicy.ttl"></pre>
+    </aside>
+  </section>
+  <section id="distribution-status">
+    <h4>Property: status</h4>
+    <table class="def">
+      <tbody>
+      <tr>
+        <th>Property</th>
+        <td>status</td>
+      </tr>
+      <tr>
+        <th>Requirement level</th>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <th>Cardinality</th>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <th>URI</th>
+        <td><a data-cite="ADMS#status"><code>adms:status</code></a></td>
+        </td>
+      </tr>
+      <tr>
+        <th>Range</th>
+        <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+        </td>
+      </tr>
+      <tr>
+        <th>Definition</th>
+        <td>The status of the distribution in the context of maturity lifecycle.</td>
+      </tr>
+      <tr>
+        <th>Usage Note</th>
+        <td>
+          <ul>
+            <li>CV to be used [[VOCAB-EU-STATUS]]. Vocabulary in human-readable form: <a href="https://op.europa.eu/de/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/distribution-status">Status</a>.</li>
+          </ul>
+        </td>
+        <tr>
+          <th>See also</th>
+        <td>see Distribution <a class="no-sectionRef" href="#distribution-availability"></a> and Dataset <a class="no-sectionRef" href="#dataset-availability"></a>. For more information about a resource lifecycle see <a href="https://www.w3.org/TR/vocab-dcat-3/#life-cycle">DCAT 3 - 11.3 Resource life-cycle</a>.
+        </td>
+      </tr>
+      </tr>
+      </tbody>
+    </table>
+    <aside class="example" title="Usage of adms:status for dcat:Distribution">
+      <pre data-include-format="text" data-include="./examples/distribution/status.ttl"></pre>
+    </aside>
+  </section>
+
   </section>
 
   <section id="Class:Data_Service">
@@ -3933,17 +4373,6 @@
         <td>1..n</td>
       </tr>
       <tr>
-        <td><a href="#data-service-contact-point">Contact Point</a></td>
-        <td>
-          <a data-cite="VOCAB-DCAT#Property:resource_contact_point">
-            <code>dcat:contactPoint</code>
-          </a>
-        </td>
-        <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
-        <td><strong>M</strong></td>
-        <td>1..n</td>
-      </tr>
-      <tr>
         <td><a href="#data-service-publisher">Publisher</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a></td>
         <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>
@@ -3957,6 +4386,17 @@
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td><strong>M</strong></td>
         <td>1..n</td>
+      </tr>
+      <tr>
+        <td><a href="#data-service-contact-point">Contact Point</a></td>
+        <td>
+          <a data-cite="VOCAB-DCAT#Property:resource_contact_point">
+            <code>dcat:contactPoint</code>
+          </a>
+        </td>
+        <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
+        <td>R</td>
+        <td>0..n</td>
       </tr>
       <tr>
         <td><a href="#data-service-endpoint-description">endpoint description</a></td>
@@ -4016,6 +4456,13 @@
         <td>O</td>
         <td>0..n</td>
       </tr>
+      <tr>
+        <td><a href="#data-service-applicablelegislation">applicable legislation</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
       </tbody>
     </table>
 
@@ -4072,57 +4519,6 @@
       </aside>
     </section>
 
-    <section id="data-service-contact-point">
-
-      <h4>Property: Contact Point</h4>
-
-      <table class="def">
-        <tbody>
-        <tr>
-          <th>Property</th>
-          <td>Contact Point</td>
-        </tr>
-        <tr>
-          <th>Requirement level</th>
-          <td><strong>Mandatory</strong></td>
-        </tr>
-        <tr>
-          <th>Cardinality</th>
-          <td>1..n</td>
-        </tr>
-        <tr>
-          <th>URI</th>
-          <td>
-            <a data-cite="VOCAB-DCAT#Property:resource_contact_point">
-              <code>dcat:contactPoint</code>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th>Range</th>
-          <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
-        </tr>
-        <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property contains contact information that can be used for sending
-                comments about the Dataset.</li>
-              <li>This property MUST contain an email address that is continuously monitored
-                by the data publisher.</li>
-              <li>If there are several contributors involved in the publication of the Dataset,
-                the property can be used multiple times.
-              </li>
-            </ul>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-      <aside class="example" title="Usage of dcat:contactPoint for dcat:DataService">
-        <pre data-include-format="text" data-include="./examples/service/contact-point.ttl"></pre>
-      </aside>
-    </section>
-
     <section id="data-service-publisher">
       <h4>Property: Publisher</h4>
       <table class="def">
@@ -4156,7 +4552,7 @@
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to an entity (organisation) responsible for making the Catalogue available.</li>
+              <li>This property refers to an entity (organisation) responsible for making the Data Service available.</li>
             </ul>
           </td>
         </tr>
@@ -4211,6 +4607,57 @@
 
     <strong>Recommended Properties</strong>
 
+    <section id="data-service-contact-point">
+
+      <h4>Property: Contact Point</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Contact Point</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td>
+            <a data-cite="VOCAB-DCAT#Property:resource_contact_point">
+              <code>dcat:contactPoint</code>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains contact information that can be used for sending
+                comments about the Dataset.</li>
+              <li>This property MUST contain an email address that is continuously monitored
+                by the data publisher.</li>
+              <li>If there are several contributors involved in the publication of the Dataset,
+                the property can be used multiple times.
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:contactPoint for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/contact-point.ttl"></pre>
+      </aside>
+    </section>
+    
     <section id="data-service-endpoint-description">
       <h4>Property: endpoint description</h4>
       <table class="def">
@@ -4512,6 +4959,43 @@
       </aside>
     </section>
 
+    <section id="data-service-applicablelegislation">
+      <h4>Property: applicable legislation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>applicable legislation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The legislation that mandates the creation or management of the Data Service.</td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/applicableLegislation.ttl"></pre>
+      </aside>
+    </section>
+
   </section>
   <section id="Class:Dataset_Series">
 
@@ -4540,6 +5024,7 @@
           , <a href="#dataset-series.issued">release date</a>
           , <a href="#dataset-series.temporal-coverage">temporal coverage</a>
           , <a href="#dataset-series.title">title</a>
+          , <a href="#dataset-series.applicablelegislation">applicable legislation</a>
           .
   </dd>
 
@@ -4579,6 +5064,13 @@
         </td>
         <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a></td>
         <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-series.applicablelegislation">applicable legislation</a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+        <td>O</td>
         <td>0..n</td>
       </tr>
       <tr>
@@ -4685,6 +5177,7 @@
         </tbody>
       </table>
     </section>
+
     <section id="dataset-series.description">
       <h4>Property: description</h4>
       <table class="def">
@@ -4784,10 +5277,45 @@
 
     <strong>Optional Properties</strong>
 
+    <section id="dataset-series-applicablelegislation">
+      <h4>Property: applicable legislation</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>applicable legislation</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The legislation that mandates the creation or management of the Dataset Series.</td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:DataSeries">
+        <pre data-include-format="text" data-include="./examples/series/applicableLegislation.ttl"></pre>
+      </aside>
+    </section>
+
     <section id="dataset-series.frequency">
-
       <h4>Property: frequency</h4>
-
       <table class="def">
         <tbody>
         <tr>
@@ -5048,7 +5576,7 @@
         </tbody>
       </table>
     </section>
-
+   
   </section>
 
 </section>
@@ -5181,63 +5709,63 @@
 
 </section>
 
-<section id="haftungsausschluss">
-  <h2>Haftungsausschluss</h2>
-  <p>eCH-Standards, welche der Verein eCH dem Benutzer zur unentgeltlichen Nutzung zur Verfügung stellen oder
-    welche eCH referenzieren, haben nur den Status von Empfehlungen. Der Verein eCH haftet in keinem Fall
-    für Entscheidungen oder Massnahmen, welche der Benutzer auf Grund dieser Dokumente trifft und / oder ergreift.
-    Der Benutzer ist verpflichtet, die Dokumente vor deren Nutzung selbst zu überprüfen und sich gegebenenfalls
-    beraten zu lassen. eCH-Standards können und sollen die technische, organisatorische oder juristische
-    Beratung im konkreten Einzelfall nicht ersetzen.
+<section id="exclusion of liability-notice of third-party rights">
+  <h2>Exclusion of liability / notice of third-party rights</h2>
+  <p>eCH standards which the eCH association make available to the user for use free of charge or which
+    reference eCH, have the status of recommendations only. The eCH Association is in no way liable for
+    decisions or actions which the user makes and/or takes on the basis of these documents. The user is
+    obliged to check the documents himself before using them and, if necessary, to seek advice. eCH
+    standards cannot and are not intended to replace technical, organisational or legal advice in specific
+    individual cases.    
   </p>
-  <p>In eCH-Standards referenzierte Dokumente, Verfahren, Methoden, Produkte und Standards sind unter Umständen
-    markenrechtlich, urheberrechtlich oder patentrechtlich geschützt. Es liegt in der ausschliesslichen
-    Verantwortlichkeit des Benutzers, sich die allenfalls erforderlichen Rechte bei den jeweils berechtigten
-    Personen und/oder Organisationen zu beschaffen.
+  <p>Documents, procedures, methods, products and standards referenced in eCH standards may be
+    protected by trademark, copyright or patent. It is the sole responsibility of the user to obtain any
+    necessary rights from the respective authorised persons and/or organisations.    
   </p>
-  <p>Obwohl der Verein eCH all seine Sorgfalt darauf verwendet, die eCH-Standards sorgfältig auszuarbeiten, kann
-    keine Zusicherung oder Garantie auf Aktualität, Vollständigkeit, Richtigkeit bzw. Fehlerfreiheit der zur
-    Verfügung gestellten Informationen und Dokumente gegeben werden. Der Inhalt von eCH-Standards kann jederzeit
-    und ohne Ankündigung geändert werden.
+  <p>Although the eCH association has taken all possible care to ensure that the eCH standards are
+    carefully prepared, no assurance or guarantee can be given that the information and documents
+    provided are up-to-date, complete, correct or free of errors. The content of eCH standards may be
+    changed at any time and without notice.    
   </p>
-  <p>Jede Haftung für Schäden, welche dem Benutzer aus dem Gebrauch der eCH-Standards entstehen ist, soweit
-    gesetzlich zulässig, wegbedungen.
-  </p>
-</section>
-
-<section id="urheberrechte">
-  <h2>Urheberrechte</h2>
-  <p>
-    Wer eCH-Standards erarbeitet, behält das geistige Eigentum an diesen. Allerdings verpflichtet sich
-    der Erarbeitende, sein betreffendes geistiges Eigentum oder seine Rechte an geistigem Eigentum anderer,
-    sofern möglich, den jeweiligen Fachgruppen und dem Verein eCH kostenlos zur uneingeschränkten Nutzung
-    und Weiterentwicklung im Rahmen des Vereinszweckes zur Verfügung zu stellen.
-  </p>
-  <p>
-    Die von den Fachgruppen erarbeiteten Standards können unter Nennung der jeweiligen Urheber von eCH
-    unentgeltlich und uneingeschränkt genutzt, weiterverbreitet und weiterentwickelt werden.
-  </p>
-  <p>
-    eCH-Standards sind vollständig dokumentiert und frei von lizenz- und/oder patentrechtlichen
-    Einschränkungen. Die dazugehörige Dokumentation kann unentgeltlich bezogen werden.
-  </p>
-  <p>
-    Diese Bestimmungen gelten ausschliesslich für die von eCH erarbeiteten Standards, nicht jedoch
-    für Standards oder Produkte Dritter, auf welche in den eCH-Standards Bezug genommen wird. Die
-    Standards enthalten die entsprechenden Hinweise auf die Rechte Dritter.
+  <p>Any liability for damages incurred by the user from the use of the eCH standards is excluded to the
+    extent permitted by law.    
   </p>
 </section>
 
-<section class="appendix" id="mitarbeit">
-  <h2>Mitarbeit & Überprüfung</h2>
+<section id="copyright">
+  <h2>Copyright</h2>
+  <p>
+    Anyone who develops eCH standards retains the intellectual property rights themselves. However,
+the developer undertakes to make the intellectual property in question or his rights to the intellectual
+property of others available to the respective specialist groups and the eCH association free of
+charge, where possible, for unrestricted use and further development within the framework of the
+association's purposes.
+  </p>
+  <p>
+    The standards drawn up by the specialist groups may be used, disseminated and further developed
+by eCH free of charge and without restriction, provided the respective authors are named.
+  </p>
+  <p>
+    eCH standards are fully documented and free of restrictions under licensing and/or patent law. The
+respective documentation can be obtained free of charge.
+  </p>
+  <p>
+    These provisions apply exclusively to the standards drawn up by eCH, but not to standards or
+products of third parties to which reference is made in the eCH standards. The standards contain the
+respective references to the rights of third parties.
+  </p>
 </section>
 
-<section class="appendix" id="aenderungen">
-  <h2>Änderungen gegenüber Vorversion</h2>
+<section class="appendix" id="collaboration">
+  <h2>Collaboration & Review</h2>
+</section>
+
+<section class="appendix" id="changelog">
+  <h2>Changelog</h2>
 </section>
 
 <section class="appendix" id="namespaces">
-  <h2>Verzeichnis der referenzierten Namensräume</h2>
+  <h2>List of referenced namespaces</h2>
   <p>Namespaces and prefixes used in normative parts of this recommendation are shown in the following table:</p>
   <table id="table-namespaces" class="simple">
       <thead>
@@ -5252,6 +5780,11 @@
         <td><code>dcat</code></td>
         <td><code>http://www.w3.org/ns/dcat#</code></td>
         <td>[[VOCAB-DCAT]]</td>
+      </tr>
+      <tr>
+        <td><code>dcatap</code></td>
+        <td><code>http://data.europa.eu/r5r/</code></td>
+        <td>[[VOCAB-DCAT-AP]]</td>
       </tr>
       <tr>
         <td><code>dct</code></td>
@@ -5309,25 +5842,30 @@
         <td>[[PROV]]</td>
       </tr>
       <tr>
-        <td><code> spdx</code></td>
+        <td><code>spdx</code></td>
         <td><code>http://spdx.org/rdf/terms#</code></td>
         <td>[[SPDX]]</td>
       </tr>
       <tr>
-        <td><code> gsp</code></td>
+        <td><code>gsp</code></td>
         <td><code>http://www.opengis.net/ont/geosparql#</code></td>
         <td>[[GeoSPARQL]]</td>
+      </tr>
+      <tr>
+        <td><code>odrl</code></td>
+        <td><code>http://www.w3.org/ns/odrl/2/#</code></td>
+        <td>[[ODRL]]</td>
       </tr>
       </tbody>
     </table>
 </section>
 
-<section class="appendix" id="abbildungsverzeichnis">
-  <h2>Abbildungsverzeichnis</h2>
+<section class="appendix" id="figures">
+  <h2>Tables of figures</h2>
 </section>
 
-<section class="appendix" id="tabellenverzeichnis">
-  <h2>Tabellenverzeichnis</h2>
+<section class="appendix" id="tables">
+  <h2>List of tables</h2>
 </section>
 
 </body>
