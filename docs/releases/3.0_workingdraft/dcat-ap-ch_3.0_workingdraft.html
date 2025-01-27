@@ -648,7 +648,7 @@
       </tr>
       <tr>
         <td><a href="#catalog-applicablelegislation">applicable legislation</a></td>
-        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
         <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
         <td>O</td>
         <td>0..n</td>
@@ -754,7 +754,7 @@
         </tbody>
       </table>
       <aside class="example" title="Usage of dct:publisher for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/publisher.ttl"></pre>
+        <pre data-include-format="text" data-include="3.0_workingdraft/examples/catalog/publisher.ttl"></pre>
       </aside>
     </section>
 
@@ -1237,12 +1237,8 @@
           </td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property contains the most recent date on which the Catalogue was modified.</li>
-            </ul>
-          </td>
+          <th>Definition</th>
+          <td>This property contains the most recent date on which the Catalogue was modified</td>
         </tr>
         </tbody>
       </table>
@@ -1269,7 +1265,7 @@
         </tr>
         <tr>
           <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
           </td>
         </tr>
         <tr>
@@ -1283,8 +1279,8 @@
         </tr>
         </tbody>
       </table>
-      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+      <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/applicableLegislation.ttl"></pre>
       </aside>
     </section>
 
@@ -1435,7 +1431,7 @@
       </tr>
       <tr>
         <td><a href="#dataset-availability">availability</a></td>
-        <td><code>dcatap:availability</code></td>
+        <td><a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></a></td>
         <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
         <td>R</td>
         <td>0..1</td>
@@ -1545,7 +1541,7 @@
       </tr>
       <tr>
         <td><a href="#dataset-applicablelegislation">applicable legislation</a></td>
-        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
         <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
         <td>O</td>
         <td>0..n</td>
@@ -2171,6 +2167,10 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to an entity (organisation) responsible for making the Dataset available.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
@@ -2214,7 +2214,7 @@
         <tr>
           <th>URI</th>
           <td>
-            <code>dcatap:availability</code>
+            <a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></a>
           </td>
         </tr>
         <tr>
@@ -2836,7 +2836,7 @@
         </tr>
         <tr>
           <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
           </td>
         </tr>
         <tr>
@@ -2858,8 +2858,8 @@
             <tr>
         </tbody>
       </table>
-      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+      <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/applicableLegislation.ttl"></pre>
       </aside>
     </section>
 
@@ -2924,7 +2924,7 @@
       </tr>
       <tr>
         <td><a href="#distribution-availability">availability</a></td>
-        <td><code>dcatap:availability</code></td>
+        <td><a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></a></td>
         <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a></td>
         <td>R</td>
         <td>0..1</td>
@@ -3114,7 +3114,7 @@
       </tr>
       <tr>
         <td><a href="#distribution-applicablelegislation">applicable legislation</a></td>
-        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
         <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
         <td>O</td>
         <td>0..n</td>
@@ -3260,7 +3260,7 @@
         <tr>
           <th>URI</th>
           <td>
-            <code>dcatap:availability</code>
+            <a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></a>
           </td>
         </tr>
         <tr>
@@ -3520,10 +3520,8 @@
           </td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <ul>
-            <li>This property contains the most recent date on which the Distribution was changed or modified.</li>
-          </ul>
+          <th>Definition</th>
+          <td>This property contains the most recent date on which the Distribution was changed or modified.</td>
         </tr>
         </tbody>
       </table>
@@ -4222,7 +4220,7 @@
       </tr>
       <tr>
         <th>URI</th>
-        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
         </td>
       </tr>
       <tr>
@@ -4236,8 +4234,8 @@
       </tr>
       </tbody>
     </table>
-    <aside class="example" title="Usage of dct:modified for dcat:Catalog">
-      <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+    <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:Distribution">
+      <pre data-include-format="text" data-include="./examples/distribution/applicableLegislation.ttl"></pre>
     </aside>
   </section>
 
@@ -4286,8 +4284,8 @@
       </tr>
       </tbody>
     </table>
-    <aside class="example" title="Usage of dct:modified for dcat:Catalog">
-      <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+    <aside class="example" title="Usage of odrl:hasPolicy for dcat:Distribution">
+      <pre data-include-format="text" data-include="./examples/distribution/hasPolicy.ttl"></pre>
     </aside>
   </section>
   <section id="distribution-status">
@@ -4335,8 +4333,8 @@
       </tr>
       </tbody>
     </table>
-    <aside class="example" title="Usage of dct:modified for dcat:Catalog">
-      <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+    <aside class="example" title="Usage of adms:status for dcat:Distribution">
+      <pre data-include-format="text" data-include="./examples/distribution/status.ttl"></pre>
     </aside>
   </section>
 
@@ -4461,7 +4459,7 @@
       </tr>
       <tr>
         <td><a href="#data-service-applicablelegislation">applicable legislation</a></td>
-        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
         <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
         <td>O</td>
         <td>0..n</td>
@@ -4980,7 +4978,7 @@
         </tr>
         <tr>
           <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
           </td>
         </tr>
         <tr>
@@ -4994,8 +4992,8 @@
         </tr>
         </tbody>
       </table>
-      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+      <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:DataService">
+        <pre data-include-format="text" data-include="./examples/service/applicableLegislation.ttl"></pre>
       </aside>
     </section>
 
@@ -5071,7 +5069,7 @@
       </tr>
       <tr>
         <td><a href="#dataset-series.applicablelegislation">applicable legislation</a></td>
-        <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
         <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
         <td>O</td>
         <td>0..n</td>
@@ -5298,7 +5296,7 @@
         </tr>
         <tr>
           <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT-AP#https://uri.semic.eu/dcatap/applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
+          <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
           </td>
         </tr>
         <tr>
@@ -5312,8 +5310,8 @@
         </tr>
         </tbody>
       </table>
-      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
+      <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:DataSeries">
+        <pre data-include-format="text" data-include="./examples/series/applicableLegislation.ttl"></pre>
       </aside>
     </section>
 
@@ -5712,63 +5710,63 @@
 
 </section>
 
-<section id="haftungsausschluss">
-  <h2>Haftungsausschluss</h2>
-  <p>eCH-Standards, welche der Verein eCH dem Benutzer zur unentgeltlichen Nutzung zur Verfügung stellen oder
-    welche eCH referenzieren, haben nur den Status von Empfehlungen. Der Verein eCH haftet in keinem Fall
-    für Entscheidungen oder Massnahmen, welche der Benutzer auf Grund dieser Dokumente trifft und / oder ergreift.
-    Der Benutzer ist verpflichtet, die Dokumente vor deren Nutzung selbst zu überprüfen und sich gegebenenfalls
-    beraten zu lassen. eCH-Standards können und sollen die technische, organisatorische oder juristische
-    Beratung im konkreten Einzelfall nicht ersetzen.
+<section id="exclusion of liability-notice of third-party rights">
+  <h2>Exclusion of liability / notice of third-party rights</h2>
+  <p>eCH standards which the eCH association make available to the user for use free of charge or which
+    reference eCH, have the status of recommendations only. The eCH Association is in no way liable for
+    decisions or actions which the user makes and/or takes on the basis of these documents. The user is
+    obliged to check the documents himself before using them and, if necessary, to seek advice. eCH
+    standards cannot and are not intended to replace technical, organisational or legal advice in specific
+    individual cases.    
   </p>
-  <p>In eCH-Standards referenzierte Dokumente, Verfahren, Methoden, Produkte und Standards sind unter Umständen
-    markenrechtlich, urheberrechtlich oder patentrechtlich geschützt. Es liegt in der ausschliesslichen
-    Verantwortlichkeit des Benutzers, sich die allenfalls erforderlichen Rechte bei den jeweils berechtigten
-    Personen und/oder Organisationen zu beschaffen.
+  <p>Documents, procedures, methods, products and standards referenced in eCH standards may be
+    protected by trademark, copyright or patent. It is the sole responsibility of the user to obtain any
+    necessary rights from the respective authorised persons and/or organisations.    
   </p>
-  <p>Obwohl der Verein eCH all seine Sorgfalt darauf verwendet, die eCH-Standards sorgfältig auszuarbeiten, kann
-    keine Zusicherung oder Garantie auf Aktualität, Vollständigkeit, Richtigkeit bzw. Fehlerfreiheit der zur
-    Verfügung gestellten Informationen und Dokumente gegeben werden. Der Inhalt von eCH-Standards kann jederzeit
-    und ohne Ankündigung geändert werden.
+  <p>Although the eCH association has taken all possible care to ensure that the eCH standards are
+    carefully prepared, no assurance or guarantee can be given that the information and documents
+    provided are up-to-date, complete, correct or free of errors. The content of eCH standards may be
+    changed at any time and without notice.    
   </p>
-  <p>Jede Haftung für Schäden, welche dem Benutzer aus dem Gebrauch der eCH-Standards entstehen ist, soweit
-    gesetzlich zulässig, wegbedungen.
-  </p>
-</section>
-
-<section id="urheberrechte">
-  <h2>Urheberrechte</h2>
-  <p>
-    Wer eCH-Standards erarbeitet, behält das geistige Eigentum an diesen. Allerdings verpflichtet sich
-    der Erarbeitende, sein betreffendes geistiges Eigentum oder seine Rechte an geistigem Eigentum anderer,
-    sofern möglich, den jeweiligen Fachgruppen und dem Verein eCH kostenlos zur uneingeschränkten Nutzung
-    und Weiterentwicklung im Rahmen des Vereinszweckes zur Verfügung zu stellen.
-  </p>
-  <p>
-    Die von den Fachgruppen erarbeiteten Standards können unter Nennung der jeweiligen Urheber von eCH
-    unentgeltlich und uneingeschränkt genutzt, weiterverbreitet und weiterentwickelt werden.
-  </p>
-  <p>
-    eCH-Standards sind vollständig dokumentiert und frei von lizenz- und/oder patentrechtlichen
-    Einschränkungen. Die dazugehörige Dokumentation kann unentgeltlich bezogen werden.
-  </p>
-  <p>
-    Diese Bestimmungen gelten ausschliesslich für die von eCH erarbeiteten Standards, nicht jedoch
-    für Standards oder Produkte Dritter, auf welche in den eCH-Standards Bezug genommen wird. Die
-    Standards enthalten die entsprechenden Hinweise auf die Rechte Dritter.
+  <p>Any liability for damages incurred by the user from the use of the eCH standards is excluded to the
+    extent permitted by law.    
   </p>
 </section>
 
-<section class="appendix" id="mitarbeit">
-  <h2>Mitarbeit & Überprüfung</h2>
+<section id="copyright">
+  <h2>Copyright</h2>
+  <p>
+    Anyone who develops eCH standards retains the intellectual property rights themselves. However,
+the developer undertakes to make the intellectual property in question or his rights to the intellectual
+property of others available to the respective specialist groups and the eCH association free of
+charge, where possible, for unrestricted use and further development within the framework of the
+association's purposes.
+  </p>
+  <p>
+    The standards drawn up by the specialist groups may be used, disseminated and further developed
+by eCH free of charge and without restriction, provided the respective authors are named.
+  </p>
+  <p>
+    eCH standards are fully documented and free of restrictions under licensing and/or patent law. The
+respective documentation can be obtained free of charge.
+  </p>
+  <p>
+    These provisions apply exclusively to the standards drawn up by eCH, but not to standards or
+products of third parties to which reference is made in the eCH standards. The standards contain the
+respective references to the rights of third parties.
+  </p>
 </section>
 
-<section class="appendix" id="aenderungen">
-  <h2>Änderungen gegenüber Vorversion</h2>
+<section class="appendix" id="collaboration">
+  <h2>Collaboration & Review</h2>
+</section>
+
+<section class="appendix" id="changelog">
+  <h2>Changelog</h2>
 </section>
 
 <section class="appendix" id="namespaces">
-  <h2>Verzeichnis der referenzierten Namensräume</h2>
+  <h2>List of referenced namespaces</h2>
   <p>Namespaces and prefixes used in normative parts of this recommendation are shown in the following table:</p>
   <table id="table-namespaces" class="simple">
       <thead>
@@ -5863,12 +5861,12 @@
     </table>
 </section>
 
-<section class="appendix" id="abbildungsverzeichnis">
-  <h2>Abbildungsverzeichnis</h2>
+<section class="appendix" id="figures">
+  <h2>Tables of figures</h2>
 </section>
 
-<section class="appendix" id="tabellenverzeichnis">
-  <h2>Tabellenverzeichnis</h2>
+<section class="appendix" id="tables">
+  <h2>List of tables</h2>
 </section>
 
 </body>

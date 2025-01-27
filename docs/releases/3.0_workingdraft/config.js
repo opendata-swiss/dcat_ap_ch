@@ -109,6 +109,11 @@ var respecConfig = {
       "title":"Themes vocabulary for DCAT-AP CH",
       "publisher":"Verein eCH",
     },
+    "VOCAB-DCAT-AP":{
+      "href":"https://semiceu.github.io/DCAT-AP/r5r/releases/3.0.0/",
+      "title": "DCAT-AP vocabulary, the r5r namespace",
+      "publisher": "Semic"
+    },
     "VOCAB-EU":{
        "href":"http://publications.europa.eu/resource/authority/",
       "title":"EU Vocabularies",
