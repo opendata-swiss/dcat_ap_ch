@@ -1407,6 +1407,16 @@
         <td>0..1</td>
       </tr>
       <tr>
+        <td><a href="#resource-rights">rights</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights">
+          <code>dct:rights</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement">
+          <code>dct:RightsStatement</code></a></td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
         <td><a href="#resource-access-rights">access rights</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/accessRights"><code>dct:accessRights</code></a>
         </td>
@@ -1477,6 +1487,21 @@
         <td>O</td>
         <td>0..n</td>
       </tr>
+      <tr>
+        <td><a href="#resource-has-policy">has policy</a></td>
+        <td><a data-cite="VOCAB-ODRL#term-hasPolicy"><code>odrl:hasPolicy</code></a></td>
+        <td><a data-cite="VOCAB-ODRL#term-Policy"><code>odrl:Policy</code></a>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#resource-status">status</a></td>
+        <td><a data-cite="ADMS#status"><code>adms:status</code></a></td>
+        <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      
       </tbody>
     </table>
 
@@ -1983,6 +2008,51 @@
       </aside>
     </section>
 
+    <section id="resource-rights">
+
+      <h4>Property: rights</h4>
+
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Rights</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dct:rights</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement">
+            <code>dct:RightsStatement</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a statement that specifies rights associated with the resource.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <aside class="example" title="Usage of dct:rights for dcat:Resource">
+        <pre data-include-format="text" data-include="./examples/resource/rights.ttl"></pre>
+      </aside>
+
+    </section>
+
     <strong>Optional Properties</strong>
 
     <section id="resource-access-rights">
@@ -2361,7 +2431,106 @@
       <aside class="example" id="ex-dataset-relation" title="Usage of dct:relation for dcat:Dataset">
         <pre data-include-format="text" data-include="./examples/dataset/relation.ttl"></pre>
       </aside>
+    </section>
 
+    <section id="resource-has-policy">
+      <h4>Property: has policy</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>has policy</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-ODRL#term-hasPolicy"><code>odrl:hasPolicy</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-ODRL#term-Policy"><code>odrl:Policy</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The policy expressing the rights associated with the resource if using the [ODRL] vocabulary.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>Information about rights expressed as an ODRL policy [<a data-cite="MODEL-ODRL#"><code>ODRL MODEL</code></a>] using the ODRL vocabulary [<a data-cite="VOCAB-ODRL#"><code>VOCAB ODRL</code></a>] MAY be provided for the distribution. See also guidance at <a href="https://www.w3.org/TR/vocab-dcat-3/#license-rights"> DCAT 3 - 9. License and rights statements </a>.</li>
+            </ul>
+          </td>
+          <tr>
+            <th>See also</th>
+          <td>see <a class="no-sectionRef" href="#resource-license"></a>, see <a class="no-sectionRef" href="#resource-access-rights"></a>, see <a class="no-sectionRef" href="#resource-rights"></a></td>
+          </td>
+        </tr>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of odrl:hasPolicy for dcat:Resource">
+        <pre data-include-format="text" data-include="./examples/resource/hasPolicy.ttl"></pre>
+      </aside>
+    </section>
+    
+    <section id="resource-status">
+      <h4>Property: status</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>status</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="ADMS#status"><code>adms:status</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The status of the resource in the context of maturity lifecycle.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>CV to be used [[VOCAB-EU-STATUS]]. Vocabulary in human-readable form: <a href="https://op.europa.eu/de/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/distribution-status">Status</a>.</li>
+            </ul>
+          </td>
+          <tr>
+            <th>See also</th>
+          <td>see Distribution <a class="no-sectionRef" href="#distribution-availability"></a> and Dataset <a class="no-sectionRef" href="#dataset-availability"></a>. For more information about a resource lifecycle see <a href="https://www.w3.org/TR/vocab-dcat-3/#life-cycle">DCAT 3 - 11.3 Resource life-cycle</a>.
+          </td>
+        </tr>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of adms:status for dcat:Resource">
+        <pre data-include-format="text" data-include="./examples/resource/status.ttl"></pre>
+      </aside>
     </section>
 
   </section>
