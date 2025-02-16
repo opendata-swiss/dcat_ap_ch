@@ -653,6 +653,27 @@
         <td>O</td>
         <td>0..n</td>
       </tr>
+      <tr>
+        <td><a href="#catalog-resource">resource</a></td>
+        <td><a data-cite="VOCAB-DCAT#resource"><code>dcat:resource</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#Class:Resource"><code>dcat:Resource</code></a>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-catalog">catalog</a></td>
+        <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:Catalog</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:Catalog</code></a>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-catalog-record">catalog record</a></td>
+        <td><a data-cite="VOCAB-DCAT#record"><code>dcat:record</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#Class:Catalog_Record"><code>dcat:CatalogRecord</code></a>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
       </tbody>
     </table>
 
@@ -1281,6 +1302,130 @@
       </table>
       <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/applicableLegislation.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-resource">
+      <h4>Property: resource</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>resource</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#resource"><code>dcat:resource</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Resource"><code>dcat:Resource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>A resource that is listed in the catalog.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This is the most general predicate for membership of a catalog. Use of a more specific sub-property is recommended when available.</li>
+            </ul>
+          </td>
+          <tr>
+            <th>See also</th>
+          <td>Sub-properties of dcat:resource in particular <a class="no-sectionRef" href="#catalog-dataset"></a>, <a class="no-sectionRef" href="#catalog-catalog"></a>, <a class="no-sectionRef" href="#catalog-service"></a>. 
+          </td>
+        </tr>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:resource for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/resource.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-catalog">
+      <h4>Property: catalog</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>catalog</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:resource</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:Resource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>A catalog that is listed in the catalog.</td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:catalog for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/catalog.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-catalog-record">
+      <h4>Property: catalog record</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>catalog record</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#record"><code>dcat:record</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Catalog_Record"><code>dcat:CatalogRecord</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>A record describing the registration of a single resource (e.g., a dataset, a data service) that is part of the catalog.</td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:record for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/record.ttl"></pre>
       </aside>
     </section>
 
@@ -2641,6 +2786,8 @@
         <pre data-include-format="text" data-include="./examples/resource/version-notes.ttl"></pre>
       </aside>
     </section>
+
+    
 
   </section>
 
