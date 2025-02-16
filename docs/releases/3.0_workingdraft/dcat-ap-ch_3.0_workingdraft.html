@@ -3037,7 +3037,7 @@
         <td>0..1</td>
       </tr>
       <tr>
-        <td><a href="#dataset-other-identifier">identifier</a></td>
+        <td><a href="#dataset-other-identifier">other identifier</a></td>
         <td><a data-cite="ADMS#identifier"><code>adms:identifier</code></a>
         </td>
         <td><a data-cite="DCAT-AP#identifier"><code>Identifier</code></a></td>
@@ -3072,6 +3072,13 @@
         <td><a href="#dataset-applicablelegislation">applicable legislation</a></td>
         <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
         <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a></td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#dataset-in-series">in series</a></td>
+        <td><a data-cite="VOCAB-DCAT#inSeries"><code>dcat:inSeries</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#Class:Dataset_Series"><code>dcat:DatasetSeries</code></a></td>
         <td>O</td>
         <td>0..n</td>
       </tr>
@@ -3518,6 +3525,57 @@
       </table>
       <aside class="example" title="Usage of dcatap:applicableLegislation for dcat:Dataset">
         <pre data-include-format="text" data-include="./examples/dataset/applicableLegislation.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="dataset-in-series">
+      <h4>Property: in series</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>in series</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#inSeries"><code>dcat:inSeries</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="VOCAB-DCAT#Class:Dataset_Series"><code>dcat:DatasetSeries</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td> 	A dataset series of which the dataset is part.</td>
+        </tr>
+        <tr>
+          <th>Subproperty of</th>
+          <td>
+            <ul>
+              <li><a data-cite="DCTERMS#isPartOf"><code>dct:isPartOf</code></a>
+              </li>
+            </ul>
+          </tr>
+          <tr>
+            <th>See also</th>
+          <td>guidance at <a href="https://www.w3.org/TR/vocab-dcat-3/#inverse-properties"> DCAT 3 - Use of inverse properties</a>.</li>
+          </td>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:inSeries for dcat:Dataset">
+        <pre data-include-format="text" data-include="./examples/dataset/in-series.ttl"></pre>
       </aside>
     </section>
 
