@@ -1501,6 +1501,20 @@
         <td>O</td>
         <td>0..1</td>
       </tr>
+      <tr>
+        <td><a href="#resource-version">version</a></td>
+        <td><a data-cite="VOCAB-DCAT#version"><code>dcat:version</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+        <td>O</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#resource-version-notes">version notes</a></td>
+        <td><a data-cite="ADMS#versionNotes"><code>adms:versionNotes</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
       
       </tbody>
     </table>
@@ -2530,6 +2544,101 @@
       </table>
       <aside class="example" title="Usage of adms:status for dcat:Resource">
         <pre data-include-format="text" data-include="./examples/resource/status.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="resource-version">
+      <h4>Property: version</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>version</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="VOCAB-DCAT#version"><code>dcat:version</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>The version indicator (name or identifier) of a resource.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li> DCAT does not prescribe how a version name / identifier should be specified, and refers for guidance to <a href="https://www.w3.org/TR/dwbp/#VersioningInfo">DWBP - Best Practice 7: Provide a version indicator</a>.</li>
+            </ul>
+          </td>
+          <tr>
+            <th>See also</th>
+          <td><a class="no-sectionRef" href="#resource-version-notes"></a>
+          </td>
+        </tr>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dcat:version for dcat:Resource">
+        <pre data-include-format="text" data-include="./examples/resource/version.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="resource-version-notes">
+      <h4>Property: version notes</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>version notes</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="ADMS#versionNotes"><code>adms:versionNotes</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>A description of the differences between this version and a previous version of the Dataset.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property can be repeated for parallel language versions of the version notes. </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of adms:versionNotes for dcat:Resource">
+        <pre data-include-format="text" data-include="./examples/resource/version-notes.ttl"></pre>
       </aside>
     </section>
 
