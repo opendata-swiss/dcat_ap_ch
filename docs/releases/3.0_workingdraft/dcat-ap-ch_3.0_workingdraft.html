@@ -1959,7 +1959,7 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>, <a data-cite="SCHEMA#/DefinedTerm"><code>schema:DefinedTerm</code></a>, <a data-cite="WIKIBASE#Item"><code>wikibase:item</code></a>, <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code>
           </td>
         </tr>
         <tr>
@@ -1978,9 +1978,8 @@
                   <li>GEMET (especially in a geo-related context): Search for a term on <a href="http://www.eionet.europa.eu/gemet/">http://www.eionet.europa.eu/gemet/</a>. Use the Concept URL, as statet on the bottom of the page of a concept (e.g. <a href="http://www.eionet.europa.eu/gemet/concept/428">http://www.eionet.europa.eu/gemet/concept/428</a>)</li>
                   <li>WIKIDATA: If there are no matching Concepts neither in TERMDAT, nor GEMET, search in Wikidata (top right search). Use the Concept URI (entry in the left side). (e.g. <a href="http://www.wikidata.org/entity/Q1749732">http://www.wikidata.org/entity/Q1749732</a>, do not copy the URL <a href="https://www.wikidata.org/**wiki**/Q1749732">https://www.wikidata.org/**wiki**/Q1749732</a>)</li>
                   <li>If you can't find a fitting concept, you can always add your own concept to Wikidata.</li>
-                  <li>Finally as a last resort, you can add a Keyword as a Literal.</li>
+                  <li>Finally as a last resort, you can add a Keyword as a Literal. Note: rdfs:Literal might be deprecated in the future.</li>
               </ol>
-Note: rdfs:Literal might be deprecated in the future.
               </li>
             </ul>
           </td>
@@ -2119,15 +2118,19 @@ Note: rdfs:Literal might be deprecated in the future.
           <th>Range</th>
           <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>
           </td>
+          <tr>
+            <th>Definition</th>
+            <td>This property refers to a knowledge organization system used to classify the catalog's resources. A resource may be associated with multiple themes.</td>
+          </tr>
         </tr>
         <tr>
           <th>Usage Note</th>
           <td>
             <ul>
               <li>
-                This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+                There MUST be at least one entry using the EU Themes Vocabulary to be DCAT-AP conform: [[VOCAB-EU-THEME]]
               </li>
-              <li>CV to be used: [[VOCAB-EU-THEME]]</li>
+              <li>It is possible (CAN) to add additional topics by using other commonly used controlled vocabularies.</li>
             </ul>
           </td>
         </tr>
@@ -2270,22 +2273,25 @@ Note: rdfs:Literal might be deprecated in the future.
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>Information regarding access or restrictions based on privacy, security, or other policies.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to information that indicates whether the Dataset is open data, has access
-                restrictions or is not public.
+              <li>Use this property exclusively for statements about access restrictions (e.g., privacy, security, or policy-related restrictions).
               </li>
               <li>
-                CV to be used: [[VOCAB-EU-ACCESS-RIGHT]].
+                The [[VOCAB-EU-ACCESS-RIGHT]] SHOULD be used. Adapt categories definitions as needed for specific use cases.
               </li>
             </ul>
           </td>
         </tr>
         </tbody>
       </table>
-      <aside class="example" title="Usage of dct:rights for dcat:Catalog">
-        <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre>
+      <aside class="example" title="Usage of dct:accessRights for dcat:Resource">
+        <pre data-include-format="text" data-include="./examples/resource/access-rights.ttl"></pre>
       </aside>
     </section>
 

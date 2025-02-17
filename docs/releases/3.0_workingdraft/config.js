@@ -199,5 +199,15 @@ var respecConfig = {
       "title":"DataCite",
       "publisher":"DataCite",
     },
+    "WIKIBASE":{
+      "href":"http://wikiba.se/ontology",
+      "title":"Wikibase",
+      "publisher":"WIKIDATA",
+    },
+    "SCHEMA":{
+      "href":"https://schema.org/",
+      "title":"Schema.org",
+      "publisher":"W3C Schema.org Community Group",
+    },
   }
 };
