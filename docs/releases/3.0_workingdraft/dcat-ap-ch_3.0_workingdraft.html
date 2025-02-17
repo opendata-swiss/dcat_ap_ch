@@ -1163,16 +1163,25 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to a geographical area covered by the Catalog.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to a geographical area covered by the Catalogue.</li>
-              <li>CV to be used: The EU Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used:
-                [[VOCAB-EU-CONTINENT]],
-                [[VOCAB-EU-COUNTRY]],
-                [[VOCAB-EU-PLACE]],
-                [[GEONAMES]]
-              </li>
+              <li>
+                This property may be indicated using an IRI reference or may be encoded as an instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>.
+                </li>
+                <li>CV to be used for IRI reference: LINDAS resources SHOULD be used. Whenever a particular location is not available as LINDAS resource, then the EU Vocabularies Named Authority Lists MAY be used:
+                  [[VOCAB-EU-CONTINENT]],
+                  [[VOCAB-EU-COUNTRY]],
+                  [[VOCAB-EU-PLACE]],
+                  if the location is not in one of the mentioned EU Vocabularies, then Geonames URIs MAY be used:
+                  [[GEONAMES]].
+                </li>
+                <li>For the encoding as instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a> see the class Location (<a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Location"> DCAT-AP - 7.12 Location </a>).</li>
+              </ul>
             </ul>
           </td>
         </tr>
@@ -1660,6 +1669,13 @@
         <td>O</td>
         <td>0..n</td>
       </tr>
+      <tr>
+        <td><a href="#resource-first">first</a></td>
+        <td><a data-cite="VOCAB-DCAT#first"><code>dcat:first</code></a></td>
+        <td><a data-cite=""><code>xxx</code></a>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
       
       </tbody>
     </table>
@@ -1947,12 +1963,25 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property contains a keyword or tag describing the resource.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property contains a keyword or tag describing the Dataset.</li>
-              <li>If a suitable keyword is available in [[TERMDAT]] then this SHOULD be used.</li>
-              <li>Good practice: mark the language of the keywords with the [[ISO 639-1]] language code such as "geodata"@en.</li>
+              <li>Keywords primarily serve to support search functionality on Data Catalogs. Using more keywords is preferable to using fewer. Keywords should be chosen from the perspective of the searcher. Consider, that keywords which are obvious for you as a publisher might be useful for the search. E.g. add environmental monitoring (<a href="http://www.wikidata.org/entity/Q1749732">http://www.wikidata.org/entity/Q1749732</a>) if you as a data publisher are an Environmental Monitoring Agency.</li>
+              <li>Both controlled vocabularies and literals are allowed, but controlled vocabularies SHOULD be used.
+                Use the following priority cascade for adding Keywords:
+                <ol>
+                  <li>TERMDAT: Search for a term on termdat.ch. E.g. Grünabfälle, take the entry ID (51810), and build the Concept URI by adding the ID to <a href="https://register.ld.admin.ch/termdat/">https://register.ld.admin.ch/termdat/</a> (e.g. <a href="https://register.ld.admin.ch/termdat/51810">https://register.ld.admin.ch/termdat/51810</a>)</li>
+                  <li>GEMET (especially in a geo-related context): Search for a term on <a href="http://www.eionet.europa.eu/gemet/">http://www.eionet.europa.eu/gemet/</a>. Use the Concept URL, as statet on the bottom of the page of a concept (e.g. <a href="http://www.eionet.europa.eu/gemet/concept/428">http://www.eionet.europa.eu/gemet/concept/428</a>)</li>
+                  <li>WIKIDATA: If there are no matching Concepts neither in TERMDAT, nor GEMET, search in Wikidata (top right search). Use the Concept URI (entry in the left side). (e.g. <a href="http://www.wikidata.org/entity/Q1749732">http://www.wikidata.org/entity/Q1749732</a>, do not copy the URL <a href="https://www.wikidata.org/**wiki**/Q1749732">https://www.wikidata.org/**wiki**/Q1749732</a>)</li>
+                  <li>If you can't find a fitting concept, you can always add your own concept to Wikidata.</li>
+                  <li>Finally as a last resort, you can add a Keyword as a Literal.</li>
+              </ol>
+Note: rdfs:Literal might be deprecated in the future.
+              </li>
             </ul>
           </td>
         </tr>
@@ -2570,12 +2599,18 @@
           <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
         </tr>
         <th>Definition</th>
-          <td>An entity responsible for producing the dataset. </td>
+          <td>An entity responsible for producing the resource (provider of the technical components), organisation or company.</td>
         <tr>
           <th>Usage Note</th>
           <td>
             <ul>
               <li>Resources of type <a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a> are recommended as values for this property.
+              </li>
+              <li>If from the public sector, use the same CV as <a class="no-sectionRef" href="#resource-publisher"></a>.
+              </li>
+              <li>For swiss companies, use the corresponding Zefix entry <a href="https://register.ld.admin.ch/zefix/company/122015">https://register.ld.admin.ch/zefix/company/122015</a>, you can find the EHRA-ID of organisations on <a href="http://zefix.ch">http://zefix.ch</a>.
+              </li>
+              <li>Fallback: We recommend using the correspondend entry in Wikidata as CV, it is straight forward to add a missing entity to Wikidata.
               </li>
             </ul>
             <tr>
@@ -3435,20 +3470,24 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to a geographic region that is covered by the Dataset.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
               <li>
-                This property refers to a geographic region that is covered by the Dataset.
+              This property may be indicated using an IRI reference or may be encoded as an instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>.
               </li>
-              <li>CV to be used: The EU Vocabularies Name Authority Lists MUST be used for continents,
-              countries and places that are in those lists; if a particular location is not in one of
-              the mentioned Named Authority Lists, Geonames URIs MUST be used:
+              <li>CV to be used for IRI reference: LINDAS resources SHOULD be used. Whenever a particular location is not available as LINDAS resource, then the EU Vocabularies Named Authority Lists MAY be used:
                 [[VOCAB-EU-CONTINENT]],
                 [[VOCAB-EU-COUNTRY]],
                 [[VOCAB-EU-PLACE]],
-                [[GEONAMES]]
+                if the location is not in one of the mentioned EU Vocabularies, then Geonames URIs MAY be used:
+                [[GEONAMES]].
               </li>
+              <li>For the encoding as instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a> see the class Location (<a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Location"> DCAT-AP - 7.12 Location </a>).</li>
             </ul>
           </td>
         </tr>
@@ -6412,15 +6451,20 @@
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>When spatial coverage is a dimension in the dataset series then the spatial coverage of each dataset in the collection should be part of the spatial coverage. In that case, an open ended value is recommended, e.g. EU or a broad bounding box covering the expected values.</li>
-              <li>CV to be used: The EU Vocabularies Name Authority Lists MUST be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs MUST be used:
-                [[VOCAB-EU-CONTINENT]],
-                [[VOCAB-EU-COUNTRY]],
-                [[VOCAB-EU-PLACE]],
-                [[GEONAMES]]
-              </li>
-            </ul>
-          </td>
+              <li>When spatial coverage is a dimension in the dataset series then the spatial coverage of each dataset in the collection should be part of the spatial coverage. In that case, an open ended value is recommended, e.g. CH or a broad bounding box covering the expected values.</li>
+              <li>
+                This property may be indicated using an IRI reference or may be encoded as an instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>.
+                </li>
+                <li>CV to be used for IRI reference: LINDAS resources SHOULD be used. Whenever a particular location is not available as LINDAS resource, then the EU Vocabularies Named Authority Lists MAY be used:
+                  [[VOCAB-EU-CONTINENT]],
+                  [[VOCAB-EU-COUNTRY]],
+                  [[VOCAB-EU-PLACE]],
+                  if the location is not in one of the mentioned EU Vocabularies, then Geonames URIs MAY be used:
+                  [[GEONAMES]].
+                </li>
+                <li>For the encoding as instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a> see the class Location (<a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Location"> DCAT-AP - 7.12 Location </a>).</li>
+              </ul>
+            </td>
         </tr>
         </tbody>
       </table>
