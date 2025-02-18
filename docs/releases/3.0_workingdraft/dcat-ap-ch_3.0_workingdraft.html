@@ -1671,6 +1671,13 @@
         <td>0..n</td>
       </tr>
       <tr>
+        <td><a href="#resource-has-part">has Part</a></td>
+        <td><a data-cite="DCTERMS#hasPart"><code>dct:hasPart</code></a></td>
+        <td><a class="no-sectionRef" href="#Class:Resource">dcat:Resource</a>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
         <td><a href="#resource-first">first</a></td>
         <td><a data-cite="VOCAB-DCAT#Property:resource_first"><code>dcat:first</code></a></td>
         <td><a data-cite=""><code></code></a>
@@ -2840,6 +2847,51 @@
       </table>
       <aside class="example" title="Usage of adms:versionNotes for dcat:Resource">
         <pre data-include-format="text" data-include="./examples/resource/version-notes.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="resource-has-part">
+      <h4>Property: has part</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>has part</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#hasPart"><code>dct:hasPart</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a class="no-sectionRef" href="#Class:Resource">dcat:Resource</a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>A related resource that is included either physically or logically in the described resource.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>Please discuss and add a usage note</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:hasPart for dcat:Resource">
+        <pre data-include-format="text" data-include="./examples/resource/has-part.ttl"></pre>
       </aside>
     </section>
 
