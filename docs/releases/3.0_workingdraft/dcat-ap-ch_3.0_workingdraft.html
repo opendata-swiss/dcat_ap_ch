@@ -2674,6 +2674,13 @@
       </thead>
       <tbody>
         <tr>
+          <td><a href="#catalog-record-primary-topic">primary topic</a></td>
+          <td><a data-cite="FOAF#term_primaryTopic"><code>foaf:primaryTopic</code></a></td>
+          <td><a class="no-sectionRef" href="#Class:Resource">Cataloged Resource</a>
+          <td><strong>M</strong></td>
+          <td>1..1</td>
+        </tr>
+        <tr>
           <td><a href="#catalog-record-modification-date">update/ modification date</a></td>
           <td><a data-cite="VOCAB-DCAT#Property:distribution_update_date">
             <code>dct:modified</code></a>
@@ -2751,7 +2758,55 @@
 
     <strong>Manadatory Properties</strong>
 
-  <section id="catalog-record-modification-date">
+    <section id="catalog-record-primary-topic">
+      <h4>Property: primary topic</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>primary topic</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="FOAF#term_primaryTopic"><code>foaf:primaryTopic</code></a></td>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a class="no-sectionRef" href="#Class:Resource">Cataloged Resource</a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>A link to the Dataset, Data Service, Dataset Series or Catalog described in the record.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>A catalogue record will refer to one entity in a catalogue. This can be either a Dataset, a Data Service, a Dataset Series or a Catalog. To ensure an unambigous reading of the cardinality the range is set to <a class="no-sectionRef" href="#Class:Resource"></a>. However it is not the intend with this range to require the explicit use of the class Catalogued Resource. As abstract class, an subclass should be used.</li>
+            </ul>
+            <ul>
+              <li><a data-cite="FOAF#term_primaryTopic"><code>foaf:primaryTopic</code></a> is functional: each catalog record can have at most one primary topic, i.e., describes one cataloged resource.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of foaf:primaryTopic for dcat:CatalogRecord">
+        <pre data-include-format="text" data-include="./examples/catalog-record/primary-topic.ttl"></pre>
+      </aside>
+    </section>
+  
+    <section id="catalog-record-modification-date">
       <h4>Property: update/ modification date</h4>
       <table class="def">
         <tbody>
