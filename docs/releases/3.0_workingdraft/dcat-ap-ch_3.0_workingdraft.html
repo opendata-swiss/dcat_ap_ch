@@ -5974,6 +5974,35 @@ respective references to the rights of third parties.
 
 <section class="appendix" id="changelog">
   <h2>Changelog</h2>
+  <h3>Alignment with DCAT-AP 3</h3>
+
+  <p>The main focus of the eCH Expert Group by the creation of DCAT-AP CH V3 was to ensure the compatibility to DCAT-AP V3.</p>
+    <ul>
+      <li>
+        DCAT and DCAT-AP introduced the new Dataset Series class. This class will be adopted in V3 of DCAT-AP CH.
+      </li>
+      <li>
+        DCAT AP 3 introduced the property dcatap:applicableLegislation. DCAT-AP CH V3 adopted this property for the classes dcat:Catalog, dcat:Dataset, dcat:Distribution, dcat:DataService and dcat:DatasetSeries.
+      </li>
+      <li>
+        Terminology: Updated the list of prefixes.
+      </li>
+    </ul>
+  <h3>Class dcat:Catalog</h3>
+  <ul>
+    <li>
+      Introduction of the property dcatap:applicableLegislation.
+    </li>
+  </ul>
+  <h3>Class dcat:Dataset</h3>
+  <ul>
+    <li>
+      The properties dcatap:applicableLegislation, odrl:hasPolicy have been added. 
+    </li>
+    <li>
+      The dcatap:availability property, which is already located at dcat:Distribution level, has also been added to the dcat:Dataset class. For the property, the controlled EU vocabulary for availability must be used. 
+    </li>
+  </ul>
 </section>
 
 <section class="appendix" id="namespaces">
