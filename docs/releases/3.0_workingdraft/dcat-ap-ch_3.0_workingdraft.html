@@ -182,8 +182,11 @@
         [[DCAT-AP-USAGEGUIDE]].
       </p>
 
-      <a href="images/uml_3.0.svg" target="_blank"><img src="images/uml_3.0.svg" /></a>
-      
+      <figure>
+        <a href="images/uml_3.0.svg" target="_blank"><img src="images/uml_3.0.svg" /></a>
+        <figcaption>Overview of the DCAT-AP CH model, showing the classes with their properties and the relationships between them</figcaption>
+      </figure>
+
     </section>
 
     <section id="requirement-levels">
@@ -531,7 +534,7 @@
       </tr>
       <tr>
         <td><a href="#catalog-catalog">catalog</a></td>
-        <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:Catalog</code></a></td>
+        <td><a data-cite="VOCAB-DCAT#Property:catalog_catalog"><code>dcat:catalog</code></a></td>
         <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:Catalog</code></a>
         <td>O</td>
         <td>0..n</td>
@@ -890,12 +893,12 @@
         </tr>
         <tr>
           <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:resource</code></a></td>
+          <td><a data-cite="VOCAB-DCAT#Property:catalog_catalog"><code>dcat:catalog</code></a></td>
           </td>
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:Resource</code></a>
+          <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:Catalog</code></a>
           </td>
         </tr>
         <tr>
@@ -3150,8 +3153,8 @@
         <td><a data-cite="ADMS#identifier"><code>adms:identifier</code></a>
         </td>
         <td><a data-cite="DCAT-AP#identifier"><code>Identifier</code></a></td>
-        <td><strong>O</strong></td>
-        <td>1..n</td>
+        <td>O</td>
+        <td>0..n</td>
       </tr>
       <tr>
         <td><a href="#dataset-documentation">documentation</a></td>
