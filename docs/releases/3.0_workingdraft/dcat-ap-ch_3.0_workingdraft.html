@@ -30,7 +30,7 @@
 <section id="abstract" class="informative">
   <p style="background: yellow; font-size: larger;"><b>This is an initial draft. All contents of this page are subject to change.</b></p>
   <p>
-    The DCAT Application Profile for Data Portals in Switzerland (DCAT-AP CH) serves as an application profile of the Data Catalog Vocabulary [[VOCAB-DCAT]] and is utilized to detail the datasets and data services featured in Swiss data portals, such as opendata.swiss. 
+    The DCAT Application Profile for Data Portals in Switzerland (DCAT-AP CH) serves as an application profile of the Data Catalog Vocabulary [[VOCAB-DCAT]] and is utilized to detail the datasets, data services and dataset series featured in swiss data portals, such as the open data portal opendata.swiss and the interoperability platform i14y.ch. 
     It primarily addresses the operators of these data portals (termed 'data receivers' in DCAT language) and the data providers who curate the data catalogues (known as 'data senders' in DCAT language).
   </p>
   <p>
@@ -40,20 +40,16 @@
   <p>
     DCAT-AP CH aims to maintain compatibility with the Application Profile for Data Portals in Europe [[DCAT-AP]]. 
     However, due to the ongoing evolution of the DCAT-AP standard, compatibility with the existing version of DCAT-AP CH is not assured. 
-    The eCH Open Government Data expert group is currently developing version 3, which will ensure maximum compatibility with DCAT-AP (current version 3.0.0).
+    The current version 3.0.0 of the standard has been developed by the <a href="https://www.ech.ch/de/der-verein/fachgruppen/open_government_data">eCH Open Government Data Expert Group</a> for this purpose.
   </p>
 </section>
-
-<aside class="ednote" title="note">
-  <p>For ease of reading and understanding, only the masculine form is used in this document when referring to persons. This wording expressly includes women in their respective functions.</p>
-</aside>
 
 <section id="introduction" class="informative">
   <h2>Introduction</h2>
 
   <section id="document-status">
     <h3>Document status</h3>
-    <p>In progress: Use is only authorised within the specialist group or expert committee.</p>
+    <p><strong>In progress: Use is only authorised within the specialist group or expert committee.</strong></p>
     <p>Draft: The document was released for public consultation by the responsible speakers from the expert committee and published accordingly.</p>
     <p>Proposal: The document is submitted to the Committee of Experts for approval DD-MM-YYYY, but is not yet standardised.</p>
     <p>Approved: The document has been approved by the Expert Committee. It has normative force for the defined scope in the defined area of validity.</p>
@@ -65,28 +61,28 @@
 
   <section id="area-of-application" >
     <h3>Area of application</h3>
-    <p>The DCAT Application Profile for data portals in Switzerland (DCAT-AP CH) is an Application Profile of the DCAT vocabulary
-      and a Subprofile of the European Application Profile DCAT-AP.</p>
+    <p>The DCAT Application Profile for Data Portals in Switzerland (DCAT-AP CH) is an application profile of the <a href="https://www.w3.org/TR/vocab-dcat-3/">DCAT vocabulary</a>
+      and a sub-profile of the <a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/">European Application Profile DCAT-AP</a>.</p>
     <ul>
-      <li><strong>DCAT (“Data Catalog Vocabulary”)</strong> is a semantic definition to describe data by the means of an RDF vocabulary.
-        It allows for a decentralized approach regarding the publication of data by enforcing interoperability
-        via the use of a common language to describe the data.
+      <li><strong>DCAT (Data Catalog Vocabulary)</strong> is a semantic definition for describing data using an RDF vocabulary.
+        It allows a decentralized approach to data publication by enforcing interoperability
+       through the use of a common language to describe data.
       </li>
-      <li>Being DCAT a generic language, it can be applied in various contexts.
-        An Application Profile specifies its utilization within a specific domain, context or application,
-        with the goal of facilitating data exchange. In Europe the application profile DCAT-AP was defined,
-        which assumed the role of a de facto standard within Europe. Many European Countries defined based on
-        DCAT-AP their own localized, tailored to their specific needs, Application Profiles.
+      <li>As DCAT is a generic language, it can be used in different contexts.
+        An application profile specifies its use within a specific domain, context or application,
+        with the aim of facilitating data exchange. In Europe, the DCAT-AP application profile has been defined,
+        and has taken on the role of a de facto standard within Europe. Many European countries defined their own localised application profile based on
+        DCAT-AP, tailored to their specific needs.
       </li>
-      <li>The Swiss community defined DCAT-AP CH to provide guidance for Swiss data publishers on how to specify their data
-        catalogues and to data portal managers on how to process data catalogues, in a DCAT-AP CH and DCAT-AP conformant manner,
-        so that interoperability with DCAT-AP is assured.
+      <li>The Swiss community defined DCAT-AP CH to provide guidance to Swiss data publishers on how to specify their data
+        catalogues and to data portal managers on how to process data cataloges in a DCAT-AP CH and DCAT-AP compliant manner,
+        thus ensuring interoperability with DCAT-AP.
       </li>
     </ul>
-        <p>It should be always kept in mind that both DCAT-AP CH and DCAT-AP primarily focus on metadata.
-          Metadata is by definition secondary information on the data: when and by whom were they published,
-          which usage conditions apply, how often are they updated, whom to contact about them and where
-          and how can they be accessed.
+        <p>It should always be kept in mind that both DCAT-AP CH and DCAT-AP focus primarily on metadata.
+          Metadata is, by definition, secondary information about the data: when and by whom it was published,
+          what the terms of use are, how often it is updated, who to contact about it and where
+          and how it can be accessed.
         </p>
   </section>
 
@@ -101,35 +97,35 @@
 
   <section id="dcat-vocabulary">
     <h3>DCAT as a universal vocabulary</h3>
-    <p>The Application Profile specified in this document is based on the specification of the Data Catalog Vocabulary (DCAT)
-      developed under the responsibility of the Government Linked Data Working Group at W3C. DCAT is an RDF vocabulary
+    <p>The application profile specified in this document is based on the Data Catalog Vocabulary (DCAT) specifications 
+      developed under the responsibility of the Government Linked Data Working Group at the W3C. DCAT is an RDF vocabulary
       designed to facilitate interoperability between data catalogues published on the Web. Additional
-      classes and properties from other well-known vocabularies are re-used where necessary.
+      classes and properties from other well-known vocabularies are reused where approriate.
     </p>
     <p>The DCAT vocabulary consists of classes and properties.</p>
     <ul>
       <li><strong>Classes are things on the internet</strong>: Not all of them have URIs, but it is recommended to provide a URI for them.
-        They are complex things like a person, an organization, a dataset, a website or a downloadable data file.
+        They are complex things like a person, an organisation, a dataset, a website or a downloadable data file.
       </li>
-      <li><strong>Classes have properties</strong>: The properties are the attributes describing these things. Some properties occur
-        in more than one class, a title for example is a common attribute. Other properties are very specialized such
-        as a file format that only makes sense for a data file.
+      <li><strong>Classes have properties</strong>: Properties are the attributes that describe these things. Some properties are common
+        to more than one class, for example a title is a common attribute. Other properties are very specialised, such
+        as a file format, which only makes sense for a data file.
       </li>
-      <li><strong>Properties can be simple or complex</strong>: Some properties are classes. For example, an organization can have a website. Or a dataset can have a data publisher. In general, a class can be recognized by its spelling: A property name starts with a lowercase letter such as dcat:dataset , while a class starts with a capital letter such as dcat:Dataset.
+      <li><strong>Properties can be simple or complex</strong>: Some properties are classes. For example, an organisation might have a website. Or a dataset may have a data publisher. In general, a class can be recognized by its spelling: A property name starts with a lowercase letter, such as dcat:dataset, while a class starts with an uppercase letter, such as dcat:Dataset.
       </li>
     </ul>
-    <p>Classes and properties are used to deliver the metadata in a structured way.</p>
+    <p>Classes and properties are used to provide metadata in a structured way.</p>
 
   </section>
 
   <section id="core-structure">
-    <h3>The core structure of DCAT-AP CH v2 replicates the core structure of DCAT-AP</h3>
-    <p>Being a Subprofile of DCAT-AP, DCAT-AP CH replicates its core structure and concepts.</p>
+    <h3>The core structure of DCAT-AP CH v3 replicates the core structure of DCAT-AP</h3>
+    <p>Being a subprofile of DCAT-AP, DCAT-AP CH replicates its core structure and concepts.</p>
 
     <section id="classes">
       <h4>Classes</h4>
-      <p>The Swiss Application Profile (“DCAT-AP CH”) as well as the European Application Profile (“DCAT-AP”)
-        are structured around the following main 4 classes:
+      <p>The Swiss Application Profile (DCAT-AP CH) as well as the European Application Profile (DCAT-AP)
+        are structured around the following 7 main classes:
       </p>
       <table class="simple">
         <thead>
@@ -146,123 +142,64 @@
           <td><a data-cite="VOCAB-DCAT#Class:Catalog"><code>dcat:Catalog</code></a></td>
         </tr>
         <tr>
-          <td><a href="#catalog-publisher">Dataset</a></td>
+          <td><a href="#Class:Resource">Resource</a></td>
+          <td>Resource published or curated by a single agent. </td>
+          <td><a data-cite="VOCAB-DCAT#Class:Resource"><code>dcat:Resource</code></a></td>
+        </tr>
+        <tr>
+          <td><a href="#Class:CatalogRecord">Catalog Record</a></td>
+          <td>A description of a Cataloged Resource's entry in the Catalog. </td>
+          <td><a data-cite="VOCAB-DCAT#Class:Catalog_Record"><code>dcat:CatalogRecord</code></a></td>
+        </tr>
+        <tr>
+          <td><a href="#Class:Dataset">Dataset</a></td>
           <td>A conceptual entity that represents the information published.</td>
            <td><a data-cite="VOCAB-DCAT#Class:Dataset"><code>dcat:Dataset</code></a></td>
         </tr>
         <tr>
-          <td><a href="#catalog-dataset">Distribution</a></td>
+          <td><a href="#Class:Distribution">Distribution</a></td>
           <td>A physical embodiment of the Dataset in a particular format.</td>
           <td><a data-cite="VOCAB-DCAT#Class:Distribution"><code>dcat:Distribution</code></a></td>
         </tr>
         <tr>
-          <td><a href="#catalog-title">Data Service</a></td>
+          <td><a href="#Class:Data_Service">Data Service</a></td>
           <td>A collection of operations that provides access to one or more datasets or data processing functions.</td>
-          <td><a data-cite="VOCAB-DCAT#Class:DataService"><code>dcat:DataService</code></a></td>
+          <td><a data-cite="VOCAB-DCAT#Class:Data_Service"><code>dcat:DataService</code></a></td>
+        </tr>
+        <tr>
+          <td><a href="#Class:Dataset_Series">Dataset Series</a></td>
+          <td>A collection of datasets that are published separately, but share some characteristics that group them.</td>
+          <td><a data-cite="VOCAB-DCAT#Class:Dataset_Series"><code>dcat:DatasetSeries</code></a></td>
         </tr>
         </tbody>
       </table>
       <p>Note that in the previous versions of DCAT-AP and DCAT-AP CH, classes were categorised to be mandatory,
         recommended and optional, like it’s currently the case for properties. This categorisation has been removed
-        in favour of the above overview and guidelines to create a common expectation for DCAT-AP catalogues.</p>
+        in favour of the above overview and guidelines to create a common expectation for DCAT-AP cataloges.</p>
       <p>
         To improve the coherency by the description of shared Dataset, Distribution and the new introduced class Data Services,
         DCAT-AP provided guidelines on their usage:
         [[DCAT-AP-USAGEGUIDE]].
       </p>
-      <div id="diagram" class="mermaid">
-        classDiagram
-        Catalog --> Dataset : dcat:dataset
-        Catalog --> DataService : dcat:service
-        DataService --> Dataset : dcat:servesDataset
-        Dataset --> Distribution : dcat:distribution
-        Distribution --> DataService : dcat:accessService
-        Catalog --> DatasetSeries : dcat:dataset
-        Dataset --> DatasetSeries : dcat:inSeries
-        class Catalog {
-        Mandatory:
-        - dct:description
-        - dct:publisher
-        - dct:title
-        Recommended:
-        - dcat:dataset
-        - foaf:homepage
-        - dct:language
-        - dct:license
-        - dct:issued
-        - dct:rights
-        - dcat:service
-        - dct:spatial
-        - dcat:themeTaxonomy
-        - dct:modified
-      }
-      class DatasetSeries {
-      Mandatory:
-      - dct:description
-      - dct:title
-      Recommended:
-      - dcat:contactPoint
-      - dct:publisher
-      }
-        class DataService {
-        Mandatory:
-        - dcat:endpointURL
-        - dcat:contactPoint
-        - dct:publisher
-        - dct:title
-        Recommended:
-        - dct:endpointDescription
-        - dct:license
-        - dcat:servesDataset
-        }
-        class Dataset {
-        Mandatory:
-        - dcat:contactPoint
-        - dct:description
-        - dct:identifier
-        - dct:publisher
-        - dct:title
-        Recommended:
-        - dcat:distribution
-        - dct:keyword
-        - dcat:landingPage
-        - dct:issued
-        - dct:spatial
-        - dct:temporal
-        - dcat:theme
-        - dct:modified
-        }
-        class Distribution {
-        Mandatory:
-        - dct:accessURL
-        - dct:license
-        Recommended:
-        - dctap:avaliability
-        - dct:description
-        - dct:format
-        - dct:rights
-        - dct:title
-        - dct:modified
-        Optional
-        - dcat:accessService
-        }
-    </div>
+
+      <a href="images/uml_3.0.svg" target="_blank"><img src="images/uml_3.0.svg" /></a>
+      
     </section>
 
     <section id="requirement-levels">
       <h4>Requirement levels</h4>
       <p>DCAT-AP CH defines four requirement levels for data receivers and senders:</p>
       <ul>
-        <li><strong>Mandatory property</strong>: a receiver MUST be able to process the information for that property;
+        <li><strong>Mandatory</strong>: a receiver MUST be able to process the information for that property;
           a sender MUST provide the information for that property.
         </li>
-        <li><strong>Recommended property</strong>: a receiver MUST be able to process the information for that property;
+        <li><strong>Recommended</strong>: a receiver MUST be able to process the information for that property;
           a sender SHOULD provide the information for that property if it is available.
         </li>
-        <li><strong>Optional property</strong>: a receiver MUST be able to process the information for that property;
+        <li><strong>Optional</strong>: a receiver MUST be able to process the information for that property;
           a sender MAY provide the information for that property but is not obliged to do so.
         </li>
-        <li><strong>Deprecated property</strong>: a receiver SHOULD be able to process information about instances
+        <li><strong>Deprecated</strong>: a receiver SHOULD be able to process information about instances
           of that property; a sender SHOULD NOT provide the information about instances of that property.
         </li>
       </ul>
@@ -277,18 +214,24 @@
     </section>
 
     <section id="controlled-vocabulary">
-      <h4>Controlled vocabularies of DCAT-AP CH v2</h4>
-      <p>In the table below, a number of properties are listed with controlled vocabularies (CV) that MUST be used for
-        the listed properties.
+      <h4>Controlled vocabularies of DCAT-AP CH v3</h4>
+      <p>The table below lists a number of properties with the controlled vocabularies (CVs) that MUST be used for
+        the properties listed.
       </p>
-      <p>Where possible the same controlled vocabularies as DCAT-AP were utilized.
-        However not every vocabulary proposed by DCAT-AP is currently applied for DCAT-AP CH v2.
-        In some cases, the eCH-Expert Group is still evaluating the application of the proposed vocabulary,
-        while in other cases the eCH-Expert Group decided to evaluate the introduction of a new, Swiss-specific vocabulary.
-        In particular for the property dct:publisher, which refers to an entity (organisation) responsible for making
-        a Catalogue, a Dataset or a Data Service available, a CV is still being discussed within the eCH-Expert
-        Group “Open Government Data” - its introduction will be evaluated for the next iterations of
-        this standard eCH-0200.
+      <p>Where possible, the same controlled vocabularies have been used as for DCAT-AP.
+        However, not every vocabulary proposed by DCAT-AP is currently used for DCAT-AP CH v3.
+        In some cases, the eCH Expert Group is still evaluating the application of the proposed vocabulary,
+        while in other cases the eCH Expert Group has decided to evaluate the introduction of a new, Swiss-specific vocabulary.
+        In particular, for the property dct:publisher, which refers to an entity (organisation) responsible for making
+        a cataloge, a dataset or a data service available, a CV is still being discussed within the eCH Expert
+        Group Open Government Data - its introduction will be evaluated for the next iterations of
+        this standard eCH-0200. 
+      </p>
+      <p>The evaluation of the Controlled Vocabularies is carried out by a subgroup of the eCH OGD Expert Group. 
+        It defines the usage notes for the use of the respective CVs and provides an aid (eCH-0285-Use-of-controlled-vocabularies) with recommendations and best practices for the use of CVs. 
+        Further information can be found here: <a href="https://github.com/opendata-swiss/eCH-0285-Use-of-controlled-vocabularies">eCH-0285-Use-of-controlled-vocabularies</a>
+      </p>
+      <p>
       </p>
       <table class="simple">
         <thead>
@@ -301,7 +244,7 @@
         </thead>
         <tbody>
         <tr>
-          <td><code>dcatap:availability</code></td>
+          <td><a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></td>
           <td>Dataset, Distribution</td>
           <td>[[VOCAB-EU-AVAILABLITY]]
           </td>
@@ -5974,6 +5917,27 @@ respective references to the rights of third parties.
 
 <section class="appendix" id="changelog">
   <h2>Changelog</h2>
+
+  <h3>General customisation</h3>
+
+  <p>General adaptations of various sections of the standard are listed here</p>
+    <ul>
+      <li>
+        The section <a class="no-sectionRef" href="#abstract"></a> has been updated.
+      </li>
+      <li>
+        The editor's note on gender-neutral language has been removed, as it is not necessary in English. 
+      </li>
+      <li>
+        Adding the three new classes Resource, Catalog Record and Dataset Series to the section <a class="no-sectionRef" href="#classes"></a>
+      </li>
+      <li>
+        An updated UML replaces the mermaid diagram in section <a class="no-sectionRef" href="#classes"></a>
+      </li>
+      <li>
+        Updating the section  <a class="no-sectionRef" href="#controlled-vocabulary"></a>
+      </li>
+    </ul>
   <h3>Alignment with DCAT-AP 3</h3>
 
   <p>The main focus of the eCH Expert Group by the creation of DCAT-AP CH V3 was to ensure the compatibility to DCAT-AP V3.</p>
