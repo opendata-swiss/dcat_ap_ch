@@ -88,6 +88,26 @@
 
   <section id="changes-overview" >
     <h3>Overview of changes compared to version 2.0.0</h3>
+    <p>The main focus of the eCH Expert Group in creating of DCAT-AP CH v3 was to ensure compatibility with DCAT-AP.</p>
+    <p>A detailed overview of the changes with references to the corresponging github issues can be found in section <a class="no-sectionRef" href="#changelog"></a></p>
+    <ul>
+      <li>
+        Introduction of the three new classes Resource, Catalog Record and Dataset Series, see <a class="no-sectionRef" href="#classes"></a>.
+      </li>
+      <li>
+        Adding new properties to several classes.
+      </li>
+      <li>
+        Define usage notes for controlled vocabularies where necessary.
+      </li>
+      <li>
+        The property <a class="no-sectionRef" href="#distribution-coverage">dct:coverage</a> at dcat:Distribution level was considered deprecated.
+      </li>
+      <li>
+        Addition of a new and detailed figure for the DCAT-AP CH model, see <a class="no-sectionRef" href="#classes"></a>. 
+      </li>
+      </ul>
+    
   </section>
 
 </section>
@@ -521,7 +541,7 @@
       <tr>
         <td><a href="#catalog-applicablelegislation">applicable legislation</a></td>
         <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
-        <td><a data-cite="VOCAB-DCAT#https://semiceu.github.io/DCAT-AP/releases/3.0.0/#LegalResource"><code>eli:LegalResource</code></a>
+        <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>eli:LegalResource</code></a>
         <td>O</td>
         <td>0..n</td>
       </tr>
@@ -5750,32 +5770,17 @@
 
 <section id="conformance-to-dcat-ap">
   <h2>Conformance to DCAT-AP</h2>
-  <p>DCAT-AP CH is a Subprofile of DCAT-AP and DCAT-AP is an application profile of DCAT.</p>
+  <p>DCAT-AP CH is a sub-profile of DCAT-AP and DCAT-AP is an application profile of DCAT.</p>
   <p>The DCAT-Profile Guidance states that application profiles may form hierarchies.</p>
   <p>There is a close collaboration between DCAT-AP and DCAT-AP CH which takes place mostly as an
     online discussion on GitHub at [[DCAT-AP-GITHUB-ISSUES]].</p>
   <p>The following diagram captures the relationship between DCAT, DCAT-AP and DCAT-AP CH:</p>
-  <div id="diagram2" class="mermaid">
-    classDiagram
 
-    DCAT -->  DCAT_AP: is_profile_of
-    DCAT_AP --> DCAT_AP_CH: is_subprofile_of
-    DCAT --> DCAT_AP_CH: is_profile_of
-    class DCAT {
-      - defines classes
-      - defines properties
-      - base vocabulary
-    }
-    class  DCAT_AP {
-      - uses classes of DCAT
-      - specifies requirement levels
-      - specifies controlled vocabulary
-    }
-    class DCAT_AP_CH {
-      - localizes DCAT-AP for Swiss context
-      - can restrict more but not less than DCAT-AP
-    }
-  </div>
+  <figure>
+    <a href="images/figure_2.svg" target="_blank"><img src="images/figure_2.svg" /></a>
+    <figcaption>Relationship between DCAT, DCAT-AP and DCAT-AP CH</figcaption>
+  </figure>
+
   <p>For the previously mentioned interoperability reasons, DCAT-AP CH aims to stay a sub-profile of [[DCAT-AP]].
     Furthermore, this way it can be assured that metadata structured as DCAT-AP CH can be efficiently
     harvested by [[DATAPORTAL-EU]].</p>
@@ -5998,6 +6003,9 @@ respective references to the rights of third parties.
         <li><a class="no-sectionRef" href="#resource-has-part">dct:hasPart</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/232">Issue 232</a>)</li>  
         <li><a class="no-sectionRef" href="#resource-first">dcat:first</a>, <a class="no-sectionRef" href="#resource-last">dcat:last</a> and <a class="no-sectionRef" href="#resource-previous">dcat:prev</a> because of the introduction of <a class="no-sectionRef" href="#Class:Dataset_Series"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/232">Issue 232</a>)</li>
       </ul>
+    </li>
+    <li>
+      The range of <a class="no-sectionRef" href="#resource-keyword">dcat:keyword</a> has been adapted to allow controlled vocabularies (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/244">Issue 244</a>). DCAT-AP CH goes one step further than DCAT-AP. This step is important because rdsf:Literal is untidy (free text) and does not handle multilingualism very well. 
     </li>
   </ul>
 
