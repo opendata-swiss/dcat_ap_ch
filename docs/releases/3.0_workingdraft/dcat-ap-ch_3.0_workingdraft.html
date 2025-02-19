@@ -444,12 +444,12 @@
       </li>
       <li><strong>URI</strong>: denotes the property URI.</li>
       <li><strong>Range</strong>: specifies the range of values that is expected for the property.</li>
-      <li><strong>ReqLevel</strong> (“Requirement level”): denotes whether the class / property is mandatory, recommended or optional.</li>
-      <li><strong>Card</strong> (“Cardinality”): specifies the minimum number of values that MUST be provided for that
+      <li><strong>ReqLevel</strong> (Requirement level): denotes whether the class / property is mandatory, recommended or optional.</li>
+      <li><strong>Card</strong> (Cardinality): specifies the minimum number of values that MUST be provided for that
         property and the maximum number of values that MAY be provided.
       </li>
       <li><strong>Usage Note</strong>: specifies custom usage instructions and provides background information.</li>
-      <li><strong>CV</strong> (“Controlled Vocabulary”): defines which controlled vocabulary SHOULD be used.</li>
+      <li><strong>CV</strong> (Controlled Vocabulary): defines which controlled vocabulary SHOULD be used.</li>
     </ul>
 
   </section>
@@ -4003,6 +4003,15 @@
         <td>O</td>
         <td>0..1</td>
       </tr>
+      <tr>
+        <td><a href="#distribution-coverage">coverage <strong>(deprecated)</strong></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/coverage"><code>dct:coverage</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LocationPeriodOrJurisdiction"><code>LocationPeriodOrJurisdiction</code></a>
+        </td>
+        <td>O</td>
+        <td>0..n</td>
+      </tr>
       </tbody>
     </table>
 
@@ -4551,15 +4560,15 @@
 
     </section>
 
-    <section id="distribution-coverage (deprecated)">
+    <section id="distribution-coverage">
 
-      <h4>Property: Coverage</h4>
+      <h4>Property: coverage <strong>(deprecated)</strong></h4>
 
       <table class="def">
         <tbody>
         <tr>
           <th>Property</th>
-          <td>Coverage</td>
+          <td>coverage <strong>(deprecated)</strong></td>
         </tr>
         <tr>
           <th>Requirement level</th>
@@ -4584,7 +4593,7 @@
           <th>Usage Note</th>
           <td>
             <ul>
-              <li><strong>Deprecated since DCAT-AP CH v3.0.0</strong></li>
+              <li><strong>Deprecated since DCAT-AP CH v3.0.0, see requirements for deprecated properties <a class="no-sectionRef" href="#requirement-levels"></a></strong></li>
                 <li>If a dataset contains distributions that differ regarding their content beyond just differences
                   in format or resolution this property can be used to specify temporal or spatial coverage of the
                   data that the distribution contains.</li>
@@ -5955,18 +5964,99 @@ respective references to the rights of third parties.
   <h3>Class dcat:Catalog</h3>
   <ul>
     <li>
-      Introduction of the property dcatap:applicableLegislation.
+      The properties <code>contact point, description, publisher, title, language, licence, release date, rights and update/modification date,</code> which are now listed in the new introduced abstract class <a class="no-sectionRef" href="#Class:Resource"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/248">Issue 248</a>), have been removed from the list of <a class="no-sectionRef" href="#Class:Catalog"></a>.
+    </li>
+    <li>
+      Introduction of the property <a class="no-sectionRef" href="#catalog-applicablelegislation">dcatap:applicableLegislation</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/236">Issue 236</a>).
+    </li>
+    <li>
+      Introduction of the property <a class="no-sectionRef" href="#catalog-resource">dcat:resource</a> because of the introduction of <a class="no-sectionRef" href="#Class:Resource"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/248">Issue 248</a>).
+    </li>
+    <li>
+      Introduction of the property <a class="no-sectionRef" href="#catalog-catalog-record">dcat:record</a> because of the introduction of <a class="no-sectionRef" href="#Class:CatalogRecord"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/249">Issue 249</a>).
     </li>
   </ul>
+
+  <h3>Class dcat:Resource</h3>
+  <ul>
+    <li>
+      Introduction of the new abstract class <a class="no-sectionRef" href="#Class:Resource"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/248">Issue 248</a>).
+    </li>
+    <li>
+      The following properties already available in DCAT-AP CH v2 are now listed under dcat:Resource and apply to the subclasses of dcat:Resource: <code>contact point, description, identifier, publisher, title,keyword/tag, landing page, release date, theme/category, update/modification date, rights, access rights, conforms to, is referenced by, language, qualified attribution, qualified relation, related resource, license</code> . 
+    </li>
+    <li>
+      Introduction of the following properties: 
+      <ul>
+        <li><a class="no-sectionRef" href="#resource-has-policy">odrl:hasPolicy</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/241">Issue 241</a>)</li>
+        <li><a class="no-sectionRef" href="#resource-status">adms:status</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/230">Issue 230</a>)</li>
+        <li><a class="no-sectionRef" href="#resource-version">dcat:version</a> and <a class="no-sectionRef" href="#resource-version-notes">adms:versionNotes</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/234">Issue 234</a>)</li>
+        <li><a class="no-sectionRef" href="#resource-creator">dct:creator</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/231">Issue 231</a>)</li>
+        <li><a class="no-sectionRef" href="#resource-has-part">dct:hasPart</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/232">Issue 232</a>)</li>  
+        <li><a class="no-sectionRef" href="#resource-first">dcat:first</a>, <a class="no-sectionRef" href="#resource-last">dcat:last</a> and <a class="no-sectionRef" href="#resource-previous">dcat:prev</a> because of the introduction of <a class="no-sectionRef" href="#Class:Dataset_Series"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/232">Issue 232</a>)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Class dcat:CatalogRecord</h3>
+  <ul>
+    <li>
+      Introduction of the new class <a class="no-sectionRef" href="#Class:CatalogRecord"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/249">Issue 249</a>).
+    </li>
+  </ul>
+
   <h3>Class dcat:Dataset</h3>
   <ul>
     <li>
-      The properties dcatap:applicableLegislation, odrl:hasPolicy have been added. 
+      The properties <code>contact point, description, publisher, title, language, release date, rights and update/modification date, access rights, conforms to, is referenced by, qualified attribution, qualified relation, related resource</code>, which are now listed in the new introduced abstract class <a class="no-sectionRef" href="#Class:Resource"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/248">Issue 248</a>), have been removed from the list of <a class="no-sectionRef" href="#Class:Dataset"></a>.
     </li>
     <li>
-      The dcatap:availability property, which is already located at dcat:Distribution level, has also been added to the dcat:Dataset class. For the property, the controlled EU vocabulary for availability must be used. 
+      Introduction of the following properties: 
+      <ul>
+        <li><a class="no-sectionRef" href="#dataset-applicablelegislation">dcatap:applicableLegislation</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/236">Issue 236</a>)</li>
+        <li><a class="no-sectionRef" href="#dataset-availability">dcatap:availability</a> - already located at <a class="no-sectionRef" href="#Class:Distribution">dcat:Distribution</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/230">Issue 230</a>)</li>
+        <li><a class="no-sectionRef" href="#dataset-other-identifier">adms:identifier</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/232">Issue 232</a>)</li>
+        <li><a class="no-sectionRef" href="#dataset-in-series">dcat:inSeries</a> because of the introduction of <a class="no-sectionRef" href="#Class:Dataset_Series"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/214">Issue 214</a>)</li>
+        <li><a class="no-sectionRef" href="#dataset-was-generated-by">prov:wasGeneratedBy</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/232">Issue 232</a>)</li>
+      </ul>
     </li>
   </ul>
+
+  <h3>Class dcat:Distribution</h3>
+  <ul>
+    <li>
+      Set <a class="no-sectionRef" href="#distribution-coverage">dct:coverage</a> as deprecated, see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/79">Issue 79</a>, <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/112">Issue 112</a> and <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/214">Issue 214</a>.
+      <li>
+        Introduction of the following properties: 
+      <ul>
+        <li><a class="no-sectionRef" href="#distribution-applicablelegislation">dcatap:applicableLegislation</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/236">Issue 236</a>)</li>
+        <li><a class="no-sectionRef" href="#distribution-status">adms:status</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/230">Issue 230</a>)</li>
+        <li><a class="no-sectionRef" href="#distribution-has-policy">odrl:hasPolicy</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/241">Issue 241</a>)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Class dcat:DataService</h3>
+  <ul>
+    <li>
+      The properties <code>contact point, publisher, title, license, access rights, keyword/tag, landing page</code>, which are now listed in the new introduced abstract class <a class="no-sectionRef" href="#Class:Resource"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/248">Issue 248</a>), have been removed from the list of <a class="no-sectionRef" href="#Class:Data_Service"></a>
+    </li>
+    <li>
+      Introduction of the following properties: 
+      <ul>
+        <li><a class="no-sectionRef" href="#data-service-applicablelegislation">dcatap:applicableLegislation</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/236">Issue 236</a>)</li>
+      </ul>
+    </li>
+</ul>
+
+<h3>Class dcat:DatasetSeries</h3>
+  <ul>
+    <li>
+      Introduction of the new class <a class="no-sectionRef" href="#Class:Dataset_Series"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/214">Issue 214</a>).
+    </li>
+  </ul>
+</li>
+
 </section>
 
 <section class="appendix" id="namespaces">
