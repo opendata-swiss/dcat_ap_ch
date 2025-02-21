@@ -4099,6 +4099,10 @@
             <code>dcat:accessURL</code></a></td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>A URL that gives access to a distribution of the dataset.</td>
+        </tr>
+        <tr>
           <th>Range</th>
           <td><a data-cite="RDF-SCHEMA#ch_resource">
             <code>rdfs:Resource</code></a>
@@ -4108,8 +4112,8 @@
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property contains a URL that gives access to a Distribution of the Dataset. The resource at
-                the access URL may contain information about how to get the Dataset.</li>
+              <li>This property contains a URL that gives access to a distribution of the dataset. The resource at
+                the access URL may contain information about how to get the dataset.</li>
             </ul>
           </td>
         </tr>
@@ -4155,11 +4159,14 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>A licence under which the distribution is made available.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to the licence under which the Distribution is made available.</li>
-              <li>CV to used: [[VOCAB-CH-LICENSE]]</li>
+              <li>CV to used for open data: [[VOCAB-CH-LICENSE]]</li>
             </ul>
           </td>
         </tr>
@@ -4201,7 +4208,7 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>This property indicates how long it is planned to keep the Distribution of the Dataset available.</td>
+          <td>This property indicates how long it is planned to keep the distribution of the dataset available.</td>
         </tr>
           <tr>
             <th>Usage Note</th>
@@ -4249,10 +4256,13 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property contains a free-text account of the distribution.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property contains a free-text account of the Distribution.</li>
               <li>The description MUST be provided if the distribution contains only part of the data
                 offered by the Dataset.</li>
               <li>This property can be repeated for parallel language versions of the description
@@ -4300,10 +4310,13 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to the file format of the distribution.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to the file format of the Distribution.</li>
               <li>CV to be used: [[VOCAB-EU-FILE-TYPE]]</li>
               <li>If a format is not available:
                 a) media type ([[IANA-MEDIA-TYPES]]) should be used
@@ -4401,11 +4414,12 @@
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
         </tr>
+        This property contains a name given to the distribution. 
         <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property contains a name given to the Distribution. This property can be repeated for
+              <li>This property can be repeated for
                 parallel language versions of the description
                 (see <a class="no-sectionRef" href="#multilingualism"></a>).</li>
               <li>The title MUST be given if the distribution contains only part of the data offered by the Dataset</li>
@@ -4460,7 +4474,7 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>This property contains the most recent date on which the Distribution was changed or modified.</td>
+          <td>This property contains the most recent date on which the distribution was changed or modified.</td>
         </tr>
         </tbody>
       </table>
@@ -4501,12 +4515,8 @@
           </td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property refers to a data service that gives access to the distribution of the Dataset</li>
-            </ul>
-          </td>
+          <th>Definition</th>
+          <td>This property refers to a data service that gives access to the distribution of the Dataset</td>
         </tr>
         </tbody>
       </table>
@@ -4547,11 +4557,14 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property contains the size of a Distribution in bytes.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property contains the size of a Distribution in bytes.
-                If the precise size is not known, an approximate size can be indicated.
+              <li>If the precise size is not known, an approximate size can be indicated.
               </li>
             </ul>
           </td>
@@ -4568,13 +4581,13 @@
 
     <section id="distribution-checksum">
 
-      <h4>Property: Checksum</h4>
+      <h4>Property: checksum</h4>
 
       <table class="def">
         <tbody>
         <tr>
           <th>Property</th>
-          <td>Checksum</td>
+          <td>checksum</td>
         </tr>
         <tr>
           <th>Requirement level</th>
@@ -4596,13 +4609,15 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property provides a mechanism that can be used to verify that the contents of a distribution
+            have not changed.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property provides a mechanism that can be used to verify that the contents of a distribution
-                have not changed.
-              </li>
-              <li>The checksum is related to the downloadURL.</li>
+              <li>The checksum is related to the <a class="no-sectionRef" href="#distribution-download-url">downloadURL</a>.</li>
               <li>Property added in [[VOCAB-DCAT-3]]:
                 <a data-cite="VOCAB-DCAT#Property:distribution_checksum">
                   <code>spdx:checksum</code>
@@ -4678,7 +4693,7 @@
         <tbody>
         <tr>
           <th>Property</th>
-          <td>Documentation</td>
+          <td>documentation</td>
         </tr>
         <tr>
           <th>Requirement level</th>
@@ -4697,12 +4712,8 @@
           <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property refers to a page or document about this Distribution.
-              </li>
-            </ul>
+          <th>Definition</th>
+          <td>This property refers to a page or document about this distribution.
           </td>
         </tr>
         </tbody>
@@ -4739,6 +4750,11 @@
           <th>Range</th>
           <td><a data-cite="RDF-SCHEMA#ch_resource">
             <code>rdfs:Resource</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>This property refers to a URL that is a direct link to a downloadable file in a given format. 
           </td>
         </tr>
         <tr>
@@ -4792,12 +4808,9 @@
           </td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>An identifier for the distribution, that identifies it as a
-                resource mainly for the organisation publishing the data.</li>
-            </ul>
+          <th>Definition</th>
+          <td>An identifier for the distribution, that identifies it as a
+                resource mainly for the organisation publishing the data.
           </td>
         </tr>
         </tbody>
@@ -4838,13 +4851,17 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>A thumbnail picture illustrating the content of the distribution.
+          </td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>A thumbnail picture illustrating the content of the Distribution.</li>
               <li>
                 For distributions that consist of visual content (photographs, videos, maps, etc.) it makes
-                sense to add a limited number of thumbnails to the metadata.</li>
+                sense to add a limited number of thumbnails to the metadata (see cardinality).</li>
               <li>
                 It’s a DCAT-AP CH Custom Class (not present in [[DCAT-AP]]).
               </li>
@@ -4860,13 +4877,13 @@
 
     <section id="distribution-language">
 
-      <h4>Property: Language</h4>
+      <h4>Property: language</h4>
 
       <table class="def">
         <tbody>
         <tr>
           <th>Property</th>
-          <td>Language</td>
+          <td>language</td>
         </tr>
         <tr>
           <th>Requirement level</th>
@@ -4887,10 +4904,14 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to a language used in the distribution.
+          </td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to a language used in the Distribution.</li>
               <li>This property can be repeated if the metadata is provided in multiple languages.</li>
               <li>The property MUST be set if the distribution is language-dependent, or if it is given in
                 some of the languages German, French, Italian and English but not in all four languages.</li>
@@ -4932,12 +4953,8 @@
           </td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property refers to a page or document about this Data Service.</li>
-            </ul>
-          </td>
+          <th>Definition</th>
+          <td>An established schema to which the described distribution conforms. </td>
         </tr>
         </tbody>
       </table>
@@ -4976,14 +4993,16 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to the media type of the distribution as defined in the official register of
+            media types managed by IANA.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to the media type of the Distribution as defined in the official register of
-                media types managed by IANA.
-              </li>
               <li>
-                The value of the element "dcat:mediaType" must correspond to a MIME type according to IANA: [[IANA-MEDIA-TYPES]].
+                The value of the element <code>dcat:mediaType</code> must correspond to a MIME type according to IANA: [[IANA-MEDIA-TYPES]].
               </li>
             </ul>
           </td>
@@ -5027,14 +5046,16 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to the format of the file in which one or more data files are
+            grouped together, e.g. to enable a set of related files to be downloaded together.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to the format of the file in which one or more data files are
-                grouped together, e.g. to enable a set of related files to be downloaded together.
-              </li>
               <li>
-                It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA.
+                It SHOULD be expressed using a media type as defined in the official register of media types managed by IANA [[IANA-MEDIA-TYPES]].
               </li>
             </ul>
           </td>
@@ -5083,12 +5104,15 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property contains the date of formal issuance (e.g., publication) of the distribution.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property contains the date of formal issuance (e.g., publication) of the Distribution.</li>
               <li>Date of formal issuance (publication) of the distribution</li>
-              <li>UsageThe first time issuance of the distribution.
+              <li>Use the first time issuance of the distribution.
               </li>
             </ul>
           </td>
@@ -5128,12 +5152,8 @@
           </td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property refers to the minimum time period resolvable in the Dataset distribution.</li>
-            </ul>
-          </td>
+          <th>Definition</th>
+          <td>This property refers to the minimum time period resolvable in the dataset distribution.</td>
         </tr>
         </tbody>
       </table>
@@ -5332,7 +5352,7 @@
         <td>0..n</td>
       </tr>
       <tr>
-        <td><a href="#data-service-documentation">Documentation</a></td>
+        <td><a href="#data-service-documentation">documentation</a></td>
         <td><a data-cite="FOAF#term_page"><code>foaf:page</code></a></td>
         <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
         <td>O</td>
@@ -5387,12 +5407,8 @@
           </td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>The root location or primary endpoint of the service (an IRI)</li>
-            </ul>
-          </td>
+          <th>Definition</th>
+          <td>The root location or primary endpoint of the service (an IRI)</td>
         </tr>
         </tbody>
       </table>
@@ -5427,6 +5443,10 @@
         <tr>
           <th>Range</th>
           <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>A description of the services available via the end-points, including their operations, parameters etc.</td>
         </tr>
         <tr>
           <th>Usage Note</th>
@@ -5475,15 +5495,7 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>Dataset that is part of the catalog.</td>
-        </tr>
-        <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property refers to a collection of data that this data service can distribute.</li>
-            </ul>
-          </td>
+          <td>This property refers to a collection of data that this data service can distribute.</td>
         </tr>
         </tbody>
       </table>
@@ -5495,12 +5507,12 @@
     <strong>Optional Properties</strong>
 
     <section id="data-service-documentation">
-      <h4>Property: Documentation</h4>
+      <h4>Property: documentation</h4>
       <table class="def">
         <tbody>
         <tr>
           <th>Property</th>
-          <td>Documentation</td>
+          <td>documentation</td>
         </tr>
         <tr>
           <th>Requirement level</th>
@@ -5519,12 +5531,8 @@
           <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
         </tr>
         <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>This property refers to a page or document about this Data Service.</li>
-            </ul>
-          </td>
+          <th>Definition</th>
+          <td>This property refers to a page or document about this Data Service.</td>
         </tr>
         </tbody>
       </table>
