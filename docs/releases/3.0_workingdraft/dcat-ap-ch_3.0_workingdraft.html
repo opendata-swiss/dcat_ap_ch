@@ -3880,7 +3880,7 @@
         <td>0..1</td>
       </tr>
       <tr>
-        <td><a href="#distribution-rights">Rights</a></td>
+        <td><a href="#distribution-rights">rights</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights">
           <code>dct:rights</code></a>
         </td>
@@ -3890,7 +3890,7 @@
         <td>0..1</td>
       </tr>
       <tr>
-        <td><a href="#distribution-title">Title</a></td>
+        <td><a href="#distribution-title">title</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
         <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
         <td>R</td>
@@ -3933,7 +3933,7 @@
         <td>0..1</td>
       </tr>
       <tr>
-        <td><a href="#distribution-checksum">Checksum</a></td>
+        <td><a href="#distribution-checksum">checksum</a></td>
         <td><a data-cite="SPDX#checksum">
           <code>spdx:checksum</code></a>
         </td>
@@ -3943,7 +3943,7 @@
         <td>0..1</td>
       </tr>
       <tr>
-        <td><a href="#distribution-documentation">Documentation</a></td>
+        <td><a href="#distribution-documentation">documentation</a></td>
         <td><a data-cite="FOAF#term_page"><code>foaf:page</code></a></td>
         <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
         <td>O</td>
@@ -3975,7 +3975,7 @@
         <td>0..3</td>
       </tr>
       <tr>
-        <td><a href="#distribution-language">Language</a></td>
+        <td><a href="#distribution-language">language</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
         </td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
@@ -4324,13 +4324,13 @@
 
     <section id="distribution-rights">
 
-      <h4>Property: Rights</h4>
+      <h4>Property: rights</h4>
 
       <table class="def">
         <tbody>
         <tr>
           <th>Property</th>
-          <td>Rights</td>
+          <td>rights</td>
         </tr>
         <tr>
           <th>Requirement level</th>
@@ -4351,10 +4351,17 @@
           </td>
         </tr>
         <tr>
+          <th>Definition</th>
+          <td>This property refers to a statement that specifies rights associated with the distribution.</td>
+        </tr>
+        <tr>
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property refers to a statement that specifies rights associated with the Distribution.</li>
+              <li>In general this property is not needed, as long as you already provide <a class="no-sectionRef" href="#distribution-license">dct:licence</a>, <a class="no-sectionRef" href="#resource-access-rights">dct:accessRights</a>.</li>
+              <li>Prioritize using <a class="no-sectionRef" href="#distribution-license">dct:licence</a>, <a class="no-sectionRef" href="#resource-access-rights">dct:accessRights</a> and for a link to a legal text <a class="no-sectionRef" href="#distribution-applicablelegislation">dcat:applicableLegislation </a>. Use dct:rights only for additional, specific rights information.</li>
+              <li>When using dct:rights, we advise you to use the <a href="http://schema.theodi.org/odrs/">Open Data Rights Statement Vocabulary (ODRS)</a>.</li>
+              <li>To refer to a dct:RightStatement it is recommended to use an URI.</li>
             </ul>
           </td>
         </tr>
@@ -4369,13 +4376,13 @@
 
     <section id="distribution-title">
 
-      <h4>Property: Title</h4>
+      <h4>Property: title</h4>
 
       <table class="def">
         <tbody>
         <tr>
           <th>Property</th>
-          <td>Title</td>
+          <td>title</td>
         </tr>
         <tr>
           <th>Requirement level</th>
@@ -5982,7 +5989,21 @@ respective references to the rights of third parties.
         An updated UML replaces the mermaid diagram in section <a class="no-sectionRef" href="#classes"></a>
       </li>
       <li>
-        Updating the section  <a class="no-sectionRef" href="#controlled-vocabulary"></a>
+        The section <a class="no-sectionRef" href="#controlled-vocabulary"></a> has been updated.
+      </li>
+      <li>
+        The usage notes that were defined as part of the controlled vocabularies subgroup (see <a href="https://github.com/opendata-swiss/eCH-0285-Use-of-controlled-vocabularies/tree/main/document">documents (work in progress</a>)) were adapted for  were adapted for properties: 
+        <ul>
+          <li><a class="no-sectionRef" href="#catalog-spatial-geographic"></a></li>
+          <li><a class="no-sectionRef" href="#dataset-spatial-geographical-coverage"></a></li>
+          <li><a class="no-sectionRef" href="#dataset-series.spatial-geographic"></a></li>
+          <li><a class="no-sectionRef" href="#resource-creator"></a></li>
+          <li><a class="no-sectionRef" href="#resource-keyword"></a></li>
+          <li><a class="no-sectionRef" href="#resource-theme-category"></a></li>
+          <li><a class="no-sectionRef" href="#resource-access-rights"></a></li>
+          <li><a class="no-sectionRef" href="#resource-rights"></a></li>
+          <li><a class="no-sectionRef" href="#distribution-rights"></a></li>
+        </ul>
       </li>
     </ul>
   <h3>Alignment with DCAT-AP 3</h3>
