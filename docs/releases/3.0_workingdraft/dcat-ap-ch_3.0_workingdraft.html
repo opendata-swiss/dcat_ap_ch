@@ -196,7 +196,8 @@
       <p>Note that in the previous versions of DCAT-AP and DCAT-AP CH, classes were categorised to be mandatory,
         recommended and optional, like it’s currently the case for properties. This categorisation has been removed
         in favour of the above overview and guidelines to create a common expectation for DCAT-AP cataloges.</p>
-      <p>
+      <p>Even if "inheritance" is not generally mentioned in the context of RDF, DCAT-AP CH assumes that every property of a class can also be used sensibly with the sub-class. This "re-usability" of the properties of its super-classes is pointed out separately in the respective class description.</p>
+        <p>
         To improve the coherency by the description of shared Dataset, Distribution and the new introduced class Data Services,
         DCAT-AP provided guidelines on their usage:
         [[DCAT-AP-USAGEGUIDE]].
@@ -2663,6 +2664,7 @@
       <th>Usage Note</th>
       <td>
         <ul>
+          <li><strong>If in doubt, do not use this class</strong></li>
           <li>This class is optional and not all catalogs will use it. It exists for catalogs where a distinction is made between metadata about a dataset or service and metadata about the entry in the catalog about the dataset or service.</li>
           <li>For more information about this class see <a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Catalog_Record"> DCAT 3 - Catalog Record</a>.</li>
         </ul>
@@ -6035,7 +6037,7 @@ respective references to the rights of third parties.
         The editor's note on gender-neutral language has been removed, as it is not necessary in English. 
       </li>
       <li>
-        Adding the three new classes Resource, Catalog Record and Dataset Series to the section <a class="no-sectionRef" href="#classes"></a>
+        Addition of the three new classes Resource, Catalog Record and Dataset Series as well as a note about "inheritance" to the section <a class="no-sectionRef" href="#classes"></a>.
       </li>
       <li>
         An updated UML replaces the mermaid diagram in section <a class="no-sectionRef" href="#classes"></a>
