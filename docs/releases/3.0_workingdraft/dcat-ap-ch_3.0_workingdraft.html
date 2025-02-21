@@ -30,16 +30,16 @@
 <section id="abstract" class="informative">
   <p style="background: yellow; font-size: larger;"><b>This is an initial draft. All contents of this page are subject to change.</b></p>
   <p>
-    The DCAT Application Profile for Data Portals in Switzerland (DCAT-AP CH) serves as an application profile of the Data Catalog Vocabulary [[VOCAB-DCAT]] and is utilized to detail the datasets, data services and dataset series featured in swiss data portals, such as the open data portal opendata.swiss and the interoperability platform i14y.ch. 
+    The DCAT Application Profile for Data Portals in Switzerland (DCAT-AP CH) serves as an application profile of the Data Catalog Vocabulary [[VOCAB-DCAT]] and is utilized to detail the datasets, data services and dataset series featured in swiss data portals, such as the open data portal opendata.swiss and the interoperability platform i14y.ch.
     It primarily addresses the operators of these data portals (termed 'data receivers' in DCAT language) and the data providers who curate the data catalogues (known as 'data senders' in DCAT language).
   </p>
   <p>
-    As a rule, data portals do not provide the data itself, but only metadata about the data. 
+    As a rule, data portals do not provide the data itself, but only metadata about the data.
     This is intended to facilitate the discovery and reuse of the data. DCAT-AP CH therefore focuses primarily on the description of metadata.
   </p>
   <p>
-    DCAT-AP CH aims to maintain compatibility with the Application Profile for Data Portals in Europe [[DCAT-AP]]. 
-    However, due to the ongoing evolution of the DCAT-AP standard, compatibility with the existing version of DCAT-AP CH is not assured. 
+    DCAT-AP CH aims to maintain compatibility with the Application Profile for Data Portals in Europe [[DCAT-AP]].
+    However, due to the ongoing evolution of the DCAT-AP standard, compatibility with the existing version of DCAT-AP CH is not assured.
     The current version 3.0.0 of the standard has been developed by the <a href="https://www.ech.ch/de/der-verein/fachgruppen/open_government_data">eCH Open Government Data Expert Group</a> for this purpose.
   </p>
 </section>
@@ -104,10 +104,10 @@
         The property <a class="no-sectionRef" href="#distribution-coverage">dct:coverage</a> at dcat:Distribution level was considered deprecated.
       </li>
       <li>
-        Addition of a new and detailed figure for the DCAT-AP CH model, see <a class="no-sectionRef" href="#classes"></a>. 
+        Addition of a new and detailed figure for the DCAT-AP CH model, see <a class="no-sectionRef" href="#classes"></a>.
       </li>
       </ul>
-    
+
   </section>
 
 </section>
@@ -117,7 +117,7 @@
 
   <section id="dcat-vocabulary">
     <h3>DCAT as a universal vocabulary</h3>
-    <p>The application profile specified in this document is based on the Data Catalog Vocabulary (DCAT) specifications 
+    <p>The application profile specified in this document is based on the Data Catalog Vocabulary (DCAT) specifications
       developed under the responsibility of the Government Linked Data Working Group at the W3C. DCAT is an RDF vocabulary
       designed to facilitate interoperability between data catalogues published on the Web. Additional
       classes and properties from other well-known vocabularies are reused where approriate.
@@ -249,10 +249,10 @@
         In particular, for the property dct:publisher, which refers to an entity (organisation) responsible for making
         a cataloge, a dataset or a data service available, a CV is still being discussed within the eCH Expert
         Group Open Government Data - its introduction will be evaluated for the next iterations of
-        this standard eCH-0200. 
+        this standard eCH-0200.
       </p>
-      <p>The evaluation of the Controlled Vocabularies is carried out by a subgroup of the eCH OGD Expert Group. 
-        It defines the usage notes for the use of the respective CVs and provides an aid (eCH-0285-Use-of-controlled-vocabularies) with recommendations and best practices for the use of CVs. 
+      <p>The evaluation of the Controlled Vocabularies is carried out by a subgroup of the eCH OGD Expert Group.
+        It defines the usage notes for the use of the respective CVs and provides an aid (eCH-0285-Use-of-controlled-vocabularies) with recommendations and best practices for the use of CVs.
         Further information can be found here: <a href="https://github.com/opendata-swiss/eCH-0285-Use-of-controlled-vocabularies">eCH-0285-Use-of-controlled-vocabularies</a>
       </p>
       <p>
@@ -268,7 +268,7 @@
         </thead>
         <tbody>
         <tr>
-          <td><a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></td>
+          <td><a data-cite="VOCAB-DCAT-AP#availability"><code>dcatap:availability</code></a></td>
           <td>Dataset, Distribution</td>
           <td>[[VOCAB-EU-AVAILABLITY]]
           </td>
@@ -398,31 +398,31 @@
     </thead>
     <tbody>
     <tr>
-      <td><a href="#catalog-title">Catalog title</a></td>
+      <td><a href="#resource-title">Catalog title</a></td>
       <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
       <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
       <td>Language encoded string</td>
     </tr>
     <tr>
-      <td><a href="#catalog-description">Catalog description</a></td>
+      <td><a href="#resource-description">Catalog description</a></td>
       <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
       <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
       <td>Language encoded string</td>
     </tr>
     <tr>
-      <td><a href="#dataset-title">Dataset title</a></td>
+      <td><a href="#resource-title">Dataset title</a></td>
       <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
       <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
       <td>Language encoded string</td>
     </tr>
     <tr>
-      <td><a href="#dataset-title">Dataset description</a></td>
+      <td><a href="#resource-title">Dataset description</a></td>
       <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
       <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
       <td>Language encoded string</td>
     </tr>
     <tr>
-      <td><a href="#dataset-keyword">Dataset keyword</a></td>
+      <td><a href="#resource-keyword">Dataset keyword</a></td>
       <td><a data-cite="VOCAB-DCAT#Property:resource_keyword"><code>dcat:keyword</code></a></td>
       <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
       <td>Language encoded string</td>
@@ -434,19 +434,19 @@
       <td>Content negotiation</td>
     </tr>
     <tr>
-      <td><a href="#dataset-landing-page">Dataset landing Page</a></td>
+      <td><a href="#resource-landing-page">Dataset landing Page</a></td>
       <td><a data-cite="VOCAB-DCAT#Property:resource_landing_page"><code>dcat:landingPage</code></a></td>
       <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
       <td>Content negotiation</td>
     </tr>
     <tr>
-      <td><a href="#catalog-publisher">Catalog publisher</a></td>
+      <td><a href="#resource-publisher">Catalog publisher</a></td>
       <td><a data-cite="VOCAB-DCAT#Property:resource_publisher"><code>dct:publisher</code></a></td>
       <td><a data-cite="FOAF#term_Document"><code>foaf:Agent</code></a></td>
       <td>Content negotiation for the URI and language encoded string for the name</td>
     </tr>
     <tr>
-      <td><a href="#dataset-publisher">Dataset publisher</a></td>
+      <td><a href="#resource-publisher">Dataset publisher</a></td>
       <td><a data-cite="VOCAB-DCAT#Property:resource_publisher"><code>dct:publisher</code></a></td>
       <td><a data-cite="FOAF#term_Document"><code>foaf:Agent</code></a></td>
       <td>Content negotiation for the URI and language encoded string for the name</td>
@@ -498,7 +498,7 @@
         <th>Card</th>
       </tr>
       </thead>
-      <tbody> 
+      <tbody>
       <tr>
         <td><a href="#catalog-dataset">dataset</a></td>
         <td><a data-cite="VOCAB-DCAT#Property:catalog_dataset"><code>dcat:dataset</code></a>
@@ -756,7 +756,6 @@
                 </li>
                 <li>For the encoding as instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a> see the class Location (<a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Location"> DCAT-AP - 7.12 Location </a>).</li>
               </ul>
-            </ul>
           </td>
         </tr>
         </tbody>
@@ -828,7 +827,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -876,7 +874,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT#resource"><code>dcat:resource</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -896,9 +893,8 @@
           </td>
           <tr>
             <th>See also</th>
-          <td>Sub-properties of dcat:resource in particular <a class="no-sectionRef" href="#catalog-dataset"></a>, <a class="no-sectionRef" href="#catalog-catalog"></a>, <a class="no-sectionRef" href="#catalog-service"></a>. 
+          <td>Sub-properties of dcat:resource in particular <a class="no-sectionRef" href="#catalog-dataset"></a>, <a class="no-sectionRef" href="#catalog-catalog"></a>, <a class="no-sectionRef" href="#catalog-service"></a>.
           </td>
-        </tr>
         </tr>
         </tbody>
       </table>
@@ -926,7 +922,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT#Property:catalog_catalog"><code>dcat:catalog</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -963,7 +958,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT#record"><code>dcat:record</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -987,7 +981,7 @@
 
     <h2>Class: Cataloged Resource</h2>
 
-    <p>Resource published or curated by a single agent.  
+    <p>Resource published or curated by a single agent.
     </p>
     <tr>
       <th>Usage Note</th>
@@ -1018,7 +1012,6 @@
         <td><a data-cite="VCARD-RDF#d4e1819"><code>vcard:Kind</code></a>
         <td><strong>M</strong></td>
         <td>1..n</td>
-        </td>
       </tr>
       <tr>
         <td><a href="#resource-description">description</a></td>
@@ -1055,7 +1048,7 @@
         <td><a href="#resource-keyword">keyword/tag</a></td>
         <td><a data-cite="VOCAB-DCAT#Property:resource_keyword"><code>dcat:keyword</code></a>
         </td>
-        <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>, <a data-cite="SCHEMA#/DefinedTerm"><code>schema:DefinedTerm</code></a>, <a data-cite="WIKIBASE#Item"><code>wikibase:item</code></a>, <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code>
+        <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>, <a data-cite="SCHEMA#/DefinedTerm"><code>schema:DefinedTerm</code></a>, <a data-cite="WIKIBASE#Item"><code>wikibase:item</code></a>, <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
         </td>
         <td>R</td>
         <td>0..n</td>
@@ -1145,7 +1138,6 @@
         <td><a data-cite="DCTERMS#http://purl.org/dc/terms/isReferencedBy"><code>dct:isReferencedBy</code></a>
         </td>
         <td><a data-cite="RDF-SCHEMA#ch_resource"><code>rdfs:Resource</code></a></td>
-        </td>
         <td>O</td>
         <td>0..n</td>
       </tr>
@@ -1189,7 +1181,6 @@
         <td><a href="#resource-creator">creator</a></td>
         <td><a data-cite="DCTERMS#http://purl.org/dc/elements/1.1/creator"><code>dct:creator</code></a></td>
         <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
-        </td>
         <td>O</td>
         <td>0..n</td>
       </tr>
@@ -1249,11 +1240,11 @@
         <td>O</td>
         <td></td>
       </tr>
-      
+
       </tbody>
     </table>
 
-    <aside class="example" id="ex-dataset" title="Dataset">
+    <aside class="example" id="ex-resource" title="Dataset">
       <pre data-include-format="text" data-include="./examples/dataset/dataset.ttl"></pre>
     </aside>
 
@@ -1410,7 +1401,7 @@
         </tbody>
       </table>
 
-      <aside class="example" id="ex-dataset-identifier" title="Usage of dct:identifier for dcat:Dataset">
+      <aside class="example" id="ex-resource-identifier" title="Usage of dct:identifier for dcat:Dataset">
         <pre data-include-format="text" data-include="./examples/dataset/identifier.ttl"></pre>
       </aside>
 
@@ -1543,7 +1534,7 @@
         </tr>
         <tr>
           <th>Range</th>
-          <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>, <a data-cite="SCHEMA#/DefinedTerm"><code>schema:DefinedTerm</code></a>, <a data-cite="WIKIBASE#Item"><code>wikibase:item</code></a>, <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code>
+          <td><a data-cite="SKOS-REFERENCE#Concept"><code>skos:Concept</code></a>, <a data-cite="SCHEMA#/DefinedTerm"><code>schema:DefinedTerm</code></a>, <a data-cite="WIKIBASE#Item"><code>wikibase:item</code></a>, <a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
         </tr>
         <tr>
@@ -1710,7 +1701,6 @@
             <th>Definition</th>
             <td>This property refers to a knowledge organization system used to classify the catalog's resources. A resource may be associated with multiple themes.</td>
           </tr>
-        </tr>
         <tr>
           <th>Usage Note</th>
           <td>
@@ -2229,7 +2219,7 @@
         </tbody>
 
       </table>
-      <aside class="example" id="ex-dataset-relation" title="Usage of dct:relation for dcat:Dataset">
+      <aside class="example" id="ex-resource-relation" title="Usage of dct:relation for dcat:Dataset">
         <pre data-include-format="text" data-include="./examples/dataset/relation.ttl"></pre>
       </aside>
 
@@ -2260,8 +2250,10 @@
           <th>Range</th>
           <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
         </tr>
-        <th>Definition</th>
+        <tr>
+          <th>Definition</th>
           <td>An entity responsible for producing the resource (provider of the technical components), organisation or company.</td>
+        </tr>
         <tr>
           <th>Usage Note</th>
           <td>
@@ -2278,8 +2270,6 @@
             <tr>
             <th>See also</th>
           <td><a href=" https://www.w3.org/TR/vocab-dcat-3/#Class:Organization_Person ">DCAT 3 - 6.12 Class: Organization/Person</a></td>
-          </td>
-        </tr>
         </tr>
         </tbody>
 
@@ -2308,7 +2298,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-ODRL#term-hasPolicy"><code>odrl:hasPolicy</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -2329,8 +2318,6 @@
           <tr>
             <th>See also</th>
           <td>see <a class="no-sectionRef" href="#resource-license"></a>, see <a class="no-sectionRef" href="#resource-access-rights"></a>, see <a class="no-sectionRef" href="#resource-rights"></a></td>
-          </td>
-        </tr>
         </tr>
         </tbody>
       </table>
@@ -2338,7 +2325,7 @@
         <pre data-include-format="text" data-include="./examples/resource/hasPolicy.ttl"></pre>
       </aside>
     </section>
-    
+
     <section id="resource-status">
       <h4>Property: status</h4>
       <table class="def">
@@ -2358,7 +2345,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="ADMS#status"><code>adms:status</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -2380,7 +2366,6 @@
             <th>See also</th>
           <td>see Distribution <a class="no-sectionRef" href="#distribution-availability"></a> and Dataset <a class="no-sectionRef" href="#dataset-availability"></a>. For more information about a resource lifecycle see <a href="https://www.w3.org/TR/vocab-dcat-3/#life-cycle">DCAT 3 - 11.3 Resource life-cycle</a>.
           </td>
-        </tr>
         </tr>
         </tbody>
       </table>
@@ -2408,7 +2393,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT#version"><code>dcat:version</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -2430,7 +2414,6 @@
             <th>See also</th>
           <td><a class="no-sectionRef" href="#resource-version-notes"></a>
           </td>
-        </tr>
         </tr>
         </tbody>
       </table>
@@ -2458,7 +2441,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="ADMS#versionNotes"><code>adms:versionNotes</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -2503,7 +2485,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="DCTERMS#hasPart"><code>dct:hasPart</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -2544,7 +2525,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT#Property:resource_first"><code>dcat:first</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Definition</th>
@@ -2584,7 +2564,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT#Property:resource_last"><code>dcat:last</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Definition</th>
@@ -2624,7 +2603,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT#Property:resource_previous"><code>dcat:prev</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Definition</th>
@@ -2658,7 +2636,7 @@
 
     <h2>Class: Catalog Record</h2>
 
-    <p>A record in a catalog, describing the registration of a single <a class="no-sectionRef" href="#Class:Resource"></a> 
+    <p>A record in a catalog, describing the registration of a single <a class="no-sectionRef" href="#Class:Resource"></a>
     </p>
     <tr>
       <th>Usage Note</th>
@@ -2786,7 +2764,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="FOAF#term_primaryTopic"><code>foaf:primaryTopic</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -2814,7 +2791,7 @@
         <pre data-include-format="text" data-include="./examples/catalog-record/primary-topic.ttl"></pre>
       </aside>
     </section>
-  
+
     <section id="catalog-record-modification-date">
       <h4>Property: update/ modification date</h4>
       <table class="def">
@@ -2931,7 +2908,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="ADMS#status"><code>adms:status</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -2953,7 +2929,6 @@
             <th>See also</th>
           <td>see Distribution <a class="no-sectionRef" href="#distribution-availability"></a> and Dataset <a class="no-sectionRef" href="#dataset-availability"></a>. For more information about a resource lifecycle see <a href="https://www.w3.org/TR/vocab-dcat-3/#life-cycle">DCAT 3 - 11.3 Resource life-cycle</a>.
           </td>
-        </tr>
         </tr>
         </tbody>
       </table>
@@ -3149,7 +3124,7 @@
         <pre data-include-format="text" data-include="./examples/catalog-record/language.ttl"></pre>
       </aside>
     </section>
-   
+
   </section>
 
   <section id="Class:Dataset">
@@ -3223,7 +3198,6 @@
         <td><a href="#dataset-documentation">documentation</a></td>
         <td><a data-cite="FOAF#term_page"><code>foaf:page</code></a></td>
         <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
-        </td>
         <td>O</td>
         <td>0..n</td>
       </tr>
@@ -3273,7 +3247,7 @@
 
     <strong>Manadatory Properties</strong>
 
-    
+
 
     <strong>Recommended Properties</strong>
 
@@ -3508,8 +3482,8 @@
           <th>Usage Note</th>
           <td>
             <ul>
-              <li> This property allows for more detailed information about the identifer, including the identifier scheme, version, and the agency managing the scheme. This is useful when datasets are 
-                referenced across different systems or organizations, ensuring clarity and consistency. 
+              <li> This property allows for more detailed information about the identifer, including the identifier scheme, version, and the agency managing the scheme. This is useful when datasets are
+                referenced across different systems or organizations, ensuring clarity and consistency.
               </li>
               <li>
                 Examples are MASTADS [[MASTADS]], DOI [[DOI]], EZID [[EZID]], W3ID [[W3ID]], DataCite [[DataCite]] or other subject-specific identifiers.
@@ -3519,8 +3493,7 @@
         </tr>
         <tr>
           <th>See also</th>
-        <td>See recommended property <a class="no-sectionRef" href="#dataset-identifier"></a>. For more on dereferencable identifiers, see <a href="https://www.w3.org/TR/vocab-dcat-3/#dereferenceable-identifiers">DCAT 3 - 8. Dereferenceable identifiers</a></td>
-        </td>
+        <td>See recommended property <a class="no-sectionRef" href="#resource-identifier"></a>. For more on dereferencable identifiers, see <a href="https://www.w3.org/TR/vocab-dcat-3/#dereferenceable-identifiers">DCAT 3 - 8. Dereferenceable identifiers</a></td>
       </tr>
         </tbody>
       </table>
@@ -3688,7 +3661,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -3735,7 +3707,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT#inSeries"><code>dcat:inSeries</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -3756,8 +3727,7 @@
           </tr>
           <tr>
             <th>See also</th>
-          <td>guidance at <a href="https://www.w3.org/TR/vocab-dcat-3/#inverse-properties"> DCAT 3 - Use of inverse properties</a>.</li>
-          </td>
+          <td>guidance at <a href="https://www.w3.org/TR/vocab-dcat-3/#inverse-properties"> DCAT 3 - Use of inverse properties</a>.
           </td>
         </tr>
         </tbody>
@@ -3786,7 +3756,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="PROV#wasGeneratedBy"><code>prov:wasGeneratedBy</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -3799,8 +3768,7 @@
         </tr>
           <tr>
             <th>Usage note</th>
-          <td>The activity associated with generation of a dataset will typically be an initiative, project, mission, survey, on-going activity ("business as usual") etc. Multiple prov:wasGeneratedBy properties can be used to indicate the dataset production context at various levels of granularity.</li>
-          </td>
+          <td>The activity associated with generation of a dataset will typically be an initiative, project, mission, survey, on-going activity ("business as usual") etc. Multiple prov:wasGeneratedBy properties can be used to indicate the dataset production context at various levels of granularity.
           </td>
         </tr>
         </tbody>
@@ -4233,7 +4201,6 @@
               </ul>
             </td>
           </tr>
-        </tr>
         </tbody>
       </table>
       <aside class="example" title="Usage of dcatap:availiablity for dcat:Distribution">
@@ -4344,7 +4311,7 @@
         </tbody>
       </table>
 
-      <aside class="example" ttitle="Usage of dct:format for dcat:Distribution">
+      <aside class="example" title="Usage of dct:format for dcat:Distribution">
         <pre data-include-format="text" data-include="./examples/distribution/format.ttl"></pre>
       </aside>
 
@@ -4429,7 +4396,7 @@
           <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
           </td>
         </tr>
-        This property contains a name given to the distribution. 
+        This property contains a name given to the distribution.
         <tr>
           <th>Usage Note</th>
           <td>
@@ -4688,7 +4655,7 @@
                   in format or resolution this property can be used to specify temporal or spatial coverage of the
                   data that the distribution contains.</li>
                 <li>
-                It’s a DCAT-AP CH Custom Class (not present in DCAT-AP). 
+                It’s a DCAT-AP CH Custom Class (not present in DCAT-AP).
             </li>
             </ul>
           </td>
@@ -4769,7 +4736,7 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>This property refers to a URL that is a direct link to a downloadable file in a given format. 
+          <td>This property refers to a URL that is a direct link to a downloadable file in a given format.
           </td>
         </tr>
         <tr>
@@ -5196,7 +5163,6 @@
       <tr>
         <th>URI</th>
         <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
-        </td>
       </tr>
       <tr>
         <th>Range</th>
@@ -5242,7 +5208,6 @@
       <tr>
         <th>URI</th>
         <td><a data-cite="VOCAB-ODRL#term-hasPolicy"><code>odrl:hasPolicy</code></a></td>
-        </td>
       </tr>
       <tr>
         <th>Range</th>
@@ -5262,9 +5227,7 @@
         </td>
         <tr>
           <th>See also</th>
-        <td>see <a class="no-sectionRef" href="#distribution-license"></a>, see <a class="no-sectionRef" href="#dataset-access-rights"></a>, see <a class="no-sectionRef" href="#distribution-rights"></a></td>
-        </td>
-      </tr>
+        <td>see <a class="no-sectionRef" href="#distribution-license"></a>, see <a class="no-sectionRef" href="#resource-access-rights"></a>, see <a class="no-sectionRef" href="#distribution-rights"></a></td>
       </tr>
       </tbody>
     </table>
@@ -5291,7 +5254,6 @@
       <tr>
         <th>URI</th>
         <td><a data-cite="ADMS#status"><code>adms:status</code></a></td>
-        </td>
       </tr>
       <tr>
         <th>Range</th>
@@ -5313,7 +5275,6 @@
           <th>See also</th>
         <td>see Distribution <a class="no-sectionRef" href="#distribution-availability"></a> and Dataset <a class="no-sectionRef" href="#dataset-availability"></a>. For more information about a resource lifecycle see <a href="https://www.w3.org/TR/vocab-dcat-3/#life-cycle">DCAT 3 - 11.3 Resource life-cycle</a>.
         </td>
-      </tr>
       </tr>
       </tbody>
     </table>
@@ -5440,7 +5401,7 @@
         <pre data-include-format="text" data-include="./examples/service/endpoint-url.ttl"></pre>
       </aside>
     </section>
-    
+
     <section id="data-service-endpoint-description">
       <h4>Property: endpoint description</h4>
       <table class="def">
@@ -5461,7 +5422,6 @@
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT#Property:data_service_endpoint_description">
             <code>dcat:endpointDescription</code></a>
-          </td>
           </td>
         </tr>
         <tr>
@@ -5584,7 +5544,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -5624,10 +5583,10 @@
 
     <p>A collection of datasets that are published separately, but share some characteristics that group them.
     </p>
-    <p>It is recommended to avoid Dataset Series without a dataset in the collection. 
-      Therefore at least one Dataset should refer to a Dataset Series using the property in series (dcat:inSeries). 
+    <p>It is recommended to avoid Dataset Series without a dataset in the collection.
+      Therefore at least one Dataset should refer to a Dataset Series using the property in series (dcat:inSeries).
     </p>
-    
+
     <table class="simple">
       <thead>
       <tr>
@@ -5653,7 +5612,7 @@
             <code>dct:accrualPeriodicity</code>
           </a>
         </td>
-        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code><dct:Frequency></code></a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/Frequency"><code>dct:Frequency</code></a></td>
         <td>O</td>
         <td>0..1</td>
       </tr>
@@ -5693,7 +5652,6 @@
         <tr>
           <th>URI</th>
           <td><a data-cite="VOCAB-DCAT-AP#applicableLegislation"><code>dcatap:applicableLegislation</code></a></td>
-          </td>
         </tr>
         <tr>
           <th>Range</th>
@@ -5854,7 +5812,7 @@
         </tbody>
       </table>
     </section>
-   
+
   </section>
 
 </section>
@@ -5979,19 +5937,19 @@
     decisions or actions which the user makes and/or takes on the basis of these documents. The user is
     obliged to check the documents himself before using them and, if necessary, to seek advice. eCH
     standards cannot and are not intended to replace technical, organisational or legal advice in specific
-    individual cases.    
+    individual cases.
   </p>
   <p>Documents, procedures, methods, products and standards referenced in eCH standards may be
     protected by trademark, copyright or patent. It is the sole responsibility of the user to obtain any
-    necessary rights from the respective authorised persons and/or organisations.    
+    necessary rights from the respective authorised persons and/or organisations.
   </p>
   <p>Although the eCH association has taken all possible care to ensure that the eCH standards are
     carefully prepared, no assurance or guarantee can be given that the information and documents
     provided are up-to-date, complete, correct or free of errors. The content of eCH standards may be
-    changed at any time and without notice.    
+    changed at any time and without notice.
   </p>
   <p>Any liability for damages incurred by the user from the use of the eCH standards is excluded to the
-    extent permitted by law.    
+    extent permitted by law.
   </p>
 </section>
 
@@ -6034,7 +5992,7 @@ respective references to the rights of third parties.
         The section <a class="no-sectionRef" href="#abstract"></a> has been updated.
       </li>
       <li>
-        The editor's note on gender-neutral language has been removed, as it is not necessary in English. 
+        The editor's note on gender-neutral language has been removed, as it is not necessary in English.
       </li>
       <li>
         Addition of the three new classes Resource, Catalog Record and Dataset Series as well as a note about "inheritance" to the section <a class="no-sectionRef" href="#classes"></a>.
@@ -6046,7 +6004,7 @@ respective references to the rights of third parties.
         The section <a class="no-sectionRef" href="#controlled-vocabulary"></a> has been updated.
       </li>
       <li>
-        The usage notes that were defined as part of the controlled vocabularies subgroup (see <a href="https://github.com/opendata-swiss/eCH-0285-Use-of-controlled-vocabularies/tree/main/document">documents (work in progress</a>)) were adapted for  were adapted for properties: 
+        The usage notes that were defined as part of the controlled vocabularies subgroup (see <a href="https://github.com/opendata-swiss/eCH-0285-Use-of-controlled-vocabularies/tree/main/document">documents (work in progress</a>)) were adapted for  were adapted for properties:
         <ul>
           <li><a class="no-sectionRef" href="#catalog-spatial-geographic"></a></li>
           <li><a class="no-sectionRef" href="#dataset-spatial-geographical-coverage"></a></li>
@@ -6096,21 +6054,21 @@ respective references to the rights of third parties.
       Introduction of the new abstract class <a class="no-sectionRef" href="#Class:Resource"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/248">Issue 248</a>).
     </li>
     <li>
-      The following properties already available in DCAT-AP CH v2 are now listed under dcat:Resource and apply to the subclasses of dcat:Resource: <code>contact point, description, identifier, publisher, title,keyword/tag, landing page, release date, theme/category, update/modification date, rights, access rights, conforms to, is referenced by, language, qualified attribution, qualified relation, related resource, license</code> . 
+      The following properties already available in DCAT-AP CH v2 are now listed under dcat:Resource and apply to the subclasses of dcat:Resource: <code>contact point, description, identifier, publisher, title,keyword/tag, landing page, release date, theme/category, update/modification date, rights, access rights, conforms to, is referenced by, language, qualified attribution, qualified relation, related resource, license</code> .
     </li>
     <li>
-      Introduction of the following properties: 
+      Introduction of the following properties:
       <ul>
         <li><a class="no-sectionRef" href="#resource-has-policy">odrl:hasPolicy</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/241">Issue 241</a>)</li>
         <li><a class="no-sectionRef" href="#resource-status">adms:status</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/230">Issue 230</a>)</li>
         <li><a class="no-sectionRef" href="#resource-version">dcat:version</a> and <a class="no-sectionRef" href="#resource-version-notes">adms:versionNotes</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/234">Issue 234</a>)</li>
         <li><a class="no-sectionRef" href="#resource-creator">dct:creator</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/231">Issue 231</a>)</li>
-        <li><a class="no-sectionRef" href="#resource-has-part">dct:hasPart</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/232">Issue 232</a>)</li>  
+        <li><a class="no-sectionRef" href="#resource-has-part">dct:hasPart</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/232">Issue 232</a>)</li>
         <li><a class="no-sectionRef" href="#resource-first">dcat:first</a>, <a class="no-sectionRef" href="#resource-last">dcat:last</a> and <a class="no-sectionRef" href="#resource-previous">dcat:prev</a> because of the introduction of <a class="no-sectionRef" href="#Class:Dataset_Series"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/232">Issue 232</a>)</li>
       </ul>
     </li>
     <li>
-      The range of <a class="no-sectionRef" href="#resource-keyword">dcat:keyword</a> has been adapted to allow controlled vocabularies (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/244">Issue 244</a>). DCAT-AP CH goes one step further than DCAT-AP. This step is important because rdsf:Literal is untidy (free text) and does not handle multilingualism very well. 
+      The range of <a class="no-sectionRef" href="#resource-keyword">dcat:keyword</a> has been adapted to allow controlled vocabularies (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/244">Issue 244</a>). DCAT-AP CH goes one step further than DCAT-AP. This step is important because rdsf:Literal is untidy (free text) and does not handle multilingualism very well.
     </li>
   </ul>
 
@@ -6127,7 +6085,7 @@ respective references to the rights of third parties.
       The properties <code>contact point, description, publisher, title, language, release date, rights and update/modification date, access rights, conforms to, is referenced by, qualified attribution, qualified relation, related resource</code>, which are now listed in the new introduced abstract class <a class="no-sectionRef" href="#Class:Resource"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/248">Issue 248</a>), have been removed from the list of <a class="no-sectionRef" href="#Class:Dataset"></a>.
     </li>
     <li>
-      Introduction of the following properties: 
+      Introduction of the following properties:
       <ul>
         <li><a class="no-sectionRef" href="#dataset-applicablelegislation">dcatap:applicableLegislation</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/236">Issue 236</a>)</li>
         <li><a class="no-sectionRef" href="#dataset-availability">dcatap:availability</a> - already located at <a class="no-sectionRef" href="#Class:Distribution">dcat:Distribution</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/230">Issue 230</a>)</li>
@@ -6143,7 +6101,7 @@ respective references to the rights of third parties.
     <li>
       Set <a class="no-sectionRef" href="#distribution-coverage">dct:coverage</a> as deprecated, see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/79">Issue 79</a>, <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/112">Issue 112</a> and <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/214">Issue 214</a>.
       <li>
-        Introduction of the following properties: 
+        Introduction of the following properties:
       <ul>
         <li><a class="no-sectionRef" href="#distribution-applicablelegislation">dcatap:applicableLegislation</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/236">Issue 236</a>)</li>
         <li><a class="no-sectionRef" href="#distribution-status">adms:status</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/230">Issue 230</a>)</li>
@@ -6158,7 +6116,7 @@ respective references to the rights of third parties.
       The properties <code>contact point, publisher, title, license, access rights, keyword/tag, landing page</code>, which are now listed in the new introduced abstract class <a class="no-sectionRef" href="#Class:Resource"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/248">Issue 248</a>), have been removed from the list of <a class="no-sectionRef" href="#Class:Data_Service"></a>
     </li>
     <li>
-      Introduction of the following properties: 
+      Introduction of the following properties:
       <ul>
         <li><a class="no-sectionRef" href="#data-service-applicablelegislation">dcatap:applicableLegislation</a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/236">Issue 236</a>)</li>
       </ul>
@@ -6171,7 +6129,6 @@ respective references to the rights of third parties.
       Introduction of the new class <a class="no-sectionRef" href="#Class:Dataset_Series"></a> (see <a href="https://github.com/opendata-swiss/dcat_ap_ch/issues/214">Issue 214</a>).
     </li>
   </ul>
-</li>
 
 </section>
 
