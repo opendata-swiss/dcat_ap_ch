@@ -4,8 +4,7 @@
   <title>DCAT-AP CH - Version 3.0.0 Working Draft</title>
   <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
-  <script src="https://hypothes.is/embed.js" async></script>
+  <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script> 
   <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c" defer></script>
   <script class="remove" src="config.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -24,8 +23,18 @@
           columns: 4;
       }
   </style>
+<script>
+  function initHypothesIs() {
+    setTimeout(() => {
+      const hypothesisScript = document.createElement("script");
+      hypothesisScript.src = "https://hypothes.is/embed.js";
+      hypothesisScript.async = true;
+      document.getElementsByTagName('head')[0].appendChild(hypothesisScript);
+    }, 3000);
+  }
+</script>
 </head>
-<body>
+<body onload="initHypothesIs()">
 
 <section id="abstract" class="informative">
   <p style="background: yellow; font-size: larger;"><b>This is an initial draft. All contents of this page are subject to change.</b></p>
