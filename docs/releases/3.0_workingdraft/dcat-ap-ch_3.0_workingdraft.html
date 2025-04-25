@@ -1667,27 +1667,6 @@
         <td>O</td>
         <td>0..n</td>
       </tr>
-      <tr>
-        <td><a href="#resource-first">first</a></td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_first"><code>dcat:first</code></a></td>
-        <td></td>
-        <td>O</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a href="#resource-last">last</a></td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_last"><code>dcat:last</code></a></td>
-        <td></td>
-        <td>O</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a href="#resource-previous">previous</a></td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_previous"><code>dcat:prev</code></a></td>
-        <td></td>
-        <td>O</td>
-        <td></td>
-      </tr>
 
       </tbody>
     </table>
@@ -2957,120 +2936,12 @@
         <pre data-include-format="text" data-include="./examples/resource/has-part.ttl"></pre>
       </aside>
     </section>
-
-    <section id="resource-first">
-      <h4>Property: first</h4>
-      <table class="def">
-        <tbody>
-        <tr>
-          <th>Property</th>
-          <td>first</td>
-        </tr>
-        <tr>
-          <th>Requirement level</th>
-          <td>Optional</td>
-        </tr>
-        <tr>
-          <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_first"><code>dcat:first</code></a></td>
-        </tr>
-        <tr>
-          <th>Definition</th>
-          <td>The first resource in an ordered collection or series of resources, to which the current resource belongs.</td>
-        </tr>
-        <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>In DCAT this property is used for resources belonging to a <a class="no-sectionRef" href="#Class:Dataset_Series"></a>.</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <th>See also</th>
-          <td><a class="no-sectionRef" href="#resource-last"></a>, <a class="no-sectionRef" href="#resource-previous"></a>, <a href="https://www.w3.org/TR/vocab-dcat-3/#inverse-properties"> DCAT 3 - Use of inverse properties</a>.</td>
-        </tr>
-        </tbody>
-      </table>
-      <aside class="example" title="Usage of dcat:first for dcat:Resource">
-        <pre data-include-format="text" data-include="./examples/resource/first.ttl"></pre>
-      </aside>
-    </section>
-
-    <section id="resource-last">
-      <h4>Property: last</h4>
-      <table class="def">
-        <tbody>
-        <tr>
-          <th>Property</th>
-          <td>last</td>
-        </tr>
-        <tr>
-          <th>Requirement level</th>
-          <td>Optional</td>
-        </tr>
-        <tr>
-          <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_last"><code>dcat:last</code></a></td>
-        </tr>
-        <tr>
-          <th>Definition</th>
-          <td>The last resource in an ordered collection or series of resources, to which the current resource belongs.</td>
-        </tr>
-        <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>In DCAT this property is used for resources belonging to a <a class="no-sectionRef" href="#Class:Dataset_Series"></a>.</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <th>See also</th>
-          <td><a class="no-sectionRef" href="#resource-first"></a>, <a class="no-sectionRef" href="#resource-previous"></a>, <a href="https://www.w3.org/TR/vocab-dcat-3/#inverse-properties"> DCAT 3 - Use of inverse properties</a>.</td>
-        </tr>
         </tbody>
       </table>
       <aside class="example" title="Usage of dcat:last for dcat:Resource">
         <pre data-include-format="text" data-include="./examples/resource/last.ttl"></pre>
       </aside>
     </section>
-
-    <section id="resource-previous">
-      <h4>Property: previous</h4>
-      <table class="def">
-        <tbody>
-        <tr>
-          <th>Property</th>
-          <td>previous</td>
-        </tr>
-        <tr>
-          <th>Requirement level</th>
-          <td>Optional</td>
-        </tr>
-        <tr>
-          <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_previous"><code>dcat:prev</code></a></td>
-        </tr>
-        <tr>
-          <th>Definition</th>
-          <td>The previous resource (before the current one) in an ordered collection or series of resources.</td>
-        </tr>
-        <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>In DCAT this property is used for resources belonging to a <a class="no-sectionRef" href="#Class:Dataset_Series"></a>.</li>
-            </ul>
-            <ul>
-              <li>Important: It does not denote a previous version of the same resource, but a distinct resource immediately preceding the current one in an ordered collection of resources.</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <th>See also</th>
-          <td><a class="no-sectionRef" href="#resource-first"></a>, <a class="no-sectionRef" href="#resource-last"></a>, <a href="https://www.w3.org/TR/vocab-dcat-3/#inverse-properties"> DCAT 3 - Use of inverse properties</a>.</td>
-        </tr>
         </tbody>
       </table>
       <aside class="example" title="Usage of dcat:prev for dcat:Resource">
