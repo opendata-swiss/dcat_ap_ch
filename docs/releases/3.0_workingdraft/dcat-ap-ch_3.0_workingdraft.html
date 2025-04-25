@@ -508,6 +508,27 @@
       </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><a href="#catalog-description">description</a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+          <td><strong>M</strong></td>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <td><a href="#catalog-publisher">publisher</a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a></td>
+          <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
+          <td><strong>M</strong></td>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <td><a href="#catalog-title">title</a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+          <td><strong>M</strong></td>
+          <td>1..n</td>
+        </tr>
       <tr>
         <td><a href="#catalog-dataset">dataset</a></td>
         <td><a data-cite="VOCAB-DCAT#Property:catalog_dataset"><code>dcat:dataset</code></a>
@@ -521,6 +542,46 @@
         <td><a href="#catalog-homepage">homepage</a></td>
         <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
         <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-language">language</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
+        </td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-license">license</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-issued">release date</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-rights">rights</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dct:rights</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
+        </td>
         <td>R</td>
         <td>0..1</td>
       </tr>
@@ -547,6 +608,19 @@
         <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></td>
         <td>R</td>
         <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-modified">update/ modification date</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+        </td>
+        <td>R</td>
+        <td>0..1</td>
       </tr>
       <tr>
         <td><a href="#catalog-applicablelegislation">applicable legislation</a></td>
@@ -582,6 +656,146 @@
     <aside class="example" title="Example for a dcat:Catalog class">
       <pre data-include-format="text" data-include="./examples/catalog/catalog.ttl"></pre>
     </aside>
+
+    <strong>Manadatory Properties</strong>
+
+    <section id="catalog-description">
+      <h4>Property: description</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>description</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>Free-text description of the
+            catalog (in the language indicated in the attribute).
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a free-text account of the data
+                Catalogue (in the language indicated in the attribute).
+              </li>
+              <li>This property can be repeated for parallel language versions of
+                the description (see <a class="no-sectionRef" href="#multilingualism"></a>).
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:description for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/description.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-publisher">
+      <h4>Property: publisher</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>publisher</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>Entity responsible for making the catalog available.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to an entity (organisation) responsible for making the Catalogue available.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:publisher for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/publisher.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-title">
+      <h4>Property: Title</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>title</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>The title of the catalogue in the indicated language</li>
+              <li>This property can be repeated for parallel language versions of the description
+                (see <a class="no-sectionRef" href="#multilingualism"></a>)</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:title for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/title.ttl"></pre>
+      </aside>
+    </section>
 
     <strong>Recommended Properties</strong>
 
@@ -671,6 +885,185 @@
       </table>
       <aside class="example" title="Usage of foaf:homepage for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/homepage.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-language">
+      <h4>Property: language</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>language</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite=VOCAB-DCAT#Property:resource_language><code>dct:language</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>
+            dct:LinguisticSystem</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a language used in the textual metadata describing
+                titles, descriptions, etc. of the Datasets in the Catalogue.
+              </li>
+              <li>The properties title and description of Catalogues, Datasets or Distribution
+                can be provided in multiple languages. In that case, it makes sense to also list
+                these languages on the Catalogue level.
+              </li>
+              <li>CV to be used: [[VOCAB-EU-LANGUAGE]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:language for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/language.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-license">
+      <h4>Property: license</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>license</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to the licence under which the Catalogue can be used or reused.
+              </li>
+              <li>CV to be used: [[VOCAB-CH-LICENSE]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:license for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/license.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-issued">
+      <h4>Property: release date</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>release date</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            (typed as
+            as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+            <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+            <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+            or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the date of formal issuance (e.g., fir publication of the Catalogue).</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:issued for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/issued.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-rights">
+      <h4>Property: Rights</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Rights</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dct:rights</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a statement that specifies rights associated with the Catalogue.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:rights for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre>
       </aside>
     </section>
 
@@ -814,6 +1207,52 @@
       </table>
       <aside class="example" title="Usage of dcat:themeTaxonomy for dcat:Catalog.">
         <pre data-include-format="text" data-include="./examples/catalog/theme-taxonomy.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-modified">
+      <h4>Property: update/ modification date</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>update/ modification date</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            (typed as
+            as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+            <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+            <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+            or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the most recent date on which the Catalogue was modified.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
       </aside>
     </section>
 
