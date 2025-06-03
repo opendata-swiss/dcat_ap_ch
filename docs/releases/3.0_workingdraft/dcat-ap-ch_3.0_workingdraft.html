@@ -508,6 +508,27 @@
       </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><a href="#catalog-description">description</a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a></td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+          <td><strong>M</strong></td>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <td><a href="#catalog-publisher">publisher</a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a></td>
+          <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a></td>
+          <td><strong>M</strong></td>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <td><a href="#catalog-title">title</a></td>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a></td>
+          <td><strong>M</strong></td>
+          <td>1..n</td>
+        </tr>
       <tr>
         <td><a href="#catalog-dataset">dataset</a></td>
         <td><a data-cite="VOCAB-DCAT#Property:catalog_dataset"><code>dcat:dataset</code></a>
@@ -521,6 +542,46 @@
         <td><a href="#catalog-homepage">homepage</a></td>
         <td><a data-cite="FOAF#term_homepage"><code>foaf:homepage</code></a></td>
         <td><a data-cite="FOAF#term_Document"><code>foaf:Document</code></a></td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-language">language</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/language"><code>dct:language</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a>
+        </td>
+        <td>R</td>
+        <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-license">license</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-issued">release date</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+        </td>
+        <td>R</td>
+        <td>0..1</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-rights">rights</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dct:rights</code></a>
+        </td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
+        </td>
         <td>R</td>
         <td>0..1</td>
       </tr>
@@ -547,6 +608,19 @@
         <td><a data-cite="SKOS-REFERENCE#ConceptScheme"><code>skos:ConceptScheme</code></a></td>
         <td>R</td>
         <td>0..n</td>
+      </tr>
+      <tr>
+        <td><a href="#catalog-modified">update/ modification date</a></td>
+        <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a></td>
+        <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          (typed as
+          as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+          <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+          <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+          or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+        </td>
+        <td>R</td>
+        <td>0..1</td>
       </tr>
       <tr>
         <td><a href="#catalog-applicablelegislation">applicable legislation</a></td>
@@ -582,6 +656,146 @@
     <aside class="example" title="Example for a dcat:Catalog class">
       <pre data-include-format="text" data-include="./examples/catalog/catalog.ttl"></pre>
     </aside>
+
+    <strong>Manadatory Properties</strong>
+
+    <section id="catalog-description">
+      <h4>Property: description</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>description</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/description"><code>dct:description</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>Free-text description of the
+            catalog (in the language indicated in the attribute).
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains a free-text account of the data
+                Catalogue (in the language indicated in the attribute).
+              </li>
+              <li>This property can be repeated for parallel language versions of
+                the description (see <a class="no-sectionRef" href="#multilingualism"></a>).
+              </li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:description for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/description.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-publisher">
+      <h4>Property: publisher</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>publisher</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/publisher"><code>dct:publisher</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="FOAF#term_Agent"><code>foaf:Agent</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Definition</th>
+          <td>Entity responsible for making the catalog available.</td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to an entity (organisation) responsible for making the Catalogue available.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:publisher for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/publisher.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-title">
+      <h4>Property: Title</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>title</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td><strong>Mandatory</strong></td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>1..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/title"><code>dct:title</code></a></td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>The title of the catalogue in the indicated language</li>
+              <li>This property can be repeated for parallel language versions of the description
+                (see <a class="no-sectionRef" href="#multilingualism"></a>)</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:title for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/title.ttl"></pre>
+      </aside>
+    </section>
 
     <strong>Recommended Properties</strong>
 
@@ -671,6 +885,185 @@
       </table>
       <aside class="example" title="Usage of foaf:homepage for dcat:Catalog">
         <pre data-include-format="text" data-include="./examples/catalog/homepage.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-language">
+      <h4>Property: language</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>language</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..n</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite=VOCAB-DCAT#Property:resource_language><code>dct:language</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LinguisticSystem"><code>
+            dct:LinguisticSystem</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a language used in the textual metadata describing
+                titles, descriptions, etc. of the Datasets in the Catalogue.
+              </li>
+              <li>The properties title and description of Catalogues, Datasets or Distribution
+                can be provided in multiple languages. In that case, it makes sense to also list
+                these languages on the Catalogue level.
+              </li>
+              <li>CV to be used: [[VOCAB-EU-LANGUAGE]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:language for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/language.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-license">
+      <h4>Property: license</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>license</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/license"><code>dct:license</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/LicenseDocument"><code>dct:LicenseDocument</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to the licence under which the Catalogue can be used or reused.
+              </li>
+              <li>CV to be used: [[VOCAB-CH-LICENSE]]</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:license for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/license.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-issued">
+      <h4>Property: release date</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>release date</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/issued"><code>dct:issued</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            (typed as
+            as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+            <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+            <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+            or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the date of formal issuance (e.g., fir publication of the Catalogue).</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:issued for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/issued.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-rights">
+      <h4>Property: Rights</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>Rights</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/rights"><code>dct:rights</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/RightsStatement"><code>dct:RightsStatement</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property refers to a statement that specifies rights associated with the Catalogue.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:rights for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/rights.ttl"></pre>
       </aside>
     </section>
 
@@ -814,6 +1207,52 @@
       </table>
       <aside class="example" title="Usage of dcat:themeTaxonomy for dcat:Catalog.">
         <pre data-include-format="text" data-include="./examples/catalog/theme-taxonomy.ttl"></pre>
+      </aside>
+    </section>
+
+    <section id="catalog-modified">
+      <h4>Property: update/ modification date</h4>
+      <table class="def">
+        <tbody>
+        <tr>
+          <th>Property</th>
+          <td>update/ modification date</td>
+        </tr>
+        <tr>
+          <th>Requirement level</th>
+          <td>Recommended</td>
+        </tr>
+        <tr>
+          <th>Cardinality</th>
+          <td>0..1</td>
+        </tr>
+        <tr>
+          <th>URI</th>
+          <td><a data-cite="DCTERMS#http://purl.org/dc/terms/modified"><code>dct:modified</code></a>
+          </td>
+        </tr>
+        <tr>
+          <th>Range</th>
+          <td><a data-cite="RDF-SCHEMA#ch_literal"><code>rdfs:Literal</code></a>
+            (typed as
+            as <a data-cite="XMLSCHEMA11-2#date"><code>xsd:date</code></a>,
+            <a data-cite="XMLSCHEMA11-2#dateTime"><code>xsd:dateTime</code></a>,
+            <a data-cite="XMLSCHEMA11-2##gYear"><code>xsd:gYear</code></a>
+            or <a data-cite="XMLSCHEMA11-2#gYearMonth"><code>xsd:gYearMonth</code></a>)
+          </td>
+        </tr>
+        <tr>
+          <th>Usage Note</th>
+          <td>
+            <ul>
+              <li>This property contains the most recent date on which the Catalogue was modified.</li>
+            </ul>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <aside class="example" title="Usage of dct:modified for dcat:Catalog">
+        <pre data-include-format="text" data-include="./examples/catalog/modified.ttl"></pre>
       </aside>
     </section>
 
@@ -1228,27 +1667,6 @@
         <td>O</td>
         <td>0..n</td>
       </tr>
-      <tr>
-        <td><a href="#resource-first">first</a></td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_first"><code>dcat:first</code></a></td>
-        <td></td>
-        <td>O</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a href="#resource-last">last</a></td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_last"><code>dcat:last</code></a></td>
-        <td></td>
-        <td>O</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a href="#resource-previous">previous</a></td>
-        <td><a data-cite="VOCAB-DCAT#Property:resource_previous"><code>dcat:prev</code></a></td>
-        <td></td>
-        <td>O</td>
-        <td></td>
-      </tr>
 
       </tbody>
     </table>
@@ -1495,12 +1913,20 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>This property contains a name given to the resource.</td>
+          <td>This property contains a short statement about the content.</td>
         </tr>
         <tr>
           <th>Usage Note</th>
           <td>
             <ul>
+              <li>Title should be understandable for external data users
+              </li>
+              <li>Give a self-explanatory title
+              </li>
+              <li>Title statement should contain 2 to 7 words
+              </li>
+              <li>Avoid abbreviations, as these are usually only known internally
+              </li>
               <li>This property can be repeated for parallel language versions of the title
                 (see <a class="no-sectionRef" href="#multilingualism"></a>).
               </li>
@@ -2517,129 +2943,9 @@
       <aside class="example" title="Usage of dct:hasPart for dcat:Resource">
         <pre data-include-format="text" data-include="./examples/resource/has-part.ttl"></pre>
       </aside>
-    </section>
-
-    <section id="resource-first">
-      <h4>Property: first</h4>
-      <table class="def">
-        <tbody>
-        <tr>
-          <th>Property</th>
-          <td>first</td>
-        </tr>
-        <tr>
-          <th>Requirement level</th>
-          <td>Optional</td>
-        </tr>
-        <tr>
-          <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_first"><code>dcat:first</code></a></td>
-        </tr>
-        <tr>
-          <th>Definition</th>
-          <td>The first resource in an ordered collection or series of resources, to which the current resource belongs.</td>
-        </tr>
-        <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>In DCAT this property is used for resources belonging to a <a class="no-sectionRef" href="#Class:Dataset_Series"></a>.</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <th>See also</th>
-          <td><a class="no-sectionRef" href="#resource-last"></a>, <a class="no-sectionRef" href="#resource-previous"></a>, <a href="https://www.w3.org/TR/vocab-dcat-3/#inverse-properties"> DCAT 3 - Use of inverse properties</a>.</td>
-        </tr>
-        </tbody>
-      </table>
-      <aside class="example" title="Usage of dcat:first for dcat:Resource">
-        <pre data-include-format="text" data-include="./examples/resource/first.ttl"></pre>
-      </aside>
-    </section>
-
-    <section id="resource-last">
-      <h4>Property: last</h4>
-      <table class="def">
-        <tbody>
-        <tr>
-          <th>Property</th>
-          <td>last</td>
-        </tr>
-        <tr>
-          <th>Requirement level</th>
-          <td>Optional</td>
-        </tr>
-        <tr>
-          <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_last"><code>dcat:last</code></a></td>
-        </tr>
-        <tr>
-          <th>Definition</th>
-          <td>The last resource in an ordered collection or series of resources, to which the current resource belongs.</td>
-        </tr>
-        <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>In DCAT this property is used for resources belonging to a <a class="no-sectionRef" href="#Class:Dataset_Series"></a>.</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <th>See also</th>
-          <td><a class="no-sectionRef" href="#resource-first"></a>, <a class="no-sectionRef" href="#resource-previous"></a>, <a href="https://www.w3.org/TR/vocab-dcat-3/#inverse-properties"> DCAT 3 - Use of inverse properties</a>.</td>
-        </tr>
-        </tbody>
-      </table>
-      <aside class="example" title="Usage of dcat:last for dcat:Resource">
-        <pre data-include-format="text" data-include="./examples/resource/last.ttl"></pre>
-      </aside>
-    </section>
-
-    <section id="resource-previous">
-      <h4>Property: previous</h4>
-      <table class="def">
-        <tbody>
-        <tr>
-          <th>Property</th>
-          <td>previous</td>
-        </tr>
-        <tr>
-          <th>Requirement level</th>
-          <td>Optional</td>
-        </tr>
-        <tr>
-          <th>URI</th>
-          <td><a data-cite="VOCAB-DCAT#Property:resource_previous"><code>dcat:prev</code></a></td>
-        </tr>
-        <tr>
-          <th>Definition</th>
-          <td>The previous resource (before the current one) in an ordered collection or series of resources.</td>
-        </tr>
-        <tr>
-          <th>Usage Note</th>
-          <td>
-            <ul>
-              <li>In DCAT this property is used for resources belonging to a <a class="no-sectionRef" href="#Class:Dataset_Series"></a>.</li>
-            </ul>
-            <ul>
-              <li>Important: It does not denote a previous version of the same resource, but a distinct resource immediately preceding the current one in an ordered collection of resources.</li>
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <th>See also</th>
-          <td><a class="no-sectionRef" href="#resource-first"></a>, <a class="no-sectionRef" href="#resource-last"></a>, <a href="https://www.w3.org/TR/vocab-dcat-3/#inverse-properties"> DCAT 3 - Use of inverse properties</a>.</td>
-        </tr>
-        </tbody>
-      </table>
-      <aside class="example" title="Usage of dcat:prev for dcat:Resource">
-        <pre data-include-format="text" data-include="./examples/resource/previous.ttl"></pre>
-      </aside>
-    </section>
-
   </section>
+  
+</section>
 
   <section id="Class:CatalogRecord">
 
@@ -2653,6 +2959,7 @@
         <ul>
           <li><strong>If in doubt, do not use this class</strong></li>
           <li>This class is optional and not all catalogs will use it. It exists for catalogs where a distinction is made between metadata about a dataset or service and metadata about the entry in the catalog about the dataset or service.</li>
+          <li>This class allows to state through dct:modified the change of the record entry (e.g. change of publisher, rights etc.). This is in contrast to a change of the dataset itself where the same property dct:modified shall be used on the class Distribution.</li>
           <li>For more information about this class see <a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Catalog_Record"> DCAT 3 - Catalog Record</a>.</li>
         </ul>
       </td>
@@ -3150,7 +3457,8 @@
     <p>
       DCAT-AP provides guidelines about the usage of Data services and Distribution in relation to Datasets:
       [[DCAT-AP-USAGEGUIDE]].
-    </p>
+    </p>Dataset is a subclass of <a class="no-sectionRef" href="#Class:Resource"></a>. The properties of Dataset are inherited from Cataloged Resource. They are listed under Cataloged Resource.</p>
+    </p>Only properties specific to the Datastet class are listed below.</p>
 
     <table class="simple">
       <thead>
@@ -4104,8 +4412,9 @@
           <th>Usage Note</th>
           <td>
             <ul>
-              <li>This property contains a URL that gives access to a distribution of the dataset. The resource at
-                the access URL may contain information about how to get the dataset.</li>
+              <li>This property contains a URL that gives access to a distribution of the dataset. The resource at the access URL may contain information about how to get the dataset.</li>
+                <li>Multiple AccessURLs for a distribution can only be assigned if there are different access methods or deployment mechanisms, such as multiple mirror servers or alternative protocols.</li>
+                <li>However, different formats must be described as separate distributions.</li>
             </ul>
           </td>
         </tr>
@@ -5595,6 +5904,10 @@
     <p>It is recommended to avoid Dataset Series without a dataset in the collection.
       Therefore at least one Dataset should refer to a Dataset Series using the property in series (dcat:inSeries).
     </p>
+    <p><strong>Note on the classification of dataset series in DCAT-AP CH v3</strong></p>
+    <p>DCAT-AP defines the dataset series only as a subclass of dcat:Resource. DCAT, however, defines it as a subclass of dcat:Dataset.
+      Until this contradiction is resolved, the class is listed as a subclass of dcat:Resource in the UML representation, but reference is still made to the possible use of properties of dcat:Dataset.
+    </p>
 
     <table class="simple">
       <thead>
@@ -5716,7 +6029,7 @@
         </tr>
         <tr>
           <th>Definition</th>
-          <td>The frequency at which the Dataset Series is updated. The frequency of a Dataset Series is not equal to the frequency of the dataset in the collection.</td>
+          <td>The frequency at which the Dataset Series is updated. The frequency of a Dataset Series is not equal to the frequency of the dataset in the collection. The frequency of a Dataset Series is the pace at which new elements are added to the dataset series. Whereas the frequency of a Dataset ist the frequency (pace) at which the Dataset is updated.</td>
         </tr>
         <tr>
           <th>Usage Note</th>
