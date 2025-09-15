@@ -35,3 +35,9 @@ RewriteCond %{HTTP:Accept} text/html
 RewriteRule ^vocabulary/licenses/(.*) /vocabulary/licenses/20240716.html#$1 [L,NE,R=303]
 RewriteCond %{HTTP:Accept} text/html
 RewriteRule ^vocabulary/publishers/(.*) /vocabulary/publishers/20210623.html#$1 [L,NE,R=303]
+
+# Serve Turtle files with correct MIME type and UTF-8 encoding
+AddType text/turtle .ttl
+AddType application/rdf+xml .rdf
+AddType text/html .html
+AddDefaultCharset UTF-8
