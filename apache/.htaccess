@@ -38,6 +38,11 @@ RewriteRule ^vocabulary/publishers/(.*) /vocabulary/publishers/20210623.html#$1 
 
 # Serve Turtle files with correct MIME type and UTF-8 encoding
 AddType text/turtle .ttl
+AddCharset UTF-8 .ttl
+
+# RDF/XML and HTML
 AddType application/rdf+xml .rdf
 AddType text/html .html
+
+# Default fallback
 AddDefaultCharset UTF-8
