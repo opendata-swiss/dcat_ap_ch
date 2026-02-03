@@ -1,0 +1,9 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<https://swisstopo/123>
+  a dcat:Dataset ;
+    prov:qualifiedAttribution [
+      a prov:Attribution;
+      prov:agent :civil_action_group;
+    ] .
