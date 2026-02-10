@@ -25,8 +25,8 @@ var respecConfig = {
     branch: "main",
     repoURL: "https://github.com/opendata-swiss/dcat_ap_ch",
   },
-  edDraftURI: "https://dcat-ap.ch/releases/3.1.1_workingdraft/dcat-ap-ch_3.1.1_workingdraft.html",
-  prevED: "https://ech.ch/ech/ech-0200",
+  edDraftURI: "https://dcat-ap.ch/releases/3.0_workingdraft/dcat-ap-ch_3.1.0_workingdraft.html",
+  prevED: "https://dcat-ap.ch/releases/3.0_workingdraft/dcat-ap-ch_3.0_workingdraft.html",
   subtitle: "A DCAT Application Profile for Switzerland (Working Draft)",
   localBiblio: {
     "DATAPORTAL-EU":{

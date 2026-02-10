@@ -6,7 +6,6 @@ RewriteCond %{REQUEST_URI} .*\.(html|ttl|rdf).*
 RewriteRule ^.* - [L]
 
 # Redirect requests to draft and latest to the current version
-RewriteRule ^releases/3.0_workingdraft/dcat-ap-ch_3.0_workingdraft\.html$ /releases/latest/v3 [R=301,L]
 RewriteRule ^releases/latest$ /releases/v3/3.0.0.html [R=302,L]
 RewriteRule ^releases/latest/v2$ /releases/2.0/dcat-ap-ch.html [R=302,L]
 RewriteRule ^releases/latest/v3$ /releases/v3/3.0.0.html [R=302,L]
