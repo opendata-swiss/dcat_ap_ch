@@ -1,0 +1,7 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://swisstopo/opendata/catalog/1234>
+  a dcat:Catalog ;
+  dct:language <http://publications.europa.eu/resource/authority/language/DEU> ,
+               <http://publications.europa.eu/resource/authority/language/FRA>.
