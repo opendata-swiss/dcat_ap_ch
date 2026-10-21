@@ -1,0 +1,11 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+<https://swisstopo/opendata/catalog>
+  a dcat:Catalog ;
+  dcat:service <https://swisstopo/data/123>, <https://swisstopo/data/345> .
+
+<https://swisstopo/data/123>
+  a dcat:DataService .
+
+<https://swisstopo/data/345>
+  a dcat:DataService .

@@ -1,0 +1,48 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------- class Catalog --------------------------------------------------
+<https://swisstopo/opendata/catalog>
+  a dcat:Catalog ;
+
+  # mandatory properties
+  dct:description "Datenkatalog der Stadt Zurich"@de ;
+  dct:publisher <https://publishers/swisstopo> ;
+  dct:title "Open Data City of Zurich"@en ,
+            "Offene Daten der Stadt Zurich"@de ;
+
+  # recommended properties
+  dcat:dataset <https://swisstopo/data/123>, <https://swisstopo/data/345> ;
+  foaf:homepage <https://swisstopo/homepage> ;
+  dcat:service <https://swisstopo/service/123>, <https://swisstopo/service/345> .
+  dct:issued "2021-01-07T00:00:00"^^xsd:dateTime ;
+  dct:license <http://dcat-ap.ch/vocabulary/licenses/terms_open> .
+
+  # optional properties
+  dct:modified "2021-01-07T00:00:00"^^xsd:dateTime ;
+  dct:language <http://publications.europa.eu/resource/authority/language/DEU> ,
+               <http://publications.europa.eu/resource/authority/language/FRA> .
+
+# ---------- class Dataset --------------------------------------------------
+<https://swisstopo/data/123>
+  a dcat:Dataset .
+
+<https://swisstopo/data/345>
+  a dcat:Dataset .
+
+# ---------- class Document --------------------------------------------------
+<https://swisstopo/index.html>
+  a foaf:Document .
+
+# ---------- class DataService -----------------------------------------------
+<https://swisstopo/service/123>
+  a dcat:DataService .
+
+<https://swisstopo/service/345>
+  a dcat:DataService .
+
+# ---------- class Agent -----------------------------------------------------
+<https://publishers/swisstopo>
+  a foaf:Agent .

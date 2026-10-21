@@ -1,0 +1,44 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------- class DataService ----------------------------------------------
+<https://swisstopo/api>
+  a dcat:DataService ;
+
+  # mandatory properties
+
+  dct:title "Service of Swisstopo"@en, "API für Swisstopo"@de ;
+  dcat:endpointURL <https://swisstopo/api> ;
+  dcat:contactPoint [
+    a vcard:Organization ;
+    vcard:fn "Abteilung Lärm BAFU" ;
+    vcard:hasEmail <mailto:noise@bafu.admin.ch> .
+  ], [
+    a vcard:Individual ;
+    vcard:fn "Sekretariat BAFU" ;
+    vcard:hasEmail <mailto:sekretariat@bafu.admin.ch> .
+  ] ;
+  dct:publisher <https://swisstopo/> ;
+
+  # recommended properties
+
+  dcat:endpointDescription <https://swisstopo/api/docu> ;
+  dct:license <http://dcat-ap.ch/vocabulary/licenses/terms_open> ;
+  dcat:servesDataset <https://swisstopo/dataset/123> ,
+                     <https://swisstopo/dataset/456> .
+
+# ---------- class Publisher ------------------------------------------------
+<https://swisstopo>
+  a foaf:Organization ;
+  foaf:name: "Landesamt für Topographie Swisstopo"@de ,
+             "Federal Office of Topography"@en .
+
+# ---------- class Dataset --------------------------------------------------
+<https://swisstopo/dataset/123>
+  a dcat:DataService .
+
+<https://swisstopo/dataset/456>
+  a dcat:DataService .

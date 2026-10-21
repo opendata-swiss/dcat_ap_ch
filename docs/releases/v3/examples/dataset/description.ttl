@@ -1,0 +1,13 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://canton.zh/opendata/catalog/treedataset>
+  a dcat:Dataset ;
+  dct:description """In diesem Dataset finden Sie Daten zum
+                 Waldbestand im Kanton Zürich
+                 - Anzahl der Bäume per year
+                 - Gesundheit der bäume"""@de,
+                 """This dataset contains information regarding the
+                 forests in Canton Zurich:
+                 - nr of trees per year
+                 - health of trees"""@en .

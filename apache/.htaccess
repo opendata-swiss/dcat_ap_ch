@@ -5,6 +5,11 @@ RewriteEngine On
 RewriteCond %{REQUEST_URI} .*\.(html|ttl|rdf).*
 RewriteRule ^.* - [L]
 
+# Redirect requests to draft and latest to the current version
+RewriteRule ^releases/latest$ /releases/v3/3.0.0.html [R=302,L]
+RewriteRule ^releases/latest/v2$ /releases/2.0/dcat-ap-ch.html [R=302,L]
+RewriteRule ^releases/latest/v3$ /releases/v3/3.0.0.html [R=302,L]
+
 # Redirect vocabulary urls to most recent version of vocabulary in requested format
 RewriteCond %{HTTP:Accept} application/rdf\+xml
 RewriteRule ^vocabulary/themes/.*$ /vocabulary/themes/20231122.rdf [L,R=303]

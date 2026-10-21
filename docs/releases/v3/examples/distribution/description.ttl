@@ -1,0 +1,16 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://canton.zh/opendata/catalog/treecount>
+  a dcat:Distribution ;
+  dct:description """dct:description "Die Gesundheitsdirektion des Kantons Zürich veröffentlicht
+                  ab dem 30.11.2020 einmal wöchentlich den Anteil der positiven SARS-CoV-2
+                  Tests bei Kindern und Jugendlichen nach Alterskategorien pro Kalenderwoche.
+                  Die Zeitreihe beginnt mit Kalenderwoche 22/2020 (25.-31.05.2020).
+                  Spaltenüberschriften:
+                  'Woche_von' = Beginn der Kalenderwoche (Datum);
+                  'Woche_bis' = Ende der Kalenderwoche (Datum);
+                  'AgeCat'= Alterskategorie (0-3, 4-11, 12-15, 16-19 Jahre);
+                  'Anzahl_positiv' = Anzahl positiver Tests;
+                  'Anzahl_negativ' = Anzahl negativer Tests;
+                  'Anteil_positiv' = Anteil der positiven Tests an allen Tests"@de ;"""@de .

@@ -1,0 +1,6 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<https://swisstopo>
+  a foaf:Organization ;
+  foaf:name "Swisstopo Landesamt für Topographie" .
+

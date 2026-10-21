@@ -1,0 +1,6 @@
+<dct:publisher>
+  <rdf:Description about="Reference to Termdat">
+    <rdfs:label>Name of the publishing organization
+    </rdfs:label>
+  </rdf:Description>
+</dct:publisher>
