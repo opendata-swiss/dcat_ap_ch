@@ -4,7 +4,7 @@
   <title>DCAT-AP CH - Version 3.0.0</title>
   <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script> 
+  <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
   <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c" defer></script>
   <script class="remove" src="config.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -1148,13 +1148,23 @@
               <li>
                 This property may be indicated using an IRI reference or may be encoded as an instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>.
                 </li>
-                <li>CV to be used for IRI reference: LINDAS resources SHOULD be used. Whenever a particular location is not available as LINDAS resource, then the EU Vocabularies Named Authority Lists MAY be used:
+                <li>CV to be used for IRI reference: LINDAS resources SHOULD be used. For Swiss locations, use:
+                  <ul>
+                    <li>Country [[LINDAS-COUNTRY]]: <code>https://ld.admin.ch/country/{ISO 3166-1 alpha-3 code}</code>, e.g. <code>https://ld.admin.ch/country/CHE</code></li>
+                    <li>Canton [[LINDAS-CANTON]]: <code>https://ld.admin.ch/canton/{BFS canton number}</code>, e.g. <code>https://ld.admin.ch/canton/1</code> (Zürich)</li>
+                    <li>District: <code>https://ld.admin.ch/district/{BFS district number}</code>, e.g. <code>https://ld.admin.ch/district/112</code> (Bezirk Zürich)</li>
+                    <li>Municipality [[LINDAS-MUNICIPALITY]]: <code>https://ld.admin.ch/municipality/{BFS municipality number}</code>, e.g. <code>https://ld.admin.ch/municipality/261</code> (Zürich)</li>
+                  </ul>
+                </li>
+                <li>These IRIs identify the administrative unit. The boundary geometries are published separately and linked via <code>gsp:hasGeometry</code> (e.g. <code>https://geo.ld.admin.ch/boundaries/canton/geometry-g1/1:2023</code>). The IRI of the administrative unit SHOULD be used as value of <code>dct:spatial</code>.</li>
+                <li>Whenever a particular location is not available as LINDAS resource, then the EU Vocabularies Named Authority Lists MAY be used:
                   [[VOCAB-EU-CONTINENT]],
                   [[VOCAB-EU-COUNTRY]],
                   [[VOCAB-EU-PLACE]],
                   if the location is not in one of the mentioned EU Vocabularies, then Geonames URIs MAY be used:
                   [[GEONAMES]].
                 </li>
+                <li>A plain literal (e.g. <code>"Kanton Zürich"</code>) is not a valid value, as the range of this property is <code>dct:Location</code>. Free-text place names SHOULD be replaced by the corresponding IRI.</li>
                 <li>For the encoding as instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a> see the class Location (<a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Location"> DCAT-AP - 7.12 Location </a>).</li>
               </ul>
           </td>
@@ -2943,7 +2953,6 @@
         <pre data-include-format="text" data-include="./examples/resource/has-part.ttl"></pre>
       </aside>
   </section>
-  
 </section>
 
   <section id="Class:CatalogRecord">
@@ -3654,13 +3663,23 @@
               <li>
               This property may be indicated using an IRI reference or may be encoded as an instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>.
               </li>
-              <li>CV to be used for IRI reference: LINDAS resources SHOULD be used. Whenever a particular location is not available as LINDAS resource, then the EU Vocabularies Named Authority Lists MAY be used:
+              <li>CV to be used for IRI reference: LINDAS resources SHOULD be used. For Swiss locations, use:
+                <ul>
+                  <li>Country [[LINDAS-COUNTRY]]: <code>https://ld.admin.ch/country/{ISO 3166-1 alpha-3 code}</code>, e.g. <code>https://ld.admin.ch/country/CHE</code></li>
+                  <li>Canton [[LINDAS-CANTON]]: <code>https://ld.admin.ch/canton/{BFS canton number}</code>, e.g. <code>https://ld.admin.ch/canton/1</code> (Zürich)</li>
+                  <li>District: <code>https://ld.admin.ch/district/{BFS district number}</code>, e.g. <code>https://ld.admin.ch/district/112</code> (Bezirk Zürich)</li>
+                  <li>Municipality [[LINDAS-MUNICIPALITY]]: <code>https://ld.admin.ch/municipality/{BFS municipality number}</code>, e.g. <code>https://ld.admin.ch/municipality/261</code> (Zürich)</li>
+                </ul>
+              </li>
+              <li>These IRIs identify the administrative unit. The boundary geometries are published separately and linked via <code>gsp:hasGeometry</code> (e.g. <code>https://geo.ld.admin.ch/boundaries/canton/geometry-g1/1:2023</code>). The IRI of the administrative unit SHOULD be used as value of <code>dct:spatial</code>.</li>
+              <li>Whenever a particular location is not available as LINDAS resource, then the EU Vocabularies Named Authority Lists MAY be used:
                 [[VOCAB-EU-CONTINENT]],
                 [[VOCAB-EU-COUNTRY]],
                 [[VOCAB-EU-PLACE]],
                 if the location is not in one of the mentioned EU Vocabularies, then Geonames URIs MAY be used:
                 [[GEONAMES]].
               </li>
+              <li>A plain literal (e.g. <code>"Kanton Zürich"</code>) is not a valid value, as the range of this property is <code>dct:Location</code>. Free-text place names SHOULD be replaced by the corresponding IRI.</li>
               <li>For the encoding as instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a> see the class Location (<a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Location"> DCAT-AP - 7.12 Location </a>).</li>
             </ul>
           </td>
@@ -6080,13 +6099,23 @@
               <li>
                 This property may be indicated using an IRI reference or may be encoded as an instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a>.
                 </li>
-                <li>CV to be used for IRI reference: LINDAS resources SHOULD be used. Whenever a particular location is not available as LINDAS resource, then the EU Vocabularies Named Authority Lists MAY be used:
+                <li>CV to be used for IRI reference: LINDAS resources SHOULD be used. For Swiss locations, use:
+                  <ul>
+                    <li>Country [[LINDAS-COUNTRY]]: <code>https://ld.admin.ch/country/{ISO 3166-1 alpha-3 code}</code>, e.g. <code>https://ld.admin.ch/country/CHE</code></li>
+                    <li>Canton [[LINDAS-CANTON]]: <code>https://ld.admin.ch/canton/{BFS canton number}</code>, e.g. <code>https://ld.admin.ch/canton/1</code> (Zürich)</li>
+                    <li>District: <code>https://ld.admin.ch/district/{BFS district number}</code>, e.g. <code>https://ld.admin.ch/district/112</code> (Bezirk Zürich)</li>
+                    <li>Municipality [[LINDAS-MUNICIPALITY]]: <code>https://ld.admin.ch/municipality/{BFS municipality number}</code>, e.g. <code>https://ld.admin.ch/municipality/261</code> (Zürich)</li>
+                  </ul>
+                </li>
+                <li>These IRIs identify the administrative unit. The boundary geometries are published separately and linked via <code>gsp:hasGeometry</code> (e.g. <code>https://geo.ld.admin.ch/boundaries/canton/geometry-g1/1:2023</code>). The IRI of the administrative unit SHOULD be used as value of <code>dct:spatial</code>.</li>
+                <li>Whenever a particular location is not available as LINDAS resource, then the EU Vocabularies Named Authority Lists MAY be used:
                   [[VOCAB-EU-CONTINENT]],
                   [[VOCAB-EU-COUNTRY]],
                   [[VOCAB-EU-PLACE]],
                   if the location is not in one of the mentioned EU Vocabularies, then Geonames URIs MAY be used:
                   [[GEONAMES]].
                 </li>
+                <li>A plain literal (e.g. <code>"Kanton Zürich"</code>) is not a valid value, as the range of this property is <code>dct:Location</code>. Free-text place names SHOULD be replaced by the corresponding IRI.</li>
                 <li>For the encoding as instance of <a data-cite="DCTERMS#http://purl.org/dc/terms/Location"><code>dct:Location</code></a> see the class Location (<a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Location"> DCAT-AP - 7.12 Location </a>).</li>
               </ul>
             </td>
