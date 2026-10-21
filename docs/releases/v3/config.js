@@ -54,6 +54,21 @@ var respecConfig = {
       "title":"GeoNames",
       "publisher":"Geonames",
     },
+    "LINDAS-CANTON":{
+      "href":"https://ld.admin.ch/dimension/canton",
+      "title":"Cantons of Switzerland",
+      "publisher":"LINDAS - Linked Data Service of the Swiss Federal Administration",
+    },
+    "LINDAS-COUNTRY":{
+      "href":"https://ld.admin.ch/dimension/country",
+      "title":"Countries",
+      "publisher":"LINDAS - Linked Data Service of the Swiss Federal Administration",
+    },
+    "LINDAS-MUNICIPALITY":{
+      "href":"https://ld.admin.ch/dimension/municipality",
+      "title":"Municipalities of Switzerland",
+      "publisher":"LINDAS - Linked Data Service of the Swiss Federal Administration",
+    },
     "ISO 639-1":{
       "href":"https://en.wikipedia.org/wiki/ISO_639-1",
       "title":"Language 2 Letter Code",
